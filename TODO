@@ -1,0 +1,158 @@
+Todo:
+  ☐ varios sts calls including caller identity
+  ☐ ability to provide custom query params or body for complicated calls
+  ☐ trap interrupts and exit cleanly
+
+Helpers:
+  ☐ function to convert permission to snake case with - instead of _
+
+Cli:
+  ☐ access key and secret is required
+  ☐ if access key starts with ASIA, then token is required maybe?
+  ☐ spinner with backwards count of remaining calls?
+
+Services:
+  ☐ a4b
+  ☐ acm
+  ☐ amplify
+  ☐ apigateway
+  ☐ appmesh
+  ☐ appstream2
+  ☐ appsync
+  ☐ athena
+  ☐ autoscaling
+  ☐ backup
+  ☐ batch
+  ☐ chime
+  ☐ cloud9
+  ☐ clouddirectory
+  ☐ cloudformation
+  ☐ cloudfront
+  ☐ cloudhsm
+  ☐ cloudhsmv2
+  ☐ cloudsearch
+  ☐ cloudtrail
+  ☐ codebuild
+  ☐ codecommit
+  ☐ codedeploy
+  ☐ codepipeline
+  ☐ codestar
+  ☐ cognito-sync
+  ☐ comprehend
+  ☐ config
+  ☐ cur
+  ☐ data.mediastore
+  ☐ datapipeline
+  ☐ datasync
+  ☐ dax
+  ☐ devicefarm
+  ☐ devices.iot1click
+  ☐ directconnect
+  ☐ discovery
+  ☐ dlm
+  ☐ dms
+  ☐ ds
+  ☐ dynamodb
+  ☐ ecr
+  ☐ ecs
+  ☐ eks
+  ☐ elasticache
+  ☐ elasticbeanstalk
+  ☐ elasticfilesystem
+  ☐ elasticloadbalancing
+  ☐ elasticmapreduce
+  ☐ elastictranscoder
+  ☐ email
+  ☐ es
+  ☐ events
+  ☐ firehose
+  ☐ fms
+  ☐ fsx
+  ☐ gamelift
+  ☐ globalaccelerator
+  ☐ glue
+  ☐ greengrass
+  ☐ guardduty
+  ☐ health
+  ☐ iam
+  ☐ importexport
+  ☐ inspector
+  ☐ iot
+  ☐ iotanalytics
+  ☐ kafka
+  ☐ kinesis
+  ☐ kinesisanalytics
+  ☐ kinesisvideo
+  ☐ kms
+  ☐ lambda
+  ☐ license-manager
+  ☐ lightsail
+  ☐ logs
+  ☐ machinelearning
+  ☐ macie
+  ☐ mediaconnect
+  ☐ mediaconvert
+  ☐ medialive
+  ☐ mediapackage
+  ☐ mediastore
+  ☐ mediatailor
+  ☐ mgh
+  ☐ mobile
+  ☐ models.lex
+  ☐ monitoring
+  ☐ mq
+  ☐ mturk-requester
+  ☐ opsworks
+  ☐ opworks
+  ☐ organizations
+  ☐ pinpoint
+  ☐ polly
+  ☐ pricing
+  ☐ projects.iot1click
+  ☐ ram
+  ☐ rds
+  ☐ redshift
+  ☐ rekognition
+  ☐ robomaker
+  ☐ route53
+  ☐ route53domains
+  ☐ route53resolver
+  ☐ sagemaker
+  ☐ sdb
+  ☐ secretsmanager
+  ☐ securityhub
+  ☐ serverlessrepo
+  ☐ servicecatalog
+  ☐ shield
+  ☐ signer
+  ☐ sms
+  ☐ sms-voice.pinpoint
+  ☐ snowball
+  ☐ sns
+  ☐ sqs
+  ☐ ssm
+  ☐ states
+  ☐ storagegateway
+  ☐ streams.dynamodb
+  ☐ sts
+  ☐ support
+  ☐ tagging
+  ☐ transcribe
+  ☐ transfer
+  ☐ translate
+  ☐ waf
+  ☐ waf-regional
+  ☐ workdocs
+  ☐ worklink
+  ☐ workmail
+  ☐ workspaces
+  ☐ xray
+
+Resources:
+  - https://www.any-api.com/amazonaws_com/ec2/docs/_Action_DescribeInstances/DescribeInstances
+  - https://docs.aws.amazon.com/index.html
+  - 
+
+Archive:
+  ✔ ec2 @project(Services)
+  ✔ s3 @project(Services)
