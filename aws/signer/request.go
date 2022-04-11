@@ -35,6 +35,7 @@ func MakeRequest(
 
 	// get request requestURL
 	requestURL := p.GetRequestURL(region, service)
+	logger.LogDebugVerbose("url", requestURL)
 
 	// if form data, set body
 	if p.FormData != nil {
@@ -98,6 +99,8 @@ func serviceSafetyNet(service string) string {
 func regionSafetyNet(service, region string) string {
 	switch service {
 	case "iam":
+		return "us-east-1"
+	case "cloudfront":
 		return "us-east-1"
 	default:
 		return region

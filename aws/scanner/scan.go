@@ -9,6 +9,7 @@ import (
 	"github.com/aws/aws-sdk-go/aws/credentials"
 	"github.com/securisec/enumerate/aws/policy"
 	"github.com/securisec/enumerate/aws/signer"
+	"github.com/securisec/enumerate/logger"
 )
 
 var (
@@ -36,7 +37,8 @@ func EnumerateAll(ctx context.Context, region string, creds interface{}) error {
 					return
 				}
 				// TODO catch errors from goroutine here
-				signer.MakeRequest(ctx, region, s.Service, &s.Policy, c)
+				_, _, err := signer.MakeRequest(ctx, region, s.Service, &s.Policy, c)
+				logger.LogError(err)
 			}
 		}()
 	}
@@ -73,7 +75,10 @@ func EnumerateSpecificService(ctx context.Context, region, service string, creds
 					return
 				}
 				// TODO catch errors from goroutine here
-				signer.MakeRequest(ctx, region, s.Service, &s.Policy, c)
+				_, _, err := signer.MakeRequest(ctx, region, s.Service, &s.Policy, c)
+				if err != nil {
+					logger.LogError(err)
+				}
 			}
 		}()
 	}

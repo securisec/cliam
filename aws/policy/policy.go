@@ -3,8 +3,6 @@ package policy
 import (
 	"fmt"
 	"path"
-
-	"github.com/securisec/enumerate/logger"
 )
 
 const (
@@ -88,12 +86,10 @@ func (s *Service) GetRequestURL(region, service string) string {
 		url = "https://" + path.Join(fmt.Sprintf(
 			"%s%s.%s", s.ServicePrefix, service, aws_BASE_URL,
 		), s.ServiceSuffix)
-		logger.LogDebugVerbose("url", url)
 		return url
 	}
 	url = "https://" + path.Join(fmt.Sprintf(
 		"%s%s.%s.%s", s.ServicePrefix, service, region, aws_BASE_URL,
 	), s.ServiceSuffix)
-	logger.LogDebugVerbose("url", url)
 	return url
 }

@@ -29,7 +29,6 @@ AWSServices:
   ☐ cloud9
   ☐ clouddirectory
   ☐ cloudformation
-  ☐ cloudfront
   ☐ cloudhsm
   ☐ cloudhsmv2
   ☐ cloudsearch
@@ -142,6 +141,7 @@ Resources:
   - 
 
 Archive:
+  ✔ cloudfront @project(AWSServices)
   ✔ apigateway @project(AWSServices)
   ✔ codebuild @project(AWSServices)
   ✔ cloudtrail @project(AWSServices)
