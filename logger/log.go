@@ -2,6 +2,8 @@ package logger
 
 import (
 	"os"
+	"regexp"
+	"strings"
 
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
@@ -17,7 +19,7 @@ var output = zerolog.ConsoleWriter{Out: os.Stdout, TimeFormat: "Jan 02 15:04:05"
 var Logger = log.Output(output)
 
 func LogSuccess(service, permission string) {
-	Logger.Info().Str(service, permission).Msg("")
+	Logger.Info().Str(service, toSnakeCase(permission)).Msg("")
 }
 
 // func LogStatus(status int) {
@@ -52,4 +54,12 @@ func LogDebug(key string, value interface{}) {
 	if DEBUG {
 		Logger.Debug().Interface(key, value).Msg("")
 	}
+}
+
+func toSnakeCase(str string) string {
+	var matchFirstCap = regexp.MustCompile("(.)([A-Z][a-z]+)")
+	var matchAllCap = regexp.MustCompile("([a-z0-9])([A-Z])")
+	snake := matchFirstCap.ReplaceAllString(str, "${1}-${2}")
+	snake = matchAllCap.ReplaceAllString(snake, "${1}-${2}")
+	return strings.ToLower(snake)
 }

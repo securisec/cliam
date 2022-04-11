@@ -3,6 +3,7 @@ package signer
 import (
 	"context"
 	"net/http"
+	"net/url"
 	"strings"
 	"time"
 
@@ -17,24 +18,31 @@ func MakeRequest(
 	region, service string,
 	p *policy.Service,
 	creds *credentials.Credentials,
-	options ...RequestOptions,
 ) (*http.Request, *http.Response, error) {
 	// TODO handle context for clean exit
 	// default options
 	method := "GET"
 	body := strings.NewReader("")
 
-	// apply options if specified
-	if len(options) > 0 {
-		method = options[0].Method
-		body = strings.NewReader(options[0].Body)
+	if p.Method != "" {
+		method = p.Method
+	}
+
+	// get request requestURL
+	requestURL := p.GetRequestURL(region, service)
+	logger.LogDebug("url", requestURL)
+
+	// if form data, set body
+	if p.FormData != nil {
+		form := url.Values{}
+		for k, v := range p.FormData {
+			form.Add(k, v)
+		}
+		body = strings.NewReader(form.Encode())
 	}
 
 	// create request
-	url := p.GetRequestURL(region, service)
-	logger.LogDebug("url", url)
-
-	req, err := http.NewRequest(method, url, body)
+	req, err := http.NewRequest(method, requestURL, body)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -59,9 +67,4 @@ func MakeRequest(
 	}
 
 	return req, res, nil
-}
-
-type RequestOptions struct {
-	Method string `json:"method"`
-	Body   string `json:"body"`
 }

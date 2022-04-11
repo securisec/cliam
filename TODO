@@ -84,7 +84,6 @@ Services:
   ☐ kinesisanalytics
   ☐ kinesisvideo
   ☐ kms
-  ☐ lambda
   ☐ license-manager
   ☐ lightsail
   ☐ logs
@@ -129,12 +128,10 @@ Services:
   ☐ sms-voice.pinpoint
   ☐ snowball
   ☐ sns
-  ☐ sqs
   ☐ ssm
   ☐ states
   ☐ storagegateway
   ☐ streams.dynamodb
-  ☐ sts
   ☐ support
   ☐ tagging
   ☐ transcribe
@@ -154,5 +151,8 @@ Resources:
   - 
 
 Archive:
+  ✔ sts @project(Services)
+  ✔ sqs @project(Services)
+  ✔ lambda @project(Services)
   ✔ ec2 @project(Services)
   ✔ s3 @project(Services)

@@ -11,6 +11,8 @@ var Services = map[string][]Service{
 	"ec2":    EC2,
 	"lambda": Lambda,
 	"s3":     S3,
+	"sqs":    SQS,
+	"sts":    STS,
 }
 
 // Service base service struct for all services
@@ -21,6 +23,12 @@ type Service struct {
 	Permission string `json:"permission"`
 	// OptionalQuery for future needs
 	OptionalQueryParams map[string]string `json:"optionalQueryParams,omitempty"`
+	// Method request method. Default is GET
+	Method string `json:"method"`
+	// FormData for form based requests
+	FormData map[string]string `json:"formData,omitempty"`
+	// JsonData for json based requests
+	JsonData map[string]interface{} `json:"jsonData,omitempty"`
 }
 
 // GetRequestURL returns the request url for the service
