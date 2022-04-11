@@ -2,6 +2,7 @@ Todo:
   ☐ ability to provide custom query params or body for complicated calls
   ☐ trap interrupts and exit cleanly
   ☐ context with timeout for requests
+  ☐ get creds from default envars for specific cloud providers
 
 Helpers:
 
@@ -9,8 +10,10 @@ Cli:
   ☐ access key and secret is required
   ☐ if access key starts with ASIA, then token is required maybe?
   ☐ spinner with backwards count of remaining calls?
+  ☐ prompt for access key and secret
+  ☐ region completer
 
-Services:
+AWSServices:
   ☐ a4b
   ☐ acm
   ☐ amplify
@@ -51,7 +54,6 @@ Services:
   ☐ dlm
   ☐ dms
   ☐ ds
-  ☐ dynamodb
   ☐ ecs
   ☐ eks
   ☐ elasticache
@@ -149,10 +151,12 @@ Resources:
   - 
 
 Archive:
+  ✔ dynamodb @project(AWSServices)
+  ✔ dynamodbstreams @project(AWSServices)
   ✔ function to convert permission to snake case with - instead of _ @project(Helpers)
-  ✔ ecr @project(Services)
-  ✔ sts @project(Services)
-  ✔ sqs @project(Services)
-  ✔ lambda @project(Services)
-  ✔ ec2 @project(Services)
-  ✔ s3 @project(Services)
+  ✔ ecr @project(AWSServices)
+  ✔ sts @project(AWSServices)
+  ✔ sqs @project(AWSServices)
+  ✔ lambda @project(AWSServices)
+  ✔ ec2 @project(AWSServices)
+  ✔ s3 @project(AWSServices)

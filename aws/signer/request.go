@@ -9,10 +9,11 @@ import (
 
 	"github.com/aws/aws-sdk-go/aws/credentials"
 	v4 "github.com/aws/aws-sdk-go/aws/signer/v4"
+	"github.com/securisec/enumerate/aws/policy"
 	"github.com/securisec/enumerate/logger"
-	"github.com/securisec/enumerate/policy"
 )
 
+// TODO move this to shared to be able to be used by other cloud providers
 func MakeRequest(
 	ctx context.Context,
 	region, service string,
@@ -34,7 +35,6 @@ func MakeRequest(
 
 	// get request requestURL
 	requestURL := p.GetRequestURL(region, service)
-	logger.LogDebug("url", requestURL)
 
 	// if form data, set body
 	if p.FormData != nil {
@@ -51,17 +51,6 @@ func MakeRequest(
 		return nil, nil, err
 	}
 
-	// add appropriate headers
-	if p.FormData != nil {
-		req.Header.Add("Content-Type", "application/x-www-form-urlencoded")
-	}
-	// add json data
-	// 🔥 the reason why we are not setting the content-type is because aws
-	// uses a different content-type for json based requests
-	// if p.JsonData != nil {
-	// 	req.Header.Add("Content-Type", "application/json")
-	// }
-
 	// add headers
 	if p.Headers != nil {
 		for k, v := range p.Headers {
@@ -71,6 +60,10 @@ func MakeRequest(
 
 	// create signer to generate auth signature header
 	signer := v4.NewSigner(creds)
+	// safety net for certain services
+	service = serviceSafetyNet(service)
+	// safety net for certain regions
+	region = regionSafetyNet(service, region)
 	// sign request
 	if _, err := signer.Sign(req, body, service, region, time.Now()); err != nil {
 		return nil, nil, err
@@ -91,4 +84,22 @@ func MakeRequest(
 	logger.LogDebugResponse(res)
 
 	return req, res, nil
+}
+
+func serviceSafetyNet(service string) string {
+	switch service {
+	case "streams.dynamodb":
+		return "dynamodb"
+	default:
+		return service
+	}
+}
+
+func regionSafetyNet(service, region string) string {
+	switch service {
+	case "iam":
+		return "us-east-1"
+	default:
+		return region
+	}
 }

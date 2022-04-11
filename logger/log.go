@@ -40,7 +40,11 @@ func LogDenied(status int, service, permission string) {
 
 func LogError(err error) {
 	if err != nil {
-		Logger.Error().Err(err).Msg("Error")
+		if DEBUG {
+			Logger.Error().Err(err).Msg("Error")
+		} else {
+			Logger.Fatal().Msg("Error")
+		}
 	}
 }
 

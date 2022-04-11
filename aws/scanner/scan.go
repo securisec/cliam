@@ -6,8 +6,8 @@ import (
 	"sync"
 
 	"github.com/aws/aws-sdk-go/aws/credentials"
-	"github.com/securisec/enumerate/policy"
-	"github.com/securisec/enumerate/signer"
+	"github.com/securisec/enumerate/aws/policy"
+	"github.com/securisec/enumerate/aws/signer"
 )
 
 var (
@@ -15,7 +15,12 @@ var (
 )
 
 // EnumerateAll scan all services and permissions
-func EnumerateAll(ctx context.Context, region string, creds *credentials.Credentials) {
+func EnumerateAll(ctx context.Context, region string, creds interface{}) error {
+	c, ok := creds.(*credentials.Credentials)
+	if !ok {
+		return fmt.Errorf("creds must be of type *credentials.Credentials")
+	}
+
 	ch := make(chan serviceMap)
 
 	wg := &sync.WaitGroup{}
@@ -29,7 +34,8 @@ func EnumerateAll(ctx context.Context, region string, creds *credentials.Credent
 					wg.Done()
 					return
 				}
-				signer.MakeRequest(ctx, region, s.Service, &s.Policy, creds)
+				// TODO catch errors from goroutine here
+				signer.MakeRequest(ctx, region, s.Service, &s.Policy, c)
 			}
 		}()
 	}
@@ -42,9 +48,16 @@ func EnumerateAll(ctx context.Context, region string, creds *credentials.Credent
 
 	close(ch)
 	wg.Wait()
+
+	return nil
 }
 
-func ScanSpecificService(ctx context.Context, region, service string, creds *credentials.Credentials) error {
+func EnumerateSpecificService(ctx context.Context, region, service string, creds interface{}) error {
+	c, ok := creds.(*credentials.Credentials)
+	if !ok {
+		return fmt.Errorf("creds must be of type *credentials.Credentials")
+	}
+
 	ch := make(chan serviceMap)
 
 	wg := &sync.WaitGroup{}
@@ -58,7 +71,8 @@ func ScanSpecificService(ctx context.Context, region, service string, creds *cre
 					wg.Done()
 					return
 				}
-				signer.MakeRequest(ctx, region, s.Service, &s.Policy, creds)
+				// TODO catch errors from goroutine here
+				signer.MakeRequest(ctx, region, s.Service, &s.Policy, c)
 			}
 		}()
 	}
