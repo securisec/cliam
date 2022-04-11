@@ -1,6 +1,6 @@
 package policy
 
-var EC2 = []Service{
+var EC2Policies = []Service{
 	{
 		ServiceSuffix: "?Action=DescribeAccountAttributes&Version=2016-11-15",
 		Permission:    "DescribeAccountAttributes",

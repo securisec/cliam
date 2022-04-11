@@ -3,6 +3,7 @@ package scanner
 import (
 	"context"
 	"fmt"
+	"net/http"
 	"sync"
 
 	"github.com/aws/aws-sdk-go/aws/credentials"
@@ -90,6 +91,16 @@ func EnumerateSpecificService(ctx context.Context, region, service string, creds
 	wg.Wait()
 
 	return nil
+}
+
+// CheckSpecificPermission check a specific permission based on the provided policy
+// This applies to AWS
+func CheckSpecificPermission(
+	region, service string,
+	policy policy.Service,
+	creds *credentials.Credentials,
+) (*http.Request, *http.Response, error) {
+	return signer.MakeRequest(context.Background(), region, service, &policy, creds)
 }
 
 type serviceMap struct {

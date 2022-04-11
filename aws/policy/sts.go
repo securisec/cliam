@@ -2,7 +2,7 @@ package policy
 
 import "github.com/securisec/enumerate/shared"
 
-var STS = []Service{
+var STSPolicies = []Service{
 	{
 		ServiceSuffix: "",
 		Permission:    "GetCallerIdentity",

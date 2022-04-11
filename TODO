@@ -2,11 +2,12 @@ Todo:
   ☐ ability to provide custom query params or body for complicated calls
   ☐ trap interrupts and exit cleanly
   ☐ context with timeout for requests
-  ☐ get creds from default envars for specific cloud providers
-
+  
 Helpers:
-
+    
 Cli:
+  ☐ get creds from default envars for specific cloud providers
+  ☐ support providing profiles from aws credentials file
   ☐ access key and secret is required
   ☐ if access key starts with ASIA, then token is required maybe?
   ☐ spinner with backwards count of remaining calls?
@@ -17,7 +18,6 @@ AWSServices:
   ☐ a4b
   ☐ acm
   ☐ amplify
-  ☐ apigateway
   ☐ appmesh
   ☐ appstream2
   ☐ appsync
@@ -33,9 +33,6 @@ AWSServices:
   ☐ cloudhsm
   ☐ cloudhsmv2
   ☐ cloudsearch
-  ☐ cloudtrail
-  ☐ codebuild
-  ☐ codecommit
   ☐ codedeploy
   ☐ codepipeline
   ☐ codestar
@@ -54,11 +51,6 @@ AWSServices:
   ☐ dlm
   ☐ dms
   ☐ ds
-  ☐ ecs
-  ☐ eks
-  ☐ elasticache
-  ☐ elasticbeanstalk
-  ☐ elasticfilesystem
   ☐ elasticloadbalancing
   ☐ elasticmapreduce
   ☐ elastictranscoder
@@ -74,7 +66,6 @@ AWSServices:
   ☐ greengrass
   ☐ guardduty
   ☐ health
-  ☐ iam
   ☐ importexport
   ☐ inspector
   ☐ iot
@@ -151,6 +142,16 @@ Resources:
   - 
 
 Archive:
+  ✔ apigateway @project(AWSServices)
+  ✔ codebuild @project(AWSServices)
+  ✔ cloudtrail @project(AWSServices)
+  ✔ codecommit @project(AWSServices)
+  ✔ elasticfilesystem @project(AWSServices)
+  ✔ elasticbeanstalk @project(AWSServices)
+  ✔ elasticache @project(AWSServices)
+  ✔ eks @project(AWSServices)
+  ✔ ecs @project(AWSServices)
+  ✔ iam @project(AWSServices)
   ✔ dynamodb @project(AWSServices)
   ✔ dynamodbstreams @project(AWSServices)
   ✔ function to convert permission to snake case with - instead of _ @project(Helpers)

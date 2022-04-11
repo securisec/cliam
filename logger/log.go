@@ -19,8 +19,10 @@ func init() {
 // Logger for info, error and debug
 var DEBUG bool
 var VERBOSE bool
-var output = zerolog.ConsoleWriter{Out: os.Stdout, TimeFormat: "Jan 02 15:04:05"}
-var Logger = log.Output(output)
+var stdOut = zerolog.ConsoleWriter{Out: os.Stdout, TimeFormat: "Jan 02 15:04:05"}
+var stdErr = zerolog.ConsoleWriter{Out: os.Stderr, TimeFormat: "Jan 02 15:04:05"}
+var Logger = log.Output(stdOut)
+var LoggerStdErr = log.Output(stdErr)
 
 func LogSuccess(service, permission string) {
 	Logger.Info().Str(service, toSnakeCase(permission)).Msg("")
@@ -41,7 +43,7 @@ func LogDenied(status int, service, permission string) {
 func LogError(err error) {
 	if err != nil {
 		if DEBUG {
-			Logger.Error().Err(err).Msg("Error")
+			LoggerStdErr.Error().Err(err).Msg("Error")
 		} else {
 			Logger.Fatal().Msg("Error")
 		}
@@ -60,15 +62,21 @@ func LogWarning(msg string) {
 
 func LogDebug(key string, value interface{}) {
 	if DEBUG {
-		Logger.Debug().Interface(key, value).Msg("")
+		LoggerStdErr.Debug().Interface(key, value).Msg("")
 	}
 }
 
-func LogDebugResponse(res *http.Response) {
+func LogDebugVerbose(key string, value interface{}) {
+	if DEBUG && VERBOSE {
+		LoggerStdErr.Debug().Interface(key, value).Msg("")
+	}
+}
+
+func LogDebugResponse(res *http.Response, permission string) {
 	if VERBOSE && DEBUG {
 		b, err := ioutil.ReadAll(res.Body)
 		if err == nil {
-			Logger.Debug().Str("body", string(b)).Msg("")
+			LoggerStdErr.Debug().Str("permission", permission).Str("body", string(b)).Msg("")
 		}
 	}
 }

@@ -1,6 +1,6 @@
 package policy
 
-var S3 = []Service{
+var S3Policies = []Service{
 	{
 		ServiceSuffix: "",
 		Permission:    "ListBuckets",

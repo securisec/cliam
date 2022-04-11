@@ -2,13 +2,13 @@ package policy
 
 import "github.com/securisec/enumerate/shared"
 
-var DynamoDB = []Service{
+var DynamoDBPolicies = []Service{
 	{
 		ServiceSuffix: "",
 		Method:        "POST",
 		JsonData:      `{}`,
 		Headers: map[string]string{
-			AWS_X_AMZ_TARGET:           "DynamoDB_20120810.ListTables",
+			aws_X_AMZ_TARGET:           "DynamoDB_20120810.ListTables",
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_JSON,
 		},
 		Permission: "ListTables",
@@ -18,7 +18,7 @@ var DynamoDB = []Service{
 		Method:        "POST",
 		JsonData:      `{}`,
 		Headers: map[string]string{
-			AWS_X_AMZ_TARGET:           "DynamoDB_20120810.ListGlobalTables",
+			aws_X_AMZ_TARGET:           "DynamoDB_20120810.ListGlobalTables",
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_JSON,
 		},
 		Permission: "ListGlobalTables",
@@ -28,7 +28,7 @@ var DynamoDB = []Service{
 		Method:        "POST",
 		JsonData:      `{}`,
 		Headers: map[string]string{
-			AWS_X_AMZ_TARGET:           "DynamoDB_20120810.ListBackups",
+			aws_X_AMZ_TARGET:           "DynamoDB_20120810.ListBackups",
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_JSON,
 		},
 		Permission: "ListBackups",
@@ -38,7 +38,7 @@ var DynamoDB = []Service{
 		Method:        "POST",
 		JsonData:      `{}`,
 		Headers: map[string]string{
-			AWS_X_AMZ_TARGET:           "DynamoDB_20120810.DescribeLimits",
+			aws_X_AMZ_TARGET:           "DynamoDB_20120810.DescribeLimits",
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_JSON,
 		},
 		Permission: "DescribeLimits",
@@ -48,7 +48,7 @@ var DynamoDB = []Service{
 		Method:        "POST",
 		JsonData:      `{}`,
 		Headers: map[string]string{
-			AWS_X_AMZ_TARGET:           "DynamoDB_20120810.DescribeEndpoints",
+			aws_X_AMZ_TARGET:           "DynamoDB_20120810.DescribeEndpoints",
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_JSON,
 		},
 		Permission: "DescribeEndpoints",

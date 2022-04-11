@@ -81,7 +81,7 @@ func MakeRequest(
 		logger.LogDenied(res.StatusCode, service, p.Permission)
 	}
 
-	logger.LogDebugResponse(res)
+	logger.LogDebugResponse(res, p.Permission)
 
 	return req, res, nil
 }

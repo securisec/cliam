@@ -1,6 +1,6 @@
 package policy
 
-var SQS = []Service{
+var SQSPolicies = []Service{
 	{
 		ServiceSuffix: "?Action=ListQueues",
 		Permission:    "ListQueues",

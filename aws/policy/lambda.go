@@ -1,6 +1,6 @@
 package policy
 
-var Lambda = []Service{
+var LambdaPolicies = []Service{
 	{
 		ServiceSuffix: "2015-03-31/functions",
 		Permission:    "ListFunctions",
