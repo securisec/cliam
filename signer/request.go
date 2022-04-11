@@ -28,6 +28,10 @@ func MakeRequest(
 		method = p.Method
 	}
 
+	if p.JsonData != "" {
+		body = strings.NewReader(p.JsonData)
+	}
+
 	// get request requestURL
 	requestURL := p.GetRequestURL(region, service)
 	logger.LogDebug("url", requestURL)
@@ -45,6 +49,24 @@ func MakeRequest(
 	req, err := http.NewRequest(method, requestURL, body)
 	if err != nil {
 		return nil, nil, err
+	}
+
+	// add appropriate headers
+	if p.FormData != nil {
+		req.Header.Add("Content-Type", "application/x-www-form-urlencoded")
+	}
+	// add json data
+	// 🔥 the reason why we are not setting the content-type is because aws
+	// uses a different content-type for json based requests
+	// if p.JsonData != nil {
+	// 	req.Header.Add("Content-Type", "application/json")
+	// }
+
+	// add headers
+	if p.Headers != nil {
+		for k, v := range p.Headers {
+			req.Header.Add(k, v)
+		}
 	}
 
 	// create signer to generate auth signature header
@@ -65,6 +87,8 @@ func MakeRequest(
 	} else {
 		logger.LogDenied(res.StatusCode, service, p.Permission)
 	}
+
+	logger.LogDebugResponse(res)
 
 	return req, res, nil
 }

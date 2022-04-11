@@ -8,6 +8,7 @@ var STS = []Service{
 			"Action":  "GetCallerIdentity",
 			"Version": "2011-06-15",
 		},
+		Method: "POST",
 	},
 	{
 		ServiceSuffix: "?Action=GetSessionToken&Version=2011-06-15",

@@ -1,10 +1,9 @@
 Todo:
-  ☐ varios sts calls including caller identity
   ☐ ability to provide custom query params or body for complicated calls
   ☐ trap interrupts and exit cleanly
+  ☐ context with timeout for requests
 
 Helpers:
-  ☐ function to convert permission to snake case with - instead of _
 
 Cli:
   ☐ access key and secret is required
@@ -53,7 +52,6 @@ Services:
   ☐ dms
   ☐ ds
   ☐ dynamodb
-  ☐ ecr
   ☐ ecs
   ☐ eks
   ☐ elasticache
@@ -151,6 +149,8 @@ Resources:
   - 
 
 Archive:
+  ✔ function to convert permission to snake case with - instead of _ @project(Helpers)
+  ✔ ecr @project(Services)
   ✔ sts @project(Services)
   ✔ sqs @project(Services)
   ✔ lambda @project(Services)

@@ -1,6 +1,8 @@
 package logger
 
 import (
+	"io/ioutil"
+	"net/http"
 	"os"
 	"regexp"
 	"strings"
@@ -11,10 +13,12 @@ import (
 
 func init() {
 	_, DEBUG = os.LookupEnv("DEBUG")
+	_, VERBOSE = os.LookupEnv("VERBOSE")
 }
 
 // Logger for info, error and debug
 var DEBUG bool
+var VERBOSE bool
 var output = zerolog.ConsoleWriter{Out: os.Stdout, TimeFormat: "Jan 02 15:04:05"}
 var Logger = log.Output(output)
 
@@ -53,6 +57,15 @@ func LogWarning(msg string) {
 func LogDebug(key string, value interface{}) {
 	if DEBUG {
 		Logger.Debug().Interface(key, value).Msg("")
+	}
+}
+
+func LogDebugResponse(res *http.Response) {
+	if VERBOSE && DEBUG {
+		b, err := ioutil.ReadAll(res.Body)
+		if err == nil {
+			Logger.Debug().Str("body", string(b)).Msg("")
+		}
 	}
 }
 
