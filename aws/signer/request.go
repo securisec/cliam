@@ -102,6 +102,8 @@ func regionSafetyNet(service, region string) string {
 		return "us-east-1"
 	case "cloudfront":
 		return "us-east-1"
+	case "route53":
+		return "us-east-1"
 	default:
 		return region
 	}

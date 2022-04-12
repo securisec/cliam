@@ -103,7 +103,6 @@ AWSServices:
   ☐ redshift
   ☐ rekognition
   ☐ robomaker
-  ☐ route53
   ☐ route53domains
   ☐ route53resolver
   ☐ sagemaker
@@ -117,8 +116,6 @@ AWSServices:
   ☐ sms
   ☐ sms-voice.pinpoint
   ☐ snowball
-  ☐ sns
-  ☐ ssm
   ☐ states
   ☐ storagegateway
   ☐ streams.dynamodb
@@ -141,6 +138,9 @@ Resources:
   - 
 
 Archive:
+  ✔ route53 @project(AWSServices)
+  ✔ sns @project(AWSServices)
+  ✔ ssm @project(AWSServices)
   ✔ cloudfront @project(AWSServices)
   ✔ apigateway @project(AWSServices)
   ✔ codebuild @project(AWSServices)

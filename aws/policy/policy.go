@@ -12,47 +12,53 @@ const (
 )
 
 const (
-	ResourceAPIGateway        = "apigateway"
-	ResourceCloudtrail        = "cloudtrail"
-	ResourceCodebuild         = "codebuild"
-	ResourceCodecommit        = "codecommit"
-	ResourceDynamodb          = "dynamodb"
-	ResourceDynamodbStreams   = "streams.dynamodb"
-	ResourceEC2               = "ec2"
-	ResourceECR               = "ecr"
-	ResourceECS               = "ecs"
-	ResourceEKS               = "eks"
-	ResourceElasticache       = "elasticache"
-	ResourceElasticBeanStalk  = "elasticbeanstalk"
-	ResourceElasticFileSystem = "elasticfilesystem"
-	ResourceIAM               = "iam"
-	ResourceLambda            = "lambda"
-	ResourceS3                = "s3"
-	ResourceSQS               = "sqs"
-	ResourceSTS               = "sts"
-	ResourceCloudfront        = "cloudfront"
+	APIGateway        = "apigateway"
+	Cloudtrail        = "cloudtrail"
+	Codebuild         = "codebuild"
+	Codecommit        = "codecommit"
+	Dynamodb          = "dynamodb"
+	DynamodbStreams   = "streams.dynamodb"
+	EC2               = "ec2"
+	ECR               = "ecr"
+	ECS               = "ecs"
+	EKS               = "eks"
+	Elasticache       = "elasticache"
+	ElasticBeanStalk  = "elasticbeanstalk"
+	ElasticFileSystem = "elasticfilesystem"
+	IAM               = "iam"
+	Lambda            = "lambda"
+	S3                = "s3"
+	SQS               = "sqs"
+	STS               = "sts"
+	Cloudfront        = "cloudfront"
+	SNS               = "sns"
+	SSM               = "ssm"
+	Route53           = "route53"
 )
 
 var Services = map[string][]Service{
-	ResourceAPIGateway:        APIGatewayPolicies,
-	ResourceCloudfront:        CloudfrontPolicies,
-	ResourceCloudtrail:        CloudtrailPolicies,
-	ResourceCodebuild:         CodebuildPolicies,
-	ResourceCodecommit:        CodecommitPolicies,
-	ResourceDynamodb:          DynamoDBPolicies,
-	ResourceDynamodbStreams:   DynamodbStreamsPolicies,
-	ResourceEC2:               EC2Policies,
-	ResourceECR:               ECRPolicies,
-	ResourceECS:               ECSPolicies,
-	ResourceEKS:               EKSPolicies,
-	ResourceElasticache:       ElasticachePolicies,
-	ResourceElasticBeanStalk:  ElasticBeanStalkPolicies,
-	ResourceElasticFileSystem: ElasticFileSystemPolicies,
-	ResourceIAM:               IAMPolicies,
-	ResourceLambda:            LambdaPolicies,
-	ResourceS3:                S3Policies,
-	ResourceSQS:               SQSPolicies,
-	ResourceSTS:               STSPolicies,
+	APIGateway:        APIGatewayPolicies,
+	Cloudfront:        CloudfrontPolicies,
+	Cloudtrail:        CloudtrailPolicies,
+	Codebuild:         CodebuildPolicies,
+	Codecommit:        CodecommitPolicies,
+	Dynamodb:          DynamoDBPolicies,
+	DynamodbStreams:   DynamodbStreamsPolicies,
+	EC2:               EC2Policies,
+	ECR:               ECRPolicies,
+	ECS:               ECSPolicies,
+	EKS:               EKSPolicies,
+	Elasticache:       ElasticachePolicies,
+	ElasticBeanStalk:  ElasticBeanStalkPolicies,
+	ElasticFileSystem: ElasticFileSystemPolicies,
+	IAM:               IAMPolicies,
+	Lambda:            LambdaPolicies,
+	S3:                S3Policies,
+	SQS:               SQSPolicies,
+	STS:               STSPolicies,
+	SNS:               SNSPolicies,
+	SSM:               SSMPolicies,
+	Route53:           Route53Policies,
 }
 
 // Service base service struct for all services
