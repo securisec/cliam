@@ -34,6 +34,8 @@ const (
 	SNS               = "sns"
 	SSM               = "ssm"
 	Route53           = "route53"
+	RDS               = "rds"
+	ELB               = "elasticloadbalancing"
 )
 
 var Services = map[string][]Service{
@@ -59,6 +61,8 @@ var Services = map[string][]Service{
 	SNS:               SNSPolicies,
 	SSM:               SSMPolicies,
 	Route53:           Route53Policies,
+	RDS:               RDSPolicies,
+	ELB:               ELBPolicies,
 }
 
 // Service base service struct for all services

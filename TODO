@@ -2,8 +2,10 @@ Todo:
   ☐ ability to provide custom query params or body for complicated calls
   ☐ trap interrupts and exit cleanly
   ☐ context with timeout for requests
+  ☐ function that can take array of services and check permissions
   
 Helpers:
+  ☐ helper functions for testing arbitrary permissions
     
 Cli:
   ☐ get creds from default envars for specific cloud providers
@@ -50,7 +52,6 @@ AWSServices:
   ☐ dlm
   ☐ dms
   ☐ ds
-  ☐ elasticloadbalancing
   ☐ elasticmapreduce
   ☐ elastictranscoder
   ☐ email
@@ -99,7 +100,6 @@ AWSServices:
   ☐ pricing
   ☐ projects.iot1click
   ☐ ram
-  ☐ rds
   ☐ redshift
   ☐ rekognition
   ☐ robomaker
@@ -138,6 +138,8 @@ Resources:
   - 
 
 Archive:
+  ✔ elasticloadbalancing @project(AWSServices)
+  ✔ rds @project(AWSServices)
   ✔ route53 @project(AWSServices)
   ✔ sns @project(AWSServices)
   ✔ ssm @project(AWSServices)
