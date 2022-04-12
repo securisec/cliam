@@ -1,6 +1,6 @@
 package policy
 
-import "github.com/securisec/enumerate/shared"
+import "github.com/securisec/iam-enumerate/shared"
 
 var SSMPolicies = []Service{
 	{

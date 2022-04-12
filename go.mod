@@ -1,4 +1,4 @@
-module github.com/securisec/enumerate
+module github.com/securisec/iam-enumerate
 
 go 1.18
 

@@ -7,14 +7,14 @@ import (
 	"sync"
 
 	"github.com/aws/aws-sdk-go/aws/credentials"
-	"github.com/securisec/enumerate/aws"
-	"github.com/securisec/enumerate/aws/policy"
-	"github.com/securisec/enumerate/aws/signer"
-	"github.com/securisec/enumerate/logger"
+	"github.com/securisec/iam-enumerate/aws"
+	"github.com/securisec/iam-enumerate/aws/policy"
+	"github.com/securisec/iam-enumerate/aws/signer"
+	"github.com/securisec/iam-enumerate/logger"
 )
 
 var (
-	MaxThreads = 10
+	MaxThreads = 5
 )
 
 // EnumerateAll scan all services and permissions

@@ -9,8 +9,8 @@ import (
 
 	"github.com/aws/aws-sdk-go/aws/credentials"
 	v4 "github.com/aws/aws-sdk-go/aws/signer/v4"
-	"github.com/securisec/enumerate/aws/policy"
-	"github.com/securisec/enumerate/logger"
+	"github.com/securisec/iam-enumerate/aws/policy"
+	"github.com/securisec/iam-enumerate/logger"
 )
 
 // TODO move this to shared to be able to be used by other cloud providers
