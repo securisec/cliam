@@ -7,6 +7,7 @@ import (
 	"sync"
 
 	"github.com/aws/aws-sdk-go/aws/credentials"
+	"github.com/securisec/enumerate/aws"
 	"github.com/securisec/enumerate/aws/policy"
 	"github.com/securisec/enumerate/aws/signer"
 	"github.com/securisec/enumerate/logger"
@@ -43,7 +44,7 @@ func EnumerateAll(ctx context.Context, region string, creds interface{}) error {
 		}()
 	}
 
-	for service, policies := range policy.Services {
+	for service, policies := range aws.Services {
 		for _, policy := range policies {
 			ch <- serviceMap{Service: service, Policy: policy}
 		}
@@ -83,7 +84,7 @@ func EnumerateSpecificService(ctx context.Context, region, service string, creds
 		}()
 	}
 
-	policies, ok := policy.Services[service]
+	policies, ok := aws.Services[service]
 	if !ok {
 		return fmt.Errorf("service %s not found", service)
 	}
