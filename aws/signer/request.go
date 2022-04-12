@@ -35,7 +35,6 @@ func MakeRequest(
 
 	// get request requestURL
 	requestURL := p.GetRequestURL(region, service)
-	logger.LogDebugVerbose("url", requestURL)
 
 	// if form data, set body
 	if p.FormData != nil {
@@ -64,7 +63,8 @@ func MakeRequest(
 	// safety net for certain services
 	service = serviceSafetyNet(service)
 	// safety net for certain regions
-	region = regionSafetyNet(service, region)
+	region = policy.AwsRegionSafetyNet(service, region)
+	logger.LogDebugVerbose("url", requestURL)
 	// sign request
 	if _, err := signer.Sign(req, body, service, region, time.Now()); err != nil {
 		return nil, nil, err
@@ -93,18 +93,5 @@ func serviceSafetyNet(service string) string {
 		return "dynamodb"
 	default:
 		return service
-	}
-}
-
-func regionSafetyNet(service, region string) string {
-	switch service {
-	case "iam":
-		return "us-east-1"
-	case "cloudfront":
-		return "us-east-1"
-	case "route53":
-		return "us-east-1"
-	default:
-		return region
 	}
 }

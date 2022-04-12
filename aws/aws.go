@@ -28,6 +28,7 @@ const (
 	RDS               = "rds"
 	ELB               = "elasticloadbalancing"
 	Cloudformation    = "cloudformation"
+	ECRPublic         = "ecr-public"
 )
 
 var Services = map[string][]policy.Service{
@@ -56,4 +57,5 @@ var Services = map[string][]policy.Service{
 	RDS:               policy.RDSPolicies,
 	ELB:               policy.ELBPolicies,
 	Cloudformation:    policy.CloudformationPolicies,
+	ECRPublic:         policy.ECRPublicPolicies,
 }

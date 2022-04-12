@@ -40,6 +40,7 @@ type Service struct {
 // to return a valid request url for the permission
 func (s *Service) GetRequestURL(region, service string) string {
 	var url string
+	region = AwsRegionSafetyNet(service, region)
 	if s.IgnoreRegion {
 		url = "https://" + path.Join(fmt.Sprintf(
 			"%s%s.%s", s.ServicePrefix, service, aws_BASE_URL,
@@ -50,4 +51,19 @@ func (s *Service) GetRequestURL(region, service string) string {
 		"%s%s.%s.%s", s.ServicePrefix, service, region, aws_BASE_URL,
 	), s.ServiceSuffix)
 	return url
+}
+
+func AwsRegionSafetyNet(service, region string) string {
+	switch service {
+	case "iam":
+		return "us-east-1"
+	case "cloudfront":
+		return "us-east-1"
+	case "route53":
+		return "us-east-1"
+	case "ecr-public":
+		return "us-east-1"
+	default:
+		return region
+	}
 }
