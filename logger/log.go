@@ -25,18 +25,18 @@ var Logger = log.Output(stdOut)
 var LoggerStdErr = log.Output(stdErr)
 
 func LogSuccess(service, permission string) {
-	Logger.Info().Str(service, toSnakeCase(permission)).Msg("")
+	Logger.Info().Str(service, toSnakeCase(permission)).Msg("Success")
 }
 
-// func LogStatus(status int) {
-// 	if DEBUG {
-// 		Logger.Warn().Int("status", status).Msg("")
-// 	}
-// }
+func LogMaybe(service, permission string) {
+	if DEBUG {
+		Logger.Debug().Str(service, toSnakeCase(permission)).Msg("Maybe")
+	}
+}
 
 func LogDenied(status int, service, permission string) {
 	if DEBUG {
-		Logger.Warn().Int("status", status).Str(service, permission).Msg("")
+		LoggerStdErr.Error().Int("status", status).Str(service, permission).Msg("Error")
 	}
 }
 

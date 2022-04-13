@@ -30,6 +30,7 @@ const (
 	Cloudformation    = "cloudformation"
 	ECRPublic         = "ecr-public"
 	ES                = "es"
+	Cloudsearch       = "cloudsearch"
 )
 
 var Services = map[string][]policy.Service{
@@ -60,6 +61,7 @@ var Services = map[string][]policy.Service{
 	Cloudformation:    policy.CloudformationPolicies,
 	ECRPublic:         policy.ECRPublicPolicies,
 	ES:                policy.ESPolicies,
+	Cloudsearch:       policy.CloudsearchPolicies,
 }
 
 func GetAWSServices() []string {
