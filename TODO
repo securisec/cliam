@@ -4,6 +4,7 @@ Todo:
   ☐ context with timeout for requests
   ☐ function that can take array of services and check permissions
   ☐ enumerate functions should return an array of valid permissions
+  ☐ refactor goroutine runners as DRY
   
 Helpers:
   ☐ helper functions for testing arbitrary permissions
@@ -16,6 +17,7 @@ Cli:
   ☐ spinner with backwards count of remaining calls?
   ☐ prompt for access key and secret
   ☐ region completer
+  ☐ read specific aws profile
 
 AWSServices:
   ☐ a4b

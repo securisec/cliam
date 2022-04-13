@@ -56,7 +56,7 @@ func EnumerateAll(ctx context.Context, region string, creds interface{}) error {
 	return nil
 }
 
-func EnumerateSpecificService(ctx context.Context, region, service string, creds interface{}) error {
+func EnumerateSpecificService(ctx context.Context, region, resource string, creds interface{}) error {
 	c, ok := creds.(*credentials.Credentials)
 	if !ok {
 		return fmt.Errorf("creds must be of type *credentials.Credentials")
@@ -84,13 +84,13 @@ func EnumerateSpecificService(ctx context.Context, region, service string, creds
 		}()
 	}
 
-	policies, ok := aws.Services[service]
+	policies, ok := aws.Services[resource]
 	if !ok {
-		return fmt.Errorf("service %s not found", service)
+		return fmt.Errorf("service %s not found", resource)
 	}
 
 	for _, policy := range policies {
-		ch <- serviceMap{Service: service, Policy: policy}
+		ch <- serviceMap{Service: resource, Policy: policy}
 	}
 
 	close(ch)

@@ -59,3 +59,11 @@ var Services = map[string][]policy.Service{
 	Cloudformation:    policy.CloudformationPolicies,
 	ECRPublic:         policy.ECRPublicPolicies,
 }
+
+func GetAWSServices() []string {
+	keys := make([]string, 0, len(Services))
+	for k := range Services {
+		keys = append(keys, k)
+	}
+	return keys
+}

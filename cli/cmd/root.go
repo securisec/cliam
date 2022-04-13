@@ -10,7 +10,11 @@ import (
 var RootCmd = &cobra.Command{
 	Use:   "cliam",
 	Short: "Cloud Enumerate is a tool to enumerate cloud credentials for their permissions.",
-	// Long: `Enumerate is a tool to enumerate AWS credentials for their permissions.`,
+	PreRun: func(cmd *cobra.Command, args []string) {
+		if len(args) == 0 {
+			cmd.Help()
+		}
+	},
 }
 
 func Execute() {

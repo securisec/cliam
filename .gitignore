@@ -16,3 +16,4 @@ temp/
 # vendor/
 .DS_Store
 .envrc
+cliam
