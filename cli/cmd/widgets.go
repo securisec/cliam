@@ -5,7 +5,7 @@ import (
 	"strings"
 
 	"github.com/manifoldco/promptui"
-	"github.com/securisec/iam-enumerate/logger"
+	"github.com/securisec/cliam/logger"
 )
 
 // promptInput is a helper function to prompt the user for input.

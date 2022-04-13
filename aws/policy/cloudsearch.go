@@ -1,6 +1,6 @@
 package policy
 
-import "github.com/securisec/iam-enumerate/shared"
+import "github.com/securisec/cliam/shared"
 
 var CloudsearchPolicies = []Service{
 	{

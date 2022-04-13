@@ -1,4 +1,4 @@
-module github.com/securisec/iam-enumerate
+module github.com/securisec/cliam
 
 go 1.18
 

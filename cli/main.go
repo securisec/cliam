@@ -1,6 +1,6 @@
 package main
 
-import "github.com/securisec/iam-enumerate/cli/cmd"
+import "github.com/securisec/cliam/cli/cmd"
 
 func main() {
 	cmd.Execute()

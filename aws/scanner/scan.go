@@ -7,10 +7,10 @@ import (
 	"sync"
 
 	"github.com/aws/aws-sdk-go/aws/credentials"
-	"github.com/securisec/iam-enumerate/aws"
-	"github.com/securisec/iam-enumerate/aws/policy"
-	"github.com/securisec/iam-enumerate/aws/signer"
-	"github.com/securisec/iam-enumerate/logger"
+	"github.com/securisec/cliam/aws"
+	"github.com/securisec/cliam/aws/policy"
+	"github.com/securisec/cliam/aws/signer"
+	"github.com/securisec/cliam/logger"
 )
 
 var (

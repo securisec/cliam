@@ -4,9 +4,9 @@ import (
 	"context"
 	"log"
 
-	"github.com/securisec/iam-enumerate/aws"
-	"github.com/securisec/iam-enumerate/aws/scanner"
-	"github.com/securisec/iam-enumerate/aws/signer"
+	"github.com/securisec/cliam/aws"
+	"github.com/securisec/cliam/aws/scanner"
+	"github.com/securisec/cliam/aws/signer"
 	"github.com/spf13/cobra"
 )
 

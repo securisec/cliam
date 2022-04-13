@@ -1,6 +1,6 @@
 package aws
 
-import "github.com/securisec/iam-enumerate/aws/policy"
+import "github.com/securisec/cliam/aws/policy"
 
 const (
 	APIGateway        = "apigateway"
