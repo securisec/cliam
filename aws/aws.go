@@ -42,6 +42,15 @@ const (
 	DMS               = "dms"
 	Glue              = "glue"
 	Grafana           = "grafana"
+	Autoscaling       = "autoscaling"
+	Athena            = "athena"
+	Lightsail         = "lightsail"
+	Logs              = "logs"
+	Mediaconnect      = "mediaconnect"
+	Appstream2        = "appstream2"
+	AppRunner         = "apprunner"
+	Workspaces        = "workspaces"
+	ConfigService     = "config"
 )
 
 var Services = map[string][]policy.Service{
@@ -84,8 +93,18 @@ var Services = map[string][]policy.Service{
 	DMS:               policy.DMSPolicies,
 	Glue:              policy.GluePolicies,
 	Grafana:           policy.GrafanaPolicies,
+	Autoscaling:       policy.AutoscalingPolicies,
+	Athena:            policy.AthenaPolicies,
+	Lightsail:         policy.LightsailPolicies,
+	Logs:              policy.LogsPolicies,
+	Mediaconnect:      policy.MediaconnectPolicies,
+	Appstream2:        policy.Appstream2Policies,
+	AppRunner:         policy.AppRunnerPolicies,
+	Workspaces:        policy.WorkspacesPolicies,
+	ConfigService:     policy.ConfigServicePolicies,
 }
 
+// GetAWSServices returns a list of AWS services
 func GetAWSServices() []string {
 	keys := make([]string, 0, len(Services))
 	for k := range Services {
