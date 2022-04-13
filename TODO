@@ -38,7 +38,6 @@ AWSServices:
   ☐ clouddirectory
   ☐ cloudhsm
   ☐ cloudhsmv2
-  ☐ cloudsearch
   ☐ codedeploy
   ☐ codepipeline
   ☐ codestar
@@ -109,7 +108,6 @@ AWSServices:
   ☐ robomaker
   ☐ route53domains
   ☐ route53resolver
-  ☐ sagemaker
   ☐ sdb
   ☐ secretsmanager
   ☐ securityhub
@@ -128,7 +126,6 @@ AWSServices:
   ☐ transcribe
   ☐ transfer
   ☐ translate
-  ☐ waf
   ☐ waf-regional
   ☐ workdocs
   ☐ worklink
@@ -142,6 +139,9 @@ Resources:
   - 
 
 Archive:
+  ✔ waf @project(AWSServices)
+  ✔ cloudsearch @project(AWSServices)
+  ✔ sagemaker @project(AWSServices)
   ✔ es @project(AWSServices)
   ✔ cloudformation @project(AWSServices)
   ✔ elasticloadbalancing @project(AWSServices)

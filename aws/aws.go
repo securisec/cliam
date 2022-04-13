@@ -31,6 +31,17 @@ const (
 	ECRPublic         = "ecr-public"
 	ES                = "es"
 	Cloudsearch       = "cloudsearch"
+	SageMaker         = "sagemaker"
+	SecretsManager    = "secretsmanager"
+	StorageGateway    = "storagegateway"
+	WAF               = "waf"
+	WAFRegional       = "waf-regional"
+	Inspector         = "inspector"
+	Email             = "email"
+	Events            = "events"
+	DMS               = "dms"
+	Glue              = "glue"
+	Grafana           = "grafana"
 )
 
 var Services = map[string][]policy.Service{
@@ -62,6 +73,17 @@ var Services = map[string][]policy.Service{
 	ECRPublic:         policy.ECRPublicPolicies,
 	ES:                policy.ESPolicies,
 	Cloudsearch:       policy.CloudsearchPolicies,
+	SageMaker:         policy.SageMakerPolicies,
+	SecretsManager:    policy.SecretsManagerPolicies,
+	StorageGateway:    policy.StorageGatewayPolicies,
+	WAF:               policy.WAFPolicies,
+	WAFRegional:       policy.WAFRegionalPolicies,
+	Inspector:         policy.InspectorPolicies,
+	Email:             policy.EmailPolicies,
+	Events:            policy.EventsPolicies,
+	DMS:               policy.DMSPolicies,
+	Glue:              policy.GluePolicies,
+	Grafana:           policy.GrafanaPolicies,
 }
 
 func GetAWSServices() []string {
