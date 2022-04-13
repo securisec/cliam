@@ -5,7 +5,7 @@ import "context"
 const (
 	CONTENT_TYPE_JSON        = "application/json"
 	CONTENT_TYPE_URL_ENCODED = "application/x-www-form-urlencoded"
-	USER_AGENT               = "insomnia"
+	USER_AGENT               = "aws-cli/2.5.3 Python/3.9.12"
 	CONTENT_TYPE_HEADER      = "Content-Type"
 )
 

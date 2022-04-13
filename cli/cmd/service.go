@@ -2,11 +2,11 @@ package cmd
 
 import (
 	"context"
+	"log"
 
 	"github.com/securisec/iam-enumerate/aws"
 	"github.com/securisec/iam-enumerate/aws/scanner"
 	"github.com/securisec/iam-enumerate/aws/signer"
-	"github.com/securisec/iam-enumerate/logger"
 	"github.com/spf13/cobra"
 )
 
@@ -34,6 +34,7 @@ func awsSingleCmdFunc(cmd *cobra.Command, args []string) {
 	creds := signer.SetCredentials(key, secret, token)
 
 	if err := scanner.EnumerateSpecificService(context.Background(), region, service, creds); err != nil {
-		logger.LoggerStdErr.Fatal().Err(err).Msg("")
+		log.Println(err)
+		// logger.LoggerStdErr.Fatal().Err(err).Msg("")
 	}
 }

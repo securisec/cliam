@@ -57,7 +57,6 @@ AWSServices:
   ☐ elasticmapreduce
   ☐ elastictranscoder
   ☐ email
-  ☐ es
   ☐ events
   ☐ firehose
   ☐ fms
@@ -140,6 +139,7 @@ Resources:
   - 
 
 Archive:
+  ✔ es @project(AWSServices)
   ✔ cloudformation @project(AWSServices)
   ✔ elasticloadbalancing @project(AWSServices)
   ✔ rds @project(AWSServices)

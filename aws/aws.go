@@ -29,6 +29,7 @@ const (
 	ELB               = "elasticloadbalancing"
 	Cloudformation    = "cloudformation"
 	ECRPublic         = "ecr-public"
+	ES                = "es"
 )
 
 var Services = map[string][]policy.Service{
@@ -58,6 +59,7 @@ var Services = map[string][]policy.Service{
 	ELB:               policy.ELBPolicies,
 	Cloudformation:    policy.CloudformationPolicies,
 	ECRPublic:         policy.ECRPublicPolicies,
+	ES:                policy.ESPolicies,
 }
 
 func GetAWSServices() []string {

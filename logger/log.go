@@ -45,7 +45,7 @@ func LogError(err error) {
 		if DEBUG {
 			LoggerStdErr.Error().Err(err).Msg("Error")
 		} else {
-			Logger.Fatal().Msg("Error")
+			Logger.Fatal().Err(err).Msg("Error")
 		}
 	}
 }
