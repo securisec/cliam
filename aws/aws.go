@@ -54,6 +54,11 @@ const (
 	KMS               = "kms"
 	Kinesis           = "kinesis"
 	Kafka             = "kafka"
+	Route53Resolver   = "route53resolver"
+	Shield            = "shield"
+	Redshift          = "redshift"
+	Directconnect     = "directconnect"
+	DeviceFarm        = "devicefarm"
 )
 
 var Services = map[string][]policy.Service{
@@ -108,6 +113,11 @@ var Services = map[string][]policy.Service{
 	KMS:               policy.KMSPolicies,
 	Kinesis:           policy.KinesisPolicies,
 	Kafka:             policy.KafkaPolicies,
+	Route53Resolver:   policy.Route53ResolverPolicies,
+	Shield:            policy.ShieldPolicies,
+	Redshift:          policy.RedshiftPolicies,
+	Directconnect:     policy.DirectconnectPolicies,
+	DeviceFarm:        policy.DeviceFarmPolicies,
 }
 
 // GetAWSResources returns a list of AWS services

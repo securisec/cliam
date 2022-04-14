@@ -13,7 +13,6 @@ import (
 	"github.com/securisec/cliam/logger"
 )
 
-// TODO move this to shared to be able to be used by other cloud providers
 func MakeRequest(
 	ctx context.Context,
 	region, service string,
@@ -57,6 +56,9 @@ func MakeRequest(
 			req.Header.Add(k, v)
 		}
 	}
+
+	// we only want accent json
+	req.Header.Add("Accept", "application/json")
 
 	// create signer to generate auth signature header
 	signer := v4.NewSigner(creds)

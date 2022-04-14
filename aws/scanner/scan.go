@@ -3,7 +3,9 @@ package scanner
 import (
 	"context"
 	"fmt"
+	"io/ioutil"
 	"net/http"
+	"os"
 	"sync"
 
 	"github.com/aws/aws-sdk-go/aws/credentials"
@@ -109,7 +111,13 @@ func EnumerateSpecificResource(ctx context.Context, region, resource string, cre
 	return nil
 }
 
-func EnumerateMultipleResources(ctx context.Context, region string, resources []string, creds interface{}) error {
+func EnumerateMultipleResources(
+	ctx context.Context,
+	region string,
+	resources []string,
+	creds interface{},
+	saveOutput *bool,
+) error {
 	c, ok := creds.(*credentials.Credentials)
 	if !ok {
 		return fmt.Errorf("creds must be of type *credentials.Credentials")
@@ -136,6 +144,9 @@ func EnumerateMultipleResources(ctx context.Context, region string, resources []
 				}
 				if res.StatusCode == http.StatusOK {
 					logger.LogSuccess(s.Service, s.Policy.Permission)
+					if *saveOutput {
+						saveOutputToFile(s, res)
+					}
 				}
 			}
 		}()
@@ -173,4 +184,13 @@ func CheckSpecificPermission(
 type serviceMap struct {
 	Service string
 	Policy  policy.Service
+}
+
+func saveOutputToFile(s serviceMap, res *http.Response) error {
+	fileName := fmt.Sprintf("%s.%s.json", s.Service, s.Policy.Permission)
+	body, err := ioutil.ReadAll(res.Body)
+	if err != nil {
+		return err
+	}
+	return ioutil.WriteFile(fileName, body, os.ModePerm)
 }

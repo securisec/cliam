@@ -21,6 +21,7 @@ var awsMultipleCmd = &cobra.Command{
 
 func init() {
 	awsCmd.AddCommand(awsMultipleCmd)
+	awsMultipleCmd.Flags().Bool("save-output", false, "Save output to file on success")
 }
 
 func awsMultipleCmdFunc(cmd *cobra.Command, args []string) {
@@ -28,12 +29,14 @@ func awsMultipleCmdFunc(cmd *cobra.Command, args []string) {
 		cmd.Help()
 	}
 
+	saveOutput, _ := cmd.Flags().GetBool("save-output")
+
 	key, secret, token, region := getCredsAndRegion()
 	services := removeDuplicates(args)
 
 	creds := signer.SetCredentials(key, secret, token)
 
-	if err := scanner.EnumerateMultipleResources(context.Background(), region, services, creds); err != nil {
+	if err := scanner.EnumerateMultipleResources(context.Background(), region, services, creds, &saveOutput); err != nil {
 		logger.LoggerStdErr.Fatal().Err(err).Msg("")
 	}
 }
