@@ -51,6 +51,9 @@ const (
 	AppRunner         = "apprunner"
 	Workspaces        = "workspaces"
 	ConfigService     = "config"
+	KMS               = "kms"
+	Kinesis           = "kinesis"
+	Kafka             = "kafka"
 )
 
 var Services = map[string][]policy.Service{
@@ -102,6 +105,9 @@ var Services = map[string][]policy.Service{
 	AppRunner:         policy.AppRunnerPolicies,
 	Workspaces:        policy.WorkspacesPolicies,
 	ConfigService:     policy.ConfigServicePolicies,
+	KMS:               policy.KMSPolicies,
+	Kinesis:           policy.KinesisPolicies,
+	Kafka:             policy.KafkaPolicies,
 }
 
 // GetAWSServices returns a list of AWS services

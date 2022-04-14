@@ -2,39 +2,38 @@ package cmd
 
 import (
 	"context"
-	"log"
 
 	"github.com/securisec/cliam/aws"
 	"github.com/securisec/cliam/aws/scanner"
 	"github.com/securisec/cliam/aws/signer"
+	"github.com/securisec/cliam/logger"
 	"github.com/spf13/cobra"
 )
 
-var awsSingleCmd = &cobra.Command{
-	Use:   "service [service]",
+var awsMultipleCmd = &cobra.Command{
+	Use:   "multiple [service...]",
 	Short: "Enumerate permissions for a single AWS service.",
-	Run:   awsSingleCmdFunc,
+	Run:   awsMultipleCmdFunc,
 	ValidArgsFunction: func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
 		return aws.GetAWSServices(), cobra.ShellCompDirectiveNoFileComp
 	},
 }
 
 func init() {
-	awsCmd.AddCommand(awsSingleCmd)
+	awsCmd.AddCommand(awsMultipleCmd)
 }
 
-func awsSingleCmdFunc(cmd *cobra.Command, args []string) {
+func awsMultipleCmdFunc(cmd *cobra.Command, args []string) {
 	if len(args) == 0 {
 		cmd.Help()
 	}
 
 	key, secret, token, region := getCredsAndRegion()
-	service := args[0]
+	services := removeDuplicates(args)
 
 	creds := signer.SetCredentials(key, secret, token)
 
-	if err := scanner.EnumerateSpecificService(context.Background(), region, service, creds); err != nil {
-		log.Println(err)
-		// logger.LoggerStdErr.Fatal().Err(err).Msg("")
+	if err := scanner.EnumerateMultipleResources(context.Background(), region, services, creds); err != nil {
+		logger.LoggerStdErr.Fatal().Err(err).Msg("")
 	}
 }
