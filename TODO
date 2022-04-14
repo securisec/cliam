@@ -21,6 +21,8 @@ Cli:
   ☐ prompt for access key and secret
   ☐ region completer
   ☐ read specific aws profile
+  ☐ accent json in aws output type
+  ☐ aws save response output json to file if 200
 
 AWSServices:
   ☐ a4b

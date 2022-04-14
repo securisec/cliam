@@ -11,11 +11,11 @@ import (
 )
 
 var awsMultipleCmd = &cobra.Command{
-	Use:   "multiple [service...]",
-	Short: "Enumerate permissions for a single AWS service.",
+	Use:   "enumerate [resource...]",
+	Short: "Enumerate permissions for specified AWS resources.",
 	Run:   awsMultipleCmdFunc,
 	ValidArgsFunction: func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
-		return aws.GetAWSServices(), cobra.ShellCompDirectiveNoFileComp
+		return aws.GetAWSResources(), cobra.ShellCompDirectiveNoFileComp
 	},
 }
 

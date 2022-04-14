@@ -95,3 +95,10 @@ func serviceSafetyNet(service string) string {
 		return service
 	}
 }
+
+type EnumerateResult struct {
+	Req *http.Request
+	Res *http.Response
+	p   *policy.Service
+	err error
+}

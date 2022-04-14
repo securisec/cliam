@@ -110,8 +110,8 @@ var Services = map[string][]policy.Service{
 	Kafka:             policy.KafkaPolicies,
 }
 
-// GetAWSServices returns a list of AWS services
-func GetAWSServices() []string {
+// GetAWSResources returns a list of AWS services
+func GetAWSResources() []string {
 	keys := make([]string, 0, len(Services))
 	for k := range Services {
 		keys = append(keys, k)
