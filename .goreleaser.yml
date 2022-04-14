@@ -1,0 +1,41 @@
+before:
+  hooks:
+    - go mod tidy
+builds:
+  - 
+    binary: cliam
+    dir: cli/
+    goos:
+      - linux
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+    ignore:
+      - goos: darwin
+        goarch: "386"
+      - goos: darwin
+        goarch: arm64
+    hooks:
+      post:
+        - upx "{{ .Path }}"
+
+    ldflags: "-s -w -X github.com/securisec/cliam-cli/version.BuildDate={{ .CommitDate }} -X github.com/securisec/cliam-cli/version.GitCommit={{ .FullCommit }} -X github.com/securisec/cliam-cli/version.GitBranch={{ .Branch }} -X github.com/securisec/cliam-cli/version.Version={{ .Tag }}"
+
+checksum:
+  name_template: cliam_cli_checksums.txt
+
+archives:
+  -
+    # format: binary
+    name_template: build/cliam-{{.Os}}-{{.Arch}}
+    replacements:
+      amd64: 64bit
+      darwin: macOS
+    # files:
+    #   -
+      
+# blobs:
+#   - provider: s3
+#     bucket: cliam-releases
+#     folder: cli/

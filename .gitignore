@@ -17,3 +17,5 @@ temp/
 .DS_Store
 .envrc
 cliam
+dist/
+build/

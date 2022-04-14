@@ -37,9 +37,15 @@ func EnumerateAll(ctx context.Context, region string, creds interface{}) error {
 					wg.Done()
 					return
 				}
-				// TODO catch errors from goroutine here
-				_, _, err := signer.MakeRequest(ctx, region, s.Service, &s.Policy, c)
-				logger.LogError(err)
+				_, res, err := signer.MakeRequest(ctx, region, s.Service, &s.Policy, c)
+				if err != nil {
+					logger.LogError(err)
+					wg.Done()
+					return
+				}
+				if res.StatusCode == http.StatusOK {
+					logger.LogSuccess(s.Service, s.Policy.Permission)
+				}
 			}
 		}()
 	}
@@ -75,10 +81,14 @@ func EnumerateSpecificResource(ctx context.Context, region, resource string, cre
 					wg.Done()
 					return
 				}
-				// TODO catch errors from goroutine here
-				_, _, err := signer.MakeRequest(ctx, region, s.Service, &s.Policy, c)
+				_, res, err := signer.MakeRequest(ctx, region, s.Service, &s.Policy, c)
 				if err != nil {
 					logger.LogError(err)
+					wg.Done()
+					return
+				}
+				if res.StatusCode == http.StatusOK {
+					logger.LogSuccess(s.Service, s.Policy.Permission)
 				}
 			}
 		}()
@@ -118,10 +128,14 @@ func EnumerateMultipleResources(ctx context.Context, region string, resources []
 					wg.Done()
 					return
 				}
-				// TODO catch errors from goroutine here
-				_, _, err := signer.MakeRequest(ctx, region, s.Service, &s.Policy, c)
+				_, res, err := signer.MakeRequest(ctx, region, s.Service, &s.Policy, c)
 				if err != nil {
 					logger.LogError(err)
+					wg.Done()
+					return
+				}
+				if res.StatusCode == http.StatusOK {
+					logger.LogSuccess(s.Service, s.Policy.Permission)
 				}
 			}
 		}()

@@ -75,15 +75,6 @@ func MakeRequest(
 		return nil, nil, err
 	}
 
-	// log success to console
-	if res.StatusCode == http.StatusOK {
-		logger.LogSuccess(service, p.Permission)
-	} else {
-		logger.LogDenied(res.StatusCode, service, p.Permission)
-	}
-
-	logger.LogDebugResponse(res, p.Permission)
-
 	return req, res, nil
 }
 
@@ -94,11 +85,4 @@ func serviceSafetyNet(service string) string {
 	default:
 		return service
 	}
-}
-
-type EnumerateResult struct {
-	Req *http.Request
-	Res *http.Response
-	p   *policy.Service
-	err error
 }
