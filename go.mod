@@ -1,6 +1,6 @@
 module github.com/securisec/cliam
 
-go 1.18
+go 1.17
 
 require (
 	github.com/aws/aws-sdk-go v1.43.36
@@ -15,6 +15,7 @@ require (
 require (
 	cloud.google.com/go/compute v1.5.0 // indirect
 	github.com/chzyer/readline v0.0.0-20180603132655-2972be24d48e // indirect
+	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/golang/groupcache v0.0.0-20200121045136-8c9f03a8e57e // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/googleapis/gax-go/v2 v2.2.0 // indirect
