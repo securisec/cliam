@@ -20,40 +20,44 @@ var awsBruteforceCmd = &cobra.Command{
 
 func init() {
 	awsCmd.AddCommand(awsBruteforceCmd)
-	awsBruteforceCmd.Flags().Int("max-threads", 5, "Maximum number of threads to use")
 	// awsBruteforceCmd.Flags().Bool("save-output", false, "Save output to file on success")
 }
 
 func awsBruteforceCmdFunc(cmd *cobra.Command, args []string) {
 	// saveOutput, _ := cmd.Flags().GetBool("save-output")
-	maxThreads, _ := cmd.Flags().GetInt("max-threads")
 	ch := make(chan string)
 
 	key, secret, token, region := getCredsAndRegion()
 	creds := signer.SetCredentials(key, secret, token)
 
 	wg := &sync.WaitGroup{}
-	wg.Add(maxThreads)
+	wg.Add(1)
 
-	for i := 0; i < maxThreads; i++ {
+	max := make(chan struct{}, MaxThreads)
 
-		go func() {
-			defer wg.Done()
-			for {
-				s, ok := <-ch
-				if !ok {
-					return
-				}
+	go func() {
+		defer wg.Done()
+		for s := range ch {
 
-				if err := scanner.EnumerateSpecificResource(context.Background(), region, s, creds); err != nil {
+			wg.Add(1)
+
+			go func(wg *sync.WaitGroup, ser string) {
+				max <- struct{}{}
+				defer func() {
+					<-max
+				}()
+
+				if err := scanner.EnumerateSpecificResource(context.Background(), region, ser, creds); err != nil {
 					logger.LoggerStdErr.Err(err).Msg("")
+					wg.Done()
 					return
 				}
 
-			}
-		}()
+				wg.Done()
+			}(wg, s)
 
-	}
+		}
+	}()
 
 	for _, service := range aws.GetAWSResources() {
 		ch <- service

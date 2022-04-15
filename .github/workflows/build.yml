@@ -1,0 +1,35 @@
+on:
+  - push
+
+name: Build *nix
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.3.4
+
+      - name: Setup go
+        uses: actions/setup-go@v2.1.3
+        with:
+          version: "1.18"
+
+      - uses: actions/cache@v2.1.3
+        with:
+          path: ~/go/pkg/mod
+          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-go-
+
+      - name: Build with goreleaser
+        uses: goreleaser/goreleaser-action@v2.9.1
+        with:
+          distribution: goreleaser
+          version: latest
+          args: release --skip-announce --rm-dist --snapshot
+
+      - if: failure()
+        run: ls -R

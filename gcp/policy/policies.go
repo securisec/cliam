@@ -1,8 +1,8 @@
 package policy
 
 type Service struct {
-	Actions []string
-	Method  string
+	Actions []string `json:"actions"`
+	Method  string   `json:"method"`
 }
 
 var Resources = map[string]Service{

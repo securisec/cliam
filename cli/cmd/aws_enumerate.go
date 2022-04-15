@@ -36,7 +36,7 @@ func awsMultipleCmdFunc(cmd *cobra.Command, args []string) {
 
 	creds := signer.SetCredentials(key, secret, token)
 
-	if err := scanner.EnumerateMultipleResources(context.Background(), region, services, creds, &saveOutput); err != nil {
+	if err := scanner.EnumerateMultipleResources(context.Background(), region, services, creds, MaxThreads, &saveOutput); err != nil {
 		logger.LoggerStdErr.Err(err).Msg("")
 	}
 }

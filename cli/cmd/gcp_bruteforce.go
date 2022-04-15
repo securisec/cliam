@@ -20,11 +20,9 @@ var gcpBruteforceCmd = &cobra.Command{
 
 func init() {
 	gcpCmd.AddCommand(gcpBruteforceCmd)
-	gcpBruteforceCmd.Flags().Int("max-threads", 5, "Maximum number of threads to use")
 }
 
 func gcpBruteforceCmdFunc(cmd *cobra.Command, _ []string) {
-	maxThreads, _ := cmd.Flags().GetInt("max-threads")
 
 	ctx := context.Background()
 	sa, project, _ := getSaAndRegion()
@@ -38,24 +36,31 @@ func gcpBruteforceCmdFunc(cmd *cobra.Command, _ []string) {
 	ch := make(chan string)
 
 	wg := &sync.WaitGroup{}
-	wg.Add(maxThreads)
+	wg.Add(1)
+
+	// the is the maximum concurrent goroutines
+	max := make(chan struct{}, MaxThreads)
 
 	options := scanner.GCPEnumOptions{
 		Creds:     creds,
 		ProjectId: project,
 	}
 
-	for i := 0; i < maxThreads; i++ {
-		go func() {
+	go func() {
+		defer wg.Done()
+		for s := range ch {
 
-			for {
-				s, ok := <-ch
-				if !ok {
-					wg.Done()
-					return
-				}
+			wg.Add(1)
 
-				ps, err := scanner.EnumerateMultipleResources(ctx, &options, s)
+			go func(wg *sync.WaitGroup, ser string) {
+
+				// block the channel until the maximum number of goroutines is reached
+				max <- struct{}{}
+				defer func() {
+					<-max
+				}()
+
+				ps, err := scanner.EnumerateMultipleResources(ctx, &options, ser)
 				if err != nil {
 					logger.LoggerStdErr.Fatal().Err(err).Msg("")
 					wg.Done()
@@ -68,9 +73,12 @@ func gcpBruteforceCmdFunc(cmd *cobra.Command, _ []string) {
 					}
 				}
 
-			}
-		}()
-	}
+				// done with this goroutine
+				wg.Done()
+			}(wg, s)
+		}
+
+	}()
 
 	for _, s := range services {
 		ch <- s

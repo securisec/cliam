@@ -119,6 +119,7 @@ func EnumerateMultipleResources(
 	region string,
 	resources []string,
 	creds interface{},
+	maxThreads int,
 	saveOutput *bool,
 ) error {
 	c, ok := creds.(*credentials.Credentials)
@@ -127,18 +128,25 @@ func EnumerateMultipleResources(
 	}
 
 	ch := make(chan serviceMap)
+	max := make(chan struct{}, maxThreads)
 
 	wg := &sync.WaitGroup{}
-	wg.Add(MaxThreads)
+	wg.Add(1)
 
-	for i := 0; i < MaxThreads; i++ {
-		go func() {
-			for {
-				s, ok := <-ch
-				if !ok {
-					wg.Done()
-					return
-				}
+	go func() {
+		defer wg.Done()
+
+		for s := range ch {
+
+			wg.Add(1)
+
+			go func(wg *sync.WaitGroup, s serviceMap) {
+
+				max <- struct{}{}
+				defer func() {
+					<-max
+				}()
+
 				_, res, err := signer.MakeRequest(ctx, region, s.Service, &s.Policy, c)
 				if err != nil {
 					logger.LogError(err)
@@ -151,9 +159,11 @@ func EnumerateMultipleResources(
 						saveOutputToFile(s, res)
 					}
 				}
-			}
-		}()
-	}
+
+				wg.Done()
+			}(wg, s)
+		}
+	}()
 
 	policies := make(map[string][]policy.Service, 0)
 	for _, resource := range resources {
