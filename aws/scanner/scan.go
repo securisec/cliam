@@ -92,6 +92,9 @@ func EnumerateSpecificResource(ctx context.Context, region, resource string, cre
 				if res.StatusCode == http.StatusOK {
 					logger.LogSuccess(s.Service, s.Policy.Permission)
 				}
+				if logger.DEBUG {
+					logger.LogDenied(res.StatusCode, s.Service, s.Policy.Permission)
+				}
 			}
 		}()
 	}

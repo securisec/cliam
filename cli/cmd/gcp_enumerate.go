@@ -33,14 +33,18 @@ func gcpServiceCmdFunc(cmd *cobra.Command, args []string) {
 		cmd.Help()
 	}
 
+	services := removeDuplicates(args)
+
 	ctx := context.Background()
 	creds, err := scanner.GetCredsFromServiceAccount(ctx, getSaPath())
 	if err != nil {
-		panic(err)
+		logger.LoggerStdErr.Err(err).Msg("Failed to get credentials from service account")
+		return
 	}
-	ps, err := scanner.EnumerateMultipleResources(ctx, creds, getProjectId(), args...)
+	ps, err := scanner.EnumerateMultipleResources(ctx, creds, getProjectId(), services...)
 	if err != nil {
-		panic(err)
+		logger.LoggerStdErr.Err(err).Msg("")
+		return
 	}
 	for _, p := range ps {
 		for _, a := range p.Actions {

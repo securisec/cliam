@@ -13,134 +13,23 @@ Helpers:
   ☐ helper functions for testing arbitrary permissions
     
 Cli:
-  ☐ get creds from default envars for specific cloud providers
   ☐ support providing profiles from aws credentials file
-  ☐ access key and secret is required
   ☐ if access key starts with ASIA, then token is required maybe?
   ☐ spinner with backwards count of remaining calls?
-  ☐ prompt for access key and secret
   ☐ region completer
   ☐ read specific aws profile
-  ☐ accent json in aws output type
-  ☐ aws save response output json to file if 200
-
-AWSServices:
-  ☐ a4b
-  ☐ acm
-  ☐ amplify
-  ☐ appmesh
-  ☐ appstream2
-  ☐ appsync
-  ☐ athena
-  ☐ autoscaling
-  ☐ backup
-  ☐ batch
-  ☐ chime
-  ☐ cloud9
-  ☐ clouddirectory
-  ☐ cloudhsm
-  ☐ cloudhsmv2
-  ☐ codedeploy
-  ☐ codepipeline
-  ☐ codestar
-  ☐ cognito-sync
-  ☐ comprehend
-  ☐ config
-  ☐ cur
-  ☐ data.mediastore
-  ☐ datapipeline
-  ☐ datasync
-  ☐ dax
-  ☐ devicefarm
-  ☐ devices.iot1click
-  ☐ directconnect
-  ☐ discovery
-  ☐ dlm
-  ☐ dms
-  ☐ ds
-  ☐ elasticmapreduce
-  ☐ elastictranscoder
-  ☐ email
-  ☐ events
-  ☐ firehose
-  ☐ fms
-  ☐ fsx
-  ☐ gamelift
-  ☐ globalaccelerator
-  ☐ glue
-  ☐ greengrass
-  ☐ guardduty
-  ☐ health
-  ☐ importexport
-  ☐ inspector
-  ☐ iot
-  ☐ iotanalytics
-  ☐ kafka
-  ☐ kinesis
-  ☐ kinesisanalytics
-  ☐ kinesisvideo
-  ☐ kms
-  ☐ license-manager
-  ☐ lightsail
-  ☐ logs
-  ☐ machinelearning
-  ☐ macie
-  ☐ mediaconnect
-  ☐ mediaconvert
-  ☐ medialive
-  ☐ mediapackage
-  ☐ mediastore
-  ☐ mediatailor
-  ☐ mgh
-  ☐ mobile
-  ☐ models.lex
-  ☐ monitoring
-  ☐ mq
-  ☐ mturk-requester
-  ☐ opsworks
-  ☐ opworks
-  ☐ organizations
-  ☐ pinpoint
-  ☐ polly
-  ☐ pricing
-  ☐ projects.iot1click
-  ☐ ram
-  ☐ redshift
-  ☐ rekognition
-  ☐ robomaker
-  ☐ route53domains
-  ☐ route53resolver
-  ☐ sdb
-  ☐ secretsmanager
-  ☐ securityhub
-  ☐ serverlessrepo
-  ☐ servicecatalog
-  ☐ shield
-  ☐ signer
-  ☐ sms
-  ☐ sms-voice.pinpoint
-  ☐ snowball
-  ☐ states
-  ☐ storagegateway
-  ☐ streams.dynamodb
-  ☐ support
-  ☐ tagging
-  ☐ transcribe
-  ☐ transfer
-  ☐ translate
-  ☐ waf-regional
-  ☐ workdocs
-  ☐ worklink
-  ☐ workmail
-  ☐ workspaces
-  ☐ xray
 
 Resources:
   - https://www.any-api.com/amazonaws_com/ec2/docs/_Action_DescribeInstances/DescribeInstances
   - https://docs.aws.amazon.com/index.html
-  - 
+  - https://stackoverflow.com/questions/46818661/whats-the-best-way-to-handle-too-many-open-files
 
 Archive:
+  ✔ get creds from default envars for specific cloud providers @project(Cli)
+  ✔ access key and secret is required @project(Cli)
+  ✔ prompt for access key and secret @project(Cli)
+  ✔ accept json in aws output type @project(Cli)
+  ✔ aws save response output json to file if 200 @project(Cli)
   ✔ waf @project(AWSServices)
   ✔ cloudsearch @project(AWSServices)
   ✔ sagemaker @project(AWSServices)

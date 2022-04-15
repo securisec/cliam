@@ -76,6 +76,8 @@ func MakeRequest(
 	if err != nil {
 		return nil, nil, err
 	}
+	defer res.Body.Close()
+	time.Sleep(20 * time.Millisecond)
 
 	return req, res, nil
 }

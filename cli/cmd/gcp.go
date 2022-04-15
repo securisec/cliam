@@ -47,5 +47,8 @@ func getProjectId() string {
 	if gcpProjectId != "" {
 		return gcpProjectId
 	}
+	if k, ok := os.LookupEnv("CLOUDSDK_CORE_PROJECT"); ok {
+		return k
+	}
 	return promptInput("GCP project id: ")
 }
