@@ -17,13 +17,13 @@ func EnumerateSpecificResource(
 
 func EnumerateMultipleResources(
 	ctx context.Context,
-	creds *cloudresourcemanager.Service,
-	projectId string,
+	options *GCPEnumOptions,
 	resources ...string,
 ) ([]policy.Service, error) {
 	var permissions []policy.Service
+
 	for _, resource := range resources {
-		r, err := GetPermissionsForResource(ctx, creds, projectId, policy.Resources[resource])
+		r, err := GetPermissionsForResource(ctx, options.Creds, options.ProjectId, policy.Resources[resource])
 		if err != nil {
 			return nil, err
 		}
@@ -46,4 +46,9 @@ func EnumerateAllResources(
 		permissions = append(permissions, r)
 	}
 	return permissions, nil
+}
+
+type GCPEnumOptions struct {
+	Creds     *cloudresourcemanager.Service
+	ProjectId string
 }

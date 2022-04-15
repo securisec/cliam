@@ -10,7 +10,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var gcpSingleCmd = &cobra.Command{
+var gcpEnumerateCmd = &cobra.Command{
 	Use:   "enumerate [resource...]",
 	Short: "Enumerate specified GCP permissions",
 	PreRun: func(cmd *cobra.Command, args []string) {
@@ -18,30 +18,36 @@ var gcpSingleCmd = &cobra.Command{
 			cmd.Help()
 		}
 	},
-	Run: gcpServiceCmdFunc,
+	Run: gcpEnumerateCmdFunc,
 	ValidArgsFunction: func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
 		return gcp.GetGCPResources(), cobra.ShellCompDirectiveNoFileComp
 	},
 }
 
 func init() {
-	gcpCmd.AddCommand(gcpSingleCmd)
+	gcpCmd.AddCommand(gcpEnumerateCmd)
 }
 
-func gcpServiceCmdFunc(cmd *cobra.Command, args []string) {
+func gcpEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 	if len(args) == 0 {
 		cmd.Help()
 	}
 
 	services := removeDuplicates(args)
 
+	sa, project, _ := getSaAndRegion()
+
 	ctx := context.Background()
-	creds, err := scanner.GetCredsFromServiceAccount(ctx, getSaPath())
+	creds, err := scanner.GetCredsFromServiceAccount(ctx, sa)
 	if err != nil {
 		logger.LoggerStdErr.Err(err).Msg("Failed to get credentials from service account")
 		return
 	}
-	ps, err := scanner.EnumerateMultipleResources(ctx, creds, getProjectId(), services...)
+	options := scanner.GCPEnumOptions{
+		Creds:     creds,
+		ProjectId: project,
+	}
+	ps, err := scanner.EnumerateMultipleResources(ctx, &options, services...)
 	if err != nil {
 		logger.LoggerStdErr.Err(err).Msg("")
 		return

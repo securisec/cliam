@@ -27,7 +27,8 @@ func gcpBruteforceCmdFunc(cmd *cobra.Command, _ []string) {
 	maxThreads, _ := cmd.Flags().GetInt("max-threads")
 
 	ctx := context.Background()
-	creds, err := scanner.GetCredsFromServiceAccount(ctx, getSaPath())
+	sa, project, _ := getSaAndRegion()
+	creds, err := scanner.GetCredsFromServiceAccount(ctx, sa)
 	if err != nil {
 		logger.LoggerStdErr.Fatal().Err(err).Msg("Failed to get credentials from service account")
 		return
@@ -39,6 +40,11 @@ func gcpBruteforceCmdFunc(cmd *cobra.Command, _ []string) {
 	wg := &sync.WaitGroup{}
 	wg.Add(maxThreads)
 
+	options := scanner.GCPEnumOptions{
+		Creds:     creds,
+		ProjectId: project,
+	}
+
 	for i := 0; i < maxThreads; i++ {
 		go func() {
 
@@ -49,7 +55,7 @@ func gcpBruteforceCmdFunc(cmd *cobra.Command, _ []string) {
 					return
 				}
 
-				ps, err := scanner.EnumerateMultipleResources(ctx, creds, getProjectId(), s)
+				ps, err := scanner.EnumerateMultipleResources(ctx, &options, s)
 				if err != nil {
 					logger.LoggerStdErr.Fatal().Err(err).Msg("")
 					wg.Done()
