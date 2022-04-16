@@ -61,10 +61,6 @@ func gcpRestCmdFunc(cmd *cobra.Command, args []string) {
 				p.ParentType = parentType
 				p.ParentID = parentID
 				p.Zone = region
-				// pol, err := p.GetURL()
-				// if err != nil {
-				// 	logger.LoggerStdErr.Fatal().Err(err).Msg("Failed to get policy URL")
-				// }
 				permissions = append(permissions, p)
 			}
 		}
@@ -95,11 +91,15 @@ func gcpRestCmdFunc(cmd *cobra.Command, args []string) {
 				}()
 
 				res, err := scanner.EnumerateRestApiRequest(ctx, accessToken, ser)
-				if err != nil && logger.DEBUG {
+				if err != nil {
 					logger.LoggerStdErr.Debug().Err(err).Msg("Failed to enumerate")
 				}
 				if res.Response.StatusCode == 200 {
 					logger.LogSuccess(res.PermissionMethod, res.Action)
+				}
+
+				if logger.DEBUG && res.Response.StatusCode != 200 {
+					logger.LogDenied(res.Response.StatusCode, res.PermissionMethod, res.Action)
 				}
 
 				wg.Done()

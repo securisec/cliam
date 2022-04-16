@@ -1,7 +1,9 @@
 package scanner
 
 import (
+	"bytes"
 	"context"
+	"encoding/json"
 	"net/http"
 
 	"github.com/securisec/cliam/gcp/policy"
@@ -61,17 +63,29 @@ func EnumerateRestApiRequest(
 	accessToken string,
 	r policy.RestCall,
 ) (policy.RestCall, error) {
+	var req *http.Request
+
 	url, err := r.GetURL()
 	if err != nil {
 		return r, err
 	}
 	// TODO handle POST requests
 	// reqBbody := nil
-	req, err := http.NewRequest(r.ReqMethod, url.URL, nil)
+	isGet := r.ReqMethod == "GET"
+
+	if isGet {
+		req, err = http.NewRequest(r.ReqMethod, url.URL, nil)
+	} else {
+		o, err := json.Marshal(r.ReqBody)
+		if err != nil {
+			return r, err
+		}
+		req, err = http.NewRequest(r.ReqMethod, url.URL, bytes.NewBuffer(o))
+	}
 	if err != nil {
 		return r, err
 	}
-	if r.PermissionMethod != "GET" {
+	if !isGet {
 		req.Header.Add("Content-Type", "application/json")
 	}
 

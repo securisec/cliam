@@ -8,6 +8,8 @@ import (
 	"strings"
 )
 
+var emptyBody = map[string]string{}
+
 type Service struct {
 	Actions   []string   `json:"actions"`
 	Method    string     `json:"method"`
@@ -368,19 +370,42 @@ var Resources = map[string]Service{
 	HealthcareOperations:                  {Method: HealthcareOperations, Actions: []string{"cancel", "get", "list"}},
 	IamRoles:                              {Method: IamRoles, Actions: []string{"create", "delete", "get", "list", "undelete", "update"}},
 	IamServiceAccountKeys:                 {Method: IamServiceAccountKeys, Actions: []string{"create", "delete", "get", "list"}},
-	IamServiceAccounts:                    {Method: IamServiceAccounts, Actions: []string{"actAs", "create", "delete", "get", "getIamPolicy", "list", "setIamPolicy", "update"}},
-	IapTunnel:                             {Method: IapTunnel, Actions: []string{"getIamPolicy", "setIamPolicy"}},
-	IapTunnelInstances:                    {Method: IapTunnelInstances, Actions: []string{"accessViaIAP", "getIamPolicy", "setIamPolicy"}},
-	IapTunnelZones:                        {Method: IapTunnelZones, Actions: []string{"getIamPolicy", "setIamPolicy"}},
-	IapWeb:                                {Method: IapWeb, Actions: []string{"getIamPolicy", "setIamPolicy"}},
-	IapWebServiceVersions:                 {Method: IapWebServiceVersions, Actions: []string{"getIamPolicy", "setIamPolicy"}},
-	IapWebServices:                        {Method: IapWebServices, Actions: []string{"getIamPolicy", "setIamPolicy"}},
-	IapWebTypes:                           {Method: IapWebTypes, Actions: []string{"getIamPolicy", "setIamPolicy"}},
-	LoggingExclusions:                     {Method: LoggingExclusions, Actions: []string{"create", "delete", "get", "list", "update"}},
-	LoggingLogEntries:                     {Method: LoggingLogEntries, Actions: []string{"create", "list"}},
-	LoggingLogMetrics:                     {Method: LoggingLogMetrics, Actions: []string{"create", "delete", "get", "list", "update"}},
-	LoggingLogServiceIndexes:              {Method: LoggingLogServiceIndexes, Actions: []string{"list"}},
-	LoggingLogServices:                    {Method: LoggingLogServices, Actions: []string{"list"}},
+	IamServiceAccounts: {
+		Method:  IamServiceAccounts,
+		Actions: []string{"actAs", "create", "delete", "get", "getIamPolicy", "list", "setIamPolicy", "update"},
+		RESTCalls: []RestCall{
+			{
+				PermissionMethod: IamServiceAccounts,
+				ReqMethod:        "GET",
+				Action:           "list",
+				URL:              "https://iam.googleapis.com/v1/{{.ParentType}}/{{.ParentID}}/serviceAccounts",
+			},
+		},
+	},
+	IapTunnel:             {Method: IapTunnel, Actions: []string{"getIamPolicy", "setIamPolicy"}},
+	IapTunnelInstances:    {Method: IapTunnelInstances, Actions: []string{"accessViaIAP", "getIamPolicy", "setIamPolicy"}},
+	IapTunnelZones:        {Method: IapTunnelZones, Actions: []string{"getIamPolicy", "setIamPolicy"}},
+	IapWeb:                {Method: IapWeb, Actions: []string{"getIamPolicy", "setIamPolicy"}},
+	IapWebServiceVersions: {Method: IapWebServiceVersions, Actions: []string{"getIamPolicy", "setIamPolicy"}},
+	IapWebServices:        {Method: IapWebServices, Actions: []string{"getIamPolicy", "setIamPolicy"}},
+	IapWebTypes:           {Method: IapWebTypes, Actions: []string{"getIamPolicy", "setIamPolicy"}},
+	LoggingExclusions:     {Method: LoggingExclusions, Actions: []string{"create", "delete", "get", "list", "update"}},
+	LoggingLogEntries: {
+		Method:  LoggingLogEntries,
+		Actions: []string{"create", "list"},
+		RESTCalls: []RestCall{
+			{
+				PermissionMethod: LoggingLogEntries,
+				Action:           "list",
+				ReqMethod:        "POST",
+				URL:              "https://logging.googleapis.com/v2/entries:list",
+				ReqBody:          emptyBody,
+			},
+		},
+	},
+	LoggingLogMetrics:        {Method: LoggingLogMetrics, Actions: []string{"create", "delete", "get", "list", "update"}},
+	LoggingLogServiceIndexes: {Method: LoggingLogServiceIndexes, Actions: []string{"list"}},
+	LoggingLogServices:       {Method: LoggingLogServices, Actions: []string{"list"}},
 	LoggingLogs: {
 		Method:  LoggingLogs,
 		Actions: []string{"delete", "list"},
