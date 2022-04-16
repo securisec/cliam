@@ -7,6 +7,7 @@ import (
 	"net/http"
 
 	"github.com/securisec/cliam/gcp/policy"
+	"github.com/securisec/cliam/gcp/rest"
 	"google.golang.org/api/cloudresourcemanager/v1"
 )
 
@@ -61,8 +62,8 @@ type GCPEnumOptions struct {
 func EnumerateRestApiRequest(
 	ctx context.Context,
 	accessToken string,
-	r policy.RestCall,
-) (policy.RestCall, error) {
+	r rest.RestCall,
+) (rest.RestCall, error) {
 	var req *http.Request
 
 	url, err := r.GetURL()
@@ -90,7 +91,7 @@ func EnumerateRestApiRequest(
 
 	// add auth bearer token
 	req.Header.Add("Authorization", "Bearer "+accessToken)
-	req.Header.Add("user-agent", "insomnia/2022.2.1")
+	req.Header.Add("user-agent", "google-cloud-sdk gcloud/379.0.0")
 
 	res, err := http.DefaultClient.Do(req)
 	if err != nil {

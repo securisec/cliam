@@ -6,7 +6,7 @@ import (
 	"sync"
 
 	"github.com/securisec/cliam/gcp"
-	"github.com/securisec/cliam/gcp/policy"
+	"github.com/securisec/cliam/gcp/rest"
 	"github.com/securisec/cliam/gcp/scanner"
 	"github.com/securisec/cliam/logger"
 	"github.com/spf13/cobra"
@@ -25,7 +25,7 @@ var gcpRestEnumerateCmd = &cobra.Command{
 	},
 	Run: gcpRestEnumerateCmdFunc,
 	ValidArgsFunction: func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
-		return gcp.GetGCPResources(), cobra.ShellCompDirectiveNoFileComp
+		return gcp.GetAvailableRestKeys(), cobra.ShellCompDirectiveNoFileComp
 	},
 }
 
@@ -61,10 +61,10 @@ func gcpRestEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 	}
 
 	// get array of permissions to check
-	permissions := make([]policy.RestCall, 0)
+	permissions := make([]rest.RestCall, 0)
 	for _, resource := range resources {
-		if r, ok := policy.Resources[resource]; ok {
-			for _, p := range r.RESTCalls {
+		if r, ok := rest.RestApiCalls[resource]; ok {
+			for _, p := range r {
 				p.ParentType = parentType
 				p.ParentID = parentID
 				p.ResourceID = resourceID
@@ -82,7 +82,7 @@ func gcpRestEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 	wg := &sync.WaitGroup{}
 	wg.Add(1)
 
-	ch := make(chan policy.RestCall, 0)
+	ch := make(chan rest.RestCall, 0)
 	// the is the maximum concurrent goroutines
 	max := make(chan struct{}, MaxThreads)
 
@@ -92,7 +92,7 @@ func gcpRestEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 		for s := range ch {
 			wg.Add(1)
 
-			go func(wg *sync.WaitGroup, ser policy.RestCall) {
+			go func(wg *sync.WaitGroup, ser rest.RestCall) {
 
 				max <- struct{}{}
 				defer func() {

@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 
 	"github.com/securisec/cliam/gcp/policy"
+	"github.com/securisec/cliam/gcp/rest"
 	"golang.org/x/oauth2/google"
 	"google.golang.org/api/compute/v1"
 )
@@ -48,6 +49,15 @@ func GetPolicyForResource(key string) []string {
 	hold := make([]string, 0, len(p.Actions))
 	for _, v := range p.Actions {
 		hold = append(hold, fmt.Sprintf("%s.%s", p.Method, v))
+	}
+	return hold
+}
+
+// GetAvailableRestKeys returns the policies for the given resource
+func GetAvailableRestKeys() []string {
+	hold := make([]string, 0)
+	for k := range rest.RestApiCalls {
+		hold = append(hold, k)
 	}
 	return hold
 }
