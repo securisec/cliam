@@ -33,7 +33,10 @@ func init() {
 	gcpRestCmd.AddCommand(gcpRestEnumerateCmd)
 	gcpRestEnumerateCmd.Flags().StringToString("parent", nil, "Specify the parent. i.e. project=my-project or organization=my-org. Valid keys are project, origanization, folder, billingAccount")
 	gcpRestEnumerateCmd.Flags().StringToString("body", map[string]string{}, "Rest API body to use when not a GET request")
-	gcpRestEnumerateCmd.Flags().String("resource-id", "", "Resource ID to use when not a GET request")
+	gcpRestEnumerateCmd.Flags().String("resource-id", "", `Resource ID to use when not a GET request. Resource id is quite 
+versitile and is used as a generic term for any resource. For example, if you are
+enumerating pubsub, resource-id could be the subscription name; but also if you are 
+enumerating compute, resource-id could be the instance name.`)
 	gcpRestEnumerateCmd.MarkFlagRequired("parent")
 }
 

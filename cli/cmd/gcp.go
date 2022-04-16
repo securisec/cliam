@@ -26,7 +26,7 @@ func init() {
 	RootCmd.AddCommand(gcpCmd)
 	gcpCmd.PersistentFlags().StringVar(&gcpServiceAccountPath, "service-account", "", "GCP service account path")
 	gcpCmd.PersistentFlags().StringVar(&gcpProjectId, "project-id", "", "GCP project id")
-	gcpCmd.PersistentFlags().StringVar(&gcpRegion, "region", "us-central1-a", "GCP Region")
+	gcpCmd.PersistentFlags().StringVar(&gcpRegion, "region", "us-central1", "GCP Region")
 }
 
 func getSaAndRegion() (string, string, string) {
