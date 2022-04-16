@@ -69,18 +69,17 @@ func EnumerateRestApiRequest(
 	if err != nil {
 		return r, err
 	}
-	// TODO handle POST requests
-	// reqBbody := nil
+
 	isGet := r.ReqMethod == "GET"
 
 	if isGet {
-		req, err = http.NewRequest(r.ReqMethod, url.URL, nil)
+		req, err = http.NewRequest(r.ReqMethod, url, nil)
 	} else {
 		o, err := json.Marshal(r.ReqBody)
 		if err != nil {
 			return r, err
 		}
-		req, err = http.NewRequest(r.ReqMethod, url.URL, bytes.NewBuffer(o))
+		req, err = http.NewRequest(r.ReqMethod, url, bytes.NewBuffer(o))
 	}
 	if err != nil {
 		return r, err
