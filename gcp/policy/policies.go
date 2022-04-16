@@ -2,7 +2,10 @@ package policy
 
 import (
 	"bytes"
+	"errors"
 	"html/template"
+	"net/http"
+	"strings"
 )
 
 type Service struct {
@@ -12,12 +15,15 @@ type Service struct {
 }
 
 type RestCall struct {
-	Zone         string `json:"zone"`
-	URL          string `json:"url"`
-	ParentPrefix string `json:"parent_prefix"`
-	Parent       string `json:"parent"`
-	ReqMethod    string `json:"req_method"`
-	Action       string `json:"action"`
+	ParentType       string            `json:"parent_type"`
+	ParentID         string            `json:"parent_id"`
+	Zone             string            `json:"zone"`
+	URL              string            `json:"url"`
+	PermissionMethod string            `json:"method"`
+	Action           string            `json:"action"`
+	ReqMethod        string            `json:"req_method"`
+	ReqBody          map[string]string `json:"req_body"`
+	Response         *http.Response    `json:"response"`
 }
 
 func (r RestCall) GetURL() (RestCall, error) {
@@ -30,6 +36,9 @@ func (r RestCall) GetURL() (RestCall, error) {
 	bb := bytes.Buffer{}
 	if err := template.Must(template.New("").Parse(b.String())).Execute(&bb, r); err != nil {
 		return r, err
+	}
+	if strings.ContainsAny(bb.String(), "{}") {
+		return r, errors.New("invalid url")
 	}
 	r.URL = bb.String()
 	return r, nil
@@ -377,9 +386,10 @@ var Resources = map[string]Service{
 		Actions: []string{"delete", "list"},
 		RESTCalls: []RestCall{
 			{
-				Action:    "list",
-				URL:       "https://logging.googleapis.com/v2/{{.ParentPrefix}}/{{.Parent}}/logs",
-				ReqMethod: "GET",
+				PermissionMethod: LoggingLogs,
+				Action:           "list",
+				URL:              "https://logging.googleapis.com/v2/{{.ParentType}}/{{.ParentID}}/logs",
+				ReqMethod:        "GET",
 			},
 		},
 	},

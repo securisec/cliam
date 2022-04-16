@@ -2,6 +2,7 @@ package scanner
 
 import (
 	"context"
+	"net/http"
 
 	"github.com/securisec/cliam/gcp/policy"
 	"google.golang.org/api/cloudresourcemanager/v1"
@@ -51,4 +52,39 @@ func EnumerateAllResources(
 type GCPEnumOptions struct {
 	Creds     *cloudresourcemanager.Service
 	ProjectId string
+}
+
+// EnumerateRestApiRequest is a request to enumerate permissions using the REST API
+// care should be paid to r policy.Resources
+func EnumerateRestApiRequest(
+	ctx context.Context,
+	accessToken string,
+	r policy.RestCall,
+) (policy.RestCall, error) {
+	url, err := r.GetURL()
+	if err != nil {
+		return r, err
+	}
+	// TODO handle POST requests
+	// reqBbody := nil
+	req, err := http.NewRequest(r.ReqMethod, url.URL, nil)
+	if err != nil {
+		return r, err
+	}
+	if r.PermissionMethod != "GET" {
+		req.Header.Add("Content-Type", "application/json")
+	}
+
+	// add auth bearer token
+	req.Header.Add("Authorization", "Bearer "+accessToken)
+	req.Header.Add("user-agent", "insomnia/2022.2.1")
+
+	res, err := http.DefaultClient.Do(req)
+	if err != nil {
+		return r, err
+	}
+
+	r.Response = res
+	defer res.Body.Close()
+	return r, nil
 }
