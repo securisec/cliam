@@ -37,6 +37,7 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           tag: DEV
           overwrite: true
+          release_name: DEV
           file_glob: true
           file: dist/build/*
 
