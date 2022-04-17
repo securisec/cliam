@@ -8,14 +8,15 @@ builds:
     goos:
       - linux
       - darwin
+      - windows
     goarch:
       - amd64
       - arm64
     ignore:
       - goos: darwin
         goarch: "386"
-      # - goos: darwin
-      #   goarch: arm64
+      - goos: windows
+        goarch: arm64
     hooks:
       post:
         - upx "{{ .Path }}"

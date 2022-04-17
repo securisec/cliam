@@ -9,6 +9,7 @@ import (
 
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
+	"github.com/securisec/cliam/shared"
 )
 
 func init() {
@@ -25,27 +26,27 @@ var Logger = log.Output(stdOut)
 var LoggerStdErr = log.Output(stdErr)
 
 func LogSuccess(service, permission string) {
-	Logger.Info().Str(service, toSnakeCase(permission)).Msg("Success")
+	Logger.Info().Str(service, toSnakeCase(permission)).Msg(shared.GetMessageColor("success"))
 }
 
 func LogMaybe(service, permission string) {
 	if DEBUG {
-		Logger.Debug().Str(service, toSnakeCase(permission)).Msg("Maybe")
+		Logger.Debug().Str(service, toSnakeCase(permission)).Msg(shared.GetMessageColor("warning"))
 	}
 }
 
 func LogDenied(status int, service, permission string) {
 	if DEBUG {
-		LoggerStdErr.Error().Int("status", status).Str(service, permission).Msg("Error")
+		LoggerStdErr.Error().Int("status", status).Str(service, permission).Msg(shared.GetMessageColor("error"))
 	}
 }
 
 func LogError(err error) {
 	if err != nil {
 		if DEBUG {
-			LoggerStdErr.Error().Err(err).Msg("Error")
+			LoggerStdErr.Error().Err(err).Msg(shared.GetMessageColor("error"))
 		} else {
-			Logger.Error().Err(err).Msg("Error")
+			Logger.Error().Err(err).Msg(shared.GetMessageColor("error"))
 		}
 	}
 }
@@ -62,13 +63,13 @@ func LogWarning(msg string) {
 
 func LogDebug(key string, value interface{}) {
 	if DEBUG {
-		LoggerStdErr.Debug().Interface(key, value).Msg("")
+		LoggerStdErr.Debug().Interface(key, value).Msg(shared.GetMessageColor("debug"))
 	}
 }
 
 func LogDebugVerbose(key string, value interface{}) {
 	if DEBUG && VERBOSE {
-		LoggerStdErr.Debug().Interface(key, value).Msg("")
+		LoggerStdErr.Debug().Interface(key, value).Msg(shared.GetMessageColor("debug"))
 	}
 }
 
@@ -76,7 +77,7 @@ func LogDebugResponse(res *http.Response, permission string) {
 	if VERBOSE && DEBUG {
 		b, err := ioutil.ReadAll(res.Body)
 		if err == nil {
-			LoggerStdErr.Debug().Str("permission", permission).Str("body", string(b)).Msg("")
+			LoggerStdErr.Debug().Str("permission", permission).Str("body", string(b)).Msg(shared.GetMessageColor("debug"))
 		}
 	}
 }

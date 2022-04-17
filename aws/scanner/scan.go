@@ -159,6 +159,9 @@ func EnumerateMultipleResources(
 						saveOutputToFile(s, res)
 					}
 				}
+				if res.StatusCode != 200 && logger.DEBUG {
+					logger.LogDenied(res.StatusCode, s.Service, s.Policy.Permission)
+				}
 
 				wg.Done()
 			}(wg, s)

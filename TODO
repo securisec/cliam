@@ -6,8 +6,13 @@ Todo:
   ☐ enumerate functions should return an array of valid permissions
   ☐ refactor goroutine runners as DRY
 
+Bug:
+  ☐ save output doesnt work for aws
+  ☐ add save output to gcp rest calls
+
 AWS:
   ☐ for services that require a body, it may be responding with a 404 if permission is valid
+  ☐ aws serverless permissions subcommand
   
 Helpers:
   ☐ helper functions for testing arbitrary permissions

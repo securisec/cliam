@@ -37,22 +37,25 @@ func init() {
 versitile and is used as a generic term for any resource. For example, if you are
 enumerating pubsub, resource-id could be the subscription name; but also if you are 
 enumerating compute, resource-id could be the instance name.`)
-	gcpRestEnumerateCmd.MarkFlagRequired("parent")
+	// gcpRestEnumerateCmd.MarkFlagRequired("parent")
 }
 
 func gcpRestEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 	parent, _ := cmd.Flags().GetStringToString("parent")
 	body, _ := cmd.Flags().GetStringToString("body")
 	resourceID, _ := cmd.Flags().GetString("resource-id")
+	sa, projectID, region, zone := getSaAndRegion()
+	if projectID != "" {
+		parent["project"] = projectID
+	}
 
 	parentType, parentID := processParent(parent)
+
 	if parentType == "" || parentID == "" {
 		logger.LoggerStdErr.Fatal().Msg("parent must be specified as project=my-project or organization=my-org")
 	}
 
 	resources := removeDuplicates(args)
-
-	sa, _, region, zone := getSaAndRegion()
 
 	ctx := context.Background()
 	accessToken, err := gcp.GetAccessToken(ctx, sa)
