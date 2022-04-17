@@ -41,6 +41,24 @@ jobs:
           file_glob: true
           file: dist/build/*
 
+      - name: Delete DEV release
+        uses: actions/github-script@v6
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          script: |
+            const release = await github.rest.repos.getReleaseByTag({
+              owner: github.repo.owner,
+              repo: github.repo.repo,
+              tag: 'DEV'
+            });
+            if (release) {
+              await github.rest.repos.deleteRelease({
+                owner: github.repo.owner,
+                repo: github.repo.repo,
+                release_id: release.id
+              });
+            }
+
       - name: Release tagged
         uses: svenstaro/upload-release-action@v2
         if: startsWith(github.ref, 'refs/tags/')
