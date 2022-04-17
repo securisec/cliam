@@ -52,7 +52,7 @@ func gcpRestEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 
 	resources := removeDuplicates(args)
 
-	sa, _, region := getSaAndRegion()
+	sa, _, region, zone := getSaAndRegion()
 
 	ctx := context.Background()
 	accessToken, err := gcp.GetAccessToken(ctx, sa)
@@ -68,7 +68,8 @@ func gcpRestEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 				p.ParentType = parentType
 				p.ParentID = parentID
 				p.ResourceID = resourceID
-				p.Zone = region
+				p.Zone = zone
+				p.Region = region
 				p.ReqBody = body
 				permissions = append(permissions, p)
 			}

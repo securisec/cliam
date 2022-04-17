@@ -37,7 +37,7 @@ func gcpEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 
 	services := removeDuplicates(args)
 
-	sa, project, _ := getSaAndRegion()
+	sa, project, _, _ := getSaAndRegion()
 
 	ctx := context.Background()
 	creds, err := scanner.GetCredsFromServiceAccount(ctx, sa)

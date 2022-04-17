@@ -25,7 +25,7 @@ func init() {
 func gcpBruteforceCmdFunc(cmd *cobra.Command, _ []string) {
 
 	ctx := context.Background()
-	sa, project, _ := getSaAndRegion()
+	sa, project, _, _ := getSaAndRegion()
 	creds, err := scanner.GetCredsFromServiceAccount(ctx, sa)
 	if err != nil {
 		logger.LoggerStdErr.Fatal().Err(err).Msg("Failed to get credentials from service account")

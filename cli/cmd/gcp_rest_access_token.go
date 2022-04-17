@@ -24,7 +24,7 @@ func init() {
 
 func gcpRestAccessTokenCmdFunc(cmd *cobra.Command, args []string) {
 
-	sa, _, _ := getSaAndRegion()
+	sa, _, _, _ := getSaAndRegion()
 
 	ctx := context.Background()
 	accessToken, err := gcp.GetAccessToken(ctx, sa)
