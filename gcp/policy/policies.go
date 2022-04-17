@@ -392,6 +392,7 @@ var Resources = map[string]Service{
 	RuntimeconfigVariables:                   {Method: RuntimeconfigVariables, Actions: []string{"create", "delete", "get", "getIamPolicy", "list", "setIamPolicy", "update", "watch"}},
 	RuntimeconfigWaiters:                     {Method: RuntimeconfigWaiters, Actions: []string{"create", "delete", "get", "getIamPolicy", "list", "setIamPolicy", "update"}},
 	ServicebrokerBindingoperations:           {Method: ServicebrokerBindingoperations, Actions: []string{"get", "list"}},
+	SecretManager:                            {Method: SecretManager, Actions: []string{"create", "delete", "get", "getIamPolicy", "list", "setIamPolicy", "update"}},
 	ServicebrokerBindings:                    {Method: ServicebrokerBindings, Actions: []string{"create", "delete", "get", "getIamPolicy", "list", "setIamPolicy"}},
 	ServicebrokerCatalogs:                    {Method: ServicebrokerCatalogs, Actions: []string{"create", "delete", "get", "getIamPolicy", "list", "setIamPolicy", "validate"}},
 	ServicebrokerInstanceoperations:          {Method: ServicebrokerInstanceoperations, Actions: []string{"get", "list"}},

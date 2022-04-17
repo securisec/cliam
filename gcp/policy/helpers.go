@@ -387,6 +387,7 @@ const (
 	RuntimeconfigVariables                   = "runtimeconfig.variables"
 	RuntimeconfigWaiters                     = "runtimeconfig.waiters"
 	ServicebrokerBindingoperations           = "servicebroker.bindingoperations"
+	SecretManager                            = "secretmanager.secrets"
 	ServicebrokerBindings                    = "servicebroker.bindings"
 	ServicebrokerCatalogs                    = "servicebroker.catalogs"
 	ServicebrokerInstanceoperations          = "servicebroker.instanceoperations"
