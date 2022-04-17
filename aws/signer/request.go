@@ -2,6 +2,7 @@ package signer
 
 import (
 	"context"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -18,7 +19,7 @@ func MakeRequest(
 	region, service string,
 	p *policy.Service,
 	creds *credentials.Credentials,
-) (*http.Request, *http.Response, error) {
+) (*http.Request, *http.Response, []byte, error) {
 	// TODO handle context for clean exit
 	// default options
 	method := "GET"
@@ -47,7 +48,7 @@ func MakeRequest(
 	// create request
 	req, err := http.NewRequest(method, requestURL, body)
 	if err != nil {
-		return nil, nil, err
+		return nil, nil, nil, err
 	}
 
 	// add headers
@@ -69,17 +70,21 @@ func MakeRequest(
 	logger.LogDebugVerbose("url", requestURL)
 	// sign request
 	if _, err := signer.Sign(req, body, service, region, time.Now()); err != nil {
-		return nil, nil, err
+		return nil, nil, nil, err
 	}
 
 	res, err := http.DefaultClient.Do(req)
 	if err != nil {
-		return nil, nil, err
+		return nil, nil, nil, err
 	}
 	defer res.Body.Close()
+	b, err := ioutil.ReadAll(res.Body)
+	if err != nil {
+		return nil, nil, nil, err
+	}
 	time.Sleep(20 * time.Millisecond)
 
-	return req, res, nil
+	return req, res, b, nil
 }
 
 func serviceSafetyNet(service string) string {

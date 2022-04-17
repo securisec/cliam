@@ -39,7 +39,7 @@ func EnumerateAll(ctx context.Context, region string, creds interface{}) error {
 					wg.Done()
 					return
 				}
-				_, res, err := signer.MakeRequest(ctx, region, s.Service, &s.Policy, c)
+				_, res, _, err := signer.MakeRequest(ctx, region, s.Service, &s.Policy, c)
 				if err != nil {
 					logger.LogError(err)
 					wg.Done()
@@ -83,7 +83,7 @@ func EnumerateSpecificResource(ctx context.Context, region, resource string, cre
 					wg.Done()
 					return
 				}
-				_, res, err := signer.MakeRequest(ctx, region, s.Service, &s.Policy, c)
+				_, res, _, err := signer.MakeRequest(ctx, region, s.Service, &s.Policy, c)
 				if err != nil {
 					logger.LogError(err)
 					wg.Done()
@@ -120,7 +120,7 @@ func EnumerateMultipleResources(
 	resources []string,
 	creds interface{},
 	maxThreads int,
-	saveOutput *bool,
+	saveOutput bool,
 ) error {
 	c, ok := creds.(*credentials.Credentials)
 	if !ok {
@@ -147,7 +147,7 @@ func EnumerateMultipleResources(
 					<-max
 				}()
 
-				_, res, err := signer.MakeRequest(ctx, region, s.Service, &s.Policy, c)
+				_, res, body, err := signer.MakeRequest(ctx, region, s.Service, &s.Policy, c)
 				if err != nil {
 					logger.LogError(err)
 					wg.Done()
@@ -155,8 +155,8 @@ func EnumerateMultipleResources(
 				}
 				if res.StatusCode == http.StatusOK {
 					logger.LogSuccess(s.Service, s.Policy.Permission)
-					if *saveOutput {
-						saveOutputToFile(s, res)
+					if saveOutput {
+						saveOutputToFile(s, body)
 					}
 				}
 				if res.StatusCode != 200 && logger.DEBUG {
@@ -193,7 +193,7 @@ func CheckSpecificPermission(
 	region, service string,
 	policy policy.Service,
 	creds *credentials.Credentials,
-) (*http.Request, *http.Response, error) {
+) (*http.Request, *http.Response, []byte, error) {
 	return signer.MakeRequest(context.Background(), region, service, &policy, creds)
 }
 
@@ -202,11 +202,7 @@ type serviceMap struct {
 	Policy  policy.Service
 }
 
-func saveOutputToFile(s serviceMap, res *http.Response) error {
+func saveOutputToFile(s serviceMap, body []byte) error {
 	fileName := fmt.Sprintf("%s.%s.json", s.Service, s.Policy.Permission)
-	body, err := ioutil.ReadAll(res.Body)
-	if err != nil {
-		return err
-	}
 	return ioutil.WriteFile(fileName, body, os.ModePerm)
 }

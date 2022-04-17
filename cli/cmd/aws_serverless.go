@@ -10,31 +10,32 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var awsCommonCmd = &cobra.Command{
-	Use:   "common",
-	Short: "Enumerate permissions for common AWS resources.",
+var awsServerlessCmd = &cobra.Command{
+	Use:   "serverless",
+	Short: "Enumerate permissions for common serverless AWS resources.",
 	Long: `Enumerate permissions for common AWS resources. It will enumerate apigateway, lambda, 
-s3, iam, and ec2`,
-	Run:               awsCommonCmdFunc,
+s3, sns, sqs and dynamodb.`,
+	Run:               awsServerlessCmdFunc,
 	ValidArgsFunction: cobra.NoFileCompletions,
 }
 
 func init() {
-	awsCmd.AddCommand(awsCommonCmd)
-	awsCommonCmd.Flags().Bool("save-output", false, "Save output to file on success")
+	awsCmd.AddCommand(awsServerlessCmd)
+	awsServerlessCmd.Flags().Bool("save-output", false, "Save output to file on success")
 }
 
-func awsCommonCmdFunc(cmd *cobra.Command, _ []string) {
+func awsServerlessCmdFunc(cmd *cobra.Command, _ []string) {
 
 	saveOutput, _ := cmd.Flags().GetBool("save-output")
 
 	key, secret, token, region := getCredsAndRegion()
 	services := []string{
-		aws.Lambda,
-		aws.IAM,
-		aws.S3,
 		aws.APIGateway,
-		aws.EC2,
+		aws.Lambda,
+		aws.S3,
+		aws.SNS,
+		aws.SQS,
+		aws.Dynamodb,
 	}
 
 	creds := signer.SetCredentials(key, secret, token)
