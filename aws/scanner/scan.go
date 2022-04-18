@@ -26,7 +26,7 @@ func EnumerateAll(ctx context.Context, region string, creds interface{}) error {
 		return fmt.Errorf("creds must be of type *credentials.Credentials")
 	}
 
-	ch := make(chan serviceMap)
+	ch := make(chan ServiceMap)
 
 	wg := &sync.WaitGroup{}
 	wg.Add(MaxThreads)
@@ -39,14 +39,14 @@ func EnumerateAll(ctx context.Context, region string, creds interface{}) error {
 					wg.Done()
 					return
 				}
-				_, res, _, err := signer.MakeRequest(ctx, region, s.Service, &s.Policy, c)
+				_, res, _, err := signer.MakeRequest(ctx, region, s.Resource, &s.Policy, c)
 				if err != nil {
 					logger.LogError(err)
 					wg.Done()
 					return
 				}
 				if res.StatusCode == http.StatusOK {
-					logger.LogSuccess(s.Service, s.Policy.Permission)
+					logger.LogSuccess(s.Resource, s.Policy.Permission)
 				}
 			}
 		}()
@@ -54,7 +54,7 @@ func EnumerateAll(ctx context.Context, region string, creds interface{}) error {
 
 	for service, policies := range aws.Services {
 		for _, policy := range policies {
-			ch <- serviceMap{Service: service, Policy: policy}
+			ch <- ServiceMap{Resource: service, Policy: policy}
 		}
 	}
 
@@ -64,52 +64,30 @@ func EnumerateAll(ctx context.Context, region string, creds interface{}) error {
 	return nil
 }
 
-func EnumerateSpecificResource(ctx context.Context, region, resource string, creds interface{}) error {
-	c, ok := creds.(*credentials.Credentials)
-	if !ok {
-		return fmt.Errorf("creds must be of type *credentials.Credentials")
+func EnumerateSpecificResource(
+	ctx context.Context,
+	region string,
+	ser ServiceMap,
+	creds *credentials.Credentials,
+	saveOutput bool,
+) error {
+
+	_, res, body, err := signer.MakeRequest(ctx, region, ser.Resource, &ser.Policy, creds)
+	if err != nil {
+		return err
+	}
+	if res.StatusCode == http.StatusOK {
+		logger.LogSuccess(ser.Resource, ser.Policy.Permission)
+	}
+	if res.StatusCode != 200 && logger.DEBUG {
+		logger.LogDenied(res.StatusCode, ser.Resource, ser.Policy.Permission)
 	}
 
-	ch := make(chan serviceMap)
-
-	wg := &sync.WaitGroup{}
-	wg.Add(MaxThreads)
-
-	for i := 0; i < MaxThreads; i++ {
-		go func() {
-			for {
-				s, ok := <-ch
-				if !ok {
-					wg.Done()
-					return
-				}
-				_, res, _, err := signer.MakeRequest(ctx, region, s.Service, &s.Policy, c)
-				if err != nil {
-					logger.LogError(err)
-					wg.Done()
-					return
-				}
-				if res.StatusCode == http.StatusOK {
-					logger.LogSuccess(s.Service, s.Policy.Permission)
-				}
-				if logger.DEBUG {
-					logger.LogDenied(res.StatusCode, s.Service, s.Policy.Permission)
-				}
-			}
-		}()
+	if res.StatusCode == http.StatusOK {
+		if saveOutput {
+			saveOutputToFile(ser, body)
+		}
 	}
-
-	policies, ok := aws.Services[resource]
-	if !ok {
-		return fmt.Errorf("service %s not found", resource)
-	}
-
-	for _, policy := range policies {
-		ch <- serviceMap{Service: resource, Policy: policy}
-	}
-
-	close(ch)
-	wg.Wait()
 
 	return nil
 }
@@ -127,7 +105,7 @@ func EnumerateMultipleResources(
 		return fmt.Errorf("creds must be of type *credentials.Credentials")
 	}
 
-	ch := make(chan serviceMap)
+	ch := make(chan ServiceMap)
 	max := make(chan struct{}, maxThreads)
 
 	wg := &sync.WaitGroup{}
@@ -140,27 +118,27 @@ func EnumerateMultipleResources(
 
 			wg.Add(1)
 
-			go func(wg *sync.WaitGroup, s serviceMap) {
+			go func(wg *sync.WaitGroup, s ServiceMap) {
 
 				max <- struct{}{}
 				defer func() {
 					<-max
 				}()
 
-				_, res, body, err := signer.MakeRequest(ctx, region, s.Service, &s.Policy, c)
+				_, res, body, err := signer.MakeRequest(ctx, region, s.Resource, &s.Policy, c)
 				if err != nil {
 					logger.LogError(err)
 					wg.Done()
 					return
 				}
 				if res.StatusCode == http.StatusOK {
-					logger.LogSuccess(s.Service, s.Policy.Permission)
+					logger.LogSuccess(s.Resource, s.Policy.Permission)
 					if saveOutput {
 						saveOutputToFile(s, body)
 					}
 				}
 				if res.StatusCode != 200 && logger.DEBUG {
-					logger.LogDenied(res.StatusCode, s.Service, s.Policy.Permission)
+					logger.LogDenied(res.StatusCode, s.Resource, s.Policy.Permission)
 				}
 
 				wg.Done()
@@ -177,7 +155,7 @@ func EnumerateMultipleResources(
 
 	for s, ps := range policies {
 		for _, p := range ps {
-			ch <- serviceMap{Service: s, Policy: p}
+			ch <- ServiceMap{Resource: s, Policy: p}
 		}
 	}
 
@@ -197,12 +175,12 @@ func CheckSpecificPermission(
 	return signer.MakeRequest(context.Background(), region, service, &policy, creds)
 }
 
-type serviceMap struct {
-	Service string
-	Policy  policy.Service
+type ServiceMap struct {
+	Resource string
+	Policy   policy.Service
 }
 
-func saveOutputToFile(s serviceMap, body []byte) error {
-	fileName := fmt.Sprintf("%s.%s.json", s.Service, s.Policy.Permission)
+func saveOutputToFile(s ServiceMap, body []byte) error {
+	fileName := fmt.Sprintf("%s.%s.json", s.Resource, s.Policy.Permission)
 	return ioutil.WriteFile(fileName, body, os.ModePerm)
 }

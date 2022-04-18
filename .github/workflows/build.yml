@@ -36,14 +36,14 @@ jobs:
         with:
           script: |
             const release = await github.rest.repos.getReleaseByTag({
-              owner: github.repo.owner,
-              repo: github.repo.repo,
+              owner: 'securisec',
+              repo: 'cliam',
               tag: 'DEV'
             });
             if (release) {
               await github.rest.repos.deleteRelease({
-                owner: github.repo.owner,
-                repo: github.repo.repo,
+                owner: 'securisec',
+                repo: 'cliam',
                 release_id: release.id
               });
             }
