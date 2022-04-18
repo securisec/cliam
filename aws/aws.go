@@ -63,6 +63,14 @@ const (
 	Redshift          = "redshift"
 	Directconnect     = "directconnect"
 	DeviceFarm        = "devicefarm"
+	SMS               = "sms"
+	VoiceID           = "voiceid"
+	Xray              = "xray"
+	Personalize       = "personalize"
+	Organizations     = "organizations"
+	MemoryDB          = "memory-db"
+	MediaStore        = "mediastore"
+	KafkaConnect      = "kafkaconnect"
 )
 
 var Services = map[string][]policy.Service{
@@ -122,6 +130,14 @@ var Services = map[string][]policy.Service{
 	Redshift:          policy.RedshiftPolicies,
 	Directconnect:     policy.DirectconnectPolicies,
 	DeviceFarm:        policy.DeviceFarmPolicies,
+	SMS:               policy.SMSPolicies,
+	VoiceID:           policy.VoiceIdPolicies,
+	Xray:              policy.XrayPolicies,
+	Personalize:       policy.PersonalizePolicies,
+	Organizations:     policy.OrganizationsPolicies,
+	MemoryDB:          policy.MemoryDBPolicies,
+	MediaStore:        policy.MediaStorePolicies,
+	KafkaConnect:      policy.KafkaConnectPolicies,
 }
 
 // GetAWSResources returns a list of AWS services

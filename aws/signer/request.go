@@ -20,8 +20,6 @@ func MakeRequest(
 	p *policy.Service,
 	creds *credentials.Credentials,
 ) (*http.Request, *http.Response, []byte, error) {
-	kontext, cncl := context.WithTimeout(context.Background(), time.Second*10)
-	defer cncl()
 	// TODO handle context for clean exit
 	// default options
 	method := "GET"
@@ -48,7 +46,7 @@ func MakeRequest(
 	}
 
 	// create request
-	req, err := http.NewRequestWithContext(kontext, method, requestURL, body)
+	req, err := http.NewRequestWithContext(ctx, method, requestURL, body)
 	if err != nil {
 		return nil, nil, nil, err
 	}
@@ -84,6 +82,10 @@ func MakeRequest(
 		return nil, nil, nil, err
 	}
 	res.Body.Close()
+
+	if logger.DEBUG && logger.VERBOSE {
+		logger.LoggerStdErr.Debug().Msg(string(b))
+	}
 
 	return req, res, b, nil
 }

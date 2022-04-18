@@ -8,7 +8,6 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
-	"time"
 
 	"github.com/securisec/cliam/gcp/policy"
 	"github.com/securisec/cliam/gcp/rest"
@@ -96,11 +95,10 @@ type GCPEnumOptions struct {
 // EnumerateRestApiRequest is a request to enumerate permissions using the REST API
 // care should be paid to r policy.Resources
 func EnumerateRestApiRequest(
+	ctx context.Context,
 	accessToken string,
 	r rest.RestCall,
 ) (rest.RestCall, []byte, error) {
-	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
-	defer cancel()
 	var req *http.Request
 
 	url, err := r.GetURL()

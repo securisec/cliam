@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"os"
 	"sync"
+	"time"
 
 	"github.com/securisec/cliam/gcp"
 	"github.com/securisec/cliam/gcp/rest"
@@ -109,11 +110,13 @@ func gcpRestEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 			go func(wg *sync.WaitGroup, ser rest.RestCall) {
 
 				max <- struct{}{}
+				ctx, cancel := context.WithTimeout(context.Background(), time.Duration(RequestTimeout)*time.Second)
 				defer func() {
+					cancel()
 					<-max
 				}()
 
-				res, body, err := scanner.EnumerateRestApiRequest(accessToken, ser)
+				res, body, err := scanner.EnumerateRestApiRequest(ctx, accessToken, ser)
 				if err != nil {
 					logger.LoggerStdErr.Debug().Str(ser.PermissionMethod, ser.Action).Err(err).Msg("Failed to enumerate")
 					wg.Done()

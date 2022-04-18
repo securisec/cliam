@@ -1,18 +1,13 @@
 Todo:
   ☐ ability to provide custom query params or body for complicated calls
   ☐ trap interrupts and exit cleanly
-  ☐ context with timeout for requests
-  ☐ function that can take array of services and check permissions
   ☐ enumerate functions should return an array of valid permissions
   ☐ refactor goroutine runners as DRY
 
 Bug:
-  ☐ save output doesnt work for aws
-  ☐ add save output to gcp rest calls
 
 AWS:
   ☐ for services that require a body, it may be responding with a 404 if permission is valid
-  ☐ aws serverless permissions subcommand
   
 Helpers:
   ☐ helper functions for testing arbitrary permissions
@@ -28,40 +23,9 @@ Resources:
   - https://www.any-api.com/amazonaws_com/ec2/docs/_Action_DescribeInstances/DescribeInstances
   - https://docs.aws.amazon.com/index.html
   - https://stackoverflow.com/questions/46818661/whats-the-best-way-to-handle-too-many-open-files
+  - git clone https://github.com/aws/aws-sdk-js.git
 
 Archive:
-  ✔ get creds from default envars for specific cloud providers @project(Cli)
-  ✔ access key and secret is required @project(Cli)
-  ✔ prompt for access key and secret @project(Cli)
-  ✔ accept json in aws output type @project(Cli)
-  ✔ aws save response output json to file if 200 @project(Cli)
-  ✔ waf @project(AWSServices)
-  ✔ cloudsearch @project(AWSServices)
-  ✔ sagemaker @project(AWSServices)
-  ✔ es @project(AWSServices)
-  ✔ cloudformation @project(AWSServices)
-  ✔ elasticloadbalancing @project(AWSServices)
-  ✔ rds @project(AWSServices)
-  ✔ route53 @project(AWSServices)
-  ✔ sns @project(AWSServices)
-  ✔ ssm @project(AWSServices)
-  ✔ cloudfront @project(AWSServices)
-  ✔ apigateway @project(AWSServices)
-  ✔ codebuild @project(AWSServices)
-  ✔ cloudtrail @project(AWSServices)
-  ✔ codecommit @project(AWSServices)
-  ✔ elasticfilesystem @project(AWSServices)
-  ✔ elasticbeanstalk @project(AWSServices)
-  ✔ elasticache @project(AWSServices)
-  ✔ eks @project(AWSServices)
-  ✔ ecs @project(AWSServices)
-  ✔ iam @project(AWSServices)
-  ✔ dynamodb @project(AWSServices)
-  ✔ dynamodbstreams @project(AWSServices)
-  ✔ function to convert permission to snake case with - instead of _ @project(Helpers)
-  ✔ ecr @project(AWSServices)
-  ✔ sts @project(AWSServices)
-  ✔ sqs @project(AWSServices)
-  ✔ lambda @project(AWSServices)
-  ✔ ec2 @project(AWSServices)
-  ✔ s3 @project(AWSServices)
+  ✔ context with timeout for requests @project(Todo)
+  ✔ function that can take array of services and check permissions @project(Todo)
+  ✔ aws serverless permissions subcommand @project(AWS)

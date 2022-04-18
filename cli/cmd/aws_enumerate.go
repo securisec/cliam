@@ -4,6 +4,7 @@ import (
 	"context"
 	"os"
 	"sync"
+	"time"
 
 	"github.com/securisec/cliam/aws"
 	"github.com/securisec/cliam/aws/scanner"
@@ -53,11 +54,14 @@ func awsEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 
 			go func(wg *sync.WaitGroup, s scanner.ServiceMap) {
 				max <- struct{}{}
+				ctx, cancel := context.WithTimeout(context.Background(), time.Duration(RequestTimeout)*time.Second)
+
 				defer func() {
+					cancel()
 					<-max
 				}()
 
-				if err := scanner.EnumerateSpecificResource(context.Background(), region, s, creds, saveOutput); err != nil {
+				if err := scanner.EnumerateSpecificResource(ctx, region, s, creds, saveOutput); err != nil {
 					logger.LoggerStdErr.Err(err).Msg("")
 					wg.Done()
 					return
