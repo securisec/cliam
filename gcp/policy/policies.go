@@ -56,7 +56,7 @@ var Resources = map[string]Service{
 	CloudconfigConfigs:                       {Method: CloudconfigConfigs, Actions: []string{"get", "update"}},
 	ClouddebuggerBreakpoints:                 {Method: ClouddebuggerBreakpoints, Actions: []string{"create", "delete", "get", "list", "listActive", "update"}},
 	ClouddebuggerDebuggees:                   {Method: ClouddebuggerDebuggees, Actions: []string{"create", "list"}},
-	CloudfunctionsFunctions:                  {Method: CloudfunctionsFunctions, Actions: []string{"call", "create", "delete", "get", "getIamPolicy", "invoke", "list", "generateDownloadUrl", "setIamPolicy", "sourceCodeGet", "sourceCodeSet", "update"}},
+	CloudfunctionsFunctions:                  {Method: CloudfunctionsFunctions, Actions: []string{"call", "create", "delete", "get", "getIamPolicy", "invoke", "list", "setIamPolicy", "sourceCodeGet", "sourceCodeSet", "update"}},
 	CloudfunctionsLocations:                  {Method: CloudfunctionsLocations, Actions: []string{"list"}},
 	CloudfunctionsOperations:                 {Method: CloudfunctionsOperations, Actions: []string{"get", "list"}},
 	CloudiotDevices:                          {Method: CloudiotDevices, Actions: []string{"bindGateway", "create", "delete", "get", "list", "sendCommand", "unbindGateway", "update", "updateConfig"}},

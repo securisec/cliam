@@ -40,12 +40,20 @@ jobs:
               repo: 'cliam',
               tag: 'DEV'
             });
+            
             if (release) {
-              await github.rest.repos.deleteRelease({
-                owner: 'securisec',
-                repo: 'cliam',
-                release_id: release.id
-              });
+
+              try {
+                await github.rest.repos.deleteRelease({
+                  owner: 'securisec',
+                  repo: 'cliam',
+                  release_id: release.id
+                });
+              } catch (e) {
+                console.log(release);
+                console.error(e);
+              }
+              
             }
 
       - name: Release DEV

@@ -113,7 +113,7 @@ func gcpRestEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 					<-max
 				}()
 
-				res, body, err := scanner.EnumerateRestApiRequest(ctx, accessToken, ser)
+				res, body, err := scanner.EnumerateRestApiRequest(accessToken, ser)
 				if err != nil {
 					logger.LoggerStdErr.Debug().Str(ser.PermissionMethod, ser.Action).Err(err).Msg("Failed to enumerate")
 					wg.Done()
