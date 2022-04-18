@@ -44,11 +44,10 @@ jobs:
             if (data) {
 
               try {
-                let d = JSON.parse(data);
                 await github.rest.repos.deleteRelease({
                   owner: 'securisec',
                   repo: 'cliam',
-                  release_id: d.id
+                  release_id: data.id
                 });
               } catch (e) {
                 console.error(e);
