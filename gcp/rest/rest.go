@@ -800,15 +800,46 @@ var RestApiCalls = map[string][]RestCall{
 	},
 	DataFusion: {
 		{
-			PermissionMethod: joinString(DataFusion, "projects", "locations"),
+			PermissionMethod: joinString(DataFusion, "projects", "regions", "autoscalingPolicies"),
+			ReqMethod:        "GET",
+			Action:           "list",
+			URL:              "https://dataproc.googleapis.com/v1/projects/{{.ParentID}}/regions/{{.Region}}/autoscalingPolicies",
+		},
+		{
+			PermissionMethod: joinString(DataFusion, "projects", "regions", "clusters"),
+			ReqMethod:        "GET",
+			Action:           "list",
+			URL:              "https://dataproc.googleapis.com/v1/projects/{{.ParentID}}/regions/{{.Region}}/clusters",
+		},
+		{
+			PermissionMethod: joinString(DataFusion, "projects", "regions", "jobs"),
+			ReqMethod:        "GET",
+			Action:           "list",
+			URL:              "https://dataproc.googleapis.com/v1/projects/{{.ParentID}}/regions/{{.Region}}/jobs",
+		},
+		{
+			PermissionMethod: joinString(DataFusion, "projects", "regions", "operations"),
+			ReqMethod:        "GET",
+			Action:           "list",
+			URL:              "https://dataproc.googleapis.com/v1/projects/{{.ParentID}}/regions/{{.Region}}/operations",
+		},
+		{
+			PermissionMethod: joinString(DataFusion, "projects", "regions", "workflowTemplates"),
+			ReqMethod:        "GET",
+			Action:           "list",
+			URL:              "https://dataproc.googleapis.com/v1/projects/{{.ParentID}}/regions/{{.Region}}/workflowTemplates",
+		},
+	},
+	DataLabeling: {},
+	DataPrep:     {},
+	DataProc: {
+		{
+			PermissionMethod: joinString(DataProc, "projects", "locations"),
 			ReqMethod:        "GET",
 			Action:           "list",
 			URL:              "https://datafusion.googleapis.com/v1/projects/{{.ParentID}}/locations",
 		},
 	},
-	DataLabeling:      {},
-	DataPrep:          {},
-	DataProc:          {},
 	DataStore:         {},
 	DeploymentManager: {},
 	DialogFlow:        {},
@@ -965,8 +996,27 @@ var RestApiCalls = map[string][]RestCall{
 	ManagedIdentities: {},
 	Ml:                {},
 	Monitoring:        {},
-	OrgPolicy:         {},
-	ProximityBeacon:   {},
+	OrgPolicy: {
+		{
+			PermissionMethod: joinString(OrgPolicy, "projects", "policies"),
+			Action:           "list",
+			URL:              "https://orgpolicy.googleapis.com/v2/projects/{{.ParentID}}/policies",
+			ReqMethod:        "GET",
+		},
+		{
+			PermissionMethod: joinString(OrgPolicy, "projects", "constraints"),
+			Action:           "list",
+			URL:              "https://orgpolicy.googleapis.com/v2/projects/{{.ParentID}}/constraints",
+			ReqMethod:        "GET",
+		},
+		{
+			PermissionMethod: joinString(OrgPolicy, "organizations", "policies"),
+			Action:           "list",
+			URL:              "https://orgpolicy.googleapis.com/v2/organizations/{{.ParentID}}/constraints",
+			ReqMethod:        "GET",
+		},
+	},
+	ProximityBeacon: {},
 	Pubsub: {
 		{
 			PermissionMethod: "pubsub.subscriptions",

@@ -8,6 +8,9 @@ Bug:
 
 AWS:
   ☐ for services that require a body, it may be responding with a 404 if permission is valid
+
+GCP:
+  ☐ enumerate with access token
   
 Helpers:
   ☐ helper functions for testing arbitrary permissions

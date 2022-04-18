@@ -1,0 +1,42 @@
+package policy
+
+import "github.com/securisec/cliam/shared"
+
+var TransferPolicies = []Service{
+	{
+		Method:   "POST",
+		JsonData: `{}`,
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			aws_X_AMZ_TARGET:           "TransferService.CreateServer",
+		},
+		Permission: "CreateServer",
+	},
+	{
+		Method:   "POST",
+		JsonData: `{}`,
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			aws_X_AMZ_TARGET:           "TransferService.ListSecurityPolicies",
+		},
+		Permission: "ListSecurityPolicies",
+	},
+	{
+		Method:   "POST",
+		JsonData: `{}`,
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			aws_X_AMZ_TARGET:           "TransferService.ListServers",
+		},
+		Permission: "ListServers",
+	},
+	{
+		Method:   "POST",
+		JsonData: `{}`,
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			aws_X_AMZ_TARGET:           "TransferService.ListWorkflows",
+		},
+		Permission: "ListWorkflows",
+	},
+}

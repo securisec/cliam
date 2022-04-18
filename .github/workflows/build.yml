@@ -51,7 +51,6 @@ jobs:
                   release_id: d.id
                 });
               } catch (e) {
-                console.log(d);
                 console.error(e);
               }
 
