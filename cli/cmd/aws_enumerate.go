@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"context"
+	"os"
 	"sync"
 
 	"github.com/securisec/cliam/aws"
@@ -27,7 +28,8 @@ func init() {
 
 func awsEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 	if len(args) == 0 {
-		cmd.Help()
+		printValidArgs(aws.GetAWSResources)
+		os.Exit(1)
 	}
 
 	saveOutput, _ := cmd.Flags().GetBool("save-output")

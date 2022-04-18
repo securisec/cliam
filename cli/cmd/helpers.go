@@ -1,10 +1,12 @@
 package cmd
 
 import (
+	"fmt"
 	"path/filepath"
 
 	"github.com/mitchellh/go-homedir"
 	"github.com/securisec/cliam/logger"
+	"github.com/securisec/cliam/shared"
 )
 
 // remove duplicates from a slice of strings
@@ -33,4 +35,11 @@ func expandPath(p string) string {
 		logger.LoggerStdErr.Fatal().Err(err).Msg("failed to get absolute path")
 	}
 	return ps
+}
+
+func printValidArgs(f func() []string) {
+	fmt.Println(shared.Red("Valid arguments:"))
+	for _, v := range f() {
+		fmt.Println(v)
+	}
 }

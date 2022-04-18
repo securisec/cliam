@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"context"
+	"os"
 	"strings"
 
 	"github.com/securisec/cliam/gcp"
@@ -17,7 +18,8 @@ var gcpEnumerateCmd = &cobra.Command{
 If resource manager is disabled, this command will end with a 403 error.`,
 	PreRun: func(cmd *cobra.Command, args []string) {
 		if len(args) == 0 {
-			cmd.Help()
+			printValidArgs(gcp.GetGCPResources)
+			os.Exit(1)
 		}
 	},
 	Run: gcpEnumerateCmdFunc,

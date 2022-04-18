@@ -21,7 +21,7 @@ var gcpRestEnumerateCmd = &cobra.Command{
 	Example: "gcp rest enumerate --parent project=my-project compute.instances",
 	PreRun: func(cmd *cobra.Command, args []string) {
 		if len(args) == 0 {
-			cmd.Help()
+			printValidArgs(gcp.GetAvailableRestKeys)
 			os.Exit(1)
 		}
 	},

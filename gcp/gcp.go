@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"io/ioutil"
+	"sort"
 
 	"github.com/securisec/cliam/gcp/policy"
 	"github.com/securisec/cliam/gcp/rest"
@@ -37,6 +38,7 @@ func GetGCPResources() []string {
 	for k := range policy.Resources {
 		keys = append(keys, k)
 	}
+	sort.Sort(sort.StringSlice(keys))
 	return keys
 }
 
@@ -59,5 +61,6 @@ func GetAvailableRestKeys() []string {
 	for k := range rest.RestApiCalls {
 		hold = append(hold, k)
 	}
+	sort.Sort(sort.StringSlice(hold))
 	return hold
 }

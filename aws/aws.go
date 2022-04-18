@@ -1,6 +1,10 @@
 package aws
 
-import "github.com/securisec/cliam/aws/policy"
+import (
+	"sort"
+
+	"github.com/securisec/cliam/aws/policy"
+)
 
 const (
 	APIGateway        = "apigateway"
@@ -126,5 +130,6 @@ func GetAWSResources() []string {
 	for k := range Services {
 		keys = append(keys, k)
 	}
+	sort.Sort(sort.StringSlice(keys))
 	return keys
 }
