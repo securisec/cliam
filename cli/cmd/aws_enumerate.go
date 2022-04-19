@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"context"
+	"errors"
 	"os"
 	"sync"
 	"time"
@@ -33,6 +34,16 @@ func awsEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 		os.Exit(1)
 	}
 
+	// spinner things
+	// var (
+	// 	total, current int
+	// )
+	// spinner, err := createSpinner()
+	// if err != nil {
+	// 	logger.Logger.Fatal().Err(err).Msg("failed to create spinner")
+	// }
+	// defer cleanupSpinner(spinner)
+
 	saveOutput, _ := cmd.Flags().GetBool("save-output")
 
 	key, secret, token, region := getCredsAndRegion()
@@ -57,12 +68,25 @@ func awsEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 				ctx, cancel := context.WithTimeout(context.Background(), time.Duration(RequestTimeout)*time.Second)
 
 				defer func() {
+					// if spinner.Status() == yacspin.SpinnerStopped {
+					// 	spinner.Start()
+					// }
+					// current += 1
+					// spinner.Message(fmt.Sprintf("%d/%d", current, total))
 					cancel()
 					<-max
 				}()
 
-				if err := scanner.EnumerateSpecificResource(ctx, region, s, creds, saveOutput); err != nil {
-					logger.LoggerStdErr.Err(err).Msg("")
+				// if spinner.Status() == yacspin.SpinnerRunning {
+				// 	spinner.Stop()
+				// }
+
+				if _, err := scanner.EnumerateSpecificResource(ctx, region, s, creds, saveOutput); err != nil {
+					if errors.Is(err, context.DeadlineExceeded) {
+						logger.LoggerStdErr.Error().Str(s.Resource, s.Policy.Permission).Msg("request timed out")
+					} else {
+						logger.LoggerStdErr.Err(err).Msg("")
+					}
 					wg.Done()
 					return
 				}
@@ -74,17 +98,10 @@ func awsEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 		}
 	}()
 
-	for _, resource := range resources {
-		policies, ok := aws.Services[resource]
-		if !ok {
-			continue
-		}
-		for _, policy := range policies {
-			ch <- scanner.ServiceMap{
-				Resource: resource,
-				Policy:   policy,
-			}
-		}
+	enumerate := scanner.GetServiceMap(resources)
+	// total = len(enumerate)
+	for _, e := range enumerate {
+		ch <- e
 	}
 
 	close(ch)

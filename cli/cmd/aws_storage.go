@@ -2,7 +2,6 @@ package cmd
 
 import (
 	"context"
-	"errors"
 	"sync"
 	"time"
 
@@ -13,21 +12,22 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var awsCommonCmd = &cobra.Command{
-	Use:   "common",
-	Short: "Enumerate permissions for common AWS resources.",
-	Long: `Enumerate permissions for common AWS resources. It will enumerate apigateway, lambda, 
-s3, iam, and ec2`,
-	Run:               awsCommonCmdFunc,
+var awsStorageCmd = &cobra.Command{
+	Use:   "storage",
+	Short: "Enumerate permissions for common storage AWS resources.",
+	Long: `Enumerate permissions for common AWS resources. It will enumerate s3, efs, 
+snowball and storage gateway.`,
+	Run:               awsStorageCmdFunc,
 	ValidArgsFunction: cobra.NoFileCompletions,
 }
 
 func init() {
-	awsCmd.AddCommand(awsCommonCmd)
-	awsCommonCmd.Flags().Bool("save-output", false, "Save output to file on success")
+	awsCmd.AddCommand(awsStorageCmd)
+	awsStorageCmd.Flags().Bool("save-output", false, "Save output to file on success")
 }
 
-func awsCommonCmdFunc(cmd *cobra.Command, _ []string) {
+func awsStorageCmdFunc(cmd *cobra.Command, _ []string) {
+
 	saveOutput, _ := cmd.Flags().GetBool("save-output")
 
 	key, secret, token, region := getCredsAndRegion()
@@ -56,11 +56,7 @@ func awsCommonCmdFunc(cmd *cobra.Command, _ []string) {
 				}()
 
 				if _, err := scanner.EnumerateSpecificResource(ctx, region, s, creds, saveOutput); err != nil {
-					if errors.Is(err, context.DeadlineExceeded) {
-						logger.LoggerStdErr.Error().Str(s.Resource, s.Policy.Permission).Msg("request timed out")
-					} else {
-						logger.LoggerStdErr.Err(err).Msg("")
-					}
+					logger.LoggerStdErr.Err(err).Msg("")
 					wg.Done()
 					return
 				}
@@ -73,11 +69,10 @@ func awsCommonCmdFunc(cmd *cobra.Command, _ []string) {
 	}()
 
 	resources := []string{
-		aws.Lambda,
-		aws.IAM,
 		aws.S3,
-		aws.APIGateway,
-		aws.EC2,
+		aws.Snowball,
+		aws.StorageGateway,
+		aws.ElasticFileSystem,
 	}
 
 	enumerate := scanner.GetServiceMap(resources)

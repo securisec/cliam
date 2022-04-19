@@ -13,21 +13,22 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var awsCommonCmd = &cobra.Command{
-	Use:   "common",
-	Short: "Enumerate permissions for common AWS resources.",
-	Long: `Enumerate permissions for common AWS resources. It will enumerate apigateway, lambda, 
-s3, iam, and ec2`,
-	Run:               awsCommonCmdFunc,
+var awsComputeCmd = &cobra.Command{
+	Use:   "compute",
+	Short: "Enumerate permissions for common compute AWS resources.",
+	Long: `Enumerate permissions for common AWS resources. It will enumerate efs, ec2, 
+elasticbeanstalk, elb and lambda.`,
+	Run:               awsComputeCmdFunc,
 	ValidArgsFunction: cobra.NoFileCompletions,
 }
 
 func init() {
-	awsCmd.AddCommand(awsCommonCmd)
-	awsCommonCmd.Flags().Bool("save-output", false, "Save output to file on success")
+	awsCmd.AddCommand(awsComputeCmd)
+	awsComputeCmd.Flags().Bool("save-output", false, "Save output to file on success")
 }
 
-func awsCommonCmdFunc(cmd *cobra.Command, _ []string) {
+func awsComputeCmdFunc(cmd *cobra.Command, _ []string) {
+
 	saveOutput, _ := cmd.Flags().GetBool("save-output")
 
 	key, secret, token, region := getCredsAndRegion()
@@ -74,10 +75,10 @@ func awsCommonCmdFunc(cmd *cobra.Command, _ []string) {
 
 	resources := []string{
 		aws.Lambda,
-		aws.IAM,
-		aws.S3,
-		aws.APIGateway,
 		aws.EC2,
+		aws.ElasticBeanStalk,
+		aws.ElasticFileSystem,
+		aws.ELB,
 	}
 
 	enumerate := scanner.GetServiceMap(resources)

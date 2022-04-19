@@ -29,6 +29,7 @@ Resources:
   - git clone https://github.com/aws/aws-sdk-js.git
 
 Archive:
+  ✔ refactor aws subcommands to use single. helper function to get all policies for an array of services @project(AWS)
   ✔ context with timeout for requests @project(Todo)
   ✔ function that can take array of services and check permissions @project(Todo)
   ✔ aws serverless permissions subcommand @project(AWS)

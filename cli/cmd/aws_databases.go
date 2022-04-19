@@ -13,21 +13,22 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var awsCommonCmd = &cobra.Command{
-	Use:   "common",
-	Short: "Enumerate permissions for common AWS resources.",
-	Long: `Enumerate permissions for common AWS resources. It will enumerate apigateway, lambda, 
-s3, iam, and ec2`,
-	Run:               awsCommonCmdFunc,
+var awsDatabasesCmd = &cobra.Command{
+	Use:   "databases",
+	Short: "Enumerate permissions for common AWS database resources.",
+	Long: `Enumerate permissions for common AWS resources. It will enumerate redshift, rds, 
+and dynamodb.`,
+	Run:               awsDatabasesCmdFunc,
 	ValidArgsFunction: cobra.NoFileCompletions,
 }
 
 func init() {
-	awsCmd.AddCommand(awsCommonCmd)
-	awsCommonCmd.Flags().Bool("save-output", false, "Save output to file on success")
+	awsCmd.AddCommand(awsDatabasesCmd)
+	awsDatabasesCmd.Flags().Bool("save-output", false, "Save output to file on success")
 }
 
-func awsCommonCmdFunc(cmd *cobra.Command, _ []string) {
+func awsDatabasesCmdFunc(cmd *cobra.Command, _ []string) {
+
 	saveOutput, _ := cmd.Flags().GetBool("save-output")
 
 	key, secret, token, region := getCredsAndRegion()
@@ -73,11 +74,9 @@ func awsCommonCmdFunc(cmd *cobra.Command, _ []string) {
 	}()
 
 	resources := []string{
-		aws.Lambda,
-		aws.IAM,
-		aws.S3,
-		aws.APIGateway,
-		aws.EC2,
+		aws.RDS,
+		aws.Redshift,
+		aws.Dynamodb,
 	}
 
 	enumerate := scanner.GetServiceMap(resources)

@@ -34,17 +34,21 @@ def getRequestEndpoint(suffix: str, action: str) -> str:
 
 
 
-fileName = '/private/tmp/aws-sdk-js/apis/databrew-2017-07-25.normal.json'
+fileName = '/private/tmp/aws-sdk-js/apis/redshift-2012-12-01.normal.json'
 with open(fileName, 'r') as f:
     data = json.loads(f.read())
 
 for operation, v in data['operations'].items():
     # print(operations)
     try:
-        if f'{operation}Request' in data['shapes']:
-            shape = data['shapes'][f'{operation}Request']
-        else:
-            shape = data['shapes'][f'{operation}Input']
+        shape = data['shapes'][v['input']['shape']]
+        # if f'{operation}Request' in data['shapes']:
+        #     shape = data['shapes'][f'{operation}Request']
+        # elif f'{operation}Input' in data['shapes']:
+        #     shape = data['shapes'][f'{operation}Input']
+        # elif f'{operation}InputMessage' in data['shapes']:
+        #     shape = data['shapes'][f'{operation}InputMessage']
+        # else:
         if 'required' in shape:
             continue
 

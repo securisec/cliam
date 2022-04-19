@@ -111,10 +111,12 @@ const (
 	AppFlow               = "appflow"
 	AuditManager          = "auditmanager"
 	DataBrew              = "databrew"
+	Snowball              = "snowball"
 )
 
 var Services = map[string][]policy.Service{
 	Outposts:              policy.OutpostsPolicies,
+	Snowball:              policy.SnowballPolicies,
 	WafV2:                 policy.WafV2Policies,
 	AccessAnalyzers:       policy.AccessAnalyzersPolicies,
 	ACM:                   policy.ACMPolicies,

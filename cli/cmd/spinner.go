@@ -1,7 +1,6 @@
 package cmd
 
 import (
-	"context"
 	"fmt"
 	"os"
 	"os/signal"
@@ -11,51 +10,37 @@ import (
 	"github.com/theckman/yacspin"
 )
 
-func getSpinner(ctx context.Context, count chan int, total int) *yacspin.Spinner {
+func createSpinner() (*yacspin.Spinner, error) {
+	// build the configuration, each field is documented
 	cfg := yacspin.Config{
-		Frequency:         100 * time.Millisecond,
-		Colors:            []string{"fgYellow"},
-		CharSet:           yacspin.CharSets[11],
-		Suffix:            " ",
-		SuffixAutoColon:   true,
-		StopCharacter:     "✓",
-		StopColors:        []string{"fgGreen"},
-		StopMessage:       "done",
+		Frequency: 100 * time.Millisecond,
+		CharSet:   yacspin.CharSets[11],
+		Suffix:    " ", // puts a least one space between the animating spinner and the Message
+		// Message:           "collecting files",
+		// SuffixAutoColon: true,
+		// ColorAll:        true,
+		Colors: []string{"fgYellow"},
+		// StopCharacter: " ",
+		StopColors: []string{"fgGreen"},
+		// StopMessage:       "done",
 		StopFailCharacter: "✗",
 		StopFailColors:    []string{"fgRed"},
 		StopFailMessage:   "failed",
 	}
 
-	spinner, err := yacspin.New(cfg)
+	s, err := yacspin.New(cfg)
 	if err != nil {
-		exitf("failed to make spinner from struct: %v", err)
+		return nil, fmt.Errorf("failed to make spinner from struct: %w", err)
 	}
-	// handle spinner cleanup on interrupts
-	sigCh := make(chan os.Signal, 1)
-	signal.Notify(sigCh, os.Interrupt, syscall.SIGTERM)
+	if err := s.Start(); err != nil {
+		return nil, err
+	}
+	stopSpinnerOnSignal(s)
 
-	defer signal.Stop(sigCh)
-
-	go func(ctx context.Context) { // this is just an example signal handler, should be more robust
-		select {
-		case <-ctx.Done():
-			spinner.StopMessage("done")
-		case <-sigCh:
-			spinner.StopFailMessage("interrupted")
-		}
-
-		os.Exit(0)
-	}(ctx)
-
-	return spinner
+	return s, nil
 }
 
-func exitf(format string, a ...interface{}) {
-	fmt.Printf(format, a...)
-	os.Exit(1)
-}
-
-func stopOnSignal(spinner *yacspin.Spinner) {
+func stopSpinnerOnSignal(spinner *yacspin.Spinner) {
 	// ensure we stop the spinner before exiting, otherwise cursor will remain
 	// hidden and terminal will require a `reset`
 	sigCh := make(chan os.Signal, 1)
@@ -70,4 +55,12 @@ func stopOnSignal(spinner *yacspin.Spinner) {
 
 		os.Exit(0)
 	}()
+}
+
+func cleanupSpinner(s *yacspin.Spinner) {
+	s.StopMessage("done")
+	s.StopColors("fgGreen")
+	if err := s.Stop(); err != nil {
+		s.StopFail()
+	}
 }
