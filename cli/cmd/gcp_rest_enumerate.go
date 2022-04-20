@@ -56,6 +56,7 @@ func gcpRestEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 	}
 
 	sa, projectID, region, zone := getSaAndRegion()
+	cliGcpLogRegion(region, zone)
 	if projectID != "" {
 		parent["project"] = projectID
 	}

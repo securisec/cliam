@@ -29,6 +29,7 @@ func awsCommonCmdFunc(cmd *cobra.Command, _ []string) {
 	saveOutput, _ := cmd.Flags().GetBool("save-output")
 
 	key, secret, token, region := getCredsAndRegion()
+	cliLogRegion(awsRegion)
 
 	creds := signer.SetCredentials(key, secret, token)
 

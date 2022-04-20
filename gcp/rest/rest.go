@@ -116,9 +116,16 @@ var RestApiCalls = map[string][]RestCall{
 			URL:              "https://bigtableadmin.googleapis.com/v2/{{.ParentID}}/locations",
 		},
 	},
-	Billing:             {},
-	BinaryAuthorization: {},
-	CloudAsset:          {},
+	Billing: {},
+	BinaryAuthorization: {
+		{
+			PermissionMethod: joinString(BinaryAuthorization, "attestors"),
+			ReqMethod:        "GET",
+			Action:           "list",
+			URL:              "https://binaryauthorization.googleapis.com/v1/projects/{{.ParentID}}/attestors",
+		},
+	},
+	CloudAsset: {},
 	CloudBuild: {
 		{
 			PermissionMethod: "cloudbuild.builds",

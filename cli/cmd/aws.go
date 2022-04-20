@@ -12,6 +12,7 @@ var awsCmd = &cobra.Command{
 	PreRun: func(cmd *cobra.Command, args []string) {
 		if len(args) == 0 {
 			cmd.Help()
+			os.Exit(1)
 		}
 	},
 }

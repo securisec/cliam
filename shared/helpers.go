@@ -27,7 +27,9 @@ func GetMessageColor(p string) string {
 	case "warning":
 		return Yellow("●")
 	case "debug", "low":
-		return Blue("●")
+		return Cyan("●")
+	case "info":
+		return Magenta("●")
 	case "success":
 		return Green("●")
 		// return Green("✓")

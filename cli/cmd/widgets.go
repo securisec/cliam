@@ -44,3 +44,11 @@ func cliCompletionLogger(ser scanner.ServiceMap, status int) {
 		logger.LogDenied(status, ser.Resource, ser.Policy.Permission)
 	}
 }
+
+func cliLogRegion(r string) {
+	logger.LoggerStdErr.Debug().Str("region", r).Msg(shared.GetMessageColor("info"))
+}
+
+func cliGcpLogRegion(r, z string) {
+	logger.LoggerStdErr.Debug().Str("region", r).Str("zone", z).Msg(shared.GetMessageColor("info"))
+}

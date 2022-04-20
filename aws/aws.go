@@ -113,10 +113,14 @@ const (
 	Workspaces            = "workspaces"
 	WorkspacesWeb         = "workspaces-web"
 	Xray                  = "xray"
+	ServiceQuotas         = "servicequotas"
+	IOT                   = "iot"
 )
 
 var Services = map[string][]policy.Service{
 	AccessAnalyzers:       policy.AccessAnalyzersPolicies,
+	IOT:                   policy.IOTPolicies,
+	ServiceQuotas:         policy.ServiceQuotasPolicies,
 	LakeFormation:         policy.LakeFormationPolicies,
 	ACM:                   policy.ACMPolicies,
 	APIGateway:            policy.APIGatewayPolicies,

@@ -45,6 +45,7 @@ func awsEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 	saveOutput, _ := cmd.Flags().GetBool("save-output")
 
 	key, secret, token, region := getCredsAndRegion()
+	cliLogRegion(awsRegion)
 	resources := removeDuplicates(args)
 
 	creds := signer.SetCredentials(key, secret, token)
