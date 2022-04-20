@@ -22,6 +22,7 @@ var (
 	awsSecretAccessKey string
 	awsSessionToken    string
 	awsRegion          string
+	awsProfile         string
 )
 
 func init() {
@@ -30,6 +31,7 @@ func init() {
 	awsCmd.PersistentFlags().StringVar(&awsSecretAccessKey, "secret-access-key", "", "AWS Secret Access Key")
 	awsCmd.PersistentFlags().StringVar(&awsSessionToken, "session-token", "", "AWS Session Token")
 	awsCmd.PersistentFlags().StringVar(&awsRegion, "region", "us-east-1", "AWS Region")
+	awsCmd.PersistentFlags().StringVar(&awsProfile, "profile", "", "AWS Profile. When profile is set, access-key-id, secret-access-key, and session-token are ignored.")
 }
 
 func getCredsAndRegion() (string, string, string, string) {
@@ -37,6 +39,10 @@ func getCredsAndRegion() (string, string, string, string) {
 }
 
 func getKeyID() string {
+	if awsProfile != "" {
+		// profile is set so we will use the profile
+		return ""
+	}
 	if awsAccessKeyID != "" {
 		return awsAccessKeyID
 	}
@@ -47,6 +53,10 @@ func getKeyID() string {
 }
 
 func getSecretKey() string {
+	if awsProfile != "" {
+		// profile is set so we will use the profile
+		return ""
+	}
 	if awsSecretAccessKey != "" {
 		return awsSecretAccessKey
 	}
@@ -57,8 +67,9 @@ func getSecretKey() string {
 }
 
 func getToken() string {
-	if awsSessionToken != "" {
-		return awsSessionToken
+	if awsProfile != "" {
+		// profile is set so we will use the profile
+		return ""
 	}
 	if k, ok := os.LookupEnv("AWS_SESSION_TOKEN"); ok {
 		return k

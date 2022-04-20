@@ -48,7 +48,7 @@ func awsEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 	cliLogRegion(awsRegion)
 	resources := removeDuplicates(args)
 
-	creds := signer.SetCredentials(key, secret, token)
+	creds := signer.SetCredentials(key, secret, token, awsProfile)
 
 	wg := &sync.WaitGroup{}
 	wg.Add(1)

@@ -32,7 +32,7 @@ func awsDatabasesCmdFunc(cmd *cobra.Command, _ []string) {
 	key, secret, token, region := getCredsAndRegion()
 	cliLogRegion(awsRegion)
 
-	creds := signer.SetCredentials(key, secret, token)
+	creds := signer.SetCredentials(key, secret, token, awsProfile)
 
 	wg := &sync.WaitGroup{}
 	wg.Add(1)
