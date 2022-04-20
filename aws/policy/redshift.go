@@ -6,6 +6,17 @@ var RedshiftPolicies = []Service{
 	{
 		Method: "POST",
 		FormData: map[string]string{
+			"Action":  "CreateSnapshotSchedule",
+			"Version": "2012-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "CreateSnapshotSchedule",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
 			"Action":  "DescribeAccountAttributes",
 			"Version": "2012-12-01",
 		},
@@ -57,6 +68,17 @@ var RedshiftPolicies = []Service{
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
 		},
 		Permission: "DescribeClusterSecurityGroups",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeClusterSnapshots",
+			"Version": "2012-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeClusterSnapshots",
 	},
 	{
 		Method: "POST",
@@ -182,6 +204,17 @@ var RedshiftPolicies = []Service{
 	{
 		Method: "POST",
 		FormData: map[string]string{
+			"Action":  "DescribeEvents",
+			"Version": "2012-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeEvents",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
 			"Action":  "DescribeHsmClientCertificates",
 			"Version": "2012-12-01",
 		},
@@ -248,6 +281,17 @@ var RedshiftPolicies = []Service{
 	{
 		Method: "POST",
 		FormData: map[string]string{
+			"Action":  "DescribeScheduledActions",
+			"Version": "2012-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeScheduledActions",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
 			"Action":  "DescribeSnapshotCopyGrants",
 			"Version": "2012-12-01",
 		},
@@ -310,5 +354,16 @@ var RedshiftPolicies = []Service{
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
 		},
 		Permission: "DescribeUsageLimits",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "RevokeEndpointAccess",
+			"Version": "2012-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "RevokeEndpointAccess",
 	},
 }

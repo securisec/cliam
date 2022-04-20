@@ -7,219 +7,221 @@ import (
 )
 
 const (
+	LakeFormation         = "lakeformation"
+	AccessAnalyzers       = "access-analyzer"
+	ACM                   = "acm"
 	APIGateway            = "apigateway"
+	AppFlow               = "appflow"
+	AppRunner             = "apprunner"
+	Appstream2            = "appstream2"
+	Athena                = "athena"
+	AuditManager          = "auditmanager"
+	Autoscaling           = "autoscaling"
+	Backup                = "backup"
+	Chime                 = "chime"
+	CloudDirectory        = "clouddirectory"
+	Cloudformation        = "cloudformation"
+	Cloudfront            = "cloudfront"
+	Cloudsearch           = "cloudsearch"
 	Cloudtrail            = "cloudtrail"
 	Codebuild             = "codebuild"
 	Codecommit            = "codecommit"
+	CodeDeploy            = "codedeploy"
+	Comprehend            = "comprehend"
+	ConfigService         = "config"
+	DataBrew              = "databrew"
+	DeviceFarm            = "devicefarm"
+	DevopsGuru            = "devops-guru"
+	Directconnect         = "directconnect"
+	DMS                   = "dms"
 	Dynamodb              = "dynamodb"
 	DynamodbStreams       = "streams.dynamodb"
 	EC2                   = "ec2"
 	ECR                   = "ecr"
+	ECRPublic             = "ecr-public"
 	ECS                   = "ecs"
 	EKS                   = "eks"
 	Elasticache           = "elasticache"
 	ElasticBeanStalk      = "elasticbeanstalk"
 	ElasticFileSystem     = "elasticfilesystem"
-	IAM                   = "iam"
-	Lambda                = "lambda"
-	S3                    = "s3"
-	SQS                   = "sqs"
-	STS                   = "sts"
-	Cloudfront            = "cloudfront"
-	SNS                   = "sns"
-	SSM                   = "ssm"
-	Route53               = "route53"
-	RDS                   = "rds"
 	ELB                   = "elasticloadbalancing"
-	Cloudformation        = "cloudformation"
-	ECRPublic             = "ecr-public"
-	ES                    = "es"
-	Cloudsearch           = "cloudsearch"
-	SageMaker             = "sagemaker"
-	SecretsManager        = "secretsmanager"
-	StorageGateway        = "storagegateway"
-	WAF                   = "waf"
-	WAFRegional           = "waf-regional"
-	Inspector             = "inspector"
 	Email                 = "email"
+	ES                    = "es"
 	Events                = "events"
-	DMS                   = "dms"
+	Forecase              = "forecast"
+	FraudDetector         = "frauddetector"
+	GameLift              = "gamelift"
 	Glue                  = "glue"
 	Grafana               = "grafana"
-	Autoscaling           = "autoscaling"
-	Athena                = "athena"
-	Lightsail             = "lightsail"
-	Logs                  = "logs"
-	Mediaconnect          = "mediaconnect"
-	Appstream2            = "appstream2"
-	AppRunner             = "apprunner"
-	Workspaces            = "workspaces"
-	ConfigService         = "config"
-	KMS                   = "kms"
-	Kinesis               = "kinesis"
-	Kafka                 = "kafka"
-	Route53Resolver       = "route53resolver"
-	Shield                = "shield"
-	Redshift              = "redshift"
-	Directconnect         = "directconnect"
-	DeviceFarm            = "devicefarm"
-	SMS                   = "sms"
-	VoiceID               = "voiceid"
-	Xray                  = "xray"
-	Personalize           = "personalize"
-	Organizations         = "organizations"
-	MemoryDB              = "memory-db"
-	MediaStore            = "mediastore"
-	KafkaConnect          = "kafkaconnect"
-	Inspector2            = "inspector2"
-	Macie2                = "macie2"
-	SecurityHub           = "securityhub"
-	Backup                = "backup"
-	Outposts              = "outposts"
-	NetworkFirewall       = "network-firewall"
-	DevopsGuru            = "devops-guru"
-	Forecase              = "forecast"
 	Greengrass            = "greengrass"
 	GroundStation         = "groundstation"
 	GuardDuty             = "guardduty"
+	IAM                   = "iam"
 	ImageBuilder          = "imagebuilder"
+	Inspector             = "inspector"
+	Inspector2            = "inspector2"
+	IotWireless           = "api.iotwireless"
+	Kafka                 = "kafka"
+	KafkaConnect          = "kafkaconnect"
+	Kinesis               = "kinesis"
+	KinesisVideo          = "kinesisvideo"
+	KMS                   = "kms"
+	Lambda                = "lambda"
 	LicenseManager        = "license-manager"
+	Lightsail             = "lightsail"
+	Logs                  = "logs"
+	Macie2                = "macie2"
+	Mediaconnect          = "mediaconnect"
 	MediaConvert          = "mediaconvert"
 	MediaLive             = "medialive"
+	MediaStore            = "mediastore"
+	MemoryDB              = "memory-db"
 	MigrationHubStratergy = "migrationhub-strategy"
 	MQ                    = "mq"
+	NetworkFirewall       = "network-firewall"
+	Organizations         = "organizations"
+	Outposts              = "outposts"
 	Panorama              = "panorama"
+	Personalize           = "personalize"
 	Proton                = "proton"
+	RDS                   = "rds"
+	Redshift              = "redshift"
 	Robomaker             = "robomaker"
+	Route53               = "route53"
+	Route53Resolver       = "route53resolver"
+	S3                    = "s3"
+	SageMaker             = "sagemaker"
+	SecretsManager        = "secretsmanager"
+	SecurityHub           = "securityhub"
 	ServiceCatalog        = "servicecatalog"
-	Transfer              = "transfer"
-	Transcribe            = "transcribe"
-	Translate             = "translate"
-	Wellarchitected       = "wellarchitected"
-	WorkspacesWeb         = "workspaces-web"
-	KinesisVideo          = "kinesisvideo"
-	IotWireless           = "api.iotwireless"
-	GameLift              = "gamelift"
-	FraudDetector         = "frauddetector"
-	Comprehend            = "comprehend"
-	CodeDeploy            = "codedeploy"
-	CloudDirectory        = "clouddirectory"
-	Chime                 = "chime"
-	WafV2                 = "wafv2"
-	AccessAnalyzers       = "access-analyzer"
-	ACM                   = "acm"
-	AppFlow               = "appflow"
-	AuditManager          = "auditmanager"
-	DataBrew              = "databrew"
+	Shield                = "shield"
+	SMS                   = "sms"
 	Snowball              = "snowball"
+	SNS                   = "sns"
+	SQS                   = "sqs"
+	SSM                   = "ssm"
+	StorageGateway        = "storagegateway"
+	STS                   = "sts"
+	Transcribe            = "transcribe"
+	Transfer              = "transfer"
+	Translate             = "translate"
+	VoiceID               = "voiceid"
+	WAF                   = "waf"
+	WAFRegional           = "waf-regional"
+	WafV2                 = "wafv2"
+	Wellarchitected       = "wellarchitected"
+	Workspaces            = "workspaces"
+	WorkspacesWeb         = "workspaces-web"
+	Xray                  = "xray"
 )
 
 var Services = map[string][]policy.Service{
-	Outposts:              policy.OutpostsPolicies,
-	Snowball:              policy.SnowballPolicies,
-	WafV2:                 policy.WafV2Policies,
 	AccessAnalyzers:       policy.AccessAnalyzersPolicies,
+	LakeFormation:         policy.LakeFormationPolicies,
 	ACM:                   policy.ACMPolicies,
+	APIGateway:            policy.APIGatewayPolicies,
 	AppFlow:               policy.AppFlowPolicies,
+	AppRunner:             policy.AppRunnerPolicies,
+	Appstream2:            policy.Appstream2Policies,
+	Athena:                policy.AthenaPolicies,
 	AuditManager:          policy.AuditManagerPolicies,
-	DataBrew:              policy.DataBrewPolicies,
-	GameLift:              policy.GameLiftPolicies,
+	Autoscaling:           policy.AutoscalingPolicies,
+	Backup:                policy.BackupPolicies,
 	Chime:                 policy.ChimePolicies,
 	CloudDirectory:        policy.CloudDirectoryPolicies,
-	CodeDeploy:            policy.CodeDeployPolicies,
-	IotWireless:           policy.IotWirelessPolicies,
-	Comprehend:            policy.ComprehendPolicies,
-	FraudDetector:         policy.FraudDetectorPolicies,
-	MQ:                    policy.MQPolicies,
-	KinesisVideo:          policy.KinesisVideoPolicies,
-	Wellarchitected:       policy.WellarchitectedPolicies,
-	WorkspacesWeb:         policy.WorkspacesWebPolicies,
-	Proton:                policy.ProtonPolicies,
-	Transfer:              policy.TransferPolicies,
-	Translate:             policy.TranslatePolicies,
-	Transcribe:            policy.TranscribePolicies,
-	ServiceCatalog:        policy.ServiceCatalogPolicies,
-	Robomaker:             policy.RobomakerPolicies,
-	Panorama:              policy.PanoramaPolicies,
-	MediaConvert:          policy.MediaConvertPolicies,
-	MigrationHubStratergy: policy.MigrationHubStratergyPolicies,
-	MediaLive:             policy.MediaLivePolicies,
-	LicenseManager:        policy.LicenseManagerPolicies,
-	NetworkFirewall:       policy.NetworkFirewallPolicies,
-	ImageBuilder:          policy.ImageBuilderPolicies,
-	GuardDuty:             policy.GuardDutyPolicies,
-	GroundStation:         policy.GroundStationPolicies,
-	Greengrass:            policy.GreengrassPolicies,
-	Forecase:              policy.ForecastPolicies,
-	DevopsGuru:            policy.DevopsGuruPolicies,
-	APIGateway:            policy.APIGatewayPolicies,
+	Cloudformation:        policy.CloudformationPolicies,
 	Cloudfront:            policy.CloudfrontPolicies,
+	Cloudsearch:           policy.CloudsearchPolicies,
 	Cloudtrail:            policy.CloudtrailPolicies,
 	Codebuild:             policy.CodebuildPolicies,
 	Codecommit:            policy.CodecommitPolicies,
+	CodeDeploy:            policy.CodeDeployPolicies,
+	Comprehend:            policy.ComprehendPolicies,
+	ConfigService:         policy.ConfigServicePolicies,
+	DataBrew:              policy.DataBrewPolicies,
+	DeviceFarm:            policy.DeviceFarmPolicies,
+	DevopsGuru:            policy.DevopsGuruPolicies,
+	Directconnect:         policy.DirectconnectPolicies,
+	DMS:                   policy.DMSPolicies,
 	Dynamodb:              policy.DynamoDBPolicies,
 	DynamodbStreams:       policy.DynamodbStreamsPolicies,
 	EC2:                   policy.EC2Policies,
 	ECR:                   policy.ECRPolicies,
+	ECRPublic:             policy.ECRPublicPolicies,
 	ECS:                   policy.ECSPolicies,
 	EKS:                   policy.EKSPolicies,
 	Elasticache:           policy.ElasticachePolicies,
 	ElasticBeanStalk:      policy.ElasticBeanStalkPolicies,
 	ElasticFileSystem:     policy.ElasticFileSystemPolicies,
-	IAM:                   policy.IAMPolicies,
-	Lambda:                policy.LambdaPolicies,
-	S3:                    policy.S3Policies,
-	SQS:                   policy.SQSPolicies,
-	STS:                   policy.STSPolicies,
-	SNS:                   policy.SNSPolicies,
-	SSM:                   policy.SSMPolicies,
-	Route53:               policy.Route53Policies,
-	RDS:                   policy.RDSPolicies,
 	ELB:                   policy.ELBPolicies,
-	Cloudformation:        policy.CloudformationPolicies,
-	ECRPublic:             policy.ECRPublicPolicies,
-	ES:                    policy.ESPolicies,
-	Cloudsearch:           policy.CloudsearchPolicies,
-	SageMaker:             policy.SageMakerPolicies,
-	SecretsManager:        policy.SecretsManagerPolicies,
-	StorageGateway:        policy.StorageGatewayPolicies,
-	WAF:                   policy.WAFPolicies,
-	WAFRegional:           policy.WAFRegionalPolicies,
-	Inspector:             policy.InspectorPolicies,
 	Email:                 policy.EmailPolicies,
+	ES:                    policy.ESPolicies,
 	Events:                policy.EventsPolicies,
-	DMS:                   policy.DMSPolicies,
+	Forecase:              policy.ForecastPolicies,
+	FraudDetector:         policy.FraudDetectorPolicies,
+	GameLift:              policy.GameLiftPolicies,
 	Glue:                  policy.GluePolicies,
 	Grafana:               policy.GrafanaPolicies,
-	Autoscaling:           policy.AutoscalingPolicies,
-	Athena:                policy.AthenaPolicies,
+	Greengrass:            policy.GreengrassPolicies,
+	GroundStation:         policy.GroundStationPolicies,
+	GuardDuty:             policy.GuardDutyPolicies,
+	IAM:                   policy.IAMPolicies,
+	ImageBuilder:          policy.ImageBuilderPolicies,
+	Inspector:             policy.InspectorPolicies,
+	Inspector2:            policy.Inspector2Policies,
+	IotWireless:           policy.IotWirelessPolicies,
+	Kafka:                 policy.KafkaPolicies,
+	KafkaConnect:          policy.KafkaConnectPolicies,
+	Kinesis:               policy.KinesisPolicies,
+	KinesisVideo:          policy.KinesisVideoPolicies,
+	KMS:                   policy.KMSPolicies,
+	Lambda:                policy.LambdaPolicies,
+	LicenseManager:        policy.LicenseManagerPolicies,
 	Lightsail:             policy.LightsailPolicies,
 	Logs:                  policy.LogsPolicies,
-	Mediaconnect:          policy.MediaconnectPolicies,
-	Appstream2:            policy.Appstream2Policies,
-	AppRunner:             policy.AppRunnerPolicies,
-	Workspaces:            policy.WorkspacesPolicies,
-	ConfigService:         policy.ConfigServicePolicies,
-	KMS:                   policy.KMSPolicies,
-	Kinesis:               policy.KinesisPolicies,
-	Kafka:                 policy.KafkaPolicies,
-	Route53Resolver:       policy.Route53ResolverPolicies,
-	Shield:                policy.ShieldPolicies,
-	Redshift:              policy.RedshiftPolicies,
-	Directconnect:         policy.DirectconnectPolicies,
-	DeviceFarm:            policy.DeviceFarmPolicies,
-	SMS:                   policy.SMSPolicies,
-	VoiceID:               policy.VoiceIdPolicies,
-	Xray:                  policy.XrayPolicies,
-	Personalize:           policy.PersonalizePolicies,
-	Organizations:         policy.OrganizationsPolicies,
-	MemoryDB:              policy.MemoryDBPolicies,
-	MediaStore:            policy.MediaStorePolicies,
-	KafkaConnect:          policy.KafkaConnectPolicies,
-	Inspector2:            policy.Inspector2Policies,
 	Macie2:                policy.Macie2Policies,
+	Mediaconnect:          policy.MediaconnectPolicies,
+	MediaConvert:          policy.MediaConvertPolicies,
+	MediaLive:             policy.MediaLivePolicies,
+	MediaStore:            policy.MediaStorePolicies,
+	MemoryDB:              policy.MemoryDBPolicies,
+	MigrationHubStratergy: policy.MigrationHubStratergyPolicies,
+	MQ:                    policy.MQPolicies,
+	NetworkFirewall:       policy.NetworkFirewallPolicies,
+	Organizations:         policy.OrganizationsPolicies,
+	Outposts:              policy.OutpostsPolicies,
+	Panorama:              policy.PanoramaPolicies,
+	Personalize:           policy.PersonalizePolicies,
+	Proton:                policy.ProtonPolicies,
+	RDS:                   policy.RDSPolicies,
+	Redshift:              policy.RedshiftPolicies,
+	Robomaker:             policy.RobomakerPolicies,
+	Route53:               policy.Route53Policies,
+	Route53Resolver:       policy.Route53ResolverPolicies,
+	S3:                    policy.S3Policies,
+	SageMaker:             policy.SageMakerPolicies,
+	SecretsManager:        policy.SecretsManagerPolicies,
 	SecurityHub:           policy.SecurityHubPolicies,
-	Backup:                policy.BackupPolicies,
+	ServiceCatalog:        policy.ServiceCatalogPolicies,
+	Shield:                policy.ShieldPolicies,
+	SMS:                   policy.SMSPolicies,
+	Snowball:              policy.SnowballPolicies,
+	SNS:                   policy.SNSPolicies,
+	SQS:                   policy.SQSPolicies,
+	SSM:                   policy.SSMPolicies,
+	StorageGateway:        policy.StorageGatewayPolicies,
+	STS:                   policy.STSPolicies,
+	Transcribe:            policy.TranscribePolicies,
+	Transfer:              policy.TransferPolicies,
+	Translate:             policy.TranslatePolicies,
+	VoiceID:               policy.VoiceIdPolicies,
+	WAF:                   policy.WAFPolicies,
+	WAFRegional:           policy.WAFRegionalPolicies,
+	WafV2:                 policy.WafV2Policies,
+	Wellarchitected:       policy.WellarchitectedPolicies,
+	Workspaces:            policy.WorkspacesPolicies,
+	WorkspacesWeb:         policy.WorkspacesWebPolicies,
+	Xray:                  policy.XrayPolicies,
 }
 
 // GetAWSResources returns a list of AWS services

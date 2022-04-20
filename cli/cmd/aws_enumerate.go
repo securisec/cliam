@@ -2,7 +2,6 @@ package cmd
 
 import (
 	"context"
-	"errors"
 	"os"
 	"sync"
 	"time"
@@ -10,7 +9,6 @@ import (
 	"github.com/securisec/cliam/aws"
 	"github.com/securisec/cliam/aws/scanner"
 	"github.com/securisec/cliam/aws/signer"
-	"github.com/securisec/cliam/logger"
 	"github.com/spf13/cobra"
 )
 
@@ -81,15 +79,13 @@ func awsEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 				// 	spinner.Stop()
 				// }
 
-				if _, err := scanner.EnumerateSpecificResource(ctx, region, s, creds, saveOutput); err != nil {
-					if errors.Is(err, context.DeadlineExceeded) {
-						logger.LoggerStdErr.Error().Str(s.Resource, s.Policy.Permission).Msg("request timed out")
-					} else {
-						logger.LoggerStdErr.Err(err).Msg("")
-					}
+				statusCode, err := scanner.EnumerateSpecificResource(ctx, region, s, creds, saveOutput)
+				if err != nil {
+					cliErrorLogger(s, err)
 					wg.Done()
 					return
 				}
+				cliCompletionLogger(s, statusCode)
 
 				wg.Done()
 

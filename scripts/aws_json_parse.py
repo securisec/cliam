@@ -2,6 +2,7 @@
 # request time is in shapes
 from fileinput import filename
 import json
+from pathlib import Path
 
 def postRequests(action: str, prefix: str) -> str:
     return f"""{{
@@ -32,35 +33,49 @@ def getRequestEndpoint(suffix: str, action: str) -> str:
     Permission: "{action}",
 }},"""
 
+def postFormEndpoint(version: str, action: str) -> str:
+    return f"""{{
+    Method: "POST",
+		FormData: map[string]string{{
+			"Action":  "{action}",
+			"Version": "{version}",
+		}},
+		Headers: map[string]string{{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		}},
+		Permission: "{action}",
+}},"""
 
 
-fileName = '/private/tmp/aws-sdk-js/apis/redshift-2012-12-01.normal.json'
-with open(fileName, 'r') as f:
+
+fileName = '../temp/awsapis/lakeformation-2017-03-31.normal.json'
+path = Path.cwd() / 'iam-enumerator' / fileName
+with open(str(path.resolve()), 'r') as f:
     data = json.loads(f.read())
 
 for operation, v in data['operations'].items():
     # print(operations)
     try:
-        shape = data['shapes'][v['input']['shape']]
-        # if f'{operation}Request' in data['shapes']:
-        #     shape = data['shapes'][f'{operation}Request']
-        # elif f'{operation}Input' in data['shapes']:
-        #     shape = data['shapes'][f'{operation}Input']
-        # elif f'{operation}InputMessage' in data['shapes']:
-        #     shape = data['shapes'][f'{operation}InputMessage']
-        # else:
-        if 'required' in shape:
-            continue
+        if 'input' in v:
+            shape = data['shapes'][v['input']['shape']]
+            if 'required' in shape:
+                continue
 
         http = v['http']
         endpoint = http['requestUri'][1:]
+        isFormEncoded = 'targetPrefix' not in data['metadata']
         if http['method'] == 'POST':
             if http['requestUri'] == '/':
-                print(postRequests(operation, data['metadata']['targetPrefix']))
+                if isFormEncoded:
+                    print(postFormEndpoint(data['metadata']['apiVersion'], operation))
+                else:
+                    print(postRequests(operation, data['metadata']['targetPrefix']))
             else:
                 print(postRequestEndpoint(endpoint, operation))
         elif http['method'] == 'GET':
             print(getRequestEndpoint(endpoint, operation))
         
     except Exception as e:
+        print(operation)
+        raise e
         print(e)

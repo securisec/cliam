@@ -8,7 +8,6 @@ import (
 	"github.com/securisec/cliam/aws"
 	"github.com/securisec/cliam/aws/scanner"
 	"github.com/securisec/cliam/aws/signer"
-	"github.com/securisec/cliam/logger"
 	"github.com/spf13/cobra"
 )
 
@@ -55,11 +54,13 @@ func awsStorageCmdFunc(cmd *cobra.Command, _ []string) {
 					<-max
 				}()
 
-				if _, err := scanner.EnumerateSpecificResource(ctx, region, s, creds, saveOutput); err != nil {
-					logger.LoggerStdErr.Err(err).Msg("")
+				statusCode, err := scanner.EnumerateSpecificResource(ctx, region, s, creds, saveOutput)
+				if err != nil {
+					cliErrorLogger(s, err)
 					wg.Done()
 					return
 				}
+				cliCompletionLogger(s, statusCode)
 
 				wg.Done()
 

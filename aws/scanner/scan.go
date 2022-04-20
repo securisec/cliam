@@ -11,7 +11,6 @@ import (
 	"github.com/securisec/cliam/aws"
 	"github.com/securisec/cliam/aws/policy"
 	"github.com/securisec/cliam/aws/signer"
-	"github.com/securisec/cliam/logger"
 )
 
 var (
@@ -74,12 +73,6 @@ func EnumerateSpecificResource(
 	_, res, body, err := signer.MakeRequest(ctx, region, ser.Resource, &ser.Policy, creds)
 	if err != nil {
 		return 0, err
-	}
-	if res.StatusCode == http.StatusOK {
-		logger.LogSuccess(ser.Resource, ser.Policy.Permission)
-	}
-	if res.StatusCode != 200 && logger.DEBUG {
-		logger.LogDenied(res.StatusCode, ser.Resource, ser.Policy.Permission)
 	}
 
 	if res.StatusCode == http.StatusOK {
