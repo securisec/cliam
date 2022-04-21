@@ -13,9 +13,10 @@ import (
 )
 
 var awsEnumerateCmd = &cobra.Command{
-	Use:   "enumerate [resource...]",
-	Short: "Enumerate permissions for specified AWS resources.",
-	Run:   awsEnumerateCmdFunc,
+	Use:     "enumerate [resource...]",
+	Example: "enumerate s3 lambda iam",
+	Short:   "Enumerate permissions for specified AWS resources.",
+	Run:     awsEnumerateCmdFunc,
 	ValidArgsFunction: func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
 		return aws.GetAWSResources(), cobra.ShellCompDirectiveNoFileComp
 	},

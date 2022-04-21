@@ -20,7 +20,6 @@ func MakeRequest(
 	p *policy.Service,
 	creds *credentials.Credentials,
 ) (*http.Request, *http.Response, []byte, error) {
-	// TODO handle context for clean exit
 	// default options
 	method := "GET"
 	body := strings.NewReader("")

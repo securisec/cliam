@@ -115,12 +115,24 @@ const (
 	Xray                  = "xray"
 	ServiceQuotas         = "servicequotas"
 	IOT                   = "iot"
+	BackupGateway         = "backup-gateway"
+	ComputeOptimizer      = "compute-optimizer"
+	Batch                 = "batch"
+	DataExchange          = "dataexchange"
+	DS                    = "ds"
+	FSX                   = "fsx"
 )
 
 var Services = map[string][]policy.Service{
 	AccessAnalyzers:       policy.AccessAnalyzersPolicies,
+	FSX:                   policy.FSXPolicies,
+	DataExchange:          policy.DataExchangePolicies,
+	DS:                    policy.DSPolicies,
+	ComputeOptimizer:      policy.ComputeOptimizerPolicies,
 	IOT:                   policy.IOTPolicies,
+	BackupGateway:         policy.BackupGatewayPolicies,
 	ServiceQuotas:         policy.ServiceQuotasPolicies,
+	Batch:                 policy.BatchPolicies,
 	LakeFormation:         policy.LakeFormationPolicies,
 	ACM:                   policy.ACMPolicies,
 	APIGateway:            policy.APIGatewayPolicies,

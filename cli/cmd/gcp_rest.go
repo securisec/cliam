@@ -7,7 +7,7 @@ import (
 )
 
 var gcpRestCmd = &cobra.Command{
-	Use:   "rest",
+	Use:   "rest [--parent project=someproject] [resource...]",
 	Short: "GCP permissions using the REST API",
 	Long:  `Unlike enumerate, this command uses the REST API to enumerate permissions.`,
 	PreRun: func(cmd *cobra.Command, args []string) {
