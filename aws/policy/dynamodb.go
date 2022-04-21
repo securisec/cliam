@@ -3,15 +3,16 @@ package policy
 import "github.com/securisec/cliam/shared"
 
 var DynamoDBPolicies = []Service{
-	{
-		Method:   "POST",
-		JsonData: `{}`,
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_JSON,
-			aws_X_AMZ_TARGET:           "DynamoDB_20120810.DescribeEndpoints",
-		},
-		Permission: "DescribeEndpoints",
-	},
+	// disabling this because it seems to be always valid
+	// {
+	// 	Method:   "POST",
+	// 	JsonData: `{}`,
+	// 	Headers: map[string]string{
+	// 		shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_JSON,
+	// 		aws_X_AMZ_TARGET:           "DynamoDB_20120810.DescribeEndpoints",
+	// 	},
+	// 	Permission: "DescribeEndpoints",
+	// },
 	{
 		Method:   "POST",
 		JsonData: `{}`,

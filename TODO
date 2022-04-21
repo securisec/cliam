@@ -25,6 +25,7 @@ Resources:
   - https://docs.aws.amazon.com/index.html
   - https://stackoverflow.com/questions/46818661/whats-the-best-way-to-handle-too-many-open-files
   - git clone https://github.com/aws/aws-sdk-js.git
+  - https://docs.oracle.com/en-us/iaas/api/#/
 
 Archive:
   ✔ read specific aws profile @project(Cli)

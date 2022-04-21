@@ -35,10 +35,13 @@ func init() {
 }
 
 func getCredsAndRegion() (string, string, string, string) {
-	return getKeyID(), getSecretKey(), getToken(), awsRegion
+	return awsGetEnvarOrPrompt("AWS_ACCESS_KEY_ID", "AWS Access Key ID: "),
+		awsGetEnvarOrPrompt("AWS_SECRET_ACCESS_KEY", "AWS Secret Access Key: "),
+		awsGetEnvarOrPrompt("AWS_SESSION_TOKEN", "AWS Session Token: "),
+		awsRegion
 }
 
-func getKeyID() string {
+func awsGetEnvarOrPrompt(envar, message string) string {
 	if awsProfile != "" {
 		// profile is set so we will use the profile
 		return ""
@@ -46,33 +49,8 @@ func getKeyID() string {
 	if awsAccessKeyID != "" {
 		return awsAccessKeyID
 	}
-	if k, ok := os.LookupEnv("AWS_ACCESS_KEY_ID"); ok {
+	if k, ok := os.LookupEnv(envar); ok {
 		return k
 	}
-	return promptInput("AWS Access Key ID: ")
-}
-
-func getSecretKey() string {
-	if awsProfile != "" {
-		// profile is set so we will use the profile
-		return ""
-	}
-	if awsSecretAccessKey != "" {
-		return awsSecretAccessKey
-	}
-	if k, ok := os.LookupEnv("AWS_SECRET_ACCESS_KEY"); ok {
-		return k
-	}
-	return promptInput("AWS Secret Access Key: ")
-}
-
-func getToken() string {
-	if awsProfile != "" {
-		// profile is set so we will use the profile
-		return ""
-	}
-	if k, ok := os.LookupEnv("AWS_SESSION_TOKEN"); ok {
-		return k
-	}
-	return ""
+	return promptInput(message)
 }

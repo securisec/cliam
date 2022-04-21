@@ -5,21 +5,21 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var azureCmd = &cobra.Command{
-	Use:   "azure",
-	Short: "Enumerate Azure credentials for their permissions.",
+var oracleCmd = &cobra.Command{
+	Use:   "oracle",
+	Short: "Enumerate oracle credentials for their permissions.",
 	PreRun: func(cmd *cobra.Command, args []string) {
 		if len(args) == 0 {
 			cmd.Help()
 		}
 	},
 	Run: func(cmd *cobra.Command, args []string) {
-		logger.LoggerStdErr.Error().Msg("azure not implemented yet")
+		logger.LoggerStdErr.Error().Msg("oracle not implemented yet")
 	},
 }
 
 func init() {
-	RootCmd.AddCommand(azureCmd)
+	RootCmd.AddCommand(oracleCmd)
 }
 
 // 🚧 TODO: Implement
