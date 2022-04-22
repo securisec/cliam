@@ -2,8 +2,10 @@ package cmd
 
 import (
 	"context"
+	"fmt"
 	"os"
 	"strings"
+	"sync"
 
 	"github.com/securisec/cliam/gcp"
 	"github.com/securisec/cliam/gcp/scanner"
@@ -47,19 +49,49 @@ func gcpEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 		logger.LoggerStdErr.Err(err).Msg("Failed to get credentials from service account")
 		return
 	}
-	options := scanner.GCPEnumOptions{
-		Creds:     creds,
-		ProjectId: project,
-	}
-	ps, err := scanner.EnumerateMultipleResources(ctx, &options, services...)
-	if err != nil {
-		logger.LoggerStdErr.Err(err).Msg("")
-		return
-	}
-	for _, p := range ps {
-		for _, a := range p.Actions {
-			a = strings.Split(a, ".")[2]
-			logger.LogSuccess(p.Method, a)
+
+	ch := make(chan string)
+	wg := &sync.WaitGroup{}
+	wg.Add(1)
+	max := make(chan struct{}, MaxThreads)
+
+	go func() {
+		defer wg.Done()
+
+		for s := range ch {
+
+			wg.Add(1)
+
+			go func(wg *sync.WaitGroup, ser string) {
+
+				max <- struct{}{}
+				defer func() {
+					<-max
+				}()
+
+				ps, err := scanner.GetPermissionsForResource(ctx, creds, project, ser)
+				if err != nil {
+					logger.LoggerStdErr.Error().Err(err).Msg("")
+					wg.Done()
+					return
+				}
+
+				for _, p := range ps {
+					x := strings.Split(p, ".")
+					logger.LogSuccess(fmt.Sprintf("%s.%s", x[0], x[1]), x[2])
+				}
+
+				wg.Done()
+			}(wg, s)
+
 		}
+
+	}()
+
+	for _, s := range services {
+		ch <- s
 	}
+
+	close(ch)
+	wg.Wait()
 }

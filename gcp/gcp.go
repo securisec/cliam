@@ -42,17 +42,19 @@ func GetGCPResources() []string {
 	return keys
 }
 
-// GetPolicyForResource returns the policies for the given resource
-func GetPolicyForResource(key string) []string {
-	p, ok := policy.Resources[key]
+// GetPoliciesForResource returns the policies for the given resource
+func GetPoliciesForResource(key string) []string {
+	policies, ok := policy.Resources[key]
 	if !ok {
 		return []string{}
 	}
-	hold := make([]string, 0, len(p.Actions))
-	for _, v := range p.Actions {
-		hold = append(hold, fmt.Sprintf("%s.%s", p.Method, v))
+	permissions := make([]string, 0)
+	for _, policy := range policies {
+		for _, action := range policy.Actions {
+			permissions = append(permissions, fmt.Sprintf("%s.%s", policy.Method, action))
+		}
 	}
-	return hold
+	return permissions
 }
 
 // GetAvailableRestKeys returns the policies for the given resource

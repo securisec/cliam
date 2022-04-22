@@ -5,11 +5,10 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
-	"fmt"
 	"io/ioutil"
 	"net/http"
 
-	"github.com/securisec/cliam/gcp/policy"
+	"github.com/securisec/cliam/gcp"
 	"github.com/securisec/cliam/gcp/rest"
 	"google.golang.org/api/cloudresourcemanager/v1"
 	"google.golang.org/api/googleapi"
@@ -18,58 +17,72 @@ import (
 func GetPermissionsForResource(
 	ctx context.Context,
 	service *cloudresourcemanager.Service,
-	projectId string,
-	ps policy.Service,
-) (policy.Service, error) {
-	var permissions []string
-	for _, action := range ps.Actions {
-		permissions = append(permissions, fmt.Sprintf("%s.%s", ps.Method, action))
-	}
-
-	p, err := service.Projects.TestIamPermissions(projectId, &cloudresourcemanager.TestIamPermissionsRequest{
-		Permissions: permissions,
-	}).Do()
-
-	if err != nil {
-		e, ok := err.(*googleapi.Error)
-		if !ok {
-			return policy.Service{}, err
-		}
-		return policy.Service{}, errors.New(e.Message)
-	}
-
-	op := policy.Service{
-		Method:  ps.Method,
-		Actions: p.Permissions,
-	}
-
-	return op, nil
-}
-
-func EnumerateSpecificResource(
-	ctx context.Context,
-	creds *cloudresourcemanager.Service,
 	projectId, resource string,
-) (policy.Service, error) {
-	return GetPermissionsForResource(ctx, creds, projectId, policy.Resources[resource])
-}
+) ([]string, error) {
+	var holdSuccess []string
+	permissions := gcp.GetPoliciesForResource(resource)
 
-func EnumerateMultipleResources(
-	ctx context.Context,
-	options *GCPEnumOptions,
-	resources ...string,
-) ([]policy.Service, error) {
-	var permissions []policy.Service
+	chunkedPolicies := chunkPolicies(permissions, 100)
 
-	for _, resource := range resources {
-		r, err := GetPermissionsForResource(ctx, options.Creds, options.ProjectId, policy.Resources[resource])
+	for _, chunk := range chunkedPolicies {
+		p, err := service.Projects.TestIamPermissions(projectId, &cloudresourcemanager.TestIamPermissionsRequest{
+			Permissions: chunk,
+		}).Do()
 		if err != nil {
-			return nil, err
+			e, ok := err.(*googleapi.Error)
+			if !ok {
+				return holdSuccess, err
+			}
+			return holdSuccess, errors.New(e.Message)
 		}
-		permissions = append(permissions, r)
+		holdSuccess = append(holdSuccess, p.Permissions...)
 	}
-	return permissions, nil
+
+	return holdSuccess, nil
 }
+
+func chunkPolicies(slice []string, chunkSize int) [][]string {
+	var chunks [][]string
+	for {
+		if len(slice) == 0 {
+			break
+		}
+
+		if len(slice) < chunkSize {
+			chunkSize = len(slice)
+		}
+
+		chunks = append(chunks, slice[0:chunkSize])
+		slice = slice[chunkSize:]
+	}
+
+	return chunks
+}
+
+// func EnumerateSpecificResource(
+// 	ctx context.Context,
+// 	creds *cloudresourcemanager.Service,
+// 	projectId, resource string,
+// ) (policy.Service, error) {
+// 	return GetPermissionsForResource(ctx, creds, projectId, policy.Resources[resource])
+// }
+
+// func EnumerateMultipleResources(
+// 	ctx context.Context,
+// 	options *GCPEnumOptions,
+// 	resources ...string,
+// ) ([]policy.Service, error) {
+// 	var permissions []policy.Service
+
+// 	for _, resource := range resources {
+// 		r, err := GetPermissionsForResource(ctx, options.Creds, options.ProjectId, policy.Resources[resource])
+// 		if err != nil {
+// 			return nil, err
+// 		}
+// 		permissions = append(permissions, r)
+// 	}
+// 	return permissions, nil
+// }
 
 // func EnumerateAllResources(
 // 	ctx context.Context,

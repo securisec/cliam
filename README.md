@@ -1,11 +1,11 @@
 # cliam
 Multi cloud iam permissions enumeration tool. Currently covers:
-[x] AWS
-[x] GCP
-[] Azure
-[] Oracle
+- [x] AWS
+- [x] GCP
+- [] Azure
+- [] Oracle
 
-### 🚧 WIP (bugs are expected)
+### 🚧 WIP
 
 [![asciicast](https://asciinema.org/a/goBHd7DlnoOb1x61ljkH2ywc1.png)](https://asciinema.org/a/goBHd7DlnoOb1x61ljkH2ywc1)
 
@@ -15,6 +15,8 @@ Cliam is a simple cloud permissions identifier. There are two main components to
 - `enumerate` which can be used to enumerate specific permissions (recommended)
 - Some service providers have service groups that can check for permissions for a specific subset of services/resources.
 
+## Installation
+Download the latest [release](https://github.com/securisec/cliam/releases). DEV tags are current, but not stable.
 
 ## Usage
 Cliam works with credentials obtained from the services well known envars or from passing the commonly required flags from the cli.
@@ -42,9 +44,6 @@ Additional help topics:
 
 Use "cliam [command] --help" for more information about a command.
 ```
-
-## Design and extending
-In order to persue speed, cliam has the requests hardcoded. 
 
 ### AWS
 Uses the AWS rest api to make a signed request using the passed in credentials. This greatly adds speed, but makes it a bit more challenging to keep up with adding new permissions. The issue of scale is that AWS uses 3 - 4 variety of requests at the service level

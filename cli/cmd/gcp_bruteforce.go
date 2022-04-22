@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"context"
+	"fmt"
 	"strings"
 	"sync"
 
@@ -42,11 +43,6 @@ func gcpBruteforceCmdFunc(cmd *cobra.Command, _ []string) {
 	// the is the maximum concurrent goroutines
 	max := make(chan struct{}, MaxThreads)
 
-	options := scanner.GCPEnumOptions{
-		Creds:     creds,
-		ProjectId: project,
-	}
-
 	go func() {
 		defer wg.Done()
 		for s := range ch {
@@ -61,17 +57,16 @@ func gcpBruteforceCmdFunc(cmd *cobra.Command, _ []string) {
 					<-max
 				}()
 
-				ps, err := scanner.EnumerateMultipleResources(ctx, &options, ser)
+				ps, err := scanner.GetPermissionsForResource(ctx, creds, project, ser)
 				if err != nil {
 					logger.LoggerStdErr.Error().Err(err).Msg("")
 					wg.Done()
 					return
 				}
+
 				for _, p := range ps {
-					for _, a := range p.Actions {
-						a = strings.Split(a, ".")[2]
-						logger.LogSuccess(p.Method, a)
-					}
+					x := strings.Split(p, ".")
+					logger.LogSuccess(fmt.Sprintf("%s.%s", x[0], x[1]), x[2])
 				}
 
 				// done with this goroutine
