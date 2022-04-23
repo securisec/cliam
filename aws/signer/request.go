@@ -20,7 +20,6 @@ func MakeRequest(
 	region, service string,
 	p *policy.Service,
 	creds *credentials.Credentials,
-	requestURL string,
 ) (*http.Request, *http.Response, []byte, error) {
 	// default options
 	method := "GET"
@@ -47,7 +46,7 @@ func MakeRequest(
 		body = strings.NewReader(string(o))
 	}
 	// create request
-	req, err := http.NewRequestWithContext(ctx, method, requestURL, body)
+	req, err := http.NewRequestWithContext(ctx, method, p.ReqURL, body)
 	if err != nil {
 		return nil, nil, nil, err
 	}
@@ -68,7 +67,7 @@ func MakeRequest(
 	service = serviceSafetyNet(service)
 	// safety net for certain regions
 	region = policy.AwsRegionSafetyNet(service, region)
-	logger.LogDebugVerbose("url", requestURL)
+	logger.LogDebugVerbose("url", p.ReqURL)
 	// sign request
 	if _, err := signer.Sign(req, body, service, region, time.Now()); err != nil {
 		return nil, nil, nil, err

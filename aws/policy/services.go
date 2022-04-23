@@ -42,6 +42,7 @@ type Service struct {
 	ExtraComponentName string
 	// ExtraComponentBodyKey is used when it ia form or json data
 	ExtraComponentBodyKey string
+	ReqURL                string
 }
 
 // GetRequestURL returns the request url for the service
