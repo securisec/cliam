@@ -79,10 +79,7 @@ func awsServerlessCmdFunc(cmd *cobra.Command, _ []string) {
 		aws.Dynamodb,
 	}
 
-	enumerate := scanner.GetServiceMap(resources)
-	for _, e := range enumerate {
-		ch <- e
-	}
+	awsSendToChannel(ch, resources, awsKnownResourceName)
 
 	close(ch)
 	wg.Wait()

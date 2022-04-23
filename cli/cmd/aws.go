@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"os"
 
+	"github.com/securisec/cliam/aws/scanner"
 	"github.com/securisec/cliam/logger"
 	"github.com/spf13/cobra"
 )
@@ -21,12 +22,13 @@ var awsCmd = &cobra.Command{
 }
 
 var (
-	awsAccessKeyID     string
-	awsSecretAccessKey string
-	awsSessionToken    string
-	awsRegion          string
-	awsProfile         string
-	awsSessionJson     string
+	awsAccessKeyID       string
+	awsSecretAccessKey   string
+	awsSessionToken      string
+	awsRegion            string
+	awsProfile           string
+	awsSessionJson       string
+	awsKnownResourceName string
 )
 
 func init() {
@@ -37,6 +39,7 @@ func init() {
 	awsCmd.PersistentFlags().StringVar(&awsRegion, "region", "us-east-1", "AWS Region")
 	awsCmd.PersistentFlags().StringVar(&awsProfile, "profile", "", "AWS Profile. When profile is set, access-key-id, secret-access-key, and session-token are ignored.")
 	awsCmd.PersistentFlags().StringVar(&awsSessionJson, "session-json", "", "AWS Session JSON file. This flag attempts to read session information from the specified file. Helpful with temporary credentials.")
+	awsCmd.PersistentFlags().StringVar(&awsKnownResourceName, "known-resource-name", "", "AWS Resource Name. When known-resource-name is set, additional permissions where a resource needs to be specified is enumerated.")
 }
 
 // return the key, secret, token and region
@@ -76,6 +79,26 @@ func awsReadSessionJsonFile() (awsSessionJsonStruct, error) {
 	}
 	err = json.Unmarshal(o, &s)
 	return s, err
+}
+
+func awsSendToChannel(ch chan scanner.ServiceMap, resources []string, word string) {
+	var extras []scanner.ServiceMap
+	enumerate := scanner.GetServiceMap(resources)
+	for _, e := range enumerate {
+		if e.Policy.IsExtra {
+			extras = append(extras, e)
+		} else {
+			ch <- e
+		}
+	}
+
+	// if a known resource name is set, we will enumerate the extra permissions
+	if word != "" && len(extras) > 0 {
+		for _, ee := range extras {
+			ee.Policy.ExtraWord = word
+			ch <- ee
+		}
+	}
 }
 
 type awsSessionJsonStruct struct {

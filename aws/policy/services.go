@@ -34,6 +34,10 @@ type Service struct {
 	IgnoreRegion bool `json:"ignoreRegion,omitempty"`
 	// QueryParams query params
 	QueryParams map[string]string `json:"queryParams,omitempty"`
+	// IsExtra allows passing a word to enumerate additional policies
+	IsExtra           bool
+	ExtraWord         string
+	ExtraUrlComponent string
 }
 
 // GetRequestURL returns the request url for the service

@@ -77,10 +77,7 @@ func awsCommonCmdFunc(cmd *cobra.Command, _ []string) {
 		aws.EC2,
 	}
 
-	enumerate := scanner.GetServiceMap(resources)
-	for _, e := range enumerate {
-		ch <- e
-	}
+	awsSendToChannel(ch, resources, awsKnownResourceName)
 
 	close(ch)
 	wg.Wait()

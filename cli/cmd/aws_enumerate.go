@@ -96,11 +96,7 @@ func awsEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 		}
 	}()
 
-	enumerate := scanner.GetServiceMap(resources)
-	// total = len(enumerate)
-	for _, e := range enumerate {
-		ch <- e
-	}
+	awsSendToChannel(ch, resources, awsKnownResourceName)
 
 	close(ch)
 	wg.Wait()
