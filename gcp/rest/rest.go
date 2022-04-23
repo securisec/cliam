@@ -211,7 +211,14 @@ var RestApiCalls = map[string][]RestCall{
 			URL:              "https://cloudfunctions.googleapis.com/v1/projects/{{.ParentID}}/locations",
 		},
 	},
-	CloudIot:          {},
+	CloudIot: {
+		{
+			PermissionMethod: joinString(CloudIot, "projects", "locations", "registries"),
+			ReqMethod:        "GET",
+			Action:           "list",
+			URL:              "https://cloudiot.googleapis.com/v1/projects/{{.ParentID}}/locations/{{.Region}}/registries",
+		},
+	},
 	CloudIotToken:     {},
 	CloudJobDiscovery: {},
 	CloudKMS: {
@@ -258,12 +265,32 @@ var RestApiCalls = map[string][]RestCall{
 			URL:              "https://sqladmin.googleapis.com/v1/projects/{{.ParentID}}/operations",
 		},
 	},
-	CloudTasks:       {},
+	CloudTasks: {
+		{
+			PermissionMethod: joinString(CloudTasks, "projects", "locations"),
+			ReqMethod:        "GET",
+			Action:           "list",
+			URL:              "https://cloudtasks.googleapis.com/v2/projects/{{.ParentID}}/locations",
+		},
+	},
 	CloudTestService: {},
 	CloudToolResults: {},
-	CloudTrace:       {},
-	CloudTranslate:   {},
-	Composer:         {},
+	CloudTrace: {
+		{
+			PermissionMethod: joinString(CloudTrace, "projects", "traces"),
+			ReqMethod:        "GET",
+			Action:           "list",
+			URL:              "https://cloudtrace.googleapis.com/v1/projects/{{.ParentID}}/traces",
+		},
+		{
+			PermissionMethod: joinString(CloudTrace, "projects", "traceSinks"),
+			ReqMethod:        "GET",
+			Action:           "list",
+			URL:              "https://cloudtrace.googleapis.com/v2beta1/projects/{{.ParentID}}/traceSinks",
+		},
+	},
+	CloudTranslate: {},
+	Composer:       {},
 	Compute: {
 		{
 			PermissionMethod: "compute.instances",
@@ -847,10 +874,78 @@ var RestApiCalls = map[string][]RestCall{
 			URL:              "https://datafusion.googleapis.com/v1/projects/{{.ParentID}}/locations",
 		},
 	},
-	DataStore:         {},
+	DataStore: {
+		{
+			PermissionMethod: joinString(DataStore, "projects", "operations"),
+			ReqMethod:        "GET",
+			Action:           "list",
+			URL:              "https://datastore.googleapis.com/v1/projects/{{.ParentID}}/operations",
+		},
+	},
 	DeploymentManager: {},
 	DialogFlow:        {},
-	Dlp:               {},
+	Dlp: {
+		{
+			PermissionMethod: joinString(Dlp, "deidentifyTemplates"),
+			ReqMethod:        "GET",
+			Action:           "list",
+			URL:              "https://dlp.googleapis.com/v2/projects/{{.ParentID}}/deidentifyTemplates",
+		},
+		{
+			PermissionMethod: joinString(Dlp, "dlpJobs"),
+			ReqMethod:        "GET",
+			Action:           "list",
+			URL:              "https://dlp.googleapis.com/v2/projects/{{.ParentID}}/dlpJobs",
+		},
+		{
+			PermissionMethod: joinString(Dlp, "inspectTemplates"),
+			ReqMethod:        "GET",
+			Action:           "list",
+			URL:              "https://dlp.googleapis.com/v2/projects/{{.ParentID}}/inspectTemplates",
+		},
+		{
+			PermissionMethod: joinString(Dlp, "jobTriggers"),
+			ReqMethod:        "GET",
+			Action:           "list",
+			URL:              "https://dlp.googleapis.com/v2/projects/{{.ParentID}}/jobTriggers",
+		},
+		{
+			PermissionMethod: joinString(Dlp, "storedInfoTypes"),
+			ReqMethod:        "GET",
+			Action:           "list",
+			URL:              "https://dlp.googleapis.com/v2/projects/{{.ParentID}}/storedInfoTypes",
+		},
+		{
+			PermissionMethod: joinString(Dlp, "deidentifyTemplates"),
+			ReqMethod:        "GET",
+			Action:           "list",
+			URL:              "https://dlp.googleapis.com/v2/projects/{{.ParentID}}/locations/{{.Region}}/deidentifyTemplates",
+		},
+		{
+			PermissionMethod: joinString(Dlp, "dlpJobs"),
+			ReqMethod:        "GET",
+			Action:           "list",
+			URL:              "https://dlp.googleapis.com/v2/projects/{{.ParentID}}/locations/{{.Region}}/dlpJobs",
+		},
+		{
+			PermissionMethod: joinString(Dlp, "inspectTemplates"),
+			ReqMethod:        "GET",
+			Action:           "list",
+			URL:              "https://dlp.googleapis.com/v2/projects/{{.ParentID}}/locations/{{.Region}}/inspectTemplates",
+		},
+		{
+			PermissionMethod: joinString(Dlp, "jobTriggers"),
+			ReqMethod:        "GET",
+			Action:           "list",
+			URL:              "https://dlp.googleapis.com/v2/projects/{{.ParentID}}/locations/{{.Region}}/jobTriggers",
+		},
+		{
+			PermissionMethod: joinString(Dlp, "storedInfoTypes"),
+			ReqMethod:        "GET",
+			Action:           "list",
+			URL:              "https://dlp.googleapis.com/v2/projects/{{.ParentID}}/locations/{{.Region}}/storedInfoTypes",
+		},
+	},
 	Dns: {
 		{
 			PermissionMethod: joinString(Dns, "managedZones"),
@@ -873,7 +968,32 @@ var RestApiCalls = map[string][]RestCall{
 	},
 	Endpoints:      {},
 	ErrorReporting: {},
-	File:           {},
+	File: {
+		{
+			PermissionMethod: joinString(File, "projects", "locations"),
+			ReqMethod:        "GET",
+			Action:           "list",
+			URL:              "https://file.googleapis.com/v1/projects/{{.ParentID}}/locations",
+		},
+		{
+			PermissionMethod: joinString(File, "projects", "locations", "backups"),
+			ReqMethod:        "GET",
+			Action:           "list",
+			URL:              "https://file.googleapis.com/v1/projects/{{.ParentID}}/locations/{{.Region}}/backups",
+		},
+		{
+			PermissionMethod: joinString(File, "projects", "locations", "instances"),
+			ReqMethod:        "GET",
+			Action:           "list",
+			URL:              "https://file.googleapis.com/v1/projects/{{.ParentID}}/locations/{{.Region}}/instances",
+		},
+		{
+			PermissionMethod: joinString(File, "projects", "locations", "operations"),
+			ReqMethod:        "GET",
+			Action:           "list",
+			URL:              "https://file.googleapis.com/v1/projects/{{.ParentID}}/locations/{{.Region}}/operations",
+		},
+	},
 	Firebase: {
 		// https://firebase.google.com/docs/reference/hosting/rest
 		{
