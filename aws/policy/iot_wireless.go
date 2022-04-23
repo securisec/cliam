@@ -6,7 +6,7 @@ var IotWirelessPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "device-profiles",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -15,7 +15,7 @@ var IotWirelessPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "service-profiles",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -79,7 +79,7 @@ var IotWirelessPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "log-levels",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},

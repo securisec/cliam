@@ -2,6 +2,7 @@ package signer
 
 import (
 	"context"
+	"encoding/json"
 	"io/ioutil"
 	"net/http"
 	"net/url"
@@ -28,15 +29,11 @@ func MakeRequest(
 		method = p.Method
 	}
 
-	if p.JsonData != "" {
-		body = strings.NewReader(p.JsonData)
-	}
-
 	// get request requestURL
 	requestURL := p.GetRequestURL(region, service)
 
 	// if form data, set body
-	if p.FormData != nil {
+	if method != "GET" && len(p.FormData) > 0 {
 		form := url.Values{}
 		for k, v := range p.FormData {
 			form.Add(k, v)
@@ -44,6 +41,13 @@ func MakeRequest(
 		body = strings.NewReader(form.Encode())
 	}
 
+	if method != "GET" && len(p.FormData) == 0 {
+		o, err := json.Marshal(p.JsonData)
+		if err != nil {
+			return nil, nil, nil, err
+		}
+		body = strings.NewReader(string(o))
+	}
 	// create request
 	req, err := http.NewRequestWithContext(ctx, method, requestURL, body)
 	if err != nil {

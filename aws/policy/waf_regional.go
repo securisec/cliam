@@ -5,7 +5,7 @@ import "github.com/securisec/cliam/shared"
 var WAFRegionalPolicies = []Service{
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 			aws_X_AMZ_TARGET:           "AWSWAF_Regional_20161128.GetChangeToken",
@@ -14,7 +14,7 @@ var WAFRegionalPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 			aws_X_AMZ_TARGET:           "AWSWAF_Regional_20161128.ListActivatedRulesInRuleGroup",
@@ -23,7 +23,7 @@ var WAFRegionalPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 			aws_X_AMZ_TARGET:           "AWSWAF_Regional_20161128.ListByteMatchSets",
@@ -32,7 +32,7 @@ var WAFRegionalPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 			aws_X_AMZ_TARGET:           "AWSWAF_Regional_20161128.ListGeoMatchSets",
@@ -41,7 +41,7 @@ var WAFRegionalPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 			aws_X_AMZ_TARGET:           "AWSWAF_Regional_20161128.ListIpSets",
@@ -50,7 +50,7 @@ var WAFRegionalPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 			aws_X_AMZ_TARGET:           "AWSWAF_Regional_20161128.ListLoggingConfigurations",
@@ -59,7 +59,7 @@ var WAFRegionalPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 			aws_X_AMZ_TARGET:           "AWSWAF_Regional_20161128.ListRateBasedRules",
@@ -68,7 +68,7 @@ var WAFRegionalPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 			aws_X_AMZ_TARGET:           "AWSWAF_Regional_20161128.ListRegexMatchSets",
@@ -77,7 +77,7 @@ var WAFRegionalPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 			aws_X_AMZ_TARGET:           "AWSWAF_Regional_20161128.ListRegexPatternSets",
@@ -86,7 +86,7 @@ var WAFRegionalPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 			aws_X_AMZ_TARGET:           "AWSWAF_Regional_20161128.ListRuleGroups",
@@ -95,7 +95,7 @@ var WAFRegionalPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 			aws_X_AMZ_TARGET:           "AWSWAF_Regional_20161128.ListRules",
@@ -104,7 +104,7 @@ var WAFRegionalPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 			aws_X_AMZ_TARGET:           "AWSWAF_Regional_20161128.ListSizeConstraintSets",
@@ -113,7 +113,7 @@ var WAFRegionalPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 			aws_X_AMZ_TARGET:           "AWSWAF_Regional_20161128.ListSqlInjectionMatchSets",
@@ -122,7 +122,7 @@ var WAFRegionalPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 			aws_X_AMZ_TARGET:           "AWSWAF_Regional_20161128.ListSubscribedRuleGroups",
@@ -131,7 +131,7 @@ var WAFRegionalPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 			aws_X_AMZ_TARGET:           "AWSWAF_Regional_20161128.ListXssMatchSets",

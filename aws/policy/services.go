@@ -27,7 +27,7 @@ type Service struct {
 	// FormData for form based requests
 	FormData map[string]string `json:"formData,omitempty"`
 	// JsonData for json based requests
-	JsonData string `json:"jsonData,omitempty"`
+	JsonData map[string]string `json:"jsonData,omitempty"`
 	// Headers additional headers
 	Headers map[string]string `json:"headers,omitempty"`
 	// IgnoreRegion some services are global

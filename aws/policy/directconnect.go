@@ -5,7 +5,7 @@ import "github.com/securisec/cliam/shared"
 var DirectconnectPolicies = []Service{
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 			aws_X_AMZ_TARGET:           "OvertureService.DescribeConnections",
@@ -14,7 +14,7 @@ var DirectconnectPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 			aws_X_AMZ_TARGET:           "OvertureService.DescribeCustomerMetadata",
@@ -23,7 +23,7 @@ var DirectconnectPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 			aws_X_AMZ_TARGET:           "OvertureService.DescribeDirectConnectGatewayAssociationProposals",
@@ -32,7 +32,7 @@ var DirectconnectPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 			aws_X_AMZ_TARGET:           "OvertureService.DescribeDirectConnectGatewayAssociations",
@@ -41,7 +41,7 @@ var DirectconnectPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 			aws_X_AMZ_TARGET:           "OvertureService.DescribeDirectConnectGatewayAttachments",
@@ -50,7 +50,7 @@ var DirectconnectPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 			aws_X_AMZ_TARGET:           "OvertureService.DescribeDirectConnectGateways",
@@ -59,7 +59,7 @@ var DirectconnectPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 			aws_X_AMZ_TARGET:           "OvertureService.DescribeInterconnects",
@@ -68,7 +68,7 @@ var DirectconnectPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 			aws_X_AMZ_TARGET:           "OvertureService.DescribeLags",
@@ -77,7 +77,7 @@ var DirectconnectPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 			aws_X_AMZ_TARGET:           "OvertureService.DescribeLocations",
@@ -86,7 +86,7 @@ var DirectconnectPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 			aws_X_AMZ_TARGET:           "OvertureService.DescribeVirtualGateways",
@@ -95,7 +95,7 @@ var DirectconnectPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 			aws_X_AMZ_TARGET:           "OvertureService.DescribeVirtualInterfaces",
@@ -104,7 +104,7 @@ var DirectconnectPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 			aws_X_AMZ_TARGET:           "OvertureService.ListVirtualInterfaceTestHistory",

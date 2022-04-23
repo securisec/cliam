@@ -5,7 +5,7 @@ import "github.com/securisec/cliam/shared"
 var OrganizationsPolicies = []Service{
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 			aws_X_AMZ_TARGET:           "AWSOrganizationsV20161128.DescribeOrganization",
@@ -14,7 +14,7 @@ var OrganizationsPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 			aws_X_AMZ_TARGET:           "AWSOrganizationsV20161128.ListAccounts",
@@ -23,7 +23,7 @@ var OrganizationsPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 			aws_X_AMZ_TARGET:           "AWSOrganizationsV20161128.ListAwsServiceAccessForOrganization",
@@ -32,7 +32,7 @@ var OrganizationsPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 			aws_X_AMZ_TARGET:           "AWSOrganizationsV20161128.ListCreateAccountStatus",
@@ -41,7 +41,7 @@ var OrganizationsPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 			aws_X_AMZ_TARGET:           "AWSOrganizationsV20161128.ListDelegatedAdministrators",
@@ -50,7 +50,7 @@ var OrganizationsPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 			aws_X_AMZ_TARGET:           "AWSOrganizationsV20161128.ListHandshakesForAccount",
@@ -59,7 +59,7 @@ var OrganizationsPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 			aws_X_AMZ_TARGET:           "AWSOrganizationsV20161128.ListHandshakesForOrganization",
@@ -68,7 +68,7 @@ var OrganizationsPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 			aws_X_AMZ_TARGET:           "AWSOrganizationsV20161128.ListRoots",

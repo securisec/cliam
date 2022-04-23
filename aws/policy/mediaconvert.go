@@ -6,7 +6,7 @@ var MediaConvertPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "2017-08-29/endpoints",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},

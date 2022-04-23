@@ -6,7 +6,7 @@ var ECRPublicPolicies = []Service{
 	{
 		Permission: "DescribeRepositories",
 		Method:     "POST",
-		JsonData:   `{}`,
+		JsonData:   map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 			"x-amz-target":             "SpencerFrontendService.DescribeRepositories",
@@ -15,7 +15,7 @@ var ECRPublicPolicies = []Service{
 	{
 		Permission: "DescribeRegistries",
 		Method:     "POST",
-		JsonData:   `{}`,
+		JsonData:   map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 			"x-amz-target":             "SpencerFrontendService.DescribeRegistries",
@@ -24,7 +24,7 @@ var ECRPublicPolicies = []Service{
 	{
 		Permission: "GetAuthorizationToken",
 		Method:     "POST",
-		JsonData:   `{}`,
+		JsonData:   map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 			"x-amz-target":             "SpencerFrontendService.GetAuthorizationToken",
@@ -33,7 +33,7 @@ var ECRPublicPolicies = []Service{
 	{
 		Permission: "GetRegistryCatalogData",
 		Method:     "POST",
-		JsonData:   `{}`,
+		JsonData:   map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 			"x-amz-target":             "SpencerFrontendService.GetRegistryCatalogData",

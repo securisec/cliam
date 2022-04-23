@@ -6,7 +6,7 @@ var APIGatewayPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "apikeys",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -15,7 +15,7 @@ var APIGatewayPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "clientcertificates",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},

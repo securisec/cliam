@@ -6,7 +6,7 @@ var ImageBuilderPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "ListComponents",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -15,7 +15,7 @@ var ImageBuilderPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "ListContainerRecipes",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -24,7 +24,7 @@ var ImageBuilderPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "ListDistributionConfigurations",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -33,7 +33,7 @@ var ImageBuilderPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "ListImagePipelines",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -42,7 +42,7 @@ var ImageBuilderPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "ListImageRecipes",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -51,7 +51,7 @@ var ImageBuilderPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "ListImages",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -60,7 +60,7 @@ var ImageBuilderPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "ListInfrastructureConfigurations",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},

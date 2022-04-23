@@ -6,7 +6,7 @@ var Macie2Policies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "custom-data-identifiers/get",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -15,7 +15,7 @@ var Macie2Policies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "findings/sample",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -24,7 +24,7 @@ var Macie2Policies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "datasources/s3",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -38,7 +38,7 @@ var Macie2Policies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "administrator/disassociate",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -47,7 +47,7 @@ var Macie2Policies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "master/disassociate",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -56,7 +56,7 @@ var Macie2Policies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "macie",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -70,7 +70,7 @@ var Macie2Policies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "datasources/s3/statistics",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -104,7 +104,7 @@ var Macie2Policies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "usage/statistics",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -118,7 +118,7 @@ var Macie2Policies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "jobs/list",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -127,7 +127,7 @@ var Macie2Policies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "custom-data-identifiers/list",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -136,7 +136,7 @@ var Macie2Policies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "findings",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -155,7 +155,7 @@ var Macie2Policies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "managed-data-identifiers/list",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -174,7 +174,7 @@ var Macie2Policies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "datasources/search-resources",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},

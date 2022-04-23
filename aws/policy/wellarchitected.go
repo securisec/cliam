@@ -11,7 +11,7 @@ var WellarchitectedPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "notifications",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -25,7 +25,7 @@ var WellarchitectedPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "workloadsSummaries",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},

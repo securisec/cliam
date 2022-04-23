@@ -6,7 +6,7 @@ var CloudDirectoryPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "amazonclouddirectory/2017-01-11/schema/development",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -15,7 +15,7 @@ var CloudDirectoryPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "amazonclouddirectory/2017-01-11/directory/list",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -24,7 +24,7 @@ var CloudDirectoryPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "amazonclouddirectory/2017-01-11/schema/managed",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -33,7 +33,7 @@ var CloudDirectoryPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "amazonclouddirectory/2017-01-11/schema/published",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},

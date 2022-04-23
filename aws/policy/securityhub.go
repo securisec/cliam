@@ -6,7 +6,7 @@ var SecurityHubPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "actionTargets/get",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -35,7 +35,7 @@ var SecurityHubPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "administrator/disassociate",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -44,7 +44,7 @@ var SecurityHubPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "master/disassociate",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -53,7 +53,7 @@ var SecurityHubPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "accounts",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -67,7 +67,7 @@ var SecurityHubPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "standards/get",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -76,7 +76,7 @@ var SecurityHubPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "findings",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -85,7 +85,7 @@ var SecurityHubPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "insights/get",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},

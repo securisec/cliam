@@ -6,7 +6,7 @@ var GreengrassPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "greengrass/definition/connectors",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -15,7 +15,7 @@ var GreengrassPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "greengrass/definition/cores",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -24,7 +24,7 @@ var GreengrassPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "greengrass/definition/devices",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -33,7 +33,7 @@ var GreengrassPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "greengrass/definition/functions",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -42,7 +42,7 @@ var GreengrassPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "greengrass/definition/loggers",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -51,7 +51,7 @@ var GreengrassPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "greengrass/definition/resources",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -60,7 +60,7 @@ var GreengrassPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "greengrass/definition/subscriptions",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},

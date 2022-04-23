@@ -6,7 +6,7 @@ var WorkspacesWebPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "portals",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},

@@ -26,7 +26,7 @@ var ESPolicies = []Service{
 	{
 		ServiceSuffix: "2021-01-01/opensearch/cc/inboundConnection/search",
 		Method:        "POST",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -35,7 +35,7 @@ var ESPolicies = []Service{
 	{
 		ServiceSuffix: "2021-01-01/opensearch/cc/outboundConnection/search",
 		Method:        "POST",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -44,7 +44,7 @@ var ESPolicies = []Service{
 	{
 		ServiceSuffix: "2021-01-01/packages/describe",
 		Method:        "POST",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -53,7 +53,7 @@ var ESPolicies = []Service{
 	{
 		ServiceSuffix: "2021-01-01/opensearch/cc/inboundConnection/search",
 		Method:        "POST",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -62,7 +62,7 @@ var ESPolicies = []Service{
 	{
 		ServiceSuffix: "2021-01-01/opensearch/cc/outboundConnection/search",
 		Method:        "POST",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -71,7 +71,7 @@ var ESPolicies = []Service{
 	{
 		ServiceSuffix: "2015-01-01/packages/describe",
 		Method:        "POST",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},

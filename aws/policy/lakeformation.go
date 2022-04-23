@@ -6,7 +6,7 @@ var LakeFormationPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "DeleteDataCellsFilter",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -15,7 +15,7 @@ var LakeFormationPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "ExtendTransaction",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -24,7 +24,7 @@ var LakeFormationPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "GetDataLakeSettings",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -33,7 +33,7 @@ var LakeFormationPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "ListDataCellsFilter",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -42,7 +42,7 @@ var LakeFormationPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "ListLFTags",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -51,7 +51,7 @@ var LakeFormationPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "ListPermissions",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -60,7 +60,7 @@ var LakeFormationPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "ListResources",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -69,7 +69,7 @@ var LakeFormationPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "ListTransactions",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -78,7 +78,7 @@ var LakeFormationPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "StartTransaction",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},

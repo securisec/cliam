@@ -6,7 +6,7 @@ var DynamoDBPolicies = []Service{
 	// disabling this because it seems to be always valid
 	// {
 	// 	Method:   "POST",
-	// 	JsonData: `{}`,
+	// 	JsonData: map[string]string{},
 	// 	Headers: map[string]string{
 	// 		shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_JSON,
 	// 		aws_X_AMZ_TARGET:           "DynamoDB_20120810.DescribeEndpoints",
@@ -15,7 +15,7 @@ var DynamoDBPolicies = []Service{
 	// },
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_JSON,
 			aws_X_AMZ_TARGET:           "DynamoDB_20120810.DescribeLimits",
@@ -24,7 +24,7 @@ var DynamoDBPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_JSON,
 			aws_X_AMZ_TARGET:           "DynamoDB_20120810.ListBackups",
@@ -33,7 +33,7 @@ var DynamoDBPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_JSON,
 			aws_X_AMZ_TARGET:           "DynamoDB_20120810.ListContributorInsights",
@@ -42,7 +42,7 @@ var DynamoDBPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_JSON,
 			aws_X_AMZ_TARGET:           "DynamoDB_20120810.ListExports",
@@ -51,7 +51,7 @@ var DynamoDBPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_JSON,
 			aws_X_AMZ_TARGET:           "DynamoDB_20120810.ListGlobalTables",
@@ -60,7 +60,7 @@ var DynamoDBPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_JSON,
 			aws_X_AMZ_TARGET:           "DynamoDB_20120810.ListTables",

@@ -6,7 +6,7 @@ var XrayPolicies = []Service{
 	{
 		ServiceSuffix: "Groups",
 		Method:        "POST",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -15,7 +15,7 @@ var XrayPolicies = []Service{
 	{
 		ServiceSuffix: "SamplingStatisticSummaries",
 		Method:        "POST",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -24,7 +24,7 @@ var XrayPolicies = []Service{
 	{
 		ServiceSuffix: "GetSamplingRules",
 		Method:        "POST",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -33,7 +33,7 @@ var XrayPolicies = []Service{
 	{
 		ServiceSuffix: "EncryptionConfig",
 		Method:        "POST",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},

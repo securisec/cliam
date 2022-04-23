@@ -6,7 +6,7 @@ var KinesisVideoPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "describeSignalingChannel",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -15,7 +15,7 @@ var KinesisVideoPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "describeStream",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -24,7 +24,7 @@ var KinesisVideoPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "listSignalingChannels",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -33,7 +33,7 @@ var KinesisVideoPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "listStreams",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -42,7 +42,7 @@ var KinesisVideoPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "listTagsForStream",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},

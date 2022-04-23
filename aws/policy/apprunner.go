@@ -5,7 +5,7 @@ import "github.com/securisec/cliam/shared"
 var AppRunnerPolicies = []Service{
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: "application/x-amz-json-1.0",
 			aws_X_AMZ_TARGET:           "AppRunner.ListAutoScalingConfigurations",
@@ -14,7 +14,7 @@ var AppRunnerPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: "application/x-amz-json-1.0",
 			aws_X_AMZ_TARGET:           "AppRunner.ListConnections",
@@ -23,7 +23,7 @@ var AppRunnerPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: "application/x-amz-json-1.0",
 			aws_X_AMZ_TARGET:           "AppRunner.ListObservabilityConfigurations",
@@ -32,7 +32,7 @@ var AppRunnerPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: "application/x-amz-json-1.0",
 			aws_X_AMZ_TARGET:           "AppRunner.ListServices",
@@ -41,7 +41,7 @@ var AppRunnerPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: "application/x-amz-json-1.0",
 			aws_X_AMZ_TARGET:           "AppRunner.ListVpcConnectors",

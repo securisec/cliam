@@ -6,7 +6,7 @@ var AuditManagerPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "account/deregisterAccount",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -15,7 +15,7 @@ var AuditManagerPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "account/deregisterOrganizationAdminAccount",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -69,7 +69,7 @@ var AuditManagerPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "account/registerAccount",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},

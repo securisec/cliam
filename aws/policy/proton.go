@@ -5,7 +5,7 @@ import "github.com/securisec/cliam/shared"
 var ProtonPolicies = []Service{
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1,
 			aws_X_AMZ_TARGET:           "AwsProton20200720.GetAccountSettings",
@@ -14,7 +14,7 @@ var ProtonPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1,
 			aws_X_AMZ_TARGET:           "AwsProton20200720.ListEnvironmentTemplates",
@@ -23,7 +23,7 @@ var ProtonPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1,
 			aws_X_AMZ_TARGET:           "AwsProton20200720.ListEnvironments",
@@ -32,7 +32,7 @@ var ProtonPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1,
 			aws_X_AMZ_TARGET:           "AwsProton20200720.ListRepositories",
@@ -41,7 +41,7 @@ var ProtonPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1,
 			aws_X_AMZ_TARGET:           "AwsProton20200720.ListServiceInstances",
@@ -50,7 +50,7 @@ var ProtonPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1,
 			aws_X_AMZ_TARGET:           "AwsProton20200720.ListServiceTemplates",
@@ -59,7 +59,7 @@ var ProtonPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1,
 			aws_X_AMZ_TARGET:           "AwsProton20200720.ListServices",
@@ -68,7 +68,7 @@ var ProtonPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1,
 			aws_X_AMZ_TARGET:           "AwsProton20200720.UpdateAccountSettings",

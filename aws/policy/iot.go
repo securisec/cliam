@@ -6,7 +6,7 @@ var IOTPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "keys-and-certificate",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -40,7 +40,7 @@ var IOTPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "effective-policies",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -74,7 +74,7 @@ var IOTPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "audit/findings",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -83,7 +83,7 @@ var IOTPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "audit/suppressions/list",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -237,7 +237,7 @@ var IOTPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "v2LoggingOptions",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -246,7 +246,7 @@ var IOTPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "indexing/config",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},

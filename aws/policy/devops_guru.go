@@ -11,7 +11,7 @@ var DevopsGuruPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "event-sources",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -20,7 +20,7 @@ var DevopsGuruPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "feedback",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -29,7 +29,7 @@ var DevopsGuruPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "organization/health",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -48,7 +48,7 @@ var DevopsGuruPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "channels",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},

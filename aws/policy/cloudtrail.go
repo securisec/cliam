@@ -5,7 +5,7 @@ import "github.com/securisec/cliam/shared"
 var CloudtrailPolicies = []Service{
 	{
 		Method:     "POST",
-		JsonData:   `{}`,
+		JsonData:   map[string]string{},
 		Permission: "DescribeTrails",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
@@ -14,7 +14,7 @@ var CloudtrailPolicies = []Service{
 	},
 	{
 		Method:     "POST",
-		JsonData:   `{}`,
+		JsonData:   map[string]string{},
 		Permission: "ListPublicKeys",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,

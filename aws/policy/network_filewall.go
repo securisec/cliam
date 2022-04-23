@@ -5,7 +5,7 @@ import "github.com/securisec/cliam/shared"
 var NetworkFirewallPolicies = []Service{
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1,
 			aws_X_AMZ_TARGET:           "NetworkFirewall_20201112.DeleteFirewall",
@@ -14,7 +14,7 @@ var NetworkFirewallPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1,
 			aws_X_AMZ_TARGET:           "NetworkFirewall_20201112.DeleteFirewallPolicy",
@@ -23,7 +23,7 @@ var NetworkFirewallPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1,
 			aws_X_AMZ_TARGET:           "NetworkFirewall_20201112.DeleteRuleGroup",
@@ -32,7 +32,7 @@ var NetworkFirewallPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1,
 			aws_X_AMZ_TARGET:           "NetworkFirewall_20201112.DescribeFirewall",
@@ -41,7 +41,7 @@ var NetworkFirewallPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1,
 			aws_X_AMZ_TARGET:           "NetworkFirewall_20201112.DescribeFirewallPolicy",
@@ -50,7 +50,7 @@ var NetworkFirewallPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1,
 			aws_X_AMZ_TARGET:           "NetworkFirewall_20201112.DescribeLoggingConfiguration",
@@ -59,7 +59,7 @@ var NetworkFirewallPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1,
 			aws_X_AMZ_TARGET:           "NetworkFirewall_20201112.DescribeRuleGroup",
@@ -68,7 +68,7 @@ var NetworkFirewallPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1,
 			aws_X_AMZ_TARGET:           "NetworkFirewall_20201112.DescribeRuleGroupMetadata",
@@ -77,7 +77,7 @@ var NetworkFirewallPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1,
 			aws_X_AMZ_TARGET:           "NetworkFirewall_20201112.ListFirewallPolicies",
@@ -86,7 +86,7 @@ var NetworkFirewallPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1,
 			aws_X_AMZ_TARGET:           "NetworkFirewall_20201112.ListFirewalls",
@@ -95,7 +95,7 @@ var NetworkFirewallPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1,
 			aws_X_AMZ_TARGET:           "NetworkFirewall_20201112.ListRuleGroups",
@@ -104,7 +104,7 @@ var NetworkFirewallPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1,
 			aws_X_AMZ_TARGET:           "NetworkFirewall_20201112.UpdateFirewallDescription",
@@ -113,7 +113,7 @@ var NetworkFirewallPolicies = []Service{
 	},
 	{
 		Method:   "POST",
-		JsonData: `{}`,
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1,
 			aws_X_AMZ_TARGET:           "NetworkFirewall_20201112.UpdateLoggingConfiguration",

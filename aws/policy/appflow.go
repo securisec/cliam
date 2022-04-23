@@ -6,7 +6,7 @@ var AppFlowPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "describe-connector-profiles",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -15,7 +15,7 @@ var AppFlowPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "describe-connectors",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -24,7 +24,7 @@ var AppFlowPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "list-connector-entities",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -33,7 +33,7 @@ var AppFlowPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "list-connectors",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -42,7 +42,7 @@ var AppFlowPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "list-flows",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -51,7 +51,7 @@ var AppFlowPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "register-connector",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},

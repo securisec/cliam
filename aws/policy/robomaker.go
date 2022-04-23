@@ -6,7 +6,7 @@ var RobomakerPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "createWorldTemplate",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -15,7 +15,7 @@ var RobomakerPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "getWorldTemplateBody",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -24,7 +24,7 @@ var RobomakerPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "listDeploymentJobs",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -33,7 +33,7 @@ var RobomakerPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "listFleets",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -42,7 +42,7 @@ var RobomakerPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "listRobotApplications",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -51,7 +51,7 @@ var RobomakerPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "listRobots",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -60,7 +60,7 @@ var RobomakerPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "listSimulationApplications",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -69,7 +69,7 @@ var RobomakerPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "listSimulationJobBatches",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -78,7 +78,7 @@ var RobomakerPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "listSimulationJobs",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -87,7 +87,7 @@ var RobomakerPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "listWorldExportJobs",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -96,7 +96,7 @@ var RobomakerPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "listWorldGenerationJobs",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -105,7 +105,7 @@ var RobomakerPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "listWorldTemplates",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -114,7 +114,7 @@ var RobomakerPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "listWorlds",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},

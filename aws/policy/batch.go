@@ -6,7 +6,7 @@ var BatchPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "v1/describecomputeenvironments",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -15,7 +15,7 @@ var BatchPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "v1/describejobdefinitions",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -24,7 +24,7 @@ var BatchPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "v1/describejobqueues",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -33,7 +33,7 @@ var BatchPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "v1/listjobs",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -42,7 +42,7 @@ var BatchPolicies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "v1/listschedulingpolicies",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},

@@ -6,7 +6,7 @@ var Inspector2Policies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "status/batch/get",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -15,7 +15,7 @@ var Inspector2Policies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "organizationconfiguration/describe",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -24,7 +24,7 @@ var Inspector2Policies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "disable",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -33,7 +33,7 @@ var Inspector2Policies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "delegatedadminaccounts/get",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -42,7 +42,7 @@ var Inspector2Policies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "reporting/status/get",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -51,7 +51,7 @@ var Inspector2Policies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "accountpermissions/list",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -60,7 +60,7 @@ var Inspector2Policies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "coverage/list",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -69,7 +69,7 @@ var Inspector2Policies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "coverage/statistics/list",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -78,7 +78,7 @@ var Inspector2Policies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "delegatedadminaccounts/list",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -87,7 +87,7 @@ var Inspector2Policies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "filters/list",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -96,7 +96,7 @@ var Inspector2Policies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "findings/list",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -105,7 +105,7 @@ var Inspector2Policies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "members/list",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},
@@ -114,7 +114,7 @@ var Inspector2Policies = []Service{
 	{
 		Method:        "POST",
 		ServiceSuffix: "usage/list",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
 		},

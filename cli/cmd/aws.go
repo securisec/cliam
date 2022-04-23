@@ -50,7 +50,7 @@ func getCredsAndRegion() (string, string, string, string) {
 	}
 	return awsGetEnvarOrPrompt("AWS_ACCESS_KEY_ID", "AWS Access Key ID: "),
 		awsGetEnvarOrPrompt("AWS_SECRET_ACCESS_KEY", "AWS Secret Access Key: "),
-		awsGetEnvarOrPrompt("AWS_SESSION_TOKEN", "AWS Session Token: "),
+		awsSessionToken,
 		awsRegion
 }
 

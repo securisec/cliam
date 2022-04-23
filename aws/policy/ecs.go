@@ -4,7 +4,7 @@ var ECSPolicies = []Service{
 	{
 		ServiceSuffix: "",
 		Method:        "POST",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			"Content-Type": aws_JSON_CONTENT_TYPE,
 			"x-amz-target": "AmazonEC2ContainerServiceV20141113.DescribeClusters",
@@ -14,7 +14,7 @@ var ECSPolicies = []Service{
 	{
 		ServiceSuffix: "",
 		Method:        "POST",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			"Content-Type": aws_JSON_CONTENT_TYPE,
 			"x-amz-target": "AmazonEC2ContainerServiceV20141113.ListAccountSettings",
@@ -24,7 +24,7 @@ var ECSPolicies = []Service{
 	{
 		ServiceSuffix: "",
 		Method:        "POST",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			"Content-Type": aws_JSON_CONTENT_TYPE,
 			"x-amz-target": "AmazonEC2ContainerServiceV20141113.ListClusters",
@@ -34,7 +34,7 @@ var ECSPolicies = []Service{
 	{
 		ServiceSuffix: "",
 		Method:        "POST",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			"Content-Type": aws_JSON_CONTENT_TYPE,
 			"x-amz-target": "AmazonEC2ContainerServiceV20141113.ListContainerInstances",
@@ -44,7 +44,7 @@ var ECSPolicies = []Service{
 	{
 		ServiceSuffix: "",
 		Method:        "POST",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			"Content-Type": aws_JSON_CONTENT_TYPE,
 			"x-amz-target": "AmazonEC2ContainerServiceV20141113.ListServices",
@@ -54,7 +54,7 @@ var ECSPolicies = []Service{
 	{
 		ServiceSuffix: "",
 		Method:        "POST",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			"Content-Type": aws_JSON_CONTENT_TYPE,
 			"x-amz-target": "AmazonEC2ContainerServiceV20141113.ListTaskDefinitionFamilies",
@@ -64,7 +64,7 @@ var ECSPolicies = []Service{
 	{
 		ServiceSuffix: "",
 		Method:        "POST",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			"Content-Type": aws_JSON_CONTENT_TYPE,
 			"x-amz-target": "AmazonEC2ContainerServiceV20141113.ListTaskDefinitions",
@@ -74,7 +74,7 @@ var ECSPolicies = []Service{
 	{
 		ServiceSuffix: "",
 		Method:        "POST",
-		JsonData:      `{}`,
+		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			"Content-Type": aws_JSON_CONTENT_TYPE,
 			"x-amz-target": "AmazonEC2ContainerServiceV20141113.ListTasks",
