@@ -29,6 +29,7 @@ var (
 	awsProfile           string
 	awsSessionJson       string
 	awsKnownResourceName string
+	awsKnownOnly         bool
 )
 
 func init() {
@@ -40,6 +41,7 @@ func init() {
 	awsCmd.PersistentFlags().StringVar(&awsProfile, "profile", "", "AWS Profile. When profile is set, access-key-id, secret-access-key, and session-token are ignored.")
 	awsCmd.PersistentFlags().StringVar(&awsSessionJson, "session-json", "", "AWS Session JSON file. This flag attempts to read session information from the specified file. Helpful with temporary credentials.")
 	awsCmd.PersistentFlags().StringVar(&awsKnownResourceName, "known-resource-name", "", "AWS Resource Name. When known-resource-name is set, additional permissions where a resource needs to be specified is enumerated.")
+	awsCmd.PersistentFlags().BoolVar(&awsKnownOnly, "known-only", false, "When set, only permissions where the known-resource-name is specified are enumerated.")
 }
 
 // return the key, secret, token and region
@@ -85,17 +87,21 @@ func awsSendToChannel(ch chan scanner.ServiceMap, resources []string, word strin
 	var extras []scanner.ServiceMap
 	enumerate := scanner.GetServiceMap(resources)
 	for _, e := range enumerate {
+		// for now, move the permissions that require a resource to the extras
+		// this will then be looped later if known-resource-name is set
 		if e.Policy.IsExtra {
 			extras = append(extras, e)
 		} else {
-			ch <- e
+			// if the known only flag is set, ignore general permissions that doesnt require a resource name
+			if !awsKnownOnly {
+				ch <- e
+			}
 		}
 	}
 
 	// if a known resource name is set, we will enumerate the extra permissions
 	if word != "" && len(extras) > 0 {
 		for _, ee := range extras {
-			ee.Policy.ExtraWord = word
 			ch <- ee
 		}
 	}

@@ -35,9 +35,13 @@ type Service struct {
 	// QueryParams query params
 	QueryParams map[string]string `json:"queryParams,omitempty"`
 	// IsExtra allows passing a word to enumerate additional policies
-	IsExtra           bool
-	ExtraWord         string
-	ExtraUrlComponent string
+	IsExtra bool
+	// ExtraWord the known word to enumerate additional policies
+	ExtraWord string
+	// ExtraComponentName this could be path, query, header, form, json or uri
+	ExtraComponentName string
+	// ExtraComponentBodyKey is used when it ia form or json data
+	ExtraComponentBodyKey string
 }
 
 // GetRequestURL returns the request url for the service
