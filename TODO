@@ -3,6 +3,7 @@ Todo:
   ☐ trap interrupts and exit cleanly
   ☐ enumerate functions should return an array of valid permissions
   ☐ refactor goroutine runners as DRY
+  ☐ refactor various aws resource groups as DRY
 
 Bug:
 

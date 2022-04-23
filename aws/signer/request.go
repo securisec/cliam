@@ -20,6 +20,7 @@ func MakeRequest(
 	region, service string,
 	p *policy.Service,
 	creds *credentials.Credentials,
+	requestURL string,
 ) (*http.Request, *http.Response, []byte, error) {
 	// default options
 	method := "GET"
@@ -28,9 +29,6 @@ func MakeRequest(
 	if p.Method != "" {
 		method = p.Method
 	}
-
-	// get request requestURL
-	requestURL := p.GetRequestURL(region, service)
 
 	// if form data, set body
 	if method != "GET" && len(p.FormData) > 0 {

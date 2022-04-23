@@ -55,7 +55,7 @@ func awsComputeCmdFunc(cmd *cobra.Command, _ []string) {
 					<-max
 				}()
 
-				statusCode, err := scanner.EnumerateSpecificResource(ctx, region, s, creds, saveOutput)
+				statusCode, err := scanner.EnumerateSpecificResource(ctx, region, s, creds, saveOutput, awsKnownResourceName)
 				if err != nil {
 					cliErrorLogger(s, err)
 					wg.Done()
