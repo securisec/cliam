@@ -3,7 +3,6 @@ Todo:
   ☐ trap interrupts and exit cleanly
   ☐ enumerate functions should return an array of valid permissions
   ☐ refactor goroutine runners as DRY
-  ☐ refactor various aws resource groups as DRY
 
 Bug:
 
@@ -29,6 +28,7 @@ Resources:
   - https://docs.oracle.com/en-us/iaas/api/#/
 
 Archive:
+  ✔ refactor various aws resource groups as DRY @project(Todo)
   ✔ read specific aws profile @project(Cli)
   ✔ refactor aws subcommands to use single. helper function to get all policies for an array of services @project(AWS)
   ✔ context with timeout for requests @project(Todo)
