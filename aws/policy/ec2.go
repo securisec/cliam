@@ -1884,4 +1884,62 @@ var EC2Policies = []Service{
 		},
 		Permission: "UpdateSecurityGroupRuleDescriptionsIngress",
 	},
+
+	// extras
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetConsoleOutput",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetConsoleOutput",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "InstanceId",
+		ExtraComponentLocation: "form",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetConsoleScreenshot",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetConsoleScreenshot",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "InstanceId",
+		ExtraComponentLocation: "form",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetLaunchTemplateData",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetLaunchTemplateData",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "InstanceId",
+		ExtraComponentLocation: "form",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetPasswordData",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetPasswordData",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "InstanceId",
+		ExtraComponentLocation: "form",
+	},
 }

@@ -42,7 +42,7 @@ func awsSharedEnumerate(resources []string, saveOutput bool) {
 					wg.Done()
 					return
 				}
-				cliCompletionLogger(s, statusCode)
+				cliResponseLogger(s, statusCode)
 
 				wg.Done()
 

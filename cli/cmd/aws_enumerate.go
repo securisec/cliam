@@ -87,7 +87,7 @@ func awsEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 					wg.Done()
 					return
 				}
-				cliCompletionLogger(s, statusCode)
+				cliResponseLogger(s, statusCode)
 
 				wg.Done()
 
@@ -96,7 +96,7 @@ func awsEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 		}
 	}()
 
-	awsSendToChannel(ch, resources, awsKnownResourceName)
+	awsSendToChannel(ch, resources)
 
 	close(ch)
 	wg.Wait()

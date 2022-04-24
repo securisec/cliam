@@ -48,7 +48,7 @@ def postFormEndpoint(version: str, action: str) -> str:
 
 
 
-fileName = '../temp/awsapis/s3-2006-03-01.normal.json'
+fileName = '../temp/awsapis/ec2-2016-11-15.normal.json'
 path = Path.cwd() / 'iam-enumerator' / fileName
 with open(str(path.resolve()), 'r') as f:
     data = json.loads(f.read())
@@ -57,16 +57,28 @@ for operation, v in data['operations'].items():
     # print(operations)
     try:
         if 'input' in v:
-            if 'Create' in operation or 'Delete' in operation or 'Put' in operation:
+            if not any([operation.startswith(x) for x in ['Get', 'List', 'Describe']]):
                 continue
+            # if 'shape' not in v['input'] or 'required' not in v['input']['shape']:
+            #     continue
             shape = data['shapes'][v['input']['shape']]
+            if not 'required' in shape:
+                continue
             if not len(shape['required']) == 1:
                 continue
+            if not shape['required'][0] == 'InstanceId':
+                continue
             print(f"""{{
-                ServiceSuffix:          "{v['http']['requestUri'].replace('{Bucket}', '{{.}}')}",
-		Permission:             "{operation}",
-		ExtraComponentLocation: "path",
-		IsExtra:                true,
+		Method: "POST",
+		FormData: map[string]string{{
+			"Action":  "{operation}",
+			"Version": "2016-11-15",
+		}},
+		Headers: map[string]string{{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		}},
+		Permission: "{operation}",
+        IsExtra: true,
 }},""")
 
         # http = v['http']
@@ -84,13 +96,19 @@ for operation, v in data['operations'].items():
         #     print(getRequestEndpoint(endpoint, operation))
         
     except Exception as e:
-        print(operation)
+        # print(operation)
         raise e
-        print(e)
+        # print(e)
 
 
 # s3
-# print(f"""{{
+# if 'input' in v:
+#             if 'Create' in operation or 'Delete' in operation or 'Put' in operation:
+#                 continue
+#             shape = data['shapes'][v['input']['shape']]
+#             if not len(shape['required']) == 1:
+#                 continue
+#             print(f"""{{
 #                 ServiceSuffix:          "{v['http']['requestUri'].replace('{Bucket}', '{{.}}')}",
 # 		Permission:             "{operation}",
 # 		ExtraComponentLocation: "path",

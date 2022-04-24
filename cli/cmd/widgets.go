@@ -36,7 +36,7 @@ func cliErrorLogger(s scanner.ServiceMap, err error) {
 	}
 }
 
-func cliCompletionLogger(ser scanner.ServiceMap, status int) {
+func cliResponseLogger(ser scanner.ServiceMap, status int) {
 	if status == http.StatusOK {
 		logger.LogSuccess(ser.Resource, ser.Policy.Permission)
 	}

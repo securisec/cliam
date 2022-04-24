@@ -61,6 +61,9 @@ func (s Service) UpdateForExtra() (Service, error) {
 		}
 		s.ReqURL = b.String()
 		return s, nil
+	case "form":
+		s.FormData[s.ExtraComponentBodyKey] = s.ExtraWord
+		return s, nil
 	}
 	// TOOD add more cases
 	return Service{}, fmt.Errorf("unsupported extra component location")

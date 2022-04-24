@@ -37,7 +37,7 @@ func LogMaybe(service, permission string) {
 
 func LogDenied(status int, service, permission string) {
 	if DEBUG {
-		LoggerStdErr.Error().Int("status", status).Str(service, permission).Msg(shared.GetMessageColor("error"))
+		LoggerStdErr.Error().Int("status", status).Str(service, toSnakeCase(permission)).Msg(shared.GetMessageColor("error"))
 	}
 }
 
