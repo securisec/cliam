@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"os"
+	"strings"
 
 	"github.com/securisec/cliam/aws/scanner"
 	"github.com/securisec/cliam/logger"
@@ -22,13 +23,13 @@ var awsCmd = &cobra.Command{
 }
 
 var (
-	awsAccessKeyID       string
-	awsSecretAccessKey   string
-	awsSessionToken      string
-	awsRegion            string
-	awsProfile           string
-	awsSessionJson       string
-	awsKnownResourceName string
+	awsAccessKeyID      string
+	awsSecretAccessKey  string
+	awsSessionToken     string
+	awsRegion           string
+	awsProfile          string
+	awsSessionJson      string
+	awsKnownResourceMap map[string]string
 	// awsKnownOnly         bool
 )
 
@@ -40,7 +41,7 @@ func init() {
 	awsCmd.PersistentFlags().StringVar(&awsRegion, "region", "us-east-1", "AWS Region")
 	awsCmd.PersistentFlags().StringVar(&awsProfile, "profile", "", "AWS Profile. When profile is set, access-key-id, secret-access-key, and session-token are ignored.")
 	awsCmd.PersistentFlags().StringVar(&awsSessionJson, "session-json", "", "AWS Session JSON file. This flag attempts to read session information from the specified file. Helpful with temporary credentials.")
-	awsCmd.PersistentFlags().StringVar(&awsKnownResourceName, "known-resource-name", "", "AWS Resource Name. When known-resource-name is set, additional permissions where a resource needs to be specified is enumerated.")
+	awsCmd.PersistentFlags().StringToStringVar(&awsKnownResourceMap, "known-resource-value", map[string]string{}, "AWS Resource Name. When known-resource-name is set, additional permissions where a resource needs to be specified is enumerated.")
 	// awsCmd.PersistentFlags().BoolVar(&awsKnownOnly, "known-only", false, "When set, only permissions where the known-resource-name is specified are enumerated.")
 }
 
@@ -93,16 +94,16 @@ func awsSendToChannel(ch chan scanner.ServiceMap, resources []string) {
 			extras = append(extras, e)
 		} else {
 			// if the known only flag is set, ignore general permissions that doesnt require a resource name
-			if awsKnownResourceName == "" {
+			if len(awsKnownResourceMap) == 0 {
 				ch <- e
 			}
 		}
 	}
 
-	// if a known resource name is set, we will enumerate the extra permissions
-	if awsKnownResourceName != "" && len(extras) > 0 {
+	// if a known resource name is set, we will enumerate only the extra permissions
+	if len(awsKnownResourceMap) > 0 && len(extras) > 0 {
 		for _, ee := range extras {
-			ee.Policy.ExtraWord = awsKnownResourceName
+			ee.Policy.ExtraValueMap = awsModifyExtraMap(awsKnownResourceMap)
 			ch <- ee
 		}
 	}
@@ -112,4 +113,12 @@ type awsSessionJsonStruct struct {
 	AccessKeyId     string `json:"AccessKeyId"`
 	SecretAccessKey string `json:"SecretAccessKey"`
 	Token           string `json:"Token"`
+}
+
+func awsModifyExtraMap(m map[string]string) map[string]string {
+	h := map[string]string{}
+	for k, v := range m {
+		h[strings.ReplaceAll(k, "-", "_")] = v
+	}
+	return h
 }

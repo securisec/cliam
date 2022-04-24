@@ -30,16 +30,18 @@ var LambdaPolicies = []Service{
 	// extra policies
 	{
 		Method:                 "GET",
-		ServiceSuffix:          "2015-03-31/functions/{{.}}",
+		ServiceSuffix:          "2015-03-31/functions/{{.function_name}}",
 		Permission:             "GetFunction",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
+		ExtraCommandLineFlag:   "function_name",
 	},
 	{
 		Method:                 "GET",
-		ServiceSuffix:          "2015-03-31/functions/{{.}}/configuration",
+		ServiceSuffix:          "2015-03-31/functions/{{.function_name}}/configuration",
 		Permission:             "GetFunctionConfiguration",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
+		ExtraCommandLineFlag:   "function_name",
 	},
 }

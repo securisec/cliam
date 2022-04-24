@@ -38,16 +38,22 @@ type Service struct {
 	QueryParams map[string]string `json:"queryParams,omitempty"`
 	// IsExtra allows passing a word to enumerate additional policies
 	IsExtra bool
-	// ExtraWord the known word to enumerate additional policies
-	ExtraWord string
+	// ExtraValueMap the known word to enumerate additional policies
+	ExtraValueMap map[string]string
 	// ExtraComponentLocation this could be path, query, header, form, json or uri
 	ExtraComponentLocation string
 	// ExtraComponentBodyKey is used when it ia form or json data
 	ExtraComponentBodyKey string
-	ReqURL                string
+	// ExtraCommandLineFlag is the cli flag that is used to specifiy the resource in aws.
+	// i.e. --bucket-name for s3 buckets
+	ExtraCommandLineFlag string
+	ReqURL               string
 }
 
 func (s Service) UpdateForExtra() (Service, error) {
+	if err := s.hasCorrectExtraKey(); err != nil {
+		return s, err
+	}
 	var b bytes.Buffer
 	// u, err := url.Parse(s.ReqURL)
 	// if err != nil {
@@ -56,17 +62,25 @@ func (s Service) UpdateForExtra() (Service, error) {
 	switch s.ExtraComponentLocation {
 	case "path":
 		temp := template.Must(template.New("").Parse(s.ReqURL))
-		if err := temp.Execute(&b, s.ExtraWord); err != nil {
+		if err := temp.Execute(&b, s.ExtraValueMap); err != nil {
 			return Service{}, err
 		}
 		s.ReqURL = b.String()
 		return s, nil
 	case "form":
-		s.FormData[s.ExtraComponentBodyKey] = s.ExtraWord
+		s.FormData[s.ExtraComponentBodyKey] = s.ExtraValueMap[s.ExtraCommandLineFlag]
 		return s, nil
 	}
 	// TOOD add more cases
 	return Service{}, fmt.Errorf("unsupported extra component location")
+}
+
+// if the passed maps doesnt have the correct flag, return error
+func (s Service) hasCorrectExtraKey() error {
+	if _, ok := s.ExtraValueMap[s.ExtraCommandLineFlag]; !ok {
+		return fmt.Errorf("missing %s", s.ExtraCommandLineFlag)
+	}
+	return nil
 }
 
 // GetRequestURL returns the request url for the service

@@ -1899,6 +1899,7 @@ var EC2Policies = []Service{
 		IsExtra:                true,
 		ExtraComponentBodyKey:  "InstanceId",
 		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "instance_id",
 	},
 	{
 		Method: "POST",
@@ -1913,6 +1914,7 @@ var EC2Policies = []Service{
 		IsExtra:                true,
 		ExtraComponentBodyKey:  "InstanceId",
 		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "instance_id",
 	},
 	{
 		Method: "POST",
@@ -1927,6 +1929,7 @@ var EC2Policies = []Service{
 		IsExtra:                true,
 		ExtraComponentBodyKey:  "InstanceId",
 		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "instance_id",
 	},
 	{
 		Method: "POST",
@@ -1941,5 +1944,6 @@ var EC2Policies = []Service{
 		IsExtra:                true,
 		ExtraComponentBodyKey:  "InstanceId",
 		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "instance_id",
 	},
 }
