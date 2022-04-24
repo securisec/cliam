@@ -102,6 +102,7 @@ func awsSendToChannel(ch chan scanner.ServiceMap, resources []string, word strin
 	// if a known resource name is set, we will enumerate the extra permissions
 	if word != "" && len(extras) > 0 {
 		for _, ee := range extras {
+			ee.Policy.ExtraWord = word
 			ch <- ee
 		}
 	}

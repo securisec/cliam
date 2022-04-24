@@ -26,4 +26,20 @@ var LambdaPolicies = []Service{
 		ServiceSuffix: "2018-10-31/layers",
 		Permission:    "ListLayers",
 	},
+
+	// extra policies
+	{
+		Method:                 "GET",
+		ServiceSuffix:          "2015-03-31/functions/{{.}}",
+		Permission:             "GetFunction",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+	},
+	{
+		Method:                 "GET",
+		ServiceSuffix:          "2015-03-31/functions/{{.}}/configuration",
+		Permission:             "GetFunctionConfiguration",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+	},
 }

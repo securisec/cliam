@@ -1,8 +1,10 @@
 package policy
 
 import (
+	"bytes"
 	"fmt"
 	"path"
+	"text/template"
 )
 
 const (
@@ -38,11 +40,30 @@ type Service struct {
 	IsExtra bool
 	// ExtraWord the known word to enumerate additional policies
 	ExtraWord string
-	// ExtraComponentName this could be path, query, header, form, json or uri
-	ExtraComponentName string
+	// ExtraComponentLocation this could be path, query, header, form, json or uri
+	ExtraComponentLocation string
 	// ExtraComponentBodyKey is used when it ia form or json data
 	ExtraComponentBodyKey string
 	ReqURL                string
+}
+
+func (s Service) UpdateForExtra() (Service, error) {
+	var b bytes.Buffer
+	// u, err := url.Parse(s.ReqURL)
+	// if err != nil {
+	// 	return Service{}, err
+	// }
+	switch s.ExtraComponentLocation {
+	case "path":
+		temp := template.Must(template.New("").Parse(s.ReqURL))
+		if err := temp.Execute(&b, s.ExtraWord); err != nil {
+			return Service{}, err
+		}
+		s.ReqURL = b.String()
+		return s, nil
+	}
+	// TOOD add more cases
+	return Service{}, fmt.Errorf("unsupported extra component location")
 }
 
 // GetRequestURL returns the request url for the service

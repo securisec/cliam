@@ -55,7 +55,7 @@ func awsStorageCmdFunc(cmd *cobra.Command, _ []string) {
 					<-max
 				}()
 
-				statusCode, err := scanner.EnumerateSpecificResource(ctx, region, s, creds, saveOutput, awsKnownResourceName)
+				statusCode, err := scanner.EnumerateSpecificResource(ctx, region, s, creds, saveOutput)
 				if err != nil {
 					cliErrorLogger(s, err)
 					wg.Done()

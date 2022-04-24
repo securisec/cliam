@@ -54,7 +54,7 @@ func awsCommonCmdFunc(cmd *cobra.Command, _ []string) {
 					<-max
 				}()
 
-				statusCode, err := scanner.EnumerateSpecificResource(ctx, region, s, creds, saveOutput, awsKnownResourceName)
+				statusCode, err := scanner.EnumerateSpecificResource(ctx, region, s, creds, saveOutput)
 				if err != nil {
 					cliErrorLogger(s, err)
 					wg.Done()
@@ -77,7 +77,10 @@ func awsCommonCmdFunc(cmd *cobra.Command, _ []string) {
 		aws.EC2,
 	}
 
-	awsSendToChannel(ch, resources, awsKnownResourceName)
+	enumerate := scanner.GetServiceMap(resources)
+	for _, e := range enumerate {
+		ch <- e
+	}
 
 	close(ch)
 	wg.Wait()

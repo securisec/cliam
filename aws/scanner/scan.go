@@ -19,12 +19,16 @@ func EnumerateSpecificResource(
 	ser ServiceMap,
 	creds *credentials.Credentials,
 	saveOutput bool,
-	word string,
 ) (int, error) {
-	ser.Policy.ExtraWord = word
 	ser.Policy.ReqURL = ser.Policy.GetRequestURL(region, ser.Resource)
 
-	// TODO update Policy here if known stuff is set
+	if ser.Policy.IsExtra {
+		s, err := ser.Policy.UpdateForExtra()
+		if err != nil {
+			return 0, err
+		}
+		ser.Policy = s
+	}
 
 	_, res, body, err := signer.MakeRequest(ctx, region, ser.Resource, &ser.Policy, creds)
 	if err != nil {
