@@ -68,7 +68,16 @@ func (s Service) UpdateForExtra() (Service, error) {
 		s.ReqURL = b.String()
 		return s, nil
 	case "form":
+		if len(s.FormData) == 0 {
+			s.FormData = make(map[string]string)
+		}
 		s.FormData[s.ExtraComponentBodyKey] = s.ExtraValueMap[s.ExtraCommandLineFlag]
+		return s, nil
+	case "json":
+		if len(s.JsonData) == 0 {
+			s.JsonData = make(map[string]string)
+		}
+		s.JsonData[s.ExtraComponentBodyKey] = s.ExtraValueMap[s.ExtraCommandLineFlag]
 		return s, nil
 	}
 	// TOOD add more cases

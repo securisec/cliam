@@ -78,6 +78,7 @@ Global Flags:
       --request-timeout int   Timeout for each request in seconds. (default 10)
 ```
 
+### Known resources
 Cliam for AWS also supports enumerating certain permissions which requires a known value. For instance, when using awscli, we can get a function using `aws lambda get-function --function-name <function_name>`.
 
 This maps directly to cliam where we can use:

@@ -52,7 +52,7 @@ def postFormEndpoint(version: str, action: str) -> str:
 
 
 
-fileName = '../temp/awsapis/iam-2010-05-08.normal.json'
+fileName = '../temp/awsapis/dynamodb-2012-08-10.normal.json'
 path = Path.cwd() / 'iam-enumerator' / fileName
 with open(str(path.resolve()), 'r') as f:
     data = json.loads(f.read())
@@ -74,21 +74,32 @@ for operation, v in data['operations'].items():
                 continue
             # print(operation)
             param = shape['required'][0]
-            
+
+#             print(f"""{{
+# 		Method: "POST",
+# 		FormData: map[string]string{{
+# 			"Action":  "{operation}",
+# 			"Version": "{data['metadata']['apiVersion']}",
+# 		}},
+# 		Headers: map[string]string{{
+# 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+# 		}},
+# 		Permission: "{operation}",
+#         IsExtra: true,
+#         ExtraComponentBodyKey:  "{param}",
+# 		ExtraComponentLocation: "form",
+# 		ExtraCommandLineFlag:   "{toSnakeCase(param)}",
+# }},""")
             print(f"""{{
 		Method: "POST",
-        IgnoreRegion:  true,
-		FormData: map[string]string{{
-			"Action":  "{operation}",
-			"Version": "{data['metadata']['apiVersion']}",
-		}},
 		Headers: map[string]string{{
-			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			aws_X_AMZ_TARGET:           "{data['metadata']['targetPrefix']}.{operation}",
 		}},
 		Permission: "{operation}",
         IsExtra: true,
         ExtraComponentBodyKey:  "{param}",
-		ExtraComponentLocation: "form",
+		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "{toSnakeCase(param)}",
 }},""")
 
