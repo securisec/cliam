@@ -78,6 +78,15 @@ Global Flags:
       --request-timeout int   Timeout for each request in seconds. (default 10)
 ```
 
+Cliam for AWS also supports enumerating certain permissions which requires a known value. For instance, when using awscli, we can get a function using `aws lambda get-function --function-name <function_name>`.
+
+This maps directly to cliam where we can use:
+
+```
+cliam aws enumerate lamda --known-value function-name=<function_name>
+```
+This will enumerate all permissions for lambda which takes function-name as a valid argument. This will work with other AWS resources as well. (more coverage coming soon)
+
 #### Examples
 Bruteforce all serverless resources from an AWS profile
 ```

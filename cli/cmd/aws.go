@@ -41,7 +41,7 @@ func init() {
 	awsCmd.PersistentFlags().StringVar(&awsRegion, "region", "us-east-1", "AWS Region")
 	awsCmd.PersistentFlags().StringVar(&awsProfile, "profile", "", "AWS Profile. When profile is set, access-key-id, secret-access-key, and session-token are ignored.")
 	awsCmd.PersistentFlags().StringVar(&awsSessionJson, "session-json", "", "AWS Session JSON file. This flag attempts to read session information from the specified file. Helpful with temporary credentials.")
-	awsCmd.PersistentFlags().StringToStringVar(&awsKnownResourceMap, "known-resource-value", map[string]string{}, "AWS Resource Name. When known-resource-name is set, additional permissions where a resource needs to be specified is enumerated.")
+	awsCmd.PersistentFlags().StringToStringVar(&awsKnownResourceMap, "known-value", map[string]string{}, "AWS Resource Name. When known-resource-name is set, additional permissions where a resource needs to be specified is enumerated.")
 	// awsCmd.PersistentFlags().BoolVar(&awsKnownOnly, "known-only", false, "When set, only permissions where the known-resource-name is specified are enumerated.")
 }
 

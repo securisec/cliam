@@ -3,6 +3,10 @@
 from fileinput import filename
 import json
 from pathlib import Path
+import re
+
+def toSnakeCase(s):
+    return re.sub(r'(?<!^)(?=[A-Z])', '_', s).lower()
 
 def postRequests(action: str, prefix: str) -> str:
     return f"""{{
@@ -48,7 +52,7 @@ def postFormEndpoint(version: str, action: str) -> str:
 
 
 
-fileName = '../temp/awsapis/ec2-2016-11-15.normal.json'
+fileName = '../temp/awsapis/iam-2010-05-08.normal.json'
 path = Path.cwd() / 'iam-enumerator' / fileName
 with open(str(path.resolve()), 'r') as f:
     data = json.loads(f.read())
@@ -66,19 +70,26 @@ for operation, v in data['operations'].items():
                 continue
             if not len(shape['required']) == 1:
                 continue
-            if not shape['required'][0] == 'InstanceId':
+            if v['http']['method'] != 'POST':
                 continue
+            # print(operation)
+            param = shape['required'][0]
+            
             print(f"""{{
 		Method: "POST",
+        IgnoreRegion:  true,
 		FormData: map[string]string{{
 			"Action":  "{operation}",
-			"Version": "2016-11-15",
+			"Version": "{data['metadata']['apiVersion']}",
 		}},
 		Headers: map[string]string{{
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
 		}},
 		Permission: "{operation}",
         IsExtra: true,
+        ExtraComponentBodyKey:  "{param}",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "{toSnakeCase(param)}",
 }},""")
 
         # http = v['http']
