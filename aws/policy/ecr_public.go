@@ -39,4 +39,66 @@ var ECRPublicPolicies = []Service{
 			"x-amz-target":             "SpencerFrontendService.GetRegistryCatalogData",
 		},
 	},
+
+	// extra policies
+	{
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			aws_X_AMZ_TARGET:           "SpencerFrontendService.DescribeImageTags",
+		},
+		Permission:             "DescribeImageTags",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "repositoryName",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "repository_name",
+	},
+	{
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			aws_X_AMZ_TARGET:           "SpencerFrontendService.DescribeImages",
+		},
+		Permission:             "DescribeImages",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "repositoryName",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "repository_name",
+	},
+	{
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			aws_X_AMZ_TARGET:           "SpencerFrontendService.GetRepositoryCatalogData",
+		},
+		Permission:             "GetRepositoryCatalogData",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "repositoryName",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "repository_name",
+	},
+	{
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			aws_X_AMZ_TARGET:           "SpencerFrontendService.GetRepositoryPolicy",
+		},
+		Permission:             "GetRepositoryPolicy",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "repositoryName",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "repository_name",
+	},
+	{
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			aws_X_AMZ_TARGET:           "SpencerFrontendService.ListTagsForResource",
+		},
+		Permission:             "ListTagsForResource",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "resourceArn",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "resource_arn",
+	},
 }
