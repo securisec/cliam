@@ -7,7 +7,7 @@ var FraudDetectorPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSHawksNestServiceFacade.DescribeModelVersions",
 		},
 		Permission: "DescribeModelVersions",
@@ -16,7 +16,7 @@ var FraudDetectorPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSHawksNestServiceFacade.GetBatchImportJobs",
 		},
 		Permission: "GetBatchImportJobs",
@@ -25,7 +25,7 @@ var FraudDetectorPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSHawksNestServiceFacade.GetBatchPredictionJobs",
 		},
 		Permission: "GetBatchPredictionJobs",
@@ -34,7 +34,7 @@ var FraudDetectorPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSHawksNestServiceFacade.GetDetectors",
 		},
 		Permission: "GetDetectors",
@@ -43,7 +43,7 @@ var FraudDetectorPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSHawksNestServiceFacade.GetEntityTypes",
 		},
 		Permission: "GetEntityTypes",
@@ -52,7 +52,7 @@ var FraudDetectorPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSHawksNestServiceFacade.GetEventTypes",
 		},
 		Permission: "GetEventTypes",
@@ -61,7 +61,7 @@ var FraudDetectorPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSHawksNestServiceFacade.GetExternalModels",
 		},
 		Permission: "GetExternalModels",
@@ -70,7 +70,7 @@ var FraudDetectorPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSHawksNestServiceFacade.GetLabels",
 		},
 		Permission: "GetLabels",
@@ -79,7 +79,7 @@ var FraudDetectorPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSHawksNestServiceFacade.GetModels",
 		},
 		Permission: "GetModels",
@@ -88,7 +88,7 @@ var FraudDetectorPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSHawksNestServiceFacade.GetOutcomes",
 		},
 		Permission: "GetOutcomes",
@@ -97,7 +97,7 @@ var FraudDetectorPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSHawksNestServiceFacade.GetVariables",
 		},
 		Permission: "GetVariables",
@@ -106,7 +106,7 @@ var FraudDetectorPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSHawksNestServiceFacade.ListEventPredictions",
 		},
 		Permission: "ListEventPredictions",

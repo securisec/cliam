@@ -8,7 +8,7 @@ var WAFPolicies = []Service{
 		Method:       "POST",
 		JsonData:     map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSWAF_20150824.GetChangeToken",
 		},
 		Permission: "GetChangeToken",
@@ -18,7 +18,7 @@ var WAFPolicies = []Service{
 		Method:       "POST",
 		JsonData:     map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSWAF_20150824.ListActivatedRulesInRuleGroup",
 		},
 		Permission: "ListActivatedRulesInRuleGroup",
@@ -28,7 +28,7 @@ var WAFPolicies = []Service{
 		Method:       "POST",
 		JsonData:     map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSWAF_20150824.ListByteMatchSets",
 		},
 		Permission: "ListByteMatchSets",
@@ -38,7 +38,7 @@ var WAFPolicies = []Service{
 		Method:       "POST",
 		JsonData:     map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSWAF_20150824.ListGeoMatchSets",
 		},
 		Permission: "ListGeoMatchSets",
@@ -48,7 +48,7 @@ var WAFPolicies = []Service{
 		Method:       "POST",
 		JsonData:     map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSWAF_20150824.ListIpSets",
 		},
 		Permission: "ListIpSets",
@@ -58,7 +58,7 @@ var WAFPolicies = []Service{
 		Method:       "POST",
 		JsonData:     map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSWAF_20150824.ListLoggingConfigurations",
 		},
 		Permission: "ListLoggingConfigurations",
@@ -68,7 +68,7 @@ var WAFPolicies = []Service{
 		Method:       "POST",
 		JsonData:     map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSWAF_20150824.ListRateBasedRules",
 		},
 		Permission: "ListRateBasedRules",
@@ -78,7 +78,7 @@ var WAFPolicies = []Service{
 		Method:       "POST",
 		JsonData:     map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSWAF_20150824.ListRegexMatchSets",
 		},
 		Permission: "ListRegexMatchSets",
@@ -88,7 +88,7 @@ var WAFPolicies = []Service{
 		Method:       "POST",
 		JsonData:     map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSWAF_20150824.ListRegexPatternSets",
 		},
 		Permission: "ListRegexPatternSets",
@@ -98,7 +98,7 @@ var WAFPolicies = []Service{
 		Method:       "POST",
 		JsonData:     map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSWAF_20150824.ListRuleGroups",
 		},
 		Permission: "ListRuleGroups",
@@ -108,7 +108,7 @@ var WAFPolicies = []Service{
 		Method:       "POST",
 		JsonData:     map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSWAF_20150824.ListRules",
 		},
 		Permission: "ListRules",
@@ -118,7 +118,7 @@ var WAFPolicies = []Service{
 		Method:       "POST",
 		JsonData:     map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSWAF_20150824.ListSizeConstraintSets",
 		},
 		Permission: "ListSizeConstraintSets",
@@ -128,7 +128,7 @@ var WAFPolicies = []Service{
 		Method:       "POST",
 		JsonData:     map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSWAF_20150824.ListSqlInjectionMatchSets",
 		},
 		Permission: "ListSqlInjectionMatchSets",
@@ -138,7 +138,7 @@ var WAFPolicies = []Service{
 		Method:       "POST",
 		JsonData:     map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSWAF_20150824.ListSubscribedRuleGroups",
 		},
 		Permission: "ListSubscribedRuleGroups",
@@ -148,7 +148,7 @@ var WAFPolicies = []Service{
 		Method:       "POST",
 		JsonData:     map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSWAF_20150824.ListXssMatchSets",
 		},
 		Permission: "ListXssMatchSets",

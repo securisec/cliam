@@ -7,7 +7,7 @@ var OrganizationsPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSOrganizationsV20161128.DescribeOrganization",
 		},
 		Permission: "DescribeOrganization",
@@ -16,7 +16,7 @@ var OrganizationsPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSOrganizationsV20161128.ListAccounts",
 		},
 		Permission: "ListAccounts",
@@ -25,7 +25,7 @@ var OrganizationsPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSOrganizationsV20161128.ListAwsServiceAccessForOrganization",
 		},
 		Permission: "ListAwsServiceAccessForOrganization",
@@ -34,7 +34,7 @@ var OrganizationsPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSOrganizationsV20161128.ListCreateAccountStatus",
 		},
 		Permission: "ListCreateAccountStatus",
@@ -43,7 +43,7 @@ var OrganizationsPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSOrganizationsV20161128.ListDelegatedAdministrators",
 		},
 		Permission: "ListDelegatedAdministrators",
@@ -52,7 +52,7 @@ var OrganizationsPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSOrganizationsV20161128.ListHandshakesForAccount",
 		},
 		Permission: "ListHandshakesForAccount",
@@ -61,7 +61,7 @@ var OrganizationsPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSOrganizationsV20161128.ListHandshakesForOrganization",
 		},
 		Permission: "ListHandshakesForOrganization",
@@ -70,7 +70,7 @@ var OrganizationsPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSOrganizationsV20161128.ListRoots",
 		},
 		Permission: "ListRoots",

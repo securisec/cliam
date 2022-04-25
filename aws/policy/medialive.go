@@ -8,7 +8,7 @@ var MediaLivePolicies = []Service{
 		ServiceSuffix: "prod/batch/delete",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "BatchDelete",
 	},
@@ -17,7 +17,7 @@ var MediaLivePolicies = []Service{
 		ServiceSuffix: "prod/batch/start",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "BatchStart",
 	},
@@ -26,7 +26,7 @@ var MediaLivePolicies = []Service{
 		ServiceSuffix: "prod/batch/stop",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "BatchStop",
 	},
@@ -35,7 +35,7 @@ var MediaLivePolicies = []Service{
 		ServiceSuffix: "prod/claimDevice",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ClaimDevice",
 	},
@@ -44,7 +44,7 @@ var MediaLivePolicies = []Service{
 		ServiceSuffix: "prod/channels",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "CreateChannel",
 	},
@@ -53,7 +53,7 @@ var MediaLivePolicies = []Service{
 		ServiceSuffix: "prod/inputs",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "CreateInput",
 	},
@@ -62,7 +62,7 @@ var MediaLivePolicies = []Service{
 		ServiceSuffix: "prod/inputSecurityGroups",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "CreateInputSecurityGroup",
 	},

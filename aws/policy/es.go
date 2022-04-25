@@ -28,7 +28,7 @@ var ESPolicies = []Service{
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "DescribeInboundCrossClusterSearchConnections",
 	},
@@ -37,7 +37,7 @@ var ESPolicies = []Service{
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "DescribeOutboundCrossClusterSearchConnections",
 	},
@@ -46,7 +46,7 @@ var ESPolicies = []Service{
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "DescribePackages",
 	},
@@ -55,7 +55,7 @@ var ESPolicies = []Service{
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "DescribeInboundConnections",
 	},
@@ -64,7 +64,7 @@ var ESPolicies = []Service{
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "DescribeOutboundConnections",
 	},
@@ -73,7 +73,7 @@ var ESPolicies = []Service{
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "DescribeOutboundConnections",
 	},

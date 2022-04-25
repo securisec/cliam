@@ -72,7 +72,7 @@ var DynamoDBPolicies = []Service{
 	{
 		Method: "POST",
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
 			aws_X_AMZ_TARGET:           "DynamoDB_20120810.DescribeBackup",
 		},
 		Permission:             "DescribeBackup",
@@ -84,7 +84,7 @@ var DynamoDBPolicies = []Service{
 	{
 		Method: "POST",
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
 			aws_X_AMZ_TARGET:           "DynamoDB_20120810.DescribeContinuousBackups",
 		},
 		Permission:             "DescribeContinuousBackups",
@@ -96,7 +96,7 @@ var DynamoDBPolicies = []Service{
 	{
 		Method: "POST",
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
 			aws_X_AMZ_TARGET:           "DynamoDB_20120810.DescribeContributorInsights",
 		},
 		Permission:             "DescribeContributorInsights",
@@ -108,7 +108,7 @@ var DynamoDBPolicies = []Service{
 	{
 		Method: "POST",
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
 			aws_X_AMZ_TARGET:           "DynamoDB_20120810.DescribeExport",
 		},
 		Permission:             "DescribeExport",
@@ -120,7 +120,7 @@ var DynamoDBPolicies = []Service{
 	{
 		Method: "POST",
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
 			aws_X_AMZ_TARGET:           "DynamoDB_20120810.DescribeGlobalTable",
 		},
 		Permission:             "DescribeGlobalTable",
@@ -132,7 +132,7 @@ var DynamoDBPolicies = []Service{
 	{
 		Method: "POST",
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
 			aws_X_AMZ_TARGET:           "DynamoDB_20120810.DescribeGlobalTableSettings",
 		},
 		Permission:             "DescribeGlobalTableSettings",
@@ -144,7 +144,7 @@ var DynamoDBPolicies = []Service{
 	{
 		Method: "POST",
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
 			aws_X_AMZ_TARGET:           "DynamoDB_20120810.DescribeKinesisStreamingDestination",
 		},
 		Permission:             "DescribeKinesisStreamingDestination",
@@ -156,7 +156,7 @@ var DynamoDBPolicies = []Service{
 	{
 		Method: "POST",
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
 			aws_X_AMZ_TARGET:           "DynamoDB_20120810.DescribeTable",
 		},
 		Permission:             "DescribeTable",
@@ -168,7 +168,7 @@ var DynamoDBPolicies = []Service{
 	{
 		Method: "POST",
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
 			aws_X_AMZ_TARGET:           "DynamoDB_20120810.DescribeTableReplicaAutoScaling",
 		},
 		Permission:             "DescribeTableReplicaAutoScaling",
@@ -180,7 +180,7 @@ var DynamoDBPolicies = []Service{
 	{
 		Method: "POST",
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
 			aws_X_AMZ_TARGET:           "DynamoDB_20120810.DescribeTimeToLive",
 		},
 		Permission:             "DescribeTimeToLive",
@@ -192,7 +192,7 @@ var DynamoDBPolicies = []Service{
 	{
 		Method: "POST",
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
 			aws_X_AMZ_TARGET:           "DynamoDB_20120810.ListTagsOfResource",
 		},
 		Permission:             "ListTagsOfResource",

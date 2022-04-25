@@ -8,7 +8,7 @@ var Inspector2Policies = []Service{
 		ServiceSuffix: "status/batch/get",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "BatchGetAccountStatus",
 	},
@@ -17,7 +17,7 @@ var Inspector2Policies = []Service{
 		ServiceSuffix: "organizationconfiguration/describe",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "DescribeOrganizationConfiguration",
 	},
@@ -26,7 +26,7 @@ var Inspector2Policies = []Service{
 		ServiceSuffix: "disable",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "Disable",
 	},
@@ -35,7 +35,7 @@ var Inspector2Policies = []Service{
 		ServiceSuffix: "delegatedadminaccounts/get",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "GetDelegatedAdminAccount",
 	},
@@ -44,7 +44,7 @@ var Inspector2Policies = []Service{
 		ServiceSuffix: "reporting/status/get",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "GetFindingsReportStatus",
 	},
@@ -53,7 +53,7 @@ var Inspector2Policies = []Service{
 		ServiceSuffix: "accountpermissions/list",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListAccountPermissions",
 	},
@@ -62,7 +62,7 @@ var Inspector2Policies = []Service{
 		ServiceSuffix: "coverage/list",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListCoverage",
 	},
@@ -71,7 +71,7 @@ var Inspector2Policies = []Service{
 		ServiceSuffix: "coverage/statistics/list",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListCoverageStatistics",
 	},
@@ -80,7 +80,7 @@ var Inspector2Policies = []Service{
 		ServiceSuffix: "delegatedadminaccounts/list",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListDelegatedAdminAccounts",
 	},
@@ -89,7 +89,7 @@ var Inspector2Policies = []Service{
 		ServiceSuffix: "filters/list",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListFilters",
 	},
@@ -98,7 +98,7 @@ var Inspector2Policies = []Service{
 		ServiceSuffix: "findings/list",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListFindings",
 	},
@@ -107,7 +107,7 @@ var Inspector2Policies = []Service{
 		ServiceSuffix: "members/list",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListMembers",
 	},
@@ -116,7 +116,7 @@ var Inspector2Policies = []Service{
 		ServiceSuffix: "usage/list",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListUsageTotals",
 	},

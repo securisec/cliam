@@ -7,7 +7,7 @@ var ComputeOptimizerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "ComputeOptimizerService.DescribeRecommendationExportJobs",
 		},
 		Permission: "DescribeRecommendationExportJobs",
@@ -16,7 +16,7 @@ var ComputeOptimizerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "ComputeOptimizerService.GetAutoScalingGroupRecommendations",
 		},
 		Permission: "GetAutoScalingGroupRecommendations",
@@ -25,7 +25,7 @@ var ComputeOptimizerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "ComputeOptimizerService.GetEBSVolumeRecommendations",
 		},
 		Permission: "GetEBSVolumeRecommendations",
@@ -34,7 +34,7 @@ var ComputeOptimizerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "ComputeOptimizerService.GetEC2InstanceRecommendations",
 		},
 		Permission: "GetEC2InstanceRecommendations",
@@ -43,7 +43,7 @@ var ComputeOptimizerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "ComputeOptimizerService.GetEnrollmentStatus",
 		},
 		Permission: "GetEnrollmentStatus",
@@ -52,7 +52,7 @@ var ComputeOptimizerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "ComputeOptimizerService.GetEnrollmentStatusesForOrganization",
 		},
 		Permission: "GetEnrollmentStatusesForOrganization",
@@ -61,7 +61,7 @@ var ComputeOptimizerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "ComputeOptimizerService.GetLambdaFunctionRecommendations",
 		},
 		Permission: "GetLambdaFunctionRecommendations",
@@ -70,7 +70,7 @@ var ComputeOptimizerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "ComputeOptimizerService.GetRecommendationSummaries",
 		},
 		Permission: "GetRecommendationSummaries",

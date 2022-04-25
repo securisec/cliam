@@ -8,7 +8,7 @@ var RobomakerPolicies = []Service{
 		ServiceSuffix: "createWorldTemplate",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "CreateWorldTemplate",
 	},
@@ -17,7 +17,7 @@ var RobomakerPolicies = []Service{
 		ServiceSuffix: "getWorldTemplateBody",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "GetWorldTemplateBody",
 	},
@@ -26,7 +26,7 @@ var RobomakerPolicies = []Service{
 		ServiceSuffix: "listDeploymentJobs",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListDeploymentJobs",
 	},
@@ -35,7 +35,7 @@ var RobomakerPolicies = []Service{
 		ServiceSuffix: "listFleets",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListFleets",
 	},
@@ -44,7 +44,7 @@ var RobomakerPolicies = []Service{
 		ServiceSuffix: "listRobotApplications",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListRobotApplications",
 	},
@@ -53,7 +53,7 @@ var RobomakerPolicies = []Service{
 		ServiceSuffix: "listRobots",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListRobots",
 	},
@@ -62,7 +62,7 @@ var RobomakerPolicies = []Service{
 		ServiceSuffix: "listSimulationApplications",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListSimulationApplications",
 	},
@@ -71,7 +71,7 @@ var RobomakerPolicies = []Service{
 		ServiceSuffix: "listSimulationJobBatches",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListSimulationJobBatches",
 	},
@@ -80,7 +80,7 @@ var RobomakerPolicies = []Service{
 		ServiceSuffix: "listSimulationJobs",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListSimulationJobs",
 	},
@@ -89,7 +89,7 @@ var RobomakerPolicies = []Service{
 		ServiceSuffix: "listWorldExportJobs",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListWorldExportJobs",
 	},
@@ -98,7 +98,7 @@ var RobomakerPolicies = []Service{
 		ServiceSuffix: "listWorldGenerationJobs",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListWorldGenerationJobs",
 	},
@@ -107,7 +107,7 @@ var RobomakerPolicies = []Service{
 		ServiceSuffix: "listWorldTemplates",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListWorldTemplates",
 	},
@@ -116,7 +116,7 @@ var RobomakerPolicies = []Service{
 		ServiceSuffix: "listWorlds",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListWorlds",
 	},

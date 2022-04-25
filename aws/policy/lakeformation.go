@@ -8,7 +8,7 @@ var LakeFormationPolicies = []Service{
 		ServiceSuffix: "DeleteDataCellsFilter",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "DeleteDataCellsFilter",
 	},
@@ -17,7 +17,7 @@ var LakeFormationPolicies = []Service{
 		ServiceSuffix: "ExtendTransaction",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ExtendTransaction",
 	},
@@ -26,7 +26,7 @@ var LakeFormationPolicies = []Service{
 		ServiceSuffix: "GetDataLakeSettings",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "GetDataLakeSettings",
 	},
@@ -35,7 +35,7 @@ var LakeFormationPolicies = []Service{
 		ServiceSuffix: "ListDataCellsFilter",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListDataCellsFilter",
 	},
@@ -44,7 +44,7 @@ var LakeFormationPolicies = []Service{
 		ServiceSuffix: "ListLFTags",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListLFTags",
 	},
@@ -53,7 +53,7 @@ var LakeFormationPolicies = []Service{
 		ServiceSuffix: "ListPermissions",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListPermissions",
 	},
@@ -62,7 +62,7 @@ var LakeFormationPolicies = []Service{
 		ServiceSuffix: "ListResources",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListResources",
 	},
@@ -71,7 +71,7 @@ var LakeFormationPolicies = []Service{
 		ServiceSuffix: "ListTransactions",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListTransactions",
 	},
@@ -80,7 +80,7 @@ var LakeFormationPolicies = []Service{
 		ServiceSuffix: "StartTransaction",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "StartTransaction",
 	},

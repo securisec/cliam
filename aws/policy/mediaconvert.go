@@ -8,7 +8,7 @@ var MediaConvertPolicies = []Service{
 		ServiceSuffix: "2017-08-29/endpoints",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "DescribeEndpoints",
 	},

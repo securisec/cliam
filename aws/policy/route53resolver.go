@@ -7,7 +7,7 @@ var Route53ResolverPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Route53Resolver.ListFirewallConfigs",
 		},
 		Permission: "ListFirewallConfigs",
@@ -16,7 +16,7 @@ var Route53ResolverPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Route53Resolver.ListFirewallDomainLists",
 		},
 		Permission: "ListFirewallDomainLists",
@@ -25,7 +25,7 @@ var Route53ResolverPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Route53Resolver.ListFirewallRuleGroupAssociations",
 		},
 		Permission: "ListFirewallRuleGroupAssociations",
@@ -34,7 +34,7 @@ var Route53ResolverPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Route53Resolver.ListFirewallRuleGroups",
 		},
 		Permission: "ListFirewallRuleGroups",
@@ -43,7 +43,7 @@ var Route53ResolverPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Route53Resolver.ListResolverConfigs",
 		},
 		Permission: "ListResolverConfigs",
@@ -52,7 +52,7 @@ var Route53ResolverPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Route53Resolver.ListResolverDnssecConfigs",
 		},
 		Permission: "ListResolverDnssecConfigs",
@@ -61,7 +61,7 @@ var Route53ResolverPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Route53Resolver.ListResolverEndpoints",
 		},
 		Permission: "ListResolverEndpoints",
@@ -70,7 +70,7 @@ var Route53ResolverPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Route53Resolver.ListResolverQueryLogConfigAssociations",
 		},
 		Permission: "ListResolverQueryLogConfigAssociations",
@@ -79,7 +79,7 @@ var Route53ResolverPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Route53Resolver.ListResolverQueryLogConfigs",
 		},
 		Permission: "ListResolverQueryLogConfigs",
@@ -88,7 +88,7 @@ var Route53ResolverPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Route53Resolver.ListResolverRuleAssociations",
 		},
 		Permission: "ListResolverRuleAssociations",
@@ -97,7 +97,7 @@ var Route53ResolverPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Route53Resolver.ListResolverRules",
 		},
 		Permission: "ListResolverRules",

@@ -7,7 +7,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.GetSagemakerServicecatalogPortfolioStatus",
 		},
 		Permission: "GetSagemakerServicecatalogPortfolioStatus",
@@ -16,7 +16,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListActions",
 		},
 		Permission: "ListActions",
@@ -25,7 +25,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListAlgorithms",
 		},
 		Permission: "ListAlgorithms",
@@ -34,7 +34,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListAppImageConfigs",
 		},
 		Permission: "ListAppImageConfigs",
@@ -43,7 +43,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListApps",
 		},
 		Permission: "ListApps",
@@ -52,7 +52,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListArtifacts",
 		},
 		Permission: "ListArtifacts",
@@ -61,7 +61,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListAssociations",
 		},
 		Permission: "ListAssociations",
@@ -70,7 +70,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListAutoMlJobs",
 		},
 		Permission: "ListAutoMlJobs",
@@ -79,7 +79,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListCodeRepositories",
 		},
 		Permission: "ListCodeRepositories",
@@ -88,7 +88,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListCompilationJobs",
 		},
 		Permission: "ListCompilationJobs",
@@ -97,7 +97,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListContexts",
 		},
 		Permission: "ListContexts",
@@ -106,7 +106,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListDataQualityJobDefinitions",
 		},
 		Permission: "ListDataQualityJobDefinitions",
@@ -115,7 +115,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListDeviceFleets",
 		},
 		Permission: "ListDeviceFleets",
@@ -124,7 +124,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListDevices",
 		},
 		Permission: "ListDevices",
@@ -133,7 +133,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListDomains",
 		},
 		Permission: "ListDomains",
@@ -142,7 +142,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListEdgePackagingJobs",
 		},
 		Permission: "ListEdgePackagingJobs",
@@ -151,7 +151,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListEndpointConfigs",
 		},
 		Permission: "ListEndpointConfigs",
@@ -160,7 +160,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListEndpoints",
 		},
 		Permission: "ListEndpoints",
@@ -169,7 +169,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListExperiments",
 		},
 		Permission: "ListExperiments",
@@ -178,7 +178,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListFeatureGroups",
 		},
 		Permission: "ListFeatureGroups",
@@ -187,7 +187,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListFlowDefinitions",
 		},
 		Permission: "ListFlowDefinitions",
@@ -196,7 +196,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListHumanTaskUis",
 		},
 		Permission: "ListHumanTaskUis",
@@ -205,7 +205,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListHyperParameterTuningJobs",
 		},
 		Permission: "ListHyperParameterTuningJobs",
@@ -214,7 +214,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListImages",
 		},
 		Permission: "ListImages",
@@ -223,7 +223,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListInferenceRecommendationsJobs",
 		},
 		Permission: "ListInferenceRecommendationsJobs",
@@ -232,7 +232,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListLabelingJobs",
 		},
 		Permission: "ListLabelingJobs",
@@ -241,7 +241,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListLineageGroups",
 		},
 		Permission: "ListLineageGroups",
@@ -250,7 +250,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListModelBiasJobDefinitions",
 		},
 		Permission: "ListModelBiasJobDefinitions",
@@ -259,7 +259,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListModelExplainabilityJobDefinitions",
 		},
 		Permission: "ListModelExplainabilityJobDefinitions",
@@ -268,7 +268,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListModelPackageGroups",
 		},
 		Permission: "ListModelPackageGroups",
@@ -277,7 +277,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListModelPackages",
 		},
 		Permission: "ListModelPackages",
@@ -286,7 +286,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListModelQualityJobDefinitions",
 		},
 		Permission: "ListModelQualityJobDefinitions",
@@ -295,7 +295,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListModels",
 		},
 		Permission: "ListModels",
@@ -304,7 +304,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListMonitoringExecutions",
 		},
 		Permission: "ListMonitoringExecutions",
@@ -313,7 +313,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListMonitoringSchedules",
 		},
 		Permission: "ListMonitoringSchedules",
@@ -322,7 +322,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListNotebookInstanceLifecycleConfigs",
 		},
 		Permission: "ListNotebookInstanceLifecycleConfigs",
@@ -331,7 +331,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListNotebookInstances",
 		},
 		Permission: "ListNotebookInstances",
@@ -340,7 +340,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListPipelineExecutionSteps",
 		},
 		Permission: "ListPipelineExecutionSteps",
@@ -349,7 +349,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListPipelines",
 		},
 		Permission: "ListPipelines",
@@ -358,7 +358,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListProcessingJobs",
 		},
 		Permission: "ListProcessingJobs",
@@ -367,7 +367,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListProjects",
 		},
 		Permission: "ListProjects",
@@ -376,7 +376,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListStudioLifecycleConfigs",
 		},
 		Permission: "ListStudioLifecycleConfigs",
@@ -385,7 +385,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListSubscribedWorkteams",
 		},
 		Permission: "ListSubscribedWorkteams",
@@ -394,7 +394,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListTrainingJobs",
 		},
 		Permission: "ListTrainingJobs",
@@ -403,7 +403,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListTransformJobs",
 		},
 		Permission: "ListTransformJobs",
@@ -412,7 +412,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListTrialComponents",
 		},
 		Permission: "ListTrialComponents",
@@ -421,7 +421,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListTrials",
 		},
 		Permission: "ListTrials",
@@ -430,7 +430,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListUserProfiles",
 		},
 		Permission: "ListUserProfiles",
@@ -439,7 +439,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListWorkforces",
 		},
 		Permission: "ListWorkforces",
@@ -448,7 +448,7 @@ var SageMakerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SageMaker.ListWorkteams",
 		},
 		Permission: "ListWorkteams",

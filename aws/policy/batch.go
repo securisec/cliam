@@ -8,7 +8,7 @@ var BatchPolicies = []Service{
 		ServiceSuffix: "v1/describecomputeenvironments",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "DescribeComputeEnvironments",
 	},
@@ -17,7 +17,7 @@ var BatchPolicies = []Service{
 		ServiceSuffix: "v1/describejobdefinitions",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "DescribeJobDefinitions",
 	},
@@ -26,7 +26,7 @@ var BatchPolicies = []Service{
 		ServiceSuffix: "v1/describejobqueues",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "DescribeJobQueues",
 	},
@@ -35,7 +35,7 @@ var BatchPolicies = []Service{
 		ServiceSuffix: "v1/listjobs",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListJobs",
 	},
@@ -44,7 +44,7 @@ var BatchPolicies = []Service{
 		ServiceSuffix: "v1/listschedulingpolicies",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListSchedulingPolicies",
 	},

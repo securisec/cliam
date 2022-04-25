@@ -7,7 +7,7 @@ var ShieldPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSShield_20160616.DescribeAttackStatistics",
 		},
 		Permission: "DescribeAttackStatistics",
@@ -16,7 +16,7 @@ var ShieldPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSShield_20160616.DescribeDrtAccess",
 		},
 		Permission: "DescribeDrtAccess",
@@ -25,7 +25,7 @@ var ShieldPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSShield_20160616.DescribeEmergencyContactSettings",
 		},
 		Permission: "DescribeEmergencyContactSettings",
@@ -34,7 +34,7 @@ var ShieldPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSShield_20160616.DescribeProtection",
 		},
 		Permission: "DescribeProtection",
@@ -43,7 +43,7 @@ var ShieldPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSShield_20160616.DescribeSubscription",
 		},
 		Permission: "DescribeSubscription",
@@ -52,7 +52,7 @@ var ShieldPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSShield_20160616.GetSubscriptionState",
 		},
 		Permission: "GetSubscriptionState",
@@ -61,7 +61,7 @@ var ShieldPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSShield_20160616.ListAttacks",
 		},
 		Permission: "ListAttacks",
@@ -70,7 +70,7 @@ var ShieldPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSShield_20160616.ListProtectionGroups",
 		},
 		Permission: "ListProtectionGroups",
@@ -79,7 +79,7 @@ var ShieldPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSShield_20160616.ListProtections",
 		},
 		Permission: "ListProtections",

@@ -7,7 +7,7 @@ var SnowballPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSIESnowballJobManagementService.CreateJob",
 		},
 		Permission: "CreateJob",
@@ -16,7 +16,7 @@ var SnowballPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSIESnowballJobManagementService.DescribeAddresses",
 		},
 		Permission: "DescribeAddresses",
@@ -25,7 +25,7 @@ var SnowballPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSIESnowballJobManagementService.GetSnowballUsage",
 		},
 		Permission: "GetSnowballUsage",
@@ -34,7 +34,7 @@ var SnowballPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSIESnowballJobManagementService.ListClusters",
 		},
 		Permission: "ListClusters",
@@ -43,7 +43,7 @@ var SnowballPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSIESnowballJobManagementService.ListCompatibleImages",
 		},
 		Permission: "ListCompatibleImages",
@@ -52,7 +52,7 @@ var SnowballPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSIESnowballJobManagementService.ListJobs",
 		},
 		Permission: "ListJobs",
@@ -61,7 +61,7 @@ var SnowballPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSIESnowballJobManagementService.ListLongTermPricing",
 		},
 		Permission: "ListLongTermPricing",

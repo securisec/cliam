@@ -8,7 +8,7 @@ var WorkspacesWebPolicies = []Service{
 		ServiceSuffix: "portals",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "CreatePortal",
 	},

@@ -8,7 +8,7 @@ var CodecommitPolicies = []Service{
 		JsonData:   map[string]string{},
 		Permission: "ListApprovalRuleTemplates",
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "CodeCommit_20150413.ListApprovalRuleTemplates",
 		},
 	},
@@ -17,7 +17,7 @@ var CodecommitPolicies = []Service{
 		JsonData:   map[string]string{},
 		Permission: "ListRepositories",
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "CodeCommit_20150413.ListRepositories",
 		},
 	},

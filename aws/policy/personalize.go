@@ -7,7 +7,7 @@ var PersonalizePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonPersonalize.ListBatchInferenceJobs",
 		},
 		Permission: "ListBatchInferenceJobs",
@@ -16,7 +16,7 @@ var PersonalizePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonPersonalize.ListBatchSegmentJobs",
 		},
 		Permission: "ListBatchSegmentJobs",
@@ -25,7 +25,7 @@ var PersonalizePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonPersonalize.ListCampaigns",
 		},
 		Permission: "ListCampaigns",
@@ -34,7 +34,7 @@ var PersonalizePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonPersonalize.ListDatasetExportJobs",
 		},
 		Permission: "ListDatasetExportJobs",
@@ -43,7 +43,7 @@ var PersonalizePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonPersonalize.ListDatasetGroups",
 		},
 		Permission: "ListDatasetGroups",
@@ -52,7 +52,7 @@ var PersonalizePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonPersonalize.ListDatasetImportJobs",
 		},
 		Permission: "ListDatasetImportJobs",
@@ -61,7 +61,7 @@ var PersonalizePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonPersonalize.ListDatasets",
 		},
 		Permission: "ListDatasets",
@@ -70,7 +70,7 @@ var PersonalizePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonPersonalize.ListEventTrackers",
 		},
 		Permission: "ListEventTrackers",
@@ -79,7 +79,7 @@ var PersonalizePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonPersonalize.ListFilters",
 		},
 		Permission: "ListFilters",
@@ -88,7 +88,7 @@ var PersonalizePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonPersonalize.ListRecipes",
 		},
 		Permission: "ListRecipes",
@@ -97,7 +97,7 @@ var PersonalizePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonPersonalize.ListRecommenders",
 		},
 		Permission: "ListRecommenders",
@@ -106,7 +106,7 @@ var PersonalizePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonPersonalize.ListSchemas",
 		},
 		Permission: "ListSchemas",
@@ -115,7 +115,7 @@ var PersonalizePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonPersonalize.ListSolutionVersions",
 		},
 		Permission: "ListSolutionVersions",
@@ -124,7 +124,7 @@ var PersonalizePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonPersonalize.ListSolutions",
 		},
 		Permission: "ListSolutions",

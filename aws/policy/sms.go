@@ -7,7 +7,7 @@ var SMSPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSServerMigrationService_V2016_10_24.GetApp",
 		},
 		Permission: "GetApp",
@@ -16,7 +16,7 @@ var SMSPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSServerMigrationService_V2016_10_24.GetAppLaunchConfiguration",
 		},
 		Permission: "GetAppLaunchConfiguration",
@@ -25,7 +25,7 @@ var SMSPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSServerMigrationService_V2016_10_24.GetAppReplicationConfiguration",
 		},
 		Permission: "GetAppReplicationConfiguration",
@@ -34,7 +34,7 @@ var SMSPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSServerMigrationService_V2016_10_24.GetConnectors",
 		},
 		Permission: "GetConnectors",
@@ -43,7 +43,7 @@ var SMSPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSServerMigrationService_V2016_10_24.GetReplicationJobs",
 		},
 		Permission: "GetReplicationJobs",
@@ -52,7 +52,7 @@ var SMSPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSServerMigrationService_V2016_10_24.GetServers",
 		},
 		Permission: "GetServers",
@@ -61,7 +61,7 @@ var SMSPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSServerMigrationService_V2016_10_24.ListApps",
 		},
 		Permission: "ListApps",

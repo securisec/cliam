@@ -8,7 +8,7 @@ var IotWirelessPolicies = []Service{
 		ServiceSuffix: "device-profiles",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "CreateDeviceProfile",
 	},
@@ -17,7 +17,7 @@ var IotWirelessPolicies = []Service{
 		ServiceSuffix: "service-profiles",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "CreateServiceProfile",
 	},
@@ -81,7 +81,7 @@ var IotWirelessPolicies = []Service{
 		ServiceSuffix: "log-levels",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "UpdateLogLevelsByResourceTypes",
 	},

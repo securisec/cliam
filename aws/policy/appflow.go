@@ -8,7 +8,7 @@ var AppFlowPolicies = []Service{
 		ServiceSuffix: "describe-connector-profiles",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "DescribeConnectorProfiles",
 	},
@@ -17,7 +17,7 @@ var AppFlowPolicies = []Service{
 		ServiceSuffix: "describe-connectors",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "DescribeConnectors",
 	},
@@ -26,7 +26,7 @@ var AppFlowPolicies = []Service{
 		ServiceSuffix: "list-connector-entities",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListConnectorEntities",
 	},
@@ -35,7 +35,7 @@ var AppFlowPolicies = []Service{
 		ServiceSuffix: "list-connectors",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListConnectors",
 	},
@@ -44,7 +44,7 @@ var AppFlowPolicies = []Service{
 		ServiceSuffix: "list-flows",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListFlows",
 	},
@@ -53,7 +53,7 @@ var AppFlowPolicies = []Service{
 		ServiceSuffix: "register-connector",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "RegisterConnector",
 	},

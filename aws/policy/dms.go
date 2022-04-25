@@ -7,7 +7,7 @@ var DMSPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonDMSv20160101.DescribeAccountAttributes",
 		},
 		Permission: "DescribeAccountAttributes",
@@ -16,7 +16,7 @@ var DMSPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonDMSv20160101.DescribeApplicableIndividualAssessments",
 		},
 		Permission: "DescribeApplicableIndividualAssessments",
@@ -25,7 +25,7 @@ var DMSPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonDMSv20160101.DescribeCertificates",
 		},
 		Permission: "DescribeCertificates",
@@ -34,7 +34,7 @@ var DMSPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonDMSv20160101.DescribeConnections",
 		},
 		Permission: "DescribeConnections",
@@ -43,7 +43,7 @@ var DMSPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonDMSv20160101.DescribeEndpointTypes",
 		},
 		Permission: "DescribeEndpointTypes",
@@ -52,7 +52,7 @@ var DMSPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonDMSv20160101.DescribeEndpoints",
 		},
 		Permission: "DescribeEndpoints",
@@ -61,7 +61,7 @@ var DMSPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonDMSv20160101.DescribeEventCategories",
 		},
 		Permission: "DescribeEventCategories",
@@ -70,7 +70,7 @@ var DMSPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonDMSv20160101.DescribeEventSubscriptions",
 		},
 		Permission: "DescribeEventSubscriptions",
@@ -79,7 +79,7 @@ var DMSPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonDMSv20160101.DescribeOrderableReplicationInstances",
 		},
 		Permission: "DescribeOrderableReplicationInstances",
@@ -88,7 +88,7 @@ var DMSPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonDMSv20160101.DescribePendingMaintenanceActions",
 		},
 		Permission: "DescribePendingMaintenanceActions",
@@ -97,7 +97,7 @@ var DMSPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonDMSv20160101.DescribeReplicationInstances",
 		},
 		Permission: "DescribeReplicationInstances",
@@ -106,7 +106,7 @@ var DMSPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonDMSv20160101.DescribeReplicationSubnetGroups",
 		},
 		Permission: "DescribeReplicationSubnetGroups",
@@ -115,7 +115,7 @@ var DMSPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonDMSv20160101.DescribeReplicationTaskAssessmentResults",
 		},
 		Permission: "DescribeReplicationTaskAssessmentResults",
@@ -124,7 +124,7 @@ var DMSPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonDMSv20160101.DescribeReplicationTaskAssessmentRuns",
 		},
 		Permission: "DescribeReplicationTaskAssessmentRuns",
@@ -133,7 +133,7 @@ var DMSPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonDMSv20160101.DescribeReplicationTaskIndividualAssessments",
 		},
 		Permission: "DescribeReplicationTaskIndividualAssessments",
@@ -142,7 +142,7 @@ var DMSPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonDMSv20160101.DescribeReplicationTasks",
 		},
 		Permission: "DescribeReplicationTasks",
@@ -151,7 +151,7 @@ var DMSPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonDMSv20160101.ListTagsForResource",
 		},
 		Permission: "ListTagsForResource",

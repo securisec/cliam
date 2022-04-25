@@ -8,7 +8,7 @@ var KinesisVideoPolicies = []Service{
 		ServiceSuffix: "describeSignalingChannel",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "DescribeSignalingChannel",
 	},
@@ -17,7 +17,7 @@ var KinesisVideoPolicies = []Service{
 		ServiceSuffix: "describeStream",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "DescribeStream",
 	},
@@ -26,7 +26,7 @@ var KinesisVideoPolicies = []Service{
 		ServiceSuffix: "listSignalingChannels",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListSignalingChannels",
 	},
@@ -35,7 +35,7 @@ var KinesisVideoPolicies = []Service{
 		ServiceSuffix: "listStreams",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListStreams",
 	},
@@ -44,7 +44,7 @@ var KinesisVideoPolicies = []Service{
 		ServiceSuffix: "listTagsForStream",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListTagsForStream",
 	},

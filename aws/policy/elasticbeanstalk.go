@@ -9,7 +9,7 @@ var ElasticBeanStalkPolicies = []Service{
 		ServiceSuffix: "?Action=DescribeApplications&Version=2010-12-01",
 		Permission:    "DescribeApplications",
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 	},
 	{
@@ -18,7 +18,7 @@ var ElasticBeanStalkPolicies = []Service{
 		ServiceSuffix: "?Action=DescribeApplicationVersions&Version=2010-12-01",
 		Permission:    "DescribeApplicationVersions",
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 	},
 	{
@@ -27,7 +27,7 @@ var ElasticBeanStalkPolicies = []Service{
 		ServiceSuffix: "?Action=DescribeEvents&Version=2010-12-01",
 		Permission:    "DescribeEvents",
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 	},
 	{
@@ -36,7 +36,7 @@ var ElasticBeanStalkPolicies = []Service{
 		ServiceSuffix: "?Action=DescribeAccountAttributes&Version=2010-12-01",
 		Permission:    "DescribeAccountAttributes",
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 	},
 	{
@@ -45,7 +45,7 @@ var ElasticBeanStalkPolicies = []Service{
 		ServiceSuffix: "?Action=ListAvailableSolutionStacks&Version=2010-12-01",
 		Permission:    "ListAvailableSolutionStacks",
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 	},
 	{
@@ -54,7 +54,7 @@ var ElasticBeanStalkPolicies = []Service{
 		ServiceSuffix: "?Action=ListPlatformBranches&Version=2010-12-01",
 		Permission:    "ListPlatformBranches",
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 	},
 	{
@@ -63,7 +63,54 @@ var ElasticBeanStalkPolicies = []Service{
 		ServiceSuffix: "?Action=ListPlatformVersions&Version=2010-12-01",
 		Permission:    "ListPlatformVersions",
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
+	},
+
+	// extra permissions
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeInstanceHealth",
+			"Version": "2012-06-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeInstanceHealth",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "LoadBalancerName",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "load_balancer_name",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeLoadBalancerAttributes",
+			"Version": "2012-06-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeLoadBalancerAttributes",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "LoadBalancerName",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "load_balancer_name",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeTags",
+			"Version": "2012-06-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeTags",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "LoadBalancerNames",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "load_balancer_names",
 	},
 }

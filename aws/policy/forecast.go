@@ -7,7 +7,7 @@ var ForecastPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonForecast.ListDatasetGroups",
 		},
 		Permission: "ListDatasetGroups",
@@ -16,7 +16,7 @@ var ForecastPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonForecast.ListDatasetImportJobs",
 		},
 		Permission: "ListDatasetImportJobs",
@@ -25,7 +25,7 @@ var ForecastPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonForecast.ListDatasets",
 		},
 		Permission: "ListDatasets",
@@ -34,7 +34,7 @@ var ForecastPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonForecast.ListExplainabilities",
 		},
 		Permission: "ListExplainabilities",
@@ -43,7 +43,7 @@ var ForecastPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonForecast.ListExplainabilityExports",
 		},
 		Permission: "ListExplainabilityExports",
@@ -52,7 +52,7 @@ var ForecastPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonForecast.ListForecastExportJobs",
 		},
 		Permission: "ListForecastExportJobs",
@@ -61,7 +61,7 @@ var ForecastPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonForecast.ListForecasts",
 		},
 		Permission: "ListForecasts",
@@ -70,7 +70,7 @@ var ForecastPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonForecast.ListPredictorBacktestExportJobs",
 		},
 		Permission: "ListPredictorBacktestExportJobs",
@@ -79,7 +79,7 @@ var ForecastPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonForecast.ListPredictors",
 		},
 		Permission: "ListPredictors",

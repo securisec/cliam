@@ -7,7 +7,7 @@ var TranscribePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Transcribe.ListCallAnalyticsCategories",
 		},
 		Permission: "ListCallAnalyticsCategories",
@@ -16,7 +16,7 @@ var TranscribePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Transcribe.ListCallAnalyticsJobs",
 		},
 		Permission: "ListCallAnalyticsJobs",
@@ -25,7 +25,7 @@ var TranscribePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Transcribe.ListLanguageModels",
 		},
 		Permission: "ListLanguageModels",
@@ -34,7 +34,7 @@ var TranscribePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Transcribe.ListMedicalTranscriptionJobs",
 		},
 		Permission: "ListMedicalTranscriptionJobs",
@@ -43,7 +43,7 @@ var TranscribePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Transcribe.ListMedicalVocabularies",
 		},
 		Permission: "ListMedicalVocabularies",
@@ -52,7 +52,7 @@ var TranscribePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Transcribe.ListTranscriptionJobs",
 		},
 		Permission: "ListTranscriptionJobs",
@@ -61,7 +61,7 @@ var TranscribePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Transcribe.ListVocabularies",
 		},
 		Permission: "ListVocabularies",
@@ -70,7 +70,7 @@ var TranscribePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Transcribe.ListVocabularyFilters",
 		},
 		Permission: "ListVocabularyFilters",

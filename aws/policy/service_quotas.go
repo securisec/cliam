@@ -7,7 +7,7 @@ var ServiceQuotasPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "ServiceQuotasV20190624.AssociateServiceQuotaTemplate",
 		},
 		Permission: "AssociateServiceQuotaTemplate",
@@ -16,7 +16,7 @@ var ServiceQuotasPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "ServiceQuotasV20190624.DisassociateServiceQuotaTemplate",
 		},
 		Permission: "DisassociateServiceQuotaTemplate",
@@ -25,7 +25,7 @@ var ServiceQuotasPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "ServiceQuotasV20190624.GetAssociationForServiceQuotaTemplate",
 		},
 		Permission: "GetAssociationForServiceQuotaTemplate",
@@ -34,7 +34,7 @@ var ServiceQuotasPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "ServiceQuotasV20190624.ListRequestedServiceQuotaChangeHistory",
 		},
 		Permission: "ListRequestedServiceQuotaChangeHistory",
@@ -43,7 +43,7 @@ var ServiceQuotasPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "ServiceQuotasV20190624.ListServiceQuotaIncreaseRequestsInTemplate",
 		},
 		Permission: "ListServiceQuotaIncreaseRequestsInTemplate",
@@ -52,7 +52,7 @@ var ServiceQuotasPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "ServiceQuotasV20190624.ListServices",
 		},
 		Permission: "ListServices",

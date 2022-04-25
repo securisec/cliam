@@ -8,10 +8,10 @@ import (
 )
 
 const (
-	aws_BASE_URL          = "amazonaws.com"
-	aws_JSON_CONTENT_TYPE = "application/x-amz-json-1.1"
-	aws_JSON_1            = "application/x-amz-json-1.0"
-	aws_X_AMZ_TARGET      = "X-Amz-Target"
+	aws_BASE_URL     = "amazonaws.com"
+	aws_JSON_1_1     = "application/x-amz-json-1.1"
+	aws_JSON_1_0     = "application/x-amz-json-1.0"
+	aws_X_AMZ_TARGET = "X-Amz-Target"
 )
 
 // Service base service struct for all services

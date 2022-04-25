@@ -7,7 +7,7 @@ var LightsailPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Lightsail_20161128.GetActiveNames",
 		},
 		Permission: "GetActiveNames",
@@ -16,7 +16,7 @@ var LightsailPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Lightsail_20161128.GetAlarms",
 		},
 		Permission: "GetAlarms",
@@ -25,7 +25,7 @@ var LightsailPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Lightsail_20161128.GetBlueprints",
 		},
 		Permission: "GetBlueprints",
@@ -34,7 +34,7 @@ var LightsailPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Lightsail_20161128.GetBucketBundles",
 		},
 		Permission: "GetBucketBundles",
@@ -43,7 +43,7 @@ var LightsailPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Lightsail_20161128.GetBuckets",
 		},
 		Permission: "GetBuckets",
@@ -52,7 +52,7 @@ var LightsailPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Lightsail_20161128.GetBundles",
 		},
 		Permission: "GetBundles",
@@ -61,7 +61,7 @@ var LightsailPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Lightsail_20161128.GetCertificates",
 		},
 		Permission: "GetCertificates",
@@ -70,7 +70,7 @@ var LightsailPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Lightsail_20161128.GetCloudFormationStackRecords",
 		},
 		Permission: "GetCloudFormationStackRecords",
@@ -79,7 +79,7 @@ var LightsailPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Lightsail_20161128.GetContactMethods",
 		},
 		Permission: "GetContactMethods",
@@ -88,7 +88,7 @@ var LightsailPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Lightsail_20161128.GetContainerApiMetadata",
 		},
 		Permission: "GetContainerApiMetadata",
@@ -97,7 +97,7 @@ var LightsailPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Lightsail_20161128.GetContainerServicePowers",
 		},
 		Permission: "GetContainerServicePowers",
@@ -106,7 +106,7 @@ var LightsailPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Lightsail_20161128.GetContainerServices",
 		},
 		Permission: "GetContainerServices",
@@ -115,7 +115,7 @@ var LightsailPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Lightsail_20161128.GetDiskSnapshots",
 		},
 		Permission: "GetDiskSnapshots",
@@ -124,7 +124,7 @@ var LightsailPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Lightsail_20161128.GetDisks",
 		},
 		Permission: "GetDisks",
@@ -133,7 +133,7 @@ var LightsailPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Lightsail_20161128.GetDistributionBundles",
 		},
 		Permission: "GetDistributionBundles",
@@ -142,7 +142,7 @@ var LightsailPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Lightsail_20161128.GetDistributionLatestCacheReset",
 		},
 		Permission: "GetDistributionLatestCacheReset",
@@ -151,7 +151,7 @@ var LightsailPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Lightsail_20161128.GetDistributions",
 		},
 		Permission: "GetDistributions",
@@ -160,7 +160,7 @@ var LightsailPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Lightsail_20161128.GetDomains",
 		},
 		Permission: "GetDomains",
@@ -169,7 +169,7 @@ var LightsailPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Lightsail_20161128.GetExportSnapshotRecords",
 		},
 		Permission: "GetExportSnapshotRecords",
@@ -178,7 +178,7 @@ var LightsailPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Lightsail_20161128.GetInstanceSnapshots",
 		},
 		Permission: "GetInstanceSnapshots",
@@ -187,7 +187,7 @@ var LightsailPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Lightsail_20161128.GetInstances",
 		},
 		Permission: "GetInstances",
@@ -196,7 +196,7 @@ var LightsailPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Lightsail_20161128.GetKeyPairs",
 		},
 		Permission: "GetKeyPairs",
@@ -205,7 +205,7 @@ var LightsailPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Lightsail_20161128.GetLoadBalancers",
 		},
 		Permission: "GetLoadBalancers",
@@ -214,7 +214,7 @@ var LightsailPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Lightsail_20161128.GetOperations",
 		},
 		Permission: "GetOperations",
@@ -223,7 +223,7 @@ var LightsailPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Lightsail_20161128.GetRegions",
 		},
 		Permission: "GetRegions",
@@ -232,7 +232,7 @@ var LightsailPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Lightsail_20161128.GetRelationalDatabaseBlueprints",
 		},
 		Permission: "GetRelationalDatabaseBlueprints",
@@ -241,7 +241,7 @@ var LightsailPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Lightsail_20161128.GetRelationalDatabaseBundles",
 		},
 		Permission: "GetRelationalDatabaseBundles",
@@ -250,7 +250,7 @@ var LightsailPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Lightsail_20161128.GetRelationalDatabaseSnapshots",
 		},
 		Permission: "GetRelationalDatabaseSnapshots",
@@ -259,7 +259,7 @@ var LightsailPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Lightsail_20161128.GetRelationalDatabases",
 		},
 		Permission: "GetRelationalDatabases",
@@ -268,7 +268,7 @@ var LightsailPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Lightsail_20161128.GetStaticIps",
 		},
 		Permission: "GetStaticIps",

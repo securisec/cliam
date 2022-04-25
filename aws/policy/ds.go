@@ -7,7 +7,7 @@ var DSPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "DirectoryService_20150416.DescribeDirectories",
 		},
 		Permission: "DescribeDirectories",
@@ -16,7 +16,7 @@ var DSPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "DirectoryService_20150416.DescribeEventTopics",
 		},
 		Permission: "DescribeEventTopics",
@@ -25,7 +25,7 @@ var DSPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "DirectoryService_20150416.DescribeSnapshots",
 		},
 		Permission: "DescribeSnapshots",
@@ -34,7 +34,7 @@ var DSPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "DirectoryService_20150416.DescribeTrusts",
 		},
 		Permission: "DescribeTrusts",
@@ -43,7 +43,7 @@ var DSPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "DirectoryService_20150416.GetDirectoryLimits",
 		},
 		Permission: "GetDirectoryLimits",
@@ -52,7 +52,7 @@ var DSPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "DirectoryService_20150416.ListLogSubscriptions",
 		},
 		Permission: "ListLogSubscriptions",

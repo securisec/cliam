@@ -8,7 +8,7 @@ var Macie2Policies = []Service{
 		ServiceSuffix: "custom-data-identifiers/get",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "BatchGetCustomDataIdentifiers",
 	},
@@ -17,7 +17,7 @@ var Macie2Policies = []Service{
 		ServiceSuffix: "findings/sample",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "CreateSampleFindings",
 	},
@@ -26,7 +26,7 @@ var Macie2Policies = []Service{
 		ServiceSuffix: "datasources/s3",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "DescribeBuckets",
 	},
@@ -40,7 +40,7 @@ var Macie2Policies = []Service{
 		ServiceSuffix: "administrator/disassociate",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "DisassociateFromAdministratorAccount",
 	},
@@ -49,7 +49,7 @@ var Macie2Policies = []Service{
 		ServiceSuffix: "master/disassociate",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "DisassociateFromMasterAccount",
 	},
@@ -58,7 +58,7 @@ var Macie2Policies = []Service{
 		ServiceSuffix: "macie",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "EnableMacie",
 	},
@@ -72,7 +72,7 @@ var Macie2Policies = []Service{
 		ServiceSuffix: "datasources/s3/statistics",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "GetBucketStatistics",
 	},
@@ -106,7 +106,7 @@ var Macie2Policies = []Service{
 		ServiceSuffix: "usage/statistics",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "GetUsageStatistics",
 	},
@@ -120,7 +120,7 @@ var Macie2Policies = []Service{
 		ServiceSuffix: "jobs/list",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListClassificationJobs",
 	},
@@ -129,7 +129,7 @@ var Macie2Policies = []Service{
 		ServiceSuffix: "custom-data-identifiers/list",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListCustomDataIdentifiers",
 	},
@@ -138,7 +138,7 @@ var Macie2Policies = []Service{
 		ServiceSuffix: "findings",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListFindings",
 	},
@@ -157,7 +157,7 @@ var Macie2Policies = []Service{
 		ServiceSuffix: "managed-data-identifiers/list",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListManagedDataIdentifiers",
 	},
@@ -176,7 +176,7 @@ var Macie2Policies = []Service{
 		ServiceSuffix: "datasources/search-resources",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "SearchResources",
 	},

@@ -7,7 +7,7 @@ var ProtonPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
 			aws_X_AMZ_TARGET:           "AwsProton20200720.GetAccountSettings",
 		},
 		Permission: "GetAccountSettings",
@@ -16,7 +16,7 @@ var ProtonPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
 			aws_X_AMZ_TARGET:           "AwsProton20200720.ListEnvironmentTemplates",
 		},
 		Permission: "ListEnvironmentTemplates",
@@ -25,7 +25,7 @@ var ProtonPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
 			aws_X_AMZ_TARGET:           "AwsProton20200720.ListEnvironments",
 		},
 		Permission: "ListEnvironments",
@@ -34,7 +34,7 @@ var ProtonPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
 			aws_X_AMZ_TARGET:           "AwsProton20200720.ListRepositories",
 		},
 		Permission: "ListRepositories",
@@ -43,7 +43,7 @@ var ProtonPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
 			aws_X_AMZ_TARGET:           "AwsProton20200720.ListServiceInstances",
 		},
 		Permission: "ListServiceInstances",
@@ -52,7 +52,7 @@ var ProtonPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
 			aws_X_AMZ_TARGET:           "AwsProton20200720.ListServiceTemplates",
 		},
 		Permission: "ListServiceTemplates",
@@ -61,7 +61,7 @@ var ProtonPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
 			aws_X_AMZ_TARGET:           "AwsProton20200720.ListServices",
 		},
 		Permission: "ListServices",
@@ -70,7 +70,7 @@ var ProtonPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
 			aws_X_AMZ_TARGET:           "AwsProton20200720.UpdateAccountSettings",
 		},
 		Permission: "UpdateAccountSettings",

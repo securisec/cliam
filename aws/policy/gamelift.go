@@ -7,7 +7,7 @@ var GameLiftPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "GameLift.CreateBuild",
 		},
 		Permission: "CreateBuild",
@@ -16,7 +16,7 @@ var GameLiftPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "GameLift.CreateScript",
 		},
 		Permission: "CreateScript",
@@ -25,7 +25,7 @@ var GameLiftPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "GameLift.DescribeEC2InstanceLimits",
 		},
 		Permission: "DescribeEC2InstanceLimits",
@@ -34,7 +34,7 @@ var GameLiftPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "GameLift.DescribeFleetAttributes",
 		},
 		Permission: "DescribeFleetAttributes",
@@ -43,7 +43,7 @@ var GameLiftPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "GameLift.DescribeFleetCapacity",
 		},
 		Permission: "DescribeFleetCapacity",
@@ -52,7 +52,7 @@ var GameLiftPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "GameLift.DescribeFleetUtilization",
 		},
 		Permission: "DescribeFleetUtilization",
@@ -61,7 +61,7 @@ var GameLiftPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "GameLift.DescribeGameSessionDetails",
 		},
 		Permission: "DescribeGameSessionDetails",
@@ -70,7 +70,7 @@ var GameLiftPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "GameLift.DescribeGameSessionQueues",
 		},
 		Permission: "DescribeGameSessionQueues",
@@ -79,7 +79,7 @@ var GameLiftPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "GameLift.DescribeGameSessions",
 		},
 		Permission: "DescribeGameSessions",
@@ -88,7 +88,7 @@ var GameLiftPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "GameLift.DescribeMatchmakingConfigurations",
 		},
 		Permission: "DescribeMatchmakingConfigurations",
@@ -97,7 +97,7 @@ var GameLiftPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "GameLift.DescribeMatchmakingRuleSets",
 		},
 		Permission: "DescribeMatchmakingRuleSets",
@@ -106,7 +106,7 @@ var GameLiftPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "GameLift.DescribePlayerSessions",
 		},
 		Permission: "DescribePlayerSessions",
@@ -115,7 +115,7 @@ var GameLiftPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "GameLift.DescribeVpcPeeringAuthorizations",
 		},
 		Permission: "DescribeVpcPeeringAuthorizations",
@@ -124,7 +124,7 @@ var GameLiftPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "GameLift.DescribeVpcPeeringConnections",
 		},
 		Permission: "DescribeVpcPeeringConnections",
@@ -133,7 +133,7 @@ var GameLiftPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "GameLift.ListAliases",
 		},
 		Permission: "ListAliases",
@@ -142,7 +142,7 @@ var GameLiftPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "GameLift.ListBuilds",
 		},
 		Permission: "ListBuilds",
@@ -151,7 +151,7 @@ var GameLiftPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "GameLift.ListFleets",
 		},
 		Permission: "ListFleets",
@@ -160,7 +160,7 @@ var GameLiftPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "GameLift.ListGameServerGroups",
 		},
 		Permission: "ListGameServerGroups",
@@ -169,7 +169,7 @@ var GameLiftPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "GameLift.ListScripts",
 		},
 		Permission: "ListScripts",
@@ -178,7 +178,7 @@ var GameLiftPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "GameLift.SearchGameSessions",
 		},
 		Permission: "SearchGameSessions",

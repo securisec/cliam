@@ -6,7 +6,7 @@ var ECSPolicies = []Service{
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			"Content-Type": aws_JSON_CONTENT_TYPE,
+			"Content-Type": aws_JSON_1_1,
 			"x-amz-target": "AmazonEC2ContainerServiceV20141113.DescribeClusters",
 		},
 		Permission: "DescribeClusters",
@@ -16,7 +16,7 @@ var ECSPolicies = []Service{
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			"Content-Type": aws_JSON_CONTENT_TYPE,
+			"Content-Type": aws_JSON_1_1,
 			"x-amz-target": "AmazonEC2ContainerServiceV20141113.ListAccountSettings",
 		},
 		Permission: "ListAccountSettings",
@@ -26,7 +26,7 @@ var ECSPolicies = []Service{
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			"Content-Type": aws_JSON_CONTENT_TYPE,
+			"Content-Type": aws_JSON_1_1,
 			"x-amz-target": "AmazonEC2ContainerServiceV20141113.ListClusters",
 		},
 		Permission: "ListClusters",
@@ -36,7 +36,7 @@ var ECSPolicies = []Service{
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			"Content-Type": aws_JSON_CONTENT_TYPE,
+			"Content-Type": aws_JSON_1_1,
 			"x-amz-target": "AmazonEC2ContainerServiceV20141113.ListContainerInstances",
 		},
 		Permission: "ListContainerInstances",
@@ -46,7 +46,7 @@ var ECSPolicies = []Service{
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			"Content-Type": aws_JSON_CONTENT_TYPE,
+			"Content-Type": aws_JSON_1_1,
 			"x-amz-target": "AmazonEC2ContainerServiceV20141113.ListServices",
 		},
 		Permission: "ListServices",
@@ -56,7 +56,7 @@ var ECSPolicies = []Service{
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			"Content-Type": aws_JSON_CONTENT_TYPE,
+			"Content-Type": aws_JSON_1_1,
 			"x-amz-target": "AmazonEC2ContainerServiceV20141113.ListTaskDefinitionFamilies",
 		},
 		Permission: "ListTaskDefinitionFamilies",
@@ -66,7 +66,7 @@ var ECSPolicies = []Service{
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			"Content-Type": aws_JSON_CONTENT_TYPE,
+			"Content-Type": aws_JSON_1_1,
 			"x-amz-target": "AmazonEC2ContainerServiceV20141113.ListTaskDefinitions",
 		},
 		Permission: "ListTaskDefinitions",
@@ -76,7 +76,7 @@ var ECSPolicies = []Service{
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			"Content-Type": aws_JSON_CONTENT_TYPE,
+			"Content-Type": aws_JSON_1_1,
 			"x-amz-target": "AmazonEC2ContainerServiceV20141113.ListTasks",
 		},
 		Permission: "ListTasks",

@@ -8,7 +8,7 @@ var APIGatewayPolicies = []Service{
 		ServiceSuffix: "apikeys",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "CreateApiKey",
 	},
@@ -17,7 +17,7 @@ var APIGatewayPolicies = []Service{
 		ServiceSuffix: "clientcertificates",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "GenerateClientCertificate",
 	},

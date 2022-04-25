@@ -7,7 +7,7 @@ var WorkspacesPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "WorkspacesService.DescribeAccount",
 		},
 		Permission: "DescribeAccount",
@@ -16,7 +16,7 @@ var WorkspacesPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "WorkspacesService.DescribeAccountModifications",
 		},
 		Permission: "DescribeAccountModifications",
@@ -25,7 +25,7 @@ var WorkspacesPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "WorkspacesService.DescribeConnectionAliases",
 		},
 		Permission: "DescribeConnectionAliases",
@@ -34,7 +34,7 @@ var WorkspacesPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "WorkspacesService.DescribeIpGroups",
 		},
 		Permission: "DescribeIpGroups",
@@ -43,7 +43,7 @@ var WorkspacesPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "WorkspacesService.DescribeWorkspaceBundles",
 		},
 		Permission: "DescribeWorkspaceBundles",
@@ -52,7 +52,7 @@ var WorkspacesPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "WorkspacesService.DescribeWorkspaceDirectories",
 		},
 		Permission: "DescribeWorkspaceDirectories",
@@ -61,7 +61,7 @@ var WorkspacesPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "WorkspacesService.DescribeWorkspaceImages",
 		},
 		Permission: "DescribeWorkspaceImages",
@@ -70,7 +70,7 @@ var WorkspacesPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "WorkspacesService.DescribeWorkspaces",
 		},
 		Permission: "DescribeWorkspaces",
@@ -79,7 +79,7 @@ var WorkspacesPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "WorkspacesService.DescribeWorkspacesConnectionStatus",
 		},
 		Permission: "DescribeWorkspacesConnectionStatus",

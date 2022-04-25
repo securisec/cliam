@@ -7,7 +7,7 @@ var MemoryDBPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonMemoryDB.DescribeAcLs",
 		},
 		Permission: "DescribeAcLs",
@@ -16,7 +16,7 @@ var MemoryDBPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonMemoryDB.DescribeClusters",
 		},
 		Permission: "DescribeClusters",
@@ -25,7 +25,7 @@ var MemoryDBPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonMemoryDB.DescribeEngineVersions",
 		},
 		Permission: "DescribeEngineVersions",
@@ -34,7 +34,7 @@ var MemoryDBPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonMemoryDB.DescribeParameterGroups",
 		},
 		Permission: "DescribeParameterGroups",
@@ -43,7 +43,7 @@ var MemoryDBPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonMemoryDB.DescribeServiceUpdates",
 		},
 		Permission: "DescribeServiceUpdates",
@@ -52,7 +52,7 @@ var MemoryDBPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonMemoryDB.DescribeSnapshots",
 		},
 		Permission: "DescribeSnapshots",
@@ -61,7 +61,7 @@ var MemoryDBPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonMemoryDB.DescribeSubnetGroups",
 		},
 		Permission: "DescribeSubnetGroups",

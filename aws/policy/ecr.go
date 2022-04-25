@@ -9,7 +9,7 @@ var ECRPolicies = []Service{
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			"Content-Type": aws_JSON_CONTENT_TYPE,
+			"Content-Type": aws_JSON_1_1,
 			"x-amz-target": "AmazonEC2ContainerRegistry_V20150921.DescribeRepositories",
 		},
 	},
@@ -19,7 +19,7 @@ var ECRPolicies = []Service{
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			"Content-Type": aws_JSON_CONTENT_TYPE,
+			"Content-Type": aws_JSON_1_1,
 			"x-amz-target": "AmazonEC2ContainerRegistry_V20150921.GetAuthorizationToken",
 		},
 	},
@@ -28,7 +28,7 @@ var ECRPolicies = []Service{
 	{
 		Method: "POST",
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonEC2ContainerRegistry_V20150921.DescribeImages",
 		},
 		Permission:             "DescribeImages",
@@ -40,7 +40,7 @@ var ECRPolicies = []Service{
 	{
 		Method: "POST",
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonEC2ContainerRegistry_V20150921.GetLifecyclePolicy",
 		},
 		Permission:             "GetLifecyclePolicy",
@@ -52,7 +52,7 @@ var ECRPolicies = []Service{
 	{
 		Method: "POST",
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonEC2ContainerRegistry_V20150921.GetLifecyclePolicyPreview",
 		},
 		Permission:             "GetLifecyclePolicyPreview",
@@ -64,7 +64,7 @@ var ECRPolicies = []Service{
 	{
 		Method: "POST",
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonEC2ContainerRegistry_V20150921.GetRepositoryPolicy",
 		},
 		Permission:             "GetRepositoryPolicy",
@@ -76,7 +76,7 @@ var ECRPolicies = []Service{
 	{
 		Method: "POST",
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonEC2ContainerRegistry_V20150921.ListImages",
 		},
 		Permission:             "ListImages",
@@ -88,7 +88,7 @@ var ECRPolicies = []Service{
 	{
 		Method: "POST",
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AmazonEC2ContainerRegistry_V20150921.ListTagsForResource",
 		},
 		Permission:             "ListTagsForResource",

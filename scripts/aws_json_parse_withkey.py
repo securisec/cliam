@@ -10,11 +10,11 @@ def toSnakeCase(s):
 def getPathParam(s, p):
     return re.sub(r'\{.+\}', f'{{{{.{toSnakeCase(p)}}}}}', s)
 
-def postJsonEndpoint(operation: str, param: str) -> str:
+def postJsonEndpoint(operation: str, param: str, jsonVersion: str) -> str:
     print(f"""{{
 		Method: "POST",
 		Headers: map[string]string{{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: {} aws_JSON_CONTENT_TYPE,
 			aws_X_AMZ_TARGET:           "{data['metadata']['targetPrefix']}.{operation}",
 		}},
 		Permission: "{operation}",
@@ -52,7 +52,8 @@ def postFormEndpoint(operation: str, param: str) -> str:
 
 
 
-fileName = '../temp/awsapis/eks-2017-11-01.normal.json'
+fileName = '../temp/awsapis/accessanalyzer-2019-11-01.normal.json'
+
 path = Path.cwd() / 'iam-enumerator' / fileName
 with open(str(path.resolve()), 'r') as f:
     data = json.loads(f.read())

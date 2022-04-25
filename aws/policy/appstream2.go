@@ -7,7 +7,7 @@ var Appstream2Policies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "PhotonAdminProxyService.DescribeAppBlocks",
 		},
 		Permission: "DescribeAppBlocks",
@@ -16,7 +16,7 @@ var Appstream2Policies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "PhotonAdminProxyService.DescribeApplicationFleetAssociations",
 		},
 		Permission: "DescribeApplicationFleetAssociations",
@@ -25,7 +25,7 @@ var Appstream2Policies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "PhotonAdminProxyService.DescribeDirectoryConfigs",
 		},
 		Permission: "DescribeDirectoryConfigs",
@@ -34,7 +34,7 @@ var Appstream2Policies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "PhotonAdminProxyService.DescribeFleets",
 		},
 		Permission: "DescribeFleets",
@@ -43,7 +43,7 @@ var Appstream2Policies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "PhotonAdminProxyService.DescribeImageBuilders",
 		},
 		Permission: "DescribeImageBuilders",
@@ -52,7 +52,7 @@ var Appstream2Policies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "PhotonAdminProxyService.DescribeImages",
 		},
 		Permission: "DescribeImages",
@@ -61,7 +61,7 @@ var Appstream2Policies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "PhotonAdminProxyService.DescribeUsageReportSubscriptions",
 		},
 		Permission: "DescribeUsageReportSubscriptions",
@@ -70,7 +70,7 @@ var Appstream2Policies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "PhotonAdminProxyService.DescribeUserStackAssociations",
 		},
 		Permission: "DescribeUserStackAssociations",

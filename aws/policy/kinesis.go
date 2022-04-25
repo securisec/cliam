@@ -7,7 +7,7 @@ var KinesisPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Kinesis_20131202.DescribeLimits",
 		},
 		Permission: "DescribeLimits",
@@ -16,7 +16,7 @@ var KinesisPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Kinesis_20131202.DescribeStreamConsumer",
 		},
 		Permission: "DescribeStreamConsumer",
@@ -25,7 +25,7 @@ var KinesisPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Kinesis_20131202.ListStreams",
 		},
 		Permission: "ListStreams",

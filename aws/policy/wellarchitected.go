@@ -13,7 +13,7 @@ var WellarchitectedPolicies = []Service{
 		ServiceSuffix: "notifications",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListNotifications",
 	},
@@ -27,7 +27,7 @@ var WellarchitectedPolicies = []Service{
 		ServiceSuffix: "workloadsSummaries",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListWorkloads",
 	},

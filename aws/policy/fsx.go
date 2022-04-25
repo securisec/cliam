@@ -7,7 +7,7 @@ var FSXPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSSimbaAPIService_v20180301.CreateBackup",
 		},
 		Permission: "CreateBackup",
@@ -16,7 +16,7 @@ var FSXPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSSimbaAPIService_v20180301.DescribeBackups",
 		},
 		Permission: "DescribeBackups",
@@ -25,7 +25,7 @@ var FSXPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSSimbaAPIService_v20180301.DescribeDataRepositoryAssociations",
 		},
 		Permission: "DescribeDataRepositoryAssociations",
@@ -34,7 +34,7 @@ var FSXPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSSimbaAPIService_v20180301.DescribeDataRepositoryTasks",
 		},
 		Permission: "DescribeDataRepositoryTasks",
@@ -43,7 +43,7 @@ var FSXPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSSimbaAPIService_v20180301.DescribeFileSystems",
 		},
 		Permission: "DescribeFileSystems",
@@ -52,7 +52,7 @@ var FSXPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSSimbaAPIService_v20180301.DescribeSnapshots",
 		},
 		Permission: "DescribeSnapshots",
@@ -61,7 +61,7 @@ var FSXPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSSimbaAPIService_v20180301.DescribeStorageVirtualMachines",
 		},
 		Permission: "DescribeStorageVirtualMachines",
@@ -70,7 +70,7 @@ var FSXPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSSimbaAPIService_v20180301.DescribeVolumes",
 		},
 		Permission: "DescribeVolumes",

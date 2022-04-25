@@ -7,7 +7,7 @@ var DirectconnectPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "OvertureService.DescribeConnections",
 		},
 		Permission: "DescribeConnections",
@@ -16,7 +16,7 @@ var DirectconnectPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "OvertureService.DescribeCustomerMetadata",
 		},
 		Permission: "DescribeCustomerMetadata",
@@ -25,7 +25,7 @@ var DirectconnectPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "OvertureService.DescribeDirectConnectGatewayAssociationProposals",
 		},
 		Permission: "DescribeDirectConnectGatewayAssociationProposals",
@@ -34,7 +34,7 @@ var DirectconnectPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "OvertureService.DescribeDirectConnectGatewayAssociations",
 		},
 		Permission: "DescribeDirectConnectGatewayAssociations",
@@ -43,7 +43,7 @@ var DirectconnectPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "OvertureService.DescribeDirectConnectGatewayAttachments",
 		},
 		Permission: "DescribeDirectConnectGatewayAttachments",
@@ -52,7 +52,7 @@ var DirectconnectPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "OvertureService.DescribeDirectConnectGateways",
 		},
 		Permission: "DescribeDirectConnectGateways",
@@ -61,7 +61,7 @@ var DirectconnectPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "OvertureService.DescribeInterconnects",
 		},
 		Permission: "DescribeInterconnects",
@@ -70,7 +70,7 @@ var DirectconnectPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "OvertureService.DescribeLags",
 		},
 		Permission: "DescribeLags",
@@ -79,7 +79,7 @@ var DirectconnectPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "OvertureService.DescribeLocations",
 		},
 		Permission: "DescribeLocations",
@@ -88,7 +88,7 @@ var DirectconnectPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "OvertureService.DescribeVirtualGateways",
 		},
 		Permission: "DescribeVirtualGateways",
@@ -97,7 +97,7 @@ var DirectconnectPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "OvertureService.DescribeVirtualInterfaces",
 		},
 		Permission: "DescribeVirtualInterfaces",
@@ -106,7 +106,7 @@ var DirectconnectPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "OvertureService.ListVirtualInterfaceTestHistory",
 		},
 		Permission: "ListVirtualInterfaceTestHistory",

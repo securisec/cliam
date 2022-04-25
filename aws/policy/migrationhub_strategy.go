@@ -18,7 +18,7 @@ var MigrationHubStratergyPolicies = []Service{
 		ServiceSuffix: "list-applicationcomponents",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListApplicationComponents",
 	},
@@ -37,7 +37,7 @@ var MigrationHubStratergyPolicies = []Service{
 		ServiceSuffix: "list-servers",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListServers",
 	},
@@ -46,7 +46,7 @@ var MigrationHubStratergyPolicies = []Service{
 		ServiceSuffix: "put-portfolio-preferences",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "PutPortfolioPreferences",
 	},
@@ -55,7 +55,7 @@ var MigrationHubStratergyPolicies = []Service{
 		ServiceSuffix: "start-assessment",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "StartAssessment",
 	},
@@ -64,7 +64,7 @@ var MigrationHubStratergyPolicies = []Service{
 		ServiceSuffix: "start-recommendation-report-generation",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "StartRecommendationReportGeneration",
 	},

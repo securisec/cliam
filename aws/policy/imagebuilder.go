@@ -8,7 +8,7 @@ var ImageBuilderPolicies = []Service{
 		ServiceSuffix: "ListComponents",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListComponents",
 	},
@@ -17,7 +17,7 @@ var ImageBuilderPolicies = []Service{
 		ServiceSuffix: "ListContainerRecipes",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListContainerRecipes",
 	},
@@ -26,7 +26,7 @@ var ImageBuilderPolicies = []Service{
 		ServiceSuffix: "ListDistributionConfigurations",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListDistributionConfigurations",
 	},
@@ -35,7 +35,7 @@ var ImageBuilderPolicies = []Service{
 		ServiceSuffix: "ListImagePipelines",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListImagePipelines",
 	},
@@ -44,7 +44,7 @@ var ImageBuilderPolicies = []Service{
 		ServiceSuffix: "ListImageRecipes",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListImageRecipes",
 	},
@@ -53,7 +53,7 @@ var ImageBuilderPolicies = []Service{
 		ServiceSuffix: "ListImages",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListImages",
 	},
@@ -62,7 +62,7 @@ var ImageBuilderPolicies = []Service{
 		ServiceSuffix: "ListInfrastructureConfigurations",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListInfrastructureConfigurations",
 	},

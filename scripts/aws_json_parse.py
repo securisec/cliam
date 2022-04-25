@@ -49,6 +49,7 @@ def postFormEndpoint(version: str, action: str) -> str:
 
 
 fileName = '../temp/awsapis/iot-2015-05-28.normal.json'
+
 path = Path.cwd() / 'iam-enumerator' / fileName
 with open(str(path.resolve()), 'r') as f:
     data = json.loads(f.read())

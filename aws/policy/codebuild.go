@@ -7,7 +7,7 @@ var CodebuildPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "CodeBuild_20161006.ListBuildBatches",
 		},
 		Permission: "ListBuildBatches",
@@ -16,7 +16,7 @@ var CodebuildPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "CodeBuild_20161006.ListBuildBatchesForProject",
 		},
 		Permission: "ListBuildBatchesForProject",
@@ -25,7 +25,7 @@ var CodebuildPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "CodeBuild_20161006.ListBuilds",
 		},
 		Permission: "ListBuilds",
@@ -34,7 +34,7 @@ var CodebuildPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "CodeBuild_20161006.ListCuratedEnvironmentImages",
 		},
 		Permission: "ListCuratedEnvironmentImages",
@@ -43,7 +43,7 @@ var CodebuildPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "CodeBuild_20161006.ListProjects",
 		},
 		Permission: "ListProjects",
@@ -52,7 +52,7 @@ var CodebuildPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "CodeBuild_20161006.ListReportGroups",
 		},
 		Permission: "ListReportGroups",
@@ -61,7 +61,7 @@ var CodebuildPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "CodeBuild_20161006.ListReports",
 		},
 		Permission: "ListReports",
@@ -70,7 +70,7 @@ var CodebuildPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "CodeBuild_20161006.ListSharedProjects",
 		},
 		Permission: "ListSharedProjects",
@@ -79,7 +79,7 @@ var CodebuildPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "CodeBuild_20161006.ListSourceCredentials",
 		},
 		Permission: "ListSourceCredentials",

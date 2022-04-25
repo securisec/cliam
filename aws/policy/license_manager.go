@@ -7,7 +7,7 @@ var LicenseManagerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSLicenseManager.GetServiceSettings",
 		},
 		Permission: "GetServiceSettings",
@@ -16,7 +16,7 @@ var LicenseManagerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSLicenseManager.ListDistributedGrants",
 		},
 		Permission: "ListDistributedGrants",
@@ -25,7 +25,7 @@ var LicenseManagerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSLicenseManager.ListLicenseConfigurations",
 		},
 		Permission: "ListLicenseConfigurations",
@@ -34,7 +34,7 @@ var LicenseManagerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSLicenseManager.ListLicenseConversionTasks",
 		},
 		Permission: "ListLicenseConversionTasks",
@@ -43,7 +43,7 @@ var LicenseManagerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSLicenseManager.ListLicenseManagerReportGenerators",
 		},
 		Permission: "ListLicenseManagerReportGenerators",
@@ -52,7 +52,7 @@ var LicenseManagerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSLicenseManager.ListLicenses",
 		},
 		Permission: "ListLicenses",
@@ -61,7 +61,7 @@ var LicenseManagerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSLicenseManager.ListReceivedGrants",
 		},
 		Permission: "ListReceivedGrants",
@@ -70,7 +70,7 @@ var LicenseManagerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSLicenseManager.ListReceivedLicenses",
 		},
 		Permission: "ListReceivedLicenses",
@@ -79,7 +79,7 @@ var LicenseManagerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSLicenseManager.ListResourceInventory",
 		},
 		Permission: "ListResourceInventory",
@@ -88,7 +88,7 @@ var LicenseManagerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSLicenseManager.ListTokens",
 		},
 		Permission: "ListTokens",
@@ -97,7 +97,7 @@ var LicenseManagerPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSLicenseManager.UpdateServiceSettings",
 		},
 		Permission: "UpdateServiceSettings",

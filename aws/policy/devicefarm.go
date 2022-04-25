@@ -7,7 +7,7 @@ var DeviceFarmPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "DeviceFarm_20150623.GetAccountSettings",
 		},
 		Permission: "GetAccountSettings",
@@ -16,7 +16,7 @@ var DeviceFarmPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "DeviceFarm_20150623.GetOfferingStatus",
 		},
 		Permission: "GetOfferingStatus",
@@ -25,7 +25,7 @@ var DeviceFarmPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "DeviceFarm_20150623.GetTestGridSession",
 		},
 		Permission: "GetTestGridSession",
@@ -34,7 +34,7 @@ var DeviceFarmPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "DeviceFarm_20150623.ListDeviceInstances",
 		},
 		Permission: "ListDeviceInstances",
@@ -43,7 +43,7 @@ var DeviceFarmPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "DeviceFarm_20150623.ListDevices",
 		},
 		Permission: "ListDevices",
@@ -52,7 +52,7 @@ var DeviceFarmPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "DeviceFarm_20150623.ListInstanceProfiles",
 		},
 		Permission: "ListInstanceProfiles",
@@ -61,7 +61,7 @@ var DeviceFarmPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "DeviceFarm_20150623.ListOfferingPromotions",
 		},
 		Permission: "ListOfferingPromotions",
@@ -70,7 +70,7 @@ var DeviceFarmPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "DeviceFarm_20150623.ListOfferingTransactions",
 		},
 		Permission: "ListOfferingTransactions",
@@ -79,7 +79,7 @@ var DeviceFarmPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "DeviceFarm_20150623.ListOfferings",
 		},
 		Permission: "ListOfferings",
@@ -88,7 +88,7 @@ var DeviceFarmPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "DeviceFarm_20150623.ListProjects",
 		},
 		Permission: "ListProjects",
@@ -97,7 +97,7 @@ var DeviceFarmPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "DeviceFarm_20150623.ListTestGridProjects",
 		},
 		Permission: "ListTestGridProjects",
@@ -106,7 +106,7 @@ var DeviceFarmPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "DeviceFarm_20150623.ListVpceConfigurations",
 		},
 		Permission: "ListVpceConfigurations",

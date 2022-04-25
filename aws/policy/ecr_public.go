@@ -8,7 +8,7 @@ var ECRPublicPolicies = []Service{
 		Method:     "POST",
 		JsonData:   map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			"x-amz-target":             "SpencerFrontendService.DescribeRepositories",
 		},
 	},
@@ -17,7 +17,7 @@ var ECRPublicPolicies = []Service{
 		Method:     "POST",
 		JsonData:   map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			"x-amz-target":             "SpencerFrontendService.DescribeRegistries",
 		},
 	},
@@ -26,7 +26,7 @@ var ECRPublicPolicies = []Service{
 		Method:     "POST",
 		JsonData:   map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			"x-amz-target":             "SpencerFrontendService.GetAuthorizationToken",
 		},
 	},
@@ -35,7 +35,7 @@ var ECRPublicPolicies = []Service{
 		Method:     "POST",
 		JsonData:   map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			"x-amz-target":             "SpencerFrontendService.GetRegistryCatalogData",
 		},
 	},
@@ -44,7 +44,7 @@ var ECRPublicPolicies = []Service{
 	{
 		Method: "POST",
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SpencerFrontendService.DescribeImageTags",
 		},
 		Permission:             "DescribeImageTags",
@@ -56,7 +56,7 @@ var ECRPublicPolicies = []Service{
 	{
 		Method: "POST",
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SpencerFrontendService.DescribeImages",
 		},
 		Permission:             "DescribeImages",
@@ -68,7 +68,7 @@ var ECRPublicPolicies = []Service{
 	{
 		Method: "POST",
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SpencerFrontendService.GetRepositoryCatalogData",
 		},
 		Permission:             "GetRepositoryCatalogData",
@@ -80,7 +80,7 @@ var ECRPublicPolicies = []Service{
 	{
 		Method: "POST",
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SpencerFrontendService.GetRepositoryPolicy",
 		},
 		Permission:             "GetRepositoryPolicy",
@@ -92,7 +92,7 @@ var ECRPublicPolicies = []Service{
 	{
 		Method: "POST",
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "SpencerFrontendService.ListTagsForResource",
 		},
 		Permission:             "ListTagsForResource",

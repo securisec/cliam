@@ -7,7 +7,7 @@ var ConfigServicePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "StarlingDoveService.DescribeAggregationAuthorizations",
 		},
 		Permission: "DescribeAggregationAuthorizations",
@@ -16,7 +16,7 @@ var ConfigServicePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "StarlingDoveService.DescribeComplianceByConfigRule",
 		},
 		Permission: "DescribeComplianceByConfigRule",
@@ -25,7 +25,7 @@ var ConfigServicePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "StarlingDoveService.DescribeComplianceByResource",
 		},
 		Permission: "DescribeComplianceByResource",
@@ -34,7 +34,7 @@ var ConfigServicePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "StarlingDoveService.DescribeConfigRuleEvaluationStatus",
 		},
 		Permission: "DescribeConfigRuleEvaluationStatus",
@@ -43,7 +43,7 @@ var ConfigServicePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "StarlingDoveService.DescribeConfigRules",
 		},
 		Permission: "DescribeConfigRules",
@@ -52,7 +52,7 @@ var ConfigServicePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "StarlingDoveService.DescribeConfigurationAggregators",
 		},
 		Permission: "DescribeConfigurationAggregators",
@@ -61,7 +61,7 @@ var ConfigServicePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "StarlingDoveService.DescribeConfigurationRecorderStatus",
 		},
 		Permission: "DescribeConfigurationRecorderStatus",
@@ -70,7 +70,7 @@ var ConfigServicePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "StarlingDoveService.DescribeConfigurationRecorders",
 		},
 		Permission: "DescribeConfigurationRecorders",
@@ -79,7 +79,7 @@ var ConfigServicePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "StarlingDoveService.DescribeConformancePackStatus",
 		},
 		Permission: "DescribeConformancePackStatus",
@@ -88,7 +88,7 @@ var ConfigServicePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "StarlingDoveService.DescribeConformancePacks",
 		},
 		Permission: "DescribeConformancePacks",
@@ -97,7 +97,7 @@ var ConfigServicePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "StarlingDoveService.DescribeDeliveryChannelStatus",
 		},
 		Permission: "DescribeDeliveryChannelStatus",
@@ -106,7 +106,7 @@ var ConfigServicePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "StarlingDoveService.DescribeDeliveryChannels",
 		},
 		Permission: "DescribeDeliveryChannels",
@@ -115,7 +115,7 @@ var ConfigServicePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "StarlingDoveService.DescribeOrganizationConfigRuleStatuses",
 		},
 		Permission: "DescribeOrganizationConfigRuleStatuses",
@@ -124,7 +124,7 @@ var ConfigServicePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "StarlingDoveService.DescribeOrganizationConfigRules",
 		},
 		Permission: "DescribeOrganizationConfigRules",
@@ -133,7 +133,7 @@ var ConfigServicePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "StarlingDoveService.DescribeOrganizationConformancePackStatuses",
 		},
 		Permission: "DescribeOrganizationConformancePackStatuses",
@@ -142,7 +142,7 @@ var ConfigServicePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "StarlingDoveService.DescribeOrganizationConformancePacks",
 		},
 		Permission: "DescribeOrganizationConformancePacks",
@@ -151,7 +151,7 @@ var ConfigServicePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "StarlingDoveService.DescribePendingAggregationRequests",
 		},
 		Permission: "DescribePendingAggregationRequests",
@@ -160,7 +160,7 @@ var ConfigServicePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "StarlingDoveService.DescribeRetentionConfigurations",
 		},
 		Permission: "DescribeRetentionConfigurations",
@@ -169,7 +169,7 @@ var ConfigServicePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "StarlingDoveService.GetComplianceSummaryByConfigRule",
 		},
 		Permission: "GetComplianceSummaryByConfigRule",
@@ -178,7 +178,7 @@ var ConfigServicePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "StarlingDoveService.GetComplianceSummaryByResourceType",
 		},
 		Permission: "GetComplianceSummaryByResourceType",
@@ -187,7 +187,7 @@ var ConfigServicePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "StarlingDoveService.GetCustomRulePolicy",
 		},
 		Permission: "GetCustomRulePolicy",
@@ -196,7 +196,7 @@ var ConfigServicePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "StarlingDoveService.GetDiscoveredResourceCounts",
 		},
 		Permission: "GetDiscoveredResourceCounts",
@@ -205,7 +205,7 @@ var ConfigServicePolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "StarlingDoveService.ListStoredQueries",
 		},
 		Permission: "ListStoredQueries",

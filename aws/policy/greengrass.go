@@ -8,7 +8,7 @@ var GreengrassPolicies = []Service{
 		ServiceSuffix: "greengrass/definition/connectors",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "CreateConnectorDefinition",
 	},
@@ -17,7 +17,7 @@ var GreengrassPolicies = []Service{
 		ServiceSuffix: "greengrass/definition/cores",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "CreateCoreDefinition",
 	},
@@ -26,7 +26,7 @@ var GreengrassPolicies = []Service{
 		ServiceSuffix: "greengrass/definition/devices",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "CreateDeviceDefinition",
 	},
@@ -35,7 +35,7 @@ var GreengrassPolicies = []Service{
 		ServiceSuffix: "greengrass/definition/functions",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "CreateFunctionDefinition",
 	},
@@ -44,7 +44,7 @@ var GreengrassPolicies = []Service{
 		ServiceSuffix: "greengrass/definition/loggers",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "CreateLoggerDefinition",
 	},
@@ -53,7 +53,7 @@ var GreengrassPolicies = []Service{
 		ServiceSuffix: "greengrass/definition/resources",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "CreateResourceDefinition",
 	},
@@ -62,7 +62,7 @@ var GreengrassPolicies = []Service{
 		ServiceSuffix: "greengrass/definition/subscriptions",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "CreateSubscriptionDefinition",
 	},

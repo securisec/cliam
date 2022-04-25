@@ -13,7 +13,7 @@ var DevopsGuruPolicies = []Service{
 		ServiceSuffix: "event-sources",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "DescribeEventSourcesConfig",
 	},
@@ -22,7 +22,7 @@ var DevopsGuruPolicies = []Service{
 		ServiceSuffix: "feedback",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "DescribeFeedback",
 	},
@@ -31,7 +31,7 @@ var DevopsGuruPolicies = []Service{
 		ServiceSuffix: "organization/health",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "DescribeOrganizationHealth",
 	},
@@ -50,7 +50,7 @@ var DevopsGuruPolicies = []Service{
 		ServiceSuffix: "channels",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListNotificationChannels",
 	},

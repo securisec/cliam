@@ -8,7 +8,7 @@ var IOTPolicies = []Service{
 		ServiceSuffix: "keys-and-certificate",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "CreateKeysAndCertificate",
 	},
@@ -42,7 +42,7 @@ var IOTPolicies = []Service{
 		ServiceSuffix: "effective-policies",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "GetEffectivePolicies",
 	},
@@ -76,7 +76,7 @@ var IOTPolicies = []Service{
 		ServiceSuffix: "audit/findings",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListAuditFindings",
 	},
@@ -85,7 +85,7 @@ var IOTPolicies = []Service{
 		ServiceSuffix: "audit/suppressions/list",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListAuditSuppressions",
 	},
@@ -239,7 +239,7 @@ var IOTPolicies = []Service{
 		ServiceSuffix: "v2LoggingOptions",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "SetV2LoggingOptions",
 	},
@@ -248,7 +248,7 @@ var IOTPolicies = []Service{
 		ServiceSuffix: "indexing/config",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "UpdateIndexingConfiguration",
 	},

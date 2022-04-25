@@ -8,7 +8,7 @@ var SecurityHubPolicies = []Service{
 		ServiceSuffix: "actionTargets/get",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "DescribeActionTargets",
 	},
@@ -37,7 +37,7 @@ var SecurityHubPolicies = []Service{
 		ServiceSuffix: "administrator/disassociate",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "DisassociateFromAdministratorAccount",
 	},
@@ -46,7 +46,7 @@ var SecurityHubPolicies = []Service{
 		ServiceSuffix: "master/disassociate",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "DisassociateFromMasterAccount",
 	},
@@ -55,7 +55,7 @@ var SecurityHubPolicies = []Service{
 		ServiceSuffix: "accounts",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "EnableSecurityHub",
 	},
@@ -69,7 +69,7 @@ var SecurityHubPolicies = []Service{
 		ServiceSuffix: "standards/get",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "GetEnabledStandards",
 	},
@@ -78,7 +78,7 @@ var SecurityHubPolicies = []Service{
 		ServiceSuffix: "findings",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "GetFindings",
 	},
@@ -87,7 +87,7 @@ var SecurityHubPolicies = []Service{
 		ServiceSuffix: "insights/get",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "GetInsights",
 	},

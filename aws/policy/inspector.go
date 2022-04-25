@@ -7,7 +7,7 @@ var InspectorPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "InspectorService.DescribeCrossAccountAccessRole",
 		},
 		Permission: "DescribeCrossAccountAccessRole",
@@ -16,7 +16,7 @@ var InspectorPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "InspectorService.ListAssessmentRuns",
 		},
 		Permission: "ListAssessmentRuns",
@@ -25,7 +25,7 @@ var InspectorPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "InspectorService.ListAssessmentTargets",
 		},
 		Permission: "ListAssessmentTargets",
@@ -34,7 +34,7 @@ var InspectorPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "InspectorService.ListAssessmentTemplates",
 		},
 		Permission: "ListAssessmentTemplates",
@@ -43,7 +43,7 @@ var InspectorPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "InspectorService.ListEventSubscriptions",
 		},
 		Permission: "ListEventSubscriptions",
@@ -52,7 +52,7 @@ var InspectorPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "InspectorService.ListFindings",
 		},
 		Permission: "ListFindings",
@@ -61,7 +61,7 @@ var InspectorPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "InspectorService.ListRulesPackages",
 		},
 		Permission: "ListRulesPackages",

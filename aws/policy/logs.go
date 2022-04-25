@@ -7,7 +7,7 @@ var LogsPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Logs_20140328.DescribeDestinations",
 		},
 		Permission: "DescribeDestinations",
@@ -16,7 +16,7 @@ var LogsPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Logs_20140328.DescribeExportTasks",
 		},
 		Permission: "DescribeExportTasks",
@@ -25,7 +25,7 @@ var LogsPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Logs_20140328.DescribeLogGroups",
 		},
 		Permission: "DescribeLogGroups",
@@ -34,7 +34,7 @@ var LogsPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Logs_20140328.DescribeMetricFilters",
 		},
 		Permission: "DescribeMetricFilters",
@@ -43,7 +43,7 @@ var LogsPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Logs_20140328.DescribeQueries",
 		},
 		Permission: "DescribeQueries",
@@ -52,7 +52,7 @@ var LogsPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Logs_20140328.DescribeQueryDefinitions",
 		},
 		Permission: "DescribeQueryDefinitions",
@@ -61,7 +61,7 @@ var LogsPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Logs_20140328.DescribeResourcePolicies",
 		},
 		Permission: "DescribeResourcePolicies",

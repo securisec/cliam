@@ -7,7 +7,7 @@ var WafV2Policies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSWAF_20190729.GetRuleGroup",
 		},
 		Permission: "GetRuleGroup",

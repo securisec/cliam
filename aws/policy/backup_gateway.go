@@ -7,7 +7,7 @@ var BackupGatewayPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "BackupOnPremises_v20210101.ListGateways",
 		},
 		Permission: "ListGateways",
@@ -16,7 +16,7 @@ var BackupGatewayPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "BackupOnPremises_v20210101.ListHypervisors",
 		},
 		Permission: "ListHypervisors",
@@ -25,7 +25,7 @@ var BackupGatewayPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "BackupOnPremises_v20210101.ListVirtualMachines",
 		},
 		Permission: "ListVirtualMachines",

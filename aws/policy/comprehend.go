@@ -7,7 +7,7 @@ var ComprehendPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Comprehend_20171127.ListDocumentClassificationJobs",
 		},
 		Permission: "ListDocumentClassificationJobs",
@@ -16,7 +16,7 @@ var ComprehendPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Comprehend_20171127.ListDocumentClassifierSummaries",
 		},
 		Permission: "ListDocumentClassifierSummaries",
@@ -25,7 +25,7 @@ var ComprehendPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Comprehend_20171127.ListDocumentClassifiers",
 		},
 		Permission: "ListDocumentClassifiers",
@@ -34,7 +34,7 @@ var ComprehendPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Comprehend_20171127.ListDominantLanguageDetectionJobs",
 		},
 		Permission: "ListDominantLanguageDetectionJobs",
@@ -43,7 +43,7 @@ var ComprehendPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Comprehend_20171127.ListEndpoints",
 		},
 		Permission: "ListEndpoints",
@@ -52,7 +52,7 @@ var ComprehendPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Comprehend_20171127.ListEntitiesDetectionJobs",
 		},
 		Permission: "ListEntitiesDetectionJobs",
@@ -61,7 +61,7 @@ var ComprehendPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Comprehend_20171127.ListEntityRecognizerSummaries",
 		},
 		Permission: "ListEntityRecognizerSummaries",
@@ -70,7 +70,7 @@ var ComprehendPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Comprehend_20171127.ListEntityRecognizers",
 		},
 		Permission: "ListEntityRecognizers",
@@ -79,7 +79,7 @@ var ComprehendPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Comprehend_20171127.ListEventsDetectionJobs",
 		},
 		Permission: "ListEventsDetectionJobs",
@@ -88,7 +88,7 @@ var ComprehendPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Comprehend_20171127.ListKeyPhrasesDetectionJobs",
 		},
 		Permission: "ListKeyPhrasesDetectionJobs",
@@ -97,7 +97,7 @@ var ComprehendPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Comprehend_20171127.ListPiiEntitiesDetectionJobs",
 		},
 		Permission: "ListPiiEntitiesDetectionJobs",
@@ -106,7 +106,7 @@ var ComprehendPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Comprehend_20171127.ListSentimentDetectionJobs",
 		},
 		Permission: "ListSentimentDetectionJobs",
@@ -115,7 +115,7 @@ var ComprehendPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Comprehend_20171127.ListTargetedSentimentDetectionJobs",
 		},
 		Permission: "ListTargetedSentimentDetectionJobs",
@@ -124,7 +124,7 @@ var ComprehendPolicies = []Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "Comprehend_20171127.ListTopicsDetectionJobs",
 		},
 		Permission: "ListTopicsDetectionJobs",
