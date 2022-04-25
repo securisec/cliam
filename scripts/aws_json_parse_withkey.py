@@ -14,7 +14,7 @@ def postJsonEndpoint(operation: str, param: str, jsonVersion: str) -> str:
     print(f"""{{
 		Method: "POST",
 		Headers: map[string]string{{
-			shared.CONTENT_TYPE_HEADER: {} aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: {'aws_JSON_1_1' if jsonVersion == '1.1' else 'aws_JSON_1_0'},
 			aws_X_AMZ_TARGET:           "{data['metadata']['targetPrefix']}.{operation}",
 		}},
 		Permission: "{operation}",
@@ -52,12 +52,13 @@ def postFormEndpoint(operation: str, param: str) -> str:
 
 
 
-fileName = '../temp/awsapis/accessanalyzer-2019-11-01.normal.json'
+fileName = '../temp/awsapis/config-2014-11-12.normal.json'
 
 path = Path.cwd() / 'iam-enumerator' / fileName
 with open(str(path.resolve()), 'r') as f:
     data = json.loads(f.read())
 
+print('// extra')
 for operation, v in data['operations'].items():
     # print(operations)
     try:
@@ -81,7 +82,7 @@ for operation, v in data['operations'].items():
                 if isFormEncoded:
                     postFormEndpoint(operation, param)
                 else:
-                    postJsonEndpoint(operation, param)
+                    postJsonEndpoint(operation, param, data['metadata']['jsonVersion'])
 
     except Exception as e:
         # print(operation)

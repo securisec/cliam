@@ -57,4 +57,73 @@ var AppFlowPolicies = []Service{
 		},
 		Permission: "RegisterConnector",
 	},
+
+	// extra
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeConnector",
+			"Version": "2020-08-23",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeConnector",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "connectorType",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "connector_type",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeConnectorEntity",
+			"Version": "2020-08-23",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeConnectorEntity",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "connectorEntityName",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "connector_entity_name",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeFlow",
+			"Version": "2020-08-23",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeFlow",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "flowName",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "flow_name",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeFlowExecutionRecords",
+			"Version": "2020-08-23",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeFlowExecutionRecords",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "flowName",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "flow_name",
+	},
+	{
+		ServiceSuffix:          "/tags/{{.resource_arn}}",
+		Permission:             "ListTagsForResource",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "resource_arn",
+	},
 }

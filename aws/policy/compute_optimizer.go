@@ -75,4 +75,30 @@ var ComputeOptimizerPolicies = []Service{
 		},
 		Permission: "GetRecommendationSummaries",
 	},
+
+	// extra
+	{
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
+			aws_X_AMZ_TARGET:           "ComputeOptimizerService.GetEffectiveRecommendationPreferences",
+		},
+		Permission:             "GetEffectiveRecommendationPreferences",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "resourceArn",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "resource_arn",
+	},
+	{
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
+			aws_X_AMZ_TARGET:           "ComputeOptimizerService.GetRecommendationPreferences",
+		},
+		Permission:             "GetRecommendationPreferences",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "resourceType",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "resource_type",
+	},
 }

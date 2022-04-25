@@ -168,4 +168,81 @@ var AutoscalingPolicies = []Service{
 		},
 		Permission: "DescribeTerminationPolicyTypes",
 	},
+
+	// extra
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeInstanceRefreshes",
+			"Version": "2011-01-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeInstanceRefreshes",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "AutoScalingGroupName",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "auto_scaling_group_name",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeLifecycleHooks",
+			"Version": "2011-01-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeLifecycleHooks",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "AutoScalingGroupName",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "auto_scaling_group_name",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeLoadBalancerTargetGroups",
+			"Version": "2011-01-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeLoadBalancerTargetGroups",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "AutoScalingGroupName",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "auto_scaling_group_name",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeLoadBalancers",
+			"Version": "2011-01-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeLoadBalancers",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "AutoScalingGroupName",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "auto_scaling_group_name",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeWarmPool",
+			"Version": "2011-01-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeWarmPool",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "AutoScalingGroupName",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "auto_scaling_group_name",
+	},
 }

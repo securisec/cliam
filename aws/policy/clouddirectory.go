@@ -39,4 +39,111 @@ var CloudDirectoryPolicies = []Service{
 		},
 		Permission: "ListPublishedSchemaArns",
 	},
+
+	// extra
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetAppliedSchemaVersion",
+			"Version": "2017-01-11",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetAppliedSchemaVersion",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "SchemaArn",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "schema_arn",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetDirectory",
+			"Version": "2017-01-11",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetDirectory",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "DirectoryArn",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "directory_arn",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetSchemaAsJson",
+			"Version": "2017-01-11",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetSchemaAsJson",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "SchemaArn",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "schema_arn",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "ListAppliedSchemaArns",
+			"Version": "2017-01-11",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "ListAppliedSchemaArns",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "DirectoryArn",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "directory_arn",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "ListFacetNames",
+			"Version": "2017-01-11",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "ListFacetNames",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "SchemaArn",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "schema_arn",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "ListTagsForResource",
+			"Version": "2017-01-11",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "ListTagsForResource",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ResourceArn",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "resource_arn",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "ListTypedLinkFacetNames",
+			"Version": "2017-01-11",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "ListTypedLinkFacetNames",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "SchemaArn",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "schema_arn",
+	},
 }
