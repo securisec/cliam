@@ -75,4 +75,30 @@ var FSXPolicies = []Service{
 		},
 		Permission: "DescribeVolumes",
 	},
+
+	// extra
+	{
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AWSSimbaAPIService_v20180301.DescribeFileSystemAliases",
+		},
+		Permission:             "DescribeFileSystemAliases",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "FileSystemId",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "file_system_id",
+	},
+	{
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AWSSimbaAPIService_v20180301.ListTagsForResource",
+		},
+		Permission:             "ListTagsForResource",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ResourceARN",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "resource_arn",
+	},
 }

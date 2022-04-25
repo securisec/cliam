@@ -48,4 +48,51 @@ var KinesisVideoPolicies = []Service{
 		},
 		Permission: "ListTagsForStream",
 	},
+
+	// extra
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetDataEndpoint",
+			"Version": "2017-09-30",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetDataEndpoint",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "APIName",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "a_p_i_name",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetSignalingChannelEndpoint",
+			"Version": "2017-09-30",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetSignalingChannelEndpoint",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ChannelARN",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "channel_arn",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "ListTagsForResource",
+			"Version": "2017-09-30",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "ListTagsForResource",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ResourceARN",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "resource_arn",
+	},
 }

@@ -120,4 +120,43 @@ var Inspector2Policies = []Service{
 		},
 		Permission: "ListUsageTotals",
 	},
+
+	// extra
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetMember",
+			"Version": "2020-06-08",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetMember",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "accountId",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "account_id",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "ListFindingAggregations",
+			"Version": "2020-06-08",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "ListFindingAggregations",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "aggregationType",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "aggregation_type",
+	},
+	{
+		ServiceSuffix:          "/tags/{{.resource_arn}}",
+		Permission:             "ListTagsForResource",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "resource_arn",
+	},
 }

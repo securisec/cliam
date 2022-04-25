@@ -113,4 +113,36 @@ var ElasticBeanStalkPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "load_balancer_names",
 	},
+
+	// extra
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeConfigurationSettings",
+			"Version": "2010-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeConfigurationSettings",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ApplicationName",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "application_name",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "ListTagsForResource",
+			"Version": "2010-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "ListTagsForResource",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ResourceArn",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "resource_arn",
+	},
 }

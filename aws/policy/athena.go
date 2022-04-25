@@ -144,6 +144,6 @@ var AthenaPolicies = []Service{
 		IsExtra:                true,
 		ExtraComponentBodyKey:  "ResourceARN",
 		ExtraComponentLocation: "json",
-		ExtraCommandLineFlag:   "resource_a_r_n",
+		ExtraCommandLineFlag:   "resource_arn",
 	},
 }

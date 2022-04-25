@@ -156,4 +156,66 @@ var DMSPolicies = []Service{
 		},
 		Permission: "ListTagsForResource",
 	},
+
+	// extra
+	{
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonDMSv20160101.DescribeEndpointSettings",
+		},
+		Permission:             "DescribeEndpointSettings",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "EngineName",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "engine_name",
+	},
+	{
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonDMSv20160101.DescribeRefreshSchemasStatus",
+		},
+		Permission:             "DescribeRefreshSchemasStatus",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "EndpointArn",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "endpoint_arn",
+	},
+	{
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonDMSv20160101.DescribeReplicationInstanceTaskLogs",
+		},
+		Permission:             "DescribeReplicationInstanceTaskLogs",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ReplicationInstanceArn",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "replication_instance_arn",
+	},
+	{
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonDMSv20160101.DescribeSchemas",
+		},
+		Permission:             "DescribeSchemas",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "EndpointArn",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "endpoint_arn",
+	},
+	{
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonDMSv20160101.DescribeTableStatistics",
+		},
+		Permission:             "DescribeTableStatistics",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ReplicationTaskArn",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "replication_task_arn",
+	},
 }

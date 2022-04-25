@@ -111,4 +111,54 @@ var FraudDetectorPolicies = []Service{
 		},
 		Permission: "ListEventPredictions",
 	},
+
+	// extra
+	{
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AWSHawksNestServiceFacade.DescribeDetector",
+		},
+		Permission:             "DescribeDetector",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "detectorId",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "detector_id",
+	},
+	{
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AWSHawksNestServiceFacade.GetDeleteEventsByEventTypeStatus",
+		},
+		Permission:             "GetDeleteEventsByEventTypeStatus",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "eventTypeName",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "event_type_name",
+	},
+	{
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AWSHawksNestServiceFacade.GetRules",
+		},
+		Permission:             "GetRules",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "detectorId",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "detector_id",
+	},
+	{
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AWSHawksNestServiceFacade.ListTagsForResource",
+		},
+		Permission:             "ListTagsForResource",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "resourceARN",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "resource_arn",
+	},
 }

@@ -66,4 +66,42 @@ var SMSPolicies = []Service{
 		},
 		Permission: "ListApps",
 	},
+
+	// extra
+	{
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AWSServerMigrationService_V2016_10_24.GetAppValidationConfiguration",
+		},
+		Permission:             "GetAppValidationConfiguration",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "appId",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "app_id",
+	},
+	{
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AWSServerMigrationService_V2016_10_24.GetAppValidationOutput",
+		},
+		Permission:             "GetAppValidationOutput",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "appId",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "app_id",
+	},
+	{
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AWSServerMigrationService_V2016_10_24.GetReplicationRuns",
+		},
+		Permission:             "GetReplicationRuns",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "replicationJobId",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "replication_job_id",
+	},
 }

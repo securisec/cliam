@@ -366,4 +366,111 @@ var RedshiftPolicies = []Service{
 		},
 		Permission: "RevokeEndpointAccess",
 	},
+
+	// extra
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeClusterParameters",
+			"Version": "2012-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeClusterParameters",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ParameterGroupName",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "parameter_group_name",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeDefaultClusterParameters",
+			"Version": "2012-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeDefaultClusterParameters",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ParameterGroupFamily",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "parameter_group_family",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeLoggingStatus",
+			"Version": "2012-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeLoggingStatus",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ClusterIdentifier",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "cluster_identifier",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeNodeConfigurationOptions",
+			"Version": "2012-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeNodeConfigurationOptions",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ActionType",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "action_type",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeResize",
+			"Version": "2012-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeResize",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ClusterIdentifier",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "cluster_identifier",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetReservedNodeExchangeConfigurationOptions",
+			"Version": "2012-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetReservedNodeExchangeConfigurationOptions",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ActionType",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "action_type",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetReservedNodeExchangeOfferings",
+			"Version": "2012-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetReservedNodeExchangeOfferings",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ReservedNodeId",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "reserved_node_id",
+	},
 }

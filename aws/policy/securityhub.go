@@ -126,4 +126,49 @@ var SecurityHubPolicies = []Service{
 		ServiceSuffix: "organization/admin",
 		Permission:    "ListOrganizationAdminAccounts",
 	},
+
+	// extra
+	{
+		ServiceSuffix:          "/standards/controls/{{.standards_subscription_arn}}",
+		Permission:             "DescribeStandardsControls",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "standards_subscription_arn",
+	},
+	{
+		ServiceSuffix:          "/findingAggregator/get/{{.finding_aggregator_arn}}",
+		Permission:             "GetFindingAggregator",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "finding_aggregator_arn",
+	},
+	{
+		ServiceSuffix:          "/insights/results/{{.insight_arn}}",
+		Permission:             "GetInsightResults",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "insight_arn",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetMembers",
+			"Version": "2018-10-26",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetMembers",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "AccountIds",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "account_ids",
+	},
+	{
+		ServiceSuffix:          "/tags/{{.resource_arn}}",
+		Permission:             "ListTagsForResource",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "resource_arn",
+	},
 }

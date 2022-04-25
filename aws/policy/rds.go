@@ -1,5 +1,7 @@
 package policy
 
+import "github.com/securisec/cliam/shared"
+
 var RDSPolicies = []Service{
 	{
 		Method:        "POST",
@@ -552,5 +554,217 @@ var RDSPolicies = []Service{
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=DescribePendingMaintenanceActions&Version=2014-10-31",
 		Permission:    "DescribePendingMaintenanceActions",
+	},
+
+	// extra
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeDBClusterBacktracks",
+			"Version": "2014-10-31",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeDBClusterBacktracks",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "DBClusterIdentifier",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "db_cluster_identifier",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeDBClusterParameters",
+			"Version": "2014-10-31",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeDBClusterParameters",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "DBClusterParameterGroupName",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "db_cluster_parameter_group_name",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeDBClusterSnapshotAttributes",
+			"Version": "2014-10-31",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeDBClusterSnapshotAttributes",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "DBClusterSnapshotIdentifier",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "db_cluster_snapshot_identifier",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeDBLogFiles",
+			"Version": "2014-10-31",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeDBLogFiles",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "DBInstanceIdentifier",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "db_instance_identifier",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeDBParameters",
+			"Version": "2014-10-31",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeDBParameters",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "DBParameterGroupName",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "db_parameter_group_name",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeDBProxyTargetGroups",
+			"Version": "2014-10-31",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeDBProxyTargetGroups",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "DBProxyName",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "db_proxy_name",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeDBProxyTargets",
+			"Version": "2014-10-31",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeDBProxyTargets",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "DBProxyName",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "db_proxy_name",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeDBSnapshotAttributes",
+			"Version": "2014-10-31",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeDBSnapshotAttributes",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "DBSnapshotIdentifier",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "db_snapshot_identifier",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeEngineDefaultClusterParameters",
+			"Version": "2014-10-31",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeEngineDefaultClusterParameters",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "DBParameterGroupFamily",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "db_parameter_group_family",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeEngineDefaultParameters",
+			"Version": "2014-10-31",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeEngineDefaultParameters",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "DBParameterGroupFamily",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "db_parameter_group_family",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeOptionGroupOptions",
+			"Version": "2014-10-31",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeOptionGroupOptions",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "EngineName",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "engine_name",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeOrderableDBInstanceOptions",
+			"Version": "2014-10-31",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeOrderableDBInstanceOptions",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "Engine",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "engine",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeValidDBInstanceModifications",
+			"Version": "2014-10-31",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeValidDBInstanceModifications",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "DBInstanceIdentifier",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "db_instance_identifier",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "ListTagsForResource",
+			"Version": "2014-10-31",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "ListTagsForResource",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ResourceName",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "resource_name",
 	},
 }

@@ -37,4 +37,41 @@ var MediaConvertPolicies = []Service{
 		ServiceSuffix: "2017-08-29/queues",
 		Permission:    "ListQueues",
 	},
+
+	// extra
+	{
+		ServiceSuffix:          "/2017-08-29/jobs/{{.id}}",
+		Permission:             "GetJob",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "id",
+	},
+	{
+		ServiceSuffix:          "/2017-08-29/jobTemplates/{{.name}}",
+		Permission:             "GetJobTemplate",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "name",
+	},
+	{
+		ServiceSuffix:          "/2017-08-29/presets/{{.name}}",
+		Permission:             "GetPreset",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "name",
+	},
+	{
+		ServiceSuffix:          "/2017-08-29/queues/{{.name}}",
+		Permission:             "GetQueue",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "name",
+	},
+	{
+		ServiceSuffix:          "/2017-08-29/tags/{{.arn}}",
+		Permission:             "ListTagsForResource",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "arn",
+	},
 }

@@ -3,6 +3,7 @@
 import json
 from pathlib import Path
 import re
+import pyperclip
 
 def toSnakeCase(s):
     return re.sub(r'(?<!^)(?=[A-Z])', '_', s).lower()
@@ -11,7 +12,7 @@ def getPathParam(s, p):
     return re.sub(r'\{.+\}', f'{{{{.{toSnakeCase(p)}}}}}', s)
 
 def postJsonEndpoint(operation: str, param: str, jsonVersion: str) -> str:
-    print(f"""{{
+    return f"""{{
 		Method: "POST",
 		Headers: map[string]string{{
 			shared.CONTENT_TYPE_HEADER: {'aws_JSON_1_1' if jsonVersion == '1.1' else 'aws_JSON_1_0'},
@@ -22,19 +23,19 @@ def postJsonEndpoint(operation: str, param: str, jsonVersion: str) -> str:
         ExtraComponentBodyKey:  "{param}",
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "{toSnakeCase(param)}",
-}},""")
+}},"""
 
 def getRequestEndpoint(operation: str, param: str) -> str:
-    print(f"""{{
+    return f"""{{
         ServiceSuffix:          "{getPathParam(v['http']['requestUri'], param)}",
 		Permission:             "{operation}",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
         ExtraCommandLineFlag:   "{toSnakeCase(param)}",
-}},""")
+}},"""
 
 def postFormEndpoint(operation: str, param: str) -> str:
-    print(f"""{{
+    return f"""{{
 		Method: "POST",
 		FormData: map[string]string{{
 			"Action":  "{operation}",
@@ -48,17 +49,17 @@ def postFormEndpoint(operation: str, param: str) -> str:
         ExtraComponentBodyKey:  "{param}",
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "{toSnakeCase(param)}",
-}},""")
+}},"""
 
 
 
-fileName = '../temp/awsapis/config-2014-11-12.normal.json'
+fileName = '../temp/awsapis/xray-2016-04-12.normal.json'
 
 path = Path.cwd() / 'iam-enumerator' / fileName
 with open(str(path.resolve()), 'r') as f:
     data = json.loads(f.read())
 
-print('// extra')
+out = ['// extra']
 for operation, v in data['operations'].items():
     # print(operations)
     try:
@@ -75,16 +76,20 @@ for operation, v in data['operations'].items():
             method = v['http']['method']
             param = shape['required'][0]
             if method == 'GET':
-                getRequestEndpoint(operation, param)
+                out.append(getRequestEndpoint(operation, param))
 
             if method == 'POST':
                 isFormEncoded = 'targetPrefix' not in data['metadata']
                 if isFormEncoded:
-                    postFormEndpoint(operation, param)
+                    out.append(postFormEndpoint(operation, param))
                 else:
-                    postJsonEndpoint(operation, param, data['metadata']['jsonVersion'])
+                    out.append(postJsonEndpoint(operation, param, data['metadata']['jsonVersion']))
 
     except Exception as e:
         # print(operation)
         raise e
         # print(e)
+
+x = '\n'.join(out)
+pyperclip.copy(x)
+print(x)

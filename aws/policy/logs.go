@@ -66,4 +66,78 @@ var LogsPolicies = []Service{
 		},
 		Permission: "DescribeResourcePolicies",
 	},
+
+	// extra
+	{
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "Logs_20140328.DescribeLogStreams",
+		},
+		Permission:             "DescribeLogStreams",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "logGroupName",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "log_group_name",
+	},
+	{
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "Logs_20140328.DescribeSubscriptionFilters",
+		},
+		Permission:             "DescribeSubscriptionFilters",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "logGroupName",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "log_group_name",
+	},
+	{
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "Logs_20140328.GetLogGroupFields",
+		},
+		Permission:             "GetLogGroupFields",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "logGroupName",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "log_group_name",
+	},
+	{
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "Logs_20140328.GetLogRecord",
+		},
+		Permission:             "GetLogRecord",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "logRecordPointer",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "log_record_pointer",
+	},
+	{
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "Logs_20140328.GetQueryResults",
+		},
+		Permission:             "GetQueryResults",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "queryId",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "query_id",
+	},
+	{
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "Logs_20140328.ListTagsLogGroup",
+		},
+		Permission:             "ListTagsLogGroup",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "logGroupName",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "log_group_name",
+	},
 }

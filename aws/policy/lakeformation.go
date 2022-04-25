@@ -84,4 +84,126 @@ var LakeFormationPolicies = []Service{
 		},
 		Permission: "StartTransaction",
 	},
+
+	// extra
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeResource",
+			"Version": "2017-03-31",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeResource",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ResourceArn",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "resource_arn",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeTransaction",
+			"Version": "2017-03-31",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeTransaction",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "TransactionId",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "transaction_id",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetEffectivePermissionsForPath",
+			"Version": "2017-03-31",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetEffectivePermissionsForPath",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ResourceArn",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "resource_arn",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetLFTag",
+			"Version": "2017-03-31",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetLFTag",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "TagKey",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "tag_key",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetQueryState",
+			"Version": "2017-03-31",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetQueryState",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "QueryId",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "query_id",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetQueryStatistics",
+			"Version": "2017-03-31",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetQueryStatistics",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "QueryId",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "query_id",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetResourceLFTags",
+			"Version": "2017-03-31",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetResourceLFTags",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "Resource",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "resource",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetWorkUnits",
+			"Version": "2017-03-31",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetWorkUnits",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "QueryId",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "query_id",
+	},
 }

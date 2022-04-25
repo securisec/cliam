@@ -180,4 +180,71 @@ var Macie2Policies = []Service{
 		},
 		Permission: "SearchResources",
 	},
+
+	// extra
+	{
+		ServiceSuffix:          "/jobs/{{.job_id}}",
+		Permission:             "DescribeClassificationJob",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "job_id",
+	},
+	{
+		ServiceSuffix:          "/custom-data-identifiers/{{.id}}",
+		Permission:             "GetCustomDataIdentifier",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "id",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetFindingStatistics",
+			"Version": "2020-01-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetFindingStatistics",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "groupBy",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "group_by",
+	},
+	{
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetFindings",
+			"Version": "2020-01-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetFindings",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "findingIds",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "finding_ids",
+	},
+	{
+		ServiceSuffix:          "/findingsfilters/{{.id}}",
+		Permission:             "GetFindingsFilter",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "id",
+	},
+	{
+		ServiceSuffix:          "/members/{{.id}}",
+		Permission:             "GetMember",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "id",
+	},
+	{
+		ServiceSuffix:          "/tags/{{.resource_arn}}",
+		Permission:             "ListTagsForResource",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "resource_arn",
+	},
 }

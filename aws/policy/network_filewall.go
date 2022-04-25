@@ -120,4 +120,30 @@ var NetworkFirewallPolicies = []Service{
 		},
 		Permission: "UpdateLoggingConfiguration",
 	},
+
+	// extra
+	{
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
+			aws_X_AMZ_TARGET:           "NetworkFirewall_20201112.DescribeResourcePolicy",
+		},
+		Permission:             "DescribeResourcePolicy",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ResourceArn",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "resource_arn",
+	},
+	{
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
+			aws_X_AMZ_TARGET:           "NetworkFirewall_20201112.ListTagsForResource",
+		},
+		Permission:             "ListTagsForResource",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ResourceArn",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "resource_arn",
+	},
 }

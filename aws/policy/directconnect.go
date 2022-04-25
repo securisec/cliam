@@ -111,4 +111,90 @@ var DirectconnectPolicies = []Service{
 		},
 		Permission: "ListVirtualInterfaceTestHistory",
 	},
+
+	// extra
+	{
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "OvertureService.DescribeConnectionLoa",
+		},
+		Permission:             "DescribeConnectionLoa",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "connectionId",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "connection_id",
+	},
+	{
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "OvertureService.DescribeConnectionsOnInterconnect",
+		},
+		Permission:             "DescribeConnectionsOnInterconnect",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "interconnectId",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "interconnect_id",
+	},
+	{
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "OvertureService.DescribeHostedConnections",
+		},
+		Permission:             "DescribeHostedConnections",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "connectionId",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "connection_id",
+	},
+	{
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "OvertureService.DescribeInterconnectLoa",
+		},
+		Permission:             "DescribeInterconnectLoa",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "interconnectId",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "interconnect_id",
+	},
+	{
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "OvertureService.DescribeLoa",
+		},
+		Permission:             "DescribeLoa",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "connectionId",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "connection_id",
+	},
+	{
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "OvertureService.DescribeRouterConfiguration",
+		},
+		Permission:             "DescribeRouterConfiguration",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "virtualInterfaceId",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "virtual_interface_id",
+	},
+	{
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "OvertureService.DescribeTags",
+		},
+		Permission:             "DescribeTags",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "resourceArns",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "resource_arns",
+	},
 }
