@@ -32,7 +32,9 @@ func cliErrorLogger(s scanner.ServiceMap, err error) {
 	if errors.Is(err, context.DeadlineExceeded) {
 		logger.LoggerStdErr.Error().Str(s.Resource, s.Policy.Permission).Msg(shared.GetMessageColor("timeout"))
 	} else {
-		logger.LoggerStdErr.Err(err).Msg(shared.GetMessageColor("error"))
+		if logger.DEBUG {
+			logger.LoggerStdErr.Err(err).Msg(shared.GetMessageColor("error"))
+		}
 	}
 }
 
