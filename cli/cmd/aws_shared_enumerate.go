@@ -51,10 +51,7 @@ func awsSharedEnumerate(resources []string, saveOutput bool) {
 		}
 	}()
 
-	enumerate := scanner.GetServiceMap(resources)
-	for _, e := range enumerate {
-		ch <- e
-	}
+	awsSendToChannel(ch, resources)
 
 	close(ch)
 	wg.Wait()

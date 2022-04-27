@@ -18,6 +18,8 @@ Cliam is a simple cloud permissions identifier. There are two main components to
 ## Installation
 Download the latest [release](https://github.com/securisec/cliam/releases). DEV tags are current, but not stable.
 
+In order to build the binary locally, cd into the `cli` directory and run `make dev`
+
 ## Usage
 Cliam works with credentials obtained from the services well known envars or from passing the commonly required flags from the cli.
 
