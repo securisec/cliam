@@ -17,7 +17,6 @@ import (
 func promptInput(msg string) string {
 	prompt := promptui.Prompt{
 		Label: msg,
-		Mask:  '*',
 	}
 	p, err := prompt.Run()
 	if err != nil {
