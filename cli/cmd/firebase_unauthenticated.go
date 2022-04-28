@@ -9,7 +9,8 @@ import (
 )
 
 var firebaseUnauthenticatedeCmd = &cobra.Command{
-	Use:               "unauthenticated",
+	Use:               "unauthenticated [--extra database=<database>,collection=<collection>,key=<key>...]",
+	Example:           "cliam firebase unauthenticated",
 	Short:             "Enumerate unauthenticated Firebase permissions",
 	Run:               firebaseUnauthenticatedeCmdFunc,
 	ValidArgsFunction: cobra.NoFileCompletions,
@@ -27,7 +28,11 @@ func firebaseUnauthenticatedeCmdFunc(cmd *cobra.Command, _ []string) {
 	// the is the maximum concurrent goroutines
 	max := make(chan struct{}, MaxThreads)
 
-	fs := []func() (int, error){firebaseRTDB, firebaseFirestore}
+	fs := []func() (int, error){
+		firebaseRTDB,
+		firebaseFirestore,
+		firebaseStorage,
+	}
 
 	go func() {
 		defer wg.Done()
@@ -82,6 +87,9 @@ func firebaseFirestore() (int, error) {
 	if _, ok := firebaseExtras["projectID"]; !ok {
 		firebaseExtras["projectID"] = firebaseProjectId
 	}
+	if _, ok := firebaseExtras["key"]; !ok {
+		firebaseExtras["key"] = ""
+	}
 
 	t := "https://firestore.googleapis.com/v1/projects/{{.projectID}}/databases/(default)/documents/{{.collection}}/{{.key}}"
 	url, err := templateBuilder(t, firebaseExtras)
@@ -90,4 +98,16 @@ func firebaseFirestore() (int, error) {
 	}
 
 	return getRequest(url, "Firestore")
+}
+
+func firebaseStorage() (int, error) {
+	if _, ok := firebaseExtras["path"]; !ok {
+		firebaseExtras["path"] = ""
+	}
+	t := "https://firebasestorage.googleapis.com/v0/b/{{.projectID}}.appspot.com/o{{.path}}"
+	url, err := templateBuilder(t, firebaseExtras)
+	if err != nil {
+		return 0, err
+	}
+	return getRequest(url, "Storage")
 }
