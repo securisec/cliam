@@ -24,6 +24,9 @@ func init() {
 }
 
 func gcpBruteforceCmdFunc(cmd *cobra.Command, _ []string) {
+	if gcpAccessToken != "" {
+		logger.LoggerStdErr.Fatal().Msg("--access-token is not supported for this command")
+	}
 
 	ctx := context.Background()
 	sa, project, region, zone := getSaAndRegion()

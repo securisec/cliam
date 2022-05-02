@@ -21,6 +21,7 @@ var (
 	gcpProjectId          string
 	gcpRegion             string
 	gcpZone               string
+	gcpAccessToken        string
 )
 
 func init() {
@@ -29,6 +30,7 @@ func init() {
 	gcpCmd.PersistentFlags().StringVar(&gcpProjectId, "project-id", "", "GCP project id")
 	gcpCmd.PersistentFlags().StringVar(&gcpRegion, "region", "us-central1", "GCP Region")
 	gcpCmd.PersistentFlags().StringVar(&gcpZone, "zone", "us-central1-a", "GCP Zone")
+	gcpCmd.PersistentFlags().StringVar(&gcpAccessToken, "access-token", "", "GCP token")
 }
 
 func getSaAndRegion() (string, string, string, string) {
@@ -36,6 +38,9 @@ func getSaAndRegion() (string, string, string, string) {
 }
 
 func getSaPath() string {
+	if gcpAccessToken != "" {
+		return ""
+	}
 	if gcpServiceAccountPath != "" {
 		return expandPath(gcpServiceAccountPath)
 	}

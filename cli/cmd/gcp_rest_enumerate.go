@@ -45,6 +45,8 @@ enumerating compute, resource-id could be the instance name.`)
 }
 
 func gcpRestEnumerateCmdFunc(cmd *cobra.Command, args []string) {
+	accessToken := gcpAccessToken
+
 	parent, err := cmd.Flags().GetStringToString("parent")
 	body, err := cmd.Flags().GetStringToString("body")
 	resourceID, err := cmd.Flags().GetString("resource-id")
@@ -70,9 +72,11 @@ func gcpRestEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 	resources := removeDuplicates(args)
 
 	ctx := context.Background()
-	accessToken, err := gcp.GetAccessToken(ctx, sa)
-	if err != nil {
-		logger.LoggerStdErr.Fatal().Err(err).Msg("Failed to get access token")
+	if gcpAccessToken == "" {
+		accessToken, err = gcp.GetAccessToken(ctx, sa)
+		if err != nil {
+			logger.LoggerStdErr.Fatal().Err(err).Msg("Failed to get access token")
+		}
 	}
 
 	// get array of permissions to check
