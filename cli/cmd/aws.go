@@ -42,7 +42,12 @@ func init() {
 	awsCmd.PersistentFlags().StringVar(&awsProfile, "profile", "", "AWS Profile. When profile is set, access-key-id, secret-access-key, and session-token are ignored.")
 	awsCmd.PersistentFlags().StringVar(&awsSessionJson, "session-json", "", "AWS Session JSON file. This flag attempts to read session information from the specified file. Helpful with temporary credentials.")
 	awsCmd.PersistentFlags().StringToStringVar(&awsKnownResourceMap, "known-value", map[string]string{}, "AWS Resource Name. When known-resource-name is set, additional permissions where a resource needs to be specified is enumerated.")
-	// awsCmd.PersistentFlags().BoolVar(&awsKnownOnly, "known-only", false, "When set, only permissions where the known-resource-name is specified are enumerated.")
+	awsCmd.RegisterFlagCompletionFunc("region", func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
+		return aws_Regions, cobra.ShellCompDirectiveNoFileComp
+	})
+	awsCmd.RegisterFlagCompletionFunc("known-value", func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
+		return []string{}, cobra.ShellCompDirectiveNoFileComp
+	})
 }
 
 // return the key, secret, token and region

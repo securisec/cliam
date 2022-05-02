@@ -39,15 +39,21 @@ func gcpEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 		cmd.Help()
 	}
 
+	accessToken := gcpAccessToken
+
 	services := removeDuplicates(args)
 
 	sa, project, _, _ := getSaAndRegion()
 
 	ctx := context.Background()
-	creds, err := scanner.GetCredsFromServiceAccount(ctx, sa)
-	if err != nil {
-		logger.LoggerStdErr.Err(err).Msg("Failed to get credentials from service account")
-		return
+
+	if accessToken == "" {
+		at, err := gcp.GetAccessToken(ctx, sa)
+		if err != nil {
+			logger.LoggerStdErr.Fatal().Err(err).Msg("Failed to get credentials from service account")
+			return
+		}
+		accessToken = at
 	}
 
 	ch := make(chan string)
@@ -69,7 +75,7 @@ func gcpEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 					<-max
 				}()
 
-				ps, err := scanner.GetPermissionsForResource(ctx, creds, project, ser)
+				ps, err := scanner.GetPermissionsFromResourceManager(ctx, accessToken, project, ser)
 				if err != nil {
 					logger.LoggerStdErr.Error().Err(err).Msg("")
 					wg.Done()

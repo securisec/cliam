@@ -4,20 +4,18 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
-	"errors"
+	"fmt"
 	"io/ioutil"
 	"net/http"
 
 	"github.com/securisec/cliam/gcp"
 	"github.com/securisec/cliam/gcp/rest"
 	"google.golang.org/api/cloudresourcemanager/v1"
-	"google.golang.org/api/googleapi"
 )
 
-func GetPermissionsForResource(
+func GetPermissionsFromResourceManager(
 	ctx context.Context,
-	service *cloudresourcemanager.Service,
-	projectId, resource string,
+	accessToken, projectId, resource string,
 ) ([]string, error) {
 	var holdSuccess []string
 	permissions := gcp.GetPoliciesForResource(resource)
@@ -25,20 +23,47 @@ func GetPermissionsForResource(
 	chunkedPolicies := chunkPolicies(permissions, 100)
 
 	for _, chunk := range chunkedPolicies {
-		p, err := service.Projects.TestIamPermissions(projectId, &cloudresourcemanager.TestIamPermissionsRequest{
-			Permissions: chunk,
-		}).Do()
+		p, err := getRequestResourceManager(ctx, accessToken, projectId, chunk)
 		if err != nil {
-			e, ok := err.(*googleapi.Error)
-			if !ok {
-				return holdSuccess, err
-			}
-			return holdSuccess, errors.New(e.Message)
+			return nil, err
 		}
-		holdSuccess = append(holdSuccess, p.Permissions...)
+		holdSuccess = append(holdSuccess, p...)
 	}
 
 	return holdSuccess, nil
+}
+
+func getRequestResourceManager(ctx context.Context, accessToken, projectID string, permissions []string) ([]string, error) {
+	var hold []string
+	var crResp struct{ Permissions []string }
+	url := fmt.Sprintf("https://cloudresourcemanager.googleapis.com/v1/projects/%s:testIamPermissions", projectID)
+	reqBody, err := json.Marshal(map[string]interface{}{"permissions": permissions})
+	if err != nil {
+		return hold, err
+	}
+
+	req, err := http.NewRequestWithContext(ctx, "POST", url, bytes.NewBuffer(reqBody))
+	if err != nil {
+		return hold, err
+	}
+	req.Header.Add("Content-Type", "application/json")
+	req.Header.Add("Authorization", "Bearer "+accessToken)
+	req.Header.Add("user-agent", "google-cloud-sdk gcloud/379.0.0")
+
+	res, err := http.DefaultClient.Do(req)
+	if err != nil {
+		return hold, err
+	}
+	body, err := ioutil.ReadAll(res.Body)
+	if err != nil {
+		return hold, err
+	}
+	res.Body.Close()
+	if err := json.Unmarshal(body, &crResp); err != nil {
+		return hold, err
+	}
+
+	return crResp.Permissions, nil
 }
 
 func chunkPolicies(slice []string, chunkSize int) [][]string {

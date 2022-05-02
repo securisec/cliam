@@ -31,6 +31,12 @@ func init() {
 	gcpCmd.PersistentFlags().StringVar(&gcpRegion, "region", "us-central1", "GCP Region")
 	gcpCmd.PersistentFlags().StringVar(&gcpZone, "zone", "us-central1-a", "GCP Zone")
 	gcpCmd.PersistentFlags().StringVar(&gcpAccessToken, "access-token", "", "GCP token")
+	gcpCmd.RegisterFlagCompletionFunc("region", func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
+		return gcp_regions, cobra.ShellCompDirectiveNoFileComp
+	})
+	gcpCmd.RegisterFlagCompletionFunc("zone", func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
+		return gcp_zones, cobra.ShellCompDirectiveNoFileComp
+	})
 }
 
 func getSaAndRegion() (string, string, string, string) {

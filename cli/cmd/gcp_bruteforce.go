@@ -24,17 +24,19 @@ func init() {
 }
 
 func gcpBruteforceCmdFunc(cmd *cobra.Command, _ []string) {
-	if gcpAccessToken != "" {
-		logger.LoggerStdErr.Fatal().Msg("--access-token is not supported for this command")
-	}
+	accessToken := gcpAccessToken
 
 	ctx := context.Background()
 	sa, project, region, zone := getSaAndRegion()
-	creds, err := scanner.GetCredsFromServiceAccount(ctx, sa)
 	cliGcpLogRegion(region, zone)
-	if err != nil {
-		logger.LoggerStdErr.Fatal().Err(err).Msg("Failed to get credentials from service account")
-		return
+
+	if accessToken == "" {
+		at, err := gcp.GetAccessToken(ctx, sa)
+		if err != nil {
+			logger.LoggerStdErr.Fatal().Err(err).Msg("Failed to get credentials from service account")
+			return
+		}
+		accessToken = at
 	}
 	services := gcp.GetGCPResources()
 
@@ -60,7 +62,7 @@ func gcpBruteforceCmdFunc(cmd *cobra.Command, _ []string) {
 					<-max
 				}()
 
-				ps, err := scanner.GetPermissionsForResource(ctx, creds, project, ser)
+				ps, err := scanner.GetPermissionsFromResourceManager(ctx, accessToken, project, ser)
 				if err != nil {
 					logger.LoggerStdErr.Error().Err(err).Msg("")
 					wg.Done()

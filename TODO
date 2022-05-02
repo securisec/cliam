@@ -1,8 +1,8 @@
 Todo:
-  ☐ ability to provide custom query params or body for complicated calls
   ☐ trap interrupts and exit cleanly
   ☐ enumerate functions should return an array of valid permissions
   ☐ refactor goroutine runners as DRY
+  ☐ firebase with config
 
 Bug:
 
@@ -18,16 +18,17 @@ Helpers:
 Cli:
   ☐ if access key starts with ASIA, then token is required maybe?
   ☐ spinner with backwards count of remaining calls?
-  ☐ region completer
 
 Resources:
-  - https://www.any-api.com/amazonaws_com/ec2/docs/_Action_DescribeInstances/DescribeInstances
   - https://docs.aws.amazon.com/index.html
-  - https://stackoverflow.com/questions/46818661/whats-the-best-way-to-handle-too-many-open-files
   - git clone https://github.com/aws/aws-sdk-js.git
   - https://docs.oracle.com/en-us/iaas/api/#/
 
 Archive:
+  ✔ ability to provide custom query params or body for complicated calls @project(Todo)
+  ✔ gcp region completer @project(Cli)
+  ✔ aws region completer @project(Cli)
+  ✔ refactor gcp resourcemanager to use token and use rest api instead @project(Todo)
   ✔ refactor various aws resource groups as DRY @project(Todo)
   ✔ read specific aws profile @project(Cli)
   ✔ refactor aws subcommands to use single. helper function to get all policies for an array of services @project(AWS)
