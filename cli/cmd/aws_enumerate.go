@@ -9,6 +9,7 @@ import (
 	"github.com/securisec/cliam/aws"
 	"github.com/securisec/cliam/aws/scanner"
 	"github.com/securisec/cliam/aws/signer"
+	"github.com/securisec/cliam/shared"
 	"github.com/spf13/cobra"
 )
 
@@ -47,7 +48,7 @@ func awsEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 
 	key, secret, token, region := getCredsAndRegion()
 	cliLogRegion(awsRegion)
-	resources := removeDuplicates(args)
+	resources := shared.RemoveDuplicates(args)
 
 	creds := signer.SetCredentials(key, secret, token, awsProfile)
 

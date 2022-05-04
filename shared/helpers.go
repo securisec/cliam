@@ -65,3 +65,19 @@ func Magenta(s string) string {
 func Black(s string) string {
 	return color.Black.Sprintf("%s", s)
 }
+
+// remove duplicates from a slice of strings
+func RemoveDuplicates(slice []string) []string {
+	if len(slice) == 0 {
+		return slice
+	}
+	m := make(map[string]bool)
+	for _, s := range slice {
+		m[s] = true
+	}
+	var res []string
+	for k := range m {
+		res = append(res, k)
+	}
+	return res
+}

@@ -10,6 +10,7 @@ import (
 	"github.com/securisec/cliam/gcp"
 	"github.com/securisec/cliam/gcp/scanner"
 	"github.com/securisec/cliam/logger"
+	"github.com/securisec/cliam/shared"
 	"github.com/spf13/cobra"
 )
 
@@ -41,7 +42,7 @@ func gcpEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 
 	accessToken := gcpAccessToken
 
-	services := removeDuplicates(args)
+	services := shared.RemoveDuplicates(args)
 
 	sa, project, _, _ := getSaAndRegion()
 

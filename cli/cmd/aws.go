@@ -45,8 +45,18 @@ func init() {
 	awsCmd.RegisterFlagCompletionFunc("region", func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
 		return aws_Regions, cobra.ShellCompDirectiveNoFileComp
 	})
+	// awsCmd.RegisterFlagCompletionFunc("known-value", func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
+	// 	return []string{}, cobra.ShellCompDirectiveNoFileComp
+	// })
 	awsCmd.RegisterFlagCompletionFunc("known-value", func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
-		return []string{}, cobra.ShellCompDirectiveNoFileComp
+		var keys []string
+		policies := scanner.GetServiceMap(args)
+		for _, p := range policies {
+			if len(p.Policy.ExtraCommandLineFlag) > 0 {
+				keys = append(keys, p.Policy.ExtraCommandLineFlag+"=")
+			}
+		}
+		return keys, cobra.ShellCompDirectiveNoSpace
 	})
 }
 

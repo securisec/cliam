@@ -11,6 +11,7 @@ import (
 	"github.com/securisec/cliam/aws"
 	"github.com/securisec/cliam/aws/policy"
 	"github.com/securisec/cliam/aws/signer"
+	"github.com/securisec/cliam/shared"
 )
 
 func EnumerateSpecificResource(
@@ -50,8 +51,9 @@ type ServiceMap struct {
 }
 
 func GetServiceMap(resources []string) []ServiceMap {
+	rm := shared.RemoveDuplicates(resources)
 	hold := make([]ServiceMap, 0)
-	for _, resource := range resources {
+	for _, resource := range rm {
 		policies, ok := aws.Services[resource]
 		if !ok {
 			continue

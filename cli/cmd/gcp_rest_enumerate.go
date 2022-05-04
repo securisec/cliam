@@ -12,6 +12,7 @@ import (
 	"github.com/securisec/cliam/gcp/rest"
 	"github.com/securisec/cliam/gcp/scanner"
 	"github.com/securisec/cliam/logger"
+	"github.com/securisec/cliam/shared"
 	"github.com/spf13/cobra"
 )
 
@@ -69,7 +70,7 @@ func gcpRestEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 		logger.LoggerStdErr.Fatal().Msg("parent must be specified as project=my-project or organization=my-org")
 	}
 
-	resources := removeDuplicates(args)
+	resources := shared.RemoveDuplicates(args)
 
 	ctx := context.Background()
 	if gcpAccessToken == "" {
