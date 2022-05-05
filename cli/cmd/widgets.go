@@ -37,12 +37,23 @@ func cliErrorLogger(s scanner.ServiceMap, err error) {
 	}
 }
 
-func cliResponseLogger(ser scanner.ServiceMap, status int) {
+func cliResponseLoggerAWS(ser scanner.ServiceMap, status int) {
+	l := logger.Logger
+	cf := ser.Policy.ExtraCommandLineFlag
+	v, ok := awsKnownResourceMap[cf]
 	if status == http.StatusOK {
-		logger.LogSuccess(ser.Resource, ser.Policy.Permission)
+		sl := l.Info().Str(ser.Resource, logger.ToSnakeCase(ser.Policy.Permission))
+		if ok {
+			sl.Str(strings.ReplaceAll(cf, "_", "-"), v)
+		}
+		sl.Msg(shared.GetMessageColor("success"))
 	}
 	if status != 200 && logger.DEBUG {
-		logger.LogDenied(status, ser.Resource, ser.Policy.Permission)
+		dl := l.Error().Str(ser.Resource, logger.ToSnakeCase(ser.Policy.Permission))
+		if ok {
+			dl.Str(strings.ReplaceAll(cf, "_", "-"), v)
+		}
+		dl.Msg(shared.GetMessageColor("success"))
 	}
 }
 

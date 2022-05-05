@@ -26,18 +26,18 @@ var Logger = log.Output(stdOut)
 var LoggerStdErr = log.Output(stdErr)
 
 func LogSuccess(service, permission string) {
-	Logger.Info().Str(service, toSnakeCase(permission)).Msg(shared.GetMessageColor("success"))
+	Logger.Info().Str(service, ToSnakeCase(permission)).Msg(shared.GetMessageColor("success"))
 }
 
 func LogMaybe(service, permission string) {
 	if DEBUG {
-		Logger.Debug().Str(service, toSnakeCase(permission)).Msg(shared.GetMessageColor("warning"))
+		Logger.Debug().Str(service, ToSnakeCase(permission)).Msg(shared.GetMessageColor("warning"))
 	}
 }
 
 func LogDenied(status int, service, permission string) {
 	if DEBUG {
-		LoggerStdErr.Error().Int("status", status).Str(service, toSnakeCase(permission)).Msg(shared.GetMessageColor("error"))
+		LoggerStdErr.Error().Int("status", status).Str(service, ToSnakeCase(permission)).Msg(shared.GetMessageColor("error"))
 	}
 }
 
@@ -82,7 +82,7 @@ func LogDebugResponse(res *http.Response, permission string) {
 	}
 }
 
-func toSnakeCase(str string) string {
+func ToSnakeCase(str string) string {
 	var matchFirstCap = regexp.MustCompile("(.)([A-Z][a-z]+)")
 	var matchAllCap = regexp.MustCompile("([a-z0-9])([A-Z])")
 	snake := matchFirstCap.ReplaceAllString(str, "${1}-${2}")

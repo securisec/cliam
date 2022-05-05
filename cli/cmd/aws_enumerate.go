@@ -88,7 +88,7 @@ func awsEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 					wg.Done()
 					return
 				}
-				cliResponseLogger(s, statusCode)
+				cliResponseLoggerAWS(s, statusCode)
 
 				wg.Done()
 
