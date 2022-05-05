@@ -1,6 +1,4 @@
 on:
-  tags:
-    - '*'
   push:
     branches:
       - master
