@@ -10,7 +10,6 @@ AWS:
   ☐ for services that require a body, it may be responding with a 404 if permission is valid
 
 GCP:
-  ☐ enumerate with access token
   
 Helpers:
   ☐ helper functions for testing arbitrary permissions
@@ -25,6 +24,7 @@ Resources:
   - https://docs.oracle.com/en-us/iaas/api/#/
 
 Archive:
+  ✔ enumerate with access token @project(GCP)
   ✔ ability to provide custom query params or body for complicated calls @project(Todo)
   ✔ gcp region completer @project(Cli)
   ✔ aws region completer @project(Cli)

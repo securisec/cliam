@@ -10,7 +10,7 @@ Multi cloud iam permissions enumeration tool. Currently covers:
 [![asciicast](https://asciinema.org/a/goBHd7DlnoOb1x61ljkH2ywc1.png)](https://asciinema.org/a/goBHd7DlnoOb1x61ljkH2ywc1)
 
 ## Description
-Cliam is a simple cloud permissions identifier. There are two main components to the CLI. Most of the enumerated permissions are list, describe or get permissions. Only permissions that does not require a specific resource are tested.
+Cliam is a simple cloud permissions identifier. There are two main components to the CLI. Most of the enumerated permissions are list, describe or get permissions. 
 
 - `enumerate` which can be used to enumerate specific permissions (recommended)
 - Some service providers have service groups that can check for permissions for a specific subset of services/resources.
@@ -88,7 +88,7 @@ This maps directly to cliam where we can use:
 ```
 cliam aws enumerate lamda --known-value function-name=<function_name>
 ```
-This will enumerate all permissions for lambda which takes function-name as a valid argument. This will work with other AWS resources as well. (more coverage coming soon)
+This will enumerate all permissions for lambda which takes function-name as a valid argument. This will work with other AWS resources as well.
 
 #### Examples
 Bruteforce all serverless resources from an AWS profile

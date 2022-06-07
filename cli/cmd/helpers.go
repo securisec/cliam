@@ -39,7 +39,7 @@ func getRequest(url, service string) (int, error) {
 	}
 	status := res.StatusCode
 	if status == 200 {
-		logger.LogSuccess("success", service)
+		logger.LoggerStdErr.Info().Str("success", service).Str("url", url).Send()
 		return status, nil
 	} else {
 		logger.LogDebug("failed", status)

@@ -9,7 +9,7 @@ import (
 )
 
 var firebaseUnauthenticatedeCmd = &cobra.Command{
-	Use:               "unauthenticated [--extra database=<database>,collection=<collection>,key=<key>...]",
+	Use:               "unauthenticated [--extra database=<database>,collection=<collection>,document=<document>...]",
 	Example:           "cliam firebase unauthenticated",
 	Short:             "Enumerate unauthenticated Firebase permissions",
 	Run:               firebaseUnauthenticatedeCmdFunc,
@@ -66,12 +66,12 @@ func firebaseUnauthenticatedeCmdFunc(cmd *cobra.Command, _ []string) {
 
 func firebaseRTDB() (int, error) {
 	// check if db is specified
-	if _, ok := firebaseExtras["database"]; !ok {
-		firebaseExtras["database"] = fmt.Sprintf("%s-default-rtdb", firebaseProjectId)
+	if _, ok := firebaseKnownValues["database"]; !ok {
+		firebaseKnownValues["database"] = fmt.Sprintf("%s-default-rtdb", firebaseProjectId)
 	}
 
 	t := "https://{{.database}}.firebaseio.com/.json"
-	url, err := templateBuilder(t, firebaseExtras)
+	url, err := templateBuilder(t, firebaseKnownValues)
 	if err != nil {
 		return 0, err
 	}
@@ -81,18 +81,18 @@ func firebaseRTDB() (int, error) {
 
 func firebaseFirestore() (int, error) {
 	// check if collection is specified
-	if _, ok := firebaseExtras["collection"]; !ok {
-		firebaseExtras["collection"] = "default"
+	if _, ok := firebaseKnownValues["collection"]; !ok {
+		firebaseKnownValues["collection"] = "default"
 	}
-	if _, ok := firebaseExtras["projectID"]; !ok {
-		firebaseExtras["projectID"] = firebaseProjectId
+	if _, ok := firebaseKnownValues["projectID"]; !ok {
+		firebaseKnownValues["projectID"] = firebaseProjectId
 	}
-	if _, ok := firebaseExtras["key"]; !ok {
-		firebaseExtras["key"] = ""
+	if _, ok := firebaseKnownValues["document"]; !ok {
+		firebaseKnownValues["document"] = ""
 	}
 
-	t := "https://firestore.googleapis.com/v1/projects/{{.projectID}}/databases/(default)/documents/{{.collection}}/{{.key}}"
-	url, err := templateBuilder(t, firebaseExtras)
+	t := "https://firestore.googleapis.com/v1/projects/{{.projectID}}/databases/(default)/documents/{{.collection}}/{{.document}}"
+	url, err := templateBuilder(t, firebaseKnownValues)
 	if err != nil {
 		return 0, err
 	}
@@ -101,11 +101,11 @@ func firebaseFirestore() (int, error) {
 }
 
 func firebaseStorage() (int, error) {
-	if _, ok := firebaseExtras["path"]; !ok {
-		firebaseExtras["path"] = ""
+	if _, ok := firebaseKnownValues["path"]; !ok {
+		firebaseKnownValues["path"] = ""
 	}
 	t := "https://firebasestorage.googleapis.com/v0/b/{{.projectID}}.appspot.com/o{{.path}}"
-	url, err := templateBuilder(t, firebaseExtras)
+	url, err := templateBuilder(t, firebaseKnownValues)
 	if err != nil {
 		return 0, err
 	}
