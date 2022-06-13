@@ -25,8 +25,14 @@ var stdErr = zerolog.ConsoleWriter{Out: os.Stderr, TimeFormat: "Jan 02 15:04:05"
 var Logger = log.Output(stdOut)
 var LoggerStdErr = log.Output(stdErr)
 
-func LogSuccess(service, permission string) {
-	Logger.Info().Str(service, ToSnakeCase(permission)).Msg(shared.GetMessageColor("success"))
+func LogSuccess(service, permission string, additionalVerbose ...map[string]string) {
+	l := Logger.Info().Str(service, ToSnakeCase(permission))
+	if len(additionalVerbose) > 0 && VERBOSE {
+		for k, v := range additionalVerbose[0] {
+			l.Str(k, v)
+		}
+	}
+	l.Msg(shared.GetMessageColor("success"))
 }
 
 func LogMaybe(service, permission string) {
@@ -45,15 +51,13 @@ func LogError(err error) {
 	if err != nil {
 		if DEBUG {
 			LoggerStdErr.Error().Err(err).Msg(shared.GetMessageColor("error"))
-		} else {
-			Logger.Error().Err(err).Msg(shared.GetMessageColor("error"))
 		}
 	}
 }
 
 func LogPanic(err error) {
 	if err != nil {
-		Logger.Panic().Err(err).Msg("")
+		LoggerStdErr.Panic().Err(err).Msg("")
 	}
 }
 
