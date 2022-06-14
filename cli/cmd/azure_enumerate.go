@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"os"
@@ -32,6 +33,7 @@ func init() {
 }
 
 func azureEnumerateCmdFunc(cmd *cobra.Command, args []string) {
+	var err error
 	if len(args) == 0 {
 		printValidArgs(azure.GetPolicyKeys)
 		os.Exit(1)
@@ -39,12 +41,10 @@ func azureEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 
 	saveOutput, _ := cmd.Flags().GetBool("save-output")
 
-	token, err := azure.GetTokenFromUsernameAndPassword(azureTenantID, azureClientID, azureClientSecret)
-	if err != nil {
-		logger.LoggerStdErr.Fatal().Err(err).Msg("Failed to get access token")
-	}
+	azureOauthToken = azureGetOauthToken()
+
 	if azureSubscriptionID == "" {
-		azureSubscriptionID, err = azure.GetFirstSubscriptionID(token)
+		azureSubscriptionID, err = azure.GetFirstSubscriptionID(azureOauthToken)
 		if err != nil {
 			logger.LoggerStdErr.Fatal().Err(err).Msg("Failed to get subscription ID")
 		}
@@ -77,26 +77,31 @@ func azureEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 					wg.Done()
 				}()
 
-				req, err := p.BuildRequest(ctx, token, known)
+				req, err := p.BuildRequest(ctx, azureOauthToken, known)
 				if err != nil {
-					logger.LogError(err)
+					logger.LogError(err, p.OperationID)
 					return
 				}
 
 				status, body, err := scanner.MakeRequest(req)
 				if err != nil {
-					logger.LogError(err)
+					logger.LogError(err, p.OperationID)
 					return
 				}
 
 				if status > 399 {
-					logger.LogError(fmt.Errorf("%d %s", status, body))
+					logger.LogError(fmt.Errorf("%d %s", status, body), p.OperationID)
 				}
 
 				azureLogSuccessMessage(p, azureKnownResourceMap)
 
 				if saveOutput {
-					ioutil.WriteFile(fmt.Sprintf("%s.json", p.OperationID), []byte(body), 0644)
+					o, err := json.Marshal(body)
+					if err != nil {
+						logger.LogError(err)
+						return
+					}
+					ioutil.WriteFile(fmt.Sprintf("%s.json", p.OperationID), o, 0644)
 				}
 
 			}(wg, s)

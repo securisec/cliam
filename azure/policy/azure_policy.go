@@ -26,7 +26,7 @@ type Policy struct {
 	PathValues    map[string]string      `json:"path_values"`
 	IsExtra       bool                   `json:"is_extra"`
 	ExtraLocation string                 `json:"extra_location"`
-	ExtraValue    map[string]interface{} `json:"extra_value"`
+	ExtraValue    map[string]string      `json:"extra_value"`
 
 	// extra
 	OperationID string `json:"operation_id"`
@@ -116,10 +116,6 @@ func (p Policy) BuildRequestUrl() (string, error) {
 	// us to build the request url using a template.
 	if p.IsExtra && p.ExtraLocation == "path" {
 		for k, v := range p.ExtraValue {
-			v, ok := v.(string)
-			if !ok {
-				continue
-			}
 			p.PathValues[k] = v
 		}
 	}

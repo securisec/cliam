@@ -47,10 +47,14 @@ func LogDenied(status int, service, permission string) {
 	}
 }
 
-func LogError(err error) {
+func LogError(err error, operation ...string) {
 	if err != nil {
 		if DEBUG {
-			LoggerStdErr.Error().Err(err).Msg(shared.GetMessageColor("error"))
+			l := LoggerStdErr.Error().Err(err)
+			if len(operation) > 0 {
+				l.Str("operation", operation[0])
+			}
+			l.Msg(shared.GetMessageColor("error"))
 		}
 	}
 }

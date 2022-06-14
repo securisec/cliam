@@ -17,6 +17,7 @@ var (
 	azureClientID          string
 	azureClientSecret      string
 	azureResourceGroupName string
+	azureOauthToken        string
 	azureKnownResourceMap  map[string]string
 	// TODO support other auth types
 )
@@ -46,6 +47,7 @@ func init() {
 	azureCmd.PersistentFlags().StringVar(&azureClientID, "client-id", "", "Azure Client ID / Username")
 	azureCmd.PersistentFlags().StringVar(&azureClientSecret, "client-secret", "", "Azure Client Secret / Password")
 	azureCmd.PersistentFlags().StringVar(&azureResourceGroupName, "resource-group-name", "", "Azure Resource Group")
+	azureCmd.PersistentFlags().StringVar(&azureOauthToken, "oauth-token", "", "Optionall use a valid Azure OAuth Token. Can also use CLIAM_AZURE_OAUTH_TOKEN envvar")
 	azureCmd.PersistentFlags().StringToStringVar(&azureKnownResourceMap, "known-value", map[string]string{}, "Azure cli flags. When known-resource-name is set, additional permissions where a resource needs to be specified is enumerated.")
 }
 
@@ -67,6 +69,9 @@ func azureValidateRequiredFlags(cmd *cobra.Command, args []string) {
 	}
 	if azureResourceGroupName == "" {
 		azureResourceGroupName = os.Getenv("AZURE_RESOURCE_GROUP")
+	}
+	if azureOauthToken == "" {
+		azureOauthToken = os.Getenv("CLIAM_AZURE_OAUTH_TOKEN")
 	}
 
 	for _, v := range []string{
@@ -105,13 +110,13 @@ func azureSendToChannel(ch chan policy.Policy, resources []string) {
 	}
 
 	// if a known resource name is set, we will enumerate only the extra permissions
-	// TODO 🚧
-	// if len(azureKnownResourceMap) > 0 && len(extras) > 0 {
-	// 	for _, ee := range extras {
-	// 		ee.Policy.ExtraValueMap = awsModifyExtraMap(awsKnownResourceMap)
-	// 		ch <- ee
-	// 	}
-	// }
+	if len(azureKnownResourceMap) > 0 && len(extras) > 0 {
+		for _, ee := range extras {
+			ee.ExtraValue = azureKnownResourceMap
+			// ee.ExtraValue = awsModifyExtraMap(awsKnownResourceMap)
+			ch <- ee
+		}
+	}
 }
 
 func azureLogSuccessMessage(policy policy.Policy, extras ...map[string]string) {
@@ -122,4 +127,15 @@ func azureLogSuccessMessage(policy policy.Policy, extras ...map[string]string) {
 		}
 	}
 	l.Msg(shared.GetMessageColor("success"))
+}
+
+func azureGetOauthToken() string {
+	if azureOauthToken != "" {
+		return azureOauthToken
+	}
+	token, err := azure.GetTokenFromUsernameAndPassword(azureTenantID, azureClientID, azureClientSecret)
+	if err != nil {
+		logger.LoggerStdErr.Fatal().Err(err).Msg("failed to get azure oauth token")
+	}
+	return token
 }

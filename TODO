@@ -3,6 +3,7 @@ Todo:
   ☐ enumerate functions should return an array of valid permissions
   ☐ refactor goroutine runners as DRY
   ☐ firebase with config
+  ☐ unify azureKnownResourceMap and azureUnknownResourceMap into a single map and flag
 
 Bug:
 

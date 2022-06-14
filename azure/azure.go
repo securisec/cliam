@@ -8,7 +8,6 @@ import (
 
 	azp "github.com/Azure/azure-sdk-for-go/sdk/azcore/policy"
 	"github.com/Azure/azure-sdk-for-go/sdk/azidentity"
-	"github.com/securisec/cliam/azure/policy"
 )
 
 // GetTokenFromUsernameAndPassword returns a valid bearer token from the given
@@ -63,16 +62,4 @@ type subscriptionResponse struct {
 	Count struct {
 		Value int `json:"value"`
 	} `json:"count"`
-}
-
-var Policies = map[string][]policy.Policy{
-	"Microsoft.Web.WebApps": policy.Microsoft_Web_WebApps,
-}
-
-func GetPolicyKeys() []string {
-	hold := make([]string, 0, len(Policies))
-	for k := range Policies {
-		hold = append(hold, k)
-	}
-	return hold
 }
