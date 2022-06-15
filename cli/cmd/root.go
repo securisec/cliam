@@ -9,6 +9,7 @@ import (
 var (
 	MaxThreads     int
 	RequestTimeout int
+	CLIVerbose     bool
 )
 
 // RootCmd represents the base command when called without any subcommands
@@ -26,6 +27,7 @@ var RootCmd = &cobra.Command{
 func init() {
 	RootCmd.PersistentFlags().IntVar(&MaxThreads, "max-threads", 5, "Maximum number of threads to use.")
 	RootCmd.PersistentFlags().IntVar(&RequestTimeout, "request-timeout", 10, "Timeout for each request in seconds.")
+	RootCmd.PersistentFlags().BoolVarP(&CLIVerbose, "verbose", "v", false, "Enable verbose output.")
 }
 
 func Execute() {

@@ -44,7 +44,7 @@ func init() {
 	RootCmd.AddCommand(azureCmd)
 
 	azureCmd.PersistentFlags().StringVar(&azureSubscriptionID, "subscription-id", "", "Azure Subscription ID")
-	azureCmd.PersistentFlags().StringVar(&azureTenantID, "tenant-id", "", "Azure Tenant ID")
+	azureCmd.PersistentFlags().StringVarP(&azureTenantID, "tenant-id", "t", "", "Azure Tenant ID")
 	azureCmd.PersistentFlags().StringVar(&azureClientID, "client-id", "", "Azure Client ID / Username")
 	azureCmd.PersistentFlags().StringVar(&azureClientSecret, "client-secret", "", "Azure Client Secret / Password")
 	azureCmd.PersistentFlags().StringVar(&azureResourceGroupName, "resource-group-name", "", "Azure Resource Group")
@@ -129,7 +129,7 @@ func azureSendToChannel(ch chan policy.Policy, resources []string) {
 
 func azureLogSuccessMessage(policy policy.Policy, body map[string]interface{}, extras ...map[string]string) {
 	l := logger.Logger.Info().Str(policy.Resource, policy.OperationID)
-	if len(extras) > 0 && logger.VERBOSE {
+	if len(extras) > 0 && CLIVerbose {
 		for k, v := range extras[0] {
 			l = l.Str(k, v)
 		}
@@ -137,13 +137,14 @@ func azureLogSuccessMessage(policy policy.Policy, body map[string]interface{}, e
 	if _, hasValue := body["value"]; hasValue {
 		v, ok := body["value"].([]interface{})
 		if ok {
-			if len(v) == 0 && logger.VERBOSE {
+			if len(v) == 0 && CLIVerbose {
 				logger.LoggerStdErr.Debug().Str(policy.Resource, policy.OperationID).Interface("body", body).Msg(shared.GetMessageColor("maybe"))
 				return
 			}
 		}
+	} else {
+		l.Msg(shared.GetMessageColor("success"))
 	}
-	l.Msg(shared.GetMessageColor("success"))
 }
 
 func azureGetOauthToken() string {

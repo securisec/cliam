@@ -44,7 +44,7 @@ func azureEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 	azureOauthToken = azureGetOauthToken()
 
 	if azureSubscriptionID == "" {
-		azureSubscriptionID, err = azure.GetFirstSubscriptionID(azureOauthToken)
+		azureSubscriptionID, _, err = azure.GetFirstSubscriptions(azureOauthToken)
 		if err != nil {
 			logger.LoggerStdErr.Fatal().Err(err).Msg("Failed to get subscription ID")
 		}

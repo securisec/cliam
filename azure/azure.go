@@ -51,30 +51,31 @@ func GetTokenFromCertificate(tenantID, clientID, certPath string) (string, error
 	return token.Token, nil
 }
 
-// GetFirstSubscriptionID returns the first subscription ID from the given.
-// The token can be used to make REST api calls.
-func GetFirstSubscriptionID(bearerToken string) (string, error) {
+// GetFirstSubscriptions returns the first subscription ID from the given.
+// The token can be used to make REST api calls. This function returns a subscription ID
+// and a list of all subscriptions.
+func GetFirstSubscriptions(bearerToken string) (string, []SubscriptionValue, error) {
 	req, err := http.NewRequest("GET", "https://management.azure.com/subscriptions?api-version=2020-01-01", nil)
 	if err != nil {
-		return "", err
+		return "", nil, err
 	}
 	req.Header.Set("Authorization", "Bearer "+bearerToken)
 
 	res, err := http.DefaultClient.Do(req)
 	// read body
 	if err != nil {
-		return "", err
+		return "", nil, err
 	}
 	defer res.Body.Close()
 	if res.StatusCode != http.StatusOK {
-		return "", fmt.Errorf("unexpected status code: %d", res.StatusCode)
+		return "", nil, fmt.Errorf("unexpected status code: %d", res.StatusCode)
 	}
-	var subs subscriptionResponse
+	var subs SubscriptionResponse
 	if err := json.NewDecoder(res.Body).Decode(&subs); err != nil {
-		return "", err
+		return "", nil, err
 	}
 	if subs.Count.Value <= 0 {
-		return "", fmt.Errorf("no subscriptions found")
+		return "", nil, fmt.Errorf("no subscriptions found")
 	}
 
 	id := subs.Value[0].SubscriptionID
@@ -87,14 +88,32 @@ func GetFirstSubscriptionID(bearerToken string) (string, error) {
 		logger.LoggerStdErr.Warn().Strs("subscriptions", s).Msg(shared.GetMessageColor("debug"))
 	}
 
-	return id, nil
+	return id, subs.Value, nil
 }
 
-type subscriptionResponse struct {
-	Value []struct {
-		SubscriptionID string `json:"subscriptionId"`
-	} `json:"value"`
-	Count struct {
-		Value int `json:"value"`
-	} `json:"count"`
+type SubscriptionResponse struct {
+	Value []SubscriptionValue `json:"value"`
+	Count Count               `json:"count"`
+}
+
+type Count struct {
+	Type  string `json:"type"`
+	Value int64  `json:"value"`
+}
+
+type SubscriptionValue struct {
+	ID                   string               `json:"id"`
+	AuthorizationSource  string               `json:"authorizationSource"`
+	ManagedByTenants     []interface{}        `json:"managedByTenants"`
+	SubscriptionID       string               `json:"subscriptionId"`
+	TenantID             string               `json:"tenantId"`
+	DisplayName          string               `json:"displayName"`
+	State                string               `json:"state"`
+	SubscriptionPolicies SubscriptionPolicies `json:"subscriptionPolicies"`
+}
+
+type SubscriptionPolicies struct {
+	LocationPlacementID string `json:"locationPlacementId"`
+	QuotaID             string `json:"quotaId"`
+	SpendingLimit       string `json:"spendingLimit"`
 }

@@ -21,6 +21,7 @@ Helpers:
 Cli:
   ☐ if access key starts with ASIA, then token is required maybe?
   ☐ spinner with backwards count of remaining calls?
+  ☐ move more verbose logging to the -v flag in the cli
 
 Resources:
   - https://docs.aws.amazon.com/index.html

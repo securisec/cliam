@@ -11,7 +11,9 @@ func GetPolicyKeys() []string {
 }
 
 var Policies = map[string][]policy.Policy{
-	"Microsoft.Web.WebApps":     policy.Microsoft_Web_WebApps,
-	"Microsoft.Web.StaticSites": policy.Microsoft_Web_StaticSites,
-	"Microsoft.Storage.storage": policy.Microsoft_Storage_storage,
+	"Microsoft.Web.WebApps":                policy.Microsoft_Web_WebApps,
+	"Microsoft.Web.StaticSites":            policy.Microsoft_Web_StaticSites,
+	"Microsoft.Web.ResourceProvider":       policy.Microsoft_Web_ResourceProvider,
+	"Microsoft.Web.ResourceHealthMetadata": policy.Microsoft_Web_ResourceHealthMetadata,
+	"Microsoft.Storage.storage":            policy.Microsoft_Storage_storage,
 }
