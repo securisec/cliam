@@ -25,10 +25,8 @@ var Microsoft_Web_ResourceProvider = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "GetSourceControl",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "GetSourceControl",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.Web/billingMeters",

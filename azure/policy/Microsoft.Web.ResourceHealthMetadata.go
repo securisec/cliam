@@ -23,39 +23,31 @@ var Microsoft_Web_ResourceHealthMetadata = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "ResourceHealthMetadata_ListBySite",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "ResourceHealthMetadata_ListBySite",
+		Resource:    "Microsoft.Web",
 	}, {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/resourceHealthMetadata/default",
 		Method: "GET",
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "ResourceHealthMetadata_GetBySite",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "ResourceHealthMetadata_GetBySite",
+		Resource:    "Microsoft.Web",
 	}, {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/resourceHealthMetadata",
 		Method: "GET",
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "ResourceHealthMetadata_ListBySiteSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "ResourceHealthMetadata_ListBySiteSlot",
+		Resource:    "Microsoft.Web",
 	}, {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/resourceHealthMetadata/default",
 		Method: "GET",
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "ResourceHealthMetadata_GetBySiteSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "ResourceHealthMetadata_GetBySiteSlot",
+		Resource:    "Microsoft.Web",
 	},
 }

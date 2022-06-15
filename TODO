@@ -4,6 +4,10 @@ Todo:
   ☐ refactor goroutine runners as DRY
   ☐ firebase with config
   ☐ unify azureKnownResourceMap and azureUnknownResourceMap into a single map and flag
+  ☐ update readme with azure and firebase 
+  ☐ replicate success and failure count for aws and gcp
+  ☐ figure out a way to have tab complete for multiple known values
+  ☐ when using tokens, validate the expiration of the token
 
 Bug:
 
@@ -11,6 +15,9 @@ AWS:
   ☐ for services that require a body, it may be responding with a 404 if permission is valid
 
 GCP:
+
+Firebase:
+  ☐ authencated scan
 
 Azure:
   ☐ default auth (from currently logged in user)

@@ -25,10 +25,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_Get",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_Get",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/analyzeCustomHostname",
@@ -36,10 +34,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_AnalyzeCustomHostname",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_AnalyzeCustomHostname",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/applySlotConfig",
@@ -47,10 +43,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ApplySlotConfigToProduction",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ApplySlotConfigToProduction",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/backup",
@@ -58,10 +52,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_Backup",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_Backup",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/backups",
@@ -69,10 +61,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListBackups",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListBackups",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/backups/{{.backupId}}",
@@ -80,10 +70,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetBackupStatus",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetBackupStatus",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/backups/{{.backupId}}/list",
@@ -91,10 +79,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListBackupStatusSecrets",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListBackupStatusSecrets",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/backups/{{.backupId}}/restore",
@@ -102,10 +88,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_Restore",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_Restore",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/basicPublishingCredentialsPolicies",
@@ -113,10 +97,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListBasicPublishingCredentialsPolicies",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListBasicPublishingCredentialsPolicies",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/basicPublishingCredentialsPolicies/ftp",
@@ -124,10 +106,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetFtpAllowed",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetFtpAllowed",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/basicPublishingCredentialsPolicies/scm",
@@ -135,10 +115,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetScmAllowed",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetScmAllowed",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/config",
@@ -146,10 +124,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListConfigurations",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListConfigurations",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/config/appsettings/list",
@@ -157,10 +133,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListApplicationSettings",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListApplicationSettings",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/config/authsettings/list",
@@ -168,10 +142,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetAuthSettings",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetAuthSettings",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/config/authsettingsV2",
@@ -179,10 +151,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetAuthSettingsV2WithoutSecrets",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetAuthSettingsV2WithoutSecrets",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/config/authsettingsV2/list",
@@ -190,10 +160,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetAuthSettingsV2",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetAuthSettingsV2",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/config/azurestorageaccounts/list",
@@ -201,10 +169,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListAzureStorageAccounts",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListAzureStorageAccounts",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/config/backup/list",
@@ -212,10 +178,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetBackupConfiguration",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetBackupConfiguration",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/config/configreferences/appsettings",
@@ -223,10 +187,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetAppSettingsKeyVaultReferences",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetAppSettingsKeyVaultReferences",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/config/configreferences/appsettings/{{.appSettingKey}}",
@@ -234,10 +196,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetAppSettingKeyVaultReference",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetAppSettingKeyVaultReference",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/config/configreferences/connectionstrings",
@@ -245,10 +205,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetSiteConnectionStringKeyVaultReferences",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetSiteConnectionStringKeyVaultReferences",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/config/configreferences/connectionstrings/{{.connectionStringKey}}",
@@ -256,10 +214,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetSiteConnectionStringKeyVaultReference",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetSiteConnectionStringKeyVaultReference",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/config/connectionstrings/list",
@@ -267,10 +223,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListConnectionStrings",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListConnectionStrings",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/config/logs",
@@ -278,10 +232,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetDiagnosticLogsConfiguration",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetDiagnosticLogsConfiguration",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/config/metadata/list",
@@ -289,10 +241,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListMetadata",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListMetadata",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/config/publishingcredentials/list",
@@ -300,10 +250,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListPublishingCredentials",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListPublishingCredentials",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/config/pushsettings/list",
@@ -311,10 +259,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListSitePushSettings",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListSitePushSettings",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/config/slotConfigNames",
@@ -322,10 +268,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListSlotConfigurationNames",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListSlotConfigurationNames",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/config/web",
@@ -333,10 +277,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetConfiguration",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetConfiguration",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/config/web/snapshots",
@@ -344,10 +286,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListConfigurationSnapshotInfo",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListConfigurationSnapshotInfo",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/config/web/snapshots/{{.snapshotId}}",
@@ -355,10 +295,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetConfigurationSnapshot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetConfigurationSnapshot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/config/web/snapshots/{{.snapshotId}}/recover",
@@ -366,10 +304,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_RecoverSiteConfigurationSnapshot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_RecoverSiteConfigurationSnapshot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/containerlogs",
@@ -377,10 +313,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetWebSiteContainerLogs",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetWebSiteContainerLogs",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/containerlogs/zip/download",
@@ -388,10 +322,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetContainerLogsZip",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetContainerLogsZip",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/continuouswebjobs",
@@ -399,10 +331,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListContinuousWebJobs",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListContinuousWebJobs",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/continuouswebjobs/{{.webJobName}}",
@@ -410,10 +340,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetContinuousWebJob",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetContinuousWebJob",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/continuouswebjobs/{{.webJobName}}/start",
@@ -421,10 +349,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_StartContinuousWebJob",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_StartContinuousWebJob",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/continuouswebjobs/{{.webJobName}}/stop",
@@ -432,10 +358,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_StopContinuousWebJob",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_StopContinuousWebJob",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/deployments",
@@ -443,10 +367,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListDeployments",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListDeployments",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/deployments/{{.id}}",
@@ -454,10 +376,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetDeployment",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetDeployment",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/deployments/{{.id}}/log",
@@ -465,10 +385,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListDeploymentLog",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListDeploymentLog",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/discoverbackup",
@@ -476,10 +394,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_DiscoverBackup",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_DiscoverBackup",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/domainOwnershipIdentifiers",
@@ -487,10 +403,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListDomainOwnershipIdentifiers",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListDomainOwnershipIdentifiers",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/domainOwnershipIdentifiers/{{.domainOwnershipIdentifierName}}",
@@ -498,10 +412,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetDomainOwnershipIdentifier",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetDomainOwnershipIdentifier",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/extensions/MSDeploy",
@@ -509,10 +421,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetMSDeployStatus",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetMSDeployStatus",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/extensions/MSDeploy/log",
@@ -520,10 +430,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetMSDeployLog",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetMSDeployLog",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/extensions/onedeploy",
@@ -531,10 +439,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetOneDeployStatus",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetOneDeployStatus",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/functions",
@@ -542,10 +448,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListFunctions",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListFunctions",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/functions/admin/token",
@@ -553,10 +457,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetFunctionsAdminToken",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetFunctionsAdminToken",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/functions/{{.functionName}}",
@@ -564,10 +466,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetFunction",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetFunction",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/functions/{{.functionName}}/listkeys",
@@ -575,10 +475,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListFunctionKeys",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListFunctionKeys",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/functions/{{.functionName}}/listsecrets",
@@ -586,10 +484,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListFunctionSecrets",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListFunctionSecrets",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/host/default/listkeys",
@@ -597,10 +493,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListHostKeys",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListHostKeys",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/host/default/listsyncstatus",
@@ -608,10 +502,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListSyncStatus",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListSyncStatus",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/host/default/sync",
@@ -619,10 +511,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_SyncFunctions",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_SyncFunctions",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/hostNameBindings",
@@ -630,10 +520,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListHostNameBindings",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListHostNameBindings",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/hostNameBindings/{{.hostName}}",
@@ -641,10 +529,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetHostNameBinding",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetHostNameBinding",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/hybridConnectionNamespaces/{{.namespaceName}}/relays/{{.relayName}}",
@@ -652,10 +538,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetHybridConnection",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetHybridConnection",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/hybridConnectionRelays",
@@ -663,10 +547,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListHybridConnections",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListHybridConnections",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/hybridconnection",
@@ -674,10 +556,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListRelayServiceConnections",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListRelayServiceConnections",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/hybridconnection/{{.entityName}}",
@@ -685,10 +565,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetRelayServiceConnection",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetRelayServiceConnection",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/instances",
@@ -696,10 +574,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListInstanceIdentifiers",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListInstanceIdentifiers",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/instances/{{.instanceId}}",
@@ -707,10 +583,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetInstanceInfo",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetInstanceInfo",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/instances/{{.instanceId}}/extensions/MSDeploy",
@@ -718,10 +592,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetInstanceMsDeployStatus",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetInstanceMsDeployStatus",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/instances/{{.instanceId}}/extensions/MSDeploy/log",
@@ -729,10 +601,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetInstanceMSDeployLog",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetInstanceMSDeployLog",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/instances/{{.instanceId}}/processes",
@@ -740,10 +610,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListInstanceProcesses",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListInstanceProcesses",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/instances/{{.instanceId}}/processes/{{.processId}}",
@@ -751,10 +619,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetInstanceProcess",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetInstanceProcess",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/instances/{{.instanceId}}/processes/{{.processId}}/dump",
@@ -762,10 +628,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetInstanceProcessDump",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetInstanceProcessDump",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/instances/{{.instanceId}}/processes/{{.processId}}/modules",
@@ -773,10 +637,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListInstanceProcessModules",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListInstanceProcessModules",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/instances/{{.instanceId}}/processes/{{.processId}}/modules/{{.baseAddress}}",
@@ -784,10 +646,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetInstanceProcessModule",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetInstanceProcessModule",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/instances/{{.instanceId}}/processes/{{.processId}}/threads",
@@ -795,10 +655,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListInstanceProcessThreads",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListInstanceProcessThreads",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/iscloneable",
@@ -806,10 +664,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_IsCloneable",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_IsCloneable",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/listbackups",
@@ -817,10 +673,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListSiteBackups",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListSiteBackups",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/listsyncfunctiontriggerstatus",
@@ -828,10 +682,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListSyncFunctionTriggers",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListSyncFunctionTriggers",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/migratemysql",
@@ -839,10 +691,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_MigrateMySql",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_MigrateMySql",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/migratemysql/status",
@@ -850,10 +700,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetMigrateMySqlStatus",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetMigrateMySqlStatus",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/networkConfig/virtualNetwork",
@@ -861,10 +709,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetSwiftVirtualNetworkConnection",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetSwiftVirtualNetworkConnection",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/networkFeatures/{{.view}}",
@@ -872,10 +718,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListNetworkFeatures",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListNetworkFeatures",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/networkTrace/operationresults/{{.operationId}}",
@@ -883,10 +727,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetNetworkTraceOperation",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetNetworkTraceOperation",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/networkTrace/start",
@@ -894,10 +736,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_StartWebSiteNetworkTrace",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_StartWebSiteNetworkTrace",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/networkTrace/startOperation",
@@ -905,10 +745,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_StartWebSiteNetworkTraceOperation",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_StartWebSiteNetworkTraceOperation",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/networkTrace/stop",
@@ -916,10 +754,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_StopWebSiteNetworkTrace",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_StopWebSiteNetworkTrace",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/networkTrace/{{.operationId}}",
@@ -927,10 +763,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetNetworkTraces",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetNetworkTraces",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/networkTraces/current/operationresults/{{.operationId}}",
@@ -938,10 +772,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetNetworkTraceOperationV2",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetNetworkTraceOperationV2",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/networkTraces/{{.operationId}}",
@@ -949,10 +781,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetNetworkTracesV2",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetNetworkTracesV2",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/newpassword",
@@ -960,10 +790,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GenerateNewSitePublishingPassword",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GenerateNewSitePublishingPassword",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/perfcounters",
@@ -971,10 +799,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListPerfMonCounters",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListPerfMonCounters",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/phplogging",
@@ -982,10 +808,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetSitePhpErrorLogFlag",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetSitePhpErrorLogFlag",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/premieraddons",
@@ -993,10 +817,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListPremierAddOns",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListPremierAddOns",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/premieraddons/{{.premierAddOnName}}",
@@ -1004,10 +826,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetPremierAddOn",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetPremierAddOn",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/privateAccess/virtualNetworks",
@@ -1015,10 +835,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetPrivateAccess",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetPrivateAccess",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/privateEndpointConnections",
@@ -1026,10 +844,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetPrivateEndpointConnectionList",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetPrivateEndpointConnectionList",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/privateEndpointConnections/{{.privateEndpointConnectionName}}",
@@ -1037,10 +853,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetPrivateEndpointConnection",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetPrivateEndpointConnection",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/privateLinkResources",
@@ -1048,10 +862,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetPrivateLinkResources",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetPrivateLinkResources",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/processes",
@@ -1059,10 +871,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListProcesses",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListProcesses",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/processes/{{.processId}}",
@@ -1070,10 +880,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetProcess",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetProcess",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/processes/{{.processId}}/dump",
@@ -1081,10 +889,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetProcessDump",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetProcessDump",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/processes/{{.processId}}/modules",
@@ -1092,10 +898,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListProcessModules",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListProcessModules",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/processes/{{.processId}}/modules/{{.baseAddress}}",
@@ -1103,10 +907,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetProcessModule",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetProcessModule",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/processes/{{.processId}}/threads",
@@ -1114,10 +916,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListProcessThreads",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListProcessThreads",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/publicCertificates",
@@ -1125,10 +925,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListPublicCertificates",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListPublicCertificates",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/publicCertificates/{{.publicCertificateName}}",
@@ -1136,10 +934,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetPublicCertificate",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetPublicCertificate",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/publishxml",
@@ -1147,10 +943,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListPublishingProfileXmlWithSecrets",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListPublishingProfileXmlWithSecrets",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/resetSlotConfig",
@@ -1158,10 +952,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ResetProductionSlotConfig",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ResetProductionSlotConfig",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/restart",
@@ -1169,10 +961,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_Restart",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_Restart",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/restoreFromBackupBlob",
@@ -1180,10 +970,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_RestoreFromBackupBlob",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_RestoreFromBackupBlob",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/restoreFromDeletedApp",
@@ -1191,10 +979,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_RestoreFromDeletedApp",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_RestoreFromDeletedApp",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/restoreSnapshot",
@@ -1202,10 +988,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_RestoreSnapshot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_RestoreSnapshot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/siteextensions",
@@ -1213,10 +997,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListSiteExtensions",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListSiteExtensions",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/siteextensions/{{.siteExtensionId}}",
@@ -1224,10 +1006,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetSiteExtension",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetSiteExtension",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots",
@@ -1235,10 +1015,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListSlots",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListSlots",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}",
@@ -1246,10 +1024,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/analyzeCustomHostname",
@@ -1257,10 +1033,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_AnalyzeCustomHostnameSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_AnalyzeCustomHostnameSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/applySlotConfig",
@@ -1268,10 +1042,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ApplySlotConfigurationSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ApplySlotConfigurationSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/backup",
@@ -1279,10 +1051,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_BackupSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_BackupSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/backups",
@@ -1290,10 +1060,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListBackupsSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListBackupsSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/backups/{{.backupId}}",
@@ -1301,10 +1069,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetBackupStatusSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetBackupStatusSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/backups/{{.backupId}}/list",
@@ -1312,10 +1078,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListBackupStatusSecretsSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListBackupStatusSecretsSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/backups/{{.backupId}}/restore",
@@ -1323,10 +1087,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_RestoreSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_RestoreSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/basicPublishingCredentialsPolicies",
@@ -1334,10 +1096,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListBasicPublishingCredentialsPoliciesSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListBasicPublishingCredentialsPoliciesSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/basicPublishingCredentialsPolicies/ftp",
@@ -1345,10 +1105,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetFtpAllowedSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetFtpAllowedSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/basicPublishingCredentialsPolicies/scm",
@@ -1356,10 +1114,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetScmAllowedSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetScmAllowedSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/config",
@@ -1367,10 +1123,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListConfigurationsSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListConfigurationsSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/config/appsettings/list",
@@ -1378,10 +1132,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListApplicationSettingsSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListApplicationSettingsSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/config/authsettings/list",
@@ -1389,10 +1141,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetAuthSettingsSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetAuthSettingsSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/config/authsettingsV2",
@@ -1400,10 +1150,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetAuthSettingsV2WithoutSecretsSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetAuthSettingsV2WithoutSecretsSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/config/authsettingsV2/list",
@@ -1411,10 +1159,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetAuthSettingsV2Slot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetAuthSettingsV2Slot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/config/azurestorageaccounts/list",
@@ -1422,10 +1168,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListAzureStorageAccountsSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListAzureStorageAccountsSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/config/backup/list",
@@ -1433,10 +1177,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetBackupConfigurationSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetBackupConfigurationSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/config/configreferences/appsettings",
@@ -1444,10 +1186,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetAppSettingsKeyVaultReferencesSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetAppSettingsKeyVaultReferencesSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/config/configreferences/appsettings/{{.appSettingKey}}",
@@ -1455,10 +1195,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetAppSettingKeyVaultReferenceSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetAppSettingKeyVaultReferenceSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/config/configreferences/connectionstrings",
@@ -1466,10 +1204,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetSiteConnectionStringKeyVaultReferencesSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetSiteConnectionStringKeyVaultReferencesSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/config/configreferences/connectionstrings/{{.connectionStringKey}}",
@@ -1477,10 +1213,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetSiteConnectionStringKeyVaultReferenceSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetSiteConnectionStringKeyVaultReferenceSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/config/connectionstrings/list",
@@ -1488,10 +1222,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListConnectionStringsSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListConnectionStringsSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/config/logs",
@@ -1499,10 +1231,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetDiagnosticLogsConfigurationSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetDiagnosticLogsConfigurationSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/config/metadata/list",
@@ -1510,10 +1240,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListMetadataSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListMetadataSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/config/publishingcredentials/list",
@@ -1521,10 +1249,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListPublishingCredentialsSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListPublishingCredentialsSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/config/pushsettings/list",
@@ -1532,10 +1258,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListSitePushSettingsSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListSitePushSettingsSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/config/web",
@@ -1543,10 +1267,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetConfigurationSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetConfigurationSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/config/web/snapshots",
@@ -1554,10 +1276,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListConfigurationSnapshotInfoSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListConfigurationSnapshotInfoSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/config/web/snapshots/{{.snapshotId}}",
@@ -1565,10 +1285,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetConfigurationSnapshotSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetConfigurationSnapshotSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/config/web/snapshots/{{.snapshotId}}/recover",
@@ -1576,10 +1294,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_RecoverSiteConfigurationSnapshotSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_RecoverSiteConfigurationSnapshotSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/containerlogs",
@@ -1587,10 +1303,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetWebSiteContainerLogsSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetWebSiteContainerLogsSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/containerlogs/zip/download",
@@ -1598,10 +1312,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetContainerLogsZipSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetContainerLogsZipSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/continuouswebjobs",
@@ -1609,10 +1321,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListContinuousWebJobsSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListContinuousWebJobsSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/continuouswebjobs/{{.webJobName}}",
@@ -1620,10 +1330,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetContinuousWebJobSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetContinuousWebJobSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/continuouswebjobs/{{.webJobName}}/start",
@@ -1631,10 +1339,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_StartContinuousWebJobSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_StartContinuousWebJobSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/continuouswebjobs/{{.webJobName}}/stop",
@@ -1642,10 +1348,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_StopContinuousWebJobSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_StopContinuousWebJobSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/deployments",
@@ -1653,10 +1357,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListDeploymentsSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListDeploymentsSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/deployments/{{.id}}",
@@ -1664,10 +1366,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetDeploymentSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetDeploymentSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/deployments/{{.id}}/log",
@@ -1675,10 +1375,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListDeploymentLogSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListDeploymentLogSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/discoverbackup",
@@ -1686,10 +1384,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_DiscoverBackupSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_DiscoverBackupSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/domainOwnershipIdentifiers",
@@ -1697,10 +1393,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListDomainOwnershipIdentifiersSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListDomainOwnershipIdentifiersSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/domainOwnershipIdentifiers/{{.domainOwnershipIdentifierName}}",
@@ -1708,10 +1402,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetDomainOwnershipIdentifierSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetDomainOwnershipIdentifierSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/extensions/MSDeploy",
@@ -1719,10 +1411,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetMSDeployStatusSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetMSDeployStatusSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/extensions/MSDeploy/log",
@@ -1730,10 +1420,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetMSDeployLogSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetMSDeployLogSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/functions",
@@ -1741,10 +1429,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListInstanceFunctionsSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListInstanceFunctionsSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/functions/admin/token",
@@ -1752,10 +1438,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetFunctionsAdminTokenSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetFunctionsAdminTokenSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/functions/{{.functionName}}",
@@ -1763,10 +1447,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetInstanceFunctionSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetInstanceFunctionSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/functions/{{.functionName}}/listkeys",
@@ -1774,10 +1456,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListFunctionKeysSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListFunctionKeysSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/functions/{{.functionName}}/listsecrets",
@@ -1785,10 +1465,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListFunctionSecretsSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListFunctionSecretsSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/host/default/listkeys",
@@ -1796,10 +1474,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListHostKeysSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListHostKeysSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/host/default/listsyncstatus",
@@ -1807,10 +1483,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListSyncStatusSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListSyncStatusSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/host/default/sync",
@@ -1818,10 +1492,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_SyncFunctionsSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_SyncFunctionsSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/hostNameBindings",
@@ -1829,10 +1501,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListHostNameBindingsSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListHostNameBindingsSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/hostNameBindings/{{.hostName}}",
@@ -1840,10 +1510,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetHostNameBindingSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetHostNameBindingSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/hybridConnectionNamespaces/{{.namespaceName}}/relays/{{.relayName}}",
@@ -1851,10 +1519,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetHybridConnectionSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetHybridConnectionSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/hybridConnectionRelays",
@@ -1862,10 +1528,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListHybridConnectionsSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListHybridConnectionsSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/hybridconnection",
@@ -1873,10 +1537,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListRelayServiceConnectionsSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListRelayServiceConnectionsSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/hybridconnection/{{.entityName}}",
@@ -1884,10 +1546,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetRelayServiceConnectionSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetRelayServiceConnectionSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/instances",
@@ -1895,10 +1555,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListInstanceIdentifiersSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListInstanceIdentifiersSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/instances/{{.instanceId}}",
@@ -1906,10 +1564,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetInstanceInfoSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetInstanceInfoSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/instances/{{.instanceId}}/extensions/MSDeploy",
@@ -1917,10 +1573,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetInstanceMsDeployStatusSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetInstanceMsDeployStatusSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/instances/{{.instanceId}}/extensions/MSDeploy/log",
@@ -1928,10 +1582,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetInstanceMSDeployLogSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetInstanceMSDeployLogSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/instances/{{.instanceId}}/processes",
@@ -1939,10 +1591,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListInstanceProcessesSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListInstanceProcessesSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/instances/{{.instanceId}}/processes/{{.processId}}",
@@ -1950,10 +1600,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetInstanceProcessSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetInstanceProcessSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/instances/{{.instanceId}}/processes/{{.processId}}/dump",
@@ -1961,10 +1609,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetInstanceProcessDumpSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetInstanceProcessDumpSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/instances/{{.instanceId}}/processes/{{.processId}}/modules",
@@ -1972,10 +1618,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListInstanceProcessModulesSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListInstanceProcessModulesSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/instances/{{.instanceId}}/processes/{{.processId}}/modules/{{.baseAddress}}",
@@ -1983,10 +1627,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetInstanceProcessModuleSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetInstanceProcessModuleSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/instances/{{.instanceId}}/processes/{{.processId}}/threads",
@@ -1994,10 +1636,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListInstanceProcessThreadsSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListInstanceProcessThreadsSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/iscloneable",
@@ -2005,10 +1645,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_IsCloneableSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_IsCloneableSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/listbackups",
@@ -2016,10 +1654,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListSiteBackupsSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListSiteBackupsSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/listsyncfunctiontriggerstatus",
@@ -2027,10 +1663,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListSyncFunctionTriggersSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListSyncFunctionTriggersSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/migratemysql/status",
@@ -2038,10 +1672,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetMigrateMySqlStatusSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetMigrateMySqlStatusSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/networkConfig/virtualNetwork",
@@ -2049,10 +1681,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetSwiftVirtualNetworkConnectionSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetSwiftVirtualNetworkConnectionSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/networkFeatures/{{.view}}",
@@ -2060,10 +1690,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListNetworkFeaturesSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListNetworkFeaturesSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/networkTrace/operationresults/{{.operationId}}",
@@ -2071,10 +1699,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetNetworkTraceOperationSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetNetworkTraceOperationSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/networkTrace/start",
@@ -2082,10 +1708,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_StartWebSiteNetworkTraceSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_StartWebSiteNetworkTraceSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/networkTrace/startOperation",
@@ -2093,10 +1717,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_StartWebSiteNetworkTraceOperationSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_StartWebSiteNetworkTraceOperationSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/networkTrace/stop",
@@ -2104,10 +1726,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_StopWebSiteNetworkTraceSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_StopWebSiteNetworkTraceSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/networkTrace/{{.operationId}}",
@@ -2115,10 +1735,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetNetworkTracesSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetNetworkTracesSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/networkTraces/current/operationresults/{{.operationId}}",
@@ -2126,10 +1744,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetNetworkTraceOperationSlotV2",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetNetworkTraceOperationSlotV2",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/networkTraces/{{.operationId}}",
@@ -2137,10 +1753,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetNetworkTracesSlotV2",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetNetworkTracesSlotV2",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/newpassword",
@@ -2148,10 +1762,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GenerateNewSitePublishingPasswordSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GenerateNewSitePublishingPasswordSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/perfcounters",
@@ -2159,10 +1771,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListPerfMonCountersSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListPerfMonCountersSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/phplogging",
@@ -2170,10 +1780,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetSitePhpErrorLogFlagSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetSitePhpErrorLogFlagSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/premieraddons",
@@ -2181,10 +1789,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListPremierAddOnsSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListPremierAddOnsSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/premieraddons/{{.premierAddOnName}}",
@@ -2192,10 +1798,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetPremierAddOnSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetPremierAddOnSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/privateAccess/virtualNetworks",
@@ -2203,10 +1807,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetPrivateAccessSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetPrivateAccessSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/privateEndpointConnections",
@@ -2214,10 +1816,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetPrivateEndpointConnectionListSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetPrivateEndpointConnectionListSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/privateEndpointConnections/{{.privateEndpointConnectionName}}",
@@ -2225,10 +1825,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetPrivateEndpointConnectionSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetPrivateEndpointConnectionSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/privateLinkResources",
@@ -2236,10 +1834,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetPrivateLinkResourcesSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetPrivateLinkResourcesSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/processes",
@@ -2247,10 +1843,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListProcessesSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListProcessesSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/processes/{{.processId}}",
@@ -2258,10 +1852,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetProcessSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetProcessSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/processes/{{.processId}}/dump",
@@ -2269,10 +1861,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetProcessDumpSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetProcessDumpSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/processes/{{.processId}}/modules",
@@ -2280,10 +1870,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListProcessModulesSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListProcessModulesSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/processes/{{.processId}}/modules/{{.baseAddress}}",
@@ -2291,10 +1879,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetProcessModuleSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetProcessModuleSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/processes/{{.processId}}/threads",
@@ -2302,10 +1888,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListProcessThreadsSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListProcessThreadsSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/publicCertificates",
@@ -2313,10 +1897,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListPublicCertificatesSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListPublicCertificatesSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/publicCertificates/{{.publicCertificateName}}",
@@ -2324,10 +1906,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetPublicCertificateSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetPublicCertificateSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/publishxml",
@@ -2335,10 +1915,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListPublishingProfileXmlWithSecretsSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListPublishingProfileXmlWithSecretsSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/resetSlotConfig",
@@ -2346,10 +1924,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ResetSlotConfigurationSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ResetSlotConfigurationSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/restart",
@@ -2357,10 +1933,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_RestartSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_RestartSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/restoreFromBackupBlob",
@@ -2368,10 +1942,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_RestoreFromBackupBlobSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_RestoreFromBackupBlobSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/restoreFromDeletedApp",
@@ -2379,10 +1951,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_RestoreFromDeletedAppSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_RestoreFromDeletedAppSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/restoreSnapshot",
@@ -2390,10 +1960,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_RestoreSnapshotSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_RestoreSnapshotSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/siteextensions",
@@ -2401,10 +1969,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListSiteExtensionsSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListSiteExtensionsSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/siteextensions/{{.siteExtensionId}}",
@@ -2412,10 +1978,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetSiteExtensionSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetSiteExtensionSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/slotsdiffs",
@@ -2423,10 +1987,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListSlotDifferencesSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListSlotDifferencesSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/slotsswap",
@@ -2434,10 +1996,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_SwapSlotSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_SwapSlotSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/snapshots",
@@ -2445,10 +2005,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListSnapshotsSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListSnapshotsSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/snapshotsdr",
@@ -2456,10 +2014,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListSnapshotsFromDRSecondarySlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListSnapshotsFromDRSecondarySlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/sourcecontrols/web",
@@ -2467,10 +2023,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetSourceControlSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetSourceControlSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/start",
@@ -2478,10 +2032,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_StartSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_StartSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/startNetworkTrace",
@@ -2489,10 +2041,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_StartNetworkTraceSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_StartNetworkTraceSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/stop",
@@ -2500,10 +2050,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_StopSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_StopSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/stopNetworkTrace",
@@ -2511,10 +2059,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_StopNetworkTraceSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_StopNetworkTraceSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/sync",
@@ -2522,10 +2068,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_SyncRepositorySlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_SyncRepositorySlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/syncfunctiontriggers",
@@ -2533,10 +2077,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_SyncFunctionTriggersSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_SyncFunctionTriggersSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/triggeredwebjobs",
@@ -2544,10 +2086,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListTriggeredWebJobsSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListTriggeredWebJobsSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/triggeredwebjobs/{{.webJobName}}",
@@ -2555,10 +2095,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetTriggeredWebJobSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetTriggeredWebJobSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/triggeredwebjobs/{{.webJobName}}/history",
@@ -2566,10 +2104,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListTriggeredWebJobHistorySlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListTriggeredWebJobHistorySlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/triggeredwebjobs/{{.webJobName}}/history/{{.id}}",
@@ -2577,10 +2113,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetTriggeredWebJobHistorySlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetTriggeredWebJobHistorySlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/triggeredwebjobs/{{.webJobName}}/run",
@@ -2588,10 +2122,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_RunTriggeredWebJobSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_RunTriggeredWebJobSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/usages",
@@ -2599,10 +2131,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListUsagesSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListUsagesSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/virtualNetworkConnections",
@@ -2610,10 +2140,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListVnetConnectionsSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListVnetConnectionsSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/virtualNetworkConnections/{{.vnetName}}",
@@ -2621,10 +2149,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetVnetConnectionSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetVnetConnectionSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/virtualNetworkConnections/{{.vnetName}}/gateways/{{.gatewayName}}",
@@ -2632,10 +2158,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetVnetConnectionGatewaySlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetVnetConnectionGatewaySlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/webjobs",
@@ -2643,10 +2167,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListWebJobsSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListWebJobsSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slots/{{.slot}}/webjobs/{{.webJobName}}",
@@ -2654,10 +2176,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetWebJobSlot",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetWebJobSlot",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slotsdiffs",
@@ -2665,10 +2185,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListSlotDifferencesFromProduction",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListSlotDifferencesFromProduction",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/slotsswap",
@@ -2676,10 +2194,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_SwapSlotWithProduction",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_SwapSlotWithProduction",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/snapshots",
@@ -2687,10 +2203,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListSnapshots",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListSnapshots",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/snapshotsdr",
@@ -2698,10 +2212,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListSnapshotsFromDRSecondary",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListSnapshotsFromDRSecondary",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/sourcecontrols/web",
@@ -2709,10 +2221,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetSourceControl",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetSourceControl",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/start",
@@ -2720,10 +2230,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_Start",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_Start",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/startNetworkTrace",
@@ -2731,10 +2239,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_StartNetworkTrace",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_StartNetworkTrace",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/stop",
@@ -2742,10 +2248,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_Stop",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_Stop",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/stopNetworkTrace",
@@ -2753,10 +2257,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_StopNetworkTrace",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_StopNetworkTrace",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/sync",
@@ -2764,10 +2266,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_SyncRepository",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_SyncRepository",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/syncfunctiontriggers",
@@ -2775,10 +2275,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_SyncFunctionTriggers",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_SyncFunctionTriggers",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/triggeredwebjobs",
@@ -2786,10 +2284,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListTriggeredWebJobs",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListTriggeredWebJobs",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/triggeredwebjobs/{{.webJobName}}",
@@ -2797,10 +2293,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetTriggeredWebJob",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetTriggeredWebJob",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/triggeredwebjobs/{{.webJobName}}/history",
@@ -2808,10 +2302,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListTriggeredWebJobHistory",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListTriggeredWebJobHistory",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/triggeredwebjobs/{{.webJobName}}/history/{{.id}}",
@@ -2819,10 +2311,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetTriggeredWebJobHistory",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetTriggeredWebJobHistory",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/triggeredwebjobs/{{.webJobName}}/run",
@@ -2830,10 +2320,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_RunTriggeredWebJob",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_RunTriggeredWebJob",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/usages",
@@ -2841,10 +2329,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListUsages",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListUsages",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/virtualNetworkConnections",
@@ -2852,10 +2338,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListVnetConnections",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListVnetConnections",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/virtualNetworkConnections/{{.vnetName}}",
@@ -2863,10 +2347,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetVnetConnection",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetVnetConnection",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/virtualNetworkConnections/{{.vnetName}}/gateways/{{.gatewayName}}",
@@ -2874,10 +2356,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetVnetConnectionGateway",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetVnetConnectionGateway",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/webjobs",
@@ -2885,10 +2365,8 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_ListWebJobs",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_ListWebJobs",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/sites/{{.name}}/webjobs/{{.webJobName}}",
@@ -2896,9 +2374,7 @@ var Microsoft_Web_WebApps = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "WebApps_GetWebJob",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "WebApps_GetWebJob",
+		Resource:    "Microsoft.Web",
 	},
 }

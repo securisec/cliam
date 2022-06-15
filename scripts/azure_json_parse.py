@@ -26,7 +26,7 @@ def convert_path(path):
     return re_param.sub("{{.\g<1>}}", path)
 
 
-def process_get(path, oper, method, extra: bool):
+def process_get(path, oper, method):
     return f"""{{
     Path: "{convert_path(path)}",
 	Method: "{method.upper()}",
@@ -35,14 +35,8 @@ def process_get(path, oper, method, extra: bool):
     }},
 	OperationID:    "{oper['operationId']}",
     Resource:       "{RESOURCE}",
-    {"IsExtra: true," if extra else ""}
-    {'ExtraLocation: "path",' if extra else ""}
 }},"""
 
-
-def process_get_extra(path, oper):
-    # TODO 🚧
-    pass
 
 def buildPolicy(path):
     hold = []
@@ -55,30 +49,35 @@ def buildPolicy(path):
                     continue
                 params = process_parameters(resource)
                 if method == "get" or method == "post":
-                    hold.append(process_get(endpoint, resource, method, len(params) != 0))
+                    hold.append(process_get(endpoint, resource, method))
     return hold
 
-def getPolicies(resource, version):
-    dirpath = Path(f"temp/azure-rest-api-specs/specification/web/resource-manager/{resource}/stable/{version}/")
-    return [f'../{x}' for x in dirpath.glob('*.json')]
+
+def getPolicies(resource, specification, version):
+    dirpath = Path(
+        f"temp/azure-rest-api-specs/specification/{specification}/resource-manager/{resource}/stable/{version}/"
+    )
+    return [f"../{x}" for x in dirpath.glob("*.json")]
+
 
 # pyperclip.copy(o)
 
-VERSION = "2021-03-01"
-RESOURCE = "Microsoft.Web"
+SPECIFICATION = "cosmos-db"
+RESOURCE = "Microsoft.DocumentDB"
+VERSION = "2021-10-15"
 
 
-for resource_path in getPolicies(RESOURCE, VERSION):
+for resource_path in getPolicies(RESOURCE, SPECIFICATION, VERSION):
 
-    path = Path( "cliam/" + resource_path )
+    path = Path("cliam/" + resource_path)
     resource = path.stem
 
-    save_path = Path(f'azure/policy/{RESOURCE}.{resource}.go')
+    save_path = Path(f"azure/policy/{RESOURCE}.{resource}.go")
     if save_path.exists():
         continue
 
     policies = buildPolicy(path)
-    var_name = RESOURCE.replace('.', '_') + f'_{resource}'
+    var_name = RESOURCE.replace(".", "_") + f"_{resource}"
 
     template = f"""package policy
 
@@ -89,4 +88,4 @@ var {var_name} = []Policy{{
 
     save_path.write_text(template)
 
-    print(f'"{RESOURCE}.{resource}":            policy.{var_name},')
+    print(f'"{RESOURCE}.{resource}": policy.{var_name},')

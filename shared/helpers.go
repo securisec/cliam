@@ -2,6 +2,8 @@ package shared
 
 import (
 	"context"
+	"regexp"
+	"strings"
 
 	"github.com/gookit/color"
 )
@@ -12,6 +14,8 @@ const (
 	USER_AGENT               = "aws-cli/2.5.3 Python/3.9.12"
 	CONTENT_TYPE_HEADER      = "Content-Type"
 )
+
+var TemplatePropertyRegex = regexp.MustCompile(`\{.(\w+)\}`)
 
 type Scanner interface {
 	EnumerateAll(ctx context.Context, region string, creds interface{}) error
@@ -80,4 +84,21 @@ func RemoveDuplicates(slice []string) []string {
 		res = append(res, k)
 	}
 	return res
+}
+
+func KebabToCamelCase(kebab string) (camelCase string) {
+	isToUpper := false
+	for _, runeValue := range kebab {
+		if isToUpper {
+			camelCase += strings.ToUpper(string(runeValue))
+			isToUpper = false
+		} else {
+			if runeValue == '-' {
+				isToUpper = true
+			} else {
+				camelCase += string(runeValue)
+			}
+		}
+	}
+	return
 }

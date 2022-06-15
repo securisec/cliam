@@ -25,6 +25,7 @@ var azureEnumerateCmd = &cobra.Command{
 	ValidArgsFunction: func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
 		return azure.GetPolicyKeys(), cobra.ShellCompDirectiveNoFileComp
 	},
+	PostRun: azurePostRunFunc,
 }
 
 func init() {
@@ -54,6 +55,9 @@ func azureEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 		SubscriptionID:    azureSubscriptionID,
 		ResourceGroupName: azureResourceGroupName,
 	}
+	if known.ResourceGroupName == "" {
+		logger.LoggerStdErr.Warn().Msg("No resource group name specified, results will be limited.")
+	}
 
 	wg := &sync.WaitGroup{}
 	wg.Add(1)
@@ -79,17 +83,20 @@ func azureEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 
 				req, err := p.BuildRequest(ctx, azureOauthToken, known)
 				if err != nil {
+					failureCounter += 1
 					logger.LogError(err, p.OperationID)
 					return
 				}
 
 				res, body, err := scanner.MakeRequest(req)
 				if err != nil {
+					failureCounter += 1
 					logger.LogError(err, p.OperationID)
 					return
 				}
 
 				if res.StatusCode > 399 {
+					failureCounter += 1
 					logger.LogError(fmt.Errorf("%d %s", res.StatusCode, body), p.OperationID)
 				}
 

@@ -6,7 +6,9 @@ import (
 	"net/http"
 	"path/filepath"
 	"text/template"
+	"time"
 
+	"github.com/golang-jwt/jwt/v4"
 	"github.com/mitchellh/go-homedir"
 	"github.com/securisec/cliam/logger"
 	"github.com/securisec/cliam/shared"
@@ -52,4 +54,13 @@ func templateBuilder(t string, args map[string]string) (string, error) {
 	var tpl bytes.Buffer
 	err := temp.Execute(&tpl, args)
 	return tpl.String(), err
+}
+
+func ValidateJwtExpiration(token string) (isValid bool) {
+	j, _, err := new(jwt.Parser).ParseUnverified(token, jwt.MapClaims{})
+	if err != nil {
+		logger.LoggerStdErr.Err(err).Err(err).Msg("Failed to parse JWT")
+	}
+	// if exp field is not set, we want to return true
+	return j.Claims.(jwt.MapClaims).VerifyExpiresAt(time.Now().Unix(), false)
 }

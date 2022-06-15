@@ -52,10 +52,8 @@ var Microsoft_Storage_storage = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-09-01",
 		},
-		OperationID:   "DeletedAccounts_Get",
-		Resource:      "Microsoft.Storage",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "DeletedAccounts_Get",
+		Resource:    "Microsoft.Storage",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.Storage/storageAccounts",
@@ -99,10 +97,8 @@ var Microsoft_Storage_storage = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-09-01",
 		},
-		OperationID:   "Usages_ListByLocation",
-		Resource:      "Microsoft.Storage",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "Usages_ListByLocation",
+		Resource:    "Microsoft.Storage",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Storage/storageAccounts/{{.accountName}}/ListAccountSas",
@@ -236,10 +232,8 @@ var Microsoft_Storage_storage = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-09-01",
 		},
-		OperationID:   "StorageAccounts_RevokeUserDelegationKeys",
-		Resource:      "Microsoft.Storage",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "StorageAccounts_RevokeUserDelegationKeys",
+		Resource:    "Microsoft.Storage",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Storage/storageAccounts/{{.accountName}}/localUsers",

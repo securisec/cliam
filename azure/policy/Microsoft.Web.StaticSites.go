@@ -7,10 +7,8 @@ var Microsoft_Web_StaticSites = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "StaticSites_PreviewWorkflow",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "StaticSites_PreviewWorkflow",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.Web/staticSites",
@@ -36,10 +34,8 @@ var Microsoft_Web_StaticSites = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "StaticSites_GetStaticSite",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "StaticSites_GetStaticSite",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/staticSites/{{.name}}/authproviders/{{.authprovider}}/listUsers",
@@ -47,10 +43,8 @@ var Microsoft_Web_StaticSites = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "StaticSites_ListStaticSiteUsers",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "StaticSites_ListStaticSiteUsers",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/staticSites/{{.name}}/builds",
@@ -58,10 +52,8 @@ var Microsoft_Web_StaticSites = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "StaticSites_GetStaticSiteBuilds",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "StaticSites_GetStaticSiteBuilds",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/staticSites/{{.name}}/builds/{{.environmentName}}",
@@ -69,10 +61,8 @@ var Microsoft_Web_StaticSites = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "StaticSites_GetStaticSiteBuild",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "StaticSites_GetStaticSiteBuild",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/staticSites/{{.name}}/builds/{{.environmentName}}/functions",
@@ -80,10 +70,8 @@ var Microsoft_Web_StaticSites = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "StaticSites_ListStaticSiteBuildFunctions",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "StaticSites_ListStaticSiteBuildFunctions",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/staticSites/{{.name}}/builds/{{.environmentName}}/listAppSettings",
@@ -91,10 +79,8 @@ var Microsoft_Web_StaticSites = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "StaticSites_ListStaticSiteBuildAppSettings",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "StaticSites_ListStaticSiteBuildAppSettings",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/staticSites/{{.name}}/builds/{{.environmentName}}/listFunctionAppSettings",
@@ -102,10 +88,8 @@ var Microsoft_Web_StaticSites = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "StaticSites_ListStaticSiteBuildFunctionAppSettings",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "StaticSites_ListStaticSiteBuildFunctionAppSettings",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/staticSites/{{.name}}/builds/{{.environmentName}}/userProvidedFunctionApps",
@@ -113,10 +97,8 @@ var Microsoft_Web_StaticSites = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "StaticSites_GetUserProvidedFunctionAppsForStaticSiteBuild",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "StaticSites_GetUserProvidedFunctionAppsForStaticSiteBuild",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/staticSites/{{.name}}/builds/{{.environmentName}}/userProvidedFunctionApps/{{.functionAppName}}",
@@ -124,10 +106,8 @@ var Microsoft_Web_StaticSites = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "StaticSites_GetUserProvidedFunctionAppForStaticSiteBuild",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "StaticSites_GetUserProvidedFunctionAppForStaticSiteBuild",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/staticSites/{{.name}}/builds/{{.environmentName}}/zipdeploy",
@@ -135,10 +115,8 @@ var Microsoft_Web_StaticSites = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "StaticSites_CreateZipDeploymentForStaticSiteBuild",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "StaticSites_CreateZipDeploymentForStaticSiteBuild",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/staticSites/{{.name}}/createUserInvitation",
@@ -146,10 +124,8 @@ var Microsoft_Web_StaticSites = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "StaticSites_CreateUserRolesInvitationLink",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "StaticSites_CreateUserRolesInvitationLink",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/staticSites/{{.name}}/customDomains",
@@ -157,10 +133,8 @@ var Microsoft_Web_StaticSites = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "StaticSites_ListStaticSiteCustomDomains",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "StaticSites_ListStaticSiteCustomDomains",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/staticSites/{{.name}}/customDomains/{{.domainName}}",
@@ -168,10 +142,8 @@ var Microsoft_Web_StaticSites = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "StaticSites_GetStaticSiteCustomDomain",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "StaticSites_GetStaticSiteCustomDomain",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/staticSites/{{.name}}/customDomains/{{.domainName}}/validate",
@@ -179,10 +151,8 @@ var Microsoft_Web_StaticSites = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "StaticSites_ValidateCustomDomainCanBeAddedToStaticSite",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "StaticSites_ValidateCustomDomainCanBeAddedToStaticSite",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/staticSites/{{.name}}/detach",
@@ -190,10 +160,8 @@ var Microsoft_Web_StaticSites = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "StaticSites_DetachStaticSite",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "StaticSites_DetachStaticSite",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/staticSites/{{.name}}/functions",
@@ -201,10 +169,8 @@ var Microsoft_Web_StaticSites = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "StaticSites_ListStaticSiteFunctions",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "StaticSites_ListStaticSiteFunctions",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/staticSites/{{.name}}/listAppSettings",
@@ -212,10 +178,8 @@ var Microsoft_Web_StaticSites = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "StaticSites_ListStaticSiteAppSettings",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "StaticSites_ListStaticSiteAppSettings",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/staticSites/{{.name}}/listConfiguredRoles",
@@ -223,10 +187,8 @@ var Microsoft_Web_StaticSites = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "StaticSites_ListStaticSiteConfiguredRoles",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "StaticSites_ListStaticSiteConfiguredRoles",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/staticSites/{{.name}}/listFunctionAppSettings",
@@ -234,10 +196,8 @@ var Microsoft_Web_StaticSites = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "StaticSites_ListStaticSiteFunctionAppSettings",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "StaticSites_ListStaticSiteFunctionAppSettings",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/staticSites/{{.name}}/listSecrets",
@@ -245,10 +205,8 @@ var Microsoft_Web_StaticSites = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "StaticSites_ListStaticSiteSecrets",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "StaticSites_ListStaticSiteSecrets",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/staticSites/{{.name}}/privateEndpointConnections",
@@ -256,10 +214,8 @@ var Microsoft_Web_StaticSites = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "StaticSites_GetPrivateEndpointConnectionList",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "StaticSites_GetPrivateEndpointConnectionList",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/staticSites/{{.name}}/privateEndpointConnections/{{.privateEndpointConnectionName}}",
@@ -267,10 +223,8 @@ var Microsoft_Web_StaticSites = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "StaticSites_GetPrivateEndpointConnection",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "StaticSites_GetPrivateEndpointConnection",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/staticSites/{{.name}}/privateLinkResources",
@@ -278,10 +232,8 @@ var Microsoft_Web_StaticSites = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "StaticSites_GetPrivateLinkResources",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "StaticSites_GetPrivateLinkResources",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/staticSites/{{.name}}/resetapikey",
@@ -289,10 +241,8 @@ var Microsoft_Web_StaticSites = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "StaticSites_ResetStaticSiteApiKey",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "StaticSites_ResetStaticSiteApiKey",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/staticSites/{{.name}}/userProvidedFunctionApps",
@@ -300,10 +250,8 @@ var Microsoft_Web_StaticSites = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "StaticSites_GetUserProvidedFunctionAppsForStaticSite",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "StaticSites_GetUserProvidedFunctionAppsForStaticSite",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/staticSites/{{.name}}/userProvidedFunctionApps/{{.functionAppName}}",
@@ -311,10 +259,8 @@ var Microsoft_Web_StaticSites = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "StaticSites_GetUserProvidedFunctionAppForStaticSite",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "StaticSites_GetUserProvidedFunctionAppForStaticSite",
+		Resource:    "Microsoft.Web",
 	},
 	{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/staticSites/{{.name}}/zipdeploy",
@@ -322,9 +268,7 @@ var Microsoft_Web_StaticSites = []Policy{
 		QueryValues: map[string]string{
 			"api-version": "2021-03-01",
 		},
-		OperationID:   "StaticSites_CreateZipDeploymentForStaticSite",
-		Resource:      "Microsoft.Web",
-		IsExtra:       true,
-		ExtraLocation: "path",
+		OperationID: "StaticSites_CreateZipDeploymentForStaticSite",
+		Resource:    "Microsoft.Web",
 	},
 }

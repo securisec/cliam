@@ -26,7 +26,7 @@ var RootCmd = &cobra.Command{
 
 func init() {
 	RootCmd.PersistentFlags().IntVar(&MaxThreads, "max-threads", 5, "Maximum number of threads to use.")
-	RootCmd.PersistentFlags().IntVar(&RequestTimeout, "request-timeout", 10, "Timeout for each request in seconds.")
+	RootCmd.PersistentFlags().IntVar(&RequestTimeout, "request-timeout", 5, "Timeout for each request in seconds.")
 	RootCmd.PersistentFlags().BoolVarP(&CLIVerbose, "verbose", "v", false, "Enable verbose output.")
 }
 
