@@ -83,17 +83,17 @@ func azureEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 					return
 				}
 
-				status, body, err := scanner.MakeRequest(req)
+				res, body, err := scanner.MakeRequest(req)
 				if err != nil {
 					logger.LogError(err, p.OperationID)
 					return
 				}
 
-				if status > 399 {
-					logger.LogError(fmt.Errorf("%d %s", status, body), p.OperationID)
+				if res.StatusCode > 399 {
+					logger.LogError(fmt.Errorf("%d %s", res.StatusCode, body), p.OperationID)
 				}
 
-				azureLogSuccessMessage(p, azureKnownResourceMap)
+				azureLogSuccessMessage(p, body, azureKnownResourceMap)
 
 				if saveOutput {
 					o, err := json.Marshal(body)

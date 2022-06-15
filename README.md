@@ -115,8 +115,6 @@ Enumerate permissions for s3, iam and ec2
 ```
 
 ### GCP
-Currently, permissions are enumerate using the `cloudresourcemanager` API. This will fail if this service is not enabled, but there are future plans to extend using rest alls to confirm permissions.
-
 GCP supports enumerating from a specific service account json file. ~Credentials from the GCP environment variables `GOOGLE_APPLICATION_CREDENTIALS` and `CLOUDSDK_CORE_PROJECT` are also supported~.
 
 Because there are two modes for GCP enumeration, use enumerate if `cloudresourcemanager` is enabled or use `rest` to enumerate specific permissions.

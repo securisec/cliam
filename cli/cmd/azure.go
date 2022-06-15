@@ -18,6 +18,7 @@ var (
 	azureClientSecret      string
 	azureResourceGroupName string
 	azureOauthToken        string
+	azureCertificatePath   string
 	azureKnownResourceMap  map[string]string
 	// TODO support other auth types
 )
@@ -48,6 +49,7 @@ func init() {
 	azureCmd.PersistentFlags().StringVar(&azureClientSecret, "client-secret", "", "Azure Client Secret / Password")
 	azureCmd.PersistentFlags().StringVar(&azureResourceGroupName, "resource-group-name", "", "Azure Resource Group")
 	azureCmd.PersistentFlags().StringVar(&azureOauthToken, "oauth-token", "", "Optionall use a valid Azure OAuth Token. Can also use CLIAM_AZURE_OAUTH_TOKEN envvar")
+	azureCmd.PersistentFlags().StringVar(&azureCertificatePath, "certificate-path", "", "Path to Certificate for certificate based authentication")
 	azureCmd.PersistentFlags().StringToStringVar(&azureKnownResourceMap, "known-value", map[string]string{}, "Azure cli flags. When known-resource-name is set, additional permissions where a resource needs to be specified is enumerated.")
 }
 
@@ -73,12 +75,18 @@ func azureValidateRequiredFlags(cmd *cobra.Command, args []string) {
 	if azureOauthToken == "" {
 		azureOauthToken = os.Getenv("CLIAM_AZURE_OAUTH_TOKEN")
 	}
+	if azureCertificatePath == "" {
+		azureCertificatePath = os.Getenv("AZURE_CLIENT_CERTIFICATE_PATH")
+	}
+
+	if azureCertificatePath == "" && azureClientSecret == "" {
+		logger.LoggerStdErr.Fatal().Msg("azure requires a client secret or certificate path")
+	}
 
 	for _, v := range []string{
 		// azureSubscriptionID,
 		azureTenantID,
 		azureClientID,
-		azureClientSecret,
 	} {
 		if v == "" {
 			logger.LoggerStdErr.Fatal().Msg(fmt.Sprintf("azure required flags are missing: %s", v))
@@ -119,11 +127,20 @@ func azureSendToChannel(ch chan policy.Policy, resources []string) {
 	}
 }
 
-func azureLogSuccessMessage(policy policy.Policy, extras ...map[string]string) {
+func azureLogSuccessMessage(policy policy.Policy, body map[string]interface{}, extras ...map[string]string) {
 	l := logger.Logger.Info().Str(policy.Resource, policy.OperationID)
 	if len(extras) > 0 && logger.VERBOSE {
 		for k, v := range extras[0] {
 			l = l.Str(k, v)
+		}
+	}
+	if _, hasValue := body["value"]; hasValue {
+		v, ok := body["value"].([]interface{})
+		if ok {
+			if len(v) == 0 && logger.VERBOSE {
+				logger.LoggerStdErr.Debug().Str(policy.Resource, policy.OperationID).Interface("body", body).Msg(shared.GetMessageColor("maybe"))
+				return
+			}
 		}
 	}
 	l.Msg(shared.GetMessageColor("success"))
@@ -133,9 +150,21 @@ func azureGetOauthToken() string {
 	if azureOauthToken != "" {
 		return azureOauthToken
 	}
-	token, err := azure.GetTokenFromUsernameAndPassword(azureTenantID, azureClientID, azureClientSecret)
-	if err != nil {
-		logger.LoggerStdErr.Fatal().Err(err).Msg("failed to get azure oauth token")
+	// client secret is provided so we will use that
+	if azureClientSecret != "" {
+		token, err := azure.GetTokenFromUsernameAndPassword(azureTenantID, azureClientID, azureClientSecret)
+		if err != nil {
+			logger.LoggerStdErr.Fatal().Err(err).Msg("failed to get azure oauth token")
+		}
+		return token
+		// use certificate to obtain token
+	} else if azureCertificatePath != "" {
+		token, err := azure.GetTokenFromCertificate(azureTenantID, azureClientID, azureCertificatePath)
+		if err != nil {
+			logger.LoggerStdErr.Fatal().Err(err).Msg("failed to get azure oauth token")
+		}
+		return token
 	}
-	return token
+	logger.Logger.Fatal().Msg("azure oauth token or client secret is required")
+	return ""
 }

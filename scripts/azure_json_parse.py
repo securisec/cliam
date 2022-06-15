@@ -5,10 +5,10 @@ import re
 import pyperclip
 
 path = Path(
-    "temp/azure-rest-api-specs/specification/web/resource-manager/Microsoft.Web/stable/2021-03-01/StaticSites.json"
+    "temp/azure-rest-api-specs/specification/storage/resource-manager/Microsoft.Storage/stable/2021-09-01/storage.json"
 )
-VERSION = "2021-03-01"
-RESOURCE = "Microsoft.Web"
+VERSION = "2021-09-01"
+RESOURCE = "Microsoft.Storage"
 
 re_param = re.compile(r"{(.*?)}")
 

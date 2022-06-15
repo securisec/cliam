@@ -22,9 +22,18 @@ func init() {
 
 func azureAccessTokenCmdFunc(_ *cobra.Command, _ []string) {
 
-	token, err := azure.GetTokenFromUsernameAndPassword(azureTenantID, azureClientID, azureClientSecret)
-	if err != nil {
-		logger.LoggerStdErr.Fatal().Err(err).Msg("Failed to get access token")
+	if azureClientSecret != "" {
+		token, err := azure.GetTokenFromUsernameAndPassword(azureTenantID, azureClientID, azureClientSecret)
+		if err != nil {
+			logger.LoggerStdErr.Fatal().Err(err).Msg("Failed to get access token")
+		}
+		fmt.Println(token)
+	} else if azureCertificatePath != "" {
+		token, err := azure.GetTokenFromCertificate(azureTenantID, azureClientID, azureCertificatePath)
+		if err != nil {
+			logger.LoggerStdErr.Fatal().Err(err).Msg("Failed to get access token")
+		}
+		fmt.Println(token)
 	}
-	fmt.Println(token)
+
 }

@@ -11,6 +11,9 @@ AWS:
   ☐ for services that require a body, it may be responding with a 404 if permission is valid
 
 GCP:
+
+Azure:
+  ☐ default auth (from currently logged in user)
   
 Helpers:
   ☐ helper functions for testing arbitrary permissions
@@ -25,6 +28,7 @@ Resources:
   - https://docs.oracle.com/en-us/iaas/api/#/
 
 Archive:
+  ✔ cert based auth @project(Azure)
   ✔ enumerate with access token @project(GCP)
   ✔ ability to provide custom query params or body for complicated calls @project(Todo)
   ✔ gcp region completer @project(Cli)

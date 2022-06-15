@@ -24,7 +24,7 @@ func GetMessageColor(p string) string {
 		return Red("●")
 	case "timeout":
 		return Red("⊗")
-	case "warning":
+	case "warning", "maybe":
 		return Yellow("●")
 	case "debug", "low":
 		return Cyan("●")
