@@ -62,9 +62,9 @@ def getPolicies(resource, specification, version):
 
 # pyperclip.copy(o)
 
-SPECIFICATION = "cosmos-db"
-RESOURCE = "Microsoft.DocumentDB"
-VERSION = "2021-10-15"
+SPECIFICATION = "mysql"
+RESOURCE = "Microsoft.DBforMySQL"
+VERSION = "2021-05-01"
 
 
 for resource_path in getPolicies(RESOURCE, SPECIFICATION, VERSION):
