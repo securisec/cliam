@@ -3,6 +3,7 @@ package cmd
 import (
 	"fmt"
 	"os"
+	"strings"
 
 	"github.com/securisec/cliam/azure"
 	"github.com/securisec/cliam/azure/policy"
@@ -19,7 +20,7 @@ var (
 	azureResourceGroupName string
 	azureOauthToken        string
 	azureCertificatePath   string
-	azureKnownResourceMap  map[string]string
+	azureKnownResourceMap  []string
 	// TODO support other auth types
 	successCounter = 0
 	failureCounter = 0
@@ -50,8 +51,8 @@ func init() {
 	azureCmd.PersistentFlags().StringVar(&azureResourceGroupName, "resource-group-name", "", "Azure Resource Group")
 	azureCmd.PersistentFlags().StringVar(&azureOauthToken, "oauth-token", "", "Optionall use a valid Azure OAuth Token. Can also use CLIAM_AZURE_OAUTH_TOKEN envvar")
 	azureCmd.PersistentFlags().StringVar(&azureCertificatePath, "certificate-path", "", "Path to Certificate for certificate based authentication")
-	azureCmd.PersistentFlags().StringToStringVar(&azureKnownResourceMap, "known-value", map[string]string{}, "Azure cli flags. When known-resource-name is set, additional permissions where a resource needs to be specified is enumerated.")
 
+	azureCmd.PersistentFlags().StringSliceVarP(&azureKnownResourceMap, "known-value", "k", []string{}, "Azure cli flags. When known-resource-name is set, additional permissions where a resource needs to be specified is enumerated.")
 	// know value completer
 	azureCmd.RegisterFlagCompletionFunc("known-value", func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
 		return azureKnownValueCompleter(args), cobra.ShellCompDirectiveNoSpace
@@ -167,10 +168,14 @@ func azureGetOauthToken() string {
 	return ""
 }
 
-func azureModifyExtraMap(m map[string]string) map[string]string {
+func azureModifyExtraMap(m []string) map[string]string {
 	h := map[string]string{}
-	for k, v := range m {
-		h[shared.KebabToCamelCase(k)] = v
+	for _, v := range m {
+		ex := strings.Split(v, "=")
+		if len(ex) != 2 {
+			continue
+		}
+		h[shared.KebabToCamelCase(ex[0])] = ex[1]
 	}
 	return h
 }

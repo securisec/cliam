@@ -62,9 +62,9 @@ def getPolicies(resource, specification, version):
 
 # pyperclip.copy(o)
 
-SPECIFICATION = "mysql"
-RESOURCE = "Microsoft.DBforMySQL"
-VERSION = "2021-05-01"
+SPECIFICATION = "apimanagement"
+RESOURCE = "Microsoft.ApiManagement"
+VERSION = "2021-08-01"
 
 
 for resource_path in getPolicies(RESOURCE, SPECIFICATION, VERSION):
