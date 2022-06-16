@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"strings"
 	"sync"
 	"time"
 
@@ -16,27 +17,28 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var azureEnumerateCmd = &cobra.Command{
-	Use:     "enumerate [resource...] [-k key=value...]",
-	Example: "enumerate Microsoft.Web.WebApps Microsoft.Web.Sites...",
-	Short:   "Enumerate permissions for specified azure resources.",
-	PreRun:  azureValidateRequiredFlags,
-	Run:     azureEnumerateCmdFunc,
-	ValidArgsFunction: func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
-		return azure.GetPolicyKeys(), cobra.ShellCompDirectiveNoFileComp
-	},
+var azureServiceCmd = &cobra.Command{
+	Use:       "service",
+	Short:     "Enumerate permissions for a specific group of azure services.",
+	PreRun:    azureValidateRequiredFlags,
+	Run:       azureServiceCmdFunc,
+	Args:      cobra.ExactValidArgs(1),
+	ValidArgs: azureServiceValidArgs(),
 }
 
 func init() {
-	azureCmd.AddCommand(azureEnumerateCmd)
+	azureCmd.AddCommand(azureServiceCmd)
 }
 
-func azureEnumerateCmdFunc(cmd *cobra.Command, args []string) {
+func azureServiceCmdFunc(_ *cobra.Command, args []string) {
+
 	var err error
 	if len(args) == 0 {
 		printValidArgs(azure.GetPolicyKeys)
 		os.Exit(1)
 	}
+
+	services := azureGetMatchingServices(args[0])
 
 	azureOauthToken = azureGetOauthToken()
 
@@ -115,8 +117,35 @@ func azureEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 		}
 	}()
 
-	azureSendToChannel(ch, args)
+	azureSendToChannel(ch, services)
 
 	close(ch)
 	wg.Wait()
+
+}
+
+func azureServiceValidArgs() []string {
+	services := []string{}
+	for _, service := range azure.GetPolicyKeys() {
+		s := strings.Split(service, ".")
+		if len(s) >= 2 {
+			services = append(services, s[1])
+		}
+	}
+	return services
+}
+
+func azureGetMatchingServices(service string) []string {
+	hold := map[string][]string{}
+	for _, service := range azure.GetPolicyKeys() {
+		s := strings.Split(service, ".")
+		if len(s) >= 2 {
+			if _, ok := hold[s[1]]; ok {
+				hold[s[1]] = append(hold[s[1]], service)
+			} else {
+				hold[s[1]] = []string{s[0]}
+			}
+		}
+	}
+	return hold[service]
 }

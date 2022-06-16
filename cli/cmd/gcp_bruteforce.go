@@ -17,6 +17,7 @@ var gcpBruteforceCmd = &cobra.Command{
 	Short:             "Enumerate all GCP permissions",
 	Run:               gcpBruteforceCmdFunc,
 	ValidArgsFunction: cobra.NoFileCompletions,
+	PostRun:           PostRunStatsFunc,
 }
 
 func init() {
@@ -65,12 +66,14 @@ func gcpBruteforceCmdFunc(cmd *cobra.Command, _ []string) {
 				ps, err := scanner.GetPermissionsFromResourceManager(ctx, accessToken, project, ser)
 				if err != nil {
 					logger.LoggerStdErr.Error().Err(err).Msg("")
+					failureCounter++
 					wg.Done()
 					return
 				}
 
 				for _, p := range ps {
 					x := strings.Split(p, ".")
+					successCounter++
 					logger.LogSuccess(fmt.Sprintf("%s.%s", x[0], x[1]), x[2])
 				}
 

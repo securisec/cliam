@@ -7,7 +7,7 @@ Todo:
   ☐ update readme with azure and firebase 
   ☐ replicate success and failure count for aws and gcp
   ☐ figure out a way to have tab complete for multiple known values
-  ☐ when using tokens, validate the expiration of the token
+  ☐ when using tokens, validate the expiration of the token (done: azure)
 
 Bug:
 
@@ -20,7 +20,6 @@ Firebase:
   ☐ authencated scan
 
 Azure:
-  ☐ default auth (from currently logged in user)
   
 Helpers:
   ☐ helper functions for testing arbitrary permissions
@@ -36,6 +35,8 @@ Resources:
   - https://docs.oracle.com/en-us/iaas/api/#/
 
 Archive:
+  ✔ default auth (from currently logged in user) @project(Azure)
+  ✔ group resources under their respective top level resource. ie. mariadb, postgres and mysql under db @project(Azure)
   ✔ cert based auth @project(Azure)
   ✔ enumerate with access token @project(GCP)
   ✔ ability to provide custom query params or body for complicated calls @project(Todo)

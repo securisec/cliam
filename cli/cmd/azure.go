@@ -20,11 +20,9 @@ var (
 	azureResourceGroupName string
 	azureOauthToken        string
 	azureCertificatePath   string
+	azureDefaultCreds      bool
 	azureKnownResourceMap  []string
-	// TODO support other auth types
-	successCounter = 0
-	failureCounter = 0
-	maybeCounter   = 0
+	// TODO support default auth
 )
 
 var azureCmd = &cobra.Command{
@@ -51,8 +49,9 @@ func init() {
 	azureCmd.PersistentFlags().StringVar(&azureResourceGroupName, "resource-group-name", "", "Azure Resource Group")
 	azureCmd.PersistentFlags().StringVar(&azureOauthToken, "oauth-token", "", "Optionall use a valid Azure OAuth Token. Can also use CLIAM_AZURE_OAUTH_TOKEN envvar")
 	azureCmd.PersistentFlags().StringVar(&azureCertificatePath, "certificate-path", "", "Path to Certificate for certificate based authentication")
+	azureCmd.PersistentFlags().BoolVar(&azureDefaultCreds, "default-creds", false, "Use currently logged in default credentials for Azure.")
 
-	azureCmd.PersistentFlags().StringSliceVarP(&azureKnownResourceMap, "known-value", "k", []string{}, "Azure cli flags. When known-resource-name is set, additional permissions where a resource needs to be specified is enumerated.")
+	azureCmd.PersistentFlags().StringSliceVarP(&azureKnownResourceMap, "known-value", "k", []string{}, "Azure cli flags. When known-value is set, additional permissions are enumerated. Format: -k <key>=<value>... Can be used multiple times")
 	// know value completer
 	azureCmd.RegisterFlagCompletionFunc("known-value", func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
 		return azureKnownValueCompleter(args), cobra.ShellCompDirectiveNoSpace
@@ -61,6 +60,9 @@ func init() {
 
 // 🚧 TODO: Implement envar support for Azure. flags override envars.
 func azureValidateRequiredFlags(cmd *cobra.Command, args []string) {
+	if azureDefaultCreds {
+		return
+	}
 	// https://github.com/Azure/azure-sdk/blob/main/_includes/tables/environment_variables.md
 	if azureClientID == "" {
 		azureClientID = os.Getenv("AZURE_CLIENT_ID")
@@ -94,6 +96,7 @@ func azureValidateRequiredFlags(cmd *cobra.Command, args []string) {
 		azureTenantID,
 		azureClientID,
 	} {
+
 		if v == "" {
 			logger.LoggerStdErr.Fatal().Msg(fmt.Sprintf("azure required flags are missing: %s", v))
 		}
@@ -149,6 +152,13 @@ func azureGetOauthToken() string {
 		}
 		return azureOauthToken
 	}
+	if azureDefaultCreds {
+		token, err := azure.GetTokenFromDefault()
+		if err != nil {
+			logger.LoggerStdErr.Fatal().Err(err).Msg("azure default creds failed")
+		}
+		return token
+	}
 	// client secret is provided so we will use that
 	if azureClientSecret != "" {
 		token, err := azure.GetTokenFromUsernameAndPassword(azureTenantID, azureClientID, azureClientSecret)
@@ -195,15 +205,4 @@ func azureKnownValueCompleter(resources []string) (validExtras []string) {
 		}
 	}
 	return shared.RemoveDuplicates(hold)
-}
-
-func azurePostRunFunc(cmd *cobra.Command, args []string) {
-	if CLIVerbose {
-		logger.LoggerStdErr.Debug().Msgf(
-			"azure: %s, %s, %s",
-			shared.Green(fmt.Sprintf("%d success", successCounter)),
-			shared.Yellow(fmt.Sprintf("%d maybe", maybeCounter)),
-			shared.Red(fmt.Sprintf("%d failure", failureCounter)),
-		)
-	}
 }

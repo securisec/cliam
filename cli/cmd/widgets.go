@@ -46,6 +46,7 @@ func cliResponseLoggerAWS(ser scanner.ServiceMap, status int) {
 		if ok {
 			sl.Str(strings.ReplaceAll(cf, "_", "-"), v)
 		}
+		successCounter++
 		sl.Msg(shared.GetMessageColor("success"))
 	}
 	if status != 200 && logger.DEBUG {
@@ -53,6 +54,7 @@ func cliResponseLoggerAWS(ser scanner.ServiceMap, status int) {
 		if ok {
 			dl.Str(strings.ReplaceAll(cf, "_", "-"), v)
 		}
+		failureCounter++
 		dl.Msg(shared.GetMessageColor("success"))
 	}
 }

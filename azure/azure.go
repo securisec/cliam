@@ -13,6 +13,21 @@ import (
 	"github.com/securisec/cliam/shared"
 )
 
+// GetTokenFromDefault get token from currently logged in user
+func GetTokenFromDefault() (string, error) {
+	az, err := azidentity.NewDefaultAzureCredential(nil)
+	if err != nil {
+		return "", err
+	}
+	token, err := az.GetToken(context.Background(), azp.TokenRequestOptions{
+		Scopes: []string{"https://management.core.windows.net//.default"},
+	})
+	if err != nil {
+		return "", err
+	}
+	return token.Token, nil
+}
+
 // GetTokenFromUsernameAndPassword returns a valid bearer token from the given
 // username, password and tenant. The token can be used to make REST api calls.
 func GetTokenFromUsernameAndPassword(tenantID, username, password string) (string, error) {

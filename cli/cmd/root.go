@@ -1,8 +1,11 @@
 package cmd
 
 import (
+	"fmt"
 	"os"
 
+	"github.com/securisec/cliam/logger"
+	"github.com/securisec/cliam/shared"
 	"github.com/spf13/cobra"
 )
 
@@ -10,6 +13,10 @@ var (
 	MaxThreads     int
 	RequestTimeout int
 	CLIVerbose     bool
+	SaveOutput     bool
+	successCounter = 0
+	failureCounter = 0
+	maybeCounter   = 0
 )
 
 // RootCmd represents the base command when called without any subcommands
@@ -22,17 +29,30 @@ var RootCmd = &cobra.Command{
 			cmd.Help()
 		}
 	},
+	PostRun: PostRunStatsFunc,
 }
 
 func init() {
 	RootCmd.PersistentFlags().IntVar(&MaxThreads, "max-threads", 5, "Maximum number of threads to use.")
 	RootCmd.PersistentFlags().IntVar(&RequestTimeout, "request-timeout", 5, "Timeout for each request in seconds.")
 	RootCmd.PersistentFlags().BoolVarP(&CLIVerbose, "verbose", "v", false, "Enable verbose output.")
+	RootCmd.Flags().BoolVar(&SaveOutput, "save-output", false, "Save output to file on success")
 }
 
 func Execute() {
 	err := RootCmd.Execute()
 	if err != nil {
 		os.Exit(1)
+	}
+}
+
+func PostRunStatsFunc(cmd *cobra.Command, args []string) {
+	if CLIVerbose {
+		logger.LoggerStdErr.Debug().Msgf(
+			"azure: %s, %s, %s",
+			shared.Green(fmt.Sprintf("%d success", successCounter)),
+			shared.Yellow(fmt.Sprintf("%d maybe", maybeCounter)),
+			shared.Red(fmt.Sprintf("%d failure", failureCounter)),
+		)
 	}
 }

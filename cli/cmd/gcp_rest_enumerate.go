@@ -42,7 +42,6 @@ versitile and is used as a generic term for any resource. For example, if you ar
 enumerating pubsub, resource-id could be the subscription name; but also if you are 
 enumerating compute, resource-id could be the instance name.`)
 	// gcpRestEnumerateCmd.MarkFlagRequired("parent")
-	gcpRestEnumerateCmd.Flags().Bool("save-output", false, "Save output to file")
 }
 
 func gcpRestEnumerateCmdFunc(cmd *cobra.Command, args []string) {
@@ -51,7 +50,6 @@ func gcpRestEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 	parent, err := cmd.Flags().GetStringToString("parent")
 	body, err := cmd.Flags().GetStringToString("body")
 	resourceID, err := cmd.Flags().GetString("resource-id")
-	saveOutput, err := cmd.Flags().GetBool("save-output")
 
 	if err != nil {
 		logger.LoggerStdErr.Fatal().Err(err).Msg("Invalid parent")
@@ -131,7 +129,7 @@ func gcpRestEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 				if res.Response.StatusCode == 200 {
 					logger.LogSuccess(res.PermissionMethod, res.Action)
 					// optionall save output
-					if saveOutput {
+					if SaveOutput {
 						path := fmt.Sprintf("%s.%s.json", ser.PermissionMethod, ser.Action)
 						if err := ioutil.WriteFile(path, body, os.ModePerm); err != nil {
 							logger.LoggerStdErr.Debug().Err(err).Msg("Failed to save output")

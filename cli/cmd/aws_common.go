@@ -1,34 +1,34 @@
 package cmd
 
 import (
-	"github.com/securisec/cliam/aws"
+	"github.com/securisec/cliam/logger"
 	"github.com/spf13/cobra"
 )
 
 var awsCommonCmd = &cobra.Command{
-	Use:   "common",
-	Short: "Enumerate permissions for common AWS resources.",
-	Long: `Enumerate permissions for common AWS resources. It will enumerate apigateway, lambda, 
-s3, iam, and ec2`,
-	Run:               awsCommonCmdFunc,
-	ValidArgsFunction: cobra.NoFileCompletions,
+	Use:       "service-group",
+	Short:     "Enumerate permissions for groups of AWS resources.",
+	Long:      "For example, serverless group enumerates permissions for lambda, sqs, s3, etc",
+	Run:       awsCommonCmdFunc,
+	Args:      cobra.ExactValidArgs(1),
+	ValidArgs: getAwsServiceGroups(),
+	PostRun:   PostRunStatsFunc,
 }
 
 func init() {
 	awsCmd.AddCommand(awsCommonCmd)
-	awsCommonCmd.Flags().Bool("save-output", false, "Save output to file on success")
 }
 
-func awsCommonCmdFunc(cmd *cobra.Command, _ []string) {
-	saveOutput, _ := cmd.Flags().GetBool("save-output")
+func awsCommonCmdFunc(cmd *cobra.Command, args []string) {
 
-	resources := []string{
-		aws.Lambda,
-		aws.IAM,
-		aws.S3,
-		aws.APIGateway,
-		aws.EC2,
+	if len(args) != 1 {
+		logger.LoggerStdErr.Fatal().Msg("Invalid number of arguments")
 	}
 
-	awsSharedEnumerate(resources, saveOutput)
+	resources, ok := AWS_SERVICE_GROUPING[args[0]]
+	if !ok {
+		logger.LoggerStdErr.Fatal().Msg("Invalid service group")
+	}
+
+	awsSharedEnumerate(resources, SaveOutput)
 }

@@ -10,7 +10,7 @@ import (
 )
 
 var gcpRestAccessTokenCmd = &cobra.Command{
-	Use:   "print-access-token",
+	Use:   "access-token",
 	Short: "Get access token for the specified service account",
 	Long: `This command outputs the access token for the specified service account which can then 
 be used to manually GCP REST API's.`,

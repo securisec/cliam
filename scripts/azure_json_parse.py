@@ -62,9 +62,9 @@ def getPolicies(resource, specification, version):
 
 # pyperclip.copy(o)
 
-SPECIFICATION = "apimanagement"
-RESOURCE = "Microsoft.ApiManagement"
-VERSION = "2021-08-01"
+SPECIFICATION = "mariadb"
+RESOURCE = "Microsoft.DBforMariaDB"
+VERSION = "2020-01-01"
 
 
 for resource_path in getPolicies(RESOURCE, SPECIFICATION, VERSION):

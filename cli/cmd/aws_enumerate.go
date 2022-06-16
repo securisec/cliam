@@ -21,11 +21,11 @@ var awsEnumerateCmd = &cobra.Command{
 	ValidArgsFunction: func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
 		return aws.GetAWSResources(), cobra.ShellCompDirectiveNoFileComp
 	},
+	PostRun: PostRunStatsFunc,
 }
 
 func init() {
 	awsCmd.AddCommand(awsEnumerateCmd)
-	awsEnumerateCmd.Flags().Bool("save-output", false, "Save output to file on success")
 }
 
 func awsEnumerateCmdFunc(cmd *cobra.Command, args []string) {
@@ -43,8 +43,6 @@ func awsEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 	// 	logger.Logger.Fatal().Err(err).Msg("failed to create spinner")
 	// }
 	// defer cleanupSpinner(spinner)
-
-	saveOutput, _ := cmd.Flags().GetBool("save-output")
 
 	key, secret, token, region := getCredsAndRegion()
 	cliLogRegion(awsRegion)
@@ -82,9 +80,10 @@ func awsEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 				// 	spinner.Stop()
 				// }
 
-				statusCode, err := scanner.EnumerateSpecificResource(ctx, region, s, creds, saveOutput)
+				statusCode, err := scanner.EnumerateSpecificResource(ctx, region, s, creds, SaveOutput)
 				if err != nil {
 					cliErrorLogger(s, err)
+					failureCounter++
 					wg.Done()
 					return
 				}
