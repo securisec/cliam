@@ -1,7 +1,7 @@
 package policy
 
-var Microsoft_ApiManagement_apimprivatelink = []Policy{
-	{
+var Microsoft_ApiManagement_apimprivatelink = map[string]Policy{
+	"PrivateEndpointConnection_ListByService": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/privateEndpointConnections",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -9,7 +9,8 @@ var Microsoft_ApiManagement_apimprivatelink = []Policy{
 		},
 		OperationID: "PrivateEndpointConnection_ListByService",
 		Resource:    "Microsoft.ApiManagement",
-	}, {
+	},
+	"PrivateEndpointConnection_GetByName": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/privateEndpointConnections/{{.privateEndpointConnectionName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -17,7 +18,8 @@ var Microsoft_ApiManagement_apimprivatelink = []Policy{
 		},
 		OperationID: "PrivateEndpointConnection_GetByName",
 		Resource:    "Microsoft.ApiManagement",
-	}, {
+	},
+	"PrivateEndpointConnection_ListPrivateLinkResources": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/privateLinkResources",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -25,7 +27,8 @@ var Microsoft_ApiManagement_apimprivatelink = []Policy{
 		},
 		OperationID: "PrivateEndpointConnection_ListPrivateLinkResources",
 		Resource:    "Microsoft.ApiManagement",
-	}, {
+	},
+	"PrivateEndpointConnection_GetPrivateLinkResource": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/privateLinkResources/{{.privateLinkSubResourceName}}",
 		Method: "GET",
 		QueryValues: map[string]string{

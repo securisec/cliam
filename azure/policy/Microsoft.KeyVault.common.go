@@ -1,6 +1,3 @@
 package policy
 
-    var Microsoft_KeyVault_common = []Policy{
-        
-    }
-    
+var Microsoft_KeyVault_common = map[string]Policy{}

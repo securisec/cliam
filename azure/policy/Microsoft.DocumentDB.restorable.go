@@ -1,7 +1,7 @@
 package policy
 
-var Microsoft_DocumentDB_restorable = []Policy{
-	{
+var Microsoft_DocumentDB_restorable = map[string]Policy{
+	"RestorableDatabaseAccounts_ListByLocation": {
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.DocumentDB/locations/{{.location}}/restorableDatabaseAccounts",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -9,7 +9,8 @@ var Microsoft_DocumentDB_restorable = []Policy{
 		},
 		OperationID: "RestorableDatabaseAccounts_ListByLocation",
 		Resource:    "Microsoft.DocumentDB",
-	}, {
+	},
+	"RestorableDatabaseAccounts_List": {
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.DocumentDB/restorableDatabaseAccounts",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -17,7 +18,8 @@ var Microsoft_DocumentDB_restorable = []Policy{
 		},
 		OperationID: "RestorableDatabaseAccounts_List",
 		Resource:    "Microsoft.DocumentDB",
-	}, {
+	},
+	"RestorableDatabaseAccounts_GetByLocation": {
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.DocumentDB/locations/{{.location}}/restorableDatabaseAccounts/{{.instanceId}}",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -25,7 +27,8 @@ var Microsoft_DocumentDB_restorable = []Policy{
 		},
 		OperationID: "RestorableDatabaseAccounts_GetByLocation",
 		Resource:    "Microsoft.DocumentDB",
-	}, {
+	},
+	"SqlResources_RetrieveContinuousBackupInformation": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.DocumentDB/databaseAccounts/{{.accountName}}/sqlDatabases/{{.databaseName}}/containers/{{.containerName}}/retrieveContinuousBackupInformation",
 		Method: "POST",
 		QueryValues: map[string]string{
@@ -33,7 +36,8 @@ var Microsoft_DocumentDB_restorable = []Policy{
 		},
 		OperationID: "SqlResources_RetrieveContinuousBackupInformation",
 		Resource:    "Microsoft.DocumentDB",
-	}, {
+	},
+	"RestorableSqlDatabases_List": {
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.DocumentDB/locations/{{.location}}/restorableDatabaseAccounts/{{.instanceId}}/restorableSqlDatabases",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -41,7 +45,8 @@ var Microsoft_DocumentDB_restorable = []Policy{
 		},
 		OperationID: "RestorableSqlDatabases_List",
 		Resource:    "Microsoft.DocumentDB",
-	}, {
+	},
+	"RestorableSqlContainers_List": {
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.DocumentDB/locations/{{.location}}/restorableDatabaseAccounts/{{.instanceId}}/restorableSqlContainers",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -49,7 +54,8 @@ var Microsoft_DocumentDB_restorable = []Policy{
 		},
 		OperationID: "RestorableSqlContainers_List",
 		Resource:    "Microsoft.DocumentDB",
-	}, {
+	},
+	"RestorableSqlResources_List": {
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.DocumentDB/locations/{{.location}}/restorableDatabaseAccounts/{{.instanceId}}/restorableSqlResources",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -57,7 +63,8 @@ var Microsoft_DocumentDB_restorable = []Policy{
 		},
 		OperationID: "RestorableSqlResources_List",
 		Resource:    "Microsoft.DocumentDB",
-	}, {
+	},
+	"MongoDBResources_RetrieveContinuousBackupInformation": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.DocumentDB/databaseAccounts/{{.accountName}}/mongodbDatabases/{{.databaseName}}/collections/{{.collectionName}}/retrieveContinuousBackupInformation",
 		Method: "POST",
 		QueryValues: map[string]string{
@@ -65,7 +72,8 @@ var Microsoft_DocumentDB_restorable = []Policy{
 		},
 		OperationID: "MongoDBResources_RetrieveContinuousBackupInformation",
 		Resource:    "Microsoft.DocumentDB",
-	}, {
+	},
+	"RestorableMongodbDatabases_List": {
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.DocumentDB/locations/{{.location}}/restorableDatabaseAccounts/{{.instanceId}}/restorableMongodbDatabases",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -73,7 +81,8 @@ var Microsoft_DocumentDB_restorable = []Policy{
 		},
 		OperationID: "RestorableMongodbDatabases_List",
 		Resource:    "Microsoft.DocumentDB",
-	}, {
+	},
+	"RestorableMongodbCollections_List": {
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.DocumentDB/locations/{{.location}}/restorableDatabaseAccounts/{{.instanceId}}/restorableMongodbCollections",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -81,7 +90,8 @@ var Microsoft_DocumentDB_restorable = []Policy{
 		},
 		OperationID: "RestorableMongodbCollections_List",
 		Resource:    "Microsoft.DocumentDB",
-	}, {
+	},
+	"RestorableMongodbResources_List": {
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.DocumentDB/locations/{{.location}}/restorableDatabaseAccounts/{{.instanceId}}/restorableMongodbResources",
 		Method: "GET",
 		QueryValues: map[string]string{

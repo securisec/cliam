@@ -1,7 +1,7 @@
 package policy
 
-var Microsoft_ApiManagement_apimconnectivitycheck = []Policy{
-	{
+var Microsoft_ApiManagement_apimconnectivitycheck = map[string]Policy{
+	"PerformConnectivityCheckAsync": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/connectivityCheck",
 		Method: "POST",
 		QueryValues: map[string]string{

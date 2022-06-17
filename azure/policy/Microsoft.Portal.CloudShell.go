@@ -1,7 +1,7 @@
 package policy
 
-var Microsoft_Portal_CloudShell = []Policy{
-	{
+var Microsoft_Portal_CloudShell = map[string]Policy{
+	"getUserSettingsWithLocation": {
 		Path:   "/providers/Microsoft.Portal/locations/{{.location}}/userSettings/{{.userSettingsName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -9,7 +9,8 @@ var Microsoft_Portal_CloudShell = []Policy{
 		},
 		OperationID: "getUserSettingsWithLocation",
 		Resource:    "Microsoft.Portal",
-	}, {
+	},
+	"getConsoleWithLocation": {
 		Path:   "/providers/Microsoft.Portal/locations/{{.location}}/consoles/{{.consoleName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -17,7 +18,8 @@ var Microsoft_Portal_CloudShell = []Policy{
 		},
 		OperationID: "getConsoleWithLocation",
 		Resource:    "Microsoft.Portal",
-	}, {
+	},
+	"keepAliveWithLocation": {
 		Path:   "/providers/Microsoft.Portal/locations/{{.location}}/consoles/{{.consoleName}}/keepAlive",
 		Method: "POST",
 		QueryValues: map[string]string{
@@ -25,7 +27,8 @@ var Microsoft_Portal_CloudShell = []Policy{
 		},
 		OperationID: "keepAliveWithLocation",
 		Resource:    "Microsoft.Portal",
-	}, {
+	},
+	"GetUserSettings": {
 		Path:   "/providers/Microsoft.Portal/userSettings/{{.userSettingsName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -33,7 +36,8 @@ var Microsoft_Portal_CloudShell = []Policy{
 		},
 		OperationID: "GetUserSettings",
 		Resource:    "Microsoft.Portal",
-	}, {
+	},
+	"GetConsole": {
 		Path:   "/providers/Microsoft.Portal/consoles/{{.consoleName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -41,7 +45,8 @@ var Microsoft_Portal_CloudShell = []Policy{
 		},
 		OperationID: "GetConsole",
 		Resource:    "Microsoft.Portal",
-	}, {
+	},
+	"KeepAlive": {
 		Path:   "/providers/Microsoft.Portal/consoles/{{.consoleName}}/keepAlive",
 		Method: "POST",
 		QueryValues: map[string]string{

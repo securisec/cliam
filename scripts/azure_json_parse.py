@@ -47,10 +47,11 @@ def buildPolicy(path):
             for method, resource in data["paths"][endpoint].items():
                 if method not in ["get", "post"]:
                     continue
-                params = process_parameters(resource)
+                # params = process_parameters(resource)
                 if method == "get" or method == "post":
-                    hold.append(process_get(endpoint, resource, method))
-    return hold
+                    hold.append('"{}": {}'.format(resource['operationId'], process_get(endpoint, resource, method)))
+
+    return '\n'.join(hold)
 
 
 def getPolicies(resource, specification, version):
@@ -62,7 +63,7 @@ def getPolicies(resource, specification, version):
 
 # pyperclip.copy(o)
 
-SPECIFICATION = "saas"
+SPECIFICATION = "devspaces"
 
 rdirs =  [dirs for dirs in Path(f'temp/azure-rest-api-specs/specification/{SPECIFICATION}/resource-manager/').glob("*") if dirs.is_dir()]
 
@@ -77,19 +78,20 @@ for dirs in rdirs:
         resource = path.stem
 
         save_path = Path(f"azure/policy/{RESOURCE}.{resource}.go")
-        if save_path.exists():
-            continue
+        # if save_path.exists():
+        #     continue
 
         policies = buildPolicy(path)
         var_name = RESOURCE.replace(".", "_") + f"_{resource}"
 
         template = f"""package policy
 
-    var {var_name} = []Policy{{
-        {''.join(policies)}
+    var {var_name} = map[string]Policy{{
+        {policies}
     }}
     """
 
         save_path.write_text(template)
+        # print(policies)
 
         print(f'"{RESOURCE}.{resource}": policy.{var_name},')

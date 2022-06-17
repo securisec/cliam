@@ -1,7 +1,7 @@
 package policy
 
-var Microsoft_ApiManagement_apimloggers = []Policy{
-	{
+var Microsoft_ApiManagement_apimloggers = map[string]Policy{
+	"Logger_ListByService": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/loggers",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -9,7 +9,8 @@ var Microsoft_ApiManagement_apimloggers = []Policy{
 		},
 		OperationID: "Logger_ListByService",
 		Resource:    "Microsoft.ApiManagement",
-	}, {
+	},
+	"Logger_Get": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/loggers/{{.loggerId}}",
 		Method: "GET",
 		QueryValues: map[string]string{

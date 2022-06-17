@@ -1,7 +1,7 @@
 package policy
 
-var Microsoft_Web_ResourceProvider = []Policy{
-	{
+var Microsoft_Web_ResourceProvider = map[string]Policy{
+	"GetPublishingUser": {
 		Path:   "/providers/Microsoft.Web/publishingUsers/web",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -10,7 +10,7 @@ var Microsoft_Web_ResourceProvider = []Policy{
 		OperationID: "GetPublishingUser",
 		Resource:    "Microsoft.Web",
 	},
-	{
+	"ListSourceControls": {
 		Path:   "/providers/Microsoft.Web/sourcecontrols",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -19,7 +19,7 @@ var Microsoft_Web_ResourceProvider = []Policy{
 		OperationID: "ListSourceControls",
 		Resource:    "Microsoft.Web",
 	},
-	{
+	"GetSourceControl": {
 		Path:   "/providers/Microsoft.Web/sourcecontrols/{{.sourceControlType}}",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -28,7 +28,7 @@ var Microsoft_Web_ResourceProvider = []Policy{
 		OperationID: "GetSourceControl",
 		Resource:    "Microsoft.Web",
 	},
-	{
+	"ListBillingMeters": {
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.Web/billingMeters",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -37,7 +37,7 @@ var Microsoft_Web_ResourceProvider = []Policy{
 		OperationID: "ListBillingMeters",
 		Resource:    "Microsoft.Web",
 	},
-	{
+	"CheckNameAvailability": {
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.Web/checknameavailability",
 		Method: "POST",
 		QueryValues: map[string]string{
@@ -46,7 +46,7 @@ var Microsoft_Web_ResourceProvider = []Policy{
 		OperationID: "CheckNameAvailability",
 		Resource:    "Microsoft.Web",
 	},
-	{
+	"ListCustomHostNameSites": {
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.Web/customhostnameSites",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -55,7 +55,7 @@ var Microsoft_Web_ResourceProvider = []Policy{
 		OperationID: "ListCustomHostNameSites",
 		Resource:    "Microsoft.Web",
 	},
-	{
+	"GetSubscriptionDeploymentLocations": {
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.Web/deploymentLocations",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -64,7 +64,7 @@ var Microsoft_Web_ResourceProvider = []Policy{
 		OperationID: "GetSubscriptionDeploymentLocations",
 		Resource:    "Microsoft.Web",
 	},
-	{
+	"ListGeoRegions": {
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.Web/geoRegions",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -73,7 +73,7 @@ var Microsoft_Web_ResourceProvider = []Policy{
 		OperationID: "ListGeoRegions",
 		Resource:    "Microsoft.Web",
 	},
-	{
+	"ListSiteIdentifiersAssignedToHostName": {
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.Web/listSitesAssignedToHostName",
 		Method: "POST",
 		QueryValues: map[string]string{
@@ -82,7 +82,7 @@ var Microsoft_Web_ResourceProvider = []Policy{
 		OperationID: "ListSiteIdentifiersAssignedToHostName",
 		Resource:    "Microsoft.Web",
 	},
-	{
+	"ListPremierAddOnOffers": {
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.Web/premieraddonoffers",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -91,7 +91,7 @@ var Microsoft_Web_ResourceProvider = []Policy{
 		OperationID: "ListPremierAddOnOffers",
 		Resource:    "Microsoft.Web",
 	},
-	{
+	"ListSkus": {
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.Web/skus",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -100,7 +100,7 @@ var Microsoft_Web_ResourceProvider = []Policy{
 		OperationID: "ListSkus",
 		Resource:    "Microsoft.Web",
 	},
-	{
+	"VerifyHostingEnvironmentVnet": {
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.Web/verifyHostingEnvironmentVnet",
 		Method: "POST",
 		QueryValues: map[string]string{
@@ -109,7 +109,7 @@ var Microsoft_Web_ResourceProvider = []Policy{
 		OperationID: "VerifyHostingEnvironmentVnet",
 		Resource:    "Microsoft.Web",
 	},
-	{
+	"Move": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/moveResources",
 		Method: "POST",
 		QueryValues: map[string]string{
@@ -118,7 +118,7 @@ var Microsoft_Web_ResourceProvider = []Policy{
 		OperationID: "Move",
 		Resource:    "Microsoft.Web",
 	},
-	{
+	"Validate": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/validate",
 		Method: "POST",
 		QueryValues: map[string]string{
@@ -127,7 +127,7 @@ var Microsoft_Web_ResourceProvider = []Policy{
 		OperationID: "Validate",
 		Resource:    "Microsoft.Web",
 	},
-	{
+	"ValidateMove": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/validateMoveResources",
 		Method: "POST",
 		QueryValues: map[string]string{

@@ -10,7 +10,7 @@ func GetPolicyKeys() []string {
 	return hold
 }
 
-var Policies = map[string][]policy.Policy{
+var Policies = map[string]map[string]policy.Policy{
 	"Microsoft.Web.WebApps":                                     policy.Microsoft_Web_WebApps,
 	"Microsoft.Web.StaticSites":                                 policy.Microsoft_Web_StaticSites,
 	"Microsoft.Web.ResourceProvider":                            policy.Microsoft_Web_ResourceProvider,

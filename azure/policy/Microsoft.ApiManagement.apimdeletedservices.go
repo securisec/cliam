@@ -1,7 +1,7 @@
 package policy
 
-var Microsoft_ApiManagement_apimdeletedservices = []Policy{
-	{
+var Microsoft_ApiManagement_apimdeletedservices = map[string]Policy{
+	"DeletedServices_ListBySubscription": {
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.ApiManagement/deletedservices",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -9,7 +9,8 @@ var Microsoft_ApiManagement_apimdeletedservices = []Policy{
 		},
 		OperationID: "DeletedServices_ListBySubscription",
 		Resource:    "Microsoft.ApiManagement",
-	}, {
+	},
+	"DeletedServices_GetByName": {
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.ApiManagement/locations/{{.location}}/deletedservices/{{.serviceName}}",
 		Method: "GET",
 		QueryValues: map[string]string{

@@ -1,7 +1,7 @@
 package policy
 
-var Microsoft_ApiManagement_apimskus = []Policy{
-	{
+var Microsoft_ApiManagement_apimskus = map[string]Policy{
+	"ApiManagementSkus_List": {
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.ApiManagement/skus",
 		Method: "GET",
 		QueryValues: map[string]string{

@@ -42,11 +42,11 @@ and use the first one.`,
 func init() {
 	RootCmd.AddCommand(azureCmd)
 
-	azureCmd.PersistentFlags().StringVar(&azureSubscriptionID, "subscription-id", "", "Azure Subscription ID")
+	azureCmd.PersistentFlags().StringVarP(&azureSubscriptionID, "subscription-id", "s", "", "Azure Subscription ID")
 	azureCmd.PersistentFlags().StringVarP(&azureTenantID, "tenant-id", "t", "", "Azure Tenant ID")
 	azureCmd.PersistentFlags().StringVar(&azureClientID, "client-id", "", "Azure Client ID / Username")
 	azureCmd.PersistentFlags().StringVar(&azureClientSecret, "client-secret", "", "Azure Client Secret / Password")
-	azureCmd.PersistentFlags().StringVar(&azureResourceGroupName, "resource-group-name", "", "Azure Resource Group")
+	azureCmd.PersistentFlags().StringVarP(&azureResourceGroupName, "resource-group-name", "r", "", "Azure Resource Group")
 	azureCmd.PersistentFlags().StringVar(&azureOauthToken, "oauth-token", "", "Optionall use a valid Azure OAuth Token. Can also use CLIAM_AZURE_OAUTH_TOKEN envvar")
 	azureCmd.PersistentFlags().StringVar(&azureCertificatePath, "certificate-path", "", "Path to Certificate for certificate based authentication")
 	azureCmd.PersistentFlags().BoolVar(&azureDefaultCreds, "default-creds", false, "Use currently logged in default credentials for Azure.")
@@ -113,7 +113,7 @@ func azureSendToChannel(ch chan policy.Policy, resources []string) {
 			continue
 		}
 		for _, policy := range policies {
-			policy.PathValues = azureModifyExtraMap(azureKnownResourceMap)
+			policy.PathValues = ModifyExtraMap(azureKnownResourceMap)
 			hold = append(hold, policy)
 		}
 	}
@@ -178,7 +178,7 @@ func azureGetOauthToken() string {
 	return ""
 }
 
-func azureModifyExtraMap(m []string) map[string]string {
+func ModifyExtraMap(m []string) map[string]string {
 	h := map[string]string{}
 	for _, v := range m {
 		ex := strings.Split(v, "=")

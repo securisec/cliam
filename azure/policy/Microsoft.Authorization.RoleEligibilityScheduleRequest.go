@@ -1,7 +1,7 @@
 package policy
 
-var Microsoft_Authorization_RoleEligibilityScheduleRequest = []Policy{
-	{
+var Microsoft_Authorization_RoleEligibilityScheduleRequest = map[string]Policy{
+	"RoleEligibilityScheduleRequests_Get": {
 		Path:   "/{{.scope}}/providers/Microsoft.Authorization/roleEligibilityScheduleRequests/{{.roleEligibilityScheduleRequestName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -9,7 +9,8 @@ var Microsoft_Authorization_RoleEligibilityScheduleRequest = []Policy{
 		},
 		OperationID: "RoleEligibilityScheduleRequests_Get",
 		Resource:    "Microsoft.Authorization",
-	}, {
+	},
+	"RoleEligibilityScheduleRequests_ListForScope": {
 		Path:   "/{{.scope}}/providers/Microsoft.Authorization/roleEligibilityScheduleRequests",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -17,7 +18,8 @@ var Microsoft_Authorization_RoleEligibilityScheduleRequest = []Policy{
 		},
 		OperationID: "RoleEligibilityScheduleRequests_ListForScope",
 		Resource:    "Microsoft.Authorization",
-	}, {
+	},
+	"RoleEligibilityScheduleRequests_Cancel": {
 		Path:   "/{{.scope}}/providers/Microsoft.Authorization/roleEligibilityScheduleRequests/{{.roleEligibilityScheduleRequestName}}/cancel",
 		Method: "POST",
 		QueryValues: map[string]string{
@@ -25,7 +27,8 @@ var Microsoft_Authorization_RoleEligibilityScheduleRequest = []Policy{
 		},
 		OperationID: "RoleEligibilityScheduleRequests_Cancel",
 		Resource:    "Microsoft.Authorization",
-	}, {
+	},
+	"RoleEligibilityScheduleRequests_Validate": {
 		Path:   "/{{.scope}}/providers/Microsoft.Authorization/roleEligibilityScheduleRequests/{{.roleEligibilityScheduleRequestName}}/validate",
 		Method: "POST",
 		QueryValues: map[string]string{

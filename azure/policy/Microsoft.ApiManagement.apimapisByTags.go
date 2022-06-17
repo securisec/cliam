@@ -1,7 +1,7 @@
 package policy
 
-var Microsoft_ApiManagement_apimapisByTags = []Policy{
-	{
+var Microsoft_ApiManagement_apimapisByTags = map[string]Policy{
+	"Api_ListByTags": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/apisByTags",
 		Method: "GET",
 		QueryValues: map[string]string{

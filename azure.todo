@@ -20,7 +20,7 @@
 ✔ azureactivedirectory
 ☐ azurearcdata
 ✘ azuredata
-✘ azurestack
+✔ azurestack
 ☐ azurestackhci
 ☐ baremetalinfrastructure
 ☐ batch
@@ -121,7 +121,7 @@
 ✔ machinelearningservices
 ☐ maintenance
 ☐ managednetwork
-☐ managedservices
+✔ managedservices
 ☐ managementgroups
 ☐ managementpartner
 ☐ maps

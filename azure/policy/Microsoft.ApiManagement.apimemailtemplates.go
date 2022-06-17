@@ -1,7 +1,7 @@
 package policy
 
-var Microsoft_ApiManagement_apimemailtemplates = []Policy{
-	{
+var Microsoft_ApiManagement_apimemailtemplates = map[string]Policy{
+	"EmailTemplate_ListByService": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/templates",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -9,7 +9,8 @@ var Microsoft_ApiManagement_apimemailtemplates = []Policy{
 		},
 		OperationID: "EmailTemplate_ListByService",
 		Resource:    "Microsoft.ApiManagement",
-	}, {
+	},
+	"EmailTemplate_Get": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/templates/{{.templateName}}",
 		Method: "GET",
 		QueryValues: map[string]string{

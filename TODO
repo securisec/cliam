@@ -3,20 +3,22 @@ Todo:
   ☐ enumerate functions should return an array of valid permissions
   ☐ refactor goroutine runners as DRY
   ☐ firebase with config
-  ☐ update readme with azure and firebase 
-  ☐ replicate success and failure count for aws and gcp
   ☐ figure out a way to have tab complete for multiple known values
   ☐ when using tokens, validate the expiration of the token (done: azure)
+  ☐ ability to test a specific permission for any cloud provider. will help with automation
 
 Bug:
 
 AWS:
   ☐ for services that require a body, it may be responding with a 404 if permission is valid
+  ☐ curl builder for requests
 
 GCP:
+  ☐ curl builder for requests
 
 Firebase:
   ☐ authencated scan
+  ☐ curl builder for requests
 
 Azure:
   
@@ -33,6 +35,9 @@ Resources:
   - https://docs.oracle.com/en-us/iaas/api/#/
 
 Archive:
+  ✔ curl builder for requests @project(Azure)
+  ✔ replicate success and failure count for aws and gcp @project(Todo)
+  ✔ update readme with azure and firebase  @project(Todo)
   ✔ default auth (from currently logged in user) @project(Azure)
   ✔ group resources under their respective top level resource. ie. mariadb, postgres and mysql under db @project(Azure)
   ✔ cert based auth @project(Azure)

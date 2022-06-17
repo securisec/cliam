@@ -1,7 +1,7 @@
 package policy
 
-var Microsoft_AzureStack_AzureStack = []Policy{
-	{
+var Microsoft_AzureStack_AzureStack = map[string]Policy{
+	"Operations_List": {
 		Path:   "/providers/Microsoft.AzureStack/operations",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -9,7 +9,8 @@ var Microsoft_AzureStack_AzureStack = []Policy{
 		},
 		OperationID: "Operations_List",
 		Resource:    "Microsoft.AzureStack",
-	}, {
+	},
+	"CloudManifestFile_List": {
 		Path:   "/providers/Microsoft.AzureStack/cloudManifestFiles",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -17,7 +18,8 @@ var Microsoft_AzureStack_AzureStack = []Policy{
 		},
 		OperationID: "CloudManifestFile_List",
 		Resource:    "Microsoft.AzureStack",
-	}, {
+	},
+	"CloudManifestFile_Get": {
 		Path:   "/providers/Microsoft.AzureStack/cloudManifestFiles/{{.verificationVersion}}",
 		Method: "GET",
 		QueryValues: map[string]string{

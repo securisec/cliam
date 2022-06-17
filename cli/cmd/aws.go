@@ -29,7 +29,7 @@ var (
 	awsRegion           string
 	awsProfile          string
 	awsSessionJson      string
-	awsKnownResourceMap map[string]string
+	awsKnownResourceMap []string
 	// awsKnownOnly         bool
 )
 
@@ -41,7 +41,7 @@ func init() {
 	awsCmd.PersistentFlags().StringVar(&awsRegion, "region", "us-east-1", "AWS Region")
 	awsCmd.PersistentFlags().StringVar(&awsProfile, "profile", "", "AWS Profile. When profile is set, access-key-id, secret-access-key, and session-token are ignored.")
 	awsCmd.PersistentFlags().StringVar(&awsSessionJson, "session-json", "", "AWS Session JSON file. This flag attempts to read session information from the specified file. Helpful with temporary credentials.")
-	awsCmd.PersistentFlags().StringToStringVar(&awsKnownResourceMap, "known-value", map[string]string{}, "AWS Resource Name. When known-resource-name is set, additional permissions where a resource needs to be specified is enumerated.")
+	awsCmd.PersistentFlags().StringSliceVarP(&awsKnownResourceMap, "known-value", "k", []string{}, "AWS Resource Name. Maps directly with aws cli flags. This flag can be used multiple times.")
 	awsCmd.RegisterFlagCompletionFunc("region", func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
 		return aws_Regions, cobra.ShellCompDirectiveNoFileComp
 	})
@@ -116,9 +116,10 @@ func awsSendToChannel(ch chan scanner.ServiceMap, resources []string) {
 	}
 
 	// if a known resource name is set, we will enumerate only the extra permissions
-	if len(awsKnownResourceMap) > 0 && len(extras) > 0 {
+	extraFlags := ModifyExtraMap(awsKnownResourceMap)
+	if len(extraFlags) > 0 && len(extras) > 0 {
 		for _, ee := range extras {
-			ee.Policy.ExtraValueMap = awsModifyExtraMap(awsKnownResourceMap)
+			ee.Policy.ExtraValueMap = awsModifyExtraMap(extraFlags)
 			ch <- ee
 		}
 	}

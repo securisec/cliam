@@ -1,7 +1,7 @@
 package policy
 
-var Microsoft_ApiManagement_apimportalrevisions = []Policy{
-	{
+var Microsoft_ApiManagement_apimportalrevisions = map[string]Policy{
+	"PortalRevision_ListByService": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/portalRevisions",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -9,7 +9,8 @@ var Microsoft_ApiManagement_apimportalrevisions = []Policy{
 		},
 		OperationID: "PortalRevision_ListByService",
 		Resource:    "Microsoft.ApiManagement",
-	}, {
+	},
+	"PortalRevision_Get": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/portalRevisions/{{.portalRevisionId}}",
 		Method: "GET",
 		QueryValues: map[string]string{

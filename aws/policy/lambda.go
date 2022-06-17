@@ -38,6 +38,14 @@ var LambdaPolicies = []Service{
 	},
 	{
 		Method:                 "GET",
+		ServiceSuffix:          "2018-10-31/layers/?find=LayerVersion&Arn={{.arn}}",
+		Permission:             "GetLayerVersionByArn",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "arn",
+	},
+	{
+		Method:                 "GET",
 		ServiceSuffix:          "2015-03-31/functions/{{.function_name}}/configuration",
 		Permission:             "GetFunctionConfiguration",
 		ExtraComponentLocation: "path",

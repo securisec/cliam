@@ -1,7 +1,7 @@
 package policy
 
-var Microsoft_ApiManagement_apimquotas = []Policy{
-	{
+var Microsoft_ApiManagement_apimquotas = map[string]Policy{
+	"QuotaByCounterKeys_ListByService": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/quotas/{{.quotaCounterKey}}",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -9,7 +9,8 @@ var Microsoft_ApiManagement_apimquotas = []Policy{
 		},
 		OperationID: "QuotaByCounterKeys_ListByService",
 		Resource:    "Microsoft.ApiManagement",
-	}, {
+	},
+	"QuotaByPeriodKeys_Get": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/quotas/{{.quotaCounterKey}}/periods/{{.quotaPeriodKey}}",
 		Method: "GET",
 		QueryValues: map[string]string{

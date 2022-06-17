@@ -22,6 +22,15 @@ func init() {
 
 func azureAccessTokenCmdFunc(_ *cobra.Command, _ []string) {
 
+	if azureDefaultCreds {
+		token, err := azure.GetTokenFromDefault()
+		if err != nil {
+			logger.LoggerStdErr.Fatal().Err(err).Msg("Failed to get access token from default credentials")
+		}
+		fmt.Println(token)
+		return
+	}
+
 	if azureClientSecret != "" {
 		token, err := azure.GetTokenFromUsernameAndPassword(azureTenantID, azureClientID, azureClientSecret)
 		if err != nil {

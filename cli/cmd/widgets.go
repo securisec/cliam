@@ -40,19 +40,20 @@ func cliErrorLogger(s scanner.ServiceMap, err error) {
 func cliResponseLoggerAWS(ser scanner.ServiceMap, status int) {
 	l := logger.Logger
 	cf := ser.Policy.ExtraCommandLineFlag
-	v, ok := awsKnownResourceMap[cf]
+	flag, ok := ModifyExtraMap(awsKnownResourceMap)[cf]
 	if status == http.StatusOK {
 		sl := l.Info().Str(ser.Resource, logger.ToSnakeCase(ser.Policy.Permission))
 		if ok {
-			sl.Str(strings.ReplaceAll(cf, "_", "-"), v)
+			sl.Str(strings.ReplaceAll(cf, "_", "-"), flag)
 		}
 		successCounter++
 		sl.Msg(shared.GetMessageColor("success"))
+		return
 	}
 	if status != 200 && logger.DEBUG {
 		dl := l.Error().Str(ser.Resource, logger.ToSnakeCase(ser.Policy.Permission))
 		if ok {
-			dl.Str(strings.ReplaceAll(cf, "_", "-"), v)
+			dl.Str(strings.ReplaceAll(cf, "_", "-"), flag)
 		}
 		failureCounter++
 		dl.Msg(shared.GetMessageColor("success"))

@@ -1,7 +1,7 @@
 package policy
 
-var Microsoft_Web_Certificates = []Policy{
-	{
+var Microsoft_Web_Certificates = map[string]Policy{
+	"Certificates_List": {
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.Web/certificates",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -9,7 +9,8 @@ var Microsoft_Web_Certificates = []Policy{
 		},
 		OperationID: "Certificates_List",
 		Resource:    "Microsoft.Web",
-	}, {
+	},
+	"Certificates_ListByResourceGroup": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/certificates",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -17,7 +18,8 @@ var Microsoft_Web_Certificates = []Policy{
 		},
 		OperationID: "Certificates_ListByResourceGroup",
 		Resource:    "Microsoft.Web",
-	}, {
+	},
+	"Certificates_Get": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Web/certificates/{{.name}}",
 		Method: "GET",
 		QueryValues: map[string]string{

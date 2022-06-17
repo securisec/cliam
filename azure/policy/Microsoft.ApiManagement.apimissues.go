@@ -1,7 +1,7 @@
 package policy
 
-var Microsoft_ApiManagement_apimissues = []Policy{
-	{
+var Microsoft_ApiManagement_apimissues = map[string]Policy{
+	"Issue_ListByService": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/issues",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -9,7 +9,8 @@ var Microsoft_ApiManagement_apimissues = []Policy{
 		},
 		OperationID: "Issue_ListByService",
 		Resource:    "Microsoft.ApiManagement",
-	}, {
+	},
+	"Issue_Get": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/issues/{{.issueId}}",
 		Method: "GET",
 		QueryValues: map[string]string{

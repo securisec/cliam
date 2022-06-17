@@ -19,7 +19,7 @@ be used to manually GCP REST API's.`,
 }
 
 func init() {
-	gcpRestCmd.AddCommand(gcpRestAccessTokenCmd)
+	gcpCmd.AddCommand(gcpRestAccessTokenCmd)
 }
 
 func gcpRestAccessTokenCmdFunc(cmd *cobra.Command, args []string) {

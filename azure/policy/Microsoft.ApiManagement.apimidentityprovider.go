@@ -1,7 +1,7 @@
 package policy
 
-var Microsoft_ApiManagement_apimidentityprovider = []Policy{
-	{
+var Microsoft_ApiManagement_apimidentityprovider = map[string]Policy{
+	"IdentityProvider_ListByService": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/identityProviders",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -9,7 +9,8 @@ var Microsoft_ApiManagement_apimidentityprovider = []Policy{
 		},
 		OperationID: "IdentityProvider_ListByService",
 		Resource:    "Microsoft.ApiManagement",
-	}, {
+	},
+	"IdentityProvider_Get": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/identityProviders/{{.identityProviderName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -17,7 +18,8 @@ var Microsoft_ApiManagement_apimidentityprovider = []Policy{
 		},
 		OperationID: "IdentityProvider_Get",
 		Resource:    "Microsoft.ApiManagement",
-	}, {
+	},
+	"IdentityProvider_ListSecrets": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/identityProviders/{{.identityProviderName}}/listSecrets",
 		Method: "POST",
 		QueryValues: map[string]string{

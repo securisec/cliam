@@ -1,7 +1,7 @@
 package policy
 
-var Microsoft_ApiManagement_apimdiagnostics = []Policy{
-	{
+var Microsoft_ApiManagement_apimdiagnostics = map[string]Policy{
+	"Diagnostic_ListByService": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/diagnostics",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -9,7 +9,8 @@ var Microsoft_ApiManagement_apimdiagnostics = []Policy{
 		},
 		OperationID: "Diagnostic_ListByService",
 		Resource:    "Microsoft.ApiManagement",
-	}, {
+	},
+	"Diagnostic_Get": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/diagnostics/{{.diagnosticId}}",
 		Method: "GET",
 		QueryValues: map[string]string{

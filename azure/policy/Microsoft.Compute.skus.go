@@ -1,7 +1,7 @@
 package policy
 
-var Microsoft_Compute_skus = []Policy{
-	{
+var Microsoft_Compute_skus = map[string]Policy{
+	"ResourceSkus_List": {
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.Compute/skus",
 		Method: "GET",
 		QueryValues: map[string]string{

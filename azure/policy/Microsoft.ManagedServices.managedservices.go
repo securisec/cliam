@@ -1,7 +1,7 @@
 package policy
 
-var Microsoft_ManagedServices_managedservices = []Policy{
-	{
+var Microsoft_ManagedServices_managedservices = map[string]Policy{
+	"RegistrationDefinitions_Get": {
 		Path:   "/{{.scope}}/providers/Microsoft.ManagedServices/registrationDefinitions/{{.registrationDefinitionId}}",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -9,7 +9,8 @@ var Microsoft_ManagedServices_managedservices = []Policy{
 		},
 		OperationID: "RegistrationDefinitions_Get",
 		Resource:    "Microsoft.ManagedServices",
-	}, {
+	},
+	"RegistrationAssignments_Get": {
 		Path:   "/{{.scope}}/providers/Microsoft.ManagedServices/registrationAssignments/{{.registrationAssignmentId}}",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -17,7 +18,8 @@ var Microsoft_ManagedServices_managedservices = []Policy{
 		},
 		OperationID: "RegistrationAssignments_Get",
 		Resource:    "Microsoft.ManagedServices",
-	}, {
+	},
+	"RegistrationDefinitions_List": {
 		Path:   "/{{.scope}}/providers/Microsoft.ManagedServices/registrationDefinitions",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -25,7 +27,8 @@ var Microsoft_ManagedServices_managedservices = []Policy{
 		},
 		OperationID: "RegistrationDefinitions_List",
 		Resource:    "Microsoft.ManagedServices",
-	}, {
+	},
+	"RegistrationAssignments_List": {
 		Path:   "/{{.scope}}/providers/Microsoft.ManagedServices/registrationAssignments",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -33,7 +36,8 @@ var Microsoft_ManagedServices_managedservices = []Policy{
 		},
 		OperationID: "RegistrationAssignments_List",
 		Resource:    "Microsoft.ManagedServices",
-	}, {
+	},
+	"MarketplaceRegistrationDefinitions_List": {
 		Path:   "/{{.scope}}/providers/Microsoft.ManagedServices/marketplaceRegistrationDefinitions",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -41,7 +45,8 @@ var Microsoft_ManagedServices_managedservices = []Policy{
 		},
 		OperationID: "MarketplaceRegistrationDefinitions_List",
 		Resource:    "Microsoft.ManagedServices",
-	}, {
+	},
+	"MarketplaceRegistrationDefinitionsWithoutScope_List": {
 		Path:   "/providers/Microsoft.ManagedServices/marketplaceRegistrationDefinitions",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -49,7 +54,8 @@ var Microsoft_ManagedServices_managedservices = []Policy{
 		},
 		OperationID: "MarketplaceRegistrationDefinitionsWithoutScope_List",
 		Resource:    "Microsoft.ManagedServices",
-	}, {
+	},
+	"MarketplaceRegistrationDefinitions_Get": {
 		Path:   "/{{.scope}}/providers/Microsoft.ManagedServices/marketplaceRegistrationDefinitions/{{.marketplaceIdentifier}}",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -57,7 +63,8 @@ var Microsoft_ManagedServices_managedservices = []Policy{
 		},
 		OperationID: "MarketplaceRegistrationDefinitions_Get",
 		Resource:    "Microsoft.ManagedServices",
-	}, {
+	},
+	"MarketplaceRegistrationDefinitionsWithoutScope_Get": {
 		Path:   "/providers/Microsoft.ManagedServices/marketplaceRegistrationDefinitions/{{.marketplaceIdentifier}}",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -65,7 +72,8 @@ var Microsoft_ManagedServices_managedservices = []Policy{
 		},
 		OperationID: "MarketplaceRegistrationDefinitionsWithoutScope_Get",
 		Resource:    "Microsoft.ManagedServices",
-	}, {
+	},
+	"Operations_List": {
 		Path:   "/providers/Microsoft.ManagedServices/operations",
 		Method: "GET",
 		QueryValues: map[string]string{

@@ -1,7 +1,7 @@
 package policy
 
-var Microsoft_ApiManagement_apimapiversionsets = []Policy{
-	{
+var Microsoft_ApiManagement_apimapiversionsets = map[string]Policy{
+	"ApiVersionSet_ListByService": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/apiVersionSets",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -9,7 +9,8 @@ var Microsoft_ApiManagement_apimapiversionsets = []Policy{
 		},
 		OperationID: "ApiVersionSet_ListByService",
 		Resource:    "Microsoft.ApiManagement",
-	}, {
+	},
+	"ApiVersionSet_Get": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/apiVersionSets/{{.versionSetId}}",
 		Method: "GET",
 		QueryValues: map[string]string{

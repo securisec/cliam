@@ -1,7 +1,7 @@
 package policy
 
-var Microsoft_DBforMariaDB_Servers = []Policy{
-	{
+var Microsoft_DBforMariaDB_Servers = map[string]Policy{
+	"Servers_Start": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.DBforMariaDB/servers/{{.serverName}}/start",
 		Method: "POST",
 		QueryValues: map[string]string{
@@ -9,7 +9,8 @@ var Microsoft_DBforMariaDB_Servers = []Policy{
 		},
 		OperationID: "Servers_Start",
 		Resource:    "Microsoft.DBforMariaDB",
-	}, {
+	},
+	"Servers_Stop": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.DBforMariaDB/servers/{{.serverName}}/stop",
 		Method: "POST",
 		QueryValues: map[string]string{

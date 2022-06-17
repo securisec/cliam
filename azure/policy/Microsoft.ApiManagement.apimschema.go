@@ -1,7 +1,7 @@
 package policy
 
-var Microsoft_ApiManagement_apimschema = []Policy{
-	{
+var Microsoft_ApiManagement_apimschema = map[string]Policy{
+	"GlobalSchema_ListByService": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/schemas",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -9,7 +9,8 @@ var Microsoft_ApiManagement_apimschema = []Policy{
 		},
 		OperationID: "GlobalSchema_ListByService",
 		Resource:    "Microsoft.ApiManagement",
-	}, {
+	},
+	"GlobalSchema_Get": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/schemas/{{.schemaId}}",
 		Method: "GET",
 		QueryValues: map[string]string{

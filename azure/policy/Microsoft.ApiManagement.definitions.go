@@ -1,3 +1,3 @@
 package policy
 
-var Microsoft_ApiManagement_definitions = []Policy{}
+var Microsoft_ApiManagement_definitions = map[string]Policy{}

@@ -1,7 +1,7 @@
 package policy
 
-var Microsoft_Authorization_RoleAssignmentSchedule = []Policy{
-	{
+var Microsoft_Authorization_RoleAssignmentSchedule = map[string]Policy{
+	"RoleAssignmentSchedules_Get": {
 		Path:   "/{{.scope}}/providers/Microsoft.Authorization/roleAssignmentSchedules/{{.roleAssignmentScheduleName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -9,7 +9,8 @@ var Microsoft_Authorization_RoleAssignmentSchedule = []Policy{
 		},
 		OperationID: "RoleAssignmentSchedules_Get",
 		Resource:    "Microsoft.Authorization",
-	}, {
+	},
+	"RoleAssignmentSchedules_ListForScope": {
 		Path:   "/{{.scope}}/providers/Microsoft.Authorization/roleAssignmentSchedules",
 		Method: "GET",
 		QueryValues: map[string]string{

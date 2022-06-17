@@ -1,7 +1,7 @@
 package policy
 
-var Microsoft_AzureStack_CustomerSubscription = []Policy{
-	{
+var Microsoft_AzureStack_CustomerSubscription = map[string]Policy{
+	"CustomerSubscriptions_List": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroup}}/providers/Microsoft.AzureStack/registrations/{{.registrationName}}/customerSubscriptions",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -9,7 +9,8 @@ var Microsoft_AzureStack_CustomerSubscription = []Policy{
 		},
 		OperationID: "CustomerSubscriptions_List",
 		Resource:    "Microsoft.AzureStack",
-	}, {
+	},
+	"CustomerSubscriptions_Get": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroup}}/providers/Microsoft.AzureStack/registrations/{{.registrationName}}/customerSubscriptions/{{.customerSubscriptionName}}",
 		Method: "GET",
 		QueryValues: map[string]string{

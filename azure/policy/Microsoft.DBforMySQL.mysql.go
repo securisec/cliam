@@ -1,7 +1,7 @@
 package policy
 
-var Microsoft_DBforMySQL_mysql = []Policy{
-	{
+var Microsoft_DBforMySQL_mysql = map[string]Policy{
+	"Servers_Get": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.DBforMySQL/flexibleServers/{{.serverName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -9,7 +9,8 @@ var Microsoft_DBforMySQL_mysql = []Policy{
 		},
 		OperationID: "Servers_Get",
 		Resource:    "Microsoft.DBforMySQL",
-	}, {
+	},
+	"Servers_ListByResourceGroup": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.DBforMySQL/flexibleServers",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -17,7 +18,8 @@ var Microsoft_DBforMySQL_mysql = []Policy{
 		},
 		OperationID: "Servers_ListByResourceGroup",
 		Resource:    "Microsoft.DBforMySQL",
-	}, {
+	},
+	"Servers_List": {
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.DBforMySQL/flexibleServers",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -25,7 +27,8 @@ var Microsoft_DBforMySQL_mysql = []Policy{
 		},
 		OperationID: "Servers_List",
 		Resource:    "Microsoft.DBforMySQL",
-	}, {
+	},
+	"Servers_Failover": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.DBforMySQL/flexibleServers/{{.serverName}}/failover",
 		Method: "POST",
 		QueryValues: map[string]string{
@@ -33,7 +36,8 @@ var Microsoft_DBforMySQL_mysql = []Policy{
 		},
 		OperationID: "Servers_Failover",
 		Resource:    "Microsoft.DBforMySQL",
-	}, {
+	},
+	"Servers_Restart": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.DBforMySQL/flexibleServers/{{.serverName}}/restart",
 		Method: "POST",
 		QueryValues: map[string]string{
@@ -41,7 +45,8 @@ var Microsoft_DBforMySQL_mysql = []Policy{
 		},
 		OperationID: "Servers_Restart",
 		Resource:    "Microsoft.DBforMySQL",
-	}, {
+	},
+	"Servers_Start": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.DBforMySQL/flexibleServers/{{.serverName}}/start",
 		Method: "POST",
 		QueryValues: map[string]string{
@@ -49,7 +54,8 @@ var Microsoft_DBforMySQL_mysql = []Policy{
 		},
 		OperationID: "Servers_Start",
 		Resource:    "Microsoft.DBforMySQL",
-	}, {
+	},
+	"Servers_Stop": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.DBforMySQL/flexibleServers/{{.serverName}}/stop",
 		Method: "POST",
 		QueryValues: map[string]string{
@@ -57,7 +63,8 @@ var Microsoft_DBforMySQL_mysql = []Policy{
 		},
 		OperationID: "Servers_Stop",
 		Resource:    "Microsoft.DBforMySQL",
-	}, {
+	},
+	"Replicas_ListByServer": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.DBforMySQL/flexibleServers/{{.serverName}}/replicas",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -65,7 +72,8 @@ var Microsoft_DBforMySQL_mysql = []Policy{
 		},
 		OperationID: "Replicas_ListByServer",
 		Resource:    "Microsoft.DBforMySQL",
-	}, {
+	},
+	"Backups_Get": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.DBforMySQL/flexibleServers/{{.serverName}}/backups/{{.backupName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -73,7 +81,8 @@ var Microsoft_DBforMySQL_mysql = []Policy{
 		},
 		OperationID: "Backups_Get",
 		Resource:    "Microsoft.DBforMySQL",
-	}, {
+	},
+	"Backups_ListByServer": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.DBforMySQL/flexibleServers/{{.serverName}}/backups",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -81,7 +90,8 @@ var Microsoft_DBforMySQL_mysql = []Policy{
 		},
 		OperationID: "Backups_ListByServer",
 		Resource:    "Microsoft.DBforMySQL",
-	}, {
+	},
+	"FirewallRules_Get": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.DBforMySQL/flexibleServers/{{.serverName}}/firewallRules/{{.firewallRuleName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -89,7 +99,8 @@ var Microsoft_DBforMySQL_mysql = []Policy{
 		},
 		OperationID: "FirewallRules_Get",
 		Resource:    "Microsoft.DBforMySQL",
-	}, {
+	},
+	"FirewallRules_ListByServer": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.DBforMySQL/flexibleServers/{{.serverName}}/firewallRules",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -97,7 +108,8 @@ var Microsoft_DBforMySQL_mysql = []Policy{
 		},
 		OperationID: "FirewallRules_ListByServer",
 		Resource:    "Microsoft.DBforMySQL",
-	}, {
+	},
+	"Databases_Get": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.DBforMySQL/flexibleServers/{{.serverName}}/databases/{{.databaseName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -105,7 +117,8 @@ var Microsoft_DBforMySQL_mysql = []Policy{
 		},
 		OperationID: "Databases_Get",
 		Resource:    "Microsoft.DBforMySQL",
-	}, {
+	},
+	"Databases_ListByServer": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.DBforMySQL/flexibleServers/{{.serverName}}/databases",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -113,7 +126,8 @@ var Microsoft_DBforMySQL_mysql = []Policy{
 		},
 		OperationID: "Databases_ListByServer",
 		Resource:    "Microsoft.DBforMySQL",
-	}, {
+	},
+	"Configurations_Get": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.DBforMySQL/flexibleServers/{{.serverName}}/configurations/{{.configurationName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -121,7 +135,8 @@ var Microsoft_DBforMySQL_mysql = []Policy{
 		},
 		OperationID: "Configurations_Get",
 		Resource:    "Microsoft.DBforMySQL",
-	}, {
+	},
+	"Configurations_BatchUpdate": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.DBforMySQL/flexibleServers/{{.serverName}}/updateConfigurations",
 		Method: "POST",
 		QueryValues: map[string]string{
@@ -129,7 +144,8 @@ var Microsoft_DBforMySQL_mysql = []Policy{
 		},
 		OperationID: "Configurations_BatchUpdate",
 		Resource:    "Microsoft.DBforMySQL",
-	}, {
+	},
+	"Configurations_ListByServer": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.DBforMySQL/flexibleServers/{{.serverName}}/configurations",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -137,7 +153,8 @@ var Microsoft_DBforMySQL_mysql = []Policy{
 		},
 		OperationID: "Configurations_ListByServer",
 		Resource:    "Microsoft.DBforMySQL",
-	}, {
+	},
+	"LocationBasedCapabilities_List": {
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.DBforMySQL/locations/{{.locationName}}/capabilities",
 		Method: "GET",
 		QueryValues: map[string]string{
@@ -145,7 +162,8 @@ var Microsoft_DBforMySQL_mysql = []Policy{
 		},
 		OperationID: "LocationBasedCapabilities_List",
 		Resource:    "Microsoft.DBforMySQL",
-	}, {
+	},
+	"CheckVirtualNetworkSubnetUsage_Execute": {
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.DBforMySQL/locations/{{.locationName}}/checkVirtualNetworkSubnetUsage",
 		Method: "POST",
 		QueryValues: map[string]string{
@@ -153,7 +171,8 @@ var Microsoft_DBforMySQL_mysql = []Policy{
 		},
 		OperationID: "CheckVirtualNetworkSubnetUsage_Execute",
 		Resource:    "Microsoft.DBforMySQL",
-	}, {
+	},
+	"CheckNameAvailability_Execute": {
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.DBforMySQL/locations/{{.locationName}}/checkNameAvailability",
 		Method: "POST",
 		QueryValues: map[string]string{
@@ -161,7 +180,8 @@ var Microsoft_DBforMySQL_mysql = []Policy{
 		},
 		OperationID: "CheckNameAvailability_Execute",
 		Resource:    "Microsoft.DBforMySQL",
-	}, {
+	},
+	"GetPrivateDnsZoneSuffix_Execute": {
 		Path:   "/providers/Microsoft.DBforMySQL/getPrivateDnsZoneSuffix",
 		Method: "POST",
 		QueryValues: map[string]string{
@@ -169,7 +189,8 @@ var Microsoft_DBforMySQL_mysql = []Policy{
 		},
 		OperationID: "GetPrivateDnsZoneSuffix_Execute",
 		Resource:    "Microsoft.DBforMySQL",
-	}, {
+	},
+	"Operations_List": {
 		Path:   "/providers/Microsoft.DBforMySQL/operations",
 		Method: "GET",
 		QueryValues: map[string]string{

@@ -17,8 +17,8 @@ import (
 )
 
 var azureEnumerateCmd = &cobra.Command{
-	Use:     "enumerate [resource...] [-k key=value...]",
-	Example: "enumerate Microsoft.Web.WebApps Microsoft.Web.Sites...",
+	Use:     "enumerate",
+	Example: "enumerate [resource...] [-k key=value...]",
 	Short:   "Enumerate permissions for specified azure resources.",
 	PreRun:  azureValidateRequiredFlags,
 	Run:     azureEnumerateCmdFunc,
@@ -96,9 +96,9 @@ func azureEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 					logger.LogError(fmt.Errorf("%d %s", res.StatusCode, body), p.OperationID)
 				}
 
-				logExtras := azureModifyExtraMap(azureKnownResourceMap)
-				logExtras["method"] = req.Method
-				logExtras["url"] = req.URL.String()
+				logExtras := ModifyExtraMap(azureKnownResourceMap)
+				// logExtras["method"] = req.Method
+				// logExtras["url"] = req.URL.String()
 				azureLogSuccessMessage(p, body, logExtras)
 
 				if SaveOutput {

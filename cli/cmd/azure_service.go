@@ -98,7 +98,7 @@ func azureServiceCmdFunc(_ *cobra.Command, args []string) {
 					logger.LogError(fmt.Errorf("%d %s", res.StatusCode, body), p.OperationID)
 				}
 
-				logExtras := azureModifyExtraMap(azureKnownResourceMap)
+				logExtras := ModifyExtraMap(azureKnownResourceMap)
 				logExtras["method"] = req.Method
 				logExtras["url"] = req.URL.String()
 				azureLogSuccessMessage(p, body, logExtras)
