@@ -16,7 +16,7 @@ jobs:
       - name: Setup go
         uses: actions/setup-go@v2.1.3
         with:
-          version: "1.17"
+          version: "1.18"
 
       - uses: actions/cache@v2.1.3
         with:
