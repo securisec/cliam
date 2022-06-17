@@ -26,7 +26,7 @@ jobs:
             ${{ runner.os }}-go-
 
       - name: Build with goreleaser
-        uses: goreleaser/goreleaser-action@v2.9.1
+        uses: goreleaser/goreleaser-action@3.0.0
         with:
           distribution: goreleaser
           version: latest
