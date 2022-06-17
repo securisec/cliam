@@ -62,30 +62,34 @@ def getPolicies(resource, specification, version):
 
 # pyperclip.copy(o)
 
-SPECIFICATION = "mariadb"
-RESOURCE = "Microsoft.DBforMariaDB"
-VERSION = "2020-01-01"
+SPECIFICATION = "saas"
+
+rdirs =  [dirs for dirs in Path(f'temp/azure-rest-api-specs/specification/{SPECIFICATION}/resource-manager/').glob("*") if dirs.is_dir()]
+
+for dirs in rdirs:
+    RESOURCE = dirs.name
+    VERSION = [x for x in sorted((dirs / "stable").glob("*"))][-1].name
 
 
-for resource_path in getPolicies(RESOURCE, SPECIFICATION, VERSION):
+    for resource_path in getPolicies(RESOURCE, SPECIFICATION, VERSION):
 
-    path = Path("cliam/" + resource_path)
-    resource = path.stem
+        path = Path("cliam/" + resource_path)
+        resource = path.stem
 
-    save_path = Path(f"azure/policy/{RESOURCE}.{resource}.go")
-    if save_path.exists():
-        continue
+        save_path = Path(f"azure/policy/{RESOURCE}.{resource}.go")
+        if save_path.exists():
+            continue
 
-    policies = buildPolicy(path)
-    var_name = RESOURCE.replace(".", "_") + f"_{resource}"
+        policies = buildPolicy(path)
+        var_name = RESOURCE.replace(".", "_") + f"_{resource}"
 
-    template = f"""package policy
+        template = f"""package policy
 
-var {var_name} = []Policy{{
-    {''.join(policies)}
-}}
-"""
+    var {var_name} = []Policy{{
+        {''.join(policies)}
+    }}
+    """
 
-    save_path.write_text(template)
+        save_path.write_text(template)
 
-    print(f'"{RESOURCE}.{resource}": policy.{var_name},')
+        print(f'"{RESOURCE}.{resource}": policy.{var_name},')

@@ -3,7 +3,6 @@ Todo:
   ☐ enumerate functions should return an array of valid permissions
   ☐ refactor goroutine runners as DRY
   ☐ firebase with config
-  ☐ unify azureKnownResourceMap and azureUnknownResourceMap into a single map and flag
   ☐ update readme with azure and firebase 
   ☐ replicate success and failure count for aws and gcp
   ☐ figure out a way to have tab complete for multiple known values
@@ -22,7 +21,6 @@ Firebase:
 Azure:
   
 Helpers:
-  ☐ helper functions for testing arbitrary permissions
     
 Cli:
   ☐ if access key starts with ASIA, then token is required maybe?
