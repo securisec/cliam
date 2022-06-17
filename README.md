@@ -2,7 +2,7 @@
 Multi cloud iam permissions enumeration tool. Currently covers:
 - [x] AWS
 - [x] GCP
-- [] Azure
+- [x] Azure
 - [] Oracle
 
 ### 🚧 WIP
@@ -26,25 +26,24 @@ Cliam works with credentials obtained from the services well known envars or fro
 **It is highly recommond that command completions are set as most of the `enumerate` options have to be specific.** To generate completions, use `cliam completion [shell]` and set according to your shells completion directory.
 
 ```
-❯❯ cliam --help
-Cloud Enumerate is a tool to enumerate cloud credentials for their permissions.
-
 Usage:
   cliam [command]
 
 Available Commands:
   aws         Enumerate AWS credentials for their permissions.
+  azure       Enumerate Azure credentials for their permissions.
   completion  Generate the autocompletion script for the specified shell
+  firebase    Enumerate Firebase permissions.
   gcp         Enumerate GCP service accounts for their permissions.
   help        Help about any command
+  version     Show version and build info
 
 Flags:
-  -h, --help   help for cliam
-
-Additional help topics:
-  cliam azure      Enumerate Azure credentials for their permissions.
-
-Use "cliam [command] --help" for more information about a command.
+  -h, --help                  help for cliam
+      --max-threads int       Maximum number of threads to use. (default 5)
+      --request-timeout int   Timeout for each request in seconds. (default 5)
+      --save-output           Save output to file on success
+  -v, --verbose               Enable verbose output.
 ```
 
 ### AWS
@@ -53,31 +52,30 @@ Uses the AWS rest api to make a signed request using the passed in credentials. 
 Supports obtaining credentials from AWS profile, flags, or default AWS environment variables like `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` and optionally `AWS_SESSION_TOKEN`.
 
 ```
-cliam aws --help
+❯❯ cliam aws                                                        
 Enumerate AWS credentials for their permissions.
 
 Usage:
   cliam aws [command]
 
 Available Commands:
-  common      Enumerate permissions for common AWS resources.
-  compute     Enumerate permissions for common compute AWS resources.
-  databases   Enumerate permissions for common AWS database resources.
-  enumerate   Enumerate permissions for specified AWS resources.
-  serverless  Enumerate permissions for common serverless AWS resources.
-  storage     Enumerate permissions for common storage AWS resources.
+  enumerate     Enumerate permissions for specified AWS resources.
+  service-group Enumerate permissions for groups of AWS resources.
 
 Flags:
-      --access-key-id string       AWS Access Key ID
-  -h, --help                       help for aws
-      --profile string             AWS Profile. When profile is set, access-key-id, secret-access-key, and session-token are ignored.
-      --region string              AWS Region (default "us-east-1")
-      --secret-access-key string   AWS Secret Access Key
-      --session-token string       AWS Session Token
+      --access-key-id string         AWS Access Key ID
+  -h, --help                         help for aws
+      --known-value stringToString   AWS Resource Name. When known-resource-name is set, additional permissions where a resource needs to be specified is enumerated. (default [])
+      --profile string               AWS Profile. When profile is set, access-key-id, secret-access-key, and session-token are ignored.
+      --region string                AWS Region (default "us-east-1")
+      --secret-access-key string     AWS Secret Access Key
+      --session-json string          AWS Session JSON file. This flag attempts to read session information from the specified file. Helpful with temporary credentials.
+      --session-token string         AWS Session Token
 
 Global Flags:
       --max-threads int       Maximum number of threads to use. (default 5)
-      --request-timeout int   Timeout for each request in seconds. (default 10)
+      --request-timeout int   Timeout for each request in seconds. (default 5)
+  -v, --verbose               Enable verbose output.
 ```
 
 ### Known resources
@@ -93,7 +91,7 @@ This will enumerate all permissions for lambda which takes function-name as a va
 #### Examples
 Bruteforce all serverless resources from an AWS profile
 ```
-❯❯ cliam aws serverless --profile=my-profile
+❯❯ cliam aws service-group serverless --profile=my-profile
 ```
 
 Use temporary session tokens obtained to check all ec2 permissions
@@ -144,6 +142,32 @@ Global Flags:
       --request-timeout int   Timeout for each request in seconds. (default 10)
 
 Use "cliam gcp [command] --help" for more information about a command.
+```
+
+### Azure
+Azure enumeration supports various authentication methods inlcuding service principals (via client id and secret), certificate MSI (via MSI token), or default auth. It also supports all the common azure environment variables 
+- AZURE_CLIENT_ID : client id or usrname
+- AZURE_CLIENT_SECRET : client secret
+- AZURE_SUBSCRIPTION_ID : subscription id
+- AZURE_CLIENT_CERTIFICATE_PATH : path to certificate
+- AZURE_TENANT_ID : tenant id
+- CLIAM_AZURE_OAUTH_TOKEN : existing oauth token
+
+```
+❯❯ cliam azure
+Enumerate Azure credentials for their permissions.
+In most cases, a valid Azure Subscription ID is required. If one 
+is not provided, the CLI will attempt to lookup available subscriptions 
+and use the first one.
+
+Usage:
+  cliam azure [command]
+
+Available Commands:
+  access-token  Get access token to use with REST apis
+  enumerate     Enumerate permissions for specified azure resources.
+  service       Enumerate permissions for a specific group of azure services.
+  subscriptions List all subscriptions
 ```
 
 ## Debug
