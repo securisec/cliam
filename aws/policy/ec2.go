@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var EC2Policies = []Service{
-	{
+var EC2Policies = map[string]Service{
+	"AcceptTransitGatewayMulticastDomainAssociations": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "AcceptTransitGatewayMulticastDomainAssociations",
@@ -14,7 +14,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "AcceptTransitGatewayMulticastDomainAssociations",
 	},
-	{
+	"AcceptVpcPeeringConnection": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "AcceptVpcPeeringConnection",
@@ -25,7 +25,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "AcceptVpcPeeringConnection",
 	},
-	{
+	"AllocateAddress": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "AllocateAddress",
@@ -36,7 +36,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "AllocateAddress",
 	},
-	{
+	"AssociateAddress": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "AssociateAddress",
@@ -47,7 +47,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "AssociateAddress",
 	},
-	{
+	"AssociateEnclaveCertificateIamRole": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "AssociateEnclaveCertificateIamRole",
@@ -58,7 +58,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "AssociateEnclaveCertificateIamRole",
 	},
-	{
+	"AssociateTransitGatewayMulticastDomain": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "AssociateTransitGatewayMulticastDomain",
@@ -69,7 +69,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "AssociateTransitGatewayMulticastDomain",
 	},
-	{
+	"AuthorizeSecurityGroupIngress": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "AuthorizeSecurityGroupIngress",
@@ -80,7 +80,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "AuthorizeSecurityGroupIngress",
 	},
-	{
+	"CancelImportTask": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "CancelImportTask",
@@ -91,7 +91,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "CancelImportTask",
 	},
-	{
+	"CreateDefaultVpc": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "CreateDefaultVpc",
@@ -102,7 +102,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "CreateDefaultVpc",
 	},
-	{
+	"CreateInstanceEventWindow": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "CreateInstanceEventWindow",
@@ -113,7 +113,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "CreateInstanceEventWindow",
 	},
-	{
+	"CreateInternetGateway": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "CreateInternetGateway",
@@ -124,7 +124,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "CreateInternetGateway",
 	},
-	{
+	"CreateIpam": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "CreateIpam",
@@ -135,7 +135,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "CreateIpam",
 	},
-	{
+	"CreatePlacementGroup": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "CreatePlacementGroup",
@@ -146,7 +146,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "CreatePlacementGroup",
 	},
-	{
+	"CreatePublicIpv4Pool": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "CreatePublicIpv4Pool",
@@ -157,7 +157,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "CreatePublicIpv4Pool",
 	},
-	{
+	"CreateTrafficMirrorFilter": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "CreateTrafficMirrorFilter",
@@ -168,7 +168,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "CreateTrafficMirrorFilter",
 	},
-	{
+	"CreateTrafficMirrorTarget": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "CreateTrafficMirrorTarget",
@@ -179,7 +179,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "CreateTrafficMirrorTarget",
 	},
-	{
+	"CreateTransitGateway": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "CreateTransitGateway",
@@ -190,7 +190,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "CreateTransitGateway",
 	},
-	{
+	"CreateVpc": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "CreateVpc",
@@ -201,7 +201,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "CreateVpc",
 	},
-	{
+	"CreateVpcEndpointServiceConfiguration": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "CreateVpcEndpointServiceConfiguration",
@@ -212,7 +212,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "CreateVpcEndpointServiceConfiguration",
 	},
-	{
+	"CreateVpcPeeringConnection": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "CreateVpcPeeringConnection",
@@ -223,7 +223,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "CreateVpcPeeringConnection",
 	},
-	{
+	"DeleteKeyPair": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DeleteKeyPair",
@@ -234,7 +234,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DeleteKeyPair",
 	},
-	{
+	"DeleteLaunchTemplate": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DeleteLaunchTemplate",
@@ -245,7 +245,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DeleteLaunchTemplate",
 	},
-	{
+	"DeleteSecurityGroup": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DeleteSecurityGroup",
@@ -256,7 +256,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DeleteSecurityGroup",
 	},
-	{
+	"DeleteSpotDatafeedSubscription": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DeleteSpotDatafeedSubscription",
@@ -267,7 +267,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DeleteSpotDatafeedSubscription",
 	},
-	{
+	"DeregisterInstanceEventNotificationAttributes": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DeregisterInstanceEventNotificationAttributes",
@@ -278,7 +278,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DeregisterInstanceEventNotificationAttributes",
 	},
-	{
+	"DeregisterTransitGatewayMulticastGroupMembers": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DeregisterTransitGatewayMulticastGroupMembers",
@@ -289,7 +289,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DeregisterTransitGatewayMulticastGroupMembers",
 	},
-	{
+	"DeregisterTransitGatewayMulticastGroupSources": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DeregisterTransitGatewayMulticastGroupSources",
@@ -300,7 +300,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DeregisterTransitGatewayMulticastGroupSources",
 	},
-	{
+	"DescribeAccountAttributes": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeAccountAttributes",
@@ -311,7 +311,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeAccountAttributes",
 	},
-	{
+	"DescribeAddresses": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeAddresses",
@@ -322,7 +322,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeAddresses",
 	},
-	{
+	"DescribeAddressesAttribute": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeAddressesAttribute",
@@ -333,7 +333,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeAddressesAttribute",
 	},
-	{
+	"DescribeAggregateIdFormat": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeAggregateIdFormat",
@@ -344,7 +344,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeAggregateIdFormat",
 	},
-	{
+	"DescribeAvailabilityZones": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeAvailabilityZones",
@@ -355,7 +355,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeAvailabilityZones",
 	},
-	{
+	"DescribeBundleTasks": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeBundleTasks",
@@ -366,7 +366,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeBundleTasks",
 	},
-	{
+	"DescribeCapacityReservationFleets": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeCapacityReservationFleets",
@@ -377,7 +377,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeCapacityReservationFleets",
 	},
-	{
+	"DescribeCapacityReservations": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeCapacityReservations",
@@ -388,7 +388,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeCapacityReservations",
 	},
-	{
+	"DescribeCarrierGateways": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeCarrierGateways",
@@ -399,7 +399,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeCarrierGateways",
 	},
-	{
+	"DescribeClassicLinkInstances": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeClassicLinkInstances",
@@ -410,7 +410,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeClassicLinkInstances",
 	},
-	{
+	"DescribeClientVpnEndpoints": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeClientVpnEndpoints",
@@ -421,7 +421,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeClientVpnEndpoints",
 	},
-	{
+	"DescribeCoipPools": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeCoipPools",
@@ -432,7 +432,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeCoipPools",
 	},
-	{
+	"DescribeConversionTasks": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeConversionTasks",
@@ -443,7 +443,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeConversionTasks",
 	},
-	{
+	"DescribeCustomerGateways": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeCustomerGateways",
@@ -454,7 +454,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeCustomerGateways",
 	},
-	{
+	"DescribeDhcpOptions": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeDhcpOptions",
@@ -465,7 +465,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeDhcpOptions",
 	},
-	{
+	"DescribeEgressOnlyInternetGateways": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeEgressOnlyInternetGateways",
@@ -476,7 +476,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeEgressOnlyInternetGateways",
 	},
-	{
+	"DescribeElasticGpus": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeElasticGpus",
@@ -487,7 +487,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeElasticGpus",
 	},
-	{
+	"DescribeExportImageTasks": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeExportImageTasks",
@@ -498,7 +498,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeExportImageTasks",
 	},
-	{
+	"DescribeExportTasks": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeExportTasks",
@@ -509,7 +509,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeExportTasks",
 	},
-	{
+	"DescribeFastLaunchImages": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeFastLaunchImages",
@@ -520,7 +520,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeFastLaunchImages",
 	},
-	{
+	"DescribeFastSnapshotRestores": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeFastSnapshotRestores",
@@ -531,7 +531,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeFastSnapshotRestores",
 	},
-	{
+	"DescribeFleets": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeFleets",
@@ -542,7 +542,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeFleets",
 	},
-	{
+	"DescribeFlowLogs": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeFlowLogs",
@@ -553,7 +553,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeFlowLogs",
 	},
-	{
+	"DescribeFpgaImages": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeFpgaImages",
@@ -564,7 +564,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeFpgaImages",
 	},
-	{
+	"DescribeHostReservationOfferings": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeHostReservationOfferings",
@@ -575,7 +575,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeHostReservationOfferings",
 	},
-	{
+	"DescribeHostReservations": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeHostReservations",
@@ -586,7 +586,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeHostReservations",
 	},
-	{
+	"DescribeHosts": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeHosts",
@@ -597,7 +597,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeHosts",
 	},
-	{
+	"DescribeIamInstanceProfileAssociations": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeIamInstanceProfileAssociations",
@@ -608,7 +608,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeIamInstanceProfileAssociations",
 	},
-	{
+	"DescribeIdFormat": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeIdFormat",
@@ -619,7 +619,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeIdFormat",
 	},
-	{
+	"DescribeImages": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeImages",
@@ -630,7 +630,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeImages",
 	},
-	{
+	"DescribeImportImageTasks": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeImportImageTasks",
@@ -641,7 +641,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeImportImageTasks",
 	},
-	{
+	"DescribeImportSnapshotTasks": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeImportSnapshotTasks",
@@ -652,7 +652,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeImportSnapshotTasks",
 	},
-	{
+	"DescribeInstanceCreditSpecifications": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeInstanceCreditSpecifications",
@@ -663,7 +663,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeInstanceCreditSpecifications",
 	},
-	{
+	"DescribeInstanceEventNotificationAttributes": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeInstanceEventNotificationAttributes",
@@ -674,7 +674,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeInstanceEventNotificationAttributes",
 	},
-	{
+	"DescribeInstanceEventWindows": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeInstanceEventWindows",
@@ -685,7 +685,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeInstanceEventWindows",
 	},
-	{
+	"DescribeInstanceStatus": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeInstanceStatus",
@@ -696,7 +696,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeInstanceStatus",
 	},
-	{
+	"DescribeInstanceTypeOfferings": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeInstanceTypeOfferings",
@@ -707,7 +707,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeInstanceTypeOfferings",
 	},
-	{
+	"DescribeInstanceTypes": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeInstanceTypes",
@@ -718,7 +718,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeInstanceTypes",
 	},
-	{
+	"DescribeInstances": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeInstances",
@@ -729,7 +729,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeInstances",
 	},
-	{
+	"DescribeInternetGateways": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeInternetGateways",
@@ -740,7 +740,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeInternetGateways",
 	},
-	{
+	"DescribeIpamPools": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeIpamPools",
@@ -751,7 +751,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeIpamPools",
 	},
-	{
+	"DescribeIpamScopes": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeIpamScopes",
@@ -762,7 +762,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeIpamScopes",
 	},
-	{
+	"DescribeIpams": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeIpams",
@@ -773,7 +773,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeIpams",
 	},
-	{
+	"DescribeIpv6Pools": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeIpv6Pools",
@@ -784,7 +784,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeIpv6Pools",
 	},
-	{
+	"DescribeKeyPairs": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeKeyPairs",
@@ -795,7 +795,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeKeyPairs",
 	},
-	{
+	"DescribeLaunchTemplateVersions": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeLaunchTemplateVersions",
@@ -806,7 +806,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeLaunchTemplateVersions",
 	},
-	{
+	"DescribeLaunchTemplates": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeLaunchTemplates",
@@ -817,7 +817,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeLaunchTemplates",
 	},
-	{
+	"DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations",
@@ -828,7 +828,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations",
 	},
-	{
+	"DescribeLocalGatewayRouteTableVpcAssociations": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeLocalGatewayRouteTableVpcAssociations",
@@ -839,7 +839,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeLocalGatewayRouteTableVpcAssociations",
 	},
-	{
+	"DescribeLocalGatewayRouteTables": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeLocalGatewayRouteTables",
@@ -850,7 +850,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeLocalGatewayRouteTables",
 	},
-	{
+	"DescribeLocalGatewayVirtualInterfaceGroups": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeLocalGatewayVirtualInterfaceGroups",
@@ -861,7 +861,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeLocalGatewayVirtualInterfaceGroups",
 	},
-	{
+	"DescribeLocalGatewayVirtualInterfaces": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeLocalGatewayVirtualInterfaces",
@@ -872,7 +872,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeLocalGatewayVirtualInterfaces",
 	},
-	{
+	"DescribeLocalGateways": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeLocalGateways",
@@ -883,7 +883,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeLocalGateways",
 	},
-	{
+	"DescribeManagedPrefixLists": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeManagedPrefixLists",
@@ -894,7 +894,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeManagedPrefixLists",
 	},
-	{
+	"DescribeMovingAddresses": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeMovingAddresses",
@@ -905,7 +905,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeMovingAddresses",
 	},
-	{
+	"DescribeNatGateways": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeNatGateways",
@@ -916,7 +916,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeNatGateways",
 	},
-	{
+	"DescribeNetworkAcls": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeNetworkAcls",
@@ -927,7 +927,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeNetworkAcls",
 	},
-	{
+	"DescribeNetworkInsightsAccessScopeAnalyses": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeNetworkInsightsAccessScopeAnalyses",
@@ -938,7 +938,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeNetworkInsightsAccessScopeAnalyses",
 	},
-	{
+	"DescribeNetworkInsightsAccessScopes": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeNetworkInsightsAccessScopes",
@@ -949,7 +949,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeNetworkInsightsAccessScopes",
 	},
-	{
+	"DescribeNetworkInsightsAnalyses": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeNetworkInsightsAnalyses",
@@ -960,7 +960,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeNetworkInsightsAnalyses",
 	},
-	{
+	"DescribeNetworkInsightsPaths": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeNetworkInsightsPaths",
@@ -971,7 +971,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeNetworkInsightsPaths",
 	},
-	{
+	"DescribeNetworkInterfacePermissions": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeNetworkInterfacePermissions",
@@ -982,7 +982,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeNetworkInterfacePermissions",
 	},
-	{
+	"DescribeNetworkInterfaces": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeNetworkInterfaces",
@@ -993,7 +993,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeNetworkInterfaces",
 	},
-	{
+	"DescribePlacementGroups": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribePlacementGroups",
@@ -1004,7 +1004,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribePlacementGroups",
 	},
-	{
+	"DescribePrefixLists": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribePrefixLists",
@@ -1015,7 +1015,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribePrefixLists",
 	},
-	{
+	"DescribePrincipalIdFormat": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribePrincipalIdFormat",
@@ -1026,7 +1026,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribePrincipalIdFormat",
 	},
-	{
+	"DescribePublicIpv4Pools": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribePublicIpv4Pools",
@@ -1037,7 +1037,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribePublicIpv4Pools",
 	},
-	{
+	"DescribeRegions": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeRegions",
@@ -1048,7 +1048,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeRegions",
 	},
-	{
+	"DescribeReplaceRootVolumeTasks": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeReplaceRootVolumeTasks",
@@ -1059,7 +1059,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeReplaceRootVolumeTasks",
 	},
-	{
+	"DescribeReservedInstances": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeReservedInstances",
@@ -1070,7 +1070,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeReservedInstances",
 	},
-	{
+	"DescribeReservedInstancesListings": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeReservedInstancesListings",
@@ -1081,7 +1081,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeReservedInstancesListings",
 	},
-	{
+	"DescribeReservedInstancesModifications": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeReservedInstancesModifications",
@@ -1092,7 +1092,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeReservedInstancesModifications",
 	},
-	{
+	"DescribeReservedInstancesOfferings": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeReservedInstancesOfferings",
@@ -1103,7 +1103,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeReservedInstancesOfferings",
 	},
-	{
+	"DescribeRouteTables": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeRouteTables",
@@ -1114,7 +1114,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeRouteTables",
 	},
-	{
+	"DescribeScheduledInstances": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeScheduledInstances",
@@ -1125,7 +1125,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeScheduledInstances",
 	},
-	{
+	"DescribeSecurityGroupRules": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeSecurityGroupRules",
@@ -1136,7 +1136,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeSecurityGroupRules",
 	},
-	{
+	"DescribeSecurityGroups": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeSecurityGroups",
@@ -1147,7 +1147,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeSecurityGroups",
 	},
-	{
+	"DescribeSnapshotTierStatus": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeSnapshotTierStatus",
@@ -1158,7 +1158,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeSnapshotTierStatus",
 	},
-	{
+	"DescribeSnapshots": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeSnapshots",
@@ -1169,7 +1169,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeSnapshots",
 	},
-	{
+	"DescribeSpotDatafeedSubscription": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeSpotDatafeedSubscription",
@@ -1180,7 +1180,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeSpotDatafeedSubscription",
 	},
-	{
+	"DescribeSpotFleetRequests": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeSpotFleetRequests",
@@ -1191,7 +1191,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeSpotFleetRequests",
 	},
-	{
+	"DescribeSpotInstanceRequests": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeSpotInstanceRequests",
@@ -1202,7 +1202,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeSpotInstanceRequests",
 	},
-	{
+	"DescribeSpotPriceHistory": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeSpotPriceHistory",
@@ -1213,7 +1213,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeSpotPriceHistory",
 	},
-	{
+	"DescribeStoreImageTasks": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeStoreImageTasks",
@@ -1224,7 +1224,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeStoreImageTasks",
 	},
-	{
+	"DescribeSubnets": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeSubnets",
@@ -1235,7 +1235,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeSubnets",
 	},
-	{
+	"DescribeTags": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeTags",
@@ -1246,7 +1246,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeTags",
 	},
-	{
+	"DescribeTrafficMirrorFilters": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeTrafficMirrorFilters",
@@ -1257,7 +1257,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeTrafficMirrorFilters",
 	},
-	{
+	"DescribeTrafficMirrorSessions": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeTrafficMirrorSessions",
@@ -1268,7 +1268,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeTrafficMirrorSessions",
 	},
-	{
+	"DescribeTrafficMirrorTargets": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeTrafficMirrorTargets",
@@ -1279,7 +1279,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeTrafficMirrorTargets",
 	},
-	{
+	"DescribeTransitGatewayAttachments": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeTransitGatewayAttachments",
@@ -1290,7 +1290,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeTransitGatewayAttachments",
 	},
-	{
+	"DescribeTransitGatewayConnectPeers": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeTransitGatewayConnectPeers",
@@ -1301,7 +1301,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeTransitGatewayConnectPeers",
 	},
-	{
+	"DescribeTransitGatewayConnects": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeTransitGatewayConnects",
@@ -1312,7 +1312,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeTransitGatewayConnects",
 	},
-	{
+	"DescribeTransitGatewayMulticastDomains": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeTransitGatewayMulticastDomains",
@@ -1323,7 +1323,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeTransitGatewayMulticastDomains",
 	},
-	{
+	"DescribeTransitGatewayPeeringAttachments": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeTransitGatewayPeeringAttachments",
@@ -1334,7 +1334,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeTransitGatewayPeeringAttachments",
 	},
-	{
+	"DescribeTransitGatewayRouteTables": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeTransitGatewayRouteTables",
@@ -1345,7 +1345,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeTransitGatewayRouteTables",
 	},
-	{
+	"DescribeTransitGatewayVpcAttachments": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeTransitGatewayVpcAttachments",
@@ -1356,7 +1356,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeTransitGatewayVpcAttachments",
 	},
-	{
+	"DescribeTransitGateways": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeTransitGateways",
@@ -1367,7 +1367,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeTransitGateways",
 	},
-	{
+	"DescribeTrunkInterfaceAssociations": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeTrunkInterfaceAssociations",
@@ -1378,7 +1378,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeTrunkInterfaceAssociations",
 	},
-	{
+	"DescribeVolumeStatus": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeVolumeStatus",
@@ -1389,7 +1389,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeVolumeStatus",
 	},
-	{
+	"DescribeVolumes": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeVolumes",
@@ -1400,7 +1400,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeVolumes",
 	},
-	{
+	"DescribeVolumesModifications": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeVolumesModifications",
@@ -1411,7 +1411,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeVolumesModifications",
 	},
-	{
+	"DescribeVpcClassicLink": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeVpcClassicLink",
@@ -1422,7 +1422,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeVpcClassicLink",
 	},
-	{
+	"DescribeVpcClassicLinkDnsSupport": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeVpcClassicLinkDnsSupport",
@@ -1433,7 +1433,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeVpcClassicLinkDnsSupport",
 	},
-	{
+	"DescribeVpcEndpointConnectionNotifications": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeVpcEndpointConnectionNotifications",
@@ -1444,7 +1444,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeVpcEndpointConnectionNotifications",
 	},
-	{
+	"DescribeVpcEndpointConnections": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeVpcEndpointConnections",
@@ -1455,7 +1455,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeVpcEndpointConnections",
 	},
-	{
+	"DescribeVpcEndpointServiceConfigurations": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeVpcEndpointServiceConfigurations",
@@ -1466,7 +1466,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeVpcEndpointServiceConfigurations",
 	},
-	{
+	"DescribeVpcEndpointServices": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeVpcEndpointServices",
@@ -1477,7 +1477,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeVpcEndpointServices",
 	},
-	{
+	"DescribeVpcEndpoints": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeVpcEndpoints",
@@ -1488,7 +1488,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeVpcEndpoints",
 	},
-	{
+	"DescribeVpcPeeringConnections": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeVpcPeeringConnections",
@@ -1499,7 +1499,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeVpcPeeringConnections",
 	},
-	{
+	"DescribeVpcs": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeVpcs",
@@ -1510,7 +1510,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeVpcs",
 	},
-	{
+	"DescribeVpnConnections": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeVpnConnections",
@@ -1521,7 +1521,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeVpnConnections",
 	},
-	{
+	"DescribeVpnGateways": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeVpnGateways",
@@ -1532,7 +1532,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DescribeVpnGateways",
 	},
-	{
+	"DisableEbsEncryptionByDefault": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DisableEbsEncryptionByDefault",
@@ -1543,7 +1543,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DisableEbsEncryptionByDefault",
 	},
-	{
+	"DisableSerialConsoleAccess": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DisableSerialConsoleAccess",
@@ -1554,7 +1554,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DisableSerialConsoleAccess",
 	},
-	{
+	"DisableVpcClassicLinkDnsSupport": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DisableVpcClassicLinkDnsSupport",
@@ -1565,7 +1565,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DisableVpcClassicLinkDnsSupport",
 	},
-	{
+	"DisassociateAddress": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DisassociateAddress",
@@ -1576,7 +1576,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DisassociateAddress",
 	},
-	{
+	"DisassociateEnclaveCertificateIamRole": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DisassociateEnclaveCertificateIamRole",
@@ -1587,7 +1587,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DisassociateEnclaveCertificateIamRole",
 	},
-	{
+	"DisassociateTransitGatewayMulticastDomain": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DisassociateTransitGatewayMulticastDomain",
@@ -1598,7 +1598,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "DisassociateTransitGatewayMulticastDomain",
 	},
-	{
+	"EnableEbsEncryptionByDefault": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "EnableEbsEncryptionByDefault",
@@ -1609,7 +1609,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "EnableEbsEncryptionByDefault",
 	},
-	{
+	"EnableSerialConsoleAccess": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "EnableSerialConsoleAccess",
@@ -1620,7 +1620,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "EnableSerialConsoleAccess",
 	},
-	{
+	"EnableVpcClassicLinkDnsSupport": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "EnableVpcClassicLinkDnsSupport",
@@ -1631,7 +1631,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "EnableVpcClassicLinkDnsSupport",
 	},
-	{
+	"GetAssociatedEnclaveCertificateIamRoles": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetAssociatedEnclaveCertificateIamRoles",
@@ -1642,7 +1642,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "GetAssociatedEnclaveCertificateIamRoles",
 	},
-	{
+	"GetEbsDefaultKmsKeyId": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetEbsDefaultKmsKeyId",
@@ -1653,7 +1653,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "GetEbsDefaultKmsKeyId",
 	},
-	{
+	"GetEbsEncryptionByDefault": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetEbsEncryptionByDefault",
@@ -1664,7 +1664,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "GetEbsEncryptionByDefault",
 	},
-	{
+	"GetSerialConsoleAccessStatus": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetSerialConsoleAccessStatus",
@@ -1675,7 +1675,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "GetSerialConsoleAccessStatus",
 	},
-	{
+	"GetTransitGatewayMulticastDomainAssociations": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetTransitGatewayMulticastDomainAssociations",
@@ -1686,7 +1686,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "GetTransitGatewayMulticastDomainAssociations",
 	},
-	{
+	"GetVpnConnectionDeviceTypes": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetVpnConnectionDeviceTypes",
@@ -1697,7 +1697,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "GetVpnConnectionDeviceTypes",
 	},
-	{
+	"ImportImage": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "ImportImage",
@@ -1708,7 +1708,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "ImportImage",
 	},
-	{
+	"ImportSnapshot": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "ImportSnapshot",
@@ -1719,7 +1719,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "ImportSnapshot",
 	},
-	{
+	"ListImagesInRecycleBin": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "ListImagesInRecycleBin",
@@ -1730,7 +1730,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "ListImagesInRecycleBin",
 	},
-	{
+	"ListSnapshotsInRecycleBin": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "ListSnapshotsInRecycleBin",
@@ -1741,7 +1741,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "ListSnapshotsInRecycleBin",
 	},
-	{
+	"ModifyLaunchTemplate": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "ModifyLaunchTemplate",
@@ -1752,7 +1752,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "ModifyLaunchTemplate",
 	},
-	{
+	"ModifyPrivateDnsNameOptions": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "ModifyPrivateDnsNameOptions",
@@ -1763,7 +1763,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "ModifyPrivateDnsNameOptions",
 	},
-	{
+	"RegisterInstanceEventNotificationAttributes": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "RegisterInstanceEventNotificationAttributes",
@@ -1774,7 +1774,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "RegisterInstanceEventNotificationAttributes",
 	},
-	{
+	"RegisterTransitGatewayMulticastGroupMembers": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "RegisterTransitGatewayMulticastGroupMembers",
@@ -1785,7 +1785,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "RegisterTransitGatewayMulticastGroupMembers",
 	},
-	{
+	"RegisterTransitGatewayMulticastGroupSources": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "RegisterTransitGatewayMulticastGroupSources",
@@ -1796,7 +1796,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "RegisterTransitGatewayMulticastGroupSources",
 	},
-	{
+	"RejectTransitGatewayMulticastDomainAssociations": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "RejectTransitGatewayMulticastDomainAssociations",
@@ -1807,7 +1807,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "RejectTransitGatewayMulticastDomainAssociations",
 	},
-	{
+	"ReleaseAddress": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "ReleaseAddress",
@@ -1818,7 +1818,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "ReleaseAddress",
 	},
-	{
+	"RequestSpotInstances": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "RequestSpotInstances",
@@ -1829,7 +1829,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "RequestSpotInstances",
 	},
-	{
+	"ResetEbsDefaultKmsKeyId": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "ResetEbsDefaultKmsKeyId",
@@ -1840,7 +1840,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "ResetEbsDefaultKmsKeyId",
 	},
-	{
+	"RevokeSecurityGroupIngress": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "RevokeSecurityGroupIngress",
@@ -1851,7 +1851,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "RevokeSecurityGroupIngress",
 	},
-	{
+	"SearchTransitGatewayMulticastGroups": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "SearchTransitGatewayMulticastGroups",
@@ -1862,7 +1862,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "SearchTransitGatewayMulticastGroups",
 	},
-	{
+	"UpdateSecurityGroupRuleDescriptionsEgress": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "UpdateSecurityGroupRuleDescriptionsEgress",
@@ -1873,7 +1873,7 @@ var EC2Policies = []Service{
 		},
 		Permission: "UpdateSecurityGroupRuleDescriptionsEgress",
 	},
-	{
+	"UpdateSecurityGroupRuleDescriptionsIngress": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "UpdateSecurityGroupRuleDescriptionsIngress",
@@ -1886,7 +1886,7 @@ var EC2Policies = []Service{
 	},
 
 	// extras
-	{
+	"GetConsoleOutput": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetConsoleOutput",
@@ -1901,7 +1901,7 @@ var EC2Policies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "instance_id",
 	},
-	{
+	"GetConsoleScreenshot": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetConsoleScreenshot",
@@ -1916,7 +1916,7 @@ var EC2Policies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "instance_id",
 	},
-	{
+	"GetLaunchTemplateData": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetLaunchTemplateData",
@@ -1931,7 +1931,7 @@ var EC2Policies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "instance_id",
 	},
-	{
+	"GetPasswordData": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetPasswordData",

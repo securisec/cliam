@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var DMSPolicies = []Service{
-	{
+var DMSPolicies = map[string]Service{
+	"DescribeAccountAttributes": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var DMSPolicies = []Service{
 		},
 		Permission: "DescribeAccountAttributes",
 	},
-	{
+	"DescribeApplicableIndividualAssessments": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var DMSPolicies = []Service{
 		},
 		Permission: "DescribeApplicableIndividualAssessments",
 	},
-	{
+	"DescribeCertificates": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -30,7 +30,7 @@ var DMSPolicies = []Service{
 		},
 		Permission: "DescribeCertificates",
 	},
-	{
+	"DescribeConnections": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -39,7 +39,7 @@ var DMSPolicies = []Service{
 		},
 		Permission: "DescribeConnections",
 	},
-	{
+	"DescribeEndpointTypes": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -48,7 +48,7 @@ var DMSPolicies = []Service{
 		},
 		Permission: "DescribeEndpointTypes",
 	},
-	{
+	"DescribeEndpoints": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -57,7 +57,7 @@ var DMSPolicies = []Service{
 		},
 		Permission: "DescribeEndpoints",
 	},
-	{
+	"DescribeEventCategories": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -66,7 +66,7 @@ var DMSPolicies = []Service{
 		},
 		Permission: "DescribeEventCategories",
 	},
-	{
+	"DescribeEventSubscriptions": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -75,7 +75,7 @@ var DMSPolicies = []Service{
 		},
 		Permission: "DescribeEventSubscriptions",
 	},
-	{
+	"DescribeOrderableReplicationInstances": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -84,7 +84,7 @@ var DMSPolicies = []Service{
 		},
 		Permission: "DescribeOrderableReplicationInstances",
 	},
-	{
+	"DescribePendingMaintenanceActions": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -93,7 +93,7 @@ var DMSPolicies = []Service{
 		},
 		Permission: "DescribePendingMaintenanceActions",
 	},
-	{
+	"DescribeReplicationInstances": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -102,7 +102,7 @@ var DMSPolicies = []Service{
 		},
 		Permission: "DescribeReplicationInstances",
 	},
-	{
+	"DescribeReplicationSubnetGroups": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -111,7 +111,7 @@ var DMSPolicies = []Service{
 		},
 		Permission: "DescribeReplicationSubnetGroups",
 	},
-	{
+	"DescribeReplicationTaskAssessmentResults": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -120,7 +120,7 @@ var DMSPolicies = []Service{
 		},
 		Permission: "DescribeReplicationTaskAssessmentResults",
 	},
-	{
+	"DescribeReplicationTaskAssessmentRuns": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -129,7 +129,7 @@ var DMSPolicies = []Service{
 		},
 		Permission: "DescribeReplicationTaskAssessmentRuns",
 	},
-	{
+	"DescribeReplicationTaskIndividualAssessments": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -138,7 +138,7 @@ var DMSPolicies = []Service{
 		},
 		Permission: "DescribeReplicationTaskIndividualAssessments",
 	},
-	{
+	"DescribeReplicationTasks": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -147,7 +147,7 @@ var DMSPolicies = []Service{
 		},
 		Permission: "DescribeReplicationTasks",
 	},
-	{
+	"ListTagsForResource": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -158,7 +158,7 @@ var DMSPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeEndpointSettings": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -170,7 +170,7 @@ var DMSPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "engine_name",
 	},
-	{
+	"DescribeRefreshSchemasStatus": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -182,7 +182,7 @@ var DMSPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "endpoint_arn",
 	},
-	{
+	"DescribeReplicationInstanceTaskLogs": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -194,7 +194,7 @@ var DMSPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "replication_instance_arn",
 	},
-	{
+	"DescribeSchemas": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -206,7 +206,7 @@ var DMSPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "endpoint_arn",
 	},
-	{
+	"DescribeTableStatistics": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

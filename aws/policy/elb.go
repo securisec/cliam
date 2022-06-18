@@ -2,38 +2,38 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var ELBPolicies = []Service{
-	{
+var ELBPolicies = map[string]Service{
+	"DescribeAccountLimits": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=DescribeAccountLimits&Version=2015-12-01",
 		Permission:    "DescribeAccountLimits",
 	},
-	{
+	"DescribeLoadBalancers": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=DescribeLoadBalancers&Version=2015-12-01",
 		Permission:    "DescribeLoadBalancers",
 	},
-	{
+	"DescribeSSLPolicies": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=DescribeSSLPolicies&Version=2015-12-01",
 		Permission:    "DescribeSSLPolicies",
 	},
-	{
+	"DescribeTargetGroups": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=DescribeTargetGroups&Version=2015-12-01",
 		Permission:    "DescribeTargetGroups",
 	},
-	{
+	"DescribeLoadBalancerPolicies": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=DescribeLoadBalancerPolicies&Version=2012-06-01",
 		Permission:    "DescribeLoadBalancerPolicies",
 	},
-	{
+	"DescribeLoadBalancerPolicyTypes": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=DescribeLoadBalancerPolicyTypes&Version=2012-06-01",
@@ -41,7 +41,7 @@ var ELBPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeInstanceHealth": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeInstanceHealth",
@@ -56,7 +56,7 @@ var ELBPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "load_balancer_name",
 	},
-	{
+	"DescribeLoadBalancerAttributes": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeLoadBalancerAttributes",
@@ -71,7 +71,7 @@ var ELBPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "load_balancer_name",
 	},
-	{
+	"DescribeTags": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeTags",

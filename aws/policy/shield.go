@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var ShieldPolicies = []Service{
-	{
+var ShieldPolicies = map[string]Service{
+	"DescribeAttackStatistics": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var ShieldPolicies = []Service{
 		},
 		Permission: "DescribeAttackStatistics",
 	},
-	{
+	"DescribeDrtAccess": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var ShieldPolicies = []Service{
 		},
 		Permission: "DescribeDrtAccess",
 	},
-	{
+	"DescribeEmergencyContactSettings": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -30,7 +30,7 @@ var ShieldPolicies = []Service{
 		},
 		Permission: "DescribeEmergencyContactSettings",
 	},
-	{
+	"DescribeProtection": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -39,7 +39,7 @@ var ShieldPolicies = []Service{
 		},
 		Permission: "DescribeProtection",
 	},
-	{
+	"DescribeSubscription": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -48,7 +48,7 @@ var ShieldPolicies = []Service{
 		},
 		Permission: "DescribeSubscription",
 	},
-	{
+	"GetSubscriptionState": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -57,7 +57,7 @@ var ShieldPolicies = []Service{
 		},
 		Permission: "GetSubscriptionState",
 	},
-	{
+	"ListAttacks": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -66,7 +66,7 @@ var ShieldPolicies = []Service{
 		},
 		Permission: "ListAttacks",
 	},
-	{
+	"ListProtectionGroups": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -75,7 +75,7 @@ var ShieldPolicies = []Service{
 		},
 		Permission: "ListProtectionGroups",
 	},
-	{
+	"ListProtections": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -86,7 +86,7 @@ var ShieldPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeAttack": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -98,7 +98,7 @@ var ShieldPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "attack_id",
 	},
-	{
+	"DescribeProtectionGroup": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -110,7 +110,7 @@ var ShieldPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "protection_group_id",
 	},
-	{
+	"ListResourcesInProtectionGroup": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -122,7 +122,7 @@ var ShieldPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "protection_group_id",
 	},
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

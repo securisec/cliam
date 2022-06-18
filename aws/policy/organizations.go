@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var OrganizationsPolicies = []Service{
-	{
+var OrganizationsPolicies = map[string]Service{
+	"DescribeOrganization": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var OrganizationsPolicies = []Service{
 		},
 		Permission: "DescribeOrganization",
 	},
-	{
+	"ListAccounts": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var OrganizationsPolicies = []Service{
 		},
 		Permission: "ListAccounts",
 	},
-	{
+	"ListAwsServiceAccessForOrganization": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -30,7 +30,7 @@ var OrganizationsPolicies = []Service{
 		},
 		Permission: "ListAwsServiceAccessForOrganization",
 	},
-	{
+	"ListCreateAccountStatus": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -39,7 +39,7 @@ var OrganizationsPolicies = []Service{
 		},
 		Permission: "ListCreateAccountStatus",
 	},
-	{
+	"ListDelegatedAdministrators": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -48,7 +48,7 @@ var OrganizationsPolicies = []Service{
 		},
 		Permission: "ListDelegatedAdministrators",
 	},
-	{
+	"ListHandshakesForAccount": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -57,7 +57,7 @@ var OrganizationsPolicies = []Service{
 		},
 		Permission: "ListHandshakesForAccount",
 	},
-	{
+	"ListHandshakesForOrganization": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -66,7 +66,7 @@ var OrganizationsPolicies = []Service{
 		},
 		Permission: "ListHandshakesForOrganization",
 	},
-	{
+	"ListRoots": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -77,7 +77,7 @@ var OrganizationsPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeAccount": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -89,7 +89,7 @@ var OrganizationsPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "account_id",
 	},
-	{
+	"DescribeCreateAccountStatus": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -101,7 +101,7 @@ var OrganizationsPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "create_account_request_id",
 	},
-	{
+	"DescribeEffectivePolicy": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -113,7 +113,7 @@ var OrganizationsPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "policy_type",
 	},
-	{
+	"DescribeHandshake": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -125,7 +125,7 @@ var OrganizationsPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "handshake_id",
 	},
-	{
+	"DescribeOrganizationalUnit": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -137,7 +137,7 @@ var OrganizationsPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "organizational_unit_id",
 	},
-	{
+	"DescribePolicy": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -149,7 +149,7 @@ var OrganizationsPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "policy_id",
 	},
-	{
+	"ListAccountsForParent": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -161,7 +161,7 @@ var OrganizationsPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "parent_id",
 	},
-	{
+	"ListDelegatedServicesForAccount": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -173,7 +173,7 @@ var OrganizationsPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "account_id",
 	},
-	{
+	"ListOrganizationalUnitsForParent": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -185,7 +185,7 @@ var OrganizationsPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "parent_id",
 	},
-	{
+	"ListParents": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -197,7 +197,7 @@ var OrganizationsPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "child_id",
 	},
-	{
+	"ListPolicies": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -209,7 +209,7 @@ var OrganizationsPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "filter",
 	},
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -221,7 +221,7 @@ var OrganizationsPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "resource_id",
 	},
-	{
+	"ListTargetsForPolicy": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

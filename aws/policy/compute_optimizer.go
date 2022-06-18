@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var ComputeOptimizerPolicies = []Service{
-	{
+var ComputeOptimizerPolicies = map[string]Service{
+	"DescribeRecommendationExportJobs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var ComputeOptimizerPolicies = []Service{
 		},
 		Permission: "DescribeRecommendationExportJobs",
 	},
-	{
+	"GetAutoScalingGroupRecommendations": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var ComputeOptimizerPolicies = []Service{
 		},
 		Permission: "GetAutoScalingGroupRecommendations",
 	},
-	{
+	"GetEBSVolumeRecommendations": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -30,7 +30,7 @@ var ComputeOptimizerPolicies = []Service{
 		},
 		Permission: "GetEBSVolumeRecommendations",
 	},
-	{
+	"GetEC2InstanceRecommendations": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -39,7 +39,7 @@ var ComputeOptimizerPolicies = []Service{
 		},
 		Permission: "GetEC2InstanceRecommendations",
 	},
-	{
+	"GetEnrollmentStatus": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -48,7 +48,7 @@ var ComputeOptimizerPolicies = []Service{
 		},
 		Permission: "GetEnrollmentStatus",
 	},
-	{
+	"GetEnrollmentStatusesForOrganization": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -57,7 +57,7 @@ var ComputeOptimizerPolicies = []Service{
 		},
 		Permission: "GetEnrollmentStatusesForOrganization",
 	},
-	{
+	"GetLambdaFunctionRecommendations": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -66,7 +66,7 @@ var ComputeOptimizerPolicies = []Service{
 		},
 		Permission: "GetLambdaFunctionRecommendations",
 	},
-	{
+	"GetRecommendationSummaries": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -77,7 +77,7 @@ var ComputeOptimizerPolicies = []Service{
 	},
 
 	// extra
-	{
+	"GetEffectiveRecommendationPreferences": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
@@ -89,7 +89,7 @@ var ComputeOptimizerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "resource_arn",
 	},
-	{
+	"GetRecommendationPreferences": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,

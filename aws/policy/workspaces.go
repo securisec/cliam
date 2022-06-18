@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var WorkspacesPolicies = []Service{
-	{
+var WorkspacesPolicies = map[string]Service{
+	"DescribeAccount": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var WorkspacesPolicies = []Service{
 		},
 		Permission: "DescribeAccount",
 	},
-	{
+	"DescribeAccountModifications": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var WorkspacesPolicies = []Service{
 		},
 		Permission: "DescribeAccountModifications",
 	},
-	{
+	"DescribeConnectionAliases": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -30,7 +30,7 @@ var WorkspacesPolicies = []Service{
 		},
 		Permission: "DescribeConnectionAliases",
 	},
-	{
+	"DescribeIpGroups": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -39,7 +39,7 @@ var WorkspacesPolicies = []Service{
 		},
 		Permission: "DescribeIpGroups",
 	},
-	{
+	"DescribeWorkspaceBundles": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -48,7 +48,7 @@ var WorkspacesPolicies = []Service{
 		},
 		Permission: "DescribeWorkspaceBundles",
 	},
-	{
+	"DescribeWorkspaceDirectories": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -57,7 +57,7 @@ var WorkspacesPolicies = []Service{
 		},
 		Permission: "DescribeWorkspaceDirectories",
 	},
-	{
+	"DescribeWorkspaceImages": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -66,7 +66,7 @@ var WorkspacesPolicies = []Service{
 		},
 		Permission: "DescribeWorkspaceImages",
 	},
-	{
+	"DescribeWorkspaces": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -75,7 +75,7 @@ var WorkspacesPolicies = []Service{
 		},
 		Permission: "DescribeWorkspaces",
 	},
-	{
+	"DescribeWorkspacesConnectionStatus": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -86,7 +86,7 @@ var WorkspacesPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeClientBranding": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -98,7 +98,7 @@ var WorkspacesPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "resource_id",
 	},
-	{
+	"DescribeClientProperties": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -110,7 +110,7 @@ var WorkspacesPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "resource_ids",
 	},
-	{
+	"DescribeConnectClientAddIns": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -122,7 +122,7 @@ var WorkspacesPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "resource_id",
 	},
-	{
+	"DescribeConnectionAliasPermissions": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -134,7 +134,7 @@ var WorkspacesPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "alias_id",
 	},
-	{
+	"DescribeTags": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -146,7 +146,7 @@ var WorkspacesPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "resource_id",
 	},
-	{
+	"DescribeWorkspaceImagePermissions": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -158,7 +158,7 @@ var WorkspacesPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "image_id",
 	},
-	{
+	"DescribeWorkspaceSnapshots": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -170,7 +170,7 @@ var WorkspacesPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "workspace_id",
 	},
-	{
+	"ListAvailableManagementCidrRanges": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

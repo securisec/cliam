@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var NetworkFirewallPolicies = []Service{
-	{
+var NetworkFirewallPolicies = map[string]Service{
+	"DeleteFirewall": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var NetworkFirewallPolicies = []Service{
 		},
 		Permission: "DeleteFirewall",
 	},
-	{
+	"DeleteFirewallPolicy": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var NetworkFirewallPolicies = []Service{
 		},
 		Permission: "DeleteFirewallPolicy",
 	},
-	{
+	"DeleteRuleGroup": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -30,7 +30,7 @@ var NetworkFirewallPolicies = []Service{
 		},
 		Permission: "DeleteRuleGroup",
 	},
-	{
+	"DescribeFirewall": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -39,7 +39,7 @@ var NetworkFirewallPolicies = []Service{
 		},
 		Permission: "DescribeFirewall",
 	},
-	{
+	"DescribeFirewallPolicy": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -48,7 +48,7 @@ var NetworkFirewallPolicies = []Service{
 		},
 		Permission: "DescribeFirewallPolicy",
 	},
-	{
+	"DescribeLoggingConfiguration": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -57,7 +57,7 @@ var NetworkFirewallPolicies = []Service{
 		},
 		Permission: "DescribeLoggingConfiguration",
 	},
-	{
+	"DescribeRuleGroup": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -66,7 +66,7 @@ var NetworkFirewallPolicies = []Service{
 		},
 		Permission: "DescribeRuleGroup",
 	},
-	{
+	"DescribeRuleGroupMetadata": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -75,7 +75,7 @@ var NetworkFirewallPolicies = []Service{
 		},
 		Permission: "DescribeRuleGroupMetadata",
 	},
-	{
+	"ListFirewallPolicies": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -84,7 +84,7 @@ var NetworkFirewallPolicies = []Service{
 		},
 		Permission: "ListFirewallPolicies",
 	},
-	{
+	"ListFirewalls": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -93,7 +93,7 @@ var NetworkFirewallPolicies = []Service{
 		},
 		Permission: "ListFirewalls",
 	},
-	{
+	"ListRuleGroups": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -102,7 +102,7 @@ var NetworkFirewallPolicies = []Service{
 		},
 		Permission: "ListRuleGroups",
 	},
-	{
+	"UpdateFirewallDescription": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -111,7 +111,7 @@ var NetworkFirewallPolicies = []Service{
 		},
 		Permission: "UpdateFirewallDescription",
 	},
-	{
+	"UpdateLoggingConfiguration": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -122,7 +122,7 @@ var NetworkFirewallPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeResourcePolicy": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
@@ -134,7 +134,7 @@ var NetworkFirewallPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "resource_arn",
 	},
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,

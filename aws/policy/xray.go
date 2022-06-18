@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var XrayPolicies = []Service{
-	{
+var XrayPolicies = map[string]Service{
+	"GetGroups": {
 		ServiceSuffix: "Groups",
 		Method:        "POST",
 		JsonData:      map[string]string{},
@@ -12,7 +12,7 @@ var XrayPolicies = []Service{
 		},
 		Permission: "GetGroups",
 	},
-	{
+	"GetSamplingStatisticSummaries": {
 		ServiceSuffix: "SamplingStatisticSummaries",
 		Method:        "POST",
 		JsonData:      map[string]string{},
@@ -21,7 +21,7 @@ var XrayPolicies = []Service{
 		},
 		Permission: "GetSamplingStatisticSummaries",
 	},
-	{
+	"GetSamplingRules": {
 		ServiceSuffix: "GetSamplingRules",
 		Method:        "POST",
 		JsonData:      map[string]string{},
@@ -30,7 +30,7 @@ var XrayPolicies = []Service{
 		},
 		Permission: "GetSamplingRules",
 	},
-	{
+	"EncryptionConfig": {
 		ServiceSuffix: "EncryptionConfig",
 		Method:        "POST",
 		JsonData:      map[string]string{},
@@ -41,7 +41,7 @@ var XrayPolicies = []Service{
 	},
 
 	// extra
-	{
+	"GetInsight": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetInsight",
@@ -56,7 +56,7 @@ var XrayPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "insight_id",
 	},
-	{
+	"GetInsightEvents": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetInsightEvents",
@@ -71,7 +71,7 @@ var XrayPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "insight_id",
 	},
-	{
+	"GetSamplingTargets": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetSamplingTargets",
@@ -86,7 +86,7 @@ var XrayPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "sampling_statistics_documents",
 	},
-	{
+	"GetTraceGraph": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetTraceGraph",
@@ -101,7 +101,7 @@ var XrayPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "trace_ids",
 	},
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "ListTagsForResource",

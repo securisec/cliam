@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var KinesisPolicies = []Service{
-	{
+var KinesisPolicies = map[string]Service{
+	"DescribeLimits": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var KinesisPolicies = []Service{
 		},
 		Permission: "DescribeLimits",
 	},
-	{
+	"DescribeStreamConsumer": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var KinesisPolicies = []Service{
 		},
 		Permission: "DescribeStreamConsumer",
 	},
-	{
+	"ListStreams": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -32,7 +32,7 @@ var KinesisPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeStream": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -44,7 +44,7 @@ var KinesisPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "stream_name",
 	},
-	{
+	"DescribeStreamSummary": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -56,7 +56,7 @@ var KinesisPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "stream_name",
 	},
-	{
+	"GetRecords": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -68,7 +68,7 @@ var KinesisPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "shard_iterator",
 	},
-	{
+	"ListStreamConsumers": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -80,7 +80,7 @@ var KinesisPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "stream_arn",
 	},
-	{
+	"ListTagsForStream": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

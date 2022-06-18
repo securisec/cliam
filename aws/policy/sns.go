@@ -2,50 +2,50 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var SNSPolicies = []Service{
-	{
+var SNSPolicies = map[string]Service{
+	"GetSMSAttributes": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=GetSMSAttributes&Version=2010-03-31",
 		Permission:    "GetSMSAttributes",
 	},
-	{
+	"GetSMSSandboxAccountStatus": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=GetSMSSandboxAccountStatus&Version=2010-03-31",
 		Permission:    "GetSMSSandboxAccountStatus",
 	},
-	{
+	"ListOriginationNumbers": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=ListOriginationNumbers&Version=2010-03-31",
 		Permission:    "ListOriginationNumbers",
 	},
-	{
+	"ListPhoneNumbersOptedOut": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=ListPhoneNumbersOptedOut&Version=2010-03-31",
 		Permission:    "ListPhoneNumbersOptedOut",
 	},
-	{
+	"ListPlatformApplications": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=ListPlatformApplications&Version=2010-03-31",
 		Permission:    "ListPlatformApplications",
 	},
-	{
+	"ListSMSSandboxPhoneNumbers": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=ListSMSSandboxPhoneNumbers&Version=2010-03-31",
 		Permission:    "ListSMSSandboxPhoneNumbers",
 	},
-	{
+	"ListSubscriptions": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=ListSubscriptions&Version=2010-03-31",
 		Permission:    "ListSubscriptions",
 	},
-	{
+	"ListTopics": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=ListTopics&Version=2010-03-31",
@@ -53,7 +53,7 @@ var SNSPolicies = []Service{
 	},
 
 	// extra policies
-	{
+	"GetEndpointAttributes": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetEndpointAttributes",
@@ -68,7 +68,7 @@ var SNSPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "endpoint_arn",
 	},
-	{
+	"GetPlatformApplicationAttributes": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetPlatformApplicationAttributes",
@@ -83,7 +83,7 @@ var SNSPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "platform_application_arn",
 	},
-	{
+	"GetSubscriptionAttributes": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetSubscriptionAttributes",
@@ -98,7 +98,7 @@ var SNSPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "subscription_arn",
 	},
-	{
+	"GetTopicAttributes": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetTopicAttributes",
@@ -113,7 +113,7 @@ var SNSPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "topic_arn",
 	},
-	{
+	"ListEndpointsByPlatformApplication": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "ListEndpointsByPlatformApplication",
@@ -128,7 +128,7 @@ var SNSPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "platform_application_arn",
 	},
-	{
+	"ListSubscriptionsByTopic": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "ListSubscriptionsByTopic",
@@ -143,7 +143,7 @@ var SNSPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "topic_arn",
 	},
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "ListTagsForResource",

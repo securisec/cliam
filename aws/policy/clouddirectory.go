@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var CloudDirectoryPolicies = []Service{
-	{
+var CloudDirectoryPolicies = map[string]Service{
+	"ListDevelopmentSchemaArns": {
 		Method:        "POST",
 		ServiceSuffix: "amazonclouddirectory/2017-01-11/schema/development",
 		JsonData:      map[string]string{},
@@ -12,7 +12,7 @@ var CloudDirectoryPolicies = []Service{
 		},
 		Permission: "ListDevelopmentSchemaArns",
 	},
-	{
+	"ListDirectories": {
 		Method:        "POST",
 		ServiceSuffix: "amazonclouddirectory/2017-01-11/directory/list",
 		JsonData:      map[string]string{},
@@ -21,7 +21,7 @@ var CloudDirectoryPolicies = []Service{
 		},
 		Permission: "ListDirectories",
 	},
-	{
+	"ListManagedSchemaArns": {
 		Method:        "POST",
 		ServiceSuffix: "amazonclouddirectory/2017-01-11/schema/managed",
 		JsonData:      map[string]string{},
@@ -30,7 +30,7 @@ var CloudDirectoryPolicies = []Service{
 		},
 		Permission: "ListManagedSchemaArns",
 	},
-	{
+	"ListPublishedSchemaArns": {
 		Method:        "POST",
 		ServiceSuffix: "amazonclouddirectory/2017-01-11/schema/published",
 		JsonData:      map[string]string{},
@@ -41,7 +41,7 @@ var CloudDirectoryPolicies = []Service{
 	},
 
 	// extra
-	{
+	"GetAppliedSchemaVersion": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetAppliedSchemaVersion",
@@ -56,7 +56,7 @@ var CloudDirectoryPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "schema_arn",
 	},
-	{
+	"GetDirectory": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetDirectory",
@@ -71,7 +71,7 @@ var CloudDirectoryPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "directory_arn",
 	},
-	{
+	"GetSchemaAsJson": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetSchemaAsJson",
@@ -86,7 +86,7 @@ var CloudDirectoryPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "schema_arn",
 	},
-	{
+	"ListAppliedSchemaArns": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "ListAppliedSchemaArns",
@@ -101,7 +101,7 @@ var CloudDirectoryPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "directory_arn",
 	},
-	{
+	"ListFacetNames": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "ListFacetNames",
@@ -116,7 +116,7 @@ var CloudDirectoryPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "schema_arn",
 	},
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "ListTagsForResource",
@@ -131,7 +131,7 @@ var CloudDirectoryPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "resource_arn",
 	},
-	{
+	"ListTypedLinkFacetNames": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "ListTypedLinkFacetNames",

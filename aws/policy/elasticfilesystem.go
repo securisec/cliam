@@ -2,14 +2,14 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var ElasticFileSystemPolicies = []Service{
-	{
+var ElasticFileSystemPolicies = map[string]Service{
+	"DescribeFileSystems": {
 		ServiceSuffix: "2015-02-01/file-systems",
 		Permission:    "DescribeFileSystems",
 	},
 
 	// extra
-	{
+	"DescribeAcceleratorOfferings": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeAcceleratorOfferings",
@@ -24,7 +24,7 @@ var ElasticFileSystemPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "location_type",
 	},
-	{
+	"ListTagsForResource": {
 		ServiceSuffix:          "/tags/{{.resource_arn}}",
 		Permission:             "ListTagsForResource",
 		ExtraComponentLocation: "path",

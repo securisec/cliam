@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var LightsailPolicies = []Service{
-	{
+var LightsailPolicies = map[string]Service{
+	"GetActiveNames": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var LightsailPolicies = []Service{
 		},
 		Permission: "GetActiveNames",
 	},
-	{
+	"GetAlarms": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var LightsailPolicies = []Service{
 		},
 		Permission: "GetAlarms",
 	},
-	{
+	"GetBlueprints": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -30,7 +30,7 @@ var LightsailPolicies = []Service{
 		},
 		Permission: "GetBlueprints",
 	},
-	{
+	"GetBucketBundles": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -39,7 +39,7 @@ var LightsailPolicies = []Service{
 		},
 		Permission: "GetBucketBundles",
 	},
-	{
+	"GetBuckets": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -48,7 +48,7 @@ var LightsailPolicies = []Service{
 		},
 		Permission: "GetBuckets",
 	},
-	{
+	"GetBundles": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -57,7 +57,7 @@ var LightsailPolicies = []Service{
 		},
 		Permission: "GetBundles",
 	},
-	{
+	"GetCertificates": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -66,7 +66,7 @@ var LightsailPolicies = []Service{
 		},
 		Permission: "GetCertificates",
 	},
-	{
+	"GetCloudFormationStackRecords": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -75,7 +75,7 @@ var LightsailPolicies = []Service{
 		},
 		Permission: "GetCloudFormationStackRecords",
 	},
-	{
+	"GetContactMethods": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -84,7 +84,7 @@ var LightsailPolicies = []Service{
 		},
 		Permission: "GetContactMethods",
 	},
-	{
+	"GetContainerApiMetadata": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -93,7 +93,7 @@ var LightsailPolicies = []Service{
 		},
 		Permission: "GetContainerApiMetadata",
 	},
-	{
+	"GetContainerServicePowers": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -102,7 +102,7 @@ var LightsailPolicies = []Service{
 		},
 		Permission: "GetContainerServicePowers",
 	},
-	{
+	"GetContainerServices": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -111,7 +111,7 @@ var LightsailPolicies = []Service{
 		},
 		Permission: "GetContainerServices",
 	},
-	{
+	"GetDiskSnapshots": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -120,7 +120,7 @@ var LightsailPolicies = []Service{
 		},
 		Permission: "GetDiskSnapshots",
 	},
-	{
+	"GetDisks": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -129,7 +129,7 @@ var LightsailPolicies = []Service{
 		},
 		Permission: "GetDisks",
 	},
-	{
+	"GetDistributionBundles": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -138,7 +138,7 @@ var LightsailPolicies = []Service{
 		},
 		Permission: "GetDistributionBundles",
 	},
-	{
+	"GetDistributionLatestCacheReset": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -147,7 +147,7 @@ var LightsailPolicies = []Service{
 		},
 		Permission: "GetDistributionLatestCacheReset",
 	},
-	{
+	"GetDistributions": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -156,7 +156,7 @@ var LightsailPolicies = []Service{
 		},
 		Permission: "GetDistributions",
 	},
-	{
+	"GetDomains": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -165,7 +165,7 @@ var LightsailPolicies = []Service{
 		},
 		Permission: "GetDomains",
 	},
-	{
+	"GetExportSnapshotRecords": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -174,7 +174,7 @@ var LightsailPolicies = []Service{
 		},
 		Permission: "GetExportSnapshotRecords",
 	},
-	{
+	"GetInstanceSnapshots": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -183,7 +183,7 @@ var LightsailPolicies = []Service{
 		},
 		Permission: "GetInstanceSnapshots",
 	},
-	{
+	"GetInstances": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -192,7 +192,7 @@ var LightsailPolicies = []Service{
 		},
 		Permission: "GetInstances",
 	},
-	{
+	"GetKeyPairs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -201,7 +201,7 @@ var LightsailPolicies = []Service{
 		},
 		Permission: "GetKeyPairs",
 	},
-	{
+	"GetLoadBalancers": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -210,7 +210,7 @@ var LightsailPolicies = []Service{
 		},
 		Permission: "GetLoadBalancers",
 	},
-	{
+	"GetOperations": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -219,7 +219,7 @@ var LightsailPolicies = []Service{
 		},
 		Permission: "GetOperations",
 	},
-	{
+	"GetRegions": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -228,7 +228,7 @@ var LightsailPolicies = []Service{
 		},
 		Permission: "GetRegions",
 	},
-	{
+	"GetRelationalDatabaseBlueprints": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -237,7 +237,7 @@ var LightsailPolicies = []Service{
 		},
 		Permission: "GetRelationalDatabaseBlueprints",
 	},
-	{
+	"GetRelationalDatabaseBundles": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -246,7 +246,7 @@ var LightsailPolicies = []Service{
 		},
 		Permission: "GetRelationalDatabaseBundles",
 	},
-	{
+	"GetRelationalDatabaseSnapshots": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -255,7 +255,7 @@ var LightsailPolicies = []Service{
 		},
 		Permission: "GetRelationalDatabaseSnapshots",
 	},
-	{
+	"GetRelationalDatabases": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -264,7 +264,7 @@ var LightsailPolicies = []Service{
 		},
 		Permission: "GetRelationalDatabases",
 	},
-	{
+	"GetStaticIps": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -275,7 +275,7 @@ var LightsailPolicies = []Service{
 	},
 
 	// extra
-	{
+	"GetAutoSnapshots": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -287,7 +287,7 @@ var LightsailPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "resource_name",
 	},
-	{
+	"GetBucketAccessKeys": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -299,7 +299,7 @@ var LightsailPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "bucket_name",
 	},
-	{
+	"GetContainerImages": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -311,7 +311,7 @@ var LightsailPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "service_name",
 	},
-	{
+	"GetContainerServiceDeployments": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -323,7 +323,7 @@ var LightsailPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "service_name",
 	},
-	{
+	"GetDisk": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -335,7 +335,7 @@ var LightsailPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "disk_name",
 	},
-	{
+	"GetDiskSnapshot": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -347,7 +347,7 @@ var LightsailPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "disk_snapshot_name",
 	},
-	{
+	"GetDomain": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -359,7 +359,7 @@ var LightsailPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "domain_name",
 	},
-	{
+	"GetInstance": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -371,7 +371,7 @@ var LightsailPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "instance_name",
 	},
-	{
+	"GetInstanceAccessDetails": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -383,7 +383,7 @@ var LightsailPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "instance_name",
 	},
-	{
+	"GetInstancePortStates": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -395,7 +395,7 @@ var LightsailPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "instance_name",
 	},
-	{
+	"GetInstanceSnapshot": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -407,7 +407,7 @@ var LightsailPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "instance_snapshot_name",
 	},
-	{
+	"GetInstanceState": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -419,7 +419,7 @@ var LightsailPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "instance_name",
 	},
-	{
+	"GetKeyPair": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -431,7 +431,7 @@ var LightsailPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "key_pair_name",
 	},
-	{
+	"GetLoadBalancer": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -443,7 +443,7 @@ var LightsailPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "load_balancer_name",
 	},
-	{
+	"GetLoadBalancerTlsCertificates": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -455,7 +455,7 @@ var LightsailPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "load_balancer_name",
 	},
-	{
+	"GetOperation": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -467,7 +467,7 @@ var LightsailPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "operation_id",
 	},
-	{
+	"GetOperationsForResource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -479,7 +479,7 @@ var LightsailPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "resource_name",
 	},
-	{
+	"GetRelationalDatabase": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -491,7 +491,7 @@ var LightsailPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "relational_database_name",
 	},
-	{
+	"GetRelationalDatabaseEvents": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -503,7 +503,7 @@ var LightsailPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "relational_database_name",
 	},
-	{
+	"GetRelationalDatabaseLogStreams": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -515,7 +515,7 @@ var LightsailPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "relational_database_name",
 	},
-	{
+	"GetRelationalDatabaseMasterUserPassword": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -527,7 +527,7 @@ var LightsailPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "relational_database_name",
 	},
-	{
+	"GetRelationalDatabaseParameters": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -539,7 +539,7 @@ var LightsailPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "relational_database_name",
 	},
-	{
+	"GetRelationalDatabaseSnapshot": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -551,7 +551,7 @@ var LightsailPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "relational_database_snapshot_name",
 	},
-	{
+	"GetStaticIp": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var TransferPolicies = []Service{
-	{
+var TransferPolicies = map[string]Service{
+	"CreateServer": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var TransferPolicies = []Service{
 		},
 		Permission: "CreateServer",
 	},
-	{
+	"ListSecurityPolicies": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var TransferPolicies = []Service{
 		},
 		Permission: "ListSecurityPolicies",
 	},
-	{
+	"ListServers": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -30,7 +30,7 @@ var TransferPolicies = []Service{
 		},
 		Permission: "ListServers",
 	},
-	{
+	"ListWorkflows": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -41,7 +41,7 @@ var TransferPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeSecurityPolicy": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -53,7 +53,7 @@ var TransferPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "security_policy_name",
 	},
-	{
+	"DescribeServer": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -65,7 +65,7 @@ var TransferPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "server_id",
 	},
-	{
+	"DescribeWorkflow": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -77,7 +77,7 @@ var TransferPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "workflow_id",
 	},
-	{
+	"ListAccesses": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -89,7 +89,7 @@ var TransferPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "server_id",
 	},
-	{
+	"ListExecutions": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -101,7 +101,7 @@ var TransferPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "workflow_id",
 	},
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -113,7 +113,7 @@ var TransferPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "arn",
 	},
-	{
+	"ListUsers": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

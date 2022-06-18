@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var FraudDetectorPolicies = []Service{
-	{
+var FraudDetectorPolicies = map[string]Service{
+	"DescribeModelVersions": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var FraudDetectorPolicies = []Service{
 		},
 		Permission: "DescribeModelVersions",
 	},
-	{
+	"GetBatchImportJobs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var FraudDetectorPolicies = []Service{
 		},
 		Permission: "GetBatchImportJobs",
 	},
-	{
+	"GetBatchPredictionJobs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -30,7 +30,7 @@ var FraudDetectorPolicies = []Service{
 		},
 		Permission: "GetBatchPredictionJobs",
 	},
-	{
+	"GetDetectors": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -39,7 +39,7 @@ var FraudDetectorPolicies = []Service{
 		},
 		Permission: "GetDetectors",
 	},
-	{
+	"GetEntityTypes": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -48,7 +48,7 @@ var FraudDetectorPolicies = []Service{
 		},
 		Permission: "GetEntityTypes",
 	},
-	{
+	"GetEventTypes": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -57,7 +57,7 @@ var FraudDetectorPolicies = []Service{
 		},
 		Permission: "GetEventTypes",
 	},
-	{
+	"GetExternalModels": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -66,7 +66,7 @@ var FraudDetectorPolicies = []Service{
 		},
 		Permission: "GetExternalModels",
 	},
-	{
+	"GetLabels": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -75,7 +75,7 @@ var FraudDetectorPolicies = []Service{
 		},
 		Permission: "GetLabels",
 	},
-	{
+	"GetModels": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -84,7 +84,7 @@ var FraudDetectorPolicies = []Service{
 		},
 		Permission: "GetModels",
 	},
-	{
+	"GetOutcomes": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -93,7 +93,7 @@ var FraudDetectorPolicies = []Service{
 		},
 		Permission: "GetOutcomes",
 	},
-	{
+	"GetVariables": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -102,7 +102,7 @@ var FraudDetectorPolicies = []Service{
 		},
 		Permission: "GetVariables",
 	},
-	{
+	"ListEventPredictions": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -113,7 +113,7 @@ var FraudDetectorPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeDetector": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -125,7 +125,7 @@ var FraudDetectorPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "detector_id",
 	},
-	{
+	"GetDeleteEventsByEventTypeStatus": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -137,7 +137,7 @@ var FraudDetectorPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "event_type_name",
 	},
-	{
+	"GetRules": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -149,7 +149,7 @@ var FraudDetectorPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "detector_id",
 	},
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var EventsPolicies = []Service{
-	{
+var EventsPolicies = map[string]Service{
+	"DescribeEventBus": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var EventsPolicies = []Service{
 		},
 		Permission: "DescribeEventBus",
 	},
-	{
+	"ListApiDestinations": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var EventsPolicies = []Service{
 		},
 		Permission: "ListApiDestinations",
 	},
-	{
+	"ListArchives": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -30,7 +30,7 @@ var EventsPolicies = []Service{
 		},
 		Permission: "ListArchives",
 	},
-	{
+	"ListConnections": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -39,7 +39,7 @@ var EventsPolicies = []Service{
 		},
 		Permission: "ListConnections",
 	},
-	{
+	"ListEventBuses": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -48,7 +48,7 @@ var EventsPolicies = []Service{
 		},
 		Permission: "ListEventBuses",
 	},
-	{
+	"ListReplays": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -57,7 +57,7 @@ var EventsPolicies = []Service{
 		},
 		Permission: "ListReplays",
 	},
-	{
+	"ListRules": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -66,7 +66,7 @@ var EventsPolicies = []Service{
 		},
 		Permission: "ListRules",
 	},
-	{
+	"ListEndpoints": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -75,18 +75,9 @@ var EventsPolicies = []Service{
 		},
 		Permission: "ListEndpoints",
 	},
-	{
-		Method:   "POST",
-		JsonData: map[string]string{},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
-			aws_X_AMZ_TARGET:           "AWSEvents.ListRules",
-		},
-		Permission: "ListRules",
-	},
 
 	// extra
-	{
+	"DescribeApiDestination": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -98,7 +89,7 @@ var EventsPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "name",
 	},
-	{
+	"DescribeArchive": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -110,7 +101,7 @@ var EventsPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "archive_name",
 	},
-	{
+	"DescribeConnection": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -122,7 +113,7 @@ var EventsPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "name",
 	},
-	{
+	"DescribeEventSource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -134,7 +125,7 @@ var EventsPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "name",
 	},
-	{
+	"DescribePartnerEventSource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -146,7 +137,7 @@ var EventsPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "name",
 	},
-	{
+	"DescribeReplay": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -158,7 +149,7 @@ var EventsPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "replay_name",
 	},
-	{
+	"DescribeRule": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -170,7 +161,7 @@ var EventsPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "name",
 	},
-	{
+	"ListPartnerEventSourceAccounts": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -182,7 +173,7 @@ var EventsPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "event_source_name",
 	},
-	{
+	"ListPartnerEventSources": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -194,7 +185,7 @@ var EventsPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "name_prefix",
 	},
-	{
+	"ListRuleNamesByTarget": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -206,7 +197,7 @@ var EventsPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "target_arn",
 	},
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -218,7 +209,7 @@ var EventsPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "resource_arn",
 	},
-	{
+	"ListTargetsByRule": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

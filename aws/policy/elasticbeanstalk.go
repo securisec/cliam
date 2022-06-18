@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var ElasticBeanStalkPolicies = []Service{
-	{
+var ElasticBeanStalkPolicies = map[string]Service{
+	"DescribeApplications": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=DescribeApplications&Version=2010-12-01",
@@ -12,7 +12,7 @@ var ElasticBeanStalkPolicies = []Service{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 	},
-	{
+	"DescribeApplicationVersions": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=DescribeApplicationVersions&Version=2010-12-01",
@@ -21,7 +21,7 @@ var ElasticBeanStalkPolicies = []Service{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 	},
-	{
+	"DescribeEvents": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=DescribeEvents&Version=2010-12-01",
@@ -30,7 +30,7 @@ var ElasticBeanStalkPolicies = []Service{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 	},
-	{
+	"DescribeAccountAttributes": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=DescribeAccountAttributes&Version=2010-12-01",
@@ -39,7 +39,7 @@ var ElasticBeanStalkPolicies = []Service{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 	},
-	{
+	"ListAvailableSolutionStacks": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=ListAvailableSolutionStacks&Version=2010-12-01",
@@ -48,7 +48,7 @@ var ElasticBeanStalkPolicies = []Service{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 	},
-	{
+	"ListPlatformBranches": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=ListPlatformBranches&Version=2010-12-01",
@@ -57,7 +57,7 @@ var ElasticBeanStalkPolicies = []Service{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 	},
-	{
+	"ListPlatformVersions": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=ListPlatformVersions&Version=2010-12-01",
@@ -67,8 +67,8 @@ var ElasticBeanStalkPolicies = []Service{
 		},
 	},
 
-	// extra permissions
-	{
+	// extra
+	"DescribeInstanceHealth": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeInstanceHealth",
@@ -83,7 +83,7 @@ var ElasticBeanStalkPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "load_balancer_name",
 	},
-	{
+	"DescribeLoadBalancerAttributes": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeLoadBalancerAttributes",
@@ -98,7 +98,7 @@ var ElasticBeanStalkPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "load_balancer_name",
 	},
-	{
+	"DescribeTags": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeTags",
@@ -115,7 +115,7 @@ var ElasticBeanStalkPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeConfigurationSettings": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeConfigurationSettings",
@@ -130,7 +130,7 @@ var ElasticBeanStalkPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "application_name",
 	},
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "ListTagsForResource",

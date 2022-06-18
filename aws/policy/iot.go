@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var IOTPolicies = []Service{
-	{
+var IOTPolicies = map[string]Service{
+	"CreateKeysAndCertificate": {
 		Method:        "POST",
 		ServiceSuffix: "keys-and-certificate",
 		JsonData:      map[string]string{},
@@ -12,32 +12,32 @@ var IOTPolicies = []Service{
 		},
 		Permission: "CreateKeysAndCertificate",
 	},
-	{
+	"DescribeAccountAuditConfiguration": {
 		Method:        "GET",
 		ServiceSuffix: "audit/configuration",
 		Permission:    "DescribeAccountAuditConfiguration",
 	},
-	{
+	"DescribeDefaultAuthorizer": {
 		Method:        "GET",
 		ServiceSuffix: "default-authorizer",
 		Permission:    "DescribeDefaultAuthorizer",
 	},
-	{
+	"DescribeEndpoint": {
 		Method:        "GET",
 		ServiceSuffix: "endpoint",
 		Permission:    "DescribeEndpoint",
 	},
-	{
+	"DescribeEventConfigurations": {
 		Method:        "GET",
 		ServiceSuffix: "event-configurations",
 		Permission:    "DescribeEventConfigurations",
 	},
-	{
+	"GetBehaviorModelTrainingSummaries": {
 		Method:        "GET",
 		ServiceSuffix: "behavior-model-training/summaries",
 		Permission:    "GetBehaviorModelTrainingSummaries",
 	},
-	{
+	"GetEffectivePolicies": {
 		Method:        "POST",
 		ServiceSuffix: "effective-policies",
 		JsonData:      map[string]string{},
@@ -46,32 +46,32 @@ var IOTPolicies = []Service{
 		},
 		Permission: "GetEffectivePolicies",
 	},
-	{
+	"GetIndexingConfiguration": {
 		Method:        "GET",
 		ServiceSuffix: "indexing/config",
 		Permission:    "GetIndexingConfiguration",
 	},
-	{
+	"GetLoggingOptions": {
 		Method:        "GET",
 		ServiceSuffix: "loggingOptions",
 		Permission:    "GetLoggingOptions",
 	},
-	{
+	"GetRegistrationCode": {
 		Method:        "GET",
 		ServiceSuffix: "registrationcode",
 		Permission:    "GetRegistrationCode",
 	},
-	{
+	"GetV2LoggingOptions": {
 		Method:        "GET",
 		ServiceSuffix: "v2LoggingOptions",
 		Permission:    "GetV2LoggingOptions",
 	},
-	{
+	"ListActiveViolations": {
 		Method:        "GET",
 		ServiceSuffix: "active-violations",
 		Permission:    "ListActiveViolations",
 	},
-	{
+	"ListAuditFindings": {
 		Method:        "POST",
 		ServiceSuffix: "audit/findings",
 		JsonData:      map[string]string{},
@@ -80,7 +80,7 @@ var IOTPolicies = []Service{
 		},
 		Permission: "ListAuditFindings",
 	},
-	{
+	"ListAuditSuppressions": {
 		Method:        "POST",
 		ServiceSuffix: "audit/suppressions/list",
 		JsonData:      map[string]string{},
@@ -89,152 +89,152 @@ var IOTPolicies = []Service{
 		},
 		Permission: "ListAuditSuppressions",
 	},
-	{
+	"ListAuthorizers": {
 		Method:        "GET",
 		ServiceSuffix: "authorizers/",
 		Permission:    "ListAuthorizers",
 	},
-	{
+	"ListBillingGroups": {
 		Method:        "GET",
 		ServiceSuffix: "billing-groups",
 		Permission:    "ListBillingGroups",
 	},
-	{
+	"ListCACertificates": {
 		Method:        "GET",
 		ServiceSuffix: "cacertificates",
 		Permission:    "ListCACertificates",
 	},
-	{
+	"ListCertificates": {
 		Method:        "GET",
 		ServiceSuffix: "certificates",
 		Permission:    "ListCertificates",
 	},
-	{
+	"ListCustomMetrics": {
 		Method:        "GET",
 		ServiceSuffix: "custom-metrics",
 		Permission:    "ListCustomMetrics",
 	},
-	{
+	"ListDetectMitigationActionsExecutions": {
 		Method:        "GET",
 		ServiceSuffix: "detect/mitigationactions/executions",
 		Permission:    "ListDetectMitigationActionsExecutions",
 	},
-	{
+	"ListDimensions": {
 		Method:        "GET",
 		ServiceSuffix: "dimensions",
 		Permission:    "ListDimensions",
 	},
-	{
+	"ListDomainConfigurations": {
 		Method:        "GET",
 		ServiceSuffix: "domainConfigurations",
 		Permission:    "ListDomainConfigurations",
 	},
-	{
+	"ListFleetMetrics": {
 		Method:        "GET",
 		ServiceSuffix: "fleet-metrics",
 		Permission:    "ListFleetMetrics",
 	},
-	{
+	"ListIndices": {
 		Method:        "GET",
 		ServiceSuffix: "indices",
 		Permission:    "ListIndices",
 	},
-	{
+	"ListJobTemplates": {
 		Method:        "GET",
 		ServiceSuffix: "job-templates",
 		Permission:    "ListJobTemplates",
 	},
-	{
+	"ListJobs": {
 		Method:        "GET",
 		ServiceSuffix: "jobs",
 		Permission:    "ListJobs",
 	},
-	{
+	"ListManagedJobTemplates": {
 		Method:        "GET",
 		ServiceSuffix: "managed-job-templates",
 		Permission:    "ListManagedJobTemplates",
 	},
-	{
+	"ListMitigationActions": {
 		Method:        "GET",
 		ServiceSuffix: "mitigationactions/actions",
 		Permission:    "ListMitigationActions",
 	},
-	{
+	"ListOTAUpdates": {
 		Method:        "GET",
 		ServiceSuffix: "otaUpdates",
 		Permission:    "ListOTAUpdates",
 	},
-	{
+	"ListOutgoingCertificates": {
 		Method:        "GET",
 		ServiceSuffix: "certificates-out-going",
 		Permission:    "ListOutgoingCertificates",
 	},
-	{
+	"ListPolicies": {
 		Method:        "GET",
 		ServiceSuffix: "policies",
 		Permission:    "ListPolicies",
 	},
-	{
+	"ListProvisioningTemplates": {
 		Method:        "GET",
 		ServiceSuffix: "provisioning-templates",
 		Permission:    "ListProvisioningTemplates",
 	},
-	{
+	"ListRoleAliases": {
 		Method:        "GET",
 		ServiceSuffix: "role-aliases",
 		Permission:    "ListRoleAliases",
 	},
-	{
+	"ListScheduledAudits": {
 		Method:        "GET",
 		ServiceSuffix: "audit/scheduledaudits",
 		Permission:    "ListScheduledAudits",
 	},
-	{
+	"ListSecurityProfiles": {
 		Method:        "GET",
 		ServiceSuffix: "security-profiles",
 		Permission:    "ListSecurityProfiles",
 	},
-	{
+	"ListStreams": {
 		Method:        "GET",
 		ServiceSuffix: "streams",
 		Permission:    "ListStreams",
 	},
-	{
+	"ListThingGroups": {
 		Method:        "GET",
 		ServiceSuffix: "thing-groups",
 		Permission:    "ListThingGroups",
 	},
-	{
+	"ListThingRegistrationTasks": {
 		Method:        "GET",
 		ServiceSuffix: "thing-registration-tasks",
 		Permission:    "ListThingRegistrationTasks",
 	},
-	{
+	"ListThingTypes": {
 		Method:        "GET",
 		ServiceSuffix: "thing-types",
 		Permission:    "ListThingTypes",
 	},
-	{
+	"ListThings": {
 		Method:        "GET",
 		ServiceSuffix: "things",
 		Permission:    "ListThings",
 	},
-	{
+	"ListTopicRuleDestinations": {
 		Method:        "GET",
 		ServiceSuffix: "destinations",
 		Permission:    "ListTopicRuleDestinations",
 	},
-	{
+	"ListTopicRules": {
 		Method:        "GET",
 		ServiceSuffix: "rules",
 		Permission:    "ListTopicRules",
 	},
-	{
+	"ListV2LoggingLevels": {
 		Method:        "GET",
 		ServiceSuffix: "v2LoggingLevel",
 		Permission:    "ListV2LoggingLevels",
 	},
-	{
+	"SetV2LoggingOptions": {
 		Method:        "POST",
 		ServiceSuffix: "v2LoggingOptions",
 		JsonData:      map[string]string{},
@@ -243,7 +243,7 @@ var IOTPolicies = []Service{
 		},
 		Permission: "SetV2LoggingOptions",
 	},
-	{
+	"UpdateIndexingConfiguration": {
 		Method:        "POST",
 		ServiceSuffix: "indexing/config",
 		JsonData:      map[string]string{},
@@ -254,189 +254,189 @@ var IOTPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeAuditFinding": {
 		ServiceSuffix:          "/audit/findings/{{.finding_id}}",
 		Permission:             "DescribeAuditFinding",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "finding_id",
 	},
-	{
+	"DescribeAuditMitigationActionsTask": {
 		ServiceSuffix:          "/audit/mitigationactions/tasks/{{.task_id}}",
 		Permission:             "DescribeAuditMitigationActionsTask",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "task_id",
 	},
-	{
+	"DescribeAuditTask": {
 		ServiceSuffix:          "/audit/tasks/{{.task_id}}",
 		Permission:             "DescribeAuditTask",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "task_id",
 	},
-	{
+	"DescribeAuthorizer": {
 		ServiceSuffix:          "/authorizer/{{.authorizer_name}}",
 		Permission:             "DescribeAuthorizer",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "authorizer_name",
 	},
-	{
+	"DescribeBillingGroup": {
 		ServiceSuffix:          "/billing-groups/{{.billing_group_name}}",
 		Permission:             "DescribeBillingGroup",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "billing_group_name",
 	},
-	{
+	"DescribeCACertificate": {
 		ServiceSuffix:          "/cacertificate/{{.certificate_id}}",
 		Permission:             "DescribeCACertificate",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "certificate_id",
 	},
-	{
+	"DescribeCertificate": {
 		ServiceSuffix:          "/certificates/{{.certificate_id}}",
 		Permission:             "DescribeCertificate",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "certificate_id",
 	},
-	{
+	"DescribeCustomMetric": {
 		ServiceSuffix:          "/custom-metric/{{.metric_name}}",
 		Permission:             "DescribeCustomMetric",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "metric_name",
 	},
-	{
+	"DescribeDetectMitigationActionsTask": {
 		ServiceSuffix:          "/detect/mitigationactions/tasks/{{.task_id}}",
 		Permission:             "DescribeDetectMitigationActionsTask",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "task_id",
 	},
-	{
+	"DescribeDimension": {
 		ServiceSuffix:          "/dimensions/{{.name}}",
 		Permission:             "DescribeDimension",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "name",
 	},
-	{
+	"DescribeDomainConfiguration": {
 		ServiceSuffix:          "/domainConfigurations/{{.domain_configuration_name}}",
 		Permission:             "DescribeDomainConfiguration",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "domain_configuration_name",
 	},
-	{
+	"DescribeFleetMetric": {
 		ServiceSuffix:          "/fleet-metric/{{.metric_name}}",
 		Permission:             "DescribeFleetMetric",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "metric_name",
 	},
-	{
+	"DescribeIndex": {
 		ServiceSuffix:          "/indices/{{.index_name}}",
 		Permission:             "DescribeIndex",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "index_name",
 	},
-	{
+	"DescribeJob": {
 		ServiceSuffix:          "/jobs/{{.job_id}}",
 		Permission:             "DescribeJob",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "job_id",
 	},
-	{
+	"DescribeJobTemplate": {
 		ServiceSuffix:          "/job-templates/{{.job_template_id}}",
 		Permission:             "DescribeJobTemplate",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "job_template_id",
 	},
-	{
+	"DescribeManagedJobTemplate": {
 		ServiceSuffix:          "/managed-job-templates/{{.template_name}}",
 		Permission:             "DescribeManagedJobTemplate",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "template_name",
 	},
-	{
+	"DescribeMitigationAction": {
 		ServiceSuffix:          "/mitigationactions/actions/{{.action_name}}",
 		Permission:             "DescribeMitigationAction",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "action_name",
 	},
-	{
+	"DescribeProvisioningTemplate": {
 		ServiceSuffix:          "/provisioning-templates/{{.template_name}}",
 		Permission:             "DescribeProvisioningTemplate",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "template_name",
 	},
-	{
+	"DescribeRoleAlias": {
 		ServiceSuffix:          "/role-aliases/{{.role_alias}}",
 		Permission:             "DescribeRoleAlias",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "role_alias",
 	},
-	{
+	"DescribeScheduledAudit": {
 		ServiceSuffix:          "/audit/scheduledaudits/{{.scheduled_audit_name}}",
 		Permission:             "DescribeScheduledAudit",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "scheduled_audit_name",
 	},
-	{
+	"DescribeSecurityProfile": {
 		ServiceSuffix:          "/security-profiles/{{.security_profile_name}}",
 		Permission:             "DescribeSecurityProfile",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "security_profile_name",
 	},
-	{
+	"DescribeStream": {
 		ServiceSuffix:          "/streams/{{.stream_id}}",
 		Permission:             "DescribeStream",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "stream_id",
 	},
-	{
+	"DescribeThing": {
 		ServiceSuffix:          "/things/{{.thing_name}}",
 		Permission:             "DescribeThing",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "thing_name",
 	},
-	{
+	"DescribeThingGroup": {
 		ServiceSuffix:          "/thing-groups/{{.thing_group_name}}",
 		Permission:             "DescribeThingGroup",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "thing_group_name",
 	},
-	{
+	"DescribeThingRegistrationTask": {
 		ServiceSuffix:          "/thing-registration-tasks/{{.task_id}}",
 		Permission:             "DescribeThingRegistrationTask",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "task_id",
 	},
-	{
+	"DescribeThingType": {
 		ServiceSuffix:          "/thing-types/{{.thing_type_name}}",
 		Permission:             "DescribeThingType",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "thing_type_name",
 	},
-	{
+	"GetCardinality": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetCardinality",
@@ -451,21 +451,21 @@ var IOTPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "query_string",
 	},
-	{
+	"GetJobDocument": {
 		ServiceSuffix:          "/jobs/{{.job_id}}/job-document",
 		Permission:             "GetJobDocument",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "job_id",
 	},
-	{
+	"GetOTAUpdate": {
 		ServiceSuffix:          "/otaUpdates/{{.ota_update_id}}",
 		Permission:             "GetOTAUpdate",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "ota_update_id",
 	},
-	{
+	"GetPercentiles": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetPercentiles",
@@ -480,14 +480,14 @@ var IOTPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "query_string",
 	},
-	{
+	"GetPolicy": {
 		ServiceSuffix:          "/policies/{{.policy_name}}",
 		Permission:             "GetPolicy",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "policy_name",
 	},
-	{
+	"GetStatistics": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetStatistics",
@@ -502,21 +502,21 @@ var IOTPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "query_string",
 	},
-	{
+	"GetTopicRule": {
 		ServiceSuffix:          "/rules/{{.rule_name}}",
 		Permission:             "GetTopicRule",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "rule_name",
 	},
-	{
+	"GetTopicRuleDestination": {
 		ServiceSuffix:          "/destinations/{{.arn}}",
 		Permission:             "GetTopicRuleDestination",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "arn",
 	},
-	{
+	"ListAttachedPolicies": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "ListAttachedPolicies",
@@ -531,77 +531,77 @@ var IOTPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "target",
 	},
-	{
+	"ListCertificatesByCA": {
 		ServiceSuffix:          "/certificates-by-ca/{{.ca_certificate_id}}",
 		Permission:             "ListCertificatesByCA",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "ca_certificate_id",
 	},
-	{
+	"ListJobExecutionsForJob": {
 		ServiceSuffix:          "/jobs/{{.job_id}}/things",
 		Permission:             "ListJobExecutionsForJob",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "job_id",
 	},
-	{
+	"ListJobExecutionsForThing": {
 		ServiceSuffix:          "/things/{{.thing_name}}/jobs",
 		Permission:             "ListJobExecutionsForThing",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "thing_name",
 	},
-	{
+	"ListPolicyPrincipals": {
 		ServiceSuffix:          "/policy-principals",
 		Permission:             "ListPolicyPrincipals",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "policy_name",
 	},
-	{
+	"ListPolicyVersions": {
 		ServiceSuffix:          "/policies/{{.policy_name}}/version",
 		Permission:             "ListPolicyVersions",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "policy_name",
 	},
-	{
+	"ListPrincipalPolicies": {
 		ServiceSuffix:          "/principal-policies",
 		Permission:             "ListPrincipalPolicies",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "principal",
 	},
-	{
+	"ListPrincipalThings": {
 		ServiceSuffix:          "/principals/things",
 		Permission:             "ListPrincipalThings",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "principal",
 	},
-	{
+	"ListProvisioningTemplateVersions": {
 		ServiceSuffix:          "/provisioning-templates/{{.template_name}}/versions",
 		Permission:             "ListProvisioningTemplateVersions",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "template_name",
 	},
-	{
+	"ListSecurityProfilesForTarget": {
 		ServiceSuffix:          "/security-profiles-for-target",
 		Permission:             "ListSecurityProfilesForTarget",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "security_profile_target_arn",
 	},
-	{
+	"ListTagsForResource": {
 		ServiceSuffix:          "/tags",
 		Permission:             "ListTagsForResource",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "resource_arn",
 	},
-	{
+	"ListTargetsForPolicy": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "ListTargetsForPolicy",
@@ -616,35 +616,35 @@ var IOTPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "policy_name",
 	},
-	{
+	"ListTargetsForSecurityProfile": {
 		ServiceSuffix:          "/security-profiles/{{.security_profile_name}}/targets",
 		Permission:             "ListTargetsForSecurityProfile",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "security_profile_name",
 	},
-	{
+	"ListThingGroupsForThing": {
 		ServiceSuffix:          "/things/{{.thing_name}}/thing-groups",
 		Permission:             "ListThingGroupsForThing",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "thing_name",
 	},
-	{
+	"ListThingPrincipals": {
 		ServiceSuffix:          "/things/{{.thing_name}}/principals",
 		Permission:             "ListThingPrincipals",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "thing_name",
 	},
-	{
+	"ListThingsInBillingGroup": {
 		ServiceSuffix:          "/billing-groups/{{.billing_group_name}}/things",
 		Permission:             "ListThingsInBillingGroup",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "billing_group_name",
 	},
-	{
+	"ListThingsInThingGroup": {
 		ServiceSuffix:          "/thing-groups/{{.thing_group_name}}/things",
 		Permission:             "ListThingsInThingGroup",
 		ExtraComponentLocation: "path",

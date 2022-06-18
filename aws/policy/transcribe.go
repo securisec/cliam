@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var TranscribePolicies = []Service{
-	{
+var TranscribePolicies = map[string]Service{
+	"ListCallAnalyticsCategories": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var TranscribePolicies = []Service{
 		},
 		Permission: "ListCallAnalyticsCategories",
 	},
-	{
+	"ListCallAnalyticsJobs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var TranscribePolicies = []Service{
 		},
 		Permission: "ListCallAnalyticsJobs",
 	},
-	{
+	"ListLanguageModels": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -30,7 +30,7 @@ var TranscribePolicies = []Service{
 		},
 		Permission: "ListLanguageModels",
 	},
-	{
+	"ListMedicalTranscriptionJobs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -39,7 +39,7 @@ var TranscribePolicies = []Service{
 		},
 		Permission: "ListMedicalTranscriptionJobs",
 	},
-	{
+	"ListMedicalVocabularies": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -48,7 +48,7 @@ var TranscribePolicies = []Service{
 		},
 		Permission: "ListMedicalVocabularies",
 	},
-	{
+	"ListTranscriptionJobs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -57,7 +57,7 @@ var TranscribePolicies = []Service{
 		},
 		Permission: "ListTranscriptionJobs",
 	},
-	{
+	"ListVocabularies": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -66,7 +66,7 @@ var TranscribePolicies = []Service{
 		},
 		Permission: "ListVocabularies",
 	},
-	{
+	"ListVocabularyFilters": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -77,7 +77,7 @@ var TranscribePolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeLanguageModel": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -89,7 +89,7 @@ var TranscribePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "model_name",
 	},
-	{
+	"GetCallAnalyticsCategory": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -101,7 +101,7 @@ var TranscribePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "category_name",
 	},
-	{
+	"GetCallAnalyticsJob": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -113,7 +113,7 @@ var TranscribePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "call_analytics_job_name",
 	},
-	{
+	"GetMedicalTranscriptionJob": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -125,7 +125,7 @@ var TranscribePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "medical_transcription_job_name",
 	},
-	{
+	"GetMedicalVocabulary": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -137,7 +137,7 @@ var TranscribePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "vocabulary_name",
 	},
-	{
+	"GetTranscriptionJob": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -149,7 +149,7 @@ var TranscribePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "transcription_job_name",
 	},
-	{
+	"GetVocabulary": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -161,7 +161,7 @@ var TranscribePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "vocabulary_name",
 	},
-	{
+	"GetVocabularyFilter": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -173,7 +173,7 @@ var TranscribePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "vocabulary_filter_name",
 	},
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

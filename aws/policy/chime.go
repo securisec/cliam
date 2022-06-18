@@ -1,345 +1,345 @@
 package policy
 
-var ChimePolicies = []Service{
-	{
+var ChimePolicies = map[string]Service{
+	"GetMessagingSessionEndpoint": {
 		Method:        "GET",
 		ServiceSuffix: "endpoints/messaging-session",
 		Permission:    "GetMessagingSessionEndpoint",
 	},
-	{
+	"ListAccounts": {
 		Method:        "GET",
 		ServiceSuffix: "accounts",
 		Permission:    "ListAccounts",
 	},
-	{
+	"ListAppInstances": {
 		Method:        "GET",
 		ServiceSuffix: "app-instances",
 		Permission:    "ListAppInstances",
 	},
-	{
+	"ListChannelMembershipsForAppInstanceUser": {
 		Method:        "GET",
 		ServiceSuffix: "channels?scope=app-instance-user-memberships",
 		Permission:    "ListChannelMembershipsForAppInstanceUser",
 	},
-	{
+	"ListChannelsModeratedByAppInstanceUser": {
 		Method:        "GET",
 		ServiceSuffix: "channels?scope=app-instance-user-moderated-channels",
 		Permission:    "ListChannelsModeratedByAppInstanceUser",
 	},
-	{
+	"ListMediaCapturePipelines": {
 		Method:        "GET",
 		ServiceSuffix: "media-capture-pipelines",
 		Permission:    "ListMediaCapturePipelines",
 	},
-	{
+	"ListMeetings": {
 		Method:        "GET",
 		ServiceSuffix: "meetings",
 		Permission:    "ListMeetings",
 	},
-	{
+	"ListPhoneNumberOrders": {
 		Method:        "GET",
 		ServiceSuffix: "phone-number-orders",
 		Permission:    "ListPhoneNumberOrders",
 	},
-	{
+	"ListPhoneNumbers": {
 		Method:        "GET",
 		ServiceSuffix: "phone-numbers",
 		Permission:    "ListPhoneNumbers",
 	},
-	{
+	"ListSipMediaApplications": {
 		Method:        "GET",
 		ServiceSuffix: "sip-media-applications",
 		Permission:    "ListSipMediaApplications",
 	},
-	{
+	"ListSipRules": {
 		Method:        "GET",
 		ServiceSuffix: "sip-rules",
 		Permission:    "ListSipRules",
 	},
-	{
+	"ListVoiceConnectorGroups": {
 		Method:        "GET",
 		ServiceSuffix: "voice-connector-groups",
 		Permission:    "ListVoiceConnectorGroups",
 	},
-	{
+	"ListVoiceConnectors": {
 		Method:        "GET",
 		ServiceSuffix: "voice-connectors",
 		Permission:    "ListVoiceConnectors",
 	},
-	{
+	"SearchAvailablePhoneNumbers": {
 		Method:        "GET",
 		ServiceSuffix: "search?type=phone-numbers",
 		Permission:    "SearchAvailablePhoneNumbers",
 	},
 
 	// extra
-	{
+	"DescribeAppInstance": {
 		ServiceSuffix:          "/app-instances/{{.app_instance_arn}}",
 		Permission:             "DescribeAppInstance",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "app_instance_arn",
 	},
-	{
+	"DescribeAppInstanceUser": {
 		ServiceSuffix:          "/app-instance-users/{{.app_instance_user_arn}}",
 		Permission:             "DescribeAppInstanceUser",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "app_instance_user_arn",
 	},
-	{
+	"DescribeChannel": {
 		ServiceSuffix:          "/channels/{{.channel_arn}}",
 		Permission:             "DescribeChannel",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "channel_arn",
 	},
-	{
+	"GetAccount": {
 		ServiceSuffix:          "/accounts/{{.account_id}}",
 		Permission:             "GetAccount",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "account_id",
 	},
-	{
+	"GetAccountSettings": {
 		ServiceSuffix:          "/accounts/{{.account_id}}/settings",
 		Permission:             "GetAccountSettings",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "account_id",
 	},
-	{
+	"GetAppInstanceRetentionSettings": {
 		ServiceSuffix:          "/app-instances/{{.app_instance_arn}}/retention-settings",
 		Permission:             "GetAppInstanceRetentionSettings",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "app_instance_arn",
 	},
-	{
+	"GetAppInstanceStreamingConfigurations": {
 		ServiceSuffix:          "/app-instances/{{.app_instance_arn}}/streaming-configurations",
 		Permission:             "GetAppInstanceStreamingConfigurations",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "app_instance_arn",
 	},
-	{
+	"GetMediaCapturePipeline": {
 		ServiceSuffix:          "/media-capture-pipelines/{{.media_pipeline_id}}",
 		Permission:             "GetMediaCapturePipeline",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "media_pipeline_id",
 	},
-	{
+	"GetMeeting": {
 		ServiceSuffix:          "/meetings/{{.meeting_id}}",
 		Permission:             "GetMeeting",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "meeting_id",
 	},
-	{
+	"GetPhoneNumber": {
 		ServiceSuffix:          "/phone-numbers/{{.phone_number_id}}",
 		Permission:             "GetPhoneNumber",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "phone_number_id",
 	},
-	{
+	"GetPhoneNumberOrder": {
 		ServiceSuffix:          "/phone-number-orders/{{.phone_number_order_id}}",
 		Permission:             "GetPhoneNumberOrder",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "phone_number_order_id",
 	},
-	{
+	"GetRetentionSettings": {
 		ServiceSuffix:          "/accounts/{{.account_id}}/retention-settings",
 		Permission:             "GetRetentionSettings",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "account_id",
 	},
-	{
+	"GetSipMediaApplication": {
 		ServiceSuffix:          "/sip-media-applications/{{.sip_media_application_id}}",
 		Permission:             "GetSipMediaApplication",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "sip_media_application_id",
 	},
-	{
+	"GetSipMediaApplicationLoggingConfiguration": {
 		ServiceSuffix:          "/sip-media-applications/{{.sip_media_application_id}}/logging-configuration",
 		Permission:             "GetSipMediaApplicationLoggingConfiguration",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "sip_media_application_id",
 	},
-	{
+	"GetSipRule": {
 		ServiceSuffix:          "/sip-rules/{{.sip_rule_id}}",
 		Permission:             "GetSipRule",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "sip_rule_id",
 	},
-	{
+	"GetVoiceConnector": {
 		ServiceSuffix:          "/voice-connectors/{{.voice_connector_id}}",
 		Permission:             "GetVoiceConnector",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "voice_connector_id",
 	},
-	{
+	"GetVoiceConnectorEmergencyCallingConfiguration": {
 		ServiceSuffix:          "/voice-connectors/{{.voice_connector_id}}/emergency-calling-configuration",
 		Permission:             "GetVoiceConnectorEmergencyCallingConfiguration",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "voice_connector_id",
 	},
-	{
+	"GetVoiceConnectorGroup": {
 		ServiceSuffix:          "/voice-connector-groups/{{.voice_connector_group_id}}",
 		Permission:             "GetVoiceConnectorGroup",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "voice_connector_group_id",
 	},
-	{
+	"GetVoiceConnectorLoggingConfiguration": {
 		ServiceSuffix:          "/voice-connectors/{{.voice_connector_id}}/logging-configuration",
 		Permission:             "GetVoiceConnectorLoggingConfiguration",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "voice_connector_id",
 	},
-	{
+	"GetVoiceConnectorOrigination": {
 		ServiceSuffix:          "/voice-connectors/{{.voice_connector_id}}/origination",
 		Permission:             "GetVoiceConnectorOrigination",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "voice_connector_id",
 	},
-	{
+	"GetVoiceConnectorProxy": {
 		ServiceSuffix:          "/voice-connectors/{{.voice_connector_id}}/programmable-numbers/proxy",
 		Permission:             "GetVoiceConnectorProxy",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "voice_connector_id",
 	},
-	{
+	"GetVoiceConnectorStreamingConfiguration": {
 		ServiceSuffix:          "/voice-connectors/{{.voice_connector_id}}/streaming-configuration",
 		Permission:             "GetVoiceConnectorStreamingConfiguration",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "voice_connector_id",
 	},
-	{
+	"GetVoiceConnectorTermination": {
 		ServiceSuffix:          "/voice-connectors/{{.voice_connector_id}}/termination",
 		Permission:             "GetVoiceConnectorTermination",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "voice_connector_id",
 	},
-	{
+	"GetVoiceConnectorTerminationHealth": {
 		ServiceSuffix:          "/voice-connectors/{{.voice_connector_id}}/termination/health",
 		Permission:             "GetVoiceConnectorTerminationHealth",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "voice_connector_id",
 	},
-	{
+	"ListAppInstanceAdmins": {
 		ServiceSuffix:          "/app-instances/{{.app_instance_arn}}/admins",
 		Permission:             "ListAppInstanceAdmins",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "app_instance_arn",
 	},
-	{
+	"ListAppInstanceUsers": {
 		ServiceSuffix:          "/app-instance-users",
 		Permission:             "ListAppInstanceUsers",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "app_instance_arn",
 	},
-	{
+	"ListAttendees": {
 		ServiceSuffix:          "/meetings/{{.meeting_id}}/attendees",
 		Permission:             "ListAttendees",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "meeting_id",
 	},
-	{
+	"ListBots": {
 		ServiceSuffix:          "/accounts/{{.account_id}}/bots",
 		Permission:             "ListBots",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "account_id",
 	},
-	{
+	"ListChannelBans": {
 		ServiceSuffix:          "/channels/{{.channel_arn}}/bans",
 		Permission:             "ListChannelBans",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "channel_arn",
 	},
-	{
+	"ListChannelMemberships": {
 		ServiceSuffix:          "/channels/{{.channel_arn}}/memberships",
 		Permission:             "ListChannelMemberships",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "channel_arn",
 	},
-	{
+	"ListChannelMessages": {
 		ServiceSuffix:          "/channels/{{.channel_arn}}/messages",
 		Permission:             "ListChannelMessages",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "channel_arn",
 	},
-	{
+	"ListChannelModerators": {
 		ServiceSuffix:          "/channels/{{.channel_arn}}/moderators",
 		Permission:             "ListChannelModerators",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "channel_arn",
 	},
-	{
+	"ListChannels": {
 		ServiceSuffix:          "/channels",
 		Permission:             "ListChannels",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "app_instance_arn",
 	},
-	{
+	"ListMeetingTags": {
 		ServiceSuffix:          "/meetings/{{.meeting_id}}/tags",
 		Permission:             "ListMeetingTags",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "meeting_id",
 	},
-	{
+	"ListProxySessions": {
 		ServiceSuffix:          "/voice-connectors/{{.voice_connector_id}}/proxy-sessions",
 		Permission:             "ListProxySessions",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "voice_connector_id",
 	},
-	{
+	"ListRooms": {
 		ServiceSuffix:          "/accounts/{{.account_id}}/rooms",
 		Permission:             "ListRooms",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "account_id",
 	},
-	{
+	"ListSupportedPhoneNumberCountries": {
 		ServiceSuffix:          "/phone-number-countries",
 		Permission:             "ListSupportedPhoneNumberCountries",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "product_type",
 	},
-	{
+	"ListUsers": {
 		ServiceSuffix:          "/accounts/{{.account_id}}/users",
 		Permission:             "ListUsers",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "account_id",
 	},
-	{
+	"ListVoiceConnectorTerminationCredentials": {
 		ServiceSuffix:          "/voice-connectors/{{.voice_connector_id}}/termination/credentials",
 		Permission:             "ListVoiceConnectorTerminationCredentials",
 		ExtraComponentLocation: "path",

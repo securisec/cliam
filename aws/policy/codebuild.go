@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var CodebuildPolicies = []Service{
-	{
+var CodebuildPolicies = map[string]Service{
+	"ListBuildBatches": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var CodebuildPolicies = []Service{
 		},
 		Permission: "ListBuildBatches",
 	},
-	{
+	"ListBuildBatchesForProject": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var CodebuildPolicies = []Service{
 		},
 		Permission: "ListBuildBatchesForProject",
 	},
-	{
+	"ListBuilds": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -30,7 +30,7 @@ var CodebuildPolicies = []Service{
 		},
 		Permission: "ListBuilds",
 	},
-	{
+	"ListCuratedEnvironmentImages": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -39,7 +39,7 @@ var CodebuildPolicies = []Service{
 		},
 		Permission: "ListCuratedEnvironmentImages",
 	},
-	{
+	"ListProjects": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -48,7 +48,7 @@ var CodebuildPolicies = []Service{
 		},
 		Permission: "ListProjects",
 	},
-	{
+	"ListReportGroups": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -57,7 +57,7 @@ var CodebuildPolicies = []Service{
 		},
 		Permission: "ListReportGroups",
 	},
-	{
+	"ListReports": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -66,7 +66,7 @@ var CodebuildPolicies = []Service{
 		},
 		Permission: "ListReports",
 	},
-	{
+	"ListSharedProjects": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -75,7 +75,7 @@ var CodebuildPolicies = []Service{
 		},
 		Permission: "ListSharedProjects",
 	},
-	{
+	"ListSourceCredentials": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -86,7 +86,7 @@ var CodebuildPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeCodeCoverages": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -98,7 +98,7 @@ var CodebuildPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "report_arn",
 	},
-	{
+	"DescribeTestCases": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -110,7 +110,7 @@ var CodebuildPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "report_arn",
 	},
-	{
+	"GetResourcePolicy": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -122,7 +122,7 @@ var CodebuildPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "resource_arn",
 	},
-	{
+	"ListBuildsForProject": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -134,7 +134,7 @@ var CodebuildPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "project_name",
 	},
-	{
+	"ListReportsForReportGroup": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

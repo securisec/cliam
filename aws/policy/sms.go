@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var SMSPolicies = []Service{
-	{
+var SMSPolicies = map[string]Service{
+	"GetApp": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var SMSPolicies = []Service{
 		},
 		Permission: "GetApp",
 	},
-	{
+	"GetAppLaunchConfiguration": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var SMSPolicies = []Service{
 		},
 		Permission: "GetAppLaunchConfiguration",
 	},
-	{
+	"GetAppReplicationConfiguration": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -30,7 +30,7 @@ var SMSPolicies = []Service{
 		},
 		Permission: "GetAppReplicationConfiguration",
 	},
-	{
+	"GetConnectors": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -39,7 +39,7 @@ var SMSPolicies = []Service{
 		},
 		Permission: "GetConnectors",
 	},
-	{
+	"GetReplicationJobs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -48,7 +48,7 @@ var SMSPolicies = []Service{
 		},
 		Permission: "GetReplicationJobs",
 	},
-	{
+	"GetServers": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -57,7 +57,7 @@ var SMSPolicies = []Service{
 		},
 		Permission: "GetServers",
 	},
-	{
+	"ListApps": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -68,7 +68,7 @@ var SMSPolicies = []Service{
 	},
 
 	// extra
-	{
+	"GetAppValidationConfiguration": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -80,7 +80,7 @@ var SMSPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "app_id",
 	},
-	{
+	"GetAppValidationOutput": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -92,7 +92,7 @@ var SMSPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "app_id",
 	},
-	{
+	"GetReplicationRuns": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

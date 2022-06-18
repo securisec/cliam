@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var ProtonPolicies = []Service{
-	{
+var ProtonPolicies = map[string]Service{
+	"GetAccountSettings": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var ProtonPolicies = []Service{
 		},
 		Permission: "GetAccountSettings",
 	},
-	{
+	"ListEnvironmentTemplates": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var ProtonPolicies = []Service{
 		},
 		Permission: "ListEnvironmentTemplates",
 	},
-	{
+	"ListEnvironments": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -30,7 +30,7 @@ var ProtonPolicies = []Service{
 		},
 		Permission: "ListEnvironments",
 	},
-	{
+	"ListRepositories": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -39,7 +39,7 @@ var ProtonPolicies = []Service{
 		},
 		Permission: "ListRepositories",
 	},
-	{
+	"ListServiceInstances": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -48,7 +48,7 @@ var ProtonPolicies = []Service{
 		},
 		Permission: "ListServiceInstances",
 	},
-	{
+	"ListServiceTemplates": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -57,7 +57,7 @@ var ProtonPolicies = []Service{
 		},
 		Permission: "ListServiceTemplates",
 	},
-	{
+	"ListServices": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -66,7 +66,7 @@ var ProtonPolicies = []Service{
 		},
 		Permission: "ListServices",
 	},
-	{
+	"UpdateAccountSettings": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -77,7 +77,7 @@ var ProtonPolicies = []Service{
 	},
 
 	// extra
-	{
+	"GetEnvironment": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
@@ -89,7 +89,7 @@ var ProtonPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "name",
 	},
-	{
+	"GetEnvironmentAccountConnection": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
@@ -101,7 +101,7 @@ var ProtonPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "id",
 	},
-	{
+	"GetEnvironmentTemplate": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
@@ -113,7 +113,7 @@ var ProtonPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "name",
 	},
-	{
+	"GetService": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
@@ -125,7 +125,7 @@ var ProtonPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "name",
 	},
-	{
+	"GetServiceTemplate": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
@@ -137,7 +137,7 @@ var ProtonPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "name",
 	},
-	{
+	"ListEnvironmentAccountConnections": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
@@ -149,7 +149,7 @@ var ProtonPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "requested_by",
 	},
-	{
+	"ListEnvironmentOutputs": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
@@ -161,7 +161,7 @@ var ProtonPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "environment_name",
 	},
-	{
+	"ListEnvironmentProvisionedResources": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
@@ -173,7 +173,7 @@ var ProtonPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "environment_name",
 	},
-	{
+	"ListEnvironmentTemplateVersions": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
@@ -185,7 +185,7 @@ var ProtonPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "template_name",
 	},
-	{
+	"ListServicePipelineOutputs": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
@@ -197,7 +197,7 @@ var ProtonPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "service_name",
 	},
-	{
+	"ListServicePipelineProvisionedResources": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
@@ -209,7 +209,7 @@ var ProtonPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "service_name",
 	},
-	{
+	"ListServiceTemplateVersions": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
@@ -221,7 +221,7 @@ var ProtonPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "template_name",
 	},
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,

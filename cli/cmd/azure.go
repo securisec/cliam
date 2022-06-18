@@ -198,7 +198,7 @@ func azureKnownValueCompleter(resources []string) (validExtras []string) {
 			continue
 		}
 		for _, policy := range policies {
-			matches := shared.TemplatePropertyRegex.FindAllStringSubmatch(policy.Path, -1)
+			matches := shared.AzureTemplatePropertyRegex.FindAllStringSubmatch(policy.Path, -1)
 			for _, m := range matches {
 				hold = append(hold, m[1]+"=")
 			}

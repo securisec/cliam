@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var ServiceCatalogPolicies = []Service{
-	{
+var ServiceCatalogPolicies = map[string]Service{
+	"DescribeProduct": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var ServiceCatalogPolicies = []Service{
 		},
 		Permission: "DescribeProduct",
 	},
-	{
+	"DescribeProductAsAdmin": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var ServiceCatalogPolicies = []Service{
 		},
 		Permission: "DescribeProductAsAdmin",
 	},
-	{
+	"DescribeProvisionedProduct": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -30,7 +30,7 @@ var ServiceCatalogPolicies = []Service{
 		},
 		Permission: "DescribeProvisionedProduct",
 	},
-	{
+	"DescribeProvisioningArtifact": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -39,7 +39,7 @@ var ServiceCatalogPolicies = []Service{
 		},
 		Permission: "DescribeProvisioningArtifact",
 	},
-	{
+	"DescribeProvisioningParameters": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -48,7 +48,7 @@ var ServiceCatalogPolicies = []Service{
 		},
 		Permission: "DescribeProvisioningParameters",
 	},
-	{
+	"DisableAWSOrganizationsAccess": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -57,7 +57,7 @@ var ServiceCatalogPolicies = []Service{
 		},
 		Permission: "DisableAWSOrganizationsAccess",
 	},
-	{
+	"EnableAWSOrganizationsAccess": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -66,7 +66,7 @@ var ServiceCatalogPolicies = []Service{
 		},
 		Permission: "EnableAWSOrganizationsAccess",
 	},
-	{
+	"GetAWSOrganizationsAccessStatus": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -75,7 +75,7 @@ var ServiceCatalogPolicies = []Service{
 		},
 		Permission: "GetAWSOrganizationsAccessStatus",
 	},
-	{
+	"GetProvisionedProductOutputs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -84,7 +84,7 @@ var ServiceCatalogPolicies = []Service{
 		},
 		Permission: "GetProvisionedProductOutputs",
 	},
-	{
+	"ListAcceptedPortfolioShares": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -93,7 +93,7 @@ var ServiceCatalogPolicies = []Service{
 		},
 		Permission: "ListAcceptedPortfolioShares",
 	},
-	{
+	"ListPortfolios": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -102,7 +102,7 @@ var ServiceCatalogPolicies = []Service{
 		},
 		Permission: "ListPortfolios",
 	},
-	{
+	"ListProvisionedProductPlans": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -111,7 +111,7 @@ var ServiceCatalogPolicies = []Service{
 		},
 		Permission: "ListProvisionedProductPlans",
 	},
-	{
+	"ListRecordHistory": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -120,7 +120,7 @@ var ServiceCatalogPolicies = []Service{
 		},
 		Permission: "ListRecordHistory",
 	},
-	{
+	"ListServiceActions": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -129,7 +129,7 @@ var ServiceCatalogPolicies = []Service{
 		},
 		Permission: "ListServiceActions",
 	},
-	{
+	"ListTagOptions": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -138,7 +138,7 @@ var ServiceCatalogPolicies = []Service{
 		},
 		Permission: "ListTagOptions",
 	},
-	{
+	"ScanProvisionedProducts": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -147,7 +147,7 @@ var ServiceCatalogPolicies = []Service{
 		},
 		Permission: "ScanProvisionedProducts",
 	},
-	{
+	"SearchProducts": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -156,7 +156,7 @@ var ServiceCatalogPolicies = []Service{
 		},
 		Permission: "SearchProducts",
 	},
-	{
+	"SearchProductsAsAdmin": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -165,7 +165,7 @@ var ServiceCatalogPolicies = []Service{
 		},
 		Permission: "SearchProductsAsAdmin",
 	},
-	{
+	"SearchProvisionedProducts": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -176,7 +176,7 @@ var ServiceCatalogPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeConstraint": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -188,7 +188,7 @@ var ServiceCatalogPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "id",
 	},
-	{
+	"DescribeCopyProductStatus": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -200,7 +200,7 @@ var ServiceCatalogPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "copy_product_token",
 	},
-	{
+	"DescribePortfolio": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -212,7 +212,7 @@ var ServiceCatalogPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "id",
 	},
-	{
+	"DescribePortfolioShareStatus": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -224,7 +224,7 @@ var ServiceCatalogPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "portfolio_share_token",
 	},
-	{
+	"DescribeProductView": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -236,7 +236,7 @@ var ServiceCatalogPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "id",
 	},
-	{
+	"DescribeProvisionedProductPlan": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -248,7 +248,7 @@ var ServiceCatalogPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "plan_id",
 	},
-	{
+	"DescribeRecord": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -260,7 +260,7 @@ var ServiceCatalogPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "id",
 	},
-	{
+	"DescribeServiceAction": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -272,7 +272,7 @@ var ServiceCatalogPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "id",
 	},
-	{
+	"DescribeTagOption": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -284,7 +284,7 @@ var ServiceCatalogPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "id",
 	},
-	{
+	"ListBudgetsForResource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -296,7 +296,7 @@ var ServiceCatalogPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "resource_id",
 	},
-	{
+	"ListConstraintsForPortfolio": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -308,7 +308,7 @@ var ServiceCatalogPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "portfolio_id",
 	},
-	{
+	"ListLaunchPaths": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -320,7 +320,7 @@ var ServiceCatalogPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "product_id",
 	},
-	{
+	"ListPortfolioAccess": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -332,7 +332,7 @@ var ServiceCatalogPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "portfolio_id",
 	},
-	{
+	"ListPortfoliosForProduct": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -344,7 +344,7 @@ var ServiceCatalogPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "product_id",
 	},
-	{
+	"ListPrincipalsForPortfolio": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -356,7 +356,7 @@ var ServiceCatalogPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "portfolio_id",
 	},
-	{
+	"ListProvisioningArtifacts": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -368,7 +368,7 @@ var ServiceCatalogPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "product_id",
 	},
-	{
+	"ListProvisioningArtifactsForServiceAction": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -380,7 +380,7 @@ var ServiceCatalogPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "service_action_id",
 	},
-	{
+	"ListResourcesForTagOption": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -392,7 +392,7 @@ var ServiceCatalogPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "tag_option_id",
 	},
-	{
+	"ListStackInstancesForProvisionedProduct": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

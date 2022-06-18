@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var SnowballPolicies = []Service{
-	{
+var SnowballPolicies = map[string]Service{
+	"CreateJob": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var SnowballPolicies = []Service{
 		},
 		Permission: "CreateJob",
 	},
-	{
+	"DescribeAddresses": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var SnowballPolicies = []Service{
 		},
 		Permission: "DescribeAddresses",
 	},
-	{
+	"GetSnowballUsage": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -30,7 +30,7 @@ var SnowballPolicies = []Service{
 		},
 		Permission: "GetSnowballUsage",
 	},
-	{
+	"ListClusters": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -39,7 +39,7 @@ var SnowballPolicies = []Service{
 		},
 		Permission: "ListClusters",
 	},
-	{
+	"ListCompatibleImages": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -48,7 +48,7 @@ var SnowballPolicies = []Service{
 		},
 		Permission: "ListCompatibleImages",
 	},
-	{
+	"ListJobs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -57,7 +57,7 @@ var SnowballPolicies = []Service{
 		},
 		Permission: "ListJobs",
 	},
-	{
+	"ListLongTermPricing": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -68,7 +68,7 @@ var SnowballPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeAddress": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -80,7 +80,7 @@ var SnowballPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "address_id",
 	},
-	{
+	"DescribeCluster": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -92,7 +92,7 @@ var SnowballPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "cluster_id",
 	},
-	{
+	"DescribeJob": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -104,7 +104,7 @@ var SnowballPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "job_id",
 	},
-	{
+	"DescribeReturnShippingLabel": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -116,7 +116,7 @@ var SnowballPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "job_id",
 	},
-	{
+	"GetJobManifest": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -128,7 +128,7 @@ var SnowballPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "job_id",
 	},
-	{
+	"GetJobUnlockCode": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -140,7 +140,7 @@ var SnowballPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "job_id",
 	},
-	{
+	"GetSoftwareUpdates": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -152,7 +152,7 @@ var SnowballPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "job_id",
 	},
-	{
+	"ListClusterJobs": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

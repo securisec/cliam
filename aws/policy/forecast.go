@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var ForecastPolicies = []Service{
-	{
+var ForecastPolicies = map[string]Service{
+	"ListDatasetGroups": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var ForecastPolicies = []Service{
 		},
 		Permission: "ListDatasetGroups",
 	},
-	{
+	"ListDatasetImportJobs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var ForecastPolicies = []Service{
 		},
 		Permission: "ListDatasetImportJobs",
 	},
-	{
+	"ListDatasets": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -30,7 +30,7 @@ var ForecastPolicies = []Service{
 		},
 		Permission: "ListDatasets",
 	},
-	{
+	"ListExplainabilities": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -39,7 +39,7 @@ var ForecastPolicies = []Service{
 		},
 		Permission: "ListExplainabilities",
 	},
-	{
+	"ListExplainabilityExports": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -48,7 +48,7 @@ var ForecastPolicies = []Service{
 		},
 		Permission: "ListExplainabilityExports",
 	},
-	{
+	"ListForecastExportJobs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -57,7 +57,7 @@ var ForecastPolicies = []Service{
 		},
 		Permission: "ListForecastExportJobs",
 	},
-	{
+	"ListForecasts": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -66,7 +66,7 @@ var ForecastPolicies = []Service{
 		},
 		Permission: "ListForecasts",
 	},
-	{
+	"ListPredictorBacktestExportJobs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -75,7 +75,7 @@ var ForecastPolicies = []Service{
 		},
 		Permission: "ListPredictorBacktestExportJobs",
 	},
-	{
+	"ListPredictors": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -86,7 +86,7 @@ var ForecastPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeAutoPredictor": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -98,7 +98,7 @@ var ForecastPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "predictor_arn",
 	},
-	{
+	"DescribeDataset": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -110,7 +110,7 @@ var ForecastPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "dataset_arn",
 	},
-	{
+	"DescribeDatasetGroup": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -122,7 +122,7 @@ var ForecastPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "dataset_group_arn",
 	},
-	{
+	"DescribeDatasetImportJob": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -134,7 +134,7 @@ var ForecastPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "dataset_import_job_arn",
 	},
-	{
+	"DescribeExplainability": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -146,7 +146,7 @@ var ForecastPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "explainability_arn",
 	},
-	{
+	"DescribeExplainabilityExport": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -158,7 +158,7 @@ var ForecastPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "explainability_export_arn",
 	},
-	{
+	"DescribeForecast": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -170,7 +170,7 @@ var ForecastPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "forecast_arn",
 	},
-	{
+	"DescribeForecastExportJob": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -182,7 +182,7 @@ var ForecastPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "forecast_export_job_arn",
 	},
-	{
+	"DescribePredictor": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -194,7 +194,7 @@ var ForecastPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "predictor_arn",
 	},
-	{
+	"DescribePredictorBacktestExportJob": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -206,7 +206,7 @@ var ForecastPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "predictor_backtest_export_job_arn",
 	},
-	{
+	"GetAccuracyMetrics": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -218,7 +218,7 @@ var ForecastPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "predictor_arn",
 	},
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var CloudsearchPolicies = []Service{
-	{
+var CloudsearchPolicies = map[string]Service{
+	"ListDomainNames": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "ListDomainNames",
@@ -14,7 +14,7 @@ var CloudsearchPolicies = []Service{
 		},
 		Permission: "ListDomainNames",
 	},
-	{
+	"DescribeDomains": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeDomains",
@@ -27,7 +27,7 @@ var CloudsearchPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeAnalysisSchemes": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeAnalysisSchemes",
@@ -42,7 +42,7 @@ var CloudsearchPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "domain_name",
 	},
-	{
+	"DescribeAvailabilityOptions": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeAvailabilityOptions",
@@ -57,7 +57,7 @@ var CloudsearchPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "domain_name",
 	},
-	{
+	"DescribeDomainEndpointOptions": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeDomainEndpointOptions",
@@ -72,7 +72,7 @@ var CloudsearchPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "domain_name",
 	},
-	{
+	"DescribeExpressions": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeExpressions",
@@ -87,7 +87,7 @@ var CloudsearchPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "domain_name",
 	},
-	{
+	"DescribeIndexFields": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeIndexFields",
@@ -102,7 +102,7 @@ var CloudsearchPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "domain_name",
 	},
-	{
+	"DescribeScalingParameters": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeScalingParameters",
@@ -117,7 +117,7 @@ var CloudsearchPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "domain_name",
 	},
-	{
+	"DescribeServiceAccessPolicies": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeServiceAccessPolicies",
@@ -132,7 +132,7 @@ var CloudsearchPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "domain_name",
 	},
-	{
+	"DescribeSuggesters": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeSuggesters",

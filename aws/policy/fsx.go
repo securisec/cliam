@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var FSXPolicies = []Service{
-	{
+var FSXPolicies = map[string]Service{
+	"CreateBackup": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var FSXPolicies = []Service{
 		},
 		Permission: "CreateBackup",
 	},
-	{
+	"DescribeBackups": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var FSXPolicies = []Service{
 		},
 		Permission: "DescribeBackups",
 	},
-	{
+	"DescribeDataRepositoryAssociations": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -30,7 +30,7 @@ var FSXPolicies = []Service{
 		},
 		Permission: "DescribeDataRepositoryAssociations",
 	},
-	{
+	"DescribeDataRepositoryTasks": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -39,7 +39,7 @@ var FSXPolicies = []Service{
 		},
 		Permission: "DescribeDataRepositoryTasks",
 	},
-	{
+	"DescribeFileSystems": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -48,7 +48,7 @@ var FSXPolicies = []Service{
 		},
 		Permission: "DescribeFileSystems",
 	},
-	{
+	"DescribeSnapshots": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -57,7 +57,7 @@ var FSXPolicies = []Service{
 		},
 		Permission: "DescribeSnapshots",
 	},
-	{
+	"DescribeStorageVirtualMachines": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -66,7 +66,7 @@ var FSXPolicies = []Service{
 		},
 		Permission: "DescribeStorageVirtualMachines",
 	},
-	{
+	"DescribeVolumes": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -77,7 +77,7 @@ var FSXPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeFileSystemAliases": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -89,7 +89,7 @@ var FSXPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "file_system_id",
 	},
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

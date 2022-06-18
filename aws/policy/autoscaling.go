@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var AutoscalingPolicies = []Service{
-	{
+var AutoscalingPolicies = map[string]Service{
+	"DescribeAccountLimits": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeAccountLimits",
@@ -14,7 +14,7 @@ var AutoscalingPolicies = []Service{
 		},
 		Permission: "DescribeAccountLimits",
 	},
-	{
+	"DescribeAdjustmentTypes": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeAdjustmentTypes",
@@ -25,7 +25,7 @@ var AutoscalingPolicies = []Service{
 		},
 		Permission: "DescribeAdjustmentTypes",
 	},
-	{
+	"DescribeAutoScalingGroups": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeAutoScalingGroups",
@@ -36,7 +36,7 @@ var AutoscalingPolicies = []Service{
 		},
 		Permission: "DescribeAutoScalingGroups",
 	},
-	{
+	"DescribeAutoScalingInstances": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeAutoScalingInstances",
@@ -47,7 +47,7 @@ var AutoscalingPolicies = []Service{
 		},
 		Permission: "DescribeAutoScalingInstances",
 	},
-	{
+	"DescribeAutoScalingNotificationTypes": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeAutoScalingNotificationTypes",
@@ -58,7 +58,7 @@ var AutoscalingPolicies = []Service{
 		},
 		Permission: "DescribeAutoScalingNotificationTypes",
 	},
-	{
+	"DescribeLaunchConfigurations": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeLaunchConfigurations",
@@ -69,7 +69,7 @@ var AutoscalingPolicies = []Service{
 		},
 		Permission: "DescribeLaunchConfigurations",
 	},
-	{
+	"DescribeLifecycleHookTypes": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeLifecycleHookTypes",
@@ -80,7 +80,7 @@ var AutoscalingPolicies = []Service{
 		},
 		Permission: "DescribeLifecycleHookTypes",
 	},
-	{
+	"DescribeMetricCollectionTypes": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeMetricCollectionTypes",
@@ -91,7 +91,7 @@ var AutoscalingPolicies = []Service{
 		},
 		Permission: "DescribeMetricCollectionTypes",
 	},
-	{
+	"DescribeNotificationConfigurations": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeNotificationConfigurations",
@@ -102,7 +102,7 @@ var AutoscalingPolicies = []Service{
 		},
 		Permission: "DescribeNotificationConfigurations",
 	},
-	{
+	"DescribePolicies": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribePolicies",
@@ -113,7 +113,7 @@ var AutoscalingPolicies = []Service{
 		},
 		Permission: "DescribePolicies",
 	},
-	{
+	"DescribeScalingActivities": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeScalingActivities",
@@ -124,7 +124,7 @@ var AutoscalingPolicies = []Service{
 		},
 		Permission: "DescribeScalingActivities",
 	},
-	{
+	"DescribeScalingProcessTypes": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeScalingProcessTypes",
@@ -135,7 +135,7 @@ var AutoscalingPolicies = []Service{
 		},
 		Permission: "DescribeScalingProcessTypes",
 	},
-	{
+	"DescribeScheduledActions": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeScheduledActions",
@@ -146,7 +146,7 @@ var AutoscalingPolicies = []Service{
 		},
 		Permission: "DescribeScheduledActions",
 	},
-	{
+	"DescribeTags": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeTags",
@@ -157,7 +157,7 @@ var AutoscalingPolicies = []Service{
 		},
 		Permission: "DescribeTags",
 	},
-	{
+	"DescribeTerminationPolicyTypes": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeTerminationPolicyTypes",
@@ -170,7 +170,7 @@ var AutoscalingPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeInstanceRefreshes": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeInstanceRefreshes",
@@ -185,7 +185,7 @@ var AutoscalingPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "auto_scaling_group_name",
 	},
-	{
+	"DescribeLifecycleHooks": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeLifecycleHooks",
@@ -200,7 +200,7 @@ var AutoscalingPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "auto_scaling_group_name",
 	},
-	{
+	"DescribeLoadBalancerTargetGroups": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeLoadBalancerTargetGroups",
@@ -215,7 +215,7 @@ var AutoscalingPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "auto_scaling_group_name",
 	},
-	{
+	"DescribeLoadBalancers": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeLoadBalancers",
@@ -230,7 +230,7 @@ var AutoscalingPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "auto_scaling_group_name",
 	},
-	{
+	"DescribeWarmPool": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeWarmPool",

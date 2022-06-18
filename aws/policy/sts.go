@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var STSPolicies = []Service{
-	{
+var STSPolicies = map[string]Service{
+	"GetCallerIdentity": {
 		ServiceSuffix: "",
 		Permission:    "GetCallerIdentity",
 		FormData: map[string]string{
@@ -15,13 +15,13 @@ var STSPolicies = []Service{
 		},
 		Method: "POST",
 	},
-	{
+	"GetSessionToken": {
 		ServiceSuffix: "?Action=GetSessionToken&Version=2011-06-15",
 		Permission:    "GetSessionToken",
 	},
 
 	// extra
-	{
+	"GetAccessKeyInfo": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetAccessKeyInfo",
@@ -36,7 +36,7 @@ var STSPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "access_key_id",
 	},
-	{
+	"GetFederationToken": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetFederationToken",

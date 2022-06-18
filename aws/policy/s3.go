@@ -1,209 +1,209 @@
 package policy
 
-var S3Policies = []Service{
-	{
+var S3Policies = map[string]Service{
+	"ListBuckets": {
 		ServiceSuffix: "",
 		Permission:    "ListBuckets",
 	},
 
 	// extra
-	{
+	"GetBucketAccelerateConfiguration": {
 		ServiceSuffix:          "/{{.bucket_name}}?accelerate",
 		Permission:             "GetBucketAccelerateConfiguration",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "bucket_name",
 	},
-	{
+	"GetBucketAcl": {
 		ServiceSuffix:          "/{{.bucket_name}}?acl",
 		Permission:             "GetBucketAcl",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "bucket_name",
 	},
-	{
+	"GetBucketCors": {
 		ServiceSuffix:          "/{{.bucket_name}}?cors",
 		Permission:             "GetBucketCors",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "bucket_name",
 	},
-	{
+	"GetBucketEncryption": {
 		ServiceSuffix:          "/{{.bucket_name}}?encryption",
 		Permission:             "GetBucketEncryption",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "bucket_name",
 	},
-	{
+	"GetBucketLifecycle": {
 		ServiceSuffix:          "/{{.bucket_name}}?lifecycle",
 		Permission:             "GetBucketLifecycle",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "bucket_name",
 	},
-	{
+	"GetBucketLifecycleConfiguration": {
 		ServiceSuffix:          "/{{.bucket_name}}?lifecycle",
 		Permission:             "GetBucketLifecycleConfiguration",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "bucket_name",
 	},
-	{
+	"GetBucketLocation": {
 		ServiceSuffix:          "/{{.bucket_name}}?location",
 		Permission:             "GetBucketLocation",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "bucket_name",
 	},
-	{
+	"GetBucketLogging": {
 		ServiceSuffix:          "/{{.bucket_name}}?logging",
 		Permission:             "GetBucketLogging",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "bucket_name",
 	},
-	{
+	"GetBucketNotification": {
 		ServiceSuffix:          "/{{.bucket_name}}?notification",
 		Permission:             "GetBucketNotification",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "bucket_name",
 	},
-	{
+	"GetBucketNotificationConfiguration": {
 		ServiceSuffix:          "/{{.bucket_name}}?notification",
 		Permission:             "GetBucketNotificationConfiguration",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "bucket_name",
 	},
-	{
+	"GetBucketOwnershipControls": {
 		ServiceSuffix:          "/{{.bucket_name}}?ownershipControls",
 		Permission:             "GetBucketOwnershipControls",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "bucket_name",
 	},
-	{
+	"GetBucketPolicy": {
 		ServiceSuffix:          "/{{.bucket_name}}?policy",
 		Permission:             "GetBucketPolicy",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "bucket_name",
 	},
-	{
+	"GetBucketPolicyStatus": {
 		ServiceSuffix:          "/{{.bucket_name}}?policyStatus",
 		Permission:             "GetBucketPolicyStatus",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "bucket_name",
 	},
-	{
+	"GetBucketReplication": {
 		ServiceSuffix:          "/{{.bucket_name}}?replication",
 		Permission:             "GetBucketReplication",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "bucket_name",
 	},
-	{
+	"GetBucketRequestPayment": {
 		ServiceSuffix:          "/{{.bucket_name}}?requestPayment",
 		Permission:             "GetBucketRequestPayment",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "bucket_name",
 	},
-	{
+	"GetBucketTagging": {
 		ServiceSuffix:          "/{{.bucket_name}}?tagging",
 		Permission:             "GetBucketTagging",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "bucket_name",
 	},
-	{
+	"GetBucketVersioning": {
 		ServiceSuffix:          "/{{.bucket_name}}?versioning",
 		Permission:             "GetBucketVersioning",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "bucket_name",
 	},
-	{
+	"GetBucketWebsite": {
 		ServiceSuffix:          "/{{.bucket_name}}?website",
 		Permission:             "GetBucketWebsite",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "bucket_name",
 	},
-	{
+	"GetObjectLockConfiguration": {
 		ServiceSuffix:          "/{{.bucket_name}}?object-lock",
 		Permission:             "GetObjectLockConfiguration",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "bucket_name",
 	},
-	{
+	"GetPublicAccessBlock": {
 		ServiceSuffix:          "/{{.bucket_name}}?publicAccessBlock",
 		Permission:             "GetPublicAccessBlock",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "bucket_name",
 	},
-	{
+	"HeadBucket": {
 		ServiceSuffix:          "/{{.bucket_name}}",
 		Permission:             "HeadBucket",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "bucket_name",
 	},
-	{
+	"ListBucketAnalyticsConfigurations": {
 		ServiceSuffix:          "/{{.bucket_name}}?analytics",
 		Permission:             "ListBucketAnalyticsConfigurations",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "bucket_name",
 	},
-	{
+	"ListBucketIntelligentTieringConfigurations": {
 		ServiceSuffix:          "/{{.bucket_name}}?intelligent-tiering",
 		Permission:             "ListBucketIntelligentTieringConfigurations",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "bucket_name",
 	},
-	{
+	"ListBucketInventoryConfigurations": {
 		ServiceSuffix:          "/{{.bucket_name}}?inventory",
 		Permission:             "ListBucketInventoryConfigurations",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "bucket_name",
 	},
-	{
+	"ListBucketMetricsConfigurations": {
 		ServiceSuffix:          "/{{.bucket_name}}?metrics",
 		Permission:             "ListBucketMetricsConfigurations",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "bucket_name",
 	},
-	{
+	"ListMultipartUploads": {
 		ServiceSuffix:          "/{{.bucket_name}}?uploads",
 		Permission:             "ListMultipartUploads",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "bucket_name",
 	},
-	{
+	"ListObjectVersions": {
 		ServiceSuffix:          "/{{.bucket_name}}?versions",
 		Permission:             "ListObjectVersions",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "bucket_name",
 	},
-	{
+	"ListObjects": {
 		ServiceSuffix:          "/{{.bucket_name}}",
 		Permission:             "ListObjects",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "bucket_name",
 	},
-	{
+	"ListObjectsV2": {
 		ServiceSuffix:          "/{{.bucket_name}}?list-type=2",
 		Permission:             "ListObjectsV2",
 		ExtraComponentLocation: "path",

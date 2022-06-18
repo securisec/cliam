@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var RobomakerPolicies = []Service{
-	{
+var RobomakerPolicies = map[string]Service{
+	"CreateWorldTemplate": {
 		Method:        "POST",
 		ServiceSuffix: "createWorldTemplate",
 		JsonData:      map[string]string{},
@@ -12,7 +12,7 @@ var RobomakerPolicies = []Service{
 		},
 		Permission: "CreateWorldTemplate",
 	},
-	{
+	"GetWorldTemplateBody": {
 		Method:        "POST",
 		ServiceSuffix: "getWorldTemplateBody",
 		JsonData:      map[string]string{},
@@ -21,7 +21,7 @@ var RobomakerPolicies = []Service{
 		},
 		Permission: "GetWorldTemplateBody",
 	},
-	{
+	"ListDeploymentJobs": {
 		Method:        "POST",
 		ServiceSuffix: "listDeploymentJobs",
 		JsonData:      map[string]string{},
@@ -30,7 +30,7 @@ var RobomakerPolicies = []Service{
 		},
 		Permission: "ListDeploymentJobs",
 	},
-	{
+	"ListFleets": {
 		Method:        "POST",
 		ServiceSuffix: "listFleets",
 		JsonData:      map[string]string{},
@@ -39,7 +39,7 @@ var RobomakerPolicies = []Service{
 		},
 		Permission: "ListFleets",
 	},
-	{
+	"ListRobotApplications": {
 		Method:        "POST",
 		ServiceSuffix: "listRobotApplications",
 		JsonData:      map[string]string{},
@@ -48,7 +48,7 @@ var RobomakerPolicies = []Service{
 		},
 		Permission: "ListRobotApplications",
 	},
-	{
+	"ListRobots": {
 		Method:        "POST",
 		ServiceSuffix: "listRobots",
 		JsonData:      map[string]string{},
@@ -57,7 +57,7 @@ var RobomakerPolicies = []Service{
 		},
 		Permission: "ListRobots",
 	},
-	{
+	"ListSimulationApplications": {
 		Method:        "POST",
 		ServiceSuffix: "listSimulationApplications",
 		JsonData:      map[string]string{},
@@ -66,7 +66,7 @@ var RobomakerPolicies = []Service{
 		},
 		Permission: "ListSimulationApplications",
 	},
-	{
+	"ListSimulationJobBatches": {
 		Method:        "POST",
 		ServiceSuffix: "listSimulationJobBatches",
 		JsonData:      map[string]string{},
@@ -75,7 +75,7 @@ var RobomakerPolicies = []Service{
 		},
 		Permission: "ListSimulationJobBatches",
 	},
-	{
+	"ListSimulationJobs": {
 		Method:        "POST",
 		ServiceSuffix: "listSimulationJobs",
 		JsonData:      map[string]string{},
@@ -84,7 +84,7 @@ var RobomakerPolicies = []Service{
 		},
 		Permission: "ListSimulationJobs",
 	},
-	{
+	"ListWorldExportJobs": {
 		Method:        "POST",
 		ServiceSuffix: "listWorldExportJobs",
 		JsonData:      map[string]string{},
@@ -93,7 +93,7 @@ var RobomakerPolicies = []Service{
 		},
 		Permission: "ListWorldExportJobs",
 	},
-	{
+	"ListWorldGenerationJobs": {
 		Method:        "POST",
 		ServiceSuffix: "listWorldGenerationJobs",
 		JsonData:      map[string]string{},
@@ -102,7 +102,7 @@ var RobomakerPolicies = []Service{
 		},
 		Permission: "ListWorldGenerationJobs",
 	},
-	{
+	"ListWorldTemplates": {
 		Method:        "POST",
 		ServiceSuffix: "listWorldTemplates",
 		JsonData:      map[string]string{},
@@ -111,7 +111,7 @@ var RobomakerPolicies = []Service{
 		},
 		Permission: "ListWorldTemplates",
 	},
-	{
+	"ListWorlds": {
 		Method:        "POST",
 		ServiceSuffix: "listWorlds",
 		JsonData:      map[string]string{},
@@ -122,7 +122,7 @@ var RobomakerPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeDeploymentJob": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeDeploymentJob",
@@ -137,7 +137,7 @@ var RobomakerPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "job",
 	},
-	{
+	"DescribeFleet": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeFleet",
@@ -152,7 +152,7 @@ var RobomakerPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "fleet",
 	},
-	{
+	"DescribeRobot": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeRobot",
@@ -167,7 +167,7 @@ var RobomakerPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "robot",
 	},
-	{
+	"DescribeRobotApplication": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeRobotApplication",
@@ -182,7 +182,7 @@ var RobomakerPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "application",
 	},
-	{
+	"DescribeSimulationApplication": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeSimulationApplication",
@@ -197,7 +197,7 @@ var RobomakerPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "application",
 	},
-	{
+	"DescribeSimulationJob": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeSimulationJob",
@@ -212,7 +212,7 @@ var RobomakerPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "job",
 	},
-	{
+	"DescribeSimulationJobBatch": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeSimulationJobBatch",
@@ -227,7 +227,7 @@ var RobomakerPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "batch",
 	},
-	{
+	"DescribeWorld": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeWorld",
@@ -242,7 +242,7 @@ var RobomakerPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "world",
 	},
-	{
+	"DescribeWorldExportJob": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeWorldExportJob",
@@ -257,7 +257,7 @@ var RobomakerPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "job",
 	},
-	{
+	"DescribeWorldGenerationJob": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeWorldGenerationJob",
@@ -272,7 +272,7 @@ var RobomakerPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "job",
 	},
-	{
+	"DescribeWorldTemplate": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeWorldTemplate",
@@ -287,7 +287,7 @@ var RobomakerPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "template",
 	},
-	{
+	"ListTagsForResource": {
 		ServiceSuffix:          "/tags/{{.resource_arn}}",
 		Permission:             "ListTagsForResource",
 		ExtraComponentLocation: "path",

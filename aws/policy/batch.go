@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var BatchPolicies = []Service{
-	{
+var BatchPolicies = map[string]Service{
+	"DescribeComputeEnvironments": {
 		Method:        "POST",
 		ServiceSuffix: "v1/describecomputeenvironments",
 		JsonData:      map[string]string{},
@@ -12,7 +12,7 @@ var BatchPolicies = []Service{
 		},
 		Permission: "DescribeComputeEnvironments",
 	},
-	{
+	"DescribeJobDefinitions": {
 		Method:        "POST",
 		ServiceSuffix: "v1/describejobdefinitions",
 		JsonData:      map[string]string{},
@@ -21,7 +21,7 @@ var BatchPolicies = []Service{
 		},
 		Permission: "DescribeJobDefinitions",
 	},
-	{
+	"DescribeJobQueues": {
 		Method:        "POST",
 		ServiceSuffix: "v1/describejobqueues",
 		JsonData:      map[string]string{},
@@ -30,7 +30,7 @@ var BatchPolicies = []Service{
 		},
 		Permission: "DescribeJobQueues",
 	},
-	{
+	"ListJobs": {
 		Method:        "POST",
 		ServiceSuffix: "v1/listjobs",
 		JsonData:      map[string]string{},
@@ -39,7 +39,7 @@ var BatchPolicies = []Service{
 		},
 		Permission: "ListJobs",
 	},
-	{
+	"ListSchedulingPolicies": {
 		Method:        "POST",
 		ServiceSuffix: "v1/listschedulingpolicies",
 		JsonData:      map[string]string{},
@@ -50,7 +50,7 @@ var BatchPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeJobs": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeJobs",
@@ -65,7 +65,7 @@ var BatchPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "jobs",
 	},
-	{
+	"DescribeSchedulingPolicies": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeSchedulingPolicies",
@@ -80,7 +80,7 @@ var BatchPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "arns",
 	},
-	{
+	"ListTagsForResource": {
 		ServiceSuffix:          "/v1/tags/{{.resource_arn}}",
 		Permission:             "ListTagsForResource",
 		ExtraComponentLocation: "path",

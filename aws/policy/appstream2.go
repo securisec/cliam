@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var Appstream2Policies = []Service{
-	{
+var Appstream2Policies = map[string]Service{
+	"DescribeAppBlocks": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var Appstream2Policies = []Service{
 		},
 		Permission: "DescribeAppBlocks",
 	},
-	{
+	"DescribeApplicationFleetAssociations": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var Appstream2Policies = []Service{
 		},
 		Permission: "DescribeApplicationFleetAssociations",
 	},
-	{
+	"DescribeDirectoryConfigs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -30,7 +30,7 @@ var Appstream2Policies = []Service{
 		},
 		Permission: "DescribeDirectoryConfigs",
 	},
-	{
+	"DescribeFleets": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -39,7 +39,7 @@ var Appstream2Policies = []Service{
 		},
 		Permission: "DescribeFleets",
 	},
-	{
+	"DescribeImageBuilders": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -48,7 +48,7 @@ var Appstream2Policies = []Service{
 		},
 		Permission: "DescribeImageBuilders",
 	},
-	{
+	"DescribeImages": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -57,7 +57,7 @@ var Appstream2Policies = []Service{
 		},
 		Permission: "DescribeImages",
 	},
-	{
+	"DescribeUsageReportSubscriptions": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -66,7 +66,7 @@ var Appstream2Policies = []Service{
 		},
 		Permission: "DescribeUsageReportSubscriptions",
 	},
-	{
+	"DescribeUserStackAssociations": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -76,7 +76,7 @@ var Appstream2Policies = []Service{
 		Permission: "DescribeUserStackAssociations",
 	},
 
-	{
+	"DescribeEntitlements": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -88,7 +88,7 @@ var Appstream2Policies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "stack_name",
 	},
-	{
+	"DescribeImagePermissions": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -100,7 +100,7 @@ var Appstream2Policies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "name",
 	},
-	{
+	"DescribeUsers": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -112,7 +112,7 @@ var Appstream2Policies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "authentication_type",
 	},
-	{
+	"ListAssociatedFleets": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -124,7 +124,7 @@ var Appstream2Policies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "stack_name",
 	},
-	{
+	"ListAssociatedStacks": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -136,7 +136,7 @@ var Appstream2Policies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "fleet_name",
 	},
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

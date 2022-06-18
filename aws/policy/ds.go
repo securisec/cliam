@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var DSPolicies = []Service{
-	{
+var DSPolicies = map[string]Service{
+	"DescribeDirectories": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var DSPolicies = []Service{
 		},
 		Permission: "DescribeDirectories",
 	},
-	{
+	"DescribeEventTopics": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var DSPolicies = []Service{
 		},
 		Permission: "DescribeEventTopics",
 	},
-	{
+	"DescribeSnapshots": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -30,7 +30,7 @@ var DSPolicies = []Service{
 		},
 		Permission: "DescribeSnapshots",
 	},
-	{
+	"DescribeTrusts": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -39,7 +39,7 @@ var DSPolicies = []Service{
 		},
 		Permission: "DescribeTrusts",
 	},
-	{
+	"GetDirectoryLimits": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -48,7 +48,7 @@ var DSPolicies = []Service{
 		},
 		Permission: "GetDirectoryLimits",
 	},
-	{
+	"ListLogSubscriptions": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -59,7 +59,7 @@ var DSPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeClientAuthenticationSettings": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -71,7 +71,7 @@ var DSPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "directory_id",
 	},
-	{
+	"DescribeConditionalForwarders": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -83,7 +83,7 @@ var DSPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "directory_id",
 	},
-	{
+	"DescribeDomainControllers": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -95,7 +95,7 @@ var DSPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "directory_id",
 	},
-	{
+	"DescribeLDAPSSettings": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -107,7 +107,7 @@ var DSPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "directory_id",
 	},
-	{
+	"DescribeRegions": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -119,7 +119,7 @@ var DSPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "directory_id",
 	},
-	{
+	"DescribeSharedDirectories": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -131,7 +131,7 @@ var DSPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "owner_directory_id",
 	},
-	{
+	"GetSnapshotLimits": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -143,7 +143,7 @@ var DSPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "directory_id",
 	},
-	{
+	"ListCertificates": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -155,7 +155,7 @@ var DSPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "directory_id",
 	},
-	{
+	"ListIpRoutes": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -167,7 +167,7 @@ var DSPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "directory_id",
 	},
-	{
+	"ListSchemaExtensions": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -179,7 +179,7 @@ var DSPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "directory_id",
 	},
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

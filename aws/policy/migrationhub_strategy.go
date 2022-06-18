@@ -2,18 +2,18 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var MigrationHubStratergyPolicies = []Service{
-	{
+var MigrationHubStratergyPolicies = map[string]Service{
+	"GetPortfolioPreferences": {
 		Method:        "GET",
 		ServiceSuffix: "get-portfolio-preferences",
 		Permission:    "GetPortfolioPreferences",
 	},
-	{
+	"GetPortfolioSummary": {
 		Method:        "GET",
 		ServiceSuffix: "get-portfolio-summary",
 		Permission:    "GetPortfolioSummary",
 	},
-	{
+	"ListApplicationComponents": {
 		Method:        "POST",
 		ServiceSuffix: "list-applicationcomponents",
 		JsonData:      map[string]string{},
@@ -22,17 +22,17 @@ var MigrationHubStratergyPolicies = []Service{
 		},
 		Permission: "ListApplicationComponents",
 	},
-	{
+	"ListCollectors": {
 		Method:        "GET",
 		ServiceSuffix: "list-collectors",
 		Permission:    "ListCollectors",
 	},
-	{
+	"ListImportFileTask": {
 		Method:        "GET",
 		ServiceSuffix: "list-import-file-task",
 		Permission:    "ListImportFileTask",
 	},
-	{
+	"ListServers": {
 		Method:        "POST",
 		ServiceSuffix: "list-servers",
 		JsonData:      map[string]string{},
@@ -41,7 +41,7 @@ var MigrationHubStratergyPolicies = []Service{
 		},
 		Permission: "ListServers",
 	},
-	{
+	"PutPortfolioPreferences": {
 		Method:        "POST",
 		ServiceSuffix: "put-portfolio-preferences",
 		JsonData:      map[string]string{},
@@ -50,7 +50,7 @@ var MigrationHubStratergyPolicies = []Service{
 		},
 		Permission: "PutPortfolioPreferences",
 	},
-	{
+	"StartAssessment": {
 		Method:        "POST",
 		ServiceSuffix: "start-assessment",
 		JsonData:      map[string]string{},
@@ -59,7 +59,7 @@ var MigrationHubStratergyPolicies = []Service{
 		},
 		Permission: "StartAssessment",
 	},
-	{
+	"StartRecommendationReportGeneration": {
 		Method:        "POST",
 		ServiceSuffix: "start-recommendation-report-generation",
 		JsonData:      map[string]string{},

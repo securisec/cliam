@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var MemoryDBPolicies = []Service{
-	{
+var MemoryDBPolicies = map[string]Service{
+	"DescribeAcLs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var MemoryDBPolicies = []Service{
 		},
 		Permission: "DescribeAcLs",
 	},
-	{
+	"DescribeClusters": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var MemoryDBPolicies = []Service{
 		},
 		Permission: "DescribeClusters",
 	},
-	{
+	"DescribeEngineVersions": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -30,7 +30,7 @@ var MemoryDBPolicies = []Service{
 		},
 		Permission: "DescribeEngineVersions",
 	},
-	{
+	"DescribeParameterGroups": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -39,7 +39,7 @@ var MemoryDBPolicies = []Service{
 		},
 		Permission: "DescribeParameterGroups",
 	},
-	{
+	"DescribeServiceUpdates": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -48,7 +48,7 @@ var MemoryDBPolicies = []Service{
 		},
 		Permission: "DescribeServiceUpdates",
 	},
-	{
+	"DescribeSnapshots": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -57,7 +57,7 @@ var MemoryDBPolicies = []Service{
 		},
 		Permission: "DescribeSnapshots",
 	},
-	{
+	"DescribeSubnetGroups": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -68,7 +68,7 @@ var MemoryDBPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeParameters": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -80,7 +80,7 @@ var MemoryDBPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "parameter_group_name",
 	},
-	{
+	"ListAllowedNodeTypeUpdates": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -92,7 +92,7 @@ var MemoryDBPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "cluster_name",
 	},
-	{
+	"ListTags": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

@@ -34,16 +34,6 @@ func awsEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 		os.Exit(1)
 	}
 
-	// spinner things
-	// var (
-	// 	total, current int
-	// )
-	// spinner, err := createSpinner()
-	// if err != nil {
-	// 	logger.Logger.Fatal().Err(err).Msg("failed to create spinner")
-	// }
-	// defer cleanupSpinner(spinner)
-
 	key, secret, token, region := getCredsAndRegion()
 	cliLogRegion(awsRegion)
 	resources := shared.RemoveDuplicates(args)
@@ -67,18 +57,9 @@ func awsEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 				ctx, cancel := context.WithTimeout(context.Background(), time.Duration(RequestTimeout)*time.Second)
 
 				defer func() {
-					// if spinner.Status() == yacspin.SpinnerStopped {
-					// 	spinner.Start()
-					// }
-					// current += 1
-					// spinner.Message(fmt.Sprintf("%d/%d", current, total))
 					cancel()
 					<-max
 				}()
-
-				// if spinner.Status() == yacspin.SpinnerRunning {
-				// 	spinner.Stop()
-				// }
 
 				statusCode, err := scanner.EnumerateSpecificResource(ctx, region, s, creds, SaveOutput)
 				if err != nil {

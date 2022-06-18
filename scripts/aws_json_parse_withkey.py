@@ -91,5 +91,5 @@ for operation, v in data['operations'].items():
         # print(e)
 
 x = '\n'.join(out)
-pyperclip.copy(x)
+# pyperclip.copy(x)
 print(x)

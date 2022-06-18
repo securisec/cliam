@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var SSMPolicies = []Service{
-	{
+var SSMPolicies = map[string]Service{
+	"DescribeActivations": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var SSMPolicies = []Service{
 		},
 		Permission: "DescribeActivations",
 	},
-	{
+	"DescribeAvailablePatches": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var SSMPolicies = []Service{
 		},
 		Permission: "DescribeAvailablePatches",
 	},
-	{
+	"DescribeInventoryDeletions": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -30,7 +30,7 @@ var SSMPolicies = []Service{
 		},
 		Permission: "DescribeInventoryDeletions",
 	},
-	{
+	"DescribeMaintenanceWindows": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -39,7 +39,7 @@ var SSMPolicies = []Service{
 		},
 		Permission: "DescribeMaintenanceWindows",
 	},
-	{
+	"DescribePatchBaselines": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -48,7 +48,7 @@ var SSMPolicies = []Service{
 		},
 		Permission: "DescribePatchBaselines",
 	},
-	{
+	"DescribePatchGroups": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -57,7 +57,7 @@ var SSMPolicies = []Service{
 		},
 		Permission: "DescribePatchGroups",
 	},
-	{
+	"GetDefaultPatchBaseline": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -66,7 +66,7 @@ var SSMPolicies = []Service{
 		},
 		Permission: "GetDefaultPatchBaseline",
 	},
-	{
+	"GetInventorySchema": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -75,7 +75,7 @@ var SSMPolicies = []Service{
 		},
 		Permission: "GetInventorySchema",
 	},
-	{
+	"ListCommandInvocations": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -84,7 +84,7 @@ var SSMPolicies = []Service{
 		},
 		Permission: "ListCommandInvocations",
 	},
-	{
+	"ListCommands": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -93,7 +93,7 @@ var SSMPolicies = []Service{
 		},
 		Permission: "ListCommands",
 	},
-	{
+	"ListComplianceItems": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -102,7 +102,7 @@ var SSMPolicies = []Service{
 		},
 		Permission: "ListComplianceItems",
 	},
-	{
+	"ListComplianceSummaries": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -111,7 +111,7 @@ var SSMPolicies = []Service{
 		},
 		Permission: "ListComplianceSummaries",
 	},
-	{
+	"ListResourceComplianceSummaries": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -120,7 +120,7 @@ var SSMPolicies = []Service{
 		},
 		Permission: "ListResourceComplianceSummaries",
 	},
-	{
+	"ListResourceDataSync": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -131,7 +131,7 @@ var SSMPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeAssociationExecutions": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -143,7 +143,7 @@ var SSMPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "association_id",
 	},
-	{
+	"DescribeAutomationStepExecutions": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -155,7 +155,7 @@ var SSMPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "automation_execution_id",
 	},
-	{
+	"DescribeDocument": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -167,7 +167,7 @@ var SSMPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "name",
 	},
-	{
+	"DescribeEffectiveInstanceAssociations": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -179,7 +179,7 @@ var SSMPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "instance_id",
 	},
-	{
+	"DescribeEffectivePatchesForPatchBaseline": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -191,7 +191,7 @@ var SSMPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "baseline_id",
 	},
-	{
+	"DescribeInstanceAssociationsStatus": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -203,7 +203,7 @@ var SSMPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "instance_id",
 	},
-	{
+	"DescribeInstancePatchStates": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -215,7 +215,7 @@ var SSMPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "instance_ids",
 	},
-	{
+	"DescribeInstancePatchStatesForPatchGroup": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -227,7 +227,7 @@ var SSMPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "patch_group",
 	},
-	{
+	"DescribeInstancePatches": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -239,7 +239,7 @@ var SSMPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "instance_id",
 	},
-	{
+	"DescribeMaintenanceWindowExecutionTasks": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -251,7 +251,7 @@ var SSMPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "window_execution_id",
 	},
-	{
+	"DescribeMaintenanceWindowExecutions": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -263,7 +263,7 @@ var SSMPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "window_id",
 	},
-	{
+	"DescribeMaintenanceWindowTargets": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -275,7 +275,7 @@ var SSMPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "window_id",
 	},
-	{
+	"DescribeMaintenanceWindowTasks": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -287,7 +287,7 @@ var SSMPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "window_id",
 	},
-	{
+	"DescribePatchGroupState": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -299,7 +299,7 @@ var SSMPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "patch_group",
 	},
-	{
+	"DescribeSessions": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -311,7 +311,7 @@ var SSMPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "state",
 	},
-	{
+	"GetAutomationExecution": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -323,7 +323,7 @@ var SSMPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "automation_execution_id",
 	},
-	{
+	"GetCalendarState": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -335,7 +335,7 @@ var SSMPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "calendar_names",
 	},
-	{
+	"GetConnectionStatus": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -347,7 +347,7 @@ var SSMPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "target",
 	},
-	{
+	"GetDocument": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -359,7 +359,7 @@ var SSMPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "name",
 	},
-	{
+	"GetMaintenanceWindow": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -371,7 +371,7 @@ var SSMPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "window_id",
 	},
-	{
+	"GetMaintenanceWindowExecution": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -383,7 +383,7 @@ var SSMPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "window_execution_id",
 	},
-	{
+	"GetOpsItem": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -395,7 +395,7 @@ var SSMPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "ops_item_id",
 	},
-	{
+	"GetOpsMetadata": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -407,7 +407,7 @@ var SSMPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "ops_metadata_arn",
 	},
-	{
+	"GetParameter": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -419,7 +419,7 @@ var SSMPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "name",
 	},
-	{
+	"GetParameterHistory": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -431,7 +431,7 @@ var SSMPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "name",
 	},
-	{
+	"GetParameters": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -443,7 +443,7 @@ var SSMPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "names",
 	},
-	{
+	"GetParametersByPath": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -455,7 +455,7 @@ var SSMPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "path",
 	},
-	{
+	"GetPatchBaseline": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -467,7 +467,7 @@ var SSMPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "baseline_id",
 	},
-	{
+	"GetPatchBaselineForPatchGroup": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -479,7 +479,7 @@ var SSMPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "patch_group",
 	},
-	{
+	"GetServiceSetting": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -491,7 +491,7 @@ var SSMPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "setting_id",
 	},
-	{
+	"ListAssociationVersions": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -503,7 +503,7 @@ var SSMPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "association_id",
 	},
-	{
+	"ListDocumentVersions": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

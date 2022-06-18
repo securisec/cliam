@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var DirectconnectPolicies = []Service{
-	{
+var DirectconnectPolicies = map[string]Service{
+	"DescribeConnections": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var DirectconnectPolicies = []Service{
 		},
 		Permission: "DescribeConnections",
 	},
-	{
+	"DescribeCustomerMetadata": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var DirectconnectPolicies = []Service{
 		},
 		Permission: "DescribeCustomerMetadata",
 	},
-	{
+	"DescribeDirectConnectGatewayAssociationProposals": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -30,7 +30,7 @@ var DirectconnectPolicies = []Service{
 		},
 		Permission: "DescribeDirectConnectGatewayAssociationProposals",
 	},
-	{
+	"DescribeDirectConnectGatewayAssociations": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -39,7 +39,7 @@ var DirectconnectPolicies = []Service{
 		},
 		Permission: "DescribeDirectConnectGatewayAssociations",
 	},
-	{
+	"DescribeDirectConnectGatewayAttachments": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -48,7 +48,7 @@ var DirectconnectPolicies = []Service{
 		},
 		Permission: "DescribeDirectConnectGatewayAttachments",
 	},
-	{
+	"DescribeDirectConnectGateways": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -57,7 +57,7 @@ var DirectconnectPolicies = []Service{
 		},
 		Permission: "DescribeDirectConnectGateways",
 	},
-	{
+	"DescribeInterconnects": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -66,7 +66,7 @@ var DirectconnectPolicies = []Service{
 		},
 		Permission: "DescribeInterconnects",
 	},
-	{
+	"DescribeLags": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -75,7 +75,7 @@ var DirectconnectPolicies = []Service{
 		},
 		Permission: "DescribeLags",
 	},
-	{
+	"DescribeLocations": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -84,7 +84,7 @@ var DirectconnectPolicies = []Service{
 		},
 		Permission: "DescribeLocations",
 	},
-	{
+	"DescribeVirtualGateways": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -93,7 +93,7 @@ var DirectconnectPolicies = []Service{
 		},
 		Permission: "DescribeVirtualGateways",
 	},
-	{
+	"DescribeVirtualInterfaces": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -102,7 +102,7 @@ var DirectconnectPolicies = []Service{
 		},
 		Permission: "DescribeVirtualInterfaces",
 	},
-	{
+	"ListVirtualInterfaceTestHistory": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -113,7 +113,7 @@ var DirectconnectPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeConnectionLoa": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -125,7 +125,7 @@ var DirectconnectPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "connection_id",
 	},
-	{
+	"DescribeConnectionsOnInterconnect": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -137,7 +137,7 @@ var DirectconnectPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "interconnect_id",
 	},
-	{
+	"DescribeHostedConnections": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -149,7 +149,7 @@ var DirectconnectPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "connection_id",
 	},
-	{
+	"DescribeInterconnectLoa": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -161,7 +161,7 @@ var DirectconnectPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "interconnect_id",
 	},
-	{
+	"DescribeLoa": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -173,7 +173,7 @@ var DirectconnectPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "connection_id",
 	},
-	{
+	"DescribeRouterConfiguration": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -185,7 +185,7 @@ var DirectconnectPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "virtual_interface_id",
 	},
-	{
+	"DescribeTags": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

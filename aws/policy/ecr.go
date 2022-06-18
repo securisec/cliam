@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var ECRPolicies = []Service{
-	{
+var ECRPolicies = map[string]Service{
+	"DescribeRepositories": {
 		ServiceSuffix: "",
 		Permission:    "DescribeRepositories",
 		Method:        "POST",
@@ -13,7 +13,7 @@ var ECRPolicies = []Service{
 			"x-amz-target": "AmazonEC2ContainerRegistry_V20150921.DescribeRepositories",
 		},
 	},
-	{
+	"GetAuthorizationToken": {
 		ServiceSuffix: "",
 		Permission:    "GetAuthorizationToken",
 		Method:        "POST",
@@ -25,7 +25,7 @@ var ECRPolicies = []Service{
 	},
 
 	// extra policies
-	{
+	"DescribeImages": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -37,7 +37,7 @@ var ECRPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "repository_name",
 	},
-	{
+	"GetLifecyclePolicy": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -49,7 +49,7 @@ var ECRPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "repository_name",
 	},
-	{
+	"GetLifecyclePolicyPreview": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -61,7 +61,7 @@ var ECRPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "repository_name",
 	},
-	{
+	"GetRepositoryPolicy": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -73,7 +73,7 @@ var ECRPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "repository_name",
 	},
-	{
+	"ListImages": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -85,7 +85,7 @@ var ECRPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "repository_name",
 	},
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

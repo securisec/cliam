@@ -5,14 +5,13 @@ import (
 	"context"
 	"fmt"
 	"net/http"
-	"regexp"
 	"strings"
 	"text/template"
+
+	"github.com/securisec/cliam/shared"
 )
 
 const BASE_URL = "https://management.azure.com"
-
-var checkForEmptyPath = regexp.MustCompile(`//`)
 
 type Policy struct {
 	Path        string            `json:"path"`
@@ -91,7 +90,7 @@ func (p Policy) BuildRequestUrl() (string, error) {
 	}
 
 	// check for empty values
-	if checkForEmptyPath.MatchString(b.String()) {
+	if shared.CheckForEmptyPathRegex.MatchString(b.String()) {
 		return "", fmt.Errorf("empty value detected")
 	}
 

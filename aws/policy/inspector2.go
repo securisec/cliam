@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var Inspector2Policies = []Service{
-	{
+var Inspector2Policies = map[string]Service{
+	"BatchGetAccountStatus": {
 		Method:        "POST",
 		ServiceSuffix: "status/batch/get",
 		JsonData:      map[string]string{},
@@ -12,7 +12,7 @@ var Inspector2Policies = []Service{
 		},
 		Permission: "BatchGetAccountStatus",
 	},
-	{
+	"DescribeOrganizationConfiguration": {
 		Method:        "POST",
 		ServiceSuffix: "organizationconfiguration/describe",
 		JsonData:      map[string]string{},
@@ -21,7 +21,7 @@ var Inspector2Policies = []Service{
 		},
 		Permission: "DescribeOrganizationConfiguration",
 	},
-	{
+	"Disable": {
 		Method:        "POST",
 		ServiceSuffix: "disable",
 		JsonData:      map[string]string{},
@@ -30,7 +30,7 @@ var Inspector2Policies = []Service{
 		},
 		Permission: "Disable",
 	},
-	{
+	"GetDelegatedAdminAccount": {
 		Method:        "POST",
 		ServiceSuffix: "delegatedadminaccounts/get",
 		JsonData:      map[string]string{},
@@ -39,7 +39,7 @@ var Inspector2Policies = []Service{
 		},
 		Permission: "GetDelegatedAdminAccount",
 	},
-	{
+	"GetFindingsReportStatus": {
 		Method:        "POST",
 		ServiceSuffix: "reporting/status/get",
 		JsonData:      map[string]string{},
@@ -48,7 +48,7 @@ var Inspector2Policies = []Service{
 		},
 		Permission: "GetFindingsReportStatus",
 	},
-	{
+	"ListAccountPermissions": {
 		Method:        "POST",
 		ServiceSuffix: "accountpermissions/list",
 		JsonData:      map[string]string{},
@@ -57,7 +57,7 @@ var Inspector2Policies = []Service{
 		},
 		Permission: "ListAccountPermissions",
 	},
-	{
+	"ListCoverage": {
 		Method:        "POST",
 		ServiceSuffix: "coverage/list",
 		JsonData:      map[string]string{},
@@ -66,7 +66,7 @@ var Inspector2Policies = []Service{
 		},
 		Permission: "ListCoverage",
 	},
-	{
+	"ListCoverageStatistics": {
 		Method:        "POST",
 		ServiceSuffix: "coverage/statistics/list",
 		JsonData:      map[string]string{},
@@ -75,7 +75,7 @@ var Inspector2Policies = []Service{
 		},
 		Permission: "ListCoverageStatistics",
 	},
-	{
+	"ListDelegatedAdminAccounts": {
 		Method:        "POST",
 		ServiceSuffix: "delegatedadminaccounts/list",
 		JsonData:      map[string]string{},
@@ -84,7 +84,7 @@ var Inspector2Policies = []Service{
 		},
 		Permission: "ListDelegatedAdminAccounts",
 	},
-	{
+	"ListFilters": {
 		Method:        "POST",
 		ServiceSuffix: "filters/list",
 		JsonData:      map[string]string{},
@@ -93,7 +93,7 @@ var Inspector2Policies = []Service{
 		},
 		Permission: "ListFilters",
 	},
-	{
+	"ListFindings": {
 		Method:        "POST",
 		ServiceSuffix: "findings/list",
 		JsonData:      map[string]string{},
@@ -102,7 +102,7 @@ var Inspector2Policies = []Service{
 		},
 		Permission: "ListFindings",
 	},
-	{
+	"ListMembers": {
 		Method:        "POST",
 		ServiceSuffix: "members/list",
 		JsonData:      map[string]string{},
@@ -111,7 +111,7 @@ var Inspector2Policies = []Service{
 		},
 		Permission: "ListMembers",
 	},
-	{
+	"ListUsageTotals": {
 		Method:        "POST",
 		ServiceSuffix: "usage/list",
 		JsonData:      map[string]string{},
@@ -122,7 +122,7 @@ var Inspector2Policies = []Service{
 	},
 
 	// extra
-	{
+	"GetMember": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetMember",
@@ -137,7 +137,7 @@ var Inspector2Policies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "account_id",
 	},
-	{
+	"ListFindingAggregations": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "ListFindingAggregations",
@@ -152,7 +152,7 @@ var Inspector2Policies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "aggregation_type",
 	},
-	{
+	"ListTagsForResource": {
 		ServiceSuffix:          "/tags/{{.resource_arn}}",
 		Permission:             "ListTagsForResource",
 		ExtraComponentLocation: "path",

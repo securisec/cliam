@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var GreengrassPolicies = []Service{
-	{
+var GreengrassPolicies = map[string]Service{
+	"CreateConnectorDefinition": {
 		Method:        "POST",
 		ServiceSuffix: "greengrass/definition/connectors",
 		JsonData:      map[string]string{},
@@ -12,7 +12,7 @@ var GreengrassPolicies = []Service{
 		},
 		Permission: "CreateConnectorDefinition",
 	},
-	{
+	"CreateCoreDefinition": {
 		Method:        "POST",
 		ServiceSuffix: "greengrass/definition/cores",
 		JsonData:      map[string]string{},
@@ -21,7 +21,7 @@ var GreengrassPolicies = []Service{
 		},
 		Permission: "CreateCoreDefinition",
 	},
-	{
+	"CreateDeviceDefinition": {
 		Method:        "POST",
 		ServiceSuffix: "greengrass/definition/devices",
 		JsonData:      map[string]string{},
@@ -30,7 +30,7 @@ var GreengrassPolicies = []Service{
 		},
 		Permission: "CreateDeviceDefinition",
 	},
-	{
+	"CreateFunctionDefinition": {
 		Method:        "POST",
 		ServiceSuffix: "greengrass/definition/functions",
 		JsonData:      map[string]string{},
@@ -39,7 +39,7 @@ var GreengrassPolicies = []Service{
 		},
 		Permission: "CreateFunctionDefinition",
 	},
-	{
+	"CreateLoggerDefinition": {
 		Method:        "POST",
 		ServiceSuffix: "greengrass/definition/loggers",
 		JsonData:      map[string]string{},
@@ -48,7 +48,7 @@ var GreengrassPolicies = []Service{
 		},
 		Permission: "CreateLoggerDefinition",
 	},
-	{
+	"CreateResourceDefinition": {
 		Method:        "POST",
 		ServiceSuffix: "greengrass/definition/resources",
 		JsonData:      map[string]string{},
@@ -57,7 +57,7 @@ var GreengrassPolicies = []Service{
 		},
 		Permission: "CreateResourceDefinition",
 	},
-	{
+	"CreateSubscriptionDefinition": {
 		Method:        "POST",
 		ServiceSuffix: "greengrass/definition/subscriptions",
 		JsonData:      map[string]string{},
@@ -66,227 +66,227 @@ var GreengrassPolicies = []Service{
 		},
 		Permission: "CreateSubscriptionDefinition",
 	},
-	{
+	"GetServiceRoleForAccount": {
 		Method:        "GET",
 		ServiceSuffix: "greengrass/servicerole",
 		Permission:    "GetServiceRoleForAccount",
 	},
-	{
+	"ListBulkDeployments": {
 		Method:        "GET",
 		ServiceSuffix: "greengrass/bulk/deployments",
 		Permission:    "ListBulkDeployments",
 	},
-	{
+	"ListConnectorDefinitions": {
 		Method:        "GET",
 		ServiceSuffix: "greengrass/definition/connectors",
 		Permission:    "ListConnectorDefinitions",
 	},
-	{
+	"ListCoreDefinitions": {
 		Method:        "GET",
 		ServiceSuffix: "greengrass/definition/cores",
 		Permission:    "ListCoreDefinitions",
 	},
-	{
+	"ListDeviceDefinitions": {
 		Method:        "GET",
 		ServiceSuffix: "greengrass/definition/devices",
 		Permission:    "ListDeviceDefinitions",
 	},
-	{
+	"ListFunctionDefinitions": {
 		Method:        "GET",
 		ServiceSuffix: "greengrass/definition/functions",
 		Permission:    "ListFunctionDefinitions",
 	},
-	{
+	"ListGroups": {
 		Method:        "GET",
 		ServiceSuffix: "greengrass/groups",
 		Permission:    "ListGroups",
 	},
-	{
+	"ListLoggerDefinitions": {
 		Method:        "GET",
 		ServiceSuffix: "greengrass/definition/loggers",
 		Permission:    "ListLoggerDefinitions",
 	},
-	{
+	"ListResourceDefinitions": {
 		Method:        "GET",
 		ServiceSuffix: "greengrass/definition/resources",
 		Permission:    "ListResourceDefinitions",
 	},
-	{
+	"ListSubscriptionDefinitions": {
 		Method:        "GET",
 		ServiceSuffix: "greengrass/definition/subscriptions",
 		Permission:    "ListSubscriptionDefinitions",
 	},
 
 	// extra
-	{
+	"GetAssociatedRole": {
 		ServiceSuffix:          "/greengrass/groups/{{.group_id}}/role",
 		Permission:             "GetAssociatedRole",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "group_id",
 	},
-	{
+	"GetBulkDeploymentStatus": {
 		ServiceSuffix:          "/greengrass/bulk/deployments/{{.bulk_deployment_id}}/status",
 		Permission:             "GetBulkDeploymentStatus",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "bulk_deployment_id",
 	},
-	{
+	"GetConnectivityInfo": {
 		ServiceSuffix:          "/greengrass/things/{{.thing_name}}/connectivityInfo",
 		Permission:             "GetConnectivityInfo",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "thing_name",
 	},
-	{
+	"GetConnectorDefinition": {
 		ServiceSuffix:          "/greengrass/definition/connectors/{{.connector_definition_id}}",
 		Permission:             "GetConnectorDefinition",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "connector_definition_id",
 	},
-	{
+	"GetCoreDefinition": {
 		ServiceSuffix:          "/greengrass/definition/cores/{{.core_definition_id}}",
 		Permission:             "GetCoreDefinition",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "core_definition_id",
 	},
-	{
+	"GetDeviceDefinition": {
 		ServiceSuffix:          "/greengrass/definition/devices/{{.device_definition_id}}",
 		Permission:             "GetDeviceDefinition",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "device_definition_id",
 	},
-	{
+	"GetFunctionDefinition": {
 		ServiceSuffix:          "/greengrass/definition/functions/{{.function_definition_id}}",
 		Permission:             "GetFunctionDefinition",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "function_definition_id",
 	},
-	{
+	"GetGroup": {
 		ServiceSuffix:          "/greengrass/groups/{{.group_id}}",
 		Permission:             "GetGroup",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "group_id",
 	},
-	{
+	"GetGroupCertificateConfiguration": {
 		ServiceSuffix:          "/greengrass/groups/{{.group_id}}/certificateauthorities/configuration/expiry",
 		Permission:             "GetGroupCertificateConfiguration",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "group_id",
 	},
-	{
+	"GetLoggerDefinition": {
 		ServiceSuffix:          "/greengrass/definition/loggers/{{.logger_definition_id}}",
 		Permission:             "GetLoggerDefinition",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "logger_definition_id",
 	},
-	{
+	"GetResourceDefinition": {
 		ServiceSuffix:          "/greengrass/definition/resources/{{.resource_definition_id}}",
 		Permission:             "GetResourceDefinition",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "resource_definition_id",
 	},
-	{
+	"GetSubscriptionDefinition": {
 		ServiceSuffix:          "/greengrass/definition/subscriptions/{{.subscription_definition_id}}",
 		Permission:             "GetSubscriptionDefinition",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "subscription_definition_id",
 	},
-	{
+	"GetThingRuntimeConfiguration": {
 		ServiceSuffix:          "/greengrass/things/{{.thing_name}}/runtimeconfig",
 		Permission:             "GetThingRuntimeConfiguration",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "thing_name",
 	},
-	{
+	"ListBulkDeploymentDetailedReports": {
 		ServiceSuffix:          "/greengrass/bulk/deployments/{{.bulk_deployment_id}}/detailed-reports",
 		Permission:             "ListBulkDeploymentDetailedReports",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "bulk_deployment_id",
 	},
-	{
+	"ListConnectorDefinitionVersions": {
 		ServiceSuffix:          "/greengrass/definition/connectors/{{.connector_definition_id}}/versions",
 		Permission:             "ListConnectorDefinitionVersions",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "connector_definition_id",
 	},
-	{
+	"ListCoreDefinitionVersions": {
 		ServiceSuffix:          "/greengrass/definition/cores/{{.core_definition_id}}/versions",
 		Permission:             "ListCoreDefinitionVersions",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "core_definition_id",
 	},
-	{
+	"ListDeployments": {
 		ServiceSuffix:          "/greengrass/groups/{{.group_id}}/deployments",
 		Permission:             "ListDeployments",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "group_id",
 	},
-	{
+	"ListDeviceDefinitionVersions": {
 		ServiceSuffix:          "/greengrass/definition/devices/{{.device_definition_id}}/versions",
 		Permission:             "ListDeviceDefinitionVersions",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "device_definition_id",
 	},
-	{
+	"ListFunctionDefinitionVersions": {
 		ServiceSuffix:          "/greengrass/definition/functions/{{.function_definition_id}}/versions",
 		Permission:             "ListFunctionDefinitionVersions",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "function_definition_id",
 	},
-	{
+	"ListGroupCertificateAuthorities": {
 		ServiceSuffix:          "/greengrass/groups/{{.group_id}}/certificateauthorities",
 		Permission:             "ListGroupCertificateAuthorities",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "group_id",
 	},
-	{
+	"ListGroupVersions": {
 		ServiceSuffix:          "/greengrass/groups/{{.group_id}}/versions",
 		Permission:             "ListGroupVersions",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "group_id",
 	},
-	{
+	"ListLoggerDefinitionVersions": {
 		ServiceSuffix:          "/greengrass/definition/loggers/{{.logger_definition_id}}/versions",
 		Permission:             "ListLoggerDefinitionVersions",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "logger_definition_id",
 	},
-	{
+	"ListResourceDefinitionVersions": {
 		ServiceSuffix:          "/greengrass/definition/resources/{{.resource_definition_id}}/versions",
 		Permission:             "ListResourceDefinitionVersions",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "resource_definition_id",
 	},
-	{
+	"ListSubscriptionDefinitionVersions": {
 		ServiceSuffix:          "/greengrass/definition/subscriptions/{{.subscription_definition_id}}/versions",
 		Permission:             "ListSubscriptionDefinitionVersions",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "subscription_definition_id",
 	},
-	{
+	"ListTagsForResource": {
 		ServiceSuffix:          "/tags/{{.resource_arn}}",
 		Permission:             "ListTagsForResource",
 		ExtraComponentLocation: "path",

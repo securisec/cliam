@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var GameLiftPolicies = []Service{
-	{
+var GameLiftPolicies = map[string]Service{
+	"CreateBuild": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var GameLiftPolicies = []Service{
 		},
 		Permission: "CreateBuild",
 	},
-	{
+	"CreateScript": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var GameLiftPolicies = []Service{
 		},
 		Permission: "CreateScript",
 	},
-	{
+	"DescribeEC2InstanceLimits": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -30,7 +30,7 @@ var GameLiftPolicies = []Service{
 		},
 		Permission: "DescribeEC2InstanceLimits",
 	},
-	{
+	"DescribeFleetAttributes": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -39,7 +39,7 @@ var GameLiftPolicies = []Service{
 		},
 		Permission: "DescribeFleetAttributes",
 	},
-	{
+	"DescribeFleetCapacity": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -48,7 +48,7 @@ var GameLiftPolicies = []Service{
 		},
 		Permission: "DescribeFleetCapacity",
 	},
-	{
+	"DescribeFleetUtilization": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -57,7 +57,7 @@ var GameLiftPolicies = []Service{
 		},
 		Permission: "DescribeFleetUtilization",
 	},
-	{
+	"DescribeGameSessionDetails": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -66,7 +66,7 @@ var GameLiftPolicies = []Service{
 		},
 		Permission: "DescribeGameSessionDetails",
 	},
-	{
+	"DescribeGameSessionQueues": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -75,7 +75,7 @@ var GameLiftPolicies = []Service{
 		},
 		Permission: "DescribeGameSessionQueues",
 	},
-	{
+	"DescribeGameSessions": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -84,7 +84,7 @@ var GameLiftPolicies = []Service{
 		},
 		Permission: "DescribeGameSessions",
 	},
-	{
+	"DescribeMatchmakingConfigurations": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -93,7 +93,7 @@ var GameLiftPolicies = []Service{
 		},
 		Permission: "DescribeMatchmakingConfigurations",
 	},
-	{
+	"DescribeMatchmakingRuleSets": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -102,7 +102,7 @@ var GameLiftPolicies = []Service{
 		},
 		Permission: "DescribeMatchmakingRuleSets",
 	},
-	{
+	"DescribePlayerSessions": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -111,7 +111,7 @@ var GameLiftPolicies = []Service{
 		},
 		Permission: "DescribePlayerSessions",
 	},
-	{
+	"DescribeVpcPeeringAuthorizations": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -120,7 +120,7 @@ var GameLiftPolicies = []Service{
 		},
 		Permission: "DescribeVpcPeeringAuthorizations",
 	},
-	{
+	"DescribeVpcPeeringConnections": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -129,7 +129,7 @@ var GameLiftPolicies = []Service{
 		},
 		Permission: "DescribeVpcPeeringConnections",
 	},
-	{
+	"ListAliases": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -138,7 +138,7 @@ var GameLiftPolicies = []Service{
 		},
 		Permission: "ListAliases",
 	},
-	{
+	"ListBuilds": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -147,7 +147,7 @@ var GameLiftPolicies = []Service{
 		},
 		Permission: "ListBuilds",
 	},
-	{
+	"ListFleets": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -156,7 +156,7 @@ var GameLiftPolicies = []Service{
 		},
 		Permission: "ListFleets",
 	},
-	{
+	"ListGameServerGroups": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -165,7 +165,7 @@ var GameLiftPolicies = []Service{
 		},
 		Permission: "ListGameServerGroups",
 	},
-	{
+	"ListScripts": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -174,7 +174,7 @@ var GameLiftPolicies = []Service{
 		},
 		Permission: "ListScripts",
 	},
-	{
+	"SearchGameSessions": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -185,7 +185,7 @@ var GameLiftPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeAlias": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -197,7 +197,7 @@ var GameLiftPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "alias_id",
 	},
-	{
+	"DescribeBuild": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -209,7 +209,7 @@ var GameLiftPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "build_id",
 	},
-	{
+	"DescribeFleetEvents": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -221,7 +221,7 @@ var GameLiftPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "fleet_id",
 	},
-	{
+	"DescribeFleetLocationAttributes": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -233,7 +233,7 @@ var GameLiftPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "fleet_id",
 	},
-	{
+	"DescribeFleetPortSettings": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -245,7 +245,7 @@ var GameLiftPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "fleet_id",
 	},
-	{
+	"DescribeGameServerGroup": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -257,7 +257,7 @@ var GameLiftPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "game_server_group_name",
 	},
-	{
+	"DescribeGameServerInstances": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -269,7 +269,7 @@ var GameLiftPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "game_server_group_name",
 	},
-	{
+	"DescribeGameSessionPlacement": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -281,7 +281,7 @@ var GameLiftPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "placement_id",
 	},
-	{
+	"DescribeInstances": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -293,7 +293,7 @@ var GameLiftPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "fleet_id",
 	},
-	{
+	"DescribeMatchmaking": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -305,7 +305,7 @@ var GameLiftPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "ticket_ids",
 	},
-	{
+	"DescribeRuntimeConfiguration": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -317,7 +317,7 @@ var GameLiftPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "fleet_id",
 	},
-	{
+	"DescribeScalingPolicies": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -329,7 +329,7 @@ var GameLiftPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "fleet_id",
 	},
-	{
+	"DescribeScript": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -341,7 +341,7 @@ var GameLiftPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "script_id",
 	},
-	{
+	"GetGameSessionLogUrl": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -353,7 +353,7 @@ var GameLiftPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "game_session_id",
 	},
-	{
+	"ListGameServers": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -365,7 +365,7 @@ var GameLiftPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "game_server_group_name",
 	},
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

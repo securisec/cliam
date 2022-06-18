@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var GluePolicies = []Service{
-	{
+var GluePolicies = map[string]Service{
+	"GetCatalogImportStatus": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var GluePolicies = []Service{
 		},
 		Permission: "GetCatalogImportStatus",
 	},
-	{
+	"GetClassifiers": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var GluePolicies = []Service{
 		},
 		Permission: "GetClassifiers",
 	},
-	{
+	"GetConnections": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -30,7 +30,7 @@ var GluePolicies = []Service{
 		},
 		Permission: "GetConnections",
 	},
-	{
+	"GetCrawlerMetrics": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -39,7 +39,7 @@ var GluePolicies = []Service{
 		},
 		Permission: "GetCrawlerMetrics",
 	},
-	{
+	"GetCrawlers": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -48,7 +48,7 @@ var GluePolicies = []Service{
 		},
 		Permission: "GetCrawlers",
 	},
-	{
+	"GetDataCatalogEncryptionSettings": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -57,7 +57,7 @@ var GluePolicies = []Service{
 		},
 		Permission: "GetDataCatalogEncryptionSettings",
 	},
-	{
+	"GetDatabases": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -66,7 +66,7 @@ var GluePolicies = []Service{
 		},
 		Permission: "GetDatabases",
 	},
-	{
+	"GetDataflowGraph": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -75,7 +75,7 @@ var GluePolicies = []Service{
 		},
 		Permission: "GetDataflowGraph",
 	},
-	{
+	"GetDevEndpoints": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -84,7 +84,7 @@ var GluePolicies = []Service{
 		},
 		Permission: "GetDevEndpoints",
 	},
-	{
+	"GetJobs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -93,7 +93,7 @@ var GluePolicies = []Service{
 		},
 		Permission: "GetJobs",
 	},
-	{
+	"GetMlTransforms": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -102,7 +102,7 @@ var GluePolicies = []Service{
 		},
 		Permission: "GetMlTransforms",
 	},
-	{
+	"GetResourcePolicies": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -111,7 +111,7 @@ var GluePolicies = []Service{
 		},
 		Permission: "GetResourcePolicies",
 	},
-	{
+	"GetResourcePolicy": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -120,7 +120,7 @@ var GluePolicies = []Service{
 		},
 		Permission: "GetResourcePolicy",
 	},
-	{
+	"GetSchemaVersion": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -129,7 +129,7 @@ var GluePolicies = []Service{
 		},
 		Permission: "GetSchemaVersion",
 	},
-	{
+	"GetSecurityConfigurations": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -138,7 +138,7 @@ var GluePolicies = []Service{
 		},
 		Permission: "GetSecurityConfigurations",
 	},
-	{
+	"GetTriggers": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -147,7 +147,7 @@ var GluePolicies = []Service{
 		},
 		Permission: "GetTriggers",
 	},
-	{
+	"ListBlueprints": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -156,7 +156,7 @@ var GluePolicies = []Service{
 		},
 		Permission: "ListBlueprints",
 	},
-	{
+	"ListCrawlers": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -165,7 +165,7 @@ var GluePolicies = []Service{
 		},
 		Permission: "ListCrawlers",
 	},
-	{
+	"ListDevEndpoints": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -174,7 +174,7 @@ var GluePolicies = []Service{
 		},
 		Permission: "ListDevEndpoints",
 	},
-	{
+	"ListJobs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -183,7 +183,7 @@ var GluePolicies = []Service{
 		},
 		Permission: "ListJobs",
 	},
-	{
+	"ListMlTransforms": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -192,7 +192,7 @@ var GluePolicies = []Service{
 		},
 		Permission: "ListMlTransforms",
 	},
-	{
+	"ListRegistries": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -201,7 +201,7 @@ var GluePolicies = []Service{
 		},
 		Permission: "ListRegistries",
 	},
-	{
+	"ListSchemas": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -210,7 +210,7 @@ var GluePolicies = []Service{
 		},
 		Permission: "ListSchemas",
 	},
-	{
+	"ListSessions": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -219,7 +219,7 @@ var GluePolicies = []Service{
 		},
 		Permission: "ListSessions",
 	},
-	{
+	"ListTriggers": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -228,7 +228,7 @@ var GluePolicies = []Service{
 		},
 		Permission: "ListTriggers",
 	},
-	{
+	"ListWorkflows": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -239,7 +239,7 @@ var GluePolicies = []Service{
 	},
 
 	// extra
-	{
+	"GetBlueprint": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -251,7 +251,7 @@ var GluePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "name",
 	},
-	{
+	"GetBlueprintRuns": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -263,7 +263,7 @@ var GluePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "blueprint_name",
 	},
-	{
+	"GetClassifier": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -275,7 +275,7 @@ var GluePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "name",
 	},
-	{
+	"GetConnection": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -287,7 +287,7 @@ var GluePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "name",
 	},
-	{
+	"GetCrawler": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -299,7 +299,7 @@ var GluePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "name",
 	},
-	{
+	"GetDatabase": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -311,7 +311,7 @@ var GluePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "name",
 	},
-	{
+	"GetDevEndpoint": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -323,7 +323,7 @@ var GluePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "endpoint_name",
 	},
-	{
+	"GetJob": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -335,7 +335,7 @@ var GluePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "job_name",
 	},
-	{
+	"GetJobBookmark": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -347,7 +347,7 @@ var GluePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "job_name",
 	},
-	{
+	"GetJobRuns": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -359,7 +359,7 @@ var GluePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "job_name",
 	},
-	{
+	"GetMLTaskRuns": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -371,7 +371,7 @@ var GluePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "transform_id",
 	},
-	{
+	"GetMLTransform": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -383,7 +383,7 @@ var GluePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "transform_id",
 	},
-	{
+	"GetMapping": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -395,7 +395,7 @@ var GluePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "source",
 	},
-	{
+	"GetRegistry": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -407,7 +407,7 @@ var GluePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "registry_id",
 	},
-	{
+	"GetSchema": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -419,7 +419,7 @@ var GluePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "schema_id",
 	},
-	{
+	"GetSecurityConfiguration": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -431,7 +431,7 @@ var GluePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "name",
 	},
-	{
+	"GetSession": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -443,7 +443,7 @@ var GluePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "id",
 	},
-	{
+	"GetTables": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -455,7 +455,7 @@ var GluePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "database_name",
 	},
-	{
+	"GetTags": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -467,7 +467,7 @@ var GluePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "resource_arn",
 	},
-	{
+	"GetTrigger": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -479,7 +479,7 @@ var GluePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "name",
 	},
-	{
+	"GetUserDefinedFunctions": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -491,7 +491,7 @@ var GluePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "pattern",
 	},
-	{
+	"GetWorkflow": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -503,7 +503,7 @@ var GluePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "name",
 	},
-	{
+	"GetWorkflowRuns": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -515,7 +515,7 @@ var GluePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "name",
 	},
-	{
+	"ListSchemaVersions": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -527,7 +527,7 @@ var GluePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "schema_id",
 	},
-	{
+	"ListStatements": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

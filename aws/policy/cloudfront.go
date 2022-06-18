@@ -1,267 +1,267 @@
 package policy
 
-var CloudfrontPolicies = []Service{
-	{
+var CloudfrontPolicies = map[string]Service{
+	"ListDistributions": {
 		IgnoreRegion:  true,
 		ServiceSuffix: "2018-11-05/distribution",
 		Permission:    "ListDistributions",
 	},
-	{
+	"ListCachePolicies": {
 		IgnoreRegion:  true,
 		ServiceSuffix: "2020-05-31/cache-policy",
 		Permission:    "ListCachePolicies",
 	},
-	{
+	"ListFunctions": {
 		IgnoreRegion:  true,
 		ServiceSuffix: "2020-05-31/function",
 		Permission:    "ListFunctions",
 	},
-	{
+	"ListKeyGroups": {
 		IgnoreRegion:  true,
 		ServiceSuffix: "2020-05-31/key-group",
 		Permission:    "ListKeyGroups",
 	},
-	{
+	"ListOriginRequestPolicies": {
 		IgnoreRegion:  true,
 		ServiceSuffix: "2020-05-31/origin-request-policy",
 		Permission:    "ListOriginRequestPolicies",
 	},
-	{
+	"ListRealtimeLogConfigs": {
 		IgnoreRegion:  true,
 		ServiceSuffix: "2020-05-31/realtime-log-config",
 		Permission:    "ListRealtimeLogConfigs",
 	},
-	{
+	"ListResponseHeadersPolicies": {
 		IgnoreRegion:  true,
 		ServiceSuffix: "2020-05-31/response-headers-policy",
 		Permission:    "ListResponseHeadersPolicies",
 	},
-	{
+	"ListCloudFrontOriginAccessIdentities": {
 		IgnoreRegion:  true,
 		ServiceSuffix: "2020-05-31/origin-access-identity/cloudfront",
 		Permission:    "ListCloudFrontOriginAccessIdentities",
 	},
-	{
+	"ListFieldLevelEncryptionConfigs": {
 		IgnoreRegion:  true,
 		ServiceSuffix: "2020-05-31/field-level-encryption",
 		Permission:    "ListFieldLevelEncryptionConfigs",
 	},
-	{
+	"ListFieldLevelEncryptionProfiles": {
 		IgnoreRegion:  true,
 		ServiceSuffix: "2020-05-31/field-level-encryption-profile",
 		Permission:    "ListFieldLevelEncryptionProfiles",
 	},
-	{
+	"ListStreamingDistributions": {
 		IgnoreRegion:  true,
 		ServiceSuffix: "2020-05-31/streaming-distribution",
 		Permission:    "ListStreamingDistributions",
 	},
 
 	// extra
-	{
+	"DescribeFunction": {
 		ServiceSuffix:          "/2020-05-31/function/{{.name}}/describe",
 		Permission:             "DescribeFunction",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "name",
 	},
-	{
+	"GetCachePolicy": {
 		ServiceSuffix:          "/2020-05-31/cache-policy/{{.id}}",
 		Permission:             "GetCachePolicy",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "id",
 	},
-	{
+	"GetCachePolicyConfig": {
 		ServiceSuffix:          "/2020-05-31/cache-policy/{{.id}}/config",
 		Permission:             "GetCachePolicyConfig",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "id",
 	},
-	{
+	"GetCloudFrontOriginAccessIdentity": {
 		ServiceSuffix:          "/2020-05-31/origin-access-identity/cloudfront/{{.id}}",
 		Permission:             "GetCloudFrontOriginAccessIdentity",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "id",
 	},
-	{
+	"GetCloudFrontOriginAccessIdentityConfig": {
 		ServiceSuffix:          "/2020-05-31/origin-access-identity/cloudfront/{{.id}}/config",
 		Permission:             "GetCloudFrontOriginAccessIdentityConfig",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "id",
 	},
-	{
+	"GetDistribution": {
 		ServiceSuffix:          "/2020-05-31/distribution/{{.id}}",
 		Permission:             "GetDistribution",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "id",
 	},
-	{
+	"GetDistributionConfig": {
 		ServiceSuffix:          "/2020-05-31/distribution/{{.id}}/config",
 		Permission:             "GetDistributionConfig",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "id",
 	},
-	{
+	"GetFieldLevelEncryption": {
 		ServiceSuffix:          "/2020-05-31/field-level-encryption/{{.id}}",
 		Permission:             "GetFieldLevelEncryption",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "id",
 	},
-	{
+	"GetFieldLevelEncryptionConfig": {
 		ServiceSuffix:          "/2020-05-31/field-level-encryption/{{.id}}/config",
 		Permission:             "GetFieldLevelEncryptionConfig",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "id",
 	},
-	{
+	"GetFieldLevelEncryptionProfile": {
 		ServiceSuffix:          "/2020-05-31/field-level-encryption-profile/{{.id}}",
 		Permission:             "GetFieldLevelEncryptionProfile",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "id",
 	},
-	{
+	"GetFieldLevelEncryptionProfileConfig": {
 		ServiceSuffix:          "/2020-05-31/field-level-encryption-profile/{{.id}}/config",
 		Permission:             "GetFieldLevelEncryptionProfileConfig",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "id",
 	},
-	{
+	"GetFunction": {
 		ServiceSuffix:          "/2020-05-31/function/{{.name}}",
 		Permission:             "GetFunction",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "name",
 	},
-	{
+	"GetKeyGroup": {
 		ServiceSuffix:          "/2020-05-31/key-group/{{.id}}",
 		Permission:             "GetKeyGroup",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "id",
 	},
-	{
+	"GetKeyGroupConfig": {
 		ServiceSuffix:          "/2020-05-31/key-group/{{.id}}/config",
 		Permission:             "GetKeyGroupConfig",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "id",
 	},
-	{
+	"GetMonitoringSubscription": {
 		ServiceSuffix:          "/2020-05-31/distributions/{{.distribution_id}}/monitoring-subscription",
 		Permission:             "GetMonitoringSubscription",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "distribution_id",
 	},
-	{
+	"GetOriginRequestPolicy": {
 		ServiceSuffix:          "/2020-05-31/origin-request-policy/{{.id}}",
 		Permission:             "GetOriginRequestPolicy",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "id",
 	},
-	{
+	"GetOriginRequestPolicyConfig": {
 		ServiceSuffix:          "/2020-05-31/origin-request-policy/{{.id}}/config",
 		Permission:             "GetOriginRequestPolicyConfig",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "id",
 	},
-	{
+	"GetPublicKey": {
 		ServiceSuffix:          "/2020-05-31/public-key/{{.id}}",
 		Permission:             "GetPublicKey",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "id",
 	},
-	{
+	"GetPublicKeyConfig": {
 		ServiceSuffix:          "/2020-05-31/public-key/{{.id}}/config",
 		Permission:             "GetPublicKeyConfig",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "id",
 	},
-	{
+	"GetResponseHeadersPolicy": {
 		ServiceSuffix:          "/2020-05-31/response-headers-policy/{{.id}}",
 		Permission:             "GetResponseHeadersPolicy",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "id",
 	},
-	{
+	"GetResponseHeadersPolicyConfig": {
 		ServiceSuffix:          "/2020-05-31/response-headers-policy/{{.id}}/config",
 		Permission:             "GetResponseHeadersPolicyConfig",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "id",
 	},
-	{
+	"GetStreamingDistribution": {
 		ServiceSuffix:          "/2020-05-31/streaming-distribution/{{.id}}",
 		Permission:             "GetStreamingDistribution",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "id",
 	},
-	{
+	"GetStreamingDistributionConfig": {
 		ServiceSuffix:          "/2020-05-31/streaming-distribution/{{.id}}/config",
 		Permission:             "GetStreamingDistributionConfig",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "id",
 	},
-	{
+	"ListDistributionsByCachePolicyId": {
 		ServiceSuffix:          "/2020-05-31/distributionsByCachePolicyId/{{.cache_policy_id}}",
 		Permission:             "ListDistributionsByCachePolicyId",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "cache_policy_id",
 	},
-	{
+	"ListDistributionsByKeyGroup": {
 		ServiceSuffix:          "/2020-05-31/distributionsByKeyGroupId/{{.key_group_id}}",
 		Permission:             "ListDistributionsByKeyGroup",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "key_group_id",
 	},
-	{
+	"ListDistributionsByOriginRequestPolicyId": {
 		ServiceSuffix:          "/2020-05-31/distributionsByOriginRequestPolicyId/{{.origin_request_policy_id}}",
 		Permission:             "ListDistributionsByOriginRequestPolicyId",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "origin_request_policy_id",
 	},
-	{
+	"ListDistributionsByResponseHeadersPolicyId": {
 		ServiceSuffix:          "/2020-05-31/distributionsByResponseHeadersPolicyId/{{.response_headers_policy_id}}",
 		Permission:             "ListDistributionsByResponseHeadersPolicyId",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "response_headers_policy_id",
 	},
-	{
+	"ListDistributionsByWebACLId": {
 		ServiceSuffix:          "/2020-05-31/distributionsByWebACLId/{{.web_a_c_l_id}}",
 		Permission:             "ListDistributionsByWebACLId",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "web_a_c_l_id",
 	},
-	{
+	"ListInvalidations": {
 		ServiceSuffix:          "/2020-05-31/distribution/{{.distribution_id}}/invalidation",
 		Permission:             "ListInvalidations",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "distribution_id",
 	},
-	{
+	"ListTagsForResource": {
 		ServiceSuffix:          "/2020-05-31/tagging",
 		Permission:             "ListTagsForResource",
 		ExtraComponentLocation: "path",

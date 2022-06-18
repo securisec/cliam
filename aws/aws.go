@@ -123,7 +123,7 @@ const (
 	FSX                   = "fsx"
 )
 
-var Services = map[string][]policy.Service{
+var Services = map[string]map[string]policy.Service{
 	AccessAnalyzers:       policy.AccessAnalyzersPolicies,
 	FSX:                   policy.FSXPolicies,
 	DataExchange:          policy.DataExchangePolicies,

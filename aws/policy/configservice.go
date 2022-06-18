@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var ConfigServicePolicies = []Service{
-	{
+var ConfigServicePolicies = map[string]Service{
+	"DescribeAggregationAuthorizations": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var ConfigServicePolicies = []Service{
 		},
 		Permission: "DescribeAggregationAuthorizations",
 	},
-	{
+	"DescribeComplianceByConfigRule": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var ConfigServicePolicies = []Service{
 		},
 		Permission: "DescribeComplianceByConfigRule",
 	},
-	{
+	"DescribeComplianceByResource": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -30,7 +30,7 @@ var ConfigServicePolicies = []Service{
 		},
 		Permission: "DescribeComplianceByResource",
 	},
-	{
+	"DescribeConfigRuleEvaluationStatus": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -39,7 +39,7 @@ var ConfigServicePolicies = []Service{
 		},
 		Permission: "DescribeConfigRuleEvaluationStatus",
 	},
-	{
+	"DescribeConfigRules": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -48,7 +48,7 @@ var ConfigServicePolicies = []Service{
 		},
 		Permission: "DescribeConfigRules",
 	},
-	{
+	"DescribeConfigurationAggregators": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -57,7 +57,7 @@ var ConfigServicePolicies = []Service{
 		},
 		Permission: "DescribeConfigurationAggregators",
 	},
-	{
+	"DescribeConfigurationRecorderStatus": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -66,7 +66,7 @@ var ConfigServicePolicies = []Service{
 		},
 		Permission: "DescribeConfigurationRecorderStatus",
 	},
-	{
+	"DescribeConfigurationRecorders": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -75,7 +75,7 @@ var ConfigServicePolicies = []Service{
 		},
 		Permission: "DescribeConfigurationRecorders",
 	},
-	{
+	"DescribeConformancePackStatus": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -84,7 +84,7 @@ var ConfigServicePolicies = []Service{
 		},
 		Permission: "DescribeConformancePackStatus",
 	},
-	{
+	"DescribeConformancePacks": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -93,7 +93,7 @@ var ConfigServicePolicies = []Service{
 		},
 		Permission: "DescribeConformancePacks",
 	},
-	{
+	"DescribeDeliveryChannelStatus": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -102,7 +102,7 @@ var ConfigServicePolicies = []Service{
 		},
 		Permission: "DescribeDeliveryChannelStatus",
 	},
-	{
+	"DescribeDeliveryChannels": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -111,7 +111,7 @@ var ConfigServicePolicies = []Service{
 		},
 		Permission: "DescribeDeliveryChannels",
 	},
-	{
+	"DescribeOrganizationConfigRuleStatuses": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -120,7 +120,7 @@ var ConfigServicePolicies = []Service{
 		},
 		Permission: "DescribeOrganizationConfigRuleStatuses",
 	},
-	{
+	"DescribeOrganizationConfigRules": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -129,7 +129,7 @@ var ConfigServicePolicies = []Service{
 		},
 		Permission: "DescribeOrganizationConfigRules",
 	},
-	{
+	"DescribeOrganizationConformancePackStatuses": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -138,7 +138,7 @@ var ConfigServicePolicies = []Service{
 		},
 		Permission: "DescribeOrganizationConformancePackStatuses",
 	},
-	{
+	"DescribeOrganizationConformancePacks": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -147,7 +147,7 @@ var ConfigServicePolicies = []Service{
 		},
 		Permission: "DescribeOrganizationConformancePacks",
 	},
-	{
+	"DescribePendingAggregationRequests": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -156,7 +156,7 @@ var ConfigServicePolicies = []Service{
 		},
 		Permission: "DescribePendingAggregationRequests",
 	},
-	{
+	"DescribeRetentionConfigurations": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -165,7 +165,7 @@ var ConfigServicePolicies = []Service{
 		},
 		Permission: "DescribeRetentionConfigurations",
 	},
-	{
+	"GetComplianceSummaryByConfigRule": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -174,7 +174,7 @@ var ConfigServicePolicies = []Service{
 		},
 		Permission: "GetComplianceSummaryByConfigRule",
 	},
-	{
+	"GetComplianceSummaryByResourceType": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -183,7 +183,7 @@ var ConfigServicePolicies = []Service{
 		},
 		Permission: "GetComplianceSummaryByResourceType",
 	},
-	{
+	"GetCustomRulePolicy": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -192,7 +192,7 @@ var ConfigServicePolicies = []Service{
 		},
 		Permission: "GetCustomRulePolicy",
 	},
-	{
+	"GetDiscoveredResourceCounts": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -201,7 +201,7 @@ var ConfigServicePolicies = []Service{
 		},
 		Permission: "GetDiscoveredResourceCounts",
 	},
-	{
+	"ListStoredQueries": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -212,7 +212,7 @@ var ConfigServicePolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeAggregateComplianceByConfigRules": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -224,7 +224,7 @@ var ConfigServicePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "configuration_aggregator_name",
 	},
-	{
+	"DescribeAggregateComplianceByConformancePacks": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -236,7 +236,7 @@ var ConfigServicePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "configuration_aggregator_name",
 	},
-	{
+	"DescribeConfigurationAggregatorSourcesStatus": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -248,7 +248,7 @@ var ConfigServicePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "configuration_aggregator_name",
 	},
-	{
+	"DescribeConformancePackCompliance": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -260,7 +260,7 @@ var ConfigServicePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "conformance_pack_name",
 	},
-	{
+	"DescribeRemediationConfigurations": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -272,7 +272,7 @@ var ConfigServicePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "config_rule_names",
 	},
-	{
+	"DescribeRemediationExceptions": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -284,7 +284,7 @@ var ConfigServicePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "config_rule_name",
 	},
-	{
+	"DescribeRemediationExecutionStatus": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -296,7 +296,7 @@ var ConfigServicePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "config_rule_name",
 	},
-	{
+	"GetAggregateConfigRuleComplianceSummary": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -308,7 +308,7 @@ var ConfigServicePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "configuration_aggregator_name",
 	},
-	{
+	"GetAggregateConformancePackComplianceSummary": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -320,7 +320,7 @@ var ConfigServicePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "configuration_aggregator_name",
 	},
-	{
+	"GetAggregateDiscoveredResourceCounts": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -332,7 +332,7 @@ var ConfigServicePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "configuration_aggregator_name",
 	},
-	{
+	"GetComplianceDetailsByConfigRule": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -344,7 +344,7 @@ var ConfigServicePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "config_rule_name",
 	},
-	{
+	"GetConformancePackComplianceDetails": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -356,7 +356,7 @@ var ConfigServicePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "conformance_pack_name",
 	},
-	{
+	"GetConformancePackComplianceSummary": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -368,7 +368,7 @@ var ConfigServicePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "conformance_pack_names",
 	},
-	{
+	"GetOrganizationConfigRuleDetailedStatus": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -380,7 +380,7 @@ var ConfigServicePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "organization_config_rule_name",
 	},
-	{
+	"GetOrganizationConformancePackDetailedStatus": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -392,7 +392,7 @@ var ConfigServicePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "organization_conformance_pack_name",
 	},
-	{
+	"GetOrganizationCustomRulePolicy": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -404,7 +404,7 @@ var ConfigServicePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "organization_config_rule_name",
 	},
-	{
+	"GetStoredQuery": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -416,7 +416,7 @@ var ConfigServicePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "query_name",
 	},
-	{
+	"ListDiscoveredResources": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -428,7 +428,7 @@ var ConfigServicePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "resource_type",
 	},
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

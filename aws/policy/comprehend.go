@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var ComprehendPolicies = []Service{
-	{
+var ComprehendPolicies = map[string]Service{
+	"ListDocumentClassificationJobs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var ComprehendPolicies = []Service{
 		},
 		Permission: "ListDocumentClassificationJobs",
 	},
-	{
+	"ListDocumentClassifierSummaries": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var ComprehendPolicies = []Service{
 		},
 		Permission: "ListDocumentClassifierSummaries",
 	},
-	{
+	"ListDocumentClassifiers": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -30,7 +30,7 @@ var ComprehendPolicies = []Service{
 		},
 		Permission: "ListDocumentClassifiers",
 	},
-	{
+	"ListDominantLanguageDetectionJobs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -39,7 +39,7 @@ var ComprehendPolicies = []Service{
 		},
 		Permission: "ListDominantLanguageDetectionJobs",
 	},
-	{
+	"ListEndpoints": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -48,7 +48,7 @@ var ComprehendPolicies = []Service{
 		},
 		Permission: "ListEndpoints",
 	},
-	{
+	"ListEntitiesDetectionJobs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -57,7 +57,7 @@ var ComprehendPolicies = []Service{
 		},
 		Permission: "ListEntitiesDetectionJobs",
 	},
-	{
+	"ListEntityRecognizerSummaries": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -66,7 +66,7 @@ var ComprehendPolicies = []Service{
 		},
 		Permission: "ListEntityRecognizerSummaries",
 	},
-	{
+	"ListEntityRecognizers": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -75,7 +75,7 @@ var ComprehendPolicies = []Service{
 		},
 		Permission: "ListEntityRecognizers",
 	},
-	{
+	"ListEventsDetectionJobs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -84,7 +84,7 @@ var ComprehendPolicies = []Service{
 		},
 		Permission: "ListEventsDetectionJobs",
 	},
-	{
+	"ListKeyPhrasesDetectionJobs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -93,7 +93,7 @@ var ComprehendPolicies = []Service{
 		},
 		Permission: "ListKeyPhrasesDetectionJobs",
 	},
-	{
+	"ListPiiEntitiesDetectionJobs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -102,7 +102,7 @@ var ComprehendPolicies = []Service{
 		},
 		Permission: "ListPiiEntitiesDetectionJobs",
 	},
-	{
+	"ListSentimentDetectionJobs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -111,7 +111,7 @@ var ComprehendPolicies = []Service{
 		},
 		Permission: "ListSentimentDetectionJobs",
 	},
-	{
+	"ListTargetedSentimentDetectionJobs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -120,7 +120,7 @@ var ComprehendPolicies = []Service{
 		},
 		Permission: "ListTargetedSentimentDetectionJobs",
 	},
-	{
+	"ListTopicsDetectionJobs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -131,7 +131,7 @@ var ComprehendPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeDocumentClassificationJob": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -143,7 +143,7 @@ var ComprehendPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "job_id",
 	},
-	{
+	"DescribeDocumentClassifier": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -155,7 +155,7 @@ var ComprehendPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "document_classifier_arn",
 	},
-	{
+	"DescribeDominantLanguageDetectionJob": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -167,7 +167,7 @@ var ComprehendPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "job_id",
 	},
-	{
+	"DescribeEndpoint": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -179,7 +179,7 @@ var ComprehendPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "endpoint_arn",
 	},
-	{
+	"DescribeEntitiesDetectionJob": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -191,7 +191,7 @@ var ComprehendPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "job_id",
 	},
-	{
+	"DescribeEntityRecognizer": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -203,7 +203,7 @@ var ComprehendPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "entity_recognizer_arn",
 	},
-	{
+	"DescribeEventsDetectionJob": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -215,7 +215,7 @@ var ComprehendPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "job_id",
 	},
-	{
+	"DescribeKeyPhrasesDetectionJob": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -227,7 +227,7 @@ var ComprehendPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "job_id",
 	},
-	{
+	"DescribePiiEntitiesDetectionJob": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -239,7 +239,7 @@ var ComprehendPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "job_id",
 	},
-	{
+	"DescribeResourcePolicy": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -251,7 +251,7 @@ var ComprehendPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "resource_arn",
 	},
-	{
+	"DescribeSentimentDetectionJob": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -263,7 +263,7 @@ var ComprehendPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "job_id",
 	},
-	{
+	"DescribeTargetedSentimentDetectionJob": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -275,7 +275,7 @@ var ComprehendPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "job_id",
 	},
-	{
+	"DescribeTopicsDetectionJob": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -287,7 +287,7 @@ var ComprehendPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "job_id",
 	},
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var WAFPolicies = []Service{
-	{
+var WAFPolicies = map[string]Service{
+	"GetChangeToken": {
 		IgnoreRegion: true,
 		Method:       "POST",
 		JsonData:     map[string]string{},
@@ -13,7 +13,7 @@ var WAFPolicies = []Service{
 		},
 		Permission: "GetChangeToken",
 	},
-	{
+	"ListActivatedRulesInRuleGroup": {
 		IgnoreRegion: true,
 		Method:       "POST",
 		JsonData:     map[string]string{},
@@ -23,7 +23,7 @@ var WAFPolicies = []Service{
 		},
 		Permission: "ListActivatedRulesInRuleGroup",
 	},
-	{
+	"ListByteMatchSets": {
 		IgnoreRegion: true,
 		Method:       "POST",
 		JsonData:     map[string]string{},
@@ -33,7 +33,7 @@ var WAFPolicies = []Service{
 		},
 		Permission: "ListByteMatchSets",
 	},
-	{
+	"ListGeoMatchSets": {
 		IgnoreRegion: true,
 		Method:       "POST",
 		JsonData:     map[string]string{},
@@ -43,7 +43,7 @@ var WAFPolicies = []Service{
 		},
 		Permission: "ListGeoMatchSets",
 	},
-	{
+	"ListIpSets": {
 		IgnoreRegion: true,
 		Method:       "POST",
 		JsonData:     map[string]string{},
@@ -53,7 +53,7 @@ var WAFPolicies = []Service{
 		},
 		Permission: "ListIpSets",
 	},
-	{
+	"ListLoggingConfigurations": {
 		IgnoreRegion: true,
 		Method:       "POST",
 		JsonData:     map[string]string{},
@@ -63,7 +63,7 @@ var WAFPolicies = []Service{
 		},
 		Permission: "ListLoggingConfigurations",
 	},
-	{
+	"ListRateBasedRules": {
 		IgnoreRegion: true,
 		Method:       "POST",
 		JsonData:     map[string]string{},
@@ -73,7 +73,7 @@ var WAFPolicies = []Service{
 		},
 		Permission: "ListRateBasedRules",
 	},
-	{
+	"ListRegexMatchSets": {
 		IgnoreRegion: true,
 		Method:       "POST",
 		JsonData:     map[string]string{},
@@ -83,7 +83,7 @@ var WAFPolicies = []Service{
 		},
 		Permission: "ListRegexMatchSets",
 	},
-	{
+	"ListRegexPatternSets": {
 		IgnoreRegion: true,
 		Method:       "POST",
 		JsonData:     map[string]string{},
@@ -93,7 +93,7 @@ var WAFPolicies = []Service{
 		},
 		Permission: "ListRegexPatternSets",
 	},
-	{
+	"ListRuleGroups": {
 		IgnoreRegion: true,
 		Method:       "POST",
 		JsonData:     map[string]string{},
@@ -103,7 +103,7 @@ var WAFPolicies = []Service{
 		},
 		Permission: "ListRuleGroups",
 	},
-	{
+	"ListRules": {
 		IgnoreRegion: true,
 		Method:       "POST",
 		JsonData:     map[string]string{},
@@ -113,7 +113,7 @@ var WAFPolicies = []Service{
 		},
 		Permission: "ListRules",
 	},
-	{
+	"ListSizeConstraintSets": {
 		IgnoreRegion: true,
 		Method:       "POST",
 		JsonData:     map[string]string{},
@@ -123,7 +123,7 @@ var WAFPolicies = []Service{
 		},
 		Permission: "ListSizeConstraintSets",
 	},
-	{
+	"ListSqlInjectionMatchSets": {
 		IgnoreRegion: true,
 		Method:       "POST",
 		JsonData:     map[string]string{},
@@ -133,7 +133,7 @@ var WAFPolicies = []Service{
 		},
 		Permission: "ListSqlInjectionMatchSets",
 	},
-	{
+	"ListSubscribedRuleGroups": {
 		IgnoreRegion: true,
 		Method:       "POST",
 		JsonData:     map[string]string{},
@@ -143,7 +143,7 @@ var WAFPolicies = []Service{
 		},
 		Permission: "ListSubscribedRuleGroups",
 	},
-	{
+	"ListXssMatchSets": {
 		IgnoreRegion: true,
 		Method:       "POST",
 		JsonData:     map[string]string{},
@@ -155,7 +155,7 @@ var WAFPolicies = []Service{
 	},
 
 	// extra
-	{
+	"GetByteMatchSet": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -167,7 +167,7 @@ var WAFPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "byte_match_set_id",
 	},
-	{
+	"GetChangeTokenStatus": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -179,7 +179,7 @@ var WAFPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "change_token",
 	},
-	{
+	"GetGeoMatchSet": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -191,7 +191,7 @@ var WAFPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "geo_match_set_id",
 	},
-	{
+	"GetIPSet": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -203,7 +203,7 @@ var WAFPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "i_p_set_id",
 	},
-	{
+	"GetLoggingConfiguration": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -215,7 +215,7 @@ var WAFPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "resource_arn",
 	},
-	{
+	"GetPermissionPolicy": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -227,7 +227,7 @@ var WAFPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "resource_arn",
 	},
-	{
+	"GetRateBasedRule": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -239,7 +239,7 @@ var WAFPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "rule_id",
 	},
-	{
+	"GetRateBasedRuleManagedKeys": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -251,7 +251,7 @@ var WAFPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "rule_id",
 	},
-	{
+	"GetRegexMatchSet": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -263,7 +263,7 @@ var WAFPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "regex_match_set_id",
 	},
-	{
+	"GetRegexPatternSet": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -275,7 +275,7 @@ var WAFPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "regex_pattern_set_id",
 	},
-	{
+	"GetRule": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -287,7 +287,7 @@ var WAFPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "rule_id",
 	},
-	{
+	"GetRuleGroup": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -299,7 +299,7 @@ var WAFPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "rule_group_id",
 	},
-	{
+	"GetSizeConstraintSet": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -311,7 +311,7 @@ var WAFPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "size_constraint_set_id",
 	},
-	{
+	"GetSqlInjectionMatchSet": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -323,7 +323,7 @@ var WAFPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "sql_injection_match_set_id",
 	},
-	{
+	"GetWebACL": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -335,7 +335,7 @@ var WAFPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "web_a_c_l_id",
 	},
-	{
+	"GetXssMatchSet": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -347,7 +347,7 @@ var WAFPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "xss_match_set_id",
 	},
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

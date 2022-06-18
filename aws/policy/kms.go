@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var KMSPolicies = []Service{
-	{
+var KMSPolicies = map[string]Service{
+	"DescribeCustomKeyStores": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var KMSPolicies = []Service{
 		},
 		Permission: "DescribeCustomKeyStores",
 	},
-	{
+	"ListAliases": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var KMSPolicies = []Service{
 		},
 		Permission: "ListAliases",
 	},
-	{
+	"ListKeys": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -32,7 +32,7 @@ var KMSPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeKey": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -44,7 +44,7 @@ var KMSPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "key_id",
 	},
-	{
+	"GetKeyRotationStatus": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -56,7 +56,7 @@ var KMSPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "key_id",
 	},
-	{
+	"GetPublicKey": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -68,7 +68,7 @@ var KMSPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "key_id",
 	},
-	{
+	"ListGrants": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -80,7 +80,7 @@ var KMSPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "key_id",
 	},
-	{
+	"ListKeyPolicies": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -92,7 +92,7 @@ var KMSPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "key_id",
 	},
-	{
+	"ListResourceTags": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -104,7 +104,7 @@ var KMSPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "key_id",
 	},
-	{
+	"ListRetirableGrants": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

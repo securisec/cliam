@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var ECRPublicPolicies = []Service{
-	{
+var ECRPublicPolicies = map[string]Service{
+	"DescribeRepositories": {
 		Permission: "DescribeRepositories",
 		Method:     "POST",
 		JsonData:   map[string]string{},
@@ -12,7 +12,7 @@ var ECRPublicPolicies = []Service{
 			"x-amz-target":             "SpencerFrontendService.DescribeRepositories",
 		},
 	},
-	{
+	"DescribeRegistries": {
 		Permission: "DescribeRegistries",
 		Method:     "POST",
 		JsonData:   map[string]string{},
@@ -21,7 +21,7 @@ var ECRPublicPolicies = []Service{
 			"x-amz-target":             "SpencerFrontendService.DescribeRegistries",
 		},
 	},
-	{
+	"GetAuthorizationToken": {
 		Permission: "GetAuthorizationToken",
 		Method:     "POST",
 		JsonData:   map[string]string{},
@@ -30,7 +30,7 @@ var ECRPublicPolicies = []Service{
 			"x-amz-target":             "SpencerFrontendService.GetAuthorizationToken",
 		},
 	},
-	{
+	"GetRegistryCatalogData": {
 		Permission: "GetRegistryCatalogData",
 		Method:     "POST",
 		JsonData:   map[string]string{},
@@ -41,7 +41,7 @@ var ECRPublicPolicies = []Service{
 	},
 
 	// extra policies
-	{
+	"DescribeImageTags": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -53,7 +53,7 @@ var ECRPublicPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "repository_name",
 	},
-	{
+	"DescribeImages": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -65,7 +65,7 @@ var ECRPublicPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "repository_name",
 	},
-	{
+	"GetRepositoryCatalogData": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -77,7 +77,7 @@ var ECRPublicPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "repository_name",
 	},
-	{
+	"GetRepositoryPolicy": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -89,7 +89,7 @@ var ECRPublicPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "repository_name",
 	},
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

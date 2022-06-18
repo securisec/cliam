@@ -2,18 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var DynamoDBPolicies = []Service{
-	// disabling this because it seems to be always valid
-	// {
-	// 	Method:   "POST",
-	// 	JsonData: map[string]string{},
-	// 	Headers: map[string]string{
-	// 		shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_JSON,
-	// 		aws_X_AMZ_TARGET:           "DynamoDB_20120810.DescribeEndpoints",
-	// 	},
-	// 	Permission: "DescribeEndpoints",
-	// },
-	{
+var DynamoDBPolicies = map[string]Service{
+	"DescribeLimits": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -22,7 +12,7 @@ var DynamoDBPolicies = []Service{
 		},
 		Permission: "DescribeLimits",
 	},
-	{
+	"ListBackups": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -31,7 +21,7 @@ var DynamoDBPolicies = []Service{
 		},
 		Permission: "ListBackups",
 	},
-	{
+	"ListContributorInsights": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -40,7 +30,7 @@ var DynamoDBPolicies = []Service{
 		},
 		Permission: "ListContributorInsights",
 	},
-	{
+	"ListExports": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -49,7 +39,7 @@ var DynamoDBPolicies = []Service{
 		},
 		Permission: "ListExports",
 	},
-	{
+	"ListGlobalTables": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -58,7 +48,7 @@ var DynamoDBPolicies = []Service{
 		},
 		Permission: "ListGlobalTables",
 	},
-	{
+	"ListTables": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -69,7 +59,7 @@ var DynamoDBPolicies = []Service{
 	},
 
 	// extras
-	{
+	"DescribeBackup": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
@@ -81,7 +71,7 @@ var DynamoDBPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "backup_arn",
 	},
-	{
+	"DescribeContinuousBackups": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
@@ -93,7 +83,7 @@ var DynamoDBPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "table_name",
 	},
-	{
+	"DescribeContributorInsights": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
@@ -105,7 +95,7 @@ var DynamoDBPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "table_name",
 	},
-	{
+	"DescribeExport": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
@@ -117,7 +107,7 @@ var DynamoDBPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "export_arn",
 	},
-	{
+	"DescribeGlobalTable": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
@@ -129,7 +119,7 @@ var DynamoDBPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "global_table_name",
 	},
-	{
+	"DescribeGlobalTableSettings": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
@@ -141,7 +131,7 @@ var DynamoDBPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "global_table_name",
 	},
-	{
+	"DescribeKinesisStreamingDestination": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
@@ -153,7 +143,7 @@ var DynamoDBPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "table_name",
 	},
-	{
+	"DescribeTable": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
@@ -165,7 +155,7 @@ var DynamoDBPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "table_name",
 	},
-	{
+	"DescribeTableReplicaAutoScaling": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
@@ -177,7 +167,7 @@ var DynamoDBPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "table_name",
 	},
-	{
+	"DescribeTimeToLive": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
@@ -189,7 +179,7 @@ var DynamoDBPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "table_name",
 	},
-	{
+	"ListTagsOfResource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,

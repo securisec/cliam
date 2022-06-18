@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var CodeDeployPolicies = []Service{
-	{
+var CodeDeployPolicies = map[string]Service{
+	"BatchGetDeploymentTargets": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var CodeDeployPolicies = []Service{
 		},
 		Permission: "BatchGetDeploymentTargets",
 	},
-	{
+	"ContinueDeployment": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var CodeDeployPolicies = []Service{
 		},
 		Permission: "ContinueDeployment",
 	},
-	{
+	"DeleteGitHubAccountToken": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -30,7 +30,7 @@ var CodeDeployPolicies = []Service{
 		},
 		Permission: "DeleteGitHubAccountToken",
 	},
-	{
+	"DeleteResourcesByExternalId": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -39,7 +39,7 @@ var CodeDeployPolicies = []Service{
 		},
 		Permission: "DeleteResourcesByExternalId",
 	},
-	{
+	"GetDeploymentTarget": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -48,7 +48,7 @@ var CodeDeployPolicies = []Service{
 		},
 		Permission: "GetDeploymentTarget",
 	},
-	{
+	"ListApplications": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -57,7 +57,7 @@ var CodeDeployPolicies = []Service{
 		},
 		Permission: "ListApplications",
 	},
-	{
+	"ListDeploymentConfigs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -66,7 +66,7 @@ var CodeDeployPolicies = []Service{
 		},
 		Permission: "ListDeploymentConfigs",
 	},
-	{
+	"ListDeploymentTargets": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -75,7 +75,7 @@ var CodeDeployPolicies = []Service{
 		},
 		Permission: "ListDeploymentTargets",
 	},
-	{
+	"ListDeployments": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -84,7 +84,7 @@ var CodeDeployPolicies = []Service{
 		},
 		Permission: "ListDeployments",
 	},
-	{
+	"ListGitHubAccountTokenNames": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -93,7 +93,7 @@ var CodeDeployPolicies = []Service{
 		},
 		Permission: "ListGitHubAccountTokenNames",
 	},
-	{
+	"ListOnPremisesInstances": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -102,7 +102,7 @@ var CodeDeployPolicies = []Service{
 		},
 		Permission: "ListOnPremisesInstances",
 	},
-	{
+	"PutLifecycleEventHookExecutionStatus": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -111,7 +111,7 @@ var CodeDeployPolicies = []Service{
 		},
 		Permission: "PutLifecycleEventHookExecutionStatus",
 	},
-	{
+	"SkipWaitTimeForInstanceTermination": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -120,7 +120,7 @@ var CodeDeployPolicies = []Service{
 		},
 		Permission: "SkipWaitTimeForInstanceTermination",
 	},
-	{
+	"UpdateApplication": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -131,7 +131,7 @@ var CodeDeployPolicies = []Service{
 	},
 
 	// extra
-	{
+	"GetApplication": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -143,7 +143,7 @@ var CodeDeployPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "application_name",
 	},
-	{
+	"GetDeployment": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -155,7 +155,7 @@ var CodeDeployPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "deployment_id",
 	},
-	{
+	"GetDeploymentConfig": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -167,7 +167,7 @@ var CodeDeployPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "deployment_config_name",
 	},
-	{
+	"GetOnPremisesInstance": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -179,7 +179,7 @@ var CodeDeployPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "instance_name",
 	},
-	{
+	"ListApplicationRevisions": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -191,7 +191,7 @@ var CodeDeployPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "application_name",
 	},
-	{
+	"ListDeploymentGroups": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -203,7 +203,7 @@ var CodeDeployPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "application_name",
 	},
-	{
+	"ListDeploymentInstances": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -215,7 +215,7 @@ var CodeDeployPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "deployment_id",
 	},
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

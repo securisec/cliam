@@ -15,7 +15,10 @@ const (
 	CONTENT_TYPE_HEADER      = "Content-Type"
 )
 
-var TemplatePropertyRegex = regexp.MustCompile(`\{.(\w+)\}`)
+var AzureTemplatePropertyRegex = regexp.MustCompile(`\{.(\w+)\}`)
+var AwsTemplatePropertyRegex = regexp.MustCompile(`(?:^|)\b(//)`)
+
+var CheckForEmptyPathRegex = regexp.MustCompile(`//`)
 
 type Scanner interface {
 	EnumerateAll(ctx context.Context, region string, creds interface{}) error

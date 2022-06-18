@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var BackupGatewayPolicies = []Service{
-	{
+var BackupGatewayPolicies = map[string]Service{
+	"ListGateways": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var BackupGatewayPolicies = []Service{
 		},
 		Permission: "ListGateways",
 	},
-	{
+	"ListHypervisors": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var BackupGatewayPolicies = []Service{
 		},
 		Permission: "ListHypervisors",
 	},
-	{
+	"ListVirtualMachines": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -32,7 +32,7 @@ var BackupGatewayPolicies = []Service{
 	},
 
 	// extra
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,

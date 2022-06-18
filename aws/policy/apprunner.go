@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var AppRunnerPolicies = []Service{
-	{
+var AppRunnerPolicies = map[string]Service{
+	"ListAutoScalingConfigurations": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var AppRunnerPolicies = []Service{
 		},
 		Permission: "ListAutoScalingConfigurations",
 	},
-	{
+	"ListConnections": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var AppRunnerPolicies = []Service{
 		},
 		Permission: "ListConnections",
 	},
-	{
+	"ListObservabilityConfigurations": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -30,7 +30,7 @@ var AppRunnerPolicies = []Service{
 		},
 		Permission: "ListObservabilityConfigurations",
 	},
-	{
+	"ListServices": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -39,7 +39,7 @@ var AppRunnerPolicies = []Service{
 		},
 		Permission: "ListServices",
 	},
-	{
+	"ListVpcConnectors": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -50,7 +50,7 @@ var AppRunnerPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeAutoScalingConfiguration": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
@@ -62,7 +62,7 @@ var AppRunnerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "auto_scaling_configuration_arn",
 	},
-	{
+	"DescribeCustomDomains": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
@@ -74,7 +74,7 @@ var AppRunnerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "service_arn",
 	},
-	{
+	"DescribeObservabilityConfiguration": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
@@ -86,7 +86,7 @@ var AppRunnerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "observability_configuration_arn",
 	},
-	{
+	"DescribeService": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
@@ -98,7 +98,7 @@ var AppRunnerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "service_arn",
 	},
-	{
+	"DescribeVpcConnector": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
@@ -110,7 +110,7 @@ var AppRunnerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "vpc_connector_arn",
 	},
-	{
+	"ListOperations": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
@@ -122,7 +122,7 @@ var AppRunnerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "service_arn",
 	},
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,

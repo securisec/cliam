@@ -2,115 +2,110 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var IAMPolicies = []Service{
-	{
+var IAMPolicies = map[string]Service{
+	"ListRoles": {
 		IgnoreRegion:  true,
 		ServiceSuffix: "?Action=ListRoles&Version=2010-05-08",
 		Permission:    "ListRoles",
 	},
-	{
+	"GetAccountAuthorizationDetails": {
 		IgnoreRegion:  true,
 		ServiceSuffix: "?Action=GetAccountAuthorizationDetails&Version=2010-05-08",
 		Permission:    "GetAccountAuthorizationDetails",
 	},
-	{
+	"GetAccountPasswordPolicy": {
 		IgnoreRegion:  true,
 		ServiceSuffix: "?Action=GetAccountPasswordPolicy&Version=2010-05-08",
 		Permission:    "GetAccountPasswordPolicy",
 	},
-	{
+	"GetAccountSummary": {
 		IgnoreRegion:  true,
 		ServiceSuffix: "?Action=GetAccountSummary&Version=2010-05-08",
 		Permission:    "GetAccountSummary",
 	},
-	{
+	"GetCredentialReport": {
 		IgnoreRegion:  true,
 		ServiceSuffix: "?Action=GetCredentialReport&Version=2010-05-08",
 		Permission:    "GetCredentialReport",
 	},
-	{
+	"GetUser": {
 		IgnoreRegion:  true,
 		ServiceSuffix: "?Action=GetUser&Version=2010-05-08",
 		Permission:    "GetUser",
 	},
-	{
+	"ListAccessKeys": {
 		IgnoreRegion:  true,
 		ServiceSuffix: "?Action=ListAccessKeys&Version=2010-05-08",
 		Permission:    "ListAccessKeys",
 	},
-	{
+	"ListAccountAliases": {
 		IgnoreRegion:  true,
 		ServiceSuffix: "?Action=ListAccountAliases&Version=2010-05-08",
 		Permission:    "ListAccountAliases",
 	},
-	{
+	"ListGroups": {
 		IgnoreRegion:  true,
 		ServiceSuffix: "?Action=ListGroups&Version=2010-05-08",
 		Permission:    "ListGroups",
 	},
-	{
+	"ListInstanceProfiles": {
 		IgnoreRegion:  true,
 		ServiceSuffix: "?Action=ListInstanceProfiles&Version=2010-05-08",
 		Permission:    "ListInstanceProfiles",
 	},
-	{
+	"ListMFADevices": {
 		IgnoreRegion:  true,
 		ServiceSuffix: "?Action=ListMFADevices&Version=2010-05-08",
 		Permission:    "ListMFADevices",
 	},
-	{
+	"ListOpenIDConnectProviders": {
 		IgnoreRegion:  true,
 		ServiceSuffix: "?Action=ListOpenIDConnectProviders&Version=2010-05-08",
 		Permission:    "ListOpenIDConnectProviders",
 	},
-	{
+	"ListPolicies": {
 		IgnoreRegion:  true,
 		ServiceSuffix: "?Action=ListPolicies&Version=2010-05-08",
 		Permission:    "ListPolicies",
 	},
-	{
-		IgnoreRegion:  true,
-		ServiceSuffix: "?Action=ListRoles&Version=2010-05-08",
-		Permission:    "ListRoles",
-	},
-	{
+	"ListSamlProviders": {
 		IgnoreRegion:  true,
 		ServiceSuffix: "?Action=ListSamlProviders&Version=2010-05-08",
 		Permission:    "ListSamlProviders",
 	},
-	{
+	"ListServerCertificates": {
 		IgnoreRegion:  true,
 		ServiceSuffix: "?Action=ListServerCertificates&Version=2010-05-08",
 		Permission:    "ListServerCertificates",
 	},
-	{
+	"ListServiceSpecificCredentials": {
 		IgnoreRegion:  true,
 		ServiceSuffix: "?Action=ListServiceSpecificCredentials&Version=2010-05-08",
 		Permission:    "ListServiceSpecificCredentials",
 	},
-	{
+	"ListSigningCertificates": {
 		IgnoreRegion:  true,
 		ServiceSuffix: "?Action=ListSigningCertificates&Version=2010-05-08",
 		Permission:    "ListSigningCertificates",
 	},
-	{
+	"ListSshPublicKeys": {
 		IgnoreRegion:  true,
 		ServiceSuffix: "?Action=ListSshPublicKeys&Version=2010-05-08",
 		Permission:    "ListSshPublicKeys",
 	},
-	{
+	"ListUsers": {
 		IgnoreRegion:  true,
 		ServiceSuffix: "?Action=ListUsers&Version=2010-05-08",
 		Permission:    "ListUsers",
 	},
-	{
+	"ListVirtualMfaDevices": {
 		IgnoreRegion:  true,
 		ServiceSuffix: "?Action=ListVirtualMfaDevices&Version=2010-05-08",
 		Permission:    "ListVirtualMfaDevices",
 	},
 
 	// extra
-	{
+	"GetAccessKeyLastUsed": {
 		Method:       "POST",
 		IgnoreRegion: true,
 		FormData: map[string]string{
@@ -126,7 +121,7 @@ var IAMPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "access_key_id",
 	},
-	{
+	"GetContextKeysForCustomPolicy": {
 		Method:       "POST",
 		IgnoreRegion: true,
 		FormData: map[string]string{
@@ -142,7 +137,7 @@ var IAMPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "policy_input_list",
 	},
-	{
+	"GetContextKeysForPrincipalPolicy": {
 		Method:       "POST",
 		IgnoreRegion: true,
 		FormData: map[string]string{
@@ -158,7 +153,7 @@ var IAMPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "policy_source_arn",
 	},
-	{
+	"GetGroup": {
 		Method:       "POST",
 		IgnoreRegion: true,
 		FormData: map[string]string{
@@ -174,7 +169,7 @@ var IAMPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "group_name",
 	},
-	{
+	"GetInstanceProfile": {
 		Method:       "POST",
 		IgnoreRegion: true,
 		FormData: map[string]string{
@@ -190,7 +185,7 @@ var IAMPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "instance_profile_name",
 	},
-	{
+	"GetLoginProfile": {
 		Method:       "POST",
 		IgnoreRegion: true,
 		FormData: map[string]string{
@@ -206,7 +201,7 @@ var IAMPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "user_name",
 	},
-	{
+	"GetOpenIDConnectProvider": {
 		Method:       "POST",
 		IgnoreRegion: true,
 		FormData: map[string]string{
@@ -222,7 +217,7 @@ var IAMPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "open_i_d_connect_provider_arn",
 	},
-	{
+	"GetOrganizationsAccessReport": {
 		Method:       "POST",
 		IgnoreRegion: true,
 		FormData: map[string]string{
@@ -238,7 +233,7 @@ var IAMPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "job_id",
 	},
-	{
+	"GetPolicy": {
 		Method:       "POST",
 		IgnoreRegion: true,
 		FormData: map[string]string{
@@ -254,7 +249,7 @@ var IAMPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "policy_arn",
 	},
-	{
+	"GetRole": {
 		Method:       "POST",
 		IgnoreRegion: true,
 		FormData: map[string]string{
@@ -270,7 +265,7 @@ var IAMPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "role_name",
 	},
-	{
+	"GetServerCertificate": {
 		Method:       "POST",
 		IgnoreRegion: true,
 		FormData: map[string]string{
@@ -286,7 +281,7 @@ var IAMPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "server_certificate_name",
 	},
-	{
+	"GetServiceLastAccessedDetails": {
 		Method:       "POST",
 		IgnoreRegion: true,
 		FormData: map[string]string{
@@ -302,7 +297,7 @@ var IAMPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "job_id",
 	},
-	{
+	"GetServiceLinkedRoleDeletionStatus": {
 		Method:       "POST",
 		IgnoreRegion: true,
 		FormData: map[string]string{
@@ -318,7 +313,7 @@ var IAMPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "deletion_task_id",
 	},
-	{
+	"ListAttachedGroupPolicies": {
 		Method:       "POST",
 		IgnoreRegion: true,
 		FormData: map[string]string{
@@ -334,7 +329,7 @@ var IAMPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "group_name",
 	},
-	{
+	"ListAttachedRolePolicies": {
 		Method:       "POST",
 		IgnoreRegion: true,
 		FormData: map[string]string{
@@ -350,7 +345,7 @@ var IAMPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "role_name",
 	},
-	{
+	"ListAttachedUserPolicies": {
 		Method:       "POST",
 		IgnoreRegion: true,
 		FormData: map[string]string{
@@ -366,7 +361,7 @@ var IAMPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "user_name",
 	},
-	{
+	"ListEntitiesForPolicy": {
 		Method:       "POST",
 		IgnoreRegion: true,
 		FormData: map[string]string{
@@ -382,7 +377,7 @@ var IAMPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "policy_arn",
 	},
-	{
+	"ListGroupPolicies": {
 		Method:       "POST",
 		IgnoreRegion: true,
 		FormData: map[string]string{
@@ -398,7 +393,7 @@ var IAMPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "group_name",
 	},
-	{
+	"ListGroupsForUser": {
 		Method:       "POST",
 		IgnoreRegion: true,
 		FormData: map[string]string{
@@ -414,7 +409,7 @@ var IAMPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "user_name",
 	},
-	{
+	"ListInstanceProfileTags": {
 		Method:       "POST",
 		IgnoreRegion: true,
 		FormData: map[string]string{
@@ -430,7 +425,7 @@ var IAMPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "instance_profile_name",
 	},
-	{
+	"ListInstanceProfilesForRole": {
 		Method:       "POST",
 		IgnoreRegion: true,
 		FormData: map[string]string{
@@ -446,7 +441,7 @@ var IAMPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "role_name",
 	},
-	{
+	"ListMFADeviceTags": {
 		Method:       "POST",
 		IgnoreRegion: true,
 		FormData: map[string]string{
@@ -462,7 +457,7 @@ var IAMPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "serial_number",
 	},
-	{
+	"ListOpenIDConnectProviderTags": {
 		Method:       "POST",
 		IgnoreRegion: true,
 		FormData: map[string]string{
@@ -478,7 +473,7 @@ var IAMPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "open_i_d_connect_provider_arn",
 	},
-	{
+	"ListPolicyTags": {
 		Method:       "POST",
 		IgnoreRegion: true,
 		FormData: map[string]string{
@@ -494,7 +489,7 @@ var IAMPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "policy_arn",
 	},
-	{
+	"ListPolicyVersions": {
 		Method:       "POST",
 		IgnoreRegion: true,
 		FormData: map[string]string{
@@ -510,7 +505,7 @@ var IAMPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "policy_arn",
 	},
-	{
+	"ListRolePolicies": {
 		Method:       "POST",
 		IgnoreRegion: true,
 		FormData: map[string]string{
@@ -526,7 +521,7 @@ var IAMPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "role_name",
 	},
-	{
+	"ListRoleTags": {
 		Method:       "POST",
 		IgnoreRegion: true,
 		FormData: map[string]string{
@@ -542,7 +537,7 @@ var IAMPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "role_name",
 	},
-	{
+	"ListSAMLProviderTags": {
 		Method:       "POST",
 		IgnoreRegion: true,
 		FormData: map[string]string{
@@ -558,7 +553,7 @@ var IAMPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "s_a_m_l_provider_arn",
 	},
-	{
+	"ListServerCertificateTags": {
 		Method:       "POST",
 		IgnoreRegion: true,
 		FormData: map[string]string{
@@ -574,7 +569,7 @@ var IAMPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "server_certificate_name",
 	},
-	{
+	"ListUserPolicies": {
 		Method:       "POST",
 		IgnoreRegion: true,
 		FormData: map[string]string{
@@ -590,7 +585,7 @@ var IAMPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "user_name",
 	},
-	{
+	"ListUserTags": {
 		Method:       "POST",
 		IgnoreRegion: true,
 		FormData: map[string]string{

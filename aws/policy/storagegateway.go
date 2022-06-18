@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var StorageGatewayPolicies = []Service{
-	{
+var StorageGatewayPolicies = map[string]Service{
+	"DescribeTapeArchives": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var StorageGatewayPolicies = []Service{
 		},
 		Permission: "DescribeTapeArchives",
 	},
-	{
+	"ListAutomaticTapeCreationPolicies": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var StorageGatewayPolicies = []Service{
 		},
 		Permission: "ListAutomaticTapeCreationPolicies",
 	},
-	{
+	"ListFileShares": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -30,7 +30,7 @@ var StorageGatewayPolicies = []Service{
 		},
 		Permission: "ListFileShares",
 	},
-	{
+	"ListFileSystemAssociations": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -39,7 +39,7 @@ var StorageGatewayPolicies = []Service{
 		},
 		Permission: "ListFileSystemAssociations",
 	},
-	{
+	"ListGateways": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -48,7 +48,7 @@ var StorageGatewayPolicies = []Service{
 		},
 		Permission: "ListGateways",
 	},
-	{
+	"ListTapePools": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -57,7 +57,7 @@ var StorageGatewayPolicies = []Service{
 		},
 		Permission: "ListTapePools",
 	},
-	{
+	"ListTapes": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -66,7 +66,7 @@ var StorageGatewayPolicies = []Service{
 		},
 		Permission: "ListTapes",
 	},
-	{
+	"ListVolumes": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -77,7 +77,7 @@ var StorageGatewayPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeAvailabilityMonitorTest": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -89,7 +89,7 @@ var StorageGatewayPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "gateway_arn",
 	},
-	{
+	"DescribeBandwidthRateLimit": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -101,7 +101,7 @@ var StorageGatewayPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "gateway_arn",
 	},
-	{
+	"DescribeBandwidthRateLimitSchedule": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -113,7 +113,7 @@ var StorageGatewayPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "gateway_arn",
 	},
-	{
+	"DescribeCache": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -125,7 +125,7 @@ var StorageGatewayPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "gateway_arn",
 	},
-	{
+	"DescribeCachediSCSIVolumes": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -137,7 +137,7 @@ var StorageGatewayPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "volume_arns",
 	},
-	{
+	"DescribeChapCredentials": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -149,7 +149,7 @@ var StorageGatewayPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "target_arn",
 	},
-	{
+	"DescribeFileSystemAssociations": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -161,7 +161,7 @@ var StorageGatewayPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "file_system_association_arn_list",
 	},
-	{
+	"DescribeGatewayInformation": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -173,7 +173,7 @@ var StorageGatewayPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "gateway_arn",
 	},
-	{
+	"DescribeMaintenanceStartTime": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -185,7 +185,7 @@ var StorageGatewayPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "gateway_arn",
 	},
-	{
+	"DescribeNFSFileShares": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -197,7 +197,7 @@ var StorageGatewayPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "file_share_arn_list",
 	},
-	{
+	"DescribeSMBFileShares": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -209,7 +209,7 @@ var StorageGatewayPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "file_share_arn_list",
 	},
-	{
+	"DescribeSMBSettings": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -221,7 +221,7 @@ var StorageGatewayPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "gateway_arn",
 	},
-	{
+	"DescribeSnapshotSchedule": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -233,7 +233,7 @@ var StorageGatewayPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "volume_arn",
 	},
-	{
+	"DescribeStorediSCSIVolumes": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -245,7 +245,7 @@ var StorageGatewayPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "volume_arns",
 	},
-	{
+	"DescribeTapeRecoveryPoints": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -257,7 +257,7 @@ var StorageGatewayPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "gateway_arn",
 	},
-	{
+	"DescribeTapes": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -269,7 +269,7 @@ var StorageGatewayPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "gateway_arn",
 	},
-	{
+	"DescribeUploadBuffer": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -281,7 +281,7 @@ var StorageGatewayPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "gateway_arn",
 	},
-	{
+	"DescribeVTLDevices": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -293,7 +293,7 @@ var StorageGatewayPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "gateway_arn",
 	},
-	{
+	"DescribeWorkingStorage": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -305,7 +305,7 @@ var StorageGatewayPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "gateway_arn",
 	},
-	{
+	"ListLocalDisks": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -317,7 +317,7 @@ var StorageGatewayPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "gateway_arn",
 	},
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -329,7 +329,7 @@ var StorageGatewayPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "resource_arn",
 	},
-	{
+	"ListVolumeInitiators": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -341,7 +341,7 @@ var StorageGatewayPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "volume_arn",
 	},
-	{
+	"ListVolumeRecoveryPoints": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

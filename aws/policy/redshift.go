@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var RedshiftPolicies = []Service{
-	{
+var RedshiftPolicies = map[string]Service{
+	"CreateSnapshotSchedule": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "CreateSnapshotSchedule",
@@ -14,7 +14,7 @@ var RedshiftPolicies = []Service{
 		},
 		Permission: "CreateSnapshotSchedule",
 	},
-	{
+	"DescribeAccountAttributes": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeAccountAttributes",
@@ -25,7 +25,7 @@ var RedshiftPolicies = []Service{
 		},
 		Permission: "DescribeAccountAttributes",
 	},
-	{
+	"DescribeAuthenticationProfiles": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeAuthenticationProfiles",
@@ -36,7 +36,7 @@ var RedshiftPolicies = []Service{
 		},
 		Permission: "DescribeAuthenticationProfiles",
 	},
-	{
+	"DescribeClusterDbRevisions": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeClusterDbRevisions",
@@ -47,7 +47,7 @@ var RedshiftPolicies = []Service{
 		},
 		Permission: "DescribeClusterDbRevisions",
 	},
-	{
+	"DescribeClusterParameterGroups": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeClusterParameterGroups",
@@ -58,7 +58,7 @@ var RedshiftPolicies = []Service{
 		},
 		Permission: "DescribeClusterParameterGroups",
 	},
-	{
+	"DescribeClusterSecurityGroups": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeClusterSecurityGroups",
@@ -69,7 +69,7 @@ var RedshiftPolicies = []Service{
 		},
 		Permission: "DescribeClusterSecurityGroups",
 	},
-	{
+	"DescribeClusterSnapshots": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeClusterSnapshots",
@@ -80,7 +80,7 @@ var RedshiftPolicies = []Service{
 		},
 		Permission: "DescribeClusterSnapshots",
 	},
-	{
+	"DescribeClusterSubnetGroups": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeClusterSubnetGroups",
@@ -91,7 +91,7 @@ var RedshiftPolicies = []Service{
 		},
 		Permission: "DescribeClusterSubnetGroups",
 	},
-	{
+	"DescribeClusterTracks": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeClusterTracks",
@@ -102,7 +102,7 @@ var RedshiftPolicies = []Service{
 		},
 		Permission: "DescribeClusterTracks",
 	},
-	{
+	"DescribeClusterVersions": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeClusterVersions",
@@ -113,7 +113,7 @@ var RedshiftPolicies = []Service{
 		},
 		Permission: "DescribeClusterVersions",
 	},
-	{
+	"DescribeClusters": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeClusters",
@@ -124,7 +124,7 @@ var RedshiftPolicies = []Service{
 		},
 		Permission: "DescribeClusters",
 	},
-	{
+	"DescribeDataShares": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeDataShares",
@@ -135,7 +135,7 @@ var RedshiftPolicies = []Service{
 		},
 		Permission: "DescribeDataShares",
 	},
-	{
+	"DescribeDataSharesForConsumer": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeDataSharesForConsumer",
@@ -146,7 +146,7 @@ var RedshiftPolicies = []Service{
 		},
 		Permission: "DescribeDataSharesForConsumer",
 	},
-	{
+	"DescribeDataSharesForProducer": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeDataSharesForProducer",
@@ -157,7 +157,7 @@ var RedshiftPolicies = []Service{
 		},
 		Permission: "DescribeDataSharesForProducer",
 	},
-	{
+	"DescribeEndpointAccess": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeEndpointAccess",
@@ -168,7 +168,7 @@ var RedshiftPolicies = []Service{
 		},
 		Permission: "DescribeEndpointAccess",
 	},
-	{
+	"DescribeEndpointAuthorization": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeEndpointAuthorization",
@@ -179,7 +179,7 @@ var RedshiftPolicies = []Service{
 		},
 		Permission: "DescribeEndpointAuthorization",
 	},
-	{
+	"DescribeEventCategories": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeEventCategories",
@@ -190,7 +190,7 @@ var RedshiftPolicies = []Service{
 		},
 		Permission: "DescribeEventCategories",
 	},
-	{
+	"DescribeEventSubscriptions": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeEventSubscriptions",
@@ -201,7 +201,7 @@ var RedshiftPolicies = []Service{
 		},
 		Permission: "DescribeEventSubscriptions",
 	},
-	{
+	"DescribeEvents": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeEvents",
@@ -212,7 +212,7 @@ var RedshiftPolicies = []Service{
 		},
 		Permission: "DescribeEvents",
 	},
-	{
+	"DescribeHsmClientCertificates": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeHsmClientCertificates",
@@ -223,7 +223,7 @@ var RedshiftPolicies = []Service{
 		},
 		Permission: "DescribeHsmClientCertificates",
 	},
-	{
+	"DescribeHsmConfigurations": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeHsmConfigurations",
@@ -234,7 +234,7 @@ var RedshiftPolicies = []Service{
 		},
 		Permission: "DescribeHsmConfigurations",
 	},
-	{
+	"DescribeOrderableClusterOptions": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeOrderableClusterOptions",
@@ -245,7 +245,7 @@ var RedshiftPolicies = []Service{
 		},
 		Permission: "DescribeOrderableClusterOptions",
 	},
-	{
+	"DescribeReservedNodeExchangeStatus": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeReservedNodeExchangeStatus",
@@ -256,7 +256,7 @@ var RedshiftPolicies = []Service{
 		},
 		Permission: "DescribeReservedNodeExchangeStatus",
 	},
-	{
+	"DescribeReservedNodeOfferings": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeReservedNodeOfferings",
@@ -267,7 +267,7 @@ var RedshiftPolicies = []Service{
 		},
 		Permission: "DescribeReservedNodeOfferings",
 	},
-	{
+	"DescribeReservedNodes": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeReservedNodes",
@@ -278,7 +278,7 @@ var RedshiftPolicies = []Service{
 		},
 		Permission: "DescribeReservedNodes",
 	},
-	{
+	"DescribeScheduledActions": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeScheduledActions",
@@ -289,7 +289,7 @@ var RedshiftPolicies = []Service{
 		},
 		Permission: "DescribeScheduledActions",
 	},
-	{
+	"DescribeSnapshotCopyGrants": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeSnapshotCopyGrants",
@@ -300,7 +300,7 @@ var RedshiftPolicies = []Service{
 		},
 		Permission: "DescribeSnapshotCopyGrants",
 	},
-	{
+	"DescribeSnapshotSchedules": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeSnapshotSchedules",
@@ -311,7 +311,7 @@ var RedshiftPolicies = []Service{
 		},
 		Permission: "DescribeSnapshotSchedules",
 	},
-	{
+	"DescribeStorage": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeStorage",
@@ -322,7 +322,7 @@ var RedshiftPolicies = []Service{
 		},
 		Permission: "DescribeStorage",
 	},
-	{
+	"DescribeTableRestoreStatus": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeTableRestoreStatus",
@@ -333,7 +333,7 @@ var RedshiftPolicies = []Service{
 		},
 		Permission: "DescribeTableRestoreStatus",
 	},
-	{
+	"DescribeTags": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeTags",
@@ -344,7 +344,7 @@ var RedshiftPolicies = []Service{
 		},
 		Permission: "DescribeTags",
 	},
-	{
+	"DescribeUsageLimits": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeUsageLimits",
@@ -355,7 +355,7 @@ var RedshiftPolicies = []Service{
 		},
 		Permission: "DescribeUsageLimits",
 	},
-	{
+	"RevokeEndpointAccess": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "RevokeEndpointAccess",
@@ -368,7 +368,7 @@ var RedshiftPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeClusterParameters": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeClusterParameters",
@@ -383,7 +383,7 @@ var RedshiftPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "parameter_group_name",
 	},
-	{
+	"DescribeDefaultClusterParameters": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeDefaultClusterParameters",
@@ -398,7 +398,7 @@ var RedshiftPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "parameter_group_family",
 	},
-	{
+	"DescribeLoggingStatus": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeLoggingStatus",
@@ -413,7 +413,7 @@ var RedshiftPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "cluster_identifier",
 	},
-	{
+	"DescribeNodeConfigurationOptions": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeNodeConfigurationOptions",
@@ -428,7 +428,7 @@ var RedshiftPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "action_type",
 	},
-	{
+	"DescribeResize": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeResize",
@@ -443,7 +443,7 @@ var RedshiftPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "cluster_identifier",
 	},
-	{
+	"GetReservedNodeExchangeConfigurationOptions": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetReservedNodeExchangeConfigurationOptions",
@@ -458,7 +458,7 @@ var RedshiftPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "action_type",
 	},
-	{
+	"GetReservedNodeExchangeOfferings": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetReservedNodeExchangeOfferings",

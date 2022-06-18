@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var ServiceQuotasPolicies = []Service{
-	{
+var ServiceQuotasPolicies = map[string]Service{
+	"AssociateServiceQuotaTemplate": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var ServiceQuotasPolicies = []Service{
 		},
 		Permission: "AssociateServiceQuotaTemplate",
 	},
-	{
+	"DisassociateServiceQuotaTemplate": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var ServiceQuotasPolicies = []Service{
 		},
 		Permission: "DisassociateServiceQuotaTemplate",
 	},
-	{
+	"GetAssociationForServiceQuotaTemplate": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -30,7 +30,7 @@ var ServiceQuotasPolicies = []Service{
 		},
 		Permission: "GetAssociationForServiceQuotaTemplate",
 	},
-	{
+	"ListRequestedServiceQuotaChangeHistory": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -39,7 +39,7 @@ var ServiceQuotasPolicies = []Service{
 		},
 		Permission: "ListRequestedServiceQuotaChangeHistory",
 	},
-	{
+	"ListServiceQuotaIncreaseRequestsInTemplate": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -48,7 +48,7 @@ var ServiceQuotasPolicies = []Service{
 		},
 		Permission: "ListServiceQuotaIncreaseRequestsInTemplate",
 	},
-	{
+	"ListServices": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -59,7 +59,7 @@ var ServiceQuotasPolicies = []Service{
 	},
 
 	// extra
-	{
+	"GetRequestedServiceQuotaChange": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -71,7 +71,7 @@ var ServiceQuotasPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "request_id",
 	},
-	{
+	"ListAWSDefaultServiceQuotas": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -83,7 +83,7 @@ var ServiceQuotasPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "service_code",
 	},
-	{
+	"ListServiceQuotas": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -95,7 +95,7 @@ var ServiceQuotasPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "service_code",
 	},
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

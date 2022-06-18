@@ -2,50 +2,50 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var ElasticachePolicies = []Service{
-	{
+var ElasticachePolicies = map[string]Service{
+	"DescribeCacheClusters": {
 		ServiceSuffix: "?Action=DescribeCacheClusters&Version=2015-02-02",
 		Permission:    "DescribeCacheClusters",
 	},
-	{
+	"DescribeCacheEngineVersions": {
 		ServiceSuffix: "?Action=DescribeCacheEngineVersions&Version=2015-02-02",
 		Permission:    "DescribeCacheEngineVersions",
 	},
-	{
+	"DescribeCacheParameterGroups": {
 		ServiceSuffix: "?Action=DescribeCacheParameterGroups&Version=2015-02-02",
 		Permission:    "DescribeCacheParameterGroups",
 	},
-	{
+	"DescribeCacheSecurityGroups": {
 		ServiceSuffix: "?Action=DescribeCacheSecurityGroups",
 		Permission:    "DescribeCacheSecurityGroups",
 	},
-	{
+	"DescribeCacheSubnetGroups": {
 		ServiceSuffix: "?Action=DescribeCacheSubnetGroups&Version=2015-02-02",
 		Permission:    "DescribeCacheSubnetGroups",
 	},
-	{
+	"DescribeReplicationGroups": {
 		ServiceSuffix: "?Action=DescribeReplicationGroups&Version=2015-02-02",
 		Permission:    "DescribeReplicationGroups",
 	},
-	{
+	"DescribeReservedCacheNodes": {
 		ServiceSuffix: "?Action=DescribeReservedCacheNodes&Version=2015-02-02",
 		Permission:    "DescribeReservedCacheNodes",
 	},
-	{
+	"DescribeReservedCacheNodesOfferings": {
 		ServiceSuffix: "?Action=DescribeReservedCacheNodesOfferings&Version=2015-02-02",
 		Permission:    "DescribeReservedCacheNodesOfferings",
 	},
-	{
+	"DescribeSnapshots": {
 		ServiceSuffix: "?Action=DescribeSnapshots&Version=2015-02-02",
 		Permission:    "DescribeSnapshots",
 	},
-	{
+	"ListAllowedNodeTypeModifications": {
 		ServiceSuffix: "?Action=ListAllowedNodeTypeModifications&Version=2015-02-02",
 		Permission:    "ListAllowedNodeTypeModifications",
 	},
 
 	// extra
-	{
+	"DescribeCacheParameters": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeCacheParameters",
@@ -60,7 +60,7 @@ var ElasticachePolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "cache_parameter_group_name",
 	},
-	{
+	"DescribeEngineDefaultParameters": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeEngineDefaultParameters",
@@ -75,7 +75,7 @@ var ElasticachePolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "cache_parameter_group_family",
 	},
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "ListTagsForResource",

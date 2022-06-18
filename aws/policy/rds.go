@@ -2,562 +2,166 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var RDSPolicies = []Service{
-	{
+var RDSPolicies = map[string]Service{
+	"DescribeDBEngineVersions": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=DescribeDBEngineVersions&Version=2014-10-31",
 		Permission:    "DescribeDBEngineVersions",
 	},
-	{
+	"DescribeDBInstances": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=DescribeDBInstances&Version=2014-10-31",
 		Permission:    "DescribeDBInstances",
 	},
-	{
+	"DescribeDBParameterGroups": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=DescribeDBParameterGroups&Version=2014-10-31",
 		Permission:    "DescribeDBParameterGroups",
 	},
-	{
+	"DescribeDBSecurityGroups": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=DescribeDBSecurityGroups&Version=2014-10-31",
 		Permission:    "DescribeDBSecurityGroups",
 	},
-	{
+	"DescribeDBSnapshots": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=DescribeDBSnapshots&Version=2014-10-31",
 		Permission:    "DescribeDBSnapshots",
 	},
-	{
+	"DescribeDBSubnetGroups": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=DescribeDBSubnetGroups&Version=2014-10-31",
 		Permission:    "DescribeDBSubnetGroups",
 	},
-	{
+	"DescribeEventCategories": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=DescribeEventCategories&Version=2014-10-31",
 		Permission:    "DescribeEventCategories",
 	},
-	{
+	"DescribeEventSubscriptions": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=DescribeEventSubscriptions&Version=2014-10-31",
 		Permission:    "DescribeEventSubscriptions",
 	},
-	{
+	"DescribeOptionGroups": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=DescribeOptionGroups&Version=2014-10-31",
 		Permission:    "DescribeOptionGroups",
 	},
-	{
+	"DescribeReservedDBInstances": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=DescribeReservedDBInstances&Version=2014-10-31",
 		Permission:    "DescribeReservedDBInstances",
 	},
-	{
+	"DescribeReservedDBInstancesOfferings": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=DescribeReservedDBInstancesOfferings&Version=2014-10-31",
 		Permission:    "DescribeReservedDBInstancesOfferings",
 	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeDBEngineVersions&Version=2014-10-31",
-		Permission:    "DescribeDBEngineVersions",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeDBInstances&Version=2014-10-31",
-		Permission:    "DescribeDBInstances",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeDBParameterGroups&Version=2014-10-31",
-		Permission:    "DescribeDBParameterGroups",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeDBSecurityGroups&Version=2014-10-31",
-		Permission:    "DescribeDBSecurityGroups",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeDBSnapshots&Version=2014-10-31",
-		Permission:    "DescribeDBSnapshots",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeDBSubnetGroups&Version=2014-10-31",
-		Permission:    "DescribeDBSubnetGroups",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeEventCategories&Version=2014-10-31",
-		Permission:    "DescribeEventCategories",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeEventSubscriptions&Version=2014-10-31",
-		Permission:    "DescribeEventSubscriptions",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeOptionGroups&Version=2014-10-31",
-		Permission:    "DescribeOptionGroups",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeReservedDBInstances&Version=2014-10-31",
-		Permission:    "DescribeReservedDBInstances",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeReservedDBInstancesOfferings&Version=2014-10-31",
-		Permission:    "DescribeReservedDBInstancesOfferings",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeDBEngineVersions&Version=2014-10-31",
-		Permission:    "DescribeDBEngineVersions",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeDBInstances&Version=2014-10-31",
-		Permission:    "DescribeDBInstances",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeDBParameterGroups&Version=2014-10-31",
-		Permission:    "DescribeDBParameterGroups",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeDBSecurityGroups&Version=2014-10-31",
-		Permission:    "DescribeDBSecurityGroups",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeDBSnapshots&Version=2014-10-31",
-		Permission:    "DescribeDBSnapshots",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeDBSubnetGroups&Version=2014-10-31",
-		Permission:    "DescribeDBSubnetGroups",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeEventCategories&Version=2014-10-31",
-		Permission:    "DescribeEventCategories",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeEventSubscriptions&Version=2014-10-31",
-		Permission:    "DescribeEventSubscriptions",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeOptionGroups&Version=2014-10-31",
-		Permission:    "DescribeOptionGroups",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeReservedDBInstances&Version=2014-10-31",
-		Permission:    "DescribeReservedDBInstances",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeReservedDBInstancesOfferings&Version=2014-10-31",
-		Permission:    "DescribeReservedDBInstancesOfferings",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeDBEngineVersions&Version=2014-10-31",
-		Permission:    "DescribeDBEngineVersions",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeDBInstances&Version=2014-10-31",
-		Permission:    "DescribeDBInstances",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeDBParameterGroups&Version=2014-10-31",
-		Permission:    "DescribeDBParameterGroups",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeDBSecurityGroups&Version=2014-10-31",
-		Permission:    "DescribeDBSecurityGroups",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeDBSnapshots&Version=2014-10-31",
-		Permission:    "DescribeDBSnapshots",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeDBSubnetGroups&Version=2014-10-31",
-		Permission:    "DescribeDBSubnetGroups",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeEventCategories&Version=2014-10-31",
-		Permission:    "DescribeEventCategories",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeEventSubscriptions&Version=2014-10-31",
-		Permission:    "DescribeEventSubscriptions",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeOptionGroups&Version=2014-10-31",
-		Permission:    "DescribeOptionGroups",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeReservedDBInstances&Version=2014-10-31",
-		Permission:    "DescribeReservedDBInstances",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeReservedDBInstancesOfferings&Version=2014-10-31",
-		Permission:    "DescribeReservedDBInstancesOfferings",
-	},
-	{
+	"DescribeAccountAttributes": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=DescribeAccountAttributes&Version=2014-10-31",
 		Permission:    "DescribeAccountAttributes",
 	},
-	{
+	"DescribeCertificates": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=DescribeCertificates&Version=2014-10-31",
 		Permission:    "DescribeCertificates",
 	},
-	{
+	"DescribeCustomAvailabilityZones": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=DescribeCustomAvailabilityZones&Version=2014-10-31",
 		Permission:    "DescribeCustomAvailabilityZones",
 	},
-	{
+	"DescribeDBClusterEndpoints": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=DescribeDBClusterEndpoints&Version=2014-10-31",
 		Permission:    "DescribeDBClusterEndpoints",
 	},
-	{
+	"DescribeDBClusterParameterGroups": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=DescribeDBClusterParameterGroups&Version=2014-10-31",
 		Permission:    "DescribeDBClusterParameterGroups",
 	},
-	{
+	"DescribeDBClusterSnapshots": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=DescribeDBClusterSnapshots&Version=2014-10-31",
 		Permission:    "DescribeDBClusterSnapshots",
 	},
-	{
+	"DescribeDBClusters": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=DescribeDBClusters&Version=2014-10-31",
 		Permission:    "DescribeDBClusters",
 	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeDBEngineVersions&Version=2014-10-31",
-		Permission:    "DescribeDBEngineVersions",
-	},
-	{
+	"DescribeDBInstanceAutomatedBackups": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=DescribeDBInstanceAutomatedBackups&Version=2014-10-31",
 		Permission:    "DescribeDBInstanceAutomatedBackups",
 	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeDBInstances&Version=2014-10-31",
-		Permission:    "DescribeDBInstances",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeDBParameterGroups&Version=2014-10-31",
-		Permission:    "DescribeDBParameterGroups",
-	},
-	{
+	"DescribeDBProxies": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=DescribeDBProxies&Version=2014-10-31",
 		Permission:    "DescribeDBProxies",
 	},
-	{
+	"DescribeDBProxyEndpoints": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=DescribeDBProxyEndpoints&Version=2014-10-31",
 		Permission:    "DescribeDBProxyEndpoints",
 	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeDBSecurityGroups&Version=2014-10-31",
-		Permission:    "DescribeDBSecurityGroups",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeDBSnapshots&Version=2014-10-31",
-		Permission:    "DescribeDBSnapshots",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeDBSubnetGroups&Version=2014-10-31",
-		Permission:    "DescribeDBSubnetGroups",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeEventCategories&Version=2014-10-31",
-		Permission:    "DescribeEventCategories",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeEventSubscriptions&Version=2014-10-31",
-		Permission:    "DescribeEventSubscriptions",
-	},
-	{
+	"DescribeExportTasks": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=DescribeExportTasks&Version=2014-10-31",
 		Permission:    "DescribeExportTasks",
 	},
-	{
+	"DescribeGlobalClusters": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=DescribeGlobalClusters&Version=2014-10-31",
 		Permission:    "DescribeGlobalClusters",
 	},
-	{
+	"DescribeInstallationMedia": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=DescribeInstallationMedia&Version=2014-10-31",
 		Permission:    "DescribeInstallationMedia",
 	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeOptionGroups&Version=2014-10-31",
-		Permission:    "DescribeOptionGroups",
-	},
-	{
+	"DescribePendingMaintenanceActions": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=DescribePendingMaintenanceActions&Version=2014-10-31",
 		Permission:    "DescribePendingMaintenanceActions",
 	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeReservedDBInstances&Version=2014-10-31",
-		Permission:    "DescribeReservedDBInstances",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeReservedDBInstancesOfferings&Version=2014-10-31",
-		Permission:    "DescribeReservedDBInstancesOfferings",
-	},
-	{
+	"DescribeSourceRegions": {
 		Method:        "POST",
 		JsonData:      map[string]string{},
 		ServiceSuffix: "?Action=DescribeSourceRegions&Version=2014-10-31",
 		Permission:    "DescribeSourceRegions",
 	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeDBClusterEndpoints&Version=2014-10-31",
-		Permission:    "DescribeDBClusterEndpoints",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeDBClusterParameterGroups&Version=2014-10-31",
-		Permission:    "DescribeDBClusterParameterGroups",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeDBClusterSnapshots&Version=2014-10-31",
-		Permission:    "DescribeDBClusterSnapshots",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeDBClusters&Version=2014-10-31",
-		Permission:    "DescribeDBClusters",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeDBEngineVersions&Version=2014-10-31",
-		Permission:    "DescribeDBEngineVersions",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeDBInstances&Version=2014-10-31",
-		Permission:    "DescribeDBInstances",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeDBParameterGroups&Version=2014-10-31",
-		Permission:    "DescribeDBParameterGroups",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeDBSubnetGroups&Version=2014-10-31",
-		Permission:    "DescribeDBSubnetGroups",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeEventCategories&Version=2014-10-31",
-		Permission:    "DescribeEventCategories",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeEventSubscriptions&Version=2014-10-31",
-		Permission:    "DescribeEventSubscriptions",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribePendingMaintenanceActions&Version=2014-10-31",
-		Permission:    "DescribePendingMaintenanceActions",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeCertificates&Version=2014-10-31",
-		Permission:    "DescribeCertificates",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeDBClusterParameterGroups&Version=2014-10-31",
-		Permission:    "DescribeDBClusterParameterGroups",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeDBClusterSnapshots&Version=2014-10-31",
-		Permission:    "DescribeDBClusterSnapshots",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeDBClusters&Version=2014-10-31",
-		Permission:    "DescribeDBClusters",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeDBEngineVersions&Version=2014-10-31",
-		Permission:    "DescribeDBEngineVersions",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeDBInstances&Version=2014-10-31",
-		Permission:    "DescribeDBInstances",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeDBSubnetGroups&Version=2014-10-31",
-		Permission:    "DescribeDBSubnetGroups",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeEventCategories&Version=2014-10-31",
-		Permission:    "DescribeEventCategories",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeEventSubscriptions&Version=2014-10-31",
-		Permission:    "DescribeEventSubscriptions",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeGlobalClusters&Version=2014-10-31",
-		Permission:    "DescribeGlobalClusters",
-	},
-	{
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribePendingMaintenanceActions&Version=2014-10-31",
-		Permission:    "DescribePendingMaintenanceActions",
-	},
 
 	// extra
-	{
+	"DescribeDBClusterBacktracks": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeDBClusterBacktracks",
@@ -572,7 +176,7 @@ var RDSPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "db_cluster_identifier",
 	},
-	{
+	"DescribeDBClusterParameters": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeDBClusterParameters",
@@ -587,7 +191,7 @@ var RDSPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "db_cluster_parameter_group_name",
 	},
-	{
+	"DescribeDBClusterSnapshotAttributes": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeDBClusterSnapshotAttributes",
@@ -602,7 +206,7 @@ var RDSPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "db_cluster_snapshot_identifier",
 	},
-	{
+	"DescribeDBLogFiles": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeDBLogFiles",
@@ -617,7 +221,7 @@ var RDSPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "db_instance_identifier",
 	},
-	{
+	"DescribeDBParameters": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeDBParameters",
@@ -632,7 +236,7 @@ var RDSPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "db_parameter_group_name",
 	},
-	{
+	"DescribeDBProxyTargetGroups": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeDBProxyTargetGroups",
@@ -647,7 +251,7 @@ var RDSPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "db_proxy_name",
 	},
-	{
+	"DescribeDBProxyTargets": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeDBProxyTargets",
@@ -662,7 +266,7 @@ var RDSPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "db_proxy_name",
 	},
-	{
+	"DescribeDBSnapshotAttributes": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeDBSnapshotAttributes",
@@ -677,7 +281,7 @@ var RDSPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "db_snapshot_identifier",
 	},
-	{
+	"DescribeEngineDefaultClusterParameters": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeEngineDefaultClusterParameters",
@@ -692,7 +296,7 @@ var RDSPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "db_parameter_group_family",
 	},
-	{
+	"DescribeEngineDefaultParameters": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeEngineDefaultParameters",
@@ -707,7 +311,7 @@ var RDSPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "db_parameter_group_family",
 	},
-	{
+	"DescribeOptionGroupOptions": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeOptionGroupOptions",
@@ -722,7 +326,7 @@ var RDSPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "engine_name",
 	},
-	{
+	"DescribeOrderableDBInstanceOptions": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeOrderableDBInstanceOptions",
@@ -737,7 +341,7 @@ var RDSPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "engine",
 	},
-	{
+	"DescribeValidDBInstanceModifications": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeValidDBInstanceModifications",
@@ -752,7 +356,7 @@ var RDSPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "db_instance_identifier",
 	},
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "ListTagsForResource",

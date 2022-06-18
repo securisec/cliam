@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var KinesisVideoPolicies = []Service{
-	{
+var KinesisVideoPolicies = map[string]Service{
+	"DescribeSignalingChannel": {
 		Method:        "POST",
 		ServiceSuffix: "describeSignalingChannel",
 		JsonData:      map[string]string{},
@@ -12,7 +12,7 @@ var KinesisVideoPolicies = []Service{
 		},
 		Permission: "DescribeSignalingChannel",
 	},
-	{
+	"DescribeStream": {
 		Method:        "POST",
 		ServiceSuffix: "describeStream",
 		JsonData:      map[string]string{},
@@ -21,7 +21,7 @@ var KinesisVideoPolicies = []Service{
 		},
 		Permission: "DescribeStream",
 	},
-	{
+	"ListSignalingChannels": {
 		Method:        "POST",
 		ServiceSuffix: "listSignalingChannels",
 		JsonData:      map[string]string{},
@@ -30,7 +30,7 @@ var KinesisVideoPolicies = []Service{
 		},
 		Permission: "ListSignalingChannels",
 	},
-	{
+	"ListStreams": {
 		Method:        "POST",
 		ServiceSuffix: "listStreams",
 		JsonData:      map[string]string{},
@@ -39,7 +39,7 @@ var KinesisVideoPolicies = []Service{
 		},
 		Permission: "ListStreams",
 	},
-	{
+	"ListTagsForStream": {
 		Method:        "POST",
 		ServiceSuffix: "listTagsForStream",
 		JsonData:      map[string]string{},
@@ -50,7 +50,7 @@ var KinesisVideoPolicies = []Service{
 	},
 
 	// extra
-	{
+	"GetDataEndpoint": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetDataEndpoint",
@@ -65,7 +65,7 @@ var KinesisVideoPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "a_p_i_name",
 	},
-	{
+	"GetSignalingChannelEndpoint": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetSignalingChannelEndpoint",
@@ -80,7 +80,7 @@ var KinesisVideoPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "channel_arn",
 	},
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "ListTagsForResource",

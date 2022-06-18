@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var CodecommitPolicies = []Service{
-	{
+var CodecommitPolicies = map[string]Service{
+	"ListApprovalRuleTemplates": {
 		Method:     "POST",
 		JsonData:   map[string]string{},
 		Permission: "ListApprovalRuleTemplates",
@@ -12,7 +12,7 @@ var CodecommitPolicies = []Service{
 			aws_X_AMZ_TARGET:           "CodeCommit_20150413.ListApprovalRuleTemplates",
 		},
 	},
-	{
+	"ListRepositories": {
 		Method:     "POST",
 		JsonData:   map[string]string{},
 		Permission: "ListRepositories",
@@ -23,7 +23,7 @@ var CodecommitPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribePullRequestEvents": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -35,7 +35,7 @@ var CodecommitPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "pull_request_id",
 	},
-	{
+	"GetApprovalRuleTemplate": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -47,7 +47,7 @@ var CodecommitPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "approval_rule_template_name",
 	},
-	{
+	"GetComment": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -59,7 +59,7 @@ var CodecommitPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "comment_id",
 	},
-	{
+	"GetCommentReactions": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -71,7 +71,7 @@ var CodecommitPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "comment_id",
 	},
-	{
+	"GetCommentsForPullRequest": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -83,7 +83,7 @@ var CodecommitPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "pull_request_id",
 	},
-	{
+	"GetPullRequest": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -95,7 +95,7 @@ var CodecommitPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "pull_request_id",
 	},
-	{
+	"GetRepository": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -107,7 +107,7 @@ var CodecommitPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "repository_name",
 	},
-	{
+	"GetRepositoryTriggers": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -119,7 +119,7 @@ var CodecommitPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "repository_name",
 	},
-	{
+	"ListAssociatedApprovalRuleTemplatesForRepository": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -131,7 +131,7 @@ var CodecommitPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "repository_name",
 	},
-	{
+	"ListBranches": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -143,7 +143,7 @@ var CodecommitPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "repository_name",
 	},
-	{
+	"ListPullRequests": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -155,7 +155,7 @@ var CodecommitPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "repository_name",
 	},
-	{
+	"ListRepositoriesForApprovalRuleTemplate": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -167,7 +167,7 @@ var CodecommitPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "approval_rule_template_name",
 	},
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

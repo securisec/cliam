@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var DynamodbStreamsPolicies = []Service{
-	{
+var DynamodbStreamsPolicies = map[string]Service{
+	"ListStreams": {
 		ServiceSuffix: "",
 		Method:        "POST",
 		JsonData:      map[string]string{},
@@ -15,7 +15,7 @@ var DynamodbStreamsPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeStream": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
@@ -27,7 +27,7 @@ var DynamodbStreamsPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "stream_arn",
 	},
-	{
+	"GetRecords": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,

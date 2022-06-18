@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var SecurityHubPolicies = []Service{
-	{
+var SecurityHubPolicies = map[string]Service{
+	"DescribeActionTargets": {
 		Method:        "POST",
 		ServiceSuffix: "actionTargets/get",
 		JsonData:      map[string]string{},
@@ -12,27 +12,27 @@ var SecurityHubPolicies = []Service{
 		},
 		Permission: "DescribeActionTargets",
 	},
-	{
+	"DescribeHub": {
 		Method:        "GET",
 		ServiceSuffix: "accounts",
 		Permission:    "DescribeHub",
 	},
-	{
+	"DescribeOrganizationConfiguration": {
 		Method:        "GET",
 		ServiceSuffix: "organization/configuration",
 		Permission:    "DescribeOrganizationConfiguration",
 	},
-	{
+	"DescribeProducts": {
 		Method:        "GET",
 		ServiceSuffix: "products",
 		Permission:    "DescribeProducts",
 	},
-	{
+	"DescribeStandards": {
 		Method:        "GET",
 		ServiceSuffix: "standards",
 		Permission:    "DescribeStandards",
 	},
-	{
+	"DisassociateFromAdministratorAccount": {
 		Method:        "POST",
 		ServiceSuffix: "administrator/disassociate",
 		JsonData:      map[string]string{},
@@ -41,7 +41,7 @@ var SecurityHubPolicies = []Service{
 		},
 		Permission: "DisassociateFromAdministratorAccount",
 	},
-	{
+	"DisassociateFromMasterAccount": {
 		Method:        "POST",
 		ServiceSuffix: "master/disassociate",
 		JsonData:      map[string]string{},
@@ -50,7 +50,7 @@ var SecurityHubPolicies = []Service{
 		},
 		Permission: "DisassociateFromMasterAccount",
 	},
-	{
+	"EnableSecurityHub": {
 		Method:        "POST",
 		ServiceSuffix: "accounts",
 		JsonData:      map[string]string{},
@@ -59,12 +59,12 @@ var SecurityHubPolicies = []Service{
 		},
 		Permission: "EnableSecurityHub",
 	},
-	{
+	"GetAdministratorAccount": {
 		Method:        "GET",
 		ServiceSuffix: "administrator",
 		Permission:    "GetAdministratorAccount",
 	},
-	{
+	"GetEnabledStandards": {
 		Method:        "POST",
 		ServiceSuffix: "standards/get",
 		JsonData:      map[string]string{},
@@ -73,7 +73,7 @@ var SecurityHubPolicies = []Service{
 		},
 		Permission: "GetEnabledStandards",
 	},
-	{
+	"GetFindings": {
 		Method:        "POST",
 		ServiceSuffix: "findings",
 		JsonData:      map[string]string{},
@@ -82,7 +82,7 @@ var SecurityHubPolicies = []Service{
 		},
 		Permission: "GetFindings",
 	},
-	{
+	"GetInsights": {
 		Method:        "POST",
 		ServiceSuffix: "insights/get",
 		JsonData:      map[string]string{},
@@ -91,65 +91,65 @@ var SecurityHubPolicies = []Service{
 		},
 		Permission: "GetInsights",
 	},
-	{
+	"GetInvitationsCount": {
 		Method:        "GET",
 		ServiceSuffix: "invitations/count",
 		Permission:    "GetInvitationsCount",
 	},
-	{
+	"GetMasterAccount": {
 		Method:        "GET",
 		ServiceSuffix: "master",
 		Permission:    "GetMasterAccount",
 	},
-	{
+	"ListEnabledProductsForImport": {
 		Method:        "GET",
 		ServiceSuffix: "productSubscriptions",
 		Permission:    "ListEnabledProductsForImport",
 	},
-	{
+	"ListFindingAggregators": {
 		Method:        "GET",
 		ServiceSuffix: "findingAggregator/list",
 		Permission:    "ListFindingAggregators",
 	},
-	{
+	"ListInvitations": {
 		Method:        "GET",
 		ServiceSuffix: "invitations",
 		Permission:    "ListInvitations",
 	},
-	{
+	"ListMembers": {
 		Method:        "GET",
 		ServiceSuffix: "members",
 		Permission:    "ListMembers",
 	},
-	{
+	"ListOrganizationAdminAccounts": {
 		Method:        "GET",
 		ServiceSuffix: "organization/admin",
 		Permission:    "ListOrganizationAdminAccounts",
 	},
 
 	// extra
-	{
+	"DescribeStandardsControls": {
 		ServiceSuffix:          "/standards/controls/{{.standards_subscription_arn}}",
 		Permission:             "DescribeStandardsControls",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "standards_subscription_arn",
 	},
-	{
+	"GetFindingAggregator": {
 		ServiceSuffix:          "/findingAggregator/get/{{.finding_aggregator_arn}}",
 		Permission:             "GetFindingAggregator",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "finding_aggregator_arn",
 	},
-	{
+	"GetInsightResults": {
 		ServiceSuffix:          "/insights/results/{{.insight_arn}}",
 		Permission:             "GetInsightResults",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "insight_arn",
 	},
-	{
+	"GetMembers": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetMembers",
@@ -164,7 +164,7 @@ var SecurityHubPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "account_ids",
 	},
-	{
+	"ListTagsForResource": {
 		ServiceSuffix:          "/tags/{{.resource_arn}}",
 		Permission:             "ListTagsForResource",
 		ExtraComponentLocation: "path",

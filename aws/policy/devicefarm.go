@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var DeviceFarmPolicies = []Service{
-	{
+var DeviceFarmPolicies = map[string]Service{
+	"GetAccountSettings": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var DeviceFarmPolicies = []Service{
 		},
 		Permission: "GetAccountSettings",
 	},
-	{
+	"GetOfferingStatus": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var DeviceFarmPolicies = []Service{
 		},
 		Permission: "GetOfferingStatus",
 	},
-	{
+	"GetTestGridSession": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -30,7 +30,7 @@ var DeviceFarmPolicies = []Service{
 		},
 		Permission: "GetTestGridSession",
 	},
-	{
+	"ListDeviceInstances": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -39,7 +39,7 @@ var DeviceFarmPolicies = []Service{
 		},
 		Permission: "ListDeviceInstances",
 	},
-	{
+	"ListDevices": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -48,7 +48,7 @@ var DeviceFarmPolicies = []Service{
 		},
 		Permission: "ListDevices",
 	},
-	{
+	"ListInstanceProfiles": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -57,7 +57,7 @@ var DeviceFarmPolicies = []Service{
 		},
 		Permission: "ListInstanceProfiles",
 	},
-	{
+	"ListOfferingPromotions": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -66,7 +66,7 @@ var DeviceFarmPolicies = []Service{
 		},
 		Permission: "ListOfferingPromotions",
 	},
-	{
+	"ListOfferingTransactions": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -75,7 +75,7 @@ var DeviceFarmPolicies = []Service{
 		},
 		Permission: "ListOfferingTransactions",
 	},
-	{
+	"ListOfferings": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -84,7 +84,7 @@ var DeviceFarmPolicies = []Service{
 		},
 		Permission: "ListOfferings",
 	},
-	{
+	"ListProjects": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -93,7 +93,7 @@ var DeviceFarmPolicies = []Service{
 		},
 		Permission: "ListProjects",
 	},
-	{
+	"ListTestGridProjects": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -102,7 +102,7 @@ var DeviceFarmPolicies = []Service{
 		},
 		Permission: "ListTestGridProjects",
 	},
-	{
+	"ListVpceConfigurations": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -113,7 +113,7 @@ var DeviceFarmPolicies = []Service{
 	},
 
 	// extra
-	{
+	"GetDevice": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -125,7 +125,7 @@ var DeviceFarmPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "arn",
 	},
-	{
+	"GetDeviceInstance": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -137,7 +137,7 @@ var DeviceFarmPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "arn",
 	},
-	{
+	"GetDevicePool": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -149,7 +149,7 @@ var DeviceFarmPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "arn",
 	},
-	{
+	"GetDevicePoolCompatibility": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -161,7 +161,7 @@ var DeviceFarmPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "device_pool_arn",
 	},
-	{
+	"GetInstanceProfile": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -173,7 +173,7 @@ var DeviceFarmPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "arn",
 	},
-	{
+	"GetJob": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -185,7 +185,7 @@ var DeviceFarmPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "arn",
 	},
-	{
+	"GetNetworkProfile": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -197,7 +197,7 @@ var DeviceFarmPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "arn",
 	},
-	{
+	"GetProject": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -209,7 +209,7 @@ var DeviceFarmPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "arn",
 	},
-	{
+	"GetRemoteAccessSession": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -221,7 +221,7 @@ var DeviceFarmPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "arn",
 	},
-	{
+	"GetRun": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -233,7 +233,7 @@ var DeviceFarmPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "arn",
 	},
-	{
+	"GetSuite": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -245,7 +245,7 @@ var DeviceFarmPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "arn",
 	},
-	{
+	"GetTest": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -257,7 +257,7 @@ var DeviceFarmPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "arn",
 	},
-	{
+	"GetTestGridProject": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -269,7 +269,7 @@ var DeviceFarmPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "project_arn",
 	},
-	{
+	"GetUpload": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -281,7 +281,7 @@ var DeviceFarmPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "arn",
 	},
-	{
+	"GetVPCEConfiguration": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -293,7 +293,7 @@ var DeviceFarmPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "arn",
 	},
-	{
+	"ListDevicePools": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -305,7 +305,7 @@ var DeviceFarmPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "arn",
 	},
-	{
+	"ListJobs": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -317,7 +317,7 @@ var DeviceFarmPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "arn",
 	},
-	{
+	"ListNetworkProfiles": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -329,7 +329,7 @@ var DeviceFarmPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "arn",
 	},
-	{
+	"ListRemoteAccessSessions": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -341,7 +341,7 @@ var DeviceFarmPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "arn",
 	},
-	{
+	"ListRuns": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -353,7 +353,7 @@ var DeviceFarmPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "arn",
 	},
-	{
+	"ListSamples": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -365,7 +365,7 @@ var DeviceFarmPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "arn",
 	},
-	{
+	"ListSuites": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -377,7 +377,7 @@ var DeviceFarmPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "arn",
 	},
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -389,7 +389,7 @@ var DeviceFarmPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "resource_arn",
 	},
-	{
+	"ListTestGridSessionActions": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -401,7 +401,7 @@ var DeviceFarmPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "session_arn",
 	},
-	{
+	"ListTestGridSessionArtifacts": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -413,7 +413,7 @@ var DeviceFarmPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "session_arn",
 	},
-	{
+	"ListTestGridSessions": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -425,7 +425,7 @@ var DeviceFarmPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "project_arn",
 	},
-	{
+	"ListTests": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -437,7 +437,7 @@ var DeviceFarmPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "arn",
 	},
-	{
+	"ListUniqueProblems": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -449,7 +449,7 @@ var DeviceFarmPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "arn",
 	},
-	{
+	"ListUploads": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

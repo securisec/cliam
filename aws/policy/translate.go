@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var TranslatePolicies = []Service{
-	{
+var TranslatePolicies = map[string]Service{
+	"ListParallelData": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var TranslatePolicies = []Service{
 		},
 		Permission: "ListParallelData",
 	},
-	{
+	"ListTerminologies": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var TranslatePolicies = []Service{
 		},
 		Permission: "ListTerminologies",
 	},
-	{
+	"ListTextTranslationJobs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -32,7 +32,7 @@ var TranslatePolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeTextTranslationJob": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -44,7 +44,7 @@ var TranslatePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "job_id",
 	},
-	{
+	"GetParallelData": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -56,7 +56,7 @@ var TranslatePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "name",
 	},
-	{
+	"GetTerminology": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

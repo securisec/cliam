@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var InspectorPolicies = []Service{
-	{
+var InspectorPolicies = map[string]Service{
+	"DescribeCrossAccountAccessRole": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var InspectorPolicies = []Service{
 		},
 		Permission: "DescribeCrossAccountAccessRole",
 	},
-	{
+	"ListAssessmentRuns": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var InspectorPolicies = []Service{
 		},
 		Permission: "ListAssessmentRuns",
 	},
-	{
+	"ListAssessmentTargets": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -30,7 +30,7 @@ var InspectorPolicies = []Service{
 		},
 		Permission: "ListAssessmentTargets",
 	},
-	{
+	"ListAssessmentTemplates": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -39,7 +39,7 @@ var InspectorPolicies = []Service{
 		},
 		Permission: "ListAssessmentTemplates",
 	},
-	{
+	"ListEventSubscriptions": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -48,7 +48,7 @@ var InspectorPolicies = []Service{
 		},
 		Permission: "ListEventSubscriptions",
 	},
-	{
+	"ListFindings": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -57,7 +57,7 @@ var InspectorPolicies = []Service{
 		},
 		Permission: "ListFindings",
 	},
-	{
+	"ListRulesPackages": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -68,7 +68,7 @@ var InspectorPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeAssessmentRuns": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -80,7 +80,7 @@ var InspectorPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "assessment_run_arns",
 	},
-	{
+	"DescribeAssessmentTargets": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -92,7 +92,7 @@ var InspectorPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "assessment_target_arns",
 	},
-	{
+	"DescribeAssessmentTemplates": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -104,7 +104,7 @@ var InspectorPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "assessment_template_arns",
 	},
-	{
+	"DescribeExclusions": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -116,7 +116,7 @@ var InspectorPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "exclusion_arns",
 	},
-	{
+	"DescribeFindings": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -128,7 +128,7 @@ var InspectorPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "finding_arns",
 	},
-	{
+	"DescribeResourceGroups": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -140,7 +140,7 @@ var InspectorPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "resource_group_arns",
 	},
-	{
+	"DescribeRulesPackages": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -152,7 +152,7 @@ var InspectorPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "rules_package_arns",
 	},
-	{
+	"GetTelemetryMetadata": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -164,7 +164,7 @@ var InspectorPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "assessment_run_arn",
 	},
-	{
+	"ListAssessmentRunAgents": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -176,7 +176,7 @@ var InspectorPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "assessment_run_arn",
 	},
-	{
+	"ListExclusions": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -188,7 +188,7 @@ var InspectorPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "assessment_run_arn",
 	},
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

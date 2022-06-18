@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var ACMPolicies = []Service{
-	{
+var ACMPolicies = map[string]Service{
+	"ListCertificates": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -14,7 +14,7 @@ var ACMPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeCertificate": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -26,7 +26,7 @@ var ACMPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "certificate_arn",
 	},
-	{
+	"GetCertificate": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -38,7 +38,7 @@ var ACMPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "certificate_arn",
 	},
-	{
+	"ListTagsForCertificate": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

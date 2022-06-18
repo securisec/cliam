@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var WafV2Policies = []Service{
-	{
+var WafV2Policies = map[string]Service{
+	"GetRuleGroup": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -14,7 +14,7 @@ var WafV2Policies = []Service{
 	},
 
 	// extra
-	{
+	"GetLoggingConfiguration": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -26,7 +26,7 @@ var WafV2Policies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "resource_arn",
 	},
-	{
+	"GetPermissionPolicy": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -38,7 +38,7 @@ var WafV2Policies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "resource_arn",
 	},
-	{
+	"GetWebACLForResource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -50,7 +50,7 @@ var WafV2Policies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "resource_arn",
 	},
-	{
+	"ListAvailableManagedRuleGroups": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -62,7 +62,7 @@ var WafV2Policies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "scope",
 	},
-	{
+	"ListIPSets": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -74,7 +74,7 @@ var WafV2Policies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "scope",
 	},
-	{
+	"ListLoggingConfigurations": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -86,7 +86,7 @@ var WafV2Policies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "scope",
 	},
-	{
+	"ListManagedRuleSets": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -98,7 +98,7 @@ var WafV2Policies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "scope",
 	},
-	{
+	"ListMobileSdkReleases": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -110,7 +110,7 @@ var WafV2Policies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "platform",
 	},
-	{
+	"ListRegexPatternSets": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -122,7 +122,7 @@ var WafV2Policies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "scope",
 	},
-	{
+	"ListResourcesForWebACL": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -134,7 +134,7 @@ var WafV2Policies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "web_a_c_l_arn",
 	},
-	{
+	"ListRuleGroups": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -146,7 +146,7 @@ var WafV2Policies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "scope",
 	},
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -158,7 +158,7 @@ var WafV2Policies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "resource_arn",
 	},
-	{
+	"ListWebACLs": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

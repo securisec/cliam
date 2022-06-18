@@ -65,7 +65,7 @@ func init() {
 		o, _ := cmd.Flags().GetString("operation")
 		pol := azureGetSpecificOperation(p, o)
 		hold := []string{}
-		matches := shared.TemplatePropertyRegex.FindAllStringSubmatch(pol.Path, -1)
+		matches := shared.AzureTemplatePropertyRegex.FindAllStringSubmatch(pol.Path, -1)
 		for _, m := range matches {
 			hold = append(hold, m[1]+"=")
 		}

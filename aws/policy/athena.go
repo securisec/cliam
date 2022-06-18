@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var AthenaPolicies = []Service{
-	{
+var AthenaPolicies = map[string]Service{
+	"ListDataCatalogs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var AthenaPolicies = []Service{
 		},
 		Permission: "ListDataCatalogs",
 	},
-	{
+	"ListEngineVersions": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var AthenaPolicies = []Service{
 		},
 		Permission: "ListEngineVersions",
 	},
-	{
+	"ListNamedQueries": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -30,7 +30,7 @@ var AthenaPolicies = []Service{
 		},
 		Permission: "ListNamedQueries",
 	},
-	{
+	"ListQueryExecutions": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -39,7 +39,7 @@ var AthenaPolicies = []Service{
 		},
 		Permission: "ListQueryExecutions",
 	},
-	{
+	"ListWorkGroups": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -50,7 +50,7 @@ var AthenaPolicies = []Service{
 	},
 
 	// extra
-	{
+	"GetDataCatalog": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -62,7 +62,7 @@ var AthenaPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "name",
 	},
-	{
+	"GetNamedQuery": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -74,7 +74,7 @@ var AthenaPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "named_query_id",
 	},
-	{
+	"GetQueryExecution": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -86,7 +86,7 @@ var AthenaPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "query_execution_id",
 	},
-	{
+	"GetQueryResults": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -98,7 +98,7 @@ var AthenaPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "query_execution_id",
 	},
-	{
+	"GetWorkGroup": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -110,7 +110,7 @@ var AthenaPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "work_group",
 	},
-	{
+	"ListDatabases": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -122,7 +122,7 @@ var AthenaPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "catalog_name",
 	},
-	{
+	"ListPreparedStatements": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -134,7 +134,7 @@ var AthenaPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "work_group",
 	},
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

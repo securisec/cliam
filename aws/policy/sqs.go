@@ -2,14 +2,14 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var SQSPolicies = []Service{
-	{
+var SQSPolicies = map[string]Service{
+	"ListQueues": {
 		ServiceSuffix: "?Action=ListQueues",
 		Permission:    "ListQueues",
 	},
 
 	// extras
-	{
+	"GetQueueAttributes": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetQueueAttributes",
@@ -24,7 +24,7 @@ var SQSPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "queue_url",
 	},
-	{
+	"GetQueueUrl": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetQueueUrl",
@@ -39,7 +39,7 @@ var SQSPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "queue_name",
 	},
-	{
+	"ListDeadLetterSourceQueues": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "ListDeadLetterSourceQueues",
@@ -54,7 +54,7 @@ var SQSPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "queue_url",
 	},
-	{
+	"ListQueueTags": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "ListQueueTags",

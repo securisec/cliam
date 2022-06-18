@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var SecretsManagerPolicies = []Service{
-	{
+var SecretsManagerPolicies = map[string]Service{
+	"GetRandomPassword": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var SecretsManagerPolicies = []Service{
 		},
 		Permission: "GetRandomPassword",
 	},
-	{
+	"ListSecrets": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -23,7 +23,7 @@ var SecretsManagerPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeSecret": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -35,7 +35,7 @@ var SecretsManagerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "secret_id",
 	},
-	{
+	"GetResourcePolicy": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -47,7 +47,7 @@ var SecretsManagerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "secret_id",
 	},
-	{
+	"GetSecretValue": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -59,7 +59,7 @@ var SecretsManagerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "secret_id",
 	},
-	{
+	"ListSecretVersionIds": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

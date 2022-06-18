@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var EmailPolicies = []Service{
-	{
+var EmailPolicies = map[string]Service{
+	"ListConfigurationSets": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "ListConfigurationSets",
@@ -14,7 +14,7 @@ var EmailPolicies = []Service{
 		},
 		Permission: "ListConfigurationSets",
 	},
-	{
+	"DescribeActiveReceiptRuleSet": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeActiveReceiptRuleSet",
@@ -25,7 +25,7 @@ var EmailPolicies = []Service{
 		},
 		Permission: "DescribeActiveReceiptRuleSet",
 	},
-	{
+	"GetAccountSendingEnabled": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetAccountSendingEnabled",
@@ -36,7 +36,7 @@ var EmailPolicies = []Service{
 		},
 		Permission: "GetAccountSendingEnabled",
 	},
-	{
+	"GetSendQuota": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetSendQuota",
@@ -47,7 +47,7 @@ var EmailPolicies = []Service{
 		},
 		Permission: "GetSendQuota",
 	},
-	{
+	"GetSendStatistics": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetSendStatistics",
@@ -58,7 +58,7 @@ var EmailPolicies = []Service{
 		},
 		Permission: "GetSendStatistics",
 	},
-	{
+	"ListCustomVerificationEmailTemplates": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "ListCustomVerificationEmailTemplates",
@@ -69,7 +69,7 @@ var EmailPolicies = []Service{
 		},
 		Permission: "ListCustomVerificationEmailTemplates",
 	},
-	{
+	"ListIdentities": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "ListIdentities",
@@ -80,7 +80,7 @@ var EmailPolicies = []Service{
 		},
 		Permission: "ListIdentities",
 	},
-	{
+	"ListReceiptFilters": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "ListReceiptFilters",
@@ -91,7 +91,7 @@ var EmailPolicies = []Service{
 		},
 		Permission: "ListReceiptFilters",
 	},
-	{
+	"ListReceiptRuleSets": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "ListReceiptRuleSets",
@@ -102,7 +102,7 @@ var EmailPolicies = []Service{
 		},
 		Permission: "ListReceiptRuleSets",
 	},
-	{
+	"ListTemplates": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "ListTemplates",
@@ -113,7 +113,7 @@ var EmailPolicies = []Service{
 		},
 		Permission: "ListTemplates",
 	},
-	{
+	"ListVerifiedEmailAddresses": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "ListVerifiedEmailAddresses",
@@ -126,7 +126,7 @@ var EmailPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeConfigurationSet": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeConfigurationSet",
@@ -141,7 +141,7 @@ var EmailPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "configuration_set_name",
 	},
-	{
+	"DescribeReceiptRuleSet": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeReceiptRuleSet",
@@ -156,7 +156,7 @@ var EmailPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "rule_set_name",
 	},
-	{
+	"GetCustomVerificationEmailTemplate": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetCustomVerificationEmailTemplate",
@@ -171,7 +171,7 @@ var EmailPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "template_name",
 	},
-	{
+	"GetIdentityDkimAttributes": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetIdentityDkimAttributes",
@@ -186,7 +186,7 @@ var EmailPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "identities",
 	},
-	{
+	"GetIdentityMailFromDomainAttributes": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetIdentityMailFromDomainAttributes",
@@ -201,7 +201,7 @@ var EmailPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "identities",
 	},
-	{
+	"GetIdentityNotificationAttributes": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetIdentityNotificationAttributes",
@@ -216,7 +216,7 @@ var EmailPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "identities",
 	},
-	{
+	"GetIdentityVerificationAttributes": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetIdentityVerificationAttributes",
@@ -231,7 +231,7 @@ var EmailPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "identities",
 	},
-	{
+	"GetTemplate": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetTemplate",
@@ -246,7 +246,7 @@ var EmailPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "template_name",
 	},
-	{
+	"ListIdentityPolicies": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "ListIdentityPolicies",

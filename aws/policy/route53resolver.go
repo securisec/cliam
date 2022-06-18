@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var Route53ResolverPolicies = []Service{
-	{
+var Route53ResolverPolicies = map[string]Service{
+	"ListFirewallConfigs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var Route53ResolverPolicies = []Service{
 		},
 		Permission: "ListFirewallConfigs",
 	},
-	{
+	"ListFirewallDomainLists": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var Route53ResolverPolicies = []Service{
 		},
 		Permission: "ListFirewallDomainLists",
 	},
-	{
+	"ListFirewallRuleGroupAssociations": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -30,7 +30,7 @@ var Route53ResolverPolicies = []Service{
 		},
 		Permission: "ListFirewallRuleGroupAssociations",
 	},
-	{
+	"ListFirewallRuleGroups": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -39,7 +39,7 @@ var Route53ResolverPolicies = []Service{
 		},
 		Permission: "ListFirewallRuleGroups",
 	},
-	{
+	"ListResolverConfigs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -48,7 +48,7 @@ var Route53ResolverPolicies = []Service{
 		},
 		Permission: "ListResolverConfigs",
 	},
-	{
+	"ListResolverDnssecConfigs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -57,7 +57,7 @@ var Route53ResolverPolicies = []Service{
 		},
 		Permission: "ListResolverDnssecConfigs",
 	},
-	{
+	"ListResolverEndpoints": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -66,7 +66,7 @@ var Route53ResolverPolicies = []Service{
 		},
 		Permission: "ListResolverEndpoints",
 	},
-	{
+	"ListResolverQueryLogConfigAssociations": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -75,7 +75,7 @@ var Route53ResolverPolicies = []Service{
 		},
 		Permission: "ListResolverQueryLogConfigAssociations",
 	},
-	{
+	"ListResolverQueryLogConfigs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -84,7 +84,7 @@ var Route53ResolverPolicies = []Service{
 		},
 		Permission: "ListResolverQueryLogConfigs",
 	},
-	{
+	"ListResolverRuleAssociations": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -93,7 +93,7 @@ var Route53ResolverPolicies = []Service{
 		},
 		Permission: "ListResolverRuleAssociations",
 	},
-	{
+	"ListResolverRules": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -104,7 +104,7 @@ var Route53ResolverPolicies = []Service{
 	},
 
 	// extra
-	{
+	"GetFirewallConfig": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -116,7 +116,7 @@ var Route53ResolverPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "resource_id",
 	},
-	{
+	"GetFirewallDomainList": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -128,7 +128,7 @@ var Route53ResolverPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "firewall_domain_list_id",
 	},
-	{
+	"GetFirewallRuleGroup": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -140,7 +140,7 @@ var Route53ResolverPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "firewall_rule_group_id",
 	},
-	{
+	"GetFirewallRuleGroupAssociation": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -152,7 +152,7 @@ var Route53ResolverPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "firewall_rule_group_association_id",
 	},
-	{
+	"GetFirewallRuleGroupPolicy": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -164,7 +164,7 @@ var Route53ResolverPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "arn",
 	},
-	{
+	"GetResolverConfig": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -176,7 +176,7 @@ var Route53ResolverPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "resource_id",
 	},
-	{
+	"GetResolverDnssecConfig": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -188,7 +188,7 @@ var Route53ResolverPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "resource_id",
 	},
-	{
+	"GetResolverEndpoint": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -200,7 +200,7 @@ var Route53ResolverPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "resolver_endpoint_id",
 	},
-	{
+	"GetResolverQueryLogConfig": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -212,7 +212,7 @@ var Route53ResolverPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "resolver_query_log_config_id",
 	},
-	{
+	"GetResolverQueryLogConfigAssociation": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -224,7 +224,7 @@ var Route53ResolverPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "resolver_query_log_config_association_id",
 	},
-	{
+	"GetResolverQueryLogConfigPolicy": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -236,7 +236,7 @@ var Route53ResolverPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "arn",
 	},
-	{
+	"GetResolverRule": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -248,7 +248,7 @@ var Route53ResolverPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "resolver_rule_id",
 	},
-	{
+	"GetResolverRuleAssociation": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -260,7 +260,7 @@ var Route53ResolverPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "resolver_rule_association_id",
 	},
-	{
+	"GetResolverRulePolicy": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -272,7 +272,7 @@ var Route53ResolverPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "arn",
 	},
-	{
+	"ListFirewallDomains": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -284,7 +284,7 @@ var Route53ResolverPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "firewall_domain_list_id",
 	},
-	{
+	"ListFirewallRules": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -296,7 +296,7 @@ var Route53ResolverPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "firewall_rule_group_id",
 	},
-	{
+	"ListResolverEndpointIpAddresses": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -308,7 +308,7 @@ var Route53ResolverPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "resolver_endpoint_id",
 	},
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

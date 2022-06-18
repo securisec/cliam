@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var VoiceIdPolicies = []Service{
-	{
+var VoiceIdPolicies = map[string]Service{
+	"ListDomains": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -14,7 +14,7 @@ var VoiceIdPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeDomain": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
@@ -26,7 +26,7 @@ var VoiceIdPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "domain_id",
 	},
-	{
+	"ListFraudsterRegistrationJobs": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
@@ -38,7 +38,7 @@ var VoiceIdPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "domain_id",
 	},
-	{
+	"ListSpeakerEnrollmentJobs": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
@@ -50,7 +50,7 @@ var VoiceIdPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "domain_id",
 	},
-	{
+	"ListSpeakers": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
@@ -62,7 +62,7 @@ var VoiceIdPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "domain_id",
 	},
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,

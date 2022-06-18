@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var LicenseManagerPolicies = []Service{
-	{
+var LicenseManagerPolicies = map[string]Service{
+	"GetServiceSettings": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var LicenseManagerPolicies = []Service{
 		},
 		Permission: "GetServiceSettings",
 	},
-	{
+	"ListDistributedGrants": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var LicenseManagerPolicies = []Service{
 		},
 		Permission: "ListDistributedGrants",
 	},
-	{
+	"ListLicenseConfigurations": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -30,7 +30,7 @@ var LicenseManagerPolicies = []Service{
 		},
 		Permission: "ListLicenseConfigurations",
 	},
-	{
+	"ListLicenseConversionTasks": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -39,7 +39,7 @@ var LicenseManagerPolicies = []Service{
 		},
 		Permission: "ListLicenseConversionTasks",
 	},
-	{
+	"ListLicenseManagerReportGenerators": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -48,7 +48,7 @@ var LicenseManagerPolicies = []Service{
 		},
 		Permission: "ListLicenseManagerReportGenerators",
 	},
-	{
+	"ListLicenses": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -57,7 +57,7 @@ var LicenseManagerPolicies = []Service{
 		},
 		Permission: "ListLicenses",
 	},
-	{
+	"ListReceivedGrants": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -66,7 +66,7 @@ var LicenseManagerPolicies = []Service{
 		},
 		Permission: "ListReceivedGrants",
 	},
-	{
+	"ListReceivedLicenses": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -75,7 +75,7 @@ var LicenseManagerPolicies = []Service{
 		},
 		Permission: "ListReceivedLicenses",
 	},
-	{
+	"ListResourceInventory": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -84,7 +84,7 @@ var LicenseManagerPolicies = []Service{
 		},
 		Permission: "ListResourceInventory",
 	},
-	{
+	"ListTokens": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -93,7 +93,7 @@ var LicenseManagerPolicies = []Service{
 		},
 		Permission: "ListTokens",
 	},
-	{
+	"UpdateServiceSettings": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -104,7 +104,7 @@ var LicenseManagerPolicies = []Service{
 	},
 
 	// extra
-	{
+	"GetAccessToken": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -116,7 +116,7 @@ var LicenseManagerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "token",
 	},
-	{
+	"GetGrant": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -128,7 +128,7 @@ var LicenseManagerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "grant_arn",
 	},
-	{
+	"GetLicense": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -140,7 +140,7 @@ var LicenseManagerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "license_arn",
 	},
-	{
+	"GetLicenseConfiguration": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -152,7 +152,7 @@ var LicenseManagerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "license_configuration_arn",
 	},
-	{
+	"GetLicenseConversionTask": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -164,7 +164,7 @@ var LicenseManagerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "license_conversion_task_id",
 	},
-	{
+	"GetLicenseManagerReportGenerator": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -176,7 +176,7 @@ var LicenseManagerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "license_manager_report_generator_arn",
 	},
-	{
+	"GetLicenseUsage": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -188,7 +188,7 @@ var LicenseManagerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "license_arn",
 	},
-	{
+	"ListAssociationsForLicenseConfiguration": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -200,7 +200,7 @@ var LicenseManagerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "license_configuration_arn",
 	},
-	{
+	"ListFailuresForLicenseConfigurationOperations": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -212,7 +212,7 @@ var LicenseManagerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "license_configuration_arn",
 	},
-	{
+	"ListLicenseSpecificationsForResource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -224,7 +224,7 @@ var LicenseManagerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "resource_arn",
 	},
-	{
+	"ListLicenseVersions": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -236,7 +236,7 @@ var LicenseManagerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "license_arn",
 	},
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -248,7 +248,7 @@ var LicenseManagerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "resource_arn",
 	},
-	{
+	"ListUsageForLicenseConfiguration": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

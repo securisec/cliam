@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var PersonalizePolicies = []Service{
-	{
+var PersonalizePolicies = map[string]Service{
+	"ListBatchInferenceJobs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var PersonalizePolicies = []Service{
 		},
 		Permission: "ListBatchInferenceJobs",
 	},
-	{
+	"ListBatchSegmentJobs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var PersonalizePolicies = []Service{
 		},
 		Permission: "ListBatchSegmentJobs",
 	},
-	{
+	"ListCampaigns": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -30,7 +30,7 @@ var PersonalizePolicies = []Service{
 		},
 		Permission: "ListCampaigns",
 	},
-	{
+	"ListDatasetExportJobs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -39,7 +39,7 @@ var PersonalizePolicies = []Service{
 		},
 		Permission: "ListDatasetExportJobs",
 	},
-	{
+	"ListDatasetGroups": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -48,7 +48,7 @@ var PersonalizePolicies = []Service{
 		},
 		Permission: "ListDatasetGroups",
 	},
-	{
+	"ListDatasetImportJobs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -57,7 +57,7 @@ var PersonalizePolicies = []Service{
 		},
 		Permission: "ListDatasetImportJobs",
 	},
-	{
+	"ListDatasets": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -66,7 +66,7 @@ var PersonalizePolicies = []Service{
 		},
 		Permission: "ListDatasets",
 	},
-	{
+	"ListEventTrackers": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -75,7 +75,7 @@ var PersonalizePolicies = []Service{
 		},
 		Permission: "ListEventTrackers",
 	},
-	{
+	"ListFilters": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -84,7 +84,7 @@ var PersonalizePolicies = []Service{
 		},
 		Permission: "ListFilters",
 	},
-	{
+	"ListRecipes": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -93,7 +93,7 @@ var PersonalizePolicies = []Service{
 		},
 		Permission: "ListRecipes",
 	},
-	{
+	"ListRecommenders": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -102,7 +102,7 @@ var PersonalizePolicies = []Service{
 		},
 		Permission: "ListRecommenders",
 	},
-	{
+	"ListSchemas": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -111,7 +111,7 @@ var PersonalizePolicies = []Service{
 		},
 		Permission: "ListSchemas",
 	},
-	{
+	"ListSolutionVersions": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -120,7 +120,7 @@ var PersonalizePolicies = []Service{
 		},
 		Permission: "ListSolutionVersions",
 	},
-	{
+	"ListSolutions": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -131,7 +131,7 @@ var PersonalizePolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeAlgorithm": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -143,7 +143,7 @@ var PersonalizePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "algorithm_arn",
 	},
-	{
+	"DescribeBatchInferenceJob": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -155,7 +155,7 @@ var PersonalizePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "batch_inference_job_arn",
 	},
-	{
+	"DescribeBatchSegmentJob": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -167,7 +167,7 @@ var PersonalizePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "batch_segment_job_arn",
 	},
-	{
+	"DescribeCampaign": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -179,7 +179,7 @@ var PersonalizePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "campaign_arn",
 	},
-	{
+	"DescribeDataset": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -191,7 +191,7 @@ var PersonalizePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "dataset_arn",
 	},
-	{
+	"DescribeDatasetExportJob": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -203,7 +203,7 @@ var PersonalizePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "dataset_export_job_arn",
 	},
-	{
+	"DescribeDatasetGroup": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -215,7 +215,7 @@ var PersonalizePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "dataset_group_arn",
 	},
-	{
+	"DescribeDatasetImportJob": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -227,7 +227,7 @@ var PersonalizePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "dataset_import_job_arn",
 	},
-	{
+	"DescribeEventTracker": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -239,7 +239,7 @@ var PersonalizePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "event_tracker_arn",
 	},
-	{
+	"DescribeFeatureTransformation": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -251,7 +251,7 @@ var PersonalizePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "feature_transformation_arn",
 	},
-	{
+	"DescribeFilter": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -263,7 +263,7 @@ var PersonalizePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "filter_arn",
 	},
-	{
+	"DescribeRecipe": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -275,7 +275,7 @@ var PersonalizePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "recipe_arn",
 	},
-	{
+	"DescribeRecommender": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -287,7 +287,7 @@ var PersonalizePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "recommender_arn",
 	},
-	{
+	"DescribeSchema": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -299,7 +299,7 @@ var PersonalizePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "schema_arn",
 	},
-	{
+	"DescribeSolution": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -311,7 +311,7 @@ var PersonalizePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "solution_arn",
 	},
-	{
+	"DescribeSolutionVersion": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -323,7 +323,7 @@ var PersonalizePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "solution_version_arn",
 	},
-	{
+	"GetSolutionMetrics": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -335,7 +335,7 @@ var PersonalizePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "solution_version_arn",
 	},
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

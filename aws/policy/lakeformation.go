@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var LakeFormationPolicies = []Service{
-	{
+var LakeFormationPolicies = map[string]Service{
+	"DeleteDataCellsFilter": {
 		Method:        "POST",
 		ServiceSuffix: "DeleteDataCellsFilter",
 		JsonData:      map[string]string{},
@@ -12,7 +12,7 @@ var LakeFormationPolicies = []Service{
 		},
 		Permission: "DeleteDataCellsFilter",
 	},
-	{
+	"ExtendTransaction": {
 		Method:        "POST",
 		ServiceSuffix: "ExtendTransaction",
 		JsonData:      map[string]string{},
@@ -21,7 +21,7 @@ var LakeFormationPolicies = []Service{
 		},
 		Permission: "ExtendTransaction",
 	},
-	{
+	"GetDataLakeSettings": {
 		Method:        "POST",
 		ServiceSuffix: "GetDataLakeSettings",
 		JsonData:      map[string]string{},
@@ -30,7 +30,7 @@ var LakeFormationPolicies = []Service{
 		},
 		Permission: "GetDataLakeSettings",
 	},
-	{
+	"ListDataCellsFilter": {
 		Method:        "POST",
 		ServiceSuffix: "ListDataCellsFilter",
 		JsonData:      map[string]string{},
@@ -39,7 +39,7 @@ var LakeFormationPolicies = []Service{
 		},
 		Permission: "ListDataCellsFilter",
 	},
-	{
+	"ListLFTags": {
 		Method:        "POST",
 		ServiceSuffix: "ListLFTags",
 		JsonData:      map[string]string{},
@@ -48,7 +48,7 @@ var LakeFormationPolicies = []Service{
 		},
 		Permission: "ListLFTags",
 	},
-	{
+	"ListPermissions": {
 		Method:        "POST",
 		ServiceSuffix: "ListPermissions",
 		JsonData:      map[string]string{},
@@ -57,7 +57,7 @@ var LakeFormationPolicies = []Service{
 		},
 		Permission: "ListPermissions",
 	},
-	{
+	"ListResources": {
 		Method:        "POST",
 		ServiceSuffix: "ListResources",
 		JsonData:      map[string]string{},
@@ -66,7 +66,7 @@ var LakeFormationPolicies = []Service{
 		},
 		Permission: "ListResources",
 	},
-	{
+	"ListTransactions": {
 		Method:        "POST",
 		ServiceSuffix: "ListTransactions",
 		JsonData:      map[string]string{},
@@ -75,7 +75,7 @@ var LakeFormationPolicies = []Service{
 		},
 		Permission: "ListTransactions",
 	},
-	{
+	"StartTransaction": {
 		Method:        "POST",
 		ServiceSuffix: "StartTransaction",
 		JsonData:      map[string]string{},
@@ -86,7 +86,7 @@ var LakeFormationPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeResource": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeResource",
@@ -101,7 +101,7 @@ var LakeFormationPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "resource_arn",
 	},
-	{
+	"DescribeTransaction": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeTransaction",
@@ -116,7 +116,7 @@ var LakeFormationPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "transaction_id",
 	},
-	{
+	"GetEffectivePermissionsForPath": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetEffectivePermissionsForPath",
@@ -131,7 +131,7 @@ var LakeFormationPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "resource_arn",
 	},
-	{
+	"GetLFTag": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetLFTag",
@@ -146,7 +146,7 @@ var LakeFormationPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "tag_key",
 	},
-	{
+	"GetQueryState": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetQueryState",
@@ -161,7 +161,7 @@ var LakeFormationPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "query_id",
 	},
-	{
+	"GetQueryStatistics": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetQueryStatistics",
@@ -176,7 +176,7 @@ var LakeFormationPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "query_id",
 	},
-	{
+	"GetResourceLFTags": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetResourceLFTags",
@@ -191,7 +191,7 @@ var LakeFormationPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "resource",
 	},
-	{
+	"GetWorkUnits": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetWorkUnits",

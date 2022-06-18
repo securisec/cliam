@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var MediaStorePolicies = []Service{
-	{
+var MediaStorePolicies = map[string]Service{
+	"DescribeContainers": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var MediaStorePolicies = []Service{
 		},
 		Permission: "DescribeContainers",
 	},
-	{
+	"ListContainers": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -23,7 +23,7 @@ var MediaStorePolicies = []Service{
 	},
 
 	// extra
-	{
+	"GetContainerPolicy": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -35,7 +35,7 @@ var MediaStorePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "container_name",
 	},
-	{
+	"GetCorsPolicy": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -47,7 +47,7 @@ var MediaStorePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "container_name",
 	},
-	{
+	"GetLifecyclePolicy": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -59,7 +59,7 @@ var MediaStorePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "container_name",
 	},
-	{
+	"GetMetricPolicy": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -71,7 +71,7 @@ var MediaStorePolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "container_name",
 	},
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

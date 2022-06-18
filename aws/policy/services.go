@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"path"
 	"text/template"
+
+	"github.com/securisec/cliam/shared"
 )
 
 const (
@@ -62,8 +64,13 @@ func (s Service) UpdateForExtra() (Service, error) {
 	switch s.ExtraComponentLocation {
 	case "path":
 		temp := template.Must(template.New("").Parse(s.ReqURL))
+		temp.Option("missingkey=error")
 		if err := temp.Execute(&b, s.ExtraValueMap); err != nil {
 			return Service{}, err
+		}
+		// check for empty values
+		if shared.AwsTemplatePropertyRegex.MatchString(b.String()) {
+			return Service{}, fmt.Errorf("empty path")
 		}
 		s.ReqURL = b.String()
 		return s, nil

@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var ECSPolicies = []Service{
-	{
+var ECSPolicies = map[string]Service{
+	"DescribeClusters": {
 		ServiceSuffix: "",
 		Method:        "POST",
 		JsonData:      map[string]string{},
@@ -13,7 +13,7 @@ var ECSPolicies = []Service{
 		},
 		Permission: "DescribeClusters",
 	},
-	{
+	"ListAccountSettings": {
 		ServiceSuffix: "",
 		Method:        "POST",
 		JsonData:      map[string]string{},
@@ -23,7 +23,7 @@ var ECSPolicies = []Service{
 		},
 		Permission: "ListAccountSettings",
 	},
-	{
+	"ListClusters": {
 		ServiceSuffix: "",
 		Method:        "POST",
 		JsonData:      map[string]string{},
@@ -33,7 +33,7 @@ var ECSPolicies = []Service{
 		},
 		Permission: "ListClusters",
 	},
-	{
+	"ListContainerInstances": {
 		ServiceSuffix: "",
 		Method:        "POST",
 		JsonData:      map[string]string{},
@@ -43,7 +43,7 @@ var ECSPolicies = []Service{
 		},
 		Permission: "ListContainerInstances",
 	},
-	{
+	"ListServices": {
 		ServiceSuffix: "",
 		Method:        "POST",
 		JsonData:      map[string]string{},
@@ -53,7 +53,7 @@ var ECSPolicies = []Service{
 		},
 		Permission: "ListServices",
 	},
-	{
+	"ListTaskDefinitionFamilies": {
 		ServiceSuffix: "",
 		Method:        "POST",
 		JsonData:      map[string]string{},
@@ -63,7 +63,7 @@ var ECSPolicies = []Service{
 		},
 		Permission: "ListTaskDefinitionFamilies",
 	},
-	{
+	"ListTaskDefinitions": {
 		ServiceSuffix: "",
 		Method:        "POST",
 		JsonData:      map[string]string{},
@@ -73,7 +73,7 @@ var ECSPolicies = []Service{
 		},
 		Permission: "ListTaskDefinitions",
 	},
-	{
+	"ListTasks": {
 		ServiceSuffix: "",
 		Method:        "POST",
 		JsonData:      map[string]string{},
@@ -85,7 +85,7 @@ var ECSPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeContainerInstances": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -97,7 +97,7 @@ var ECSPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "container_instances",
 	},
-	{
+	"DescribeServices": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -109,7 +109,7 @@ var ECSPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "services",
 	},
-	{
+	"DescribeTaskDefinition": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -121,7 +121,7 @@ var ECSPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "task_definition",
 	},
-	{
+	"DescribeTasks": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -133,7 +133,7 @@ var ECSPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "tasks",
 	},
-	{
+	"ListAttributes": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -145,7 +145,7 @@ var ECSPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "target_type",
 	},
-	{
+	"ListTagsForResource": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

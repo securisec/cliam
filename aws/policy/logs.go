@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var LogsPolicies = []Service{
-	{
+var LogsPolicies = map[string]Service{
+	"DescribeDestinations": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var LogsPolicies = []Service{
 		},
 		Permission: "DescribeDestinations",
 	},
-	{
+	"DescribeExportTasks": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var LogsPolicies = []Service{
 		},
 		Permission: "DescribeExportTasks",
 	},
-	{
+	"DescribeLogGroups": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -30,7 +30,7 @@ var LogsPolicies = []Service{
 		},
 		Permission: "DescribeLogGroups",
 	},
-	{
+	"DescribeMetricFilters": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -39,7 +39,7 @@ var LogsPolicies = []Service{
 		},
 		Permission: "DescribeMetricFilters",
 	},
-	{
+	"DescribeQueries": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -48,7 +48,7 @@ var LogsPolicies = []Service{
 		},
 		Permission: "DescribeQueries",
 	},
-	{
+	"DescribeQueryDefinitions": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -57,7 +57,7 @@ var LogsPolicies = []Service{
 		},
 		Permission: "DescribeQueryDefinitions",
 	},
-	{
+	"DescribeResourcePolicies": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -68,7 +68,7 @@ var LogsPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeLogStreams": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -80,7 +80,7 @@ var LogsPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "log_group_name",
 	},
-	{
+	"DescribeSubscriptionFilters": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -92,7 +92,7 @@ var LogsPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "log_group_name",
 	},
-	{
+	"GetLogGroupFields": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -104,7 +104,7 @@ var LogsPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "log_group_name",
 	},
-	{
+	"GetLogRecord": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -116,7 +116,7 @@ var LogsPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "log_record_pointer",
 	},
-	{
+	"GetQueryResults": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -128,7 +128,7 @@ var LogsPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "query_id",
 	},
-	{
+	"ListTagsLogGroup": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

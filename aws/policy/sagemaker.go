@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var SageMakerPolicies = []Service{
-	{
+var SageMakerPolicies = map[string]Service{
+	"GetSagemakerServicecatalogPortfolioStatus": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -12,7 +12,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "GetSagemakerServicecatalogPortfolioStatus",
 	},
-	{
+	"ListActions": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -21,7 +21,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListActions",
 	},
-	{
+	"ListAlgorithms": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -30,7 +30,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListAlgorithms",
 	},
-	{
+	"ListAppImageConfigs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -39,7 +39,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListAppImageConfigs",
 	},
-	{
+	"ListApps": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -48,7 +48,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListApps",
 	},
-	{
+	"ListArtifacts": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -57,7 +57,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListArtifacts",
 	},
-	{
+	"ListAssociations": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -66,7 +66,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListAssociations",
 	},
-	{
+	"ListAutoMlJobs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -75,7 +75,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListAutoMlJobs",
 	},
-	{
+	"ListCodeRepositories": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -84,7 +84,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListCodeRepositories",
 	},
-	{
+	"ListCompilationJobs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -93,7 +93,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListCompilationJobs",
 	},
-	{
+	"ListContexts": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -102,7 +102,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListContexts",
 	},
-	{
+	"ListDataQualityJobDefinitions": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -111,7 +111,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListDataQualityJobDefinitions",
 	},
-	{
+	"ListDeviceFleets": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -120,7 +120,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListDeviceFleets",
 	},
-	{
+	"ListDevices": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -129,7 +129,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListDevices",
 	},
-	{
+	"ListDomains": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -138,7 +138,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListDomains",
 	},
-	{
+	"ListEdgePackagingJobs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -147,7 +147,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListEdgePackagingJobs",
 	},
-	{
+	"ListEndpointConfigs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -156,7 +156,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListEndpointConfigs",
 	},
-	{
+	"ListEndpoints": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -165,7 +165,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListEndpoints",
 	},
-	{
+	"ListExperiments": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -174,7 +174,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListExperiments",
 	},
-	{
+	"ListFeatureGroups": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -183,7 +183,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListFeatureGroups",
 	},
-	{
+	"ListFlowDefinitions": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -192,7 +192,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListFlowDefinitions",
 	},
-	{
+	"ListHumanTaskUis": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -201,7 +201,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListHumanTaskUis",
 	},
-	{
+	"ListHyperParameterTuningJobs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -210,7 +210,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListHyperParameterTuningJobs",
 	},
-	{
+	"ListImages": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -219,7 +219,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListImages",
 	},
-	{
+	"ListInferenceRecommendationsJobs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -228,7 +228,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListInferenceRecommendationsJobs",
 	},
-	{
+	"ListLabelingJobs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -237,7 +237,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListLabelingJobs",
 	},
-	{
+	"ListLineageGroups": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -246,7 +246,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListLineageGroups",
 	},
-	{
+	"ListModelBiasJobDefinitions": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -255,7 +255,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListModelBiasJobDefinitions",
 	},
-	{
+	"ListModelExplainabilityJobDefinitions": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -264,7 +264,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListModelExplainabilityJobDefinitions",
 	},
-	{
+	"ListModelPackageGroups": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -273,7 +273,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListModelPackageGroups",
 	},
-	{
+	"ListModelPackages": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -282,7 +282,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListModelPackages",
 	},
-	{
+	"ListModelQualityJobDefinitions": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -291,7 +291,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListModelQualityJobDefinitions",
 	},
-	{
+	"ListModels": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -300,7 +300,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListModels",
 	},
-	{
+	"ListMonitoringExecutions": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -309,7 +309,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListMonitoringExecutions",
 	},
-	{
+	"ListMonitoringSchedules": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -318,7 +318,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListMonitoringSchedules",
 	},
-	{
+	"ListNotebookInstanceLifecycleConfigs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -327,7 +327,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListNotebookInstanceLifecycleConfigs",
 	},
-	{
+	"ListNotebookInstances": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -336,7 +336,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListNotebookInstances",
 	},
-	{
+	"ListPipelineExecutionSteps": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -345,7 +345,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListPipelineExecutionSteps",
 	},
-	{
+	"ListPipelines": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -354,7 +354,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListPipelines",
 	},
-	{
+	"ListProcessingJobs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -363,7 +363,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListProcessingJobs",
 	},
-	{
+	"ListProjects": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -372,7 +372,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListProjects",
 	},
-	{
+	"ListStudioLifecycleConfigs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -381,7 +381,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListStudioLifecycleConfigs",
 	},
-	{
+	"ListSubscribedWorkteams": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -390,7 +390,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListSubscribedWorkteams",
 	},
-	{
+	"ListTrainingJobs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -399,7 +399,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListTrainingJobs",
 	},
-	{
+	"ListTransformJobs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -408,7 +408,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListTransformJobs",
 	},
-	{
+	"ListTrialComponents": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -417,7 +417,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListTrialComponents",
 	},
-	{
+	"ListTrials": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -426,7 +426,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListTrials",
 	},
-	{
+	"ListUserProfiles": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -435,7 +435,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListUserProfiles",
 	},
-	{
+	"ListWorkforces": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -444,7 +444,7 @@ var SageMakerPolicies = []Service{
 		},
 		Permission: "ListWorkforces",
 	},
-	{
+	"ListWorkteams": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
@@ -455,7 +455,7 @@ var SageMakerPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeAction": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -467,7 +467,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "action_name",
 	},
-	{
+	"DescribeAlgorithm": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -479,7 +479,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "algorithm_name",
 	},
-	{
+	"DescribeAppImageConfig": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -491,7 +491,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "app_image_config_name",
 	},
-	{
+	"DescribeArtifact": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -503,7 +503,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "artifact_arn",
 	},
-	{
+	"DescribeAutoMLJob": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -515,7 +515,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "auto_m_l_job_name",
 	},
-	{
+	"DescribeCodeRepository": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -527,7 +527,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "code_repository_name",
 	},
-	{
+	"DescribeCompilationJob": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -539,7 +539,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "compilation_job_name",
 	},
-	{
+	"DescribeContext": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -551,7 +551,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "context_name",
 	},
-	{
+	"DescribeDataQualityJobDefinition": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -563,7 +563,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "job_definition_name",
 	},
-	{
+	"DescribeDeviceFleet": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -575,7 +575,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "device_fleet_name",
 	},
-	{
+	"DescribeDomain": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -587,7 +587,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "domain_id",
 	},
-	{
+	"DescribeEdgePackagingJob": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -599,7 +599,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "edge_packaging_job_name",
 	},
-	{
+	"DescribeEndpoint": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -611,7 +611,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "endpoint_name",
 	},
-	{
+	"DescribeEndpointConfig": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -623,7 +623,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "endpoint_config_name",
 	},
-	{
+	"DescribeExperiment": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -635,7 +635,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "experiment_name",
 	},
-	{
+	"DescribeFeatureGroup": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -647,7 +647,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "feature_group_name",
 	},
-	{
+	"DescribeFlowDefinition": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -659,7 +659,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "flow_definition_name",
 	},
-	{
+	"DescribeHumanTaskUi": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -671,7 +671,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "human_task_ui_name",
 	},
-	{
+	"DescribeHyperParameterTuningJob": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -683,7 +683,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "hyper_parameter_tuning_job_name",
 	},
-	{
+	"DescribeImage": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -695,7 +695,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "image_name",
 	},
-	{
+	"DescribeImageVersion": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -707,7 +707,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "image_name",
 	},
-	{
+	"DescribeInferenceRecommendationsJob": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -719,7 +719,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "job_name",
 	},
-	{
+	"DescribeLabelingJob": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -731,7 +731,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "labeling_job_name",
 	},
-	{
+	"DescribeLineageGroup": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -743,7 +743,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "lineage_group_name",
 	},
-	{
+	"DescribeModel": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -755,7 +755,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "model_name",
 	},
-	{
+	"DescribeModelBiasJobDefinition": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -767,7 +767,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "job_definition_name",
 	},
-	{
+	"DescribeModelExplainabilityJobDefinition": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -779,7 +779,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "job_definition_name",
 	},
-	{
+	"DescribeModelPackage": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -791,7 +791,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "model_package_name",
 	},
-	{
+	"DescribeModelPackageGroup": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -803,7 +803,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "model_package_group_name",
 	},
-	{
+	"DescribeModelQualityJobDefinition": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -815,7 +815,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "job_definition_name",
 	},
-	{
+	"DescribeMonitoringSchedule": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -827,7 +827,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "monitoring_schedule_name",
 	},
-	{
+	"DescribeNotebookInstance": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -839,7 +839,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "notebook_instance_name",
 	},
-	{
+	"DescribeNotebookInstanceLifecycleConfig": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -851,7 +851,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "notebook_instance_lifecycle_config_name",
 	},
-	{
+	"DescribePipeline": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -863,7 +863,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "pipeline_name",
 	},
-	{
+	"DescribePipelineDefinitionForExecution": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -875,7 +875,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "pipeline_execution_arn",
 	},
-	{
+	"DescribePipelineExecution": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -887,7 +887,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "pipeline_execution_arn",
 	},
-	{
+	"DescribeProcessingJob": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -899,7 +899,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "processing_job_name",
 	},
-	{
+	"DescribeProject": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -911,7 +911,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "project_name",
 	},
-	{
+	"DescribeStudioLifecycleConfig": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -923,7 +923,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "studio_lifecycle_config_name",
 	},
-	{
+	"DescribeSubscribedWorkteam": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -935,7 +935,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "workteam_arn",
 	},
-	{
+	"DescribeTrainingJob": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -947,7 +947,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "training_job_name",
 	},
-	{
+	"DescribeTransformJob": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -959,7 +959,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "transform_job_name",
 	},
-	{
+	"DescribeTrial": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -971,7 +971,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "trial_name",
 	},
-	{
+	"DescribeTrialComponent": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -983,7 +983,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "trial_component_name",
 	},
-	{
+	"DescribeWorkforce": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -995,7 +995,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "workforce_name",
 	},
-	{
+	"DescribeWorkteam": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -1007,7 +1007,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "workteam_name",
 	},
-	{
+	"GetDeviceFleetReport": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -1019,7 +1019,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "device_fleet_name",
 	},
-	{
+	"GetLineageGroupPolicy": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -1031,7 +1031,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "lineage_group_name",
 	},
-	{
+	"GetModelPackageGroupPolicy": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -1043,7 +1043,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "model_package_group_name",
 	},
-	{
+	"GetSearchSuggestions": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -1055,7 +1055,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "resource",
 	},
-	{
+	"ListCandidatesForAutoMLJob": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -1067,7 +1067,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "auto_m_l_job_name",
 	},
-	{
+	"ListImageVersions": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -1079,7 +1079,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "image_name",
 	},
-	{
+	"ListLabelingJobsForWorkteam": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -1091,7 +1091,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "workteam_arn",
 	},
-	{
+	"ListPipelineExecutions": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -1103,7 +1103,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "pipeline_name",
 	},
-	{
+	"ListPipelineParametersForExecution": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -1115,7 +1115,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "pipeline_execution_arn",
 	},
-	{
+	"ListTags": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -1127,7 +1127,7 @@ var SageMakerPolicies = []Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "resource_arn",
 	},
-	{
+	"ListTrainingJobsForHyperParameterTuningJob": {
 		Method: "POST",
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,

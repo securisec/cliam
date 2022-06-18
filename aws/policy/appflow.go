@@ -2,8 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var AppFlowPolicies = []Service{
-	{
+var AppFlowPolicies = map[string]Service{
+	"DescribeConnectorProfiles": {
 		Method:        "POST",
 		ServiceSuffix: "describe-connector-profiles",
 		JsonData:      map[string]string{},
@@ -12,7 +12,7 @@ var AppFlowPolicies = []Service{
 		},
 		Permission: "DescribeConnectorProfiles",
 	},
-	{
+	"DescribeConnectors": {
 		Method:        "POST",
 		ServiceSuffix: "describe-connectors",
 		JsonData:      map[string]string{},
@@ -21,7 +21,7 @@ var AppFlowPolicies = []Service{
 		},
 		Permission: "DescribeConnectors",
 	},
-	{
+	"ListConnectorEntities": {
 		Method:        "POST",
 		ServiceSuffix: "list-connector-entities",
 		JsonData:      map[string]string{},
@@ -30,7 +30,7 @@ var AppFlowPolicies = []Service{
 		},
 		Permission: "ListConnectorEntities",
 	},
-	{
+	"ListConnectors": {
 		Method:        "POST",
 		ServiceSuffix: "list-connectors",
 		JsonData:      map[string]string{},
@@ -39,7 +39,7 @@ var AppFlowPolicies = []Service{
 		},
 		Permission: "ListConnectors",
 	},
-	{
+	"ListFlows": {
 		Method:        "POST",
 		ServiceSuffix: "list-flows",
 		JsonData:      map[string]string{},
@@ -48,7 +48,7 @@ var AppFlowPolicies = []Service{
 		},
 		Permission: "ListFlows",
 	},
-	{
+	"RegisterConnector": {
 		Method:        "POST",
 		ServiceSuffix: "register-connector",
 		JsonData:      map[string]string{},
@@ -59,7 +59,7 @@ var AppFlowPolicies = []Service{
 	},
 
 	// extra
-	{
+	"DescribeConnector": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeConnector",
@@ -74,7 +74,7 @@ var AppFlowPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "connector_type",
 	},
-	{
+	"DescribeConnectorEntity": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeConnectorEntity",
@@ -89,7 +89,7 @@ var AppFlowPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "connector_entity_name",
 	},
-	{
+	"DescribeFlow": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeFlow",
@@ -104,7 +104,7 @@ var AppFlowPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "flow_name",
 	},
-	{
+	"DescribeFlowExecutionRecords": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeFlowExecutionRecords",
@@ -119,7 +119,7 @@ var AppFlowPolicies = []Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "flow_name",
 	},
-	{
+	"ListTagsForResource": {
 		ServiceSuffix:          "/tags/{{.resource_arn}}",
 		Permission:             "ListTagsForResource",
 		ExtraComponentLocation: "path",
