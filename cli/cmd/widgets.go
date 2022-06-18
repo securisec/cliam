@@ -50,12 +50,13 @@ func cliResponseLoggerAWS(ser scanner.ServiceMap, status int) {
 		sl.Msg(shared.GetMessageColor("success"))
 		return
 	}
+	// it was not a successful request
+	failureCounter++
 	if status != 200 && logger.DEBUG {
 		dl := l.Error().Str(ser.Resource, logger.ToSnakeCase(ser.Policy.Permission))
 		if ok {
 			dl.Str(strings.ReplaceAll(cf, "_", "-"), flag)
 		}
-		failureCounter++
 		dl.Msg(shared.GetMessageColor("success"))
 	}
 }

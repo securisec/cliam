@@ -14,9 +14,10 @@ import (
 )
 
 var azureRequestBuilderCmd = &cobra.Command{
-	Use:   "curl-builder",
-	Short: "Build the curl command to test an azure policy.",
-	Long:  "Some requests requires known values. For these, use the -k command to supply them",
+	Use:     "curl-builder",
+	Short:   "Build the curl command to test an azure policy.",
+	Long:    "Some requests requires known values. For these, use the -n command to supply them",
+	Example: "azure curl-builder --policy somepolicy --operation someoperation --values somevalue=somevalue",
 	PreRun: func(cmd *cobra.Command, args []string) {
 		if azureSubscriptionID == "" {
 			azureSubscriptionID = os.Getenv("AZURE_SUBSCRIPTION_ID")

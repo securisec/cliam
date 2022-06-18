@@ -31,7 +31,7 @@ func EnumerateSpecificResource(
 		ser.Policy = s
 	}
 
-	_, res, body, err := signer.MakeRequest(ctx, region, ser.Resource, &ser.Policy, creds)
+	_, res, body, err := signer.MakeScannerRequest(ctx, region, ser.Resource, &ser.Policy, creds)
 	if err != nil {
 		return 0, err
 	}

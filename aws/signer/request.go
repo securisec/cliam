@@ -15,7 +15,7 @@ import (
 	"github.com/securisec/cliam/logger"
 )
 
-func MakeRequest(
+func MakeScannerRequest(
 	ctx context.Context,
 	region, service string,
 	p *policy.Service,
@@ -97,4 +97,63 @@ func serviceSafetyNet(service string) string {
 	default:
 		return service
 	}
+}
+
+func BuildRequest(
+	region, service string,
+	p *policy.Service,
+	creds *credentials.Credentials,
+) (*http.Request, error) {
+	// default options
+	method := "GET"
+	body := strings.NewReader("")
+
+	if p.Method != "" {
+		method = p.Method
+	}
+
+	// if form data, set body
+	if method != "GET" && len(p.FormData) > 0 {
+		form := url.Values{}
+		for k, v := range p.FormData {
+			form.Add(k, v)
+		}
+		body = strings.NewReader(form.Encode())
+	}
+
+	if method != "GET" && len(p.FormData) == 0 {
+		o, err := json.Marshal(p.JsonData)
+		if err != nil {
+			return nil, err
+		}
+		body = strings.NewReader(string(o))
+	}
+	// create request
+	req, err := http.NewRequest(method, p.ReqURL, body)
+	if err != nil {
+		return nil, err
+	}
+
+	// add headers
+	if p.Headers != nil {
+		for k, v := range p.Headers {
+			req.Header.Add(k, v)
+		}
+	}
+
+	// we only want accent json
+	req.Header.Add("Accept", "application/json")
+
+	// create signer to generate auth signature header
+	signer := v4.NewSigner(creds)
+	// safety net for certain services
+	service = serviceSafetyNet(service)
+	// safety net for certain regions
+	region = policy.AwsRegionSafetyNet(service, region)
+	// sign request
+	if _, err := signer.Sign(req, body, service, region, time.Now()); err != nil {
+		return nil, err
+	}
+
+	return req, nil
 }
