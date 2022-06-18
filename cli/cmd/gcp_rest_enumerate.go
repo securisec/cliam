@@ -35,34 +35,20 @@ var gcpRestEnumerateCmd = &cobra.Command{
 
 func init() {
 	gcpRestCmd.AddCommand(gcpRestEnumerateCmd)
-	gcpRestEnumerateCmd.Flags().StringToString("parent", nil, "Specify the parent. i.e. project=my-project or organization=my-org. Valid keys are project, origanization, folder, billingAccount")
-	gcpRestEnumerateCmd.Flags().StringToString("body", map[string]string{}, "Rest API body to use when not a GET request")
-	gcpRestEnumerateCmd.Flags().String("resource-id", "", `Resource ID to use when not a GET request. Resource id is quite 
-versitile and is used as a generic term for any resource. For example, if you are
-enumerating pubsub, resource-id could be the subscription name; but also if you are 
-enumerating compute, resource-id could be the instance name.`)
 	// gcpRestEnumerateCmd.MarkFlagRequired("parent")
 }
 
 func gcpRestEnumerateCmdFunc(cmd *cobra.Command, args []string) {
+	var err error
 	accessToken := gcpAccessToken
-
-	parent, err := cmd.Flags().GetStringToString("parent")
-	body, err := cmd.Flags().GetStringToString("body")
-	resourceID, err := cmd.Flags().GetString("resource-id")
-
-	if err != nil {
-		logger.LoggerStdErr.Fatal().Err(err).Msg("Invalid parent")
-		os.Exit(1)
-	}
 
 	sa, projectID, region, zone := getSaAndRegion()
 	cliGcpLogRegion(region, zone)
 	if projectID != "" {
-		parent["project"] = projectID
+		gcpRestParent["project"] = projectID
 	}
 
-	parentType, parentID := processParent(parent)
+	parentType, parentID := processParent(gcpRestParent)
 
 	if parentType == "" || parentID == "" {
 		logger.LoggerStdErr.Fatal().Msg("parent must be specified as project=my-project or organization=my-org")
@@ -85,10 +71,10 @@ func gcpRestEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 			for _, p := range r {
 				p.ParentType = parentType
 				p.ParentID = parentID
-				p.ResourceID = resourceID
+				p.ResourceID = gcpRestResourceID
 				p.Zone = zone
 				p.Region = region
-				p.ReqBody = body
+				p.ReqBody = gcpRestBody
 				permissions = append(permissions, p)
 			}
 		}

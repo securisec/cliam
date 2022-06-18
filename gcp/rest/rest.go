@@ -34,7 +34,7 @@ type RestCall struct {
 
 func (r RestCall) GetURL() (string, error) {
 	t := template.Must(template.New("").Parse("{{.URL}}"))
-	t.Option("missingkey=error")
+	t = t.Option("missingkey=error")
 	b := bytes.Buffer{}
 
 	if err := t.Execute(&b, r); err != nil {
@@ -43,7 +43,7 @@ func (r RestCall) GetURL() (string, error) {
 
 	bb := bytes.Buffer{}
 	tt := template.Must(template.New("").Parse(b.String()))
-	tt.Option("missingkey=error")
+	tt = tt.Option("missingkey=error")
 
 	if err := tt.Execute(&bb, r); err != nil {
 		return "", err
@@ -52,7 +52,7 @@ func (r RestCall) GetURL() (string, error) {
 	url := bb.String()
 	if strings.Contains(strings.Replace(url, "https://", "", -1), "//") {
 		// one or more of the template variables is empty
-		return "", errors.New("invalid url.")
+		return "", errors.New("invalid url. Needed parameters are missing")
 	}
 	return url, nil
 }

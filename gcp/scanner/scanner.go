@@ -137,34 +137,7 @@ func EnumerateRestApiRequest(
 	accessToken string,
 	r rest.RestCall,
 ) (rest.RestCall, []byte, error) {
-	var req *http.Request
-
-	url, err := r.GetURL()
-	if err != nil {
-		return r, nil, err
-	}
-
-	isGet := r.ReqMethod == "GET"
-
-	if isGet {
-		req, err = http.NewRequestWithContext(ctx, r.ReqMethod, url, nil)
-	} else {
-		o, err := json.Marshal(r.ReqBody)
-		if err != nil {
-			return r, nil, err
-		}
-		req, err = http.NewRequestWithContext(ctx, r.ReqMethod, url, bytes.NewBuffer(o))
-	}
-	if err != nil {
-		return r, nil, err
-	}
-	if !isGet {
-		req.Header.Add("Content-Type", "application/json")
-	}
-
-	// add auth bearer token
-	req.Header.Add("Authorization", "Bearer "+accessToken)
-	req.Header.Add("user-agent", "google-cloud-sdk gcloud/379.0.0")
+	req, err := RequestBuilder(ctx, r, accessToken)
 
 	res, err := http.DefaultClient.Do(req)
 	if err != nil {
@@ -179,4 +152,37 @@ func EnumerateRestApiRequest(
 	r.Response = res
 	res.Body.Close()
 	return r, body, nil
+}
+
+func RequestBuilder(ctx context.Context, r rest.RestCall, accessToken string) (*http.Request, error) {
+	var req *http.Request
+
+	url, err := r.GetURL()
+	if err != nil {
+		return nil, err
+	}
+
+	isGet := r.ReqMethod == "GET"
+
+	if isGet {
+		req, err = http.NewRequestWithContext(ctx, r.ReqMethod, url, nil)
+	} else {
+		o, err := json.Marshal(r.ReqBody)
+		if err != nil {
+			return nil, err
+		}
+		req, err = http.NewRequestWithContext(ctx, r.ReqMethod, url, bytes.NewBuffer(o))
+	}
+	if err != nil {
+		return nil, err
+	}
+	if !isGet {
+		req.Header.Add("Content-Type", "application/json")
+	}
+
+	// add auth bearer token
+	req.Header.Add("Authorization", "Bearer "+accessToken)
+	req.Header.Add("user-agent", "google-cloud-sdk gcloud/379.0.0")
+
+	return req, nil
 }
