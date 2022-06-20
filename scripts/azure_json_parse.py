@@ -63,7 +63,7 @@ def getPolicies(resource, specification, version):
 
 # pyperclip.copy(o)
 
-SPECIFICATION = "devspaces"
+SPECIFICATION = "visualstudio"
 
 rdirs =  [dirs for dirs in Path(f'temp/azure-rest-api-specs/specification/{SPECIFICATION}/resource-manager/').glob("*") if dirs.is_dir()]
 
@@ -78,8 +78,8 @@ for dirs in rdirs:
         resource = path.stem
 
         save_path = Path(f"azure/policy/{RESOURCE}.{resource}.go")
-        # if save_path.exists():
-        #     continue
+        if save_path.exists():
+            continue
 
         policies = buildPolicy(path)
         var_name = RESOURCE.replace(".", "_") + f"_{resource}"

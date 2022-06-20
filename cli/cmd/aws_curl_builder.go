@@ -49,7 +49,7 @@ func init() {
 		for k := range policies {
 			hold = append(hold, k+"=")
 		}
-		return hold, cobra.ShellCompDirectiveNoFileComp
+		return hold, cobra.ShellCompDirectiveNoSpace
 	})
 
 	// know value completer
