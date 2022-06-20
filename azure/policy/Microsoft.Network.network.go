@@ -1,6 +1,3 @@
 package policy
 
-    var Microsoft_Network_network = map[string]Policy{
-        
-    }
-    
+var Microsoft_Network_network = map[string]Policy{}
