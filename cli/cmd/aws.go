@@ -14,6 +14,10 @@ import (
 var awsCmd = &cobra.Command{
 	Use:   "aws",
 	Short: "Enumerate AWS credentials for their permissions.",
+	Long: `The following environment variables can be used to override the default values:
+- AWS_ACCESS_KEY_ID
+- AWS_SECRET_ACCESS_KEY
+- AWS_SESSION_TOKEN`,
 	PreRun: func(cmd *cobra.Command, args []string) {
 		if len(args) == 0 {
 			cmd.Help()

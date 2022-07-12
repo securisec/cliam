@@ -68,6 +68,11 @@ func gcpRestCurlBuilderFunc(cmd *cobra.Command, args []string) {
 	pCli, _ := cmd.Flags().GetString("policy")
 	oCli, _ := cmd.Flags().GetString("operation")
 	// values, _ := cmd.Flags().GetStringSlice("values")
+	p := gcpGetSpecificOperation(pCli, oCli)
+	parentType, parentID := processParent(gcpRestParent)
+	if parentType == "" || parentID == "" {
+		logger.LoggerStdErr.Fatal().Msg("Parent type and id must be set")
+	}
 
 	accessToken := gcpAccessToken
 	if accessToken == "" {
@@ -77,8 +82,6 @@ func gcpRestCurlBuilderFunc(cmd *cobra.Command, args []string) {
 		}
 	}
 
-	p := gcpGetSpecificOperation(pCli, oCli)
-	parentType, parentID := processParent(gcpRestParent)
 	p.ParentType = parentType
 	p.ParentID = parentID
 	p.ResourceID = gcpRestResourceID

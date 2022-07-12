@@ -63,7 +63,7 @@ def getPolicies(resource, specification, version):
 
 # pyperclip.copy(o)
 
-SPECIFICATION = "visualstudio"
+SPECIFICATION = "datashare"
 
 rdirs =  [dirs for dirs in Path(f'temp/azure-rest-api-specs/specification/{SPECIFICATION}/resource-manager/').glob("*") if dirs.is_dir()]
 
@@ -94,4 +94,6 @@ for dirs in rdirs:
         save_path.write_text(template)
         # print(policies)
 
-        print(f'"{RESOURCE}.{resource}": policy.{var_name},')
+        o = f'"{RESOURCE}.{resource}": policy.{var_name},'
+        pyperclip.copy(o)
+        print(o)

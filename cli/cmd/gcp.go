@@ -9,6 +9,9 @@ import (
 var gcpCmd = &cobra.Command{
 	Use:   "gcp",
 	Short: "Enumerate GCP service accounts for their permissions.",
+	Long: `The following environment variables can be used to override the default behavior:
+- GOOGLE_APPLICATION_CREDENTIALS
+- CLOUDSDK_CORE_PROJECT`,
 	PreRun: func(cmd *cobra.Command, args []string) {
 		if len(args) == 0 {
 			cmd.Help()

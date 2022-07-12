@@ -31,7 +31,13 @@ var azureCmd = &cobra.Command{
 	Long: `Enumerate Azure credentials for their permissions.
 In most cases, a valid Azure Subscription ID is required. If one 
 is not provided, the CLI will attempt to lookup available subscriptions 
-and use the first one.`,
+and use the first one. The following environment variables can also be used:
+- AZURE_SUBSCRIPTION_ID
+- AZURE_TENANT_ID
+- AZURE_CLIENT_ID
+- AZURE_CLIENT_SECRET
+- AZURE_CLIENT_CERTIFICATE_PATH
+- CLIAM_AZURE_OAUTH_TOKEN`,
 	PreRun: func(cmd *cobra.Command, args []string) {
 		if len(args) == 0 {
 			cmd.Help()

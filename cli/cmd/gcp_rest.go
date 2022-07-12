@@ -32,4 +32,9 @@ func init() {
 versitile and is used as a generic term for any resource. For example, if you are
 enumerating pubsub, resource-id could be the subscription name; but also if you are 
 enumerating compute, resource-id could be the instance name.`)
+
+	// Completers
+	gcpRestCmd.RegisterFlagCompletionFunc("parent", func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
+		return []string{"project=", "organization="}, cobra.ShellCompDirectiveNoSpace
+	})
 }

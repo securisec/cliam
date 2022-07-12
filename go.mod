@@ -15,6 +15,7 @@ require (
 	github.com/theckman/yacspin v0.13.12
 	golang.org/x/oauth2 v0.0.0-20220411215720-9780585627b5
 	google.golang.org/api v0.74.0
+	moul.io/http2curl/v2 v2.3.0
 )
 
 require (
@@ -47,5 +48,4 @@ require (
 	google.golang.org/genproto v0.0.0-20220324131243-acbaeb5b85eb // indirect
 	google.golang.org/grpc v1.45.0 // indirect
 	google.golang.org/protobuf v1.27.1 // indirect
-	moul.io/http2curl/v2 v2.3.0 // indirect
 )
