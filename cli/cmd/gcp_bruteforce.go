@@ -24,7 +24,7 @@ func init() {
 	gcpCmd.AddCommand(gcpBruteforceCmd)
 }
 
-func gcpBruteforceCmdFunc(cmd *cobra.Command, _ []string) {
+func gcpBruteforceCmdFunc(_ *cobra.Command, _ []string) {
 	accessToken := gcpAccessToken
 
 	ctx := context.Background()

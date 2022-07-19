@@ -9,6 +9,7 @@ import (
 	"github.com/securisec/cliam/aws"
 	"github.com/securisec/cliam/aws/scanner"
 	"github.com/securisec/cliam/aws/signer"
+	"github.com/securisec/cliam/logger"
 	"github.com/securisec/cliam/shared"
 	"github.com/spf13/cobra"
 )
@@ -28,7 +29,12 @@ func init() {
 	awsCmd.AddCommand(awsEnumerateCmd)
 }
 
-func awsEnumerateCmdFunc(cmd *cobra.Command, args []string) {
+func awsEnumerateCmdFunc(_ *cobra.Command, args []string) {
+	if awsEndpoint != "" {
+		// TODO: remove
+		logger.LogWarning("🚧 Custom endpoint enumeration may not be consistent")
+	}
+
 	if len(args) == 0 {
 		printValidArgs(aws.GetAWSResources)
 		os.Exit(1)
@@ -61,7 +67,7 @@ func awsEnumerateCmdFunc(cmd *cobra.Command, args []string) {
 					<-max
 				}()
 
-				statusCode, err := scanner.EnumerateSpecificResource(ctx, region, s, creds, SaveOutput)
+				statusCode, err := scanner.EnumerateSpecificResource(ctx, region, awsEndpoint, s, creds, SaveOutput)
 				if err != nil {
 					cliErrorLogger(s, err)
 					failureCounter++

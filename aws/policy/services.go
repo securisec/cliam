@@ -3,6 +3,7 @@ package policy
 import (
 	"bytes"
 	"fmt"
+	"net/url"
 	"path"
 	"text/template"
 
@@ -102,19 +103,26 @@ func (s Service) hasCorrectExtraKey() error {
 // GetRequestURL returns the request url for the service
 // This will combine the service, region and service suffix
 // to return a valid request url for the permission
-func (s *Service) GetRequestURL(region, service string) string {
-	var url string
+func (s *Service) GetRequestURL(region, service, endpoint string) (string, error) {
+	var eUrl string
+	if endpoint != "" {
+		pu, err := url.Parse(endpoint)
+		if err != nil {
+			return "", err
+		}
+		return fmt.Sprintf("%s://", pu.Scheme) + path.Join(pu.Host, s.ServiceSuffix), nil
+	}
 	region = AwsRegionSafetyNet(service, region)
 	if s.IgnoreRegion {
-		url = "https://" + path.Join(fmt.Sprintf(
+		eUrl = "https://" + path.Join(fmt.Sprintf(
 			"%s%s.%s", s.ServicePrefix, service, aws_BASE_URL,
 		), s.ServiceSuffix)
-		return url
+		return eUrl, nil
 	}
-	url = "https://" + path.Join(fmt.Sprintf(
+	eUrl = "https://" + path.Join(fmt.Sprintf(
 		"%s%s.%s.%s", s.ServicePrefix, service, region, aws_BASE_URL,
 	), s.ServiceSuffix)
-	return url
+	return eUrl, nil
 }
 
 func AwsRegionSafetyNet(service, region string) string {

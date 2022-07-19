@@ -66,7 +66,7 @@ func LogPanic(err error) {
 }
 
 func LogWarning(msg string) {
-	Logger.Warn().Msg(msg)
+	Logger.Warn().Str("msg", msg).Msg(shared.GetMessageColor("warning"))
 }
 
 func LogDebug(key string, value interface{}) {

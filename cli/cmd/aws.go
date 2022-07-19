@@ -33,6 +33,7 @@ var (
 	awsRegion           string
 	awsProfile          string
 	awsSessionJson      string
+	awsEndpoint         string
 	awsKnownResourceMap []string
 	// awsKnownOnly         bool
 )
@@ -45,6 +46,7 @@ func init() {
 	awsCmd.PersistentFlags().StringVar(&awsRegion, "region", "us-east-1", "AWS Region")
 	awsCmd.PersistentFlags().StringVar(&awsProfile, "profile", "", "AWS Profile. When profile is set, access-key-id, secret-access-key, and session-token are ignored.")
 	awsCmd.PersistentFlags().StringVar(&awsSessionJson, "session-json", "", "AWS Session JSON file. This flag attempts to read session information from the specified file. Helpful with temporary credentials.")
+	awsCmd.PersistentFlags().StringVar(&awsEndpoint, "endpoint", "", "AWS Endpoint. Custom AWS endpoint.")
 	awsCmd.PersistentFlags().StringSliceVarP(&awsKnownResourceMap, "known-value", "k", []string{}, "AWS Resource Name. Maps directly with aws cli flags. This flag can be used multiple times.")
 	awsCmd.RegisterFlagCompletionFunc("region", func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
 		return aws_Regions, cobra.ShellCompDirectiveNoFileComp
@@ -52,7 +54,7 @@ func init() {
 	// awsCmd.RegisterFlagCompletionFunc("known-value", func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
 	// 	return []string{}, cobra.ShellCompDirectiveNoFileComp
 	// })
-	awsCmd.RegisterFlagCompletionFunc("known-value", func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
+	awsCmd.RegisterFlagCompletionFunc("known-value", func(_ *cobra.Command, args []string, _ string) ([]string, cobra.ShellCompDirective) {
 		var keys []string
 		policies := scanner.GetServiceMap(args)
 		for _, p := range policies {

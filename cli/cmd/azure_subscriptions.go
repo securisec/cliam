@@ -23,7 +23,7 @@ func init() {
 	azureCmd.AddCommand(azureSubscriptionCmd)
 }
 
-func azureSubscriptionCmdFunc(cmd *cobra.Command, args []string) {
+func azureSubscriptionCmdFunc(_ *cobra.Command, _ []string) {
 	token := azureGetOauthToken()
 	_, subs, err := azure.GetFirstSubscriptions(token)
 	if err != nil {

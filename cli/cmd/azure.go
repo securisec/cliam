@@ -65,7 +65,7 @@ func init() {
 }
 
 // 🚧 TODO: Implement envar support for Azure. flags override envars.
-func azureValidateRequiredFlags(cmd *cobra.Command, args []string) {
+func azureValidateRequiredFlags(_ *cobra.Command, _ []string) {
 	if azureDefaultCreds {
 		return
 	}

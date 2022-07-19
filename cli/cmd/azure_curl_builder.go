@@ -18,7 +18,7 @@ var azureRequestBuilderCmd = &cobra.Command{
 	Short:   "Build the curl command to test an azure policy.",
 	Long:    "Some requests requires known values. For these, use the -n command to supply them",
 	Example: "azure curl-builder --policy somepolicy --operation someoperation --values somevalue=somevalue",
-	PreRun: func(cmd *cobra.Command, args []string) {
+	PreRun: func(_ *cobra.Command, _ []string) {
 		if azureSubscriptionID == "" {
 			azureSubscriptionID = os.Getenv("AZURE_SUBSCRIPTION_ID")
 		}
@@ -41,10 +41,10 @@ func init() {
 	azureRequestBuilderCmd.Flags().StringSliceP("values", "n", []string{}, "The values to use for known values.")
 
 	// completers
-	azureRequestBuilderCmd.RegisterFlagCompletionFunc("policy", func(cmd *cobra.Command, _ []string, toComplete string) ([]string, cobra.ShellCompDirective) {
+	azureRequestBuilderCmd.RegisterFlagCompletionFunc("policy", func(cmd *cobra.Command, _ []string, _ string) ([]string, cobra.ShellCompDirective) {
 		return azure.GetPolicyKeys(), cobra.ShellCompDirectiveNoFileComp
 	})
-	azureRequestBuilderCmd.RegisterFlagCompletionFunc("operation", func(cmd *cobra.Command, _ []string, toComplete string) ([]string, cobra.ShellCompDirective) {
+	azureRequestBuilderCmd.RegisterFlagCompletionFunc("operation", func(cmd *cobra.Command, _ []string, _ string) ([]string, cobra.ShellCompDirective) {
 		hold := []string{}
 		policy, _ := cmd.Flags().GetString("policy")
 		if policy == "" {
@@ -61,7 +61,7 @@ func init() {
 	})
 
 	// know value completer
-	azureRequestBuilderCmd.RegisterFlagCompletionFunc("values", func(cmd *cobra.Command, _ []string, toComplete string) ([]string, cobra.ShellCompDirective) {
+	azureRequestBuilderCmd.RegisterFlagCompletionFunc("values", func(cmd *cobra.Command, _ []string, _ string) ([]string, cobra.ShellCompDirective) {
 		p, _ := cmd.Flags().GetString("policy")
 		o, _ := cmd.Flags().GetString("operation")
 		pol := azureGetSpecificOperation(p, o)

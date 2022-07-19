@@ -16,12 +16,16 @@ import (
 
 func EnumerateSpecificResource(
 	ctx context.Context,
-	region string,
+	region, endpoint string,
 	ser ServiceMap,
 	creds *credentials.Credentials,
 	saveOutput bool,
 ) (int, error) {
-	ser.Policy.ReqURL = ser.Policy.GetRequestURL(region, ser.Resource)
+	u, err := ser.Policy.GetRequestURL(region, ser.Resource, endpoint)
+	if err != nil {
+		return 0, err
+	}
+	ser.Policy.ReqURL = u
 
 	if ser.Policy.IsExtra {
 		s, err := ser.Policy.UpdateForExtra()

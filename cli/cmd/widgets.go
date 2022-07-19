@@ -52,8 +52,9 @@ func cliResponseLoggerAWS(ser scanner.ServiceMap, status int) {
 	}
 	// it was not a successful request
 	failureCounter++
-	if status != 200 && logger.DEBUG {
+	if status != 200 && CLIVerbose {
 		dl := l.Error().Str(ser.Resource, logger.ToSnakeCase(ser.Policy.Permission))
+		dl.Int("status", status)
 		if ok {
 			dl.Str(strings.ReplaceAll(cf, "_", "-"), flag)
 		}

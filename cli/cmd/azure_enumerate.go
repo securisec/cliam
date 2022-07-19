@@ -31,7 +31,7 @@ func init() {
 	azureCmd.AddCommand(azureEnumerateCmd)
 }
 
-func azureEnumerateCmdFunc(cmd *cobra.Command, args []string) {
+func azureEnumerateCmdFunc(_ *cobra.Command, args []string) {
 	var err error
 	if len(args) == 0 {
 		printValidArgs(azure.GetPolicyKeys)

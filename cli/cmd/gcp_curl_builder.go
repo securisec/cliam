@@ -25,10 +25,10 @@ func init() {
 	gcpRestCurlBuilderCmd.Flags().StringP("operation", "o", "", "The operation to build.")
 	// gcpRestCurlBuilderCmd.Flags().StringSliceP("values", "n", []string{}, "The values to use for known values.")
 
-	gcpRestCurlBuilderCmd.RegisterFlagCompletionFunc("policy", func(cmd *cobra.Command, _ []string, toComplete string) ([]string, cobra.ShellCompDirective) {
+	gcpRestCurlBuilderCmd.RegisterFlagCompletionFunc("policy", func(cmd *cobra.Command, _ []string, _ string) ([]string, cobra.ShellCompDirective) {
 		return gcp.GetGCPResources(), cobra.ShellCompDirectiveNoFileComp
 	})
-	gcpRestCurlBuilderCmd.RegisterFlagCompletionFunc("operation", func(cmd *cobra.Command, _ []string, toComplete string) ([]string, cobra.ShellCompDirective) {
+	gcpRestCurlBuilderCmd.RegisterFlagCompletionFunc("operation", func(cmd *cobra.Command, _ []string, _ string) ([]string, cobra.ShellCompDirective) {
 		hold := []string{}
 		pCli, _ := cmd.Flags().GetString("policy")
 		if pCli == "" {
@@ -60,7 +60,7 @@ func init() {
 	gcpRestCurlBuilderCmd.MarkFlagRequired("operation")
 }
 
-func gcpRestCurlBuilderFunc(cmd *cobra.Command, args []string) {
+func gcpRestCurlBuilderFunc(cmd *cobra.Command, _ []string) {
 	var err error
 	ctx := context.Background()
 	sa, _, region, zone := getSaAndRegion()

@@ -11,6 +11,7 @@ Bug:
 
 AWS:
   ☐ for services that require a body, it may be responding with a 404 if permission is valid
+  ☐ 🚧 aws endpoint support
 
 GCP:
   ☐ curl builder for requests

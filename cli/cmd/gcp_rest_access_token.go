@@ -22,7 +22,7 @@ func init() {
 	gcpCmd.AddCommand(gcpRestAccessTokenCmd)
 }
 
-func gcpRestAccessTokenCmdFunc(cmd *cobra.Command, args []string) {
+func gcpRestAccessTokenCmdFunc(_ *cobra.Command, _ []string) {
 
 	sa, _, _, _ := getSaAndRegion()
 

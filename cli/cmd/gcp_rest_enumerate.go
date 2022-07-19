@@ -21,7 +21,7 @@ var gcpRestEnumerateCmd = &cobra.Command{
 	Short:   "Enumerate specified GCP permissions using the REST API",
 	Long:    `Unlike enumerate, this command uses the REST API to enumerate permissions.`,
 	Example: "gcp rest enumerate --parent project=my-project compute.instances",
-	PreRun: func(cmd *cobra.Command, args []string) {
+	PreRun: func(_ *cobra.Command, args []string) {
 		if len(args) == 0 {
 			printValidArgs(gcp.GetAvailableRestKeys)
 			os.Exit(1)
@@ -38,7 +38,7 @@ func init() {
 	// gcpRestEnumerateCmd.MarkFlagRequired("parent")
 }
 
-func gcpRestEnumerateCmdFunc(cmd *cobra.Command, args []string) {
+func gcpRestEnumerateCmdFunc(_ *cobra.Command, args []string) {
 	var err error
 	accessToken := gcpAccessToken
 

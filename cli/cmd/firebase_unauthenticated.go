@@ -20,7 +20,7 @@ func init() {
 	firebaseCmd.AddCommand(firebaseUnauthenticatedeCmd)
 }
 
-func firebaseUnauthenticatedeCmdFunc(cmd *cobra.Command, _ []string) {
+func firebaseUnauthenticatedeCmdFunc(_ *cobra.Command, _ []string) {
 
 	wg := &sync.WaitGroup{}
 	wg.Add(1)

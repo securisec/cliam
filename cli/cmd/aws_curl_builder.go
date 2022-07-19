@@ -16,7 +16,7 @@ var awsRequestBuilderCmd = &cobra.Command{
 	Short:   "Build the curl command to test an aws policy.",
 	Example: "aws curl-builder --policy somepolicy --operation someoperation --values somevalue=somevalue",
 	Long:    "Some requests requires known values. For these, use the -n command to supply them",
-	PreRun: func(cmd *cobra.Command, args []string) {
+	PreRun: func(_ *cobra.Command, _ []string) {
 		if awsRegion == "" {
 			logger.LoggerStdErr.Fatal().Msg("region is required")
 		}
@@ -33,10 +33,10 @@ func init() {
 	awsRequestBuilderCmd.Flags().StringSliceP("values", "n", []string{}, "The values to use for known values.")
 
 	// completers
-	awsRequestBuilderCmd.RegisterFlagCompletionFunc("policy", func(cmd *cobra.Command, _ []string, toComplete string) ([]string, cobra.ShellCompDirective) {
+	awsRequestBuilderCmd.RegisterFlagCompletionFunc("policy", func(cmd *cobra.Command, _ []string, _ string) ([]string, cobra.ShellCompDirective) {
 		return aws.GetAWSResources(), cobra.ShellCompDirectiveNoFileComp
 	})
-	awsRequestBuilderCmd.RegisterFlagCompletionFunc("operation", func(cmd *cobra.Command, _ []string, toComplete string) ([]string, cobra.ShellCompDirective) {
+	awsRequestBuilderCmd.RegisterFlagCompletionFunc("operation", func(cmd *cobra.Command, _ []string, _ string) ([]string, cobra.ShellCompDirective) {
 		hold := []string{}
 		policy, _ := cmd.Flags().GetString("policy")
 		if policy == "" {
@@ -47,13 +47,13 @@ func init() {
 			return hold, cobra.ShellCompDirectiveNoFileComp
 		}
 		for k := range policies {
-			hold = append(hold, k+"=")
+			hold = append(hold, k)
 		}
 		return hold, cobra.ShellCompDirectiveNoSpace
 	})
 
 	// know value completer
-	awsRequestBuilderCmd.RegisterFlagCompletionFunc("values", func(cmd *cobra.Command, _ []string, toComplete string) ([]string, cobra.ShellCompDirective) {
+	awsRequestBuilderCmd.RegisterFlagCompletionFunc("values", func(cmd *cobra.Command, _ []string, _ string) ([]string, cobra.ShellCompDirective) {
 		p, _ := cmd.Flags().GetString("policy")
 		o, _ := cmd.Flags().GetString("operation")
 		pol := awsGetSpecificOperation(p, o)
@@ -86,7 +86,11 @@ func awsRequestBuilderCmdFunc(cmd *cobra.Command, _ []string) {
 		p.ExtraValueMap = extraMap
 	}
 
-	p.ReqURL = p.GetRequestURL(region, pCli)
+	u, err := p.GetRequestURL(region, pCli, awsEndpoint)
+	if err != nil {
+		logger.LoggerStdErr.Fatal().Err(err).Msg("error getting request url")
+	}
+	p.ReqURL = u
 	if p.IsExtra {
 		s, err := p.UpdateForExtra()
 		if err != nil {

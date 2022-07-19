@@ -10,7 +10,7 @@ import (
 var versionCmd = &cobra.Command{
 	Use:   "version",
 	Short: "Show version and build info",
-	Run: func(cmd *cobra.Command, args []string) {
+	Run: func(_ *cobra.Command, _ []string) {
 		v := fmt.Sprintf(
 			"Version: %s\nBuildDate: %s\nGitCommit: %s\nGitBranch: %s",
 			version.Version,

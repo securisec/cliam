@@ -19,7 +19,7 @@ var gcpEnumerateCmd = &cobra.Command{
 	Short: "Enumerate specified GCP permissions",
 	Long: `Enumerate uses cloudresource manager to check if the service account has the specified permissions. 
 If resource manager is disabled, this command will end with a 403 error.`,
-	PreRun: func(cmd *cobra.Command, args []string) {
+	PreRun: func(_ *cobra.Command, args []string) {
 		if len(args) == 0 {
 			printValidArgs(gcp.GetGCPResources)
 			os.Exit(1)
