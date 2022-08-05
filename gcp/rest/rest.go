@@ -1000,7 +1000,15 @@ var RestApiCalls = map[string]map[string]RestCall{
 			URL:              "https://file.googleapis.com/v1/projects/{{.ParentID}}/locations/{{.Region}}/operations",
 		},
 	},
+
 	Firebase: {
+		// firestore
+		"list_collections": {
+			PermissionMethod: joinString("firestore", "documents:listCollectionIds"),
+			ReqMethod:        "GET",
+			Action:           "list",
+			URL:              "https://firestore.clients6.google.com/v1/projects/{{.ParentID}}/databases/(default)/documents:listCollectionIds",
+		},
 		// https://firebase.google.com/docs/reference/hosting/rest
 		"sites_list": {
 			PermissionMethod: "firebase.hosting.projects.sites",

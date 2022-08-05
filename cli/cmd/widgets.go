@@ -58,7 +58,7 @@ func cliResponseLoggerAWS(ser scanner.ServiceMap, status int) {
 		if ok {
 			dl.Str(strings.ReplaceAll(cf, "_", "-"), flag)
 		}
-		dl.Msg(shared.GetMessageColor("success"))
+		dl.Msg(shared.GetMessageColor("error"))
 	}
 }
 
