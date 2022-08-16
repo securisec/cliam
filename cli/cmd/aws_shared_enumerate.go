@@ -18,7 +18,7 @@ func awsSharedEnumerate(resources []string, saveOutput bool) {
 	wg := &sync.WaitGroup{}
 	wg.Add(1)
 
-	ch := make(chan scanner.ServiceMap, 0)
+	ch := make(chan scanner.ServiceMap)
 	max := make(chan struct{}, MaxThreads)
 
 	go func() {

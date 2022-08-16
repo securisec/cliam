@@ -3,7 +3,6 @@ package cmd
 import (
 	"context"
 	"fmt"
-	"io/ioutil"
 	"os"
 	"sync"
 	"time"
@@ -87,7 +86,7 @@ func gcpRestEnumerateCmdFunc(_ *cobra.Command, args []string) {
 	wg := &sync.WaitGroup{}
 	wg.Add(1)
 
-	ch := make(chan rest.RestCall, 0)
+	ch := make(chan rest.RestCall)
 	// the is the maximum concurrent goroutines
 	max := make(chan struct{}, MaxThreads)
 
@@ -117,7 +116,7 @@ func gcpRestEnumerateCmdFunc(_ *cobra.Command, args []string) {
 					// optionall save output
 					if SaveOutput {
 						path := fmt.Sprintf("%s.%s.json", ser.PermissionMethod, ser.Action)
-						if err := ioutil.WriteFile(path, body, os.ModePerm); err != nil {
+						if err := os.WriteFile(path, body, os.ModePerm); err != nil {
 							logger.LoggerStdErr.Debug().Err(err).Msg("Failed to save output")
 						}
 					}
@@ -159,6 +158,6 @@ func processParent(parent map[string]string) (string, string) {
 	if v, ok := parent["billingAccount"]; ok {
 		return "billingAccounts", v
 	}
-	logger.LoggerStdErr.Error().Msg("Invalid parent")
+	// logger.LoggerStdErr.Error().Msg("Invalid parent")
 	return "", ""
 }

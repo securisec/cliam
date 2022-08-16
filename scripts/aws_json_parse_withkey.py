@@ -12,7 +12,7 @@ def getPathParam(s, p):
     return re.sub(r'\{.+\}', f'{{{{.{toSnakeCase(p)}}}}}', s)
 
 def postJsonEndpoint(operation: str, param: str, jsonVersion: str) -> str:
-    return f"""{{
+    return f""""{operation}": {{
 		Method: "POST",
 		Headers: map[string]string{{
 			shared.CONTENT_TYPE_HEADER: {'aws_JSON_1_1' if jsonVersion == '1.1' else 'aws_JSON_1_0'},
@@ -26,7 +26,7 @@ def postJsonEndpoint(operation: str, param: str, jsonVersion: str) -> str:
 }},"""
 
 def getRequestEndpoint(operation: str, param: str) -> str:
-    return f"""{{
+    return f""""{operation}": {{
         ServiceSuffix:          "{getPathParam(v['http']['requestUri'], param)}",
 		Permission:             "{operation}",
 		ExtraComponentLocation: "path",
@@ -35,7 +35,7 @@ def getRequestEndpoint(operation: str, param: str) -> str:
 }},"""
 
 def postFormEndpoint(operation: str, param: str) -> str:
-    return f"""{{
+    return f""""{operation}": {{
 		Method: "POST",
 		FormData: map[string]string{{
 			"Action":  "{operation}",
@@ -53,7 +53,7 @@ def postFormEndpoint(operation: str, param: str) -> str:
 
 
 
-fileName = '../temp/awsapis/xray-2016-04-12.normal.json'
+fileName = '../temp/awsapis/cognito-sync-2014-06-30.normal.json'
 
 path = Path.cwd() / 'iam-enumerator' / fileName
 with open(str(path.resolve()), 'r') as f:

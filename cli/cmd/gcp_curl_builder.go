@@ -70,8 +70,14 @@ func gcpRestCurlBuilderFunc(cmd *cobra.Command, _ []string) {
 	// values, _ := cmd.Flags().GetStringSlice("values")
 	p := gcpGetSpecificOperation(pCli, oCli)
 	parentType, parentID := processParent(gcpRestParent)
+
 	if parentType == "" || parentID == "" {
-		logger.LoggerStdErr.Fatal().Msg("Parent type and id must be set")
+		if gcpProjectId != "" {
+			parentType = "projects"
+			parentID = gcpProjectId
+		} else {
+			logger.LoggerStdErr.Fatal().Msg("Parent type and id must be set")
+		}
 	}
 
 	accessToken := gcpAccessToken

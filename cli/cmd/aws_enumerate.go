@@ -22,6 +22,7 @@ var awsEnumerateCmd = &cobra.Command{
 	ValidArgsFunction: func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
 		return aws.GetAWSResources(), cobra.ShellCompDirectiveNoFileComp
 	},
+	PreRun:  awsLoadEnvVarsFirst,
 	PostRun: PostRunStatsFunc,
 }
 
@@ -49,7 +50,7 @@ func awsEnumerateCmdFunc(_ *cobra.Command, args []string) {
 	wg := &sync.WaitGroup{}
 	wg.Add(1)
 
-	ch := make(chan scanner.ServiceMap, 0)
+	ch := make(chan scanner.ServiceMap)
 	max := make(chan struct{}, MaxThreads)
 
 	go func() {

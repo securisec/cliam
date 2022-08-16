@@ -46,7 +46,7 @@ func getRequest(url, service string) (int, error) {
 	} else {
 		logger.LogDebug("failed", status)
 	}
-	return status, fmt.Errorf("Bad status: %d", status)
+	return status, fmt.Errorf("bad status: %d", status)
 }
 
 func templateBuilder(t string, args map[string]string) (string, error) {

@@ -1,8 +1,11 @@
 package cmd
 
 import (
+	"encoding/json"
 	"os"
 
+	"github.com/securisec/cliam/logger"
+	"github.com/securisec/cliam/shared"
 	"github.com/spf13/cobra"
 )
 
@@ -51,6 +54,10 @@ func getSaPath() string {
 		return ""
 	}
 	if gcpServiceAccountPath != "" {
+		d, err := gcpReadServiceAccount(gcpServiceAccountPath)
+		if err == nil {
+			gcpProjectId = d.ProjectID
+		}
 		return expandPath(gcpServiceAccountPath)
 	}
 	if k, ok := os.LookupEnv("GOOGLE_APPLICATION_CREDENTIALS"); ok {
@@ -67,4 +74,33 @@ func getProjectId() string {
 		return k
 	}
 	return promptInput("GCP project id: ")
+}
+
+type gcpServiceAccountType struct {
+	Type                    string `json:"type"`
+	ProjectID               string `json:"project_id"`
+	PrivateKeyID            string `json:"private_key_id"`
+	PrivateKey              string `json:"private_key"`
+	ClientEmail             string `json:"client_email"`
+	ClientID                string `json:"client_id"`
+	AuthURI                 string `json:"auth_uri"`
+	TokenURI                string `json:"token_uri"`
+	AuthProviderX509CERTURL string `json:"auth_provider_x509_cert_url"`
+	ClientX509CERTURL       string `json:"client_x509_cert_url"`
+}
+
+func gcpReadServiceAccount(path string) (*gcpServiceAccountType, error) {
+	sa := &gcpServiceAccountType{}
+	o, err := os.ReadFile(path)
+	if err != nil {
+		return nil, err
+	}
+	if err := json.Unmarshal(o, sa); err != nil {
+		return nil, err
+	}
+	if CLIVerbose {
+		logger.LoggerStdErr.Debug().Str("email", sa.ClientEmail).Msg(shared.GetMessageColor("info"))
+	}
+	gcpProjectId = sa.ProjectID
+	return sa, nil
 }

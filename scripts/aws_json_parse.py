@@ -5,36 +5,36 @@ import json
 from pathlib import Path
 
 def postRequests(action: str, prefix: str) -> str:
-    return f"""{{
+    return f""""{action}": {{
     Method: "POST",
-    JsonData: `{{}}`,
+    JsonData: map[string]string{{}},
     Headers: map[string]string{{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "{prefix}.{action}",
 		}},
     Permission: "{action}",
 }},"""
 
 def postRequestEndpoint(suffix: str, action: str) -> str:
-    return f"""{{
+    return f""""{action}":  {{
     Method: "POST",
     ServiceSuffix: "{suffix}",
-    JsonData: `{{}}`,
+    JsonData: map[string]string{{}},
     Headers: map[string]string{{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_CONTENT_TYPE,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		}},
     Permission: "{action}",
 }},"""
 
 def getRequestEndpoint(suffix: str, action: str) -> str:
-    return f"""{{
+    return f""""{action}":  {{
     Method: "GET",
     ServiceSuffix: "{suffix}",
     Permission: "{action}",
 }},"""
 
 def postFormEndpoint(version: str, action: str) -> str:
-    return f"""{{
+    return f""""{action}":  {{
     Method: "POST",
 		FormData: map[string]string{{
 			"Action":  "{action}",
@@ -48,7 +48,7 @@ def postFormEndpoint(version: str, action: str) -> str:
 
 
 
-fileName = '../temp/awsapis/iot-2015-05-28.normal.json'
+fileName = '../temp/awsapis/cognito-sync-2014-06-30.normal.json'
 
 path = Path.cwd() / 'iam-enumerator' / fileName
 with open(str(path.resolve()), 'r') as f:

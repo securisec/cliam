@@ -4,7 +4,6 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"os"
 	"sync"
 	"time"
@@ -58,7 +57,7 @@ func azureEnumerateCmdFunc(_ *cobra.Command, args []string) {
 	wg := &sync.WaitGroup{}
 	wg.Add(1)
 
-	ch := make(chan policy.Policy, 0)
+	ch := make(chan policy.Policy)
 	max := make(chan struct{}, MaxThreads)
 
 	go func() {
@@ -107,7 +106,7 @@ func azureEnumerateCmdFunc(_ *cobra.Command, args []string) {
 						logger.LogError(err)
 						return
 					}
-					ioutil.WriteFile(fmt.Sprintf("%s.json", p.OperationID), o, 0644)
+					os.WriteFile(fmt.Sprintf("%s.json", p.OperationID), o, 0644)
 				}
 
 			}(wg, s)

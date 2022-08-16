@@ -6,12 +6,22 @@ Todo:
   ☐ figure out a way to have tab complete for multiple known values
   ☐ when using tokens, validate the expiration of the token (done: azure)
   ☐ ability to test a specific permission for any cloud provider. will help with automation
+  ☐ session-json for aws is not the right format
+  ☐ gcp set parent as project if one is not set. get project from json file
+  ☐ aws all regions flag
+  ☐ aws : helper : ebs : ability for bruteforcing all regions for specific aws permission
+  ☐ aws : helper : sts : get caller identity
+  ☐ aws : helper : cognito : get unauth creds
+  ☐ gcp : helper : iam : get service accounts and their roles
+  ☐ optionally pass known values as a json file
+  ☐ if session-json is being used, check if expiration is valid
+  ☐ flag that will show all possible valid keys for known values
+
+Helpers:
 
 Bug:
 
 AWS:
-  ☐ for services that require a body, it may be responding with a 404 if permission is valid
-  ☐ 🚧 aws endpoint support
 
 GCP:
   ☐ curl builder for requests
@@ -35,6 +45,11 @@ Resources:
   - https://docs.oracle.com/en-us/iaas/api/#/
 
 Archive:
+  ✔ improve aws ASIA token credentials parsing @project(Todo)
+  ✔ @bug env based session token is not working @project(Todo)
+  ✔ for gcp service account, try to read project id from file @project(Todo)
+  ✔ add cognito @project(Todo)
+  ✔ enumerate ebs snapshots across various regions @project(Helpers)
   ✔ curl builder for requests @project(AWS)
   ✔ curl builder for requests @project(Azure)
   ✔ replicate success and failure count for aws and gcp @project(Todo)

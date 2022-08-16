@@ -121,6 +121,9 @@ const (
 	DataExchange          = "dataexchange"
 	DS                    = "ds"
 	FSX                   = "fsx"
+	CognitoIDP            = "cognito-idp"
+	CognitoIdentity       = "cognito-identity"
+	CognitoSync           = "cognito-sync"
 )
 
 var Services = map[string]map[string]policy.Service{
@@ -238,6 +241,9 @@ var Services = map[string]map[string]policy.Service{
 	Workspaces:            policy.WorkspacesPolicies,
 	WorkspacesWeb:         policy.WorkspacesWebPolicies,
 	Xray:                  policy.XrayPolicies,
+	CognitoIDP:            policy.CognitoIDPPolicies,
+	CognitoSync:           policy.CognitoSyncPolicies,
+	CognitoIdentity:       policy.CognitoIdentityPolicies,
 }
 
 // GetAWSResources returns a list of AWS services
@@ -246,6 +252,6 @@ func GetAWSResources() []string {
 	for k := range Services {
 		keys = append(keys, k)
 	}
-	sort.Sort(sort.StringSlice(keys))
+	sort.Strings(keys)
 	return keys
 }

@@ -2,7 +2,6 @@ package cmd
 
 import (
 	"encoding/json"
-	"io/ioutil"
 	"os"
 	"strings"
 
@@ -23,6 +22,7 @@ var awsCmd = &cobra.Command{
 			cmd.Help()
 			os.Exit(1)
 		}
+		awsLoadEnvVarsFirst(cmd, args)
 	},
 }
 
@@ -73,7 +73,7 @@ func getCredsAndRegion() (string, string, string, string) {
 		if err != nil {
 			logger.LoggerStdErr.Fatal().Msg("Failed to read session json file")
 		}
-		return s.AccessKeyId, s.SecretAccessKey, s.Token, awsRegion
+		return s.Credentials.AccessKeyId, s.Credentials.SecretAccessKey, s.Credentials.Token, awsRegion
 	}
 	return awsGetEnvarOrPrompt("AWS_ACCESS_KEY_ID", "AWS Access Key ID: "),
 		awsGetEnvarOrPrompt("AWS_SECRET_ACCESS_KEY", "AWS Secret Access Key: "),
@@ -97,7 +97,7 @@ func awsGetEnvarOrPrompt(envar, message string) string {
 
 func awsReadSessionJsonFile() (awsSessionJsonStruct, error) {
 	var s awsSessionJsonStruct
-	o, err := ioutil.ReadFile(awsSessionJson)
+	o, err := os.ReadFile(awsSessionJson)
 	if err != nil {
 		return s, err
 	}
@@ -132,9 +132,12 @@ func awsSendToChannel(ch chan scanner.ServiceMap, resources []string) {
 }
 
 type awsSessionJsonStruct struct {
-	AccessKeyId     string `json:"AccessKeyId"`
-	SecretAccessKey string `json:"SecretAccessKey"`
-	Token           string `json:"Token"`
+	Credentials struct {
+		AccessKeyId     string `json:"AccessKeyId"`
+		SecretAccessKey string `json:"SecretAccessKey"`
+		Token           string `json:"SessionToken"`
+		Expiration      string `json:"Expiration"`
+	} `json:"Credentials"`
 }
 
 func awsModifyExtraMap(m map[string]string) map[string]string {
@@ -143,4 +146,10 @@ func awsModifyExtraMap(m map[string]string) map[string]string {
 		h[strings.ReplaceAll(k, "-", "_")] = v
 	}
 	return h
+}
+
+func awsLoadEnvVarsFirst(_ *cobra.Command, _ []string) {
+	awsSessionToken = os.Getenv("AWS_SESSION_TOKEN")
+	awsAccessKeyID = os.Getenv("AWS_ACCESS_KEY_ID")
+	awsSecretAccessKey = os.Getenv("AWS_SECRET_ACCESS_KEY")
 }
