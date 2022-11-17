@@ -3,7 +3,6 @@ package cmd
 import (
 	"fmt"
 	"os"
-	"strings"
 
 	"github.com/securisec/cliam/logger"
 	"github.com/securisec/cliam/shared"
@@ -48,16 +47,10 @@ func Execute() {
 }
 
 func PostRunStatsFunc(cmd *cobra.Command, _ []string) {
-	cloudProvider := ""
-	cp := strings.Fields(cmd.CommandPath())
-	if len(cp) >= 2 {
-		cloudProvider = cp[1]
-	}
 
 	if CLIVerbose {
 		logger.LoggerStdErr.Debug().Msgf(
-			"%s: %s, %s, %s",
-			cloudProvider,
+			"%s, %s, %s",
 			shared.Green(fmt.Sprintf("%d success", successCounter)),
 			shared.Yellow(fmt.Sprintf("%d maybe", maybeCounter)),
 			shared.Red(fmt.Sprintf("%d failure", failureCounter)),
