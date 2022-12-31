@@ -9,13 +9,14 @@ Todo:
   ☐ session-json for aws is not the right format
   ☐ gcp set parent as project if one is not set. get project from json file
   ☐ aws all regions flag
-  ☐ aws : helper : ebs : ability for bruteforcing all regions for specific aws permission
-  ☐ aws : helper : sts : get caller identity
   ☐ aws : helper : cognito : get unauth creds
   ☐ gcp : helper : iam : get service accounts and their roles
   ☐ optionally pass known values as a json file
-  ☐ if session-json is being used, check if expiration is valid
   ☐ flag that will show all possible valid keys for known values
+  ☐ 🐛 bug with debug message which says azure although it is aws
+  ☐ 💚 🐛 build for arm mac doesnt work on zsh
+  ☐ ✨ sas-token enumeration for azure
+  ☐ 💡 local database?
 
 Helpers:
 

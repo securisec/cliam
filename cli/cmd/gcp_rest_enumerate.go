@@ -42,7 +42,11 @@ func gcpRestEnumerateCmdFunc(_ *cobra.Command, args []string) {
 	accessToken := gcpAccessToken
 
 	sa, projectID, region, zone := getSaAndRegion()
-	cliGcpLogRegion(region, zone)
+	cliGcpLogRegion(map[string]string{
+		"region":  region,
+		"zone":    zone,
+		"project": projectID,
+	})
 	if projectID != "" {
 		gcpRestParent["project"] = projectID
 	}

@@ -66,6 +66,10 @@ func cliLogRegion(r string) {
 	logger.LoggerStdErr.Debug().Str("region", r).Msg(shared.GetMessageColor("info"))
 }
 
-func cliGcpLogRegion(r, z string) {
-	logger.LoggerStdErr.Debug().Str("region", r).Str("zone", z).Msg(shared.GetMessageColor("info"))
+func cliGcpLogRegion(data map[string]string) {
+	l := logger.LoggerStdErr.Debug()
+	for k, v := range data {
+		l.Str(k, v)
+	}
+	l.Msg(shared.GetMessageColor("info"))
 }

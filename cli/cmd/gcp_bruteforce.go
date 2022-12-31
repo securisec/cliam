@@ -29,7 +29,11 @@ func gcpBruteforceCmdFunc(_ *cobra.Command, _ []string) {
 
 	ctx := context.Background()
 	sa, project, region, zone := getSaAndRegion()
-	cliGcpLogRegion(region, zone)
+	cliGcpLogRegion(map[string]string{
+		"region":  region,
+		"zone":    zone,
+		"project": project,
+	})
 
 	if accessToken == "" {
 		at, err := gcp.GetAccessToken(ctx, sa)
