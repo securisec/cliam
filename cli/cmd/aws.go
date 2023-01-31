@@ -22,7 +22,7 @@ var awsCmd = &cobra.Command{
 			cmd.Help()
 			os.Exit(1)
 		}
-		awsLoadEnvVarsFirst(cmd, args)
+		// awsLoadEnvVarsFirst(cmd, args)
 	},
 }
 
@@ -40,9 +40,9 @@ var (
 
 func init() {
 	RootCmd.AddCommand(awsCmd)
-	awsCmd.PersistentFlags().StringVar(&awsAccessKeyID, "access-key-id", "", "AWS Access Key ID")
-	awsCmd.PersistentFlags().StringVar(&awsSecretAccessKey, "secret-access-key", "", "AWS Secret Access Key")
-	awsCmd.PersistentFlags().StringVar(&awsSessionToken, "session-token", "", "AWS Session Token")
+	awsCmd.PersistentFlags().StringVar(&awsAccessKeyID, "access-key-id", os.Getenv("AWS_ACCESS_KEY_ID"), "AWS Access Key ID")
+	awsCmd.PersistentFlags().StringVar(&awsSecretAccessKey, "secret-access-key", os.Getenv("AWS_SECRET_ACCESS_KEY"), "AWS Secret Access Key")
+	awsCmd.PersistentFlags().StringVar(&awsSessionToken, "session-token", os.Getenv("AWS_SESSION_TOKEN"), "AWS Session Token")
 	awsCmd.PersistentFlags().StringVar(&awsRegion, "region", "us-east-1", "AWS Region")
 	awsCmd.PersistentFlags().StringVar(&awsProfile, "profile", "", "AWS Profile. When profile is set, access-key-id, secret-access-key, and session-token are ignored.")
 	awsCmd.PersistentFlags().StringVar(&awsSessionJson, "session-json", "", "AWS Session JSON file. This flag attempts to read session information from the specified file. Helpful with temporary credentials.")
@@ -86,8 +86,11 @@ func awsGetEnvarOrPrompt(envar, message string) string {
 		// profile is set so we will use the profile
 		return ""
 	}
-	if awsAccessKeyID != "" {
+	if envar == "AWS_ACCESS_KEY_ID" && awsAccessKeyID != "" {
 		return awsAccessKeyID
+	}
+	if envar == "AWS_SECRET_ACCESS_KEY" && awsSecretAccessKey != "" {
+		return awsSecretAccessKey
 	}
 	if k, ok := os.LookupEnv(envar); ok {
 		return k
@@ -148,8 +151,8 @@ func awsModifyExtraMap(m map[string]string) map[string]string {
 	return h
 }
 
-func awsLoadEnvVarsFirst(_ *cobra.Command, _ []string) {
-	awsSessionToken = os.Getenv("AWS_SESSION_TOKEN")
-	awsAccessKeyID = os.Getenv("AWS_ACCESS_KEY_ID")
-	awsSecretAccessKey = os.Getenv("AWS_SECRET_ACCESS_KEY")
-}
+// func awsLoadEnvVarsFirst(_ *cobra.Command, _ []string) {
+// 	awsSessionToken = os.Getenv("AWS_SESSION_TOKEN")
+// 	awsAccessKeyID = os.Getenv("AWS_ACCESS_KEY_ID")
+// 	awsSecretAccessKey = os.Getenv("AWS_SECRET_ACCESS_KEY")
+// }

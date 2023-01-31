@@ -48,13 +48,13 @@ and use the first one. The following environment variables can also be used:
 func init() {
 	RootCmd.AddCommand(azureCmd)
 
-	azureCmd.PersistentFlags().StringVarP(&azureSubscriptionID, "subscription-id", "s", "", "Azure Subscription ID")
-	azureCmd.PersistentFlags().StringVarP(&azureTenantID, "tenant-id", "t", "", "Azure Tenant ID")
-	azureCmd.PersistentFlags().StringVar(&azureClientID, "client-id", "", "Azure Client ID / Username")
-	azureCmd.PersistentFlags().StringVar(&azureClientSecret, "client-secret", "", "Azure Client Secret / Password")
+	azureCmd.PersistentFlags().StringVarP(&azureSubscriptionID, "subscription-id", "s", os.Getenv("AZURE_SUBSCRIPTION_ID"), "Azure Subscription ID. Env AZURE_SUBSCRIPTION_ID")
+	azureCmd.PersistentFlags().StringVarP(&azureTenantID, "tenant-id", "t", os.Getenv("AZURE_TENANT_ID"), "Azure Tenant ID. Env AZURE_TENANT_ID")
+	azureCmd.PersistentFlags().StringVar(&azureClientID, "client-id", os.Getenv("AZURE_CLIENT_ID"), "Azure Client ID / Username. Env AZURE_CLIENT_ID")
+	azureCmd.PersistentFlags().StringVar(&azureClientSecret, "client-secret", os.Getenv("AZURE_CLIENT_SECRET"), "Azure Client Secret / Password. Env AZURE_CLIENT_SECRET")
 	azureCmd.PersistentFlags().StringVarP(&azureResourceGroupName, "resource-group-name", "r", "", "Azure Resource Group")
-	azureCmd.PersistentFlags().StringVar(&azureOauthToken, "oauth-token", "", "Optionall use a valid Azure OAuth Token. Can also use CLIAM_AZURE_OAUTH_TOKEN envvar")
-	azureCmd.PersistentFlags().StringVar(&azureCertificatePath, "certificate-path", "", "Path to Certificate for certificate based authentication")
+	azureCmd.PersistentFlags().StringVar(&azureOauthToken, "oauth-token", os.Getenv("CLIAM_AZURE_OAUTH_TOKEN"), "Optionall use a valid Azure OAuth Token. Can also use CLIAM_AZURE_OAUTH_TOKEN envvar")
+	azureCmd.PersistentFlags().StringVar(&azureCertificatePath, "certificate-path", os.Getenv("AZURE_CLIENT_CERTIFICATE_PATH"), "Path to Certificate for certificate based authentication. Env AZURE_CLIENT_CERTIFICATE_PATH")
 	azureCmd.PersistentFlags().BoolVar(&azureDefaultCreds, "default-creds", false, "Use currently logged in default credentials for Azure.")
 
 	azureCmd.PersistentFlags().StringSliceVarP(&azureKnownResourceMap, "known-value", "k", []string{}, "Azure cli flags. When known-value is set, additional permissions are enumerated. Format: -k <key>=<value>... Can be used multiple times")

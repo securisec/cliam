@@ -32,8 +32,8 @@ var (
 
 func init() {
 	RootCmd.AddCommand(gcpCmd)
-	gcpCmd.PersistentFlags().StringVar(&gcpServiceAccountPath, "service-account", "", "GCP service account path")
-	gcpCmd.PersistentFlags().StringVar(&gcpProjectId, "project-id", "", "GCP project id")
+	gcpCmd.PersistentFlags().StringVar(&gcpServiceAccountPath, "service-account", os.Getenv("GOOGLE_APPLICATION_CREDENTIALS"), "GCP service account path. Env GOOGLE_APPLICATION_CREDENTIALS")
+	gcpCmd.PersistentFlags().StringVar(&gcpProjectId, "project-id", os.Getenv("CLOUDSDK_CORE_PROJECT"), "GCP project id. Env CLOUDSDK_CORE_PROJECT")
 	gcpCmd.PersistentFlags().StringVar(&gcpRegion, "region", "us-central1", "GCP Region")
 	gcpCmd.PersistentFlags().StringVar(&gcpZone, "zone", "us-central1-a", "GCP Zone")
 	gcpCmd.PersistentFlags().StringVar(&gcpAccessToken, "access-token", "", "GCP token")

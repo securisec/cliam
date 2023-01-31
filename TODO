@@ -46,26 +46,6 @@ Resources:
   - https://docs.oracle.com/en-us/iaas/api/#/
 
 Archive:
-  ✔ improve aws ASIA token credentials parsing @project(Todo)
-  ✔ @bug env based session token is not working @project(Todo)
-  ✔ for gcp service account, try to read project id from file @project(Todo)
-  ✔ add cognito @project(Todo)
-  ✔ enumerate ebs snapshots across various regions @project(Helpers)
-  ✔ curl builder for requests @project(AWS)
-  ✔ curl builder for requests @project(Azure)
-  ✔ replicate success and failure count for aws and gcp @project(Todo)
-  ✔ update readme with azure and firebase  @project(Todo)
-  ✔ default auth (from currently logged in user) @project(Azure)
-  ✔ group resources under their respective top level resource. ie. mariadb, postgres and mysql under db @project(Azure)
-  ✔ cert based auth @project(Azure)
-  ✔ enumerate with access token @project(GCP)
-  ✔ ability to provide custom query params or body for complicated calls @project(Todo)
-  ✔ gcp region completer @project(Cli)
-  ✔ aws region completer @project(Cli)
-  ✔ refactor gcp resourcemanager to use token and use rest api instead @project(Todo)
-  ✔ refactor various aws resource groups as DRY @project(Todo)
-  ✔ read specific aws profile @project(Cli)
-  ✔ refactor aws subcommands to use single. helper function to get all policies for an array of services @project(AWS)
-  ✔ context with timeout for requests @project(Todo)
-  ✔ function that can take array of services and check permissions @project(Todo)
-  ✔ aws serverless permissions subcommand @project(AWS)
+  ✔ 🚀 set envar as default value for flags
+  ✔ 🐛 cli args passed for aws is still prompting for creds
+  ✔ 🐛 looks like secret for aws when passed as a flag is wrong for static credentials

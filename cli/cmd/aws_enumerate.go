@@ -22,7 +22,7 @@ var awsEnumerateCmd = &cobra.Command{
 	ValidArgsFunction: func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
 		return aws.GetAWSResources(), cobra.ShellCompDirectiveNoFileComp
 	},
-	PreRun:  awsLoadEnvVarsFirst,
+	// PreRun:  awsLoadEnvVarsFirst,
 	PostRun: PostRunStatsFunc,
 }
 

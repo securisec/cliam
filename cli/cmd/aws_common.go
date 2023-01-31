@@ -12,8 +12,8 @@ var awsCommonCmd = &cobra.Command{
 	Run:       awsCommonCmdFunc,
 	Args:      cobra.ExactValidArgs(1),
 	ValidArgs: getAwsServiceGroups(),
-	PreRun:    awsLoadEnvVarsFirst,
-	PostRun:   PostRunStatsFunc,
+	// PreRun:    awsLoadEnvVarsFirst,
+	PostRun: PostRunStatsFunc,
 }
 
 func init() {

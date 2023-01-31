@@ -3,7 +3,7 @@ package signer
 import (
 	"context"
 	"encoding/json"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -77,7 +77,7 @@ func MakeScannerRequest(
 	if err != nil {
 		return nil, nil, nil, err
 	}
-	b, err := ioutil.ReadAll(res.Body)
+	b, err := io.ReadAll(res.Body)
 	if err != nil {
 		return nil, nil, nil, err
 	}

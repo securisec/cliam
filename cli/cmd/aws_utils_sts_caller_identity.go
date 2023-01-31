@@ -12,10 +12,10 @@ import (
 )
 
 var awsUtilsStsCallerIdentityCmd = &cobra.Command{
-	Use:    "sts-get-caller-identity",
-	Short:  "Enumerate AWS EC2 snapshots across specified regions",
-	Run:    awsUtilsStsCallerIdentityCmdFunc,
-	PreRun: awsLoadEnvVarsFirst,
+	Use:   "sts-get-caller-identity",
+	Short: "Enumerate AWS EC2 snapshots across specified regions",
+	Run:   awsUtilsStsCallerIdentityCmdFunc,
+	// PreRun: awsLoadEnvVarsFirst,
 }
 
 func init() {
