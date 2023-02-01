@@ -114,6 +114,6 @@ var XrayPolicies = map[string]Service{
 		IsExtra:                true,
 		ExtraComponentBodyKey:  "ResourceARN",
 		ExtraComponentLocation: "form",
-		ExtraCommandLineFlag:   "resource_a_r_n",
+		ExtraCommandLineFlag:   "resource_arn",
 	},
 }

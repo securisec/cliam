@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// AppFlowPolicies policy
 var AppFlowPolicies = map[string]Service{
 	"DescribeConnectorProfiles": {
 		Method:        "POST",

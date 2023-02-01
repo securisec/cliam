@@ -2,7 +2,17 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// ACMPolicies policy
 var ACMPolicies = map[string]Service{
+	"GetAccountConfiguration": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "CertificateManager.GetAccountConfiguration",
+		},
+		Permission: "GetAccountConfiguration",
+	},
 	"ListCertificates": {
 		Method:   "POST",
 		JsonData: map[string]string{},

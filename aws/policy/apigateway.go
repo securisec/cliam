@@ -2,16 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// APIGatewayPolicies policy
 var APIGatewayPolicies = map[string]Service{
-	"CreateApiKey": {
-		Method:        "POST",
-		ServiceSuffix: "apikeys",
-		JsonData:      map[string]string{},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
-		},
-		Permission: "CreateApiKey",
-	},
 	"GenerateClientCertificate": {
 		Method:        "POST",
 		ServiceSuffix: "clientcertificates",
@@ -61,13 +53,8 @@ var APIGatewayPolicies = map[string]Service{
 		ServiceSuffix: "vpclinks",
 		Permission:    "GetVpcLinks",
 	},
-	"GetApis": {
-		Method:        "GET",
-		ServiceSuffix: "v2/apis",
-		Permission:    "GetApis",
-	},
 
-	// extra policies
+	// extra
 	"GetApiKey": {
 		ServiceSuffix:          "/apikeys/{{.api_key}}",
 		Permission:             "GetApiKey",
@@ -201,6 +188,15 @@ var APIGatewayPolicies = map[string]Service{
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "vpc_link_id",
 	},
+
+	// apigatewayv2
+	"GetApis": {
+		Method:        "GET",
+		ServiceSuffix: "v2/apis",
+		Permission:    "GetApis",
+	},
+
+	// extra
 	"GetApi": {
 		ServiceSuffix:          "/v2/apis/{{.api_id}}",
 		Permission:             "GetApi",

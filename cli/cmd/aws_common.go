@@ -26,7 +26,7 @@ func awsCommonCmdFunc(cmd *cobra.Command, args []string) {
 		logger.LoggerStdErr.Fatal().Msg("Invalid number of arguments")
 	}
 
-	resources, ok := AWS_SERVICE_GROUPING[args[0]]
+	resources, ok := AwsServiceGrouping[args[0]]
 	if !ok {
 		logger.LoggerStdErr.Fatal().Msg("Invalid service group")
 	}

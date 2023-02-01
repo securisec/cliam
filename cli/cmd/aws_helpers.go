@@ -2,7 +2,8 @@ package cmd
 
 import "github.com/securisec/cliam/aws"
 
-var AWS_SERVICE_GROUPING = map[string][]string{
+// AwsServiceGrouping common service mappings to group services together
+var AwsServiceGrouping = map[string][]string{
 	"common": {
 		aws.Lambda,
 		aws.IAM,
@@ -40,7 +41,7 @@ var AWS_SERVICE_GROUPING = map[string][]string{
 
 func getAwsServiceGroups() []string {
 	var groups []string
-	for k := range AWS_SERVICE_GROUPING {
+	for k := range AwsServiceGrouping {
 		groups = append(groups, k)
 	}
 	return groups

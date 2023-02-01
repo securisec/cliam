@@ -124,6 +124,10 @@ const (
 	CognitoIDP            = "cognito-idp"
 	CognitoIdentity       = "cognito-identity"
 	CognitoSync           = "cognito-sync"
+	Opensearch            = "opensearch"
+	Polly                 = "polly"
+	CodeArtifact          = "codeartifact"
+	AppSync               = "appsync"
 )
 
 var Services = map[string]map[string]policy.Service{
@@ -244,6 +248,10 @@ var Services = map[string]map[string]policy.Service{
 	CognitoIDP:            policy.CognitoIDPPolicies,
 	CognitoSync:           policy.CognitoSyncPolicies,
 	CognitoIdentity:       policy.CognitoIdentityPolicies,
+	Opensearch:            policy.OpensearchPolicies,
+	Polly:                 policy.PollyPolicies,
+	CodeArtifact:          policy.CodeArtifactPolicies,
+	AppSync:               policy.AppSyncPolicies,
 }
 
 // GetAWSResources returns a list of AWS services

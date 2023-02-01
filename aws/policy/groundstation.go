@@ -1,5 +1,6 @@
 package policy
 
+// GroundStationPolicies policies
 var GroundStationPolicies = map[string]Service{
 	"ListConfigs": {
 		Method:        "GET",
@@ -26,7 +27,6 @@ var GroundStationPolicies = map[string]Service{
 		ServiceSuffix: "satellite",
 		Permission:    "ListSatellites",
 	},
-
 	// extra
 	"DescribeContact": {
 		ServiceSuffix:          "/contact/{{.contact_id}}",
@@ -34,6 +34,20 @@ var GroundStationPolicies = map[string]Service{
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "contact_id",
+	},
+	"DescribeEphemeris": {
+		ServiceSuffix:          "/ephemeris/{{.ephemeris_id}}",
+		Permission:             "DescribeEphemeris",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "ephemeris_id",
+	},
+	"GetAgentConfiguration": {
+		ServiceSuffix:          "/agent/{{.agent_id}}/configuration",
+		Permission:             "GetAgentConfiguration",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "agent_id",
 	},
 	"GetDataflowEndpointGroup": {
 		ServiceSuffix:          "/dataflowEndpointGroup/{{.dataflow_endpoint_group_id}}",

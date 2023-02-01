@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// EC2Policies policies
 var EC2Policies = map[string]Service{
 	"AcceptTransitGatewayMulticastDomainAssociations": {
 		Method: "POST",
@@ -91,138 +92,6 @@ var EC2Policies = map[string]Service{
 		},
 		Permission: "CancelImportTask",
 	},
-	"CreateDefaultVpc": {
-		Method: "POST",
-		FormData: map[string]string{
-			"Action":  "CreateDefaultVpc",
-			"Version": "2016-11-15",
-		},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
-		},
-		Permission: "CreateDefaultVpc",
-	},
-	"CreateInstanceEventWindow": {
-		Method: "POST",
-		FormData: map[string]string{
-			"Action":  "CreateInstanceEventWindow",
-			"Version": "2016-11-15",
-		},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
-		},
-		Permission: "CreateInstanceEventWindow",
-	},
-	"CreateInternetGateway": {
-		Method: "POST",
-		FormData: map[string]string{
-			"Action":  "CreateInternetGateway",
-			"Version": "2016-11-15",
-		},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
-		},
-		Permission: "CreateInternetGateway",
-	},
-	"CreateIpam": {
-		Method: "POST",
-		FormData: map[string]string{
-			"Action":  "CreateIpam",
-			"Version": "2016-11-15",
-		},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
-		},
-		Permission: "CreateIpam",
-	},
-	"CreatePlacementGroup": {
-		Method: "POST",
-		FormData: map[string]string{
-			"Action":  "CreatePlacementGroup",
-			"Version": "2016-11-15",
-		},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
-		},
-		Permission: "CreatePlacementGroup",
-	},
-	"CreatePublicIpv4Pool": {
-		Method: "POST",
-		FormData: map[string]string{
-			"Action":  "CreatePublicIpv4Pool",
-			"Version": "2016-11-15",
-		},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
-		},
-		Permission: "CreatePublicIpv4Pool",
-	},
-	"CreateTrafficMirrorFilter": {
-		Method: "POST",
-		FormData: map[string]string{
-			"Action":  "CreateTrafficMirrorFilter",
-			"Version": "2016-11-15",
-		},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
-		},
-		Permission: "CreateTrafficMirrorFilter",
-	},
-	"CreateTrafficMirrorTarget": {
-		Method: "POST",
-		FormData: map[string]string{
-			"Action":  "CreateTrafficMirrorTarget",
-			"Version": "2016-11-15",
-		},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
-		},
-		Permission: "CreateTrafficMirrorTarget",
-	},
-	"CreateTransitGateway": {
-		Method: "POST",
-		FormData: map[string]string{
-			"Action":  "CreateTransitGateway",
-			"Version": "2016-11-15",
-		},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
-		},
-		Permission: "CreateTransitGateway",
-	},
-	"CreateVpc": {
-		Method: "POST",
-		FormData: map[string]string{
-			"Action":  "CreateVpc",
-			"Version": "2016-11-15",
-		},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
-		},
-		Permission: "CreateVpc",
-	},
-	"CreateVpcEndpointServiceConfiguration": {
-		Method: "POST",
-		FormData: map[string]string{
-			"Action":  "CreateVpcEndpointServiceConfiguration",
-			"Version": "2016-11-15",
-		},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
-		},
-		Permission: "CreateVpcEndpointServiceConfiguration",
-	},
-	"CreateVpcPeeringConnection": {
-		Method: "POST",
-		FormData: map[string]string{
-			"Action":  "CreateVpcPeeringConnection",
-			"Version": "2016-11-15",
-		},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
-		},
-		Permission: "CreateVpcPeeringConnection",
-	},
 	"DeleteKeyPair": {
 		Method: "POST",
 		FormData: map[string]string{
@@ -311,6 +180,17 @@ var EC2Policies = map[string]Service{
 		},
 		Permission: "DescribeAccountAttributes",
 	},
+	"DescribeAddressTransfers": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeAddressTransfers",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeAddressTransfers",
+	},
 	"DescribeAddresses": {
 		Method: "POST",
 		FormData: map[string]string{
@@ -354,6 +234,17 @@ var EC2Policies = map[string]Service{
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
 		},
 		Permission: "DescribeAvailabilityZones",
+	},
+	"DescribeAwsNetworkPerformanceMetricSubscriptions": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeAwsNetworkPerformanceMetricSubscriptions",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeAwsNetworkPerformanceMetricSubscriptions",
 	},
 	"DescribeBundleTasks": {
 		Method: "POST",
@@ -750,6 +641,28 @@ var EC2Policies = map[string]Service{
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
 		},
 		Permission: "DescribeIpamPools",
+	},
+	"DescribeIpamResourceDiscoveries": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeIpamResourceDiscoveries",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeIpamResourceDiscoveries",
+	},
+	"DescribeIpamResourceDiscoveryAssociations": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeIpamResourceDiscoveryAssociations",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeIpamResourceDiscoveryAssociations",
 	},
 	"DescribeIpamScopes": {
 		Method: "POST",
@@ -1334,6 +1247,28 @@ var EC2Policies = map[string]Service{
 		},
 		Permission: "DescribeTransitGatewayPeeringAttachments",
 	},
+	"DescribeTransitGatewayPolicyTables": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeTransitGatewayPolicyTables",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeTransitGatewayPolicyTables",
+	},
+	"DescribeTransitGatewayRouteTableAnnouncements": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeTransitGatewayRouteTableAnnouncements",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeTransitGatewayRouteTableAnnouncements",
+	},
 	"DescribeTransitGatewayRouteTables": {
 		Method: "POST",
 		FormData: map[string]string{
@@ -1377,6 +1312,61 @@ var EC2Policies = map[string]Service{
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
 		},
 		Permission: "DescribeTrunkInterfaceAssociations",
+	},
+	"DescribeVerifiedAccessEndpoints": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeVerifiedAccessEndpoints",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeVerifiedAccessEndpoints",
+	},
+	"DescribeVerifiedAccessGroups": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeVerifiedAccessGroups",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeVerifiedAccessGroups",
+	},
+	"DescribeVerifiedAccessInstanceLoggingConfigurations": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeVerifiedAccessInstanceLoggingConfigurations",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeVerifiedAccessInstanceLoggingConfigurations",
+	},
+	"DescribeVerifiedAccessInstances": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeVerifiedAccessInstances",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeVerifiedAccessInstances",
+	},
+	"DescribeVerifiedAccessTrustProviders": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeVerifiedAccessTrustProviders",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeVerifiedAccessTrustProviders",
 	},
 	"DescribeVolumeStatus": {
 		Method: "POST",
@@ -1532,6 +1522,17 @@ var EC2Policies = map[string]Service{
 		},
 		Permission: "DescribeVpnGateways",
 	},
+	"DisableAwsNetworkPerformanceMetricSubscription": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DisableAwsNetworkPerformanceMetricSubscription",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DisableAwsNetworkPerformanceMetricSubscription",
+	},
 	"DisableEbsEncryptionByDefault": {
 		Method: "POST",
 		FormData: map[string]string{
@@ -1598,6 +1599,17 @@ var EC2Policies = map[string]Service{
 		},
 		Permission: "DisassociateTransitGatewayMulticastDomain",
 	},
+	"EnableAwsNetworkPerformanceMetricSubscription": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "EnableAwsNetworkPerformanceMetricSubscription",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "EnableAwsNetworkPerformanceMetricSubscription",
+	},
 	"EnableEbsEncryptionByDefault": {
 		Method: "POST",
 		FormData: map[string]string{
@@ -1608,6 +1620,17 @@ var EC2Policies = map[string]Service{
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
 		},
 		Permission: "EnableEbsEncryptionByDefault",
+	},
+	"EnableReachabilityAnalyzerOrganizationSharing": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "EnableReachabilityAnalyzerOrganizationSharing",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "EnableReachabilityAnalyzerOrganizationSharing",
 	},
 	"EnableSerialConsoleAccess": {
 		Method: "POST",
@@ -1641,6 +1664,17 @@ var EC2Policies = map[string]Service{
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
 		},
 		Permission: "GetAssociatedEnclaveCertificateIamRoles",
+	},
+	"GetAwsNetworkPerformanceData": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetAwsNetworkPerformanceData",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "GetAwsNetworkPerformanceData",
 	},
 	"GetEbsDefaultKmsKeyId": {
 		Method: "POST",
@@ -1885,7 +1919,232 @@ var EC2Policies = map[string]Service{
 		Permission: "UpdateSecurityGroupRuleDescriptionsIngress",
 	},
 
-	// extras
+	// extra
+	"DescribeByoipCidrs": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeByoipCidrs",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeByoipCidrs",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "MaxResults",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "max_results",
+	},
+	"DescribeClientVpnAuthorizationRules": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeClientVpnAuthorizationRules",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeClientVpnAuthorizationRules",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ClientVpnEndpointId",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "client_vpn_endpoint_id",
+	},
+	"DescribeClientVpnConnections": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeClientVpnConnections",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeClientVpnConnections",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ClientVpnEndpointId",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "client_vpn_endpoint_id",
+	},
+	"DescribeClientVpnRoutes": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeClientVpnRoutes",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeClientVpnRoutes",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ClientVpnEndpointId",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "client_vpn_endpoint_id",
+	},
+	"DescribeClientVpnTargetNetworks": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeClientVpnTargetNetworks",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeClientVpnTargetNetworks",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ClientVpnEndpointId",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "client_vpn_endpoint_id",
+	},
+	"DescribeFleetInstances": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeFleetInstances",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeFleetInstances",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "FleetId",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "fleet_id",
+	},
+	"DescribeIdentityIdFormat": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeIdentityIdFormat",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeIdentityIdFormat",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "PrincipalArn",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "principal_arn",
+	},
+	"DescribeNetworkInterfaceAttribute": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeNetworkInterfaceAttribute",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeNetworkInterfaceAttribute",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "NetworkInterfaceId",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "network_interface_id",
+	},
+	"DescribeSecurityGroupReferences": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeSecurityGroupReferences",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeSecurityGroupReferences",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "GroupId",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "group_id",
+	},
+	"DescribeSpotFleetInstances": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeSpotFleetInstances",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeSpotFleetInstances",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "SpotFleetRequestId",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "spot_fleet_request_id",
+	},
+	"DescribeStaleSecurityGroups": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeStaleSecurityGroups",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeStaleSecurityGroups",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "VpcId",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "vpc_id",
+	},
+	"DescribeVpcEndpointServicePermissions": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeVpcEndpointServicePermissions",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeVpcEndpointServicePermissions",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ServiceId",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "service_id",
+	},
+	"GetAssociatedIpv6PoolCidrs": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetAssociatedIpv6PoolCidrs",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetAssociatedIpv6PoolCidrs",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "PoolId",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "pool_id",
+	},
+	"GetCapacityReservationUsage": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetCapacityReservationUsage",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetCapacityReservationUsage",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "CapacityReservationId",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "capacity_reservation_id",
+	},
+	"GetCoipPoolUsage": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetCoipPoolUsage",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetCoipPoolUsage",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "PoolId",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "pool_id",
+	},
 	"GetConsoleOutput": {
 		Method: "POST",
 		FormData: map[string]string{
@@ -1916,6 +2175,96 @@ var EC2Policies = map[string]Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "instance_id",
 	},
+	"GetDefaultCreditSpecification": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetDefaultCreditSpecification",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetDefaultCreditSpecification",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "InstanceFamily",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "instance_family",
+	},
+	"GetGroupsForCapacityReservation": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetGroupsForCapacityReservation",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetGroupsForCapacityReservation",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "CapacityReservationId",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "capacity_reservation_id",
+	},
+	"GetInstanceUefiData": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetInstanceUefiData",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetInstanceUefiData",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "InstanceId",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "instance_id",
+	},
+	"GetIpamPoolAllocations": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetIpamPoolAllocations",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetIpamPoolAllocations",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "IpamPoolId",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "ipam_pool_id",
+	},
+	"GetIpamPoolCidrs": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetIpamPoolCidrs",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetIpamPoolCidrs",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "IpamPoolId",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "ipam_pool_id",
+	},
+	"GetIpamResourceCidrs": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetIpamResourceCidrs",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetIpamResourceCidrs",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "IpamScopeId",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "ipam_scope_id",
+	},
 	"GetLaunchTemplateData": {
 		Method: "POST",
 		FormData: map[string]string{
@@ -1931,6 +2280,66 @@ var EC2Policies = map[string]Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "instance_id",
 	},
+	"GetManagedPrefixListAssociations": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetManagedPrefixListAssociations",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetManagedPrefixListAssociations",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "PrefixListId",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "prefix_list_id",
+	},
+	"GetManagedPrefixListEntries": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetManagedPrefixListEntries",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetManagedPrefixListEntries",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "PrefixListId",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "prefix_list_id",
+	},
+	"GetNetworkInsightsAccessScopeAnalysisFindings": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetNetworkInsightsAccessScopeAnalysisFindings",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetNetworkInsightsAccessScopeAnalysisFindings",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "NetworkInsightsAccessScopeAnalysisId",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "network_insights_access_scope_analysis_id",
+	},
+	"GetNetworkInsightsAccessScopeContent": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetNetworkInsightsAccessScopeContent",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetNetworkInsightsAccessScopeContent",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "NetworkInsightsAccessScopeId",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "network_insights_access_scope_id",
+	},
 	"GetPasswordData": {
 		Method: "POST",
 		FormData: map[string]string{
@@ -1945,5 +2354,170 @@ var EC2Policies = map[string]Service{
 		ExtraComponentBodyKey:  "InstanceId",
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "instance_id",
+	},
+	"GetReservedInstancesExchangeQuote": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetReservedInstancesExchangeQuote",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetReservedInstancesExchangeQuote",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ReservedInstanceIds",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "reserved_instance_ids",
+	},
+	"GetSpotPlacementScores": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetSpotPlacementScores",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetSpotPlacementScores",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "TargetCapacity",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "target_capacity",
+	},
+	"GetSubnetCidrReservations": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetSubnetCidrReservations",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetSubnetCidrReservations",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "SubnetId",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "subnet_id",
+	},
+	"GetTransitGatewayAttachmentPropagations": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetTransitGatewayAttachmentPropagations",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetTransitGatewayAttachmentPropagations",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "TransitGatewayAttachmentId",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "transit_gateway_attachment_id",
+	},
+	"GetTransitGatewayPolicyTableAssociations": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetTransitGatewayPolicyTableAssociations",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetTransitGatewayPolicyTableAssociations",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "TransitGatewayPolicyTableId",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "transit_gateway_policy_table_id",
+	},
+	"GetTransitGatewayPolicyTableEntries": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetTransitGatewayPolicyTableEntries",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetTransitGatewayPolicyTableEntries",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "TransitGatewayPolicyTableId",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "transit_gateway_policy_table_id",
+	},
+	"GetTransitGatewayPrefixListReferences": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetTransitGatewayPrefixListReferences",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetTransitGatewayPrefixListReferences",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "TransitGatewayRouteTableId",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "transit_gateway_route_table_id",
+	},
+	"GetTransitGatewayRouteTableAssociations": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetTransitGatewayRouteTableAssociations",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetTransitGatewayRouteTableAssociations",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "TransitGatewayRouteTableId",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "transit_gateway_route_table_id",
+	},
+	"GetTransitGatewayRouteTablePropagations": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetTransitGatewayRouteTablePropagations",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetTransitGatewayRouteTablePropagations",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "TransitGatewayRouteTableId",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "transit_gateway_route_table_id",
+	},
+	"GetVerifiedAccessEndpointPolicy": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetVerifiedAccessEndpointPolicy",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetVerifiedAccessEndpointPolicy",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "VerifiedAccessEndpointId",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "verified_access_endpoint_id",
+	},
+	"GetVerifiedAccessGroupPolicy": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetVerifiedAccessGroupPolicy",
+			"Version": "2016-11-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetVerifiedAccessGroupPolicy",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "VerifiedAccessGroupId",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "verified_access_group_id",
 	},
 }
