@@ -2,24 +2,34 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var CodecommitPolicies = map[string]Service{
+// CodeCommitPolicies policy
+var CodeCommitPolicies = map[string]Service{
+	"GetBranch": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "CodeCommit_20150413.GetBranch",
+		},
+		Permission: "GetBranch",
+	},
 	"ListApprovalRuleTemplates": {
-		Method:     "POST",
-		JsonData:   map[string]string{},
-		Permission: "ListApprovalRuleTemplates",
+		Method:   "POST",
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "CodeCommit_20150413.ListApprovalRuleTemplates",
 		},
+		Permission: "ListApprovalRuleTemplates",
 	},
 	"ListRepositories": {
-		Method:     "POST",
-		JsonData:   map[string]string{},
-		Permission: "ListRepositories",
+		Method:   "POST",
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "CodeCommit_20150413.ListRepositories",
 		},
+		Permission: "ListRepositories",
 	},
 
 	// extra

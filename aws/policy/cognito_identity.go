@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// CognitoIdentityPolicies policy
 var CognitoIdentityPolicies = map[string]Service{
 
 	// extra

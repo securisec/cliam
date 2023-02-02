@@ -1,34 +1,74 @@
 package policy
 
-import "github.com/securisec/cliam/shared"
-
+// ElasticFileSystemPolicies policy
 var ElasticFileSystemPolicies = map[string]Service{
+	"DescribeAccessPoints": {
+		Method:        "GET",
+		ServiceSuffix: "2015-02-01/access-points",
+		Permission:    "DescribeAccessPoints",
+	},
+	"DescribeAccountPreferences": {
+		Method:        "GET",
+		ServiceSuffix: "2015-02-01/account-preferences",
+		Permission:    "DescribeAccountPreferences",
+	},
 	"DescribeFileSystems": {
+		Method:        "GET",
 		ServiceSuffix: "2015-02-01/file-systems",
 		Permission:    "DescribeFileSystems",
 	},
+	"DescribeMountTargets": {
+		Method:        "GET",
+		ServiceSuffix: "2015-02-01/mount-targets",
+		Permission:    "DescribeMountTargets",
+	},
+	"DescribeReplicationConfigurations": {
+		Method:        "GET",
+		ServiceSuffix: "2015-02-01/file-systems/replication-configurations",
+		Permission:    "DescribeReplicationConfigurations",
+	},
 
 	// extra
-	"DescribeAcceleratorOfferings": {
-		Method: "POST",
-		FormData: map[string]string{
-			"Action":  "DescribeAcceleratorOfferings",
-			"Version": "2017-07-25",
-		},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
-		},
-		Permission:             "DescribeAcceleratorOfferings",
+	"DescribeBackupPolicy": {
+		ServiceSuffix:          "/2015-02-01/file-systems/{{.file_system_id}}/backup-policy",
+		Permission:             "DescribeBackupPolicy",
+		ExtraComponentLocation: "path",
 		IsExtra:                true,
-		ExtraComponentBodyKey:  "locationType",
-		ExtraComponentLocation: "form",
-		ExtraCommandLineFlag:   "location_type",
+		ExtraCommandLineFlag:   "file_system_id",
+	},
+	"DescribeFileSystemPolicy": {
+		ServiceSuffix:          "/2015-02-01/file-systems/{{.file_system_id}}/policy",
+		Permission:             "DescribeFileSystemPolicy",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "file_system_id",
+	},
+	"DescribeLifecycleConfiguration": {
+		ServiceSuffix:          "/2015-02-01/file-systems/{{.file_system_id}}/lifecycle-configuration",
+		Permission:             "DescribeLifecycleConfiguration",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "file_system_id",
+	},
+	"DescribeMountTargetSecurityGroups": {
+		ServiceSuffix:          "/2015-02-01/mount-targets/{{.mount_target_id}}/security-groups",
+		Permission:             "DescribeMountTargetSecurityGroups",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "mount_target_id",
+	},
+	"DescribeTags": {
+		ServiceSuffix:          "/2015-02-01/tags/{{.file_system_id}}/",
+		Permission:             "DescribeTags",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "file_system_id",
 	},
 	"ListTagsForResource": {
-		ServiceSuffix:          "/tags/{{.resource_arn}}",
+		ServiceSuffix:          "/2015-02-01/resource-tags/{{.resource_id}}",
 		Permission:             "ListTagsForResource",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
-		ExtraCommandLineFlag:   "resource_arn",
+		ExtraCommandLineFlag:   "resource_id",
 	},
 }

@@ -2,18 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var CloudsearchPolicies = map[string]Service{
-	"ListDomainNames": {
-		Method: "POST",
-		FormData: map[string]string{
-			"Action":  "ListDomainNames",
-			"Version": "2013-01-01",
-		},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
-		},
-		Permission: "ListDomainNames",
-	},
+// CloudSearchPolicies policy
+var CloudSearchPolicies = map[string]Service{
 	"DescribeDomains": {
 		Method: "POST",
 		FormData: map[string]string{
@@ -24,6 +14,17 @@ var CloudsearchPolicies = map[string]Service{
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
 		},
 		Permission: "DescribeDomains",
+	},
+	"ListDomainNames": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "ListDomainNames",
+			"Version": "2013-01-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "ListDomainNames",
 	},
 
 	// extra

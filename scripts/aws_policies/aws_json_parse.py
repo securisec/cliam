@@ -53,7 +53,6 @@ def postFormEndpoint(version: str, action: str) -> str:
 
 
 def get_policies(filename: str, ignore_creates_deletes: bool = False) -> List[Any]:
-    # TODO 🔥 ignore creates and deletes
     out = []
     path = Path.cwd() / "iam-enumerator" / filename.replace("../", "", 1)
     with open(str(path.resolve()), "r") as f:
@@ -61,7 +60,7 @@ def get_policies(filename: str, ignore_creates_deletes: bool = False) -> List[An
 
     for operation, v in data["operations"].items():
         # skip create operations
-        if ignore_creates_deletes and operation.startswith('Create'):
+        if ignore_creates_deletes and (operation.startswith('Create') or operation.startswith('Delete')):
             continue
         # print(operations)
         try:

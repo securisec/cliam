@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// DeviceFarmPolicies policy
 var DeviceFarmPolicies = map[string]Service{
 	"GetAccountSettings": {
 		Method:   "POST",
@@ -102,14 +103,14 @@ var DeviceFarmPolicies = map[string]Service{
 		},
 		Permission: "ListTestGridProjects",
 	},
-	"ListVpceConfigurations": {
+	"ListVPCEConfigurations": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
-			aws_X_AMZ_TARGET:           "DeviceFarm_20150623.ListVpceConfigurations",
+			aws_X_AMZ_TARGET:           "DeviceFarm_20150623.ListVPCEConfigurations",
 		},
-		Permission: "ListVpceConfigurations",
+		Permission: "ListVPCEConfigurations",
 	},
 
 	// extra

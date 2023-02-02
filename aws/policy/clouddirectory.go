@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// CloudDirectoryPolicies policy
 var CloudDirectoryPolicies = map[string]Service{
 	"ListDevelopmentSchemaArns": {
 		Method:        "POST",
@@ -21,15 +22,6 @@ var CloudDirectoryPolicies = map[string]Service{
 		},
 		Permission: "ListDirectories",
 	},
-	"ListManagedSchemaArns": {
-		Method:        "POST",
-		ServiceSuffix: "amazonclouddirectory/2017-01-11/schema/managed",
-		JsonData:      map[string]string{},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
-		},
-		Permission: "ListManagedSchemaArns",
-	},
 	"ListPublishedSchemaArns": {
 		Method:        "POST",
 		ServiceSuffix: "amazonclouddirectory/2017-01-11/schema/published",
@@ -45,7 +37,7 @@ var CloudDirectoryPolicies = map[string]Service{
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetAppliedSchemaVersion",
-			"Version": "2017-01-11",
+			"Version": "2016-05-10",
 		},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
@@ -60,7 +52,7 @@ var CloudDirectoryPolicies = map[string]Service{
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetDirectory",
-			"Version": "2017-01-11",
+			"Version": "2016-05-10",
 		},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
@@ -75,7 +67,7 @@ var CloudDirectoryPolicies = map[string]Service{
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetSchemaAsJson",
-			"Version": "2017-01-11",
+			"Version": "2016-05-10",
 		},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
@@ -90,7 +82,7 @@ var CloudDirectoryPolicies = map[string]Service{
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "ListAppliedSchemaArns",
-			"Version": "2017-01-11",
+			"Version": "2016-05-10",
 		},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
@@ -105,7 +97,7 @@ var CloudDirectoryPolicies = map[string]Service{
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "ListFacetNames",
-			"Version": "2017-01-11",
+			"Version": "2016-05-10",
 		},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
@@ -120,7 +112,7 @@ var CloudDirectoryPolicies = map[string]Service{
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "ListTagsForResource",
-			"Version": "2017-01-11",
+			"Version": "2016-05-10",
 		},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
@@ -135,7 +127,7 @@ var CloudDirectoryPolicies = map[string]Service{
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "ListTypedLinkFacetNames",
-			"Version": "2017-01-11",
+			"Version": "2016-05-10",
 		},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,

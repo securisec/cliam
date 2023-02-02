@@ -1,5 +1,6 @@
 package policy
 
+// DataBrewPolicies policy
 var DataBrewPolicies = map[string]Service{
 	"ListDatasets": {
 		Method:        "GET",

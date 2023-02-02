@@ -2,7 +2,17 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var Appstream2Policies = map[string]Service{
+// AppStreamPolicies policy
+var AppStreamPolicies = map[string]Service{
+	"DeleteUsageReportSubscription": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "PhotonAdminProxyService.DeleteUsageReportSubscription",
+		},
+		Permission: "DeleteUsageReportSubscription",
+	},
 	"DescribeAppBlocks": {
 		Method:   "POST",
 		JsonData: map[string]string{},
@@ -20,6 +30,15 @@ var Appstream2Policies = map[string]Service{
 			aws_X_AMZ_TARGET:           "PhotonAdminProxyService.DescribeApplicationFleetAssociations",
 		},
 		Permission: "DescribeApplicationFleetAssociations",
+	},
+	"DescribeApplications": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "PhotonAdminProxyService.DescribeApplications",
+		},
+		Permission: "DescribeApplications",
 	},
 	"DescribeDirectoryConfigs": {
 		Method:   "POST",
@@ -57,6 +76,15 @@ var Appstream2Policies = map[string]Service{
 		},
 		Permission: "DescribeImages",
 	},
+	"DescribeStacks": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "PhotonAdminProxyService.DescribeStacks",
+		},
+		Permission: "DescribeStacks",
+	},
 	"DescribeUsageReportSubscriptions": {
 		Method:   "POST",
 		JsonData: map[string]string{},
@@ -75,7 +103,17 @@ var Appstream2Policies = map[string]Service{
 		},
 		Permission: "DescribeUserStackAssociations",
 	},
+	"UpdateFleet": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "PhotonAdminProxyService.UpdateFleet",
+		},
+		Permission: "UpdateFleet",
+	},
 
+	// extra
 	"DescribeEntitlements": {
 		Method: "POST",
 		Headers: map[string]string{

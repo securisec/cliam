@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// CognitoIDPPolicies policy
 var CognitoIDPPolicies = map[string]Service{
 	"AssociateSoftwareToken": {
 		Method:   "POST",

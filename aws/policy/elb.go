@@ -2,88 +2,149 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// ELBPolicies policy
 var ELBPolicies = map[string]Service{
 	"DescribeAccountLimits": {
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeAccountLimits&Version=2015-12-01",
-		Permission:    "DescribeAccountLimits",
-	},
-	"DescribeLoadBalancers": {
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeLoadBalancers&Version=2015-12-01",
-		Permission:    "DescribeLoadBalancers",
-	},
-	"DescribeSSLPolicies": {
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeSSLPolicies&Version=2015-12-01",
-		Permission:    "DescribeSSLPolicies",
-	},
-	"DescribeTargetGroups": {
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeTargetGroups&Version=2015-12-01",
-		Permission:    "DescribeTargetGroups",
-	},
-	"DescribeLoadBalancerPolicies": {
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeLoadBalancerPolicies&Version=2012-06-01",
-		Permission:    "DescribeLoadBalancerPolicies",
-	},
-	"DescribeLoadBalancerPolicyTypes": {
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeLoadBalancerPolicyTypes&Version=2012-06-01",
-		Permission:    "DescribeLoadBalancerPolicyTypes",
-	},
-
-	// extra
-	"DescribeInstanceHealth": {
 		Method: "POST",
 		FormData: map[string]string{
-			"Action":  "DescribeInstanceHealth",
-			"Version": "2012-06-01",
+			"Action":  "DescribeAccountLimits",
+			"Version": "2015-12-01",
 		},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
 		},
-		Permission:             "DescribeInstanceHealth",
+		Permission: "DescribeAccountLimits",
+	},
+	"DescribeListeners": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeListeners",
+			"Version": "2015-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeListeners",
+	},
+	"DescribeLoadBalancers": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeLoadBalancers",
+			"Version": "2015-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeLoadBalancers",
+	},
+	"DescribeRules": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeRules",
+			"Version": "2015-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeRules",
+	},
+	"DescribeSSLPolicies": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeSSLPolicies",
+			"Version": "2015-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeSSLPolicies",
+	},
+	"DescribeTargetGroups": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeTargetGroups",
+			"Version": "2015-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeTargetGroups",
+	},
+
+	// extra
+	"DescribeListenerCertificates": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeListenerCertificates",
+			"Version": "2015-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeListenerCertificates",
 		IsExtra:                true,
-		ExtraComponentBodyKey:  "LoadBalancerName",
+		ExtraComponentBodyKey:  "ListenerArn",
 		ExtraComponentLocation: "form",
-		ExtraCommandLineFlag:   "load_balancer_name",
+		ExtraCommandLineFlag:   "listener_arn",
 	},
 	"DescribeLoadBalancerAttributes": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeLoadBalancerAttributes",
-			"Version": "2012-06-01",
+			"Version": "2015-12-01",
 		},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
 		},
 		Permission:             "DescribeLoadBalancerAttributes",
 		IsExtra:                true,
-		ExtraComponentBodyKey:  "LoadBalancerName",
+		ExtraComponentBodyKey:  "LoadBalancerArn",
 		ExtraComponentLocation: "form",
-		ExtraCommandLineFlag:   "load_balancer_name",
+		ExtraCommandLineFlag:   "load_balancer_arn",
 	},
 	"DescribeTags": {
 		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "DescribeTags",
-			"Version": "2012-06-01",
+			"Version": "2015-12-01",
 		},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
 		},
 		Permission:             "DescribeTags",
 		IsExtra:                true,
-		ExtraComponentBodyKey:  "LoadBalancerNames",
+		ExtraComponentBodyKey:  "ResourceArns",
 		ExtraComponentLocation: "form",
-		ExtraCommandLineFlag:   "load_balancer_names",
+		ExtraCommandLineFlag:   "resource_arns",
+	},
+	"DescribeTargetGroupAttributes": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeTargetGroupAttributes",
+			"Version": "2015-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeTargetGroupAttributes",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "TargetGroupArn",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "target_group_arn",
+	},
+	"DescribeTargetHealth": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeTargetHealth",
+			"Version": "2015-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeTargetHealth",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "TargetGroupArn",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "target_group_arn",
 	},
 }

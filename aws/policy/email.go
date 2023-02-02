@@ -2,18 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// EmailPolicies policy
 var EmailPolicies = map[string]Service{
-	"ListConfigurationSets": {
-		Method: "POST",
-		FormData: map[string]string{
-			"Action":  "ListConfigurationSets",
-			"Version": "2010-12-01",
-		},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
-		},
-		Permission: "ListConfigurationSets",
-	},
 	"DescribeActiveReceiptRuleSet": {
 		Method: "POST",
 		FormData: map[string]string{
@@ -57,6 +47,17 @@ var EmailPolicies = map[string]Service{
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
 		},
 		Permission: "GetSendStatistics",
+	},
+	"ListConfigurationSets": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "ListConfigurationSets",
+			"Version": "2010-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "ListConfigurationSets",
 	},
 	"ListCustomVerificationEmailTemplates": {
 		Method: "POST",
@@ -123,6 +124,28 @@ var EmailPolicies = map[string]Service{
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
 		},
 		Permission: "ListVerifiedEmailAddresses",
+	},
+	"SetActiveReceiptRuleSet": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "SetActiveReceiptRuleSet",
+			"Version": "2010-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "SetActiveReceiptRuleSet",
+	},
+	"UpdateAccountSendingEnabled": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "UpdateAccountSendingEnabled",
+			"Version": "2010-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "UpdateAccountSendingEnabled",
 	},
 
 	// extra

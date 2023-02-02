@@ -2,30 +2,11 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// ESPolicies policy
 var ESPolicies = map[string]Service{
-	"ListDomainNames": {
-		ServiceSuffix: "2021-01-01/domain",
-		Permission:    "ListDomainNames",
-	},
-	"DescribeReservedElasticsearchInstances": {
-		ServiceSuffix: "2015-01-01/es/reservedInstances",
-		Permission:    "DescribeReservedElasticsearchInstances",
-	},
-	"DescribeReservedElasticsearchInstancesOfferings": {
-		ServiceSuffix: "2015-01-01/es/reservedInstanceOfferings",
-		Permission:    "DescribeReservedElasticsearchInstancesOfferings",
-	},
-	"GetCompatibleElasticsearchVersions": {
-		ServiceSuffix: "2015-01-01/es/compatibleVersions",
-		Permission:    "GetCompatibleElasticsearchVersions",
-	},
-	"ListElasticsearchVersions": {
-		ServiceSuffix: "2015-01-01/es/versions",
-		Permission:    "ListElasticsearchVersions",
-	},
 	"DescribeInboundCrossClusterSearchConnections": {
-		ServiceSuffix: "2021-01-01/opensearch/cc/inboundConnection/search",
 		Method:        "POST",
+		ServiceSuffix: "2015-01-01/es/ccs/inboundConnection/search",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -33,8 +14,8 @@ var ESPolicies = map[string]Service{
 		Permission: "DescribeInboundCrossClusterSearchConnections",
 	},
 	"DescribeOutboundCrossClusterSearchConnections": {
-		ServiceSuffix: "2021-01-01/opensearch/cc/outboundConnection/search",
 		Method:        "POST",
+		ServiceSuffix: "2015-01-01/es/ccs/outboundConnection/search",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
@@ -42,31 +23,43 @@ var ESPolicies = map[string]Service{
 		Permission: "DescribeOutboundCrossClusterSearchConnections",
 	},
 	"DescribePackages": {
-		ServiceSuffix: "2021-01-01/packages/describe",
 		Method:        "POST",
+		ServiceSuffix: "2015-01-01/packages/describe",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "DescribePackages",
 	},
-	"DescribeInboundConnections": {
-		ServiceSuffix: "2021-01-01/opensearch/cc/inboundConnection/search",
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
-		},
-		Permission: "DescribeInboundConnections",
+	"DescribeReservedElasticsearchInstanceOfferings": {
+		Method:        "GET",
+		ServiceSuffix: "2015-01-01/es/reservedInstanceOfferings",
+		Permission:    "DescribeReservedElasticsearchInstanceOfferings",
 	},
-	"DescribeOutboundConnections": {
-		ServiceSuffix: "2021-01-01/opensearch/cc/outboundConnection/search",
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
-		},
-		Permission: "DescribeOutboundConnections",
+	"DescribeReservedElasticsearchInstances": {
+		Method:        "GET",
+		ServiceSuffix: "2015-01-01/es/reservedInstances",
+		Permission:    "DescribeReservedElasticsearchInstances",
+	},
+	"GetCompatibleElasticsearchVersions": {
+		Method:        "GET",
+		ServiceSuffix: "2015-01-01/es/compatibleVersions",
+		Permission:    "GetCompatibleElasticsearchVersions",
+	},
+	"ListDomainNames": {
+		Method:        "GET",
+		ServiceSuffix: "2015-01-01/domain",
+		Permission:    "ListDomainNames",
+	},
+	"ListElasticsearchVersions": {
+		Method:        "GET",
+		ServiceSuffix: "2015-01-01/es/versions",
+		Permission:    "ListElasticsearchVersions",
+	},
+	"ListVpcEndpoints": {
+		Method:        "GET",
+		ServiceSuffix: "2015-01-01/es/vpcEndpoints",
+		Permission:    "ListVpcEndpoints",
 	},
 
 	// extra
@@ -113,6 +106,21 @@ var ESPolicies = map[string]Service{
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "domain_names",
 	},
+	"DescribeVpcEndpoints": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeVpcEndpoints",
+			"Version": "2015-01-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "DescribeVpcEndpoints",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "VpcEndpointIds",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "vpc_endpoint_ids",
+	},
 	"GetPackageVersionHistory": {
 		ServiceSuffix:          "/2015-01-01/packages/{{.package_i_d}}/history",
 		Permission:             "GetPackageVersionHistory",
@@ -139,7 +147,7 @@ var ESPolicies = map[string]Service{
 		Permission:             "ListDomainsForPackage",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
-		ExtraCommandLineFlag:   "package_i_d",
+		ExtraCommandLineFlag:   "package_id",
 	},
 	"ListElasticsearchInstanceTypes": {
 		ServiceSuffix:          "/2015-01-01/es/instanceTypes/{{.elasticsearch_version}}",
@@ -161,5 +169,19 @@ var ESPolicies = map[string]Service{
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "arn",
+	},
+	"ListVpcEndpointAccess": {
+		ServiceSuffix:          "/2015-01-01/es/domain/{{.domain_name}}/listVpcEndpointAccess",
+		Permission:             "ListVpcEndpointAccess",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "domain_name",
+	},
+	"ListVpcEndpointsForDomain": {
+		ServiceSuffix:          "/2015-01-01/es/domain/{{.domain_name}}/vpcEndpoints",
+		Permission:             "ListVpcEndpointsForDomain",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "domain_name",
 	},
 }

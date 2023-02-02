@@ -1,5 +1,6 @@
 package policy
 
+// DataExchangePolicies policy
 var DataExchangePolicies = map[string]Service{
 	"ListDataSets": {
 		Method:        "GET",

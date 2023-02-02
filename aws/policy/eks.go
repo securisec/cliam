@@ -1,12 +1,19 @@
 package policy
 
+// EKSPolicies policy
 var EKSPolicies = map[string]Service{
+	"DescribeAddonVersions": {
+		Method:        "GET",
+		ServiceSuffix: "addons/supported-versions",
+		Permission:    "DescribeAddonVersions",
+	},
 	"ListClusters": {
+		Method:        "GET",
 		ServiceSuffix: "clusters",
 		Permission:    "ListClusters",
 	},
 
-	// extra policies
+	// extra
 	"DescribeCluster": {
 		ServiceSuffix:          "/clusters/{{.name}}",
 		Permission:             "DescribeCluster",

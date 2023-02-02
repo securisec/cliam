@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// BatchPolicies policy
 var BatchPolicies = map[string]Service{
 	"DescribeComputeEnvironments": {
 		Method:        "POST",

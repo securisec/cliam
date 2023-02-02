@@ -2,66 +2,260 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var CloudformationPolicies = map[string]Service{
+// CloudFormationPolicies policy
+var CloudFormationPolicies = map[string]Service{
+	"ActivateType": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "ActivateType",
+			"Version": "2010-05-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "ActivateType",
+	},
+	"DeactivateType": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DeactivateType",
+			"Version": "2010-05-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DeactivateType",
+	},
+	"DeregisterType": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DeregisterType",
+			"Version": "2010-05-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DeregisterType",
+	},
 	"DescribeAccountLimits": {
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeAccountLimits&Version=2010-05-15",
-		Permission:    "DescribeAccountLimits",
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeAccountLimits",
+			"Version": "2010-05-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeAccountLimits",
 	},
 	"DescribePublisher": {
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribePublisher&Version=2010-05-15",
-		Permission:    "DescribePublisher",
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribePublisher",
+			"Version": "2010-05-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribePublisher",
+	},
+	"DescribeStackEvents": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeStackEvents",
+			"Version": "2010-05-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeStackEvents",
+	},
+	"DescribeStackResources": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeStackResources",
+			"Version": "2010-05-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeStackResources",
+	},
+	"DescribeStacks": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeStacks",
+			"Version": "2010-05-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeStacks",
 	},
 	"DescribeType": {
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeType&Version=2010-05-15",
-		Permission:    "DescribeType",
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeType",
+			"Version": "2010-05-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeType",
+	},
+	"EstimateTemplateCost": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "EstimateTemplateCost",
+			"Version": "2010-05-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "EstimateTemplateCost",
+	},
+	"GetTemplate": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetTemplate",
+			"Version": "2010-05-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "GetTemplate",
 	},
 	"GetTemplateSummary": {
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=GetTemplateSummary&Version=2010-05-15",
-		Permission:    "GetTemplateSummary",
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetTemplateSummary",
+			"Version": "2010-05-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "GetTemplateSummary",
 	},
 	"ListExports": {
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=ListExports&Version=2010-05-15",
-		Permission:    "ListExports",
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "ListExports",
+			"Version": "2010-05-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "ListExports",
 	},
 	"ListStackSets": {
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=ListStackSets&Version=2010-05-15",
-		Permission:    "ListStackSets",
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "ListStackSets",
+			"Version": "2010-05-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "ListStackSets",
 	},
 	"ListStacks": {
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=ListStacks&Version=2010-05-15",
-		Permission:    "ListStacks",
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "ListStacks",
+			"Version": "2010-05-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "ListStacks",
 	},
 	"ListTypeRegistrations": {
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=ListTypeRegistrations&Version=2010-05-15",
-		Permission:    "ListTypeRegistrations",
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "ListTypeRegistrations",
+			"Version": "2010-05-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "ListTypeRegistrations",
 	},
 	"ListTypeVersions": {
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=ListTypeVersions&Version=2010-05-15",
-		Permission:    "ListTypeVersions",
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "ListTypeVersions",
+			"Version": "2010-05-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "ListTypeVersions",
 	},
 	"ListTypes": {
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=ListTypes&Version=2010-05-15",
-		Permission:    "ListTypes",
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "ListTypes",
+			"Version": "2010-05-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "ListTypes",
+	},
+	"PublishType": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "PublishType",
+			"Version": "2010-05-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "PublishType",
+	},
+	"RegisterPublisher": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "RegisterPublisher",
+			"Version": "2010-05-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "RegisterPublisher",
+	},
+	"SetTypeDefaultVersion": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "SetTypeDefaultVersion",
+			"Version": "2010-05-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "SetTypeDefaultVersion",
+	},
+	"TestType": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "TestType",
+			"Version": "2010-05-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "TestType",
+	},
+	"ValidateTemplate": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "ValidateTemplate",
+			"Version": "2010-05-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "ValidateTemplate",
 	},
 
 	// extra

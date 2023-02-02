@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// ComputeOptimizerPolicies policy
 var ComputeOptimizerPolicies = map[string]Service{
 	"DescribeRecommendationExportJobs": {
 		Method:   "POST",
@@ -38,6 +39,15 @@ var ComputeOptimizerPolicies = map[string]Service{
 			aws_X_AMZ_TARGET:           "ComputeOptimizerService.GetEC2InstanceRecommendations",
 		},
 		Permission: "GetEC2InstanceRecommendations",
+	},
+	"GetECSServiceRecommendations": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "ComputeOptimizerService.GetECSServiceRecommendations",
+		},
+		Permission: "GetECSServiceRecommendations",
 	},
 	"GetEnrollmentStatus": {
 		Method:   "POST",

@@ -2,46 +2,183 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// ElasticachePolicies policy
 var ElasticachePolicies = map[string]Service{
 	"DescribeCacheClusters": {
-		ServiceSuffix: "?Action=DescribeCacheClusters&Version=2015-02-02",
-		Permission:    "DescribeCacheClusters",
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeCacheClusters",
+			"Version": "2015-02-02",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeCacheClusters",
 	},
 	"DescribeCacheEngineVersions": {
-		ServiceSuffix: "?Action=DescribeCacheEngineVersions&Version=2015-02-02",
-		Permission:    "DescribeCacheEngineVersions",
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeCacheEngineVersions",
+			"Version": "2015-02-02",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeCacheEngineVersions",
 	},
 	"DescribeCacheParameterGroups": {
-		ServiceSuffix: "?Action=DescribeCacheParameterGroups&Version=2015-02-02",
-		Permission:    "DescribeCacheParameterGroups",
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeCacheParameterGroups",
+			"Version": "2015-02-02",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeCacheParameterGroups",
 	},
 	"DescribeCacheSecurityGroups": {
-		ServiceSuffix: "?Action=DescribeCacheSecurityGroups",
-		Permission:    "DescribeCacheSecurityGroups",
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeCacheSecurityGroups",
+			"Version": "2015-02-02",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeCacheSecurityGroups",
 	},
 	"DescribeCacheSubnetGroups": {
-		ServiceSuffix: "?Action=DescribeCacheSubnetGroups&Version=2015-02-02",
-		Permission:    "DescribeCacheSubnetGroups",
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeCacheSubnetGroups",
+			"Version": "2015-02-02",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeCacheSubnetGroups",
+	},
+	"DescribeEvents": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeEvents",
+			"Version": "2015-02-02",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeEvents",
+	},
+	"DescribeGlobalReplicationGroups": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeGlobalReplicationGroups",
+			"Version": "2015-02-02",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeGlobalReplicationGroups",
 	},
 	"DescribeReplicationGroups": {
-		ServiceSuffix: "?Action=DescribeReplicationGroups&Version=2015-02-02",
-		Permission:    "DescribeReplicationGroups",
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeReplicationGroups",
+			"Version": "2015-02-02",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeReplicationGroups",
 	},
 	"DescribeReservedCacheNodes": {
-		ServiceSuffix: "?Action=DescribeReservedCacheNodes&Version=2015-02-02",
-		Permission:    "DescribeReservedCacheNodes",
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeReservedCacheNodes",
+			"Version": "2015-02-02",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeReservedCacheNodes",
 	},
 	"DescribeReservedCacheNodesOfferings": {
-		ServiceSuffix: "?Action=DescribeReservedCacheNodesOfferings&Version=2015-02-02",
-		Permission:    "DescribeReservedCacheNodesOfferings",
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeReservedCacheNodesOfferings",
+			"Version": "2015-02-02",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeReservedCacheNodesOfferings",
+	},
+	"DescribeServiceUpdates": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeServiceUpdates",
+			"Version": "2015-02-02",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeServiceUpdates",
 	},
 	"DescribeSnapshots": {
-		ServiceSuffix: "?Action=DescribeSnapshots&Version=2015-02-02",
-		Permission:    "DescribeSnapshots",
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeSnapshots",
+			"Version": "2015-02-02",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeSnapshots",
+	},
+	"DescribeUpdateActions": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeUpdateActions",
+			"Version": "2015-02-02",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeUpdateActions",
+	},
+	"DescribeUserGroups": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeUserGroups",
+			"Version": "2015-02-02",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeUserGroups",
+	},
+	"DescribeUsers": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeUsers",
+			"Version": "2015-02-02",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeUsers",
 	},
 	"ListAllowedNodeTypeModifications": {
-		ServiceSuffix: "?Action=ListAllowedNodeTypeModifications&Version=2015-02-02",
-		Permission:    "ListAllowedNodeTypeModifications",
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "ListAllowedNodeTypeModifications",
+			"Version": "2015-02-02",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "ListAllowedNodeTypeModifications",
 	},
 
 	// extra

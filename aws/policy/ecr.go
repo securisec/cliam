@@ -2,29 +2,73 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// ECRPolicies policy
 var ECRPolicies = map[string]Service{
-	"DescribeRepositories": {
-		ServiceSuffix: "",
-		Permission:    "DescribeRepositories",
-		Method:        "POST",
-		JsonData:      map[string]string{},
+	"DescribePullThroughCacheRules": {
+		Method:   "POST",
+		JsonData: map[string]string{},
 		Headers: map[string]string{
-			"Content-Type": aws_JSON_1_1,
-			"x-amz-target": "AmazonEC2ContainerRegistry_V20150921.DescribeRepositories",
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonEC2ContainerRegistry_V20150921.DescribePullThroughCacheRules",
 		},
+		Permission: "DescribePullThroughCacheRules",
+	},
+	"DescribeRegistry": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonEC2ContainerRegistry_V20150921.DescribeRegistry",
+		},
+		Permission: "DescribeRegistry",
+	},
+	"DescribeRepositories": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonEC2ContainerRegistry_V20150921.DescribeRepositories",
+		},
+		Permission: "DescribeRepositories",
 	},
 	"GetAuthorizationToken": {
-		ServiceSuffix: "",
-		Permission:    "GetAuthorizationToken",
-		Method:        "POST",
-		JsonData:      map[string]string{},
+		Method:   "POST",
+		JsonData: map[string]string{},
 		Headers: map[string]string{
-			"Content-Type": aws_JSON_1_1,
-			"x-amz-target": "AmazonEC2ContainerRegistry_V20150921.GetAuthorizationToken",
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonEC2ContainerRegistry_V20150921.GetAuthorizationToken",
 		},
+		Permission: "GetAuthorizationToken",
+	},
+	"GetRegistryPolicy": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonEC2ContainerRegistry_V20150921.GetRegistryPolicy",
+		},
+		Permission: "GetRegistryPolicy",
+	},
+	"GetRegistryScanningConfiguration": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonEC2ContainerRegistry_V20150921.GetRegistryScanningConfiguration",
+		},
+		Permission: "GetRegistryScanningConfiguration",
+	},
+	"PutRegistryScanningConfiguration": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonEC2ContainerRegistry_V20150921.PutRegistryScanningConfiguration",
+		},
+		Permission: "PutRegistryScanningConfiguration",
 	},
 
-	// extra policies
+	// extra
 	"DescribeImages": {
 		Method: "POST",
 		Headers: map[string]string{

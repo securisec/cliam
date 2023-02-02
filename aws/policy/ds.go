@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// DSPolicies policy
 var DSPolicies = map[string]Service{
 	"DescribeDirectories": {
 		Method:   "POST",
@@ -114,6 +115,18 @@ var DSPolicies = map[string]Service{
 			aws_X_AMZ_TARGET:           "DirectoryService_20150416.DescribeRegions",
 		},
 		Permission:             "DescribeRegions",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "DirectoryId",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "directory_id",
+	},
+	"DescribeSettings": {
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "DirectoryService_20150416.DescribeSettings",
+		},
+		Permission:             "DescribeSettings",
 		IsExtra:                true,
 		ExtraComponentBodyKey:  "DirectoryId",
 		ExtraComponentLocation: "json",

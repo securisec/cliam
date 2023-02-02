@@ -1,8 +1,20 @@
+// Package policy ..
 package policy
 
 import "github.com/securisec/cliam/shared"
 
+// AccessAnalyzersPolicies policy
 var AccessAnalyzersPolicies = map[string]Service{
+	"ListAnalyzers": {
+		Method:        "GET",
+		ServiceSuffix: "analyzer",
+		Permission:    "ListAnalyzers",
+	},
+	"ListPolicyGenerations": {
+		Method:        "GET",
+		ServiceSuffix: "policy/generation",
+		Permission:    "ListPolicyGenerations",
+	},
 
 	// extra
 	"GetAnalyzer": {

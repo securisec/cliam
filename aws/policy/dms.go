@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// DMSPolicies policy
 var DMSPolicies = map[string]Service{
 	"DescribeAccountAttributes": {
 		Method:   "POST",
@@ -74,6 +75,60 @@ var DMSPolicies = map[string]Service{
 			aws_X_AMZ_TARGET:           "AmazonDMSv20160101.DescribeEventSubscriptions",
 		},
 		Permission: "DescribeEventSubscriptions",
+	},
+	"DescribeEvents": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonDMSv20160101.DescribeEvents",
+		},
+		Permission: "DescribeEvents",
+	},
+	"DescribeFleetAdvisorCollectors": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonDMSv20160101.DescribeFleetAdvisorCollectors",
+		},
+		Permission: "DescribeFleetAdvisorCollectors",
+	},
+	"DescribeFleetAdvisorDatabases": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonDMSv20160101.DescribeFleetAdvisorDatabases",
+		},
+		Permission: "DescribeFleetAdvisorDatabases",
+	},
+	"DescribeFleetAdvisorLsaAnalysis": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonDMSv20160101.DescribeFleetAdvisorLsaAnalysis",
+		},
+		Permission: "DescribeFleetAdvisorLsaAnalysis",
+	},
+	"DescribeFleetAdvisorSchemaObjectSummary": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonDMSv20160101.DescribeFleetAdvisorSchemaObjectSummary",
+		},
+		Permission: "DescribeFleetAdvisorSchemaObjectSummary",
+	},
+	"DescribeFleetAdvisorSchemas": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonDMSv20160101.DescribeFleetAdvisorSchemas",
+		},
+		Permission: "DescribeFleetAdvisorSchemas",
 	},
 	"DescribeOrderableReplicationInstances": {
 		Method:   "POST",
@@ -155,6 +210,24 @@ var DMSPolicies = map[string]Service{
 			aws_X_AMZ_TARGET:           "AmazonDMSv20160101.ListTagsForResource",
 		},
 		Permission: "ListTagsForResource",
+	},
+	"RunFleetAdvisorLsaAnalysis": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonDMSv20160101.RunFleetAdvisorLsaAnalysis",
+		},
+		Permission: "RunFleetAdvisorLsaAnalysis",
+	},
+	"UpdateSubscriptionsToEventBridge": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonDMSv20160101.UpdateSubscriptionsToEventBridge",
+		},
+		Permission: "UpdateSubscriptionsToEventBridge",
 	},
 
 	// extra

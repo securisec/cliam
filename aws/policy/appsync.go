@@ -1,6 +1,6 @@
 package policy
 
-// AppSyncPolicies policies
+// AppSyncPolicies policy
 var AppSyncPolicies = map[string]Service{
 	"ListDomainNames": {
 		Method:        "GET",

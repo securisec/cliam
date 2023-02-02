@@ -2,12 +2,22 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// DynamoDBPolicies policy
 var DynamoDBPolicies = map[string]Service{
-	"DescribeLimits": {
+	"DescribeEndpoints": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_JSON,
+			aws_X_AMZ_TARGET:           "DynamoDB_20120810.DescribeEndpoints",
+		},
+		Permission: "DescribeEndpoints",
+	},
+	"DescribeLimits": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "DynamoDB_20120810.DescribeLimits",
 		},
 		Permission: "DescribeLimits",
@@ -48,6 +58,15 @@ var DynamoDBPolicies = map[string]Service{
 		},
 		Permission: "ListGlobalTables",
 	},
+	"ListImports": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "DynamoDB_20120810.ListImports",
+		},
+		Permission: "ListImports",
+	},
 	"ListTables": {
 		Method:   "POST",
 		JsonData: map[string]string{},
@@ -58,7 +77,7 @@ var DynamoDBPolicies = map[string]Service{
 		Permission: "ListTables",
 	},
 
-	// extras
+	// extra
 	"DescribeBackup": {
 		Method: "POST",
 		Headers: map[string]string{
@@ -130,6 +149,18 @@ var DynamoDBPolicies = map[string]Service{
 		ExtraComponentBodyKey:  "GlobalTableName",
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "global_table_name",
+	},
+	"DescribeImport": {
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
+			aws_X_AMZ_TARGET:           "DynamoDB_20120810.DescribeImport",
+		},
+		Permission:             "DescribeImport",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ImportArn",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "import_arn",
 	},
 	"DescribeKinesisStreamingDestination": {
 		Method: "POST",

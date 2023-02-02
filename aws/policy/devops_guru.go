@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// DevopsGuruPolicies policy
 var DevopsGuruPolicies = map[string]Service{
 	"DescribeAccountHealth": {
 		Method:        "GET",
@@ -44,6 +45,15 @@ var DevopsGuruPolicies = map[string]Service{
 		Method:        "GET",
 		ServiceSuffix: "cost-estimation",
 		Permission:    "GetCostEstimation",
+	},
+	"ListMonitoredResources": {
+		Method:        "POST",
+		ServiceSuffix: "monitoredResources",
+		JsonData:      map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+		},
+		Permission: "ListMonitoredResources",
 	},
 	"ListNotificationChannels": {
 		Method:        "POST",
@@ -139,6 +149,21 @@ var DevopsGuruPolicies = map[string]Service{
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
 		},
 		Permission:             "ListAnomaliesForInsight",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "InsightId",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "insight_id",
+	},
+	"ListAnomalousLogGroups": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "ListAnomalousLogGroups",
+			"Version": "2020-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "ListAnomalousLogGroups",
 		IsExtra:                true,
 		ExtraComponentBodyKey:  "InsightId",
 		ExtraComponentLocation: "form",

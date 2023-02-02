@@ -2,7 +2,17 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// ComprehendPolicies policy
 var ComprehendPolicies = map[string]Service{
+	"DetectEntities": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "Comprehend_20171127.DetectEntities",
+		},
+		Permission: "DetectEntities",
+	},
 	"ListDocumentClassificationJobs": {
 		Method:   "POST",
 		JsonData: map[string]string{},

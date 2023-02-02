@@ -1,10 +1,21 @@
 package policy
 
+// ChimePolicies policy
 var ChimePolicies = map[string]Service{
+	"GetGlobalSettings": {
+		Method:        "GET",
+		ServiceSuffix: "settings",
+		Permission:    "GetGlobalSettings",
+	},
 	"GetMessagingSessionEndpoint": {
 		Method:        "GET",
 		ServiceSuffix: "endpoints/messaging-session",
 		Permission:    "GetMessagingSessionEndpoint",
+	},
+	"GetPhoneNumberSettings": {
+		Method:        "GET",
+		ServiceSuffix: "settings/phone-number",
+		Permission:    "GetPhoneNumberSettings",
 	},
 	"ListAccounts": {
 		Method:        "GET",
@@ -331,6 +342,13 @@ var ChimePolicies = map[string]Service{
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "product_type",
+	},
+	"ListTagsForResource": {
+		ServiceSuffix:          "/tags",
+		Permission:             "ListTagsForResource",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "resource_arn",
 	},
 	"ListUsers": {
 		ServiceSuffix:          "/accounts/{{.account_id}}/users",

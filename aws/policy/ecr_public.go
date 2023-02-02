@@ -2,45 +2,55 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// ECRPublicPolicies policy
 var ECRPublicPolicies = map[string]Service{
-	"DescribeRepositories": {
-		Permission: "DescribeRepositories",
-		Method:     "POST",
-		JsonData:   map[string]string{},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
-			"x-amz-target":             "SpencerFrontendService.DescribeRepositories",
-		},
-	},
 	"DescribeRegistries": {
-		Permission: "DescribeRegistries",
-		Method:     "POST",
-		JsonData:   map[string]string{},
+		Method:   "POST",
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
-			"x-amz-target":             "SpencerFrontendService.DescribeRegistries",
+			aws_X_AMZ_TARGET:           "SpencerFrontendService.DescribeRegistries",
 		},
+		Permission: "DescribeRegistries",
+	},
+	"DescribeRepositories": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "SpencerFrontendService.DescribeRepositories",
+		},
+		Permission: "DescribeRepositories",
 	},
 	"GetAuthorizationToken": {
-		Permission: "GetAuthorizationToken",
-		Method:     "POST",
-		JsonData:   map[string]string{},
+		Method:   "POST",
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
-			"x-amz-target":             "SpencerFrontendService.GetAuthorizationToken",
+			aws_X_AMZ_TARGET:           "SpencerFrontendService.GetAuthorizationToken",
 		},
+		Permission: "GetAuthorizationToken",
 	},
 	"GetRegistryCatalogData": {
-		Permission: "GetRegistryCatalogData",
-		Method:     "POST",
-		JsonData:   map[string]string{},
+		Method:   "POST",
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
-			"x-amz-target":             "SpencerFrontendService.GetRegistryCatalogData",
+			aws_X_AMZ_TARGET:           "SpencerFrontendService.GetRegistryCatalogData",
 		},
+		Permission: "GetRegistryCatalogData",
+	},
+	"PutRegistryCatalogData": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "SpencerFrontendService.PutRegistryCatalogData",
+		},
+		Permission: "PutRegistryCatalogData",
 	},
 
-	// extra policies
+	// extra
 	"DescribeImageTags": {
 		Method: "POST",
 		Headers: map[string]string{

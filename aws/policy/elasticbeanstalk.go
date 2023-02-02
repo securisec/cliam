@@ -2,116 +2,249 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// ElasticBeanStalkPolicies policy
 var ElasticBeanStalkPolicies = map[string]Service{
-	"DescribeApplications": {
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeApplications&Version=2010-12-01",
-		Permission:    "DescribeApplications",
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+	"AbortEnvironmentUpdate": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "AbortEnvironmentUpdate",
+			"Version": "2010-12-01",
 		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "AbortEnvironmentUpdate",
 	},
-	"DescribeApplicationVersions": {
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeApplicationVersions&Version=2010-12-01",
-		Permission:    "DescribeApplicationVersions",
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+	"ComposeEnvironments": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "ComposeEnvironments",
+			"Version": "2010-12-01",
 		},
-	},
-	"DescribeEvents": {
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeEvents&Version=2010-12-01",
-		Permission:    "DescribeEvents",
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
 		},
+		Permission: "ComposeEnvironments",
 	},
 	"DescribeAccountAttributes": {
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=DescribeAccountAttributes&Version=2010-12-01",
-		Permission:    "DescribeAccountAttributes",
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeAccountAttributes",
+			"Version": "2010-12-01",
 		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeAccountAttributes",
+	},
+	"DescribeApplicationVersions": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeApplicationVersions",
+			"Version": "2010-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeApplicationVersions",
+	},
+	"DescribeApplications": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeApplications",
+			"Version": "2010-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeApplications",
+	},
+	"DescribeConfigurationOptions": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeConfigurationOptions",
+			"Version": "2010-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeConfigurationOptions",
+	},
+	"DescribeEnvironmentHealth": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeEnvironmentHealth",
+			"Version": "2010-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeEnvironmentHealth",
+	},
+	"DescribeEnvironmentManagedActionHistory": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeEnvironmentManagedActionHistory",
+			"Version": "2010-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeEnvironmentManagedActionHistory",
+	},
+	"DescribeEnvironmentManagedActions": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeEnvironmentManagedActions",
+			"Version": "2010-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeEnvironmentManagedActions",
+	},
+	"DescribeEnvironmentResources": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeEnvironmentResources",
+			"Version": "2010-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeEnvironmentResources",
+	},
+	"DescribeEnvironments": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeEnvironments",
+			"Version": "2010-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeEnvironments",
+	},
+	"DescribeEvents": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeEvents",
+			"Version": "2010-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeEvents",
+	},
+	"DescribeInstancesHealth": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribeInstancesHealth",
+			"Version": "2010-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribeInstancesHealth",
+	},
+	"DescribePlatformVersion": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "DescribePlatformVersion",
+			"Version": "2010-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "DescribePlatformVersion",
 	},
 	"ListAvailableSolutionStacks": {
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=ListAvailableSolutionStacks&Version=2010-12-01",
-		Permission:    "ListAvailableSolutionStacks",
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "ListAvailableSolutionStacks",
+			"Version": "2010-12-01",
 		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "ListAvailableSolutionStacks",
 	},
 	"ListPlatformBranches": {
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=ListPlatformBranches&Version=2010-12-01",
-		Permission:    "ListPlatformBranches",
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "ListPlatformBranches",
+			"Version": "2010-12-01",
 		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "ListPlatformBranches",
 	},
 	"ListPlatformVersions": {
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=ListPlatformVersions&Version=2010-12-01",
-		Permission:    "ListPlatformVersions",
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
-		},
-	},
-
-	// extra
-	"DescribeInstanceHealth": {
 		Method: "POST",
 		FormData: map[string]string{
-			"Action":  "DescribeInstanceHealth",
-			"Version": "2012-06-01",
+			"Action":  "ListPlatformVersions",
+			"Version": "2010-12-01",
 		},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
 		},
-		Permission:             "DescribeInstanceHealth",
-		IsExtra:                true,
-		ExtraComponentBodyKey:  "LoadBalancerName",
-		ExtraComponentLocation: "form",
-		ExtraCommandLineFlag:   "load_balancer_name",
+		Permission: "ListPlatformVersions",
 	},
-	"DescribeLoadBalancerAttributes": {
+	"RebuildEnvironment": {
 		Method: "POST",
 		FormData: map[string]string{
-			"Action":  "DescribeLoadBalancerAttributes",
-			"Version": "2012-06-01",
+			"Action":  "RebuildEnvironment",
+			"Version": "2010-12-01",
 		},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
 		},
-		Permission:             "DescribeLoadBalancerAttributes",
-		IsExtra:                true,
-		ExtraComponentBodyKey:  "LoadBalancerName",
-		ExtraComponentLocation: "form",
-		ExtraCommandLineFlag:   "load_balancer_name",
+		Permission: "RebuildEnvironment",
 	},
-	"DescribeTags": {
+	"RestartAppServer": {
 		Method: "POST",
 		FormData: map[string]string{
-			"Action":  "DescribeTags",
-			"Version": "2012-06-01",
+			"Action":  "RestartAppServer",
+			"Version": "2010-12-01",
 		},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
 		},
-		Permission:             "DescribeTags",
-		IsExtra:                true,
-		ExtraComponentBodyKey:  "LoadBalancerNames",
-		ExtraComponentLocation: "form",
-		ExtraCommandLineFlag:   "load_balancer_names",
+		Permission: "RestartAppServer",
+	},
+	"SwapEnvironmentCNAMEs": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "SwapEnvironmentCNAMEs",
+			"Version": "2010-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "SwapEnvironmentCNAMEs",
+	},
+	"TerminateEnvironment": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "TerminateEnvironment",
+			"Version": "2010-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "TerminateEnvironment",
+	},
+	"UpdateEnvironment": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "UpdateEnvironment",
+			"Version": "2010-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "UpdateEnvironment",
 	},
 
 	// extra

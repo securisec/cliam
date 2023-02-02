@@ -2,14 +2,14 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// DynamodbStreamsPolicies policy
 var DynamodbStreamsPolicies = map[string]Service{
 	"ListStreams": {
-		ServiceSuffix: "",
-		Method:        "POST",
-		JsonData:      map[string]string{},
+		Method:   "POST",
+		JsonData: map[string]string{},
 		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "DynamoDBStreams_20120810.ListStreams",
-			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_JSON,
 		},
 		Permission: "ListStreams",
 	},

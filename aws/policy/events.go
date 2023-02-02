@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// EventsPolicies policy
 var EventsPolicies = map[string]Service{
 	"DescribeEventBus": {
 		Method:   "POST",
@@ -48,6 +49,15 @@ var EventsPolicies = map[string]Service{
 		},
 		Permission: "ListEventBuses",
 	},
+	"ListEventSources": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AWSEvents.ListEventSources",
+		},
+		Permission: "ListEventSources",
+	},
 	"ListReplays": {
 		Method:   "POST",
 		JsonData: map[string]string{},
@@ -66,14 +76,23 @@ var EventsPolicies = map[string]Service{
 		},
 		Permission: "ListRules",
 	},
-	"ListEndpoints": {
+	"PutPermission": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
-			aws_X_AMZ_TARGET:           "AWSEvents.ListEndpoints",
+			aws_X_AMZ_TARGET:           "AWSEvents.PutPermission",
 		},
-		Permission: "ListEndpoints",
+		Permission: "PutPermission",
+	},
+	"RemovePermission": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AWSEvents.RemovePermission",
+		},
+		Permission: "RemovePermission",
 	},
 
 	// extra

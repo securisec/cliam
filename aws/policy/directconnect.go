@@ -2,7 +2,35 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var DirectconnectPolicies = map[string]Service{
+// DirectConnectPolicies policy
+var DirectConnectPolicies = map[string]Service{
+	"ConfirmCustomerAgreement": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "OvertureService.ConfirmCustomerAgreement",
+		},
+		Permission: "ConfirmCustomerAgreement",
+	},
+	"DeleteBGPPeer": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "OvertureService.DeleteBGPPeer",
+		},
+		Permission: "DeleteBGPPeer",
+	},
+	"DeleteDirectConnectGatewayAssociation": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "OvertureService.DeleteDirectConnectGatewayAssociation",
+		},
+		Permission: "DeleteDirectConnectGatewayAssociation",
+	},
 	"DescribeConnections": {
 		Method:   "POST",
 		JsonData: map[string]string{},
@@ -110,6 +138,15 @@ var DirectconnectPolicies = map[string]Service{
 			aws_X_AMZ_TARGET:           "OvertureService.ListVirtualInterfaceTestHistory",
 		},
 		Permission: "ListVirtualInterfaceTestHistory",
+	},
+	"UpdateDirectConnectGatewayAssociation": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "OvertureService.UpdateDirectConnectGatewayAssociation",
+		},
+		Permission: "UpdateDirectConnectGatewayAssociation",
 	},
 
 	// extra

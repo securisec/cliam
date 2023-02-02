@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// AuditManagerPolicies policy
 var AuditManagerPolicies = map[string]Service{
 	"DeregisterAccount": {
 		Method:        "POST",

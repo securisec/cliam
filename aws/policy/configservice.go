@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// ConfigServicePolicies policy
 var ConfigServicePolicies = map[string]Service{
 	"DescribeAggregationAuthorizations": {
 		Method:   "POST",
@@ -165,6 +166,15 @@ var ConfigServicePolicies = map[string]Service{
 		},
 		Permission: "DescribeRetentionConfigurations",
 	},
+	"GetComplianceDetailsByResource": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "StarlingDoveService.GetComplianceDetailsByResource",
+		},
+		Permission: "GetComplianceDetailsByResource",
+	},
 	"GetComplianceSummaryByConfigRule": {
 		Method:   "POST",
 		JsonData: map[string]string{},
@@ -201,6 +211,24 @@ var ConfigServicePolicies = map[string]Service{
 		},
 		Permission: "GetDiscoveredResourceCounts",
 	},
+	"ListConformancePackComplianceScores": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "StarlingDoveService.ListConformancePackComplianceScores",
+		},
+		Permission: "ListConformancePackComplianceScores",
+	},
+	"ListResourceEvaluations": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "StarlingDoveService.ListResourceEvaluations",
+		},
+		Permission: "ListResourceEvaluations",
+	},
 	"ListStoredQueries": {
 		Method:   "POST",
 		JsonData: map[string]string{},
@@ -209,6 +237,15 @@ var ConfigServicePolicies = map[string]Service{
 			aws_X_AMZ_TARGET:           "StarlingDoveService.ListStoredQueries",
 		},
 		Permission: "ListStoredQueries",
+	},
+	"StartConfigRulesEvaluation": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "StarlingDoveService.StartConfigRulesEvaluation",
+		},
+		Permission: "StartConfigRulesEvaluation",
 	},
 
 	// extra
@@ -403,6 +440,18 @@ var ConfigServicePolicies = map[string]Service{
 		ExtraComponentBodyKey:  "OrganizationConfigRuleName",
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "organization_config_rule_name",
+	},
+	"GetResourceEvaluationSummary": {
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "StarlingDoveService.GetResourceEvaluationSummary",
+		},
+		Permission:             "GetResourceEvaluationSummary",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ResourceEvaluationId",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "resource_evaluation_id",
 	},
 	"GetStoredQuery": {
 		Method: "POST",

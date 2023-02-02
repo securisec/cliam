@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// BackupPolicies policy
 var BackupPolicies = map[string]Service{
 	"DescribeGlobalSettings": {
 		Method:        "GET",
@@ -12,6 +13,11 @@ var BackupPolicies = map[string]Service{
 		Method:        "GET",
 		ServiceSuffix: "account-settings",
 		Permission:    "DescribeRegionSettings",
+	},
+	"GetSupportedResourceTypes": {
+		Method:        "GET",
+		ServiceSuffix: "supported-resource-types",
+		Permission:    "GetSupportedResourceTypes",
 	},
 	"ListBackupJobs": {
 		Method:        "GET",
@@ -42,6 +48,11 @@ var BackupPolicies = map[string]Service{
 		Method:        "GET",
 		ServiceSuffix: "audit/frameworks",
 		Permission:    "ListFrameworks",
+	},
+	"ListLegalHolds": {
+		Method:        "GET",
+		ServiceSuffix: "legal-holds/",
+		Permission:    "ListLegalHolds",
 	},
 	"ListProtectedResources": {
 		Method:        "GET",
@@ -164,6 +175,13 @@ var BackupPolicies = map[string]Service{
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "backup_vault_name",
 	},
+	"GetLegalHold": {
+		ServiceSuffix:          "/legal-holds/{{.legal_hold_id}}/",
+		Permission:             "GetLegalHold",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "legal_hold_id",
+	},
 	"ListBackupPlanVersions": {
 		ServiceSuffix:          "/backup/plans/{{.backup_plan_id}}/versions/",
 		Permission:             "ListBackupPlanVersions",
@@ -184,6 +202,13 @@ var BackupPolicies = map[string]Service{
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "backup_vault_name",
+	},
+	"ListRecoveryPointsByLegalHold": {
+		ServiceSuffix:          "/legal-holds/{{.legal_hold_id}}/recovery-points",
+		Permission:             "ListRecoveryPointsByLegalHold",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "legal_hold_id",
 	},
 	"ListRecoveryPointsByResource": {
 		ServiceSuffix:          "/resources/{{.resource_arn}}/recovery-points/",

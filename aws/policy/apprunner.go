@@ -2,12 +2,13 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// AppRunnerPolicies policy
 var AppRunnerPolicies = map[string]Service{
 	"ListAutoScalingConfigurations": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: "application/x-amz-json-1.0",
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AppRunner.ListAutoScalingConfigurations",
 		},
 		Permission: "ListAutoScalingConfigurations",
@@ -16,7 +17,7 @@ var AppRunnerPolicies = map[string]Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: "application/x-amz-json-1.0",
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AppRunner.ListConnections",
 		},
 		Permission: "ListConnections",
@@ -25,7 +26,7 @@ var AppRunnerPolicies = map[string]Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: "application/x-amz-json-1.0",
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AppRunner.ListObservabilityConfigurations",
 		},
 		Permission: "ListObservabilityConfigurations",
@@ -34,7 +35,7 @@ var AppRunnerPolicies = map[string]Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: "application/x-amz-json-1.0",
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AppRunner.ListServices",
 		},
 		Permission: "ListServices",
@@ -43,10 +44,19 @@ var AppRunnerPolicies = map[string]Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: "application/x-amz-json-1.0",
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AppRunner.ListVpcConnectors",
 		},
 		Permission: "ListVpcConnectors",
+	},
+	"ListVpcIngressConnections": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AppRunner.ListVpcIngressConnections",
+		},
+		Permission: "ListVpcIngressConnections",
 	},
 
 	// extra
@@ -109,6 +119,18 @@ var AppRunnerPolicies = map[string]Service{
 		ExtraComponentBodyKey:  "VpcConnectorArn",
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "vpc_connector_arn",
+	},
+	"DescribeVpcIngressConnection": {
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
+			aws_X_AMZ_TARGET:           "AppRunner.DescribeVpcIngressConnection",
+		},
+		Permission:             "DescribeVpcIngressConnection",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "VpcIngressConnectionArn",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "vpc_ingress_connection_arn",
 	},
 	"ListOperations": {
 		Method: "POST",

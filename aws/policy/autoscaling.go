@@ -2,7 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var AutoscalingPolicies = map[string]Service{
+// AutoScalingPolicies policy
+var AutoScalingPolicies = map[string]Service{
 	"DescribeAccountLimits": {
 		Method: "POST",
 		FormData: map[string]string{

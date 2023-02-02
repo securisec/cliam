@@ -7,33 +7,42 @@ import (
 )
 
 const (
-	LakeFormation         = "lakeformation"
 	AccessAnalyzers       = "access-analyzer"
 	ACM                   = "acm"
 	APIGateway            = "apigateway"
 	AppFlow               = "appflow"
 	AppRunner             = "apprunner"
-	Appstream2            = "appstream2"
+	AppStream             = "appstream"
+	AppSync               = "appsync"
 	Athena                = "athena"
 	AuditManager          = "auditmanager"
-	Autoscaling           = "autoscaling"
+	AutoScaling           = "autoscaling"
 	Backup                = "backup"
+	BackupGateway         = "backup-gateway"
+	Batch                 = "batch"
 	Chime                 = "chime"
 	CloudDirectory        = "clouddirectory"
-	Cloudformation        = "cloudformation"
-	Cloudfront            = "cloudfront"
-	Cloudsearch           = "cloudsearch"
-	Cloudtrail            = "cloudtrail"
-	Codebuild             = "codebuild"
-	Codecommit            = "codecommit"
+	CloudFormation        = "cloudformation"
+	CloudFront            = "cloudfront"
+	CloudSearch           = "cloudsearch"
+	CloudTrail            = "cloudtrail"
+	CodeArtifact          = "codeartifact"
+	CodeBuild             = "codebuild"
+	CodeCommit            = "codecommit"
 	CodeDeploy            = "codedeploy"
+	CognitoIdentity       = "cognito-identity"
+	CognitoIDP            = "cognito-idp"
+	CognitoSync           = "cognito-sync"
 	Comprehend            = "comprehend"
+	ComputeOptimizer      = "compute-optimizer"
 	ConfigService         = "config"
 	DataBrew              = "databrew"
+	DataExchange          = "dataexchange"
 	DeviceFarm            = "devicefarm"
 	DevopsGuru            = "devops-guru"
-	Directconnect         = "directconnect"
+	DirectConnect         = "directconnect"
 	DMS                   = "dms"
+	DS                    = "ds"
 	Dynamodb              = "dynamodb"
 	DynamodbStreams       = "streams.dynamodb"
 	EC2                   = "ec2"
@@ -50,6 +59,7 @@ const (
 	Events                = "events"
 	Forecase              = "forecast"
 	FraudDetector         = "frauddetector"
+	FSX                   = "fsx"
 	GameLift              = "gamelift"
 	Glue                  = "glue"
 	Grafana               = "grafana"
@@ -60,12 +70,14 @@ const (
 	ImageBuilder          = "imagebuilder"
 	Inspector             = "inspector"
 	Inspector2            = "inspector2"
+	IOT                   = "iot"
 	IotWireless           = "api.iotwireless"
 	Kafka                 = "kafka"
 	KafkaConnect          = "kafkaconnect"
 	Kinesis               = "kinesis"
 	KinesisVideo          = "kinesisvideo"
 	KMS                   = "kms"
+	LakeFormation         = "lakeformation"
 	Lambda                = "lambda"
 	LicenseManager        = "license-manager"
 	Lightsail             = "lightsail"
@@ -79,10 +91,12 @@ const (
 	MigrationHubStratergy = "migrationhub-strategy"
 	MQ                    = "mq"
 	NetworkFirewall       = "network-firewall"
+	Opensearch            = "opensearch"
 	Organizations         = "organizations"
 	Outposts              = "outposts"
 	Panorama              = "panorama"
 	Personalize           = "personalize"
+	Polly                 = "polly"
 	Proton                = "proton"
 	RDS                   = "rds"
 	Redshift              = "redshift"
@@ -94,6 +108,7 @@ const (
 	SecretsManager        = "secretsmanager"
 	SecurityHub           = "securityhub"
 	ServiceCatalog        = "servicecatalog"
+	ServiceQuotas         = "servicequotas"
 	Shield                = "shield"
 	SMS                   = "sms"
 	Snowball              = "snowball"
@@ -113,59 +128,45 @@ const (
 	Workspaces            = "workspaces"
 	WorkspacesWeb         = "workspaces-web"
 	Xray                  = "xray"
-	ServiceQuotas         = "servicequotas"
-	IOT                   = "iot"
-	BackupGateway         = "backup-gateway"
-	ComputeOptimizer      = "compute-optimizer"
-	Batch                 = "batch"
-	DataExchange          = "dataexchange"
-	DS                    = "ds"
-	FSX                   = "fsx"
-	CognitoIDP            = "cognito-idp"
-	CognitoIdentity       = "cognito-identity"
-	CognitoSync           = "cognito-sync"
-	Opensearch            = "opensearch"
-	Polly                 = "polly"
-	CodeArtifact          = "codeartifact"
-	AppSync               = "appsync"
 )
 
 var Services = map[string]map[string]policy.Service{
 	AccessAnalyzers:       policy.AccessAnalyzersPolicies,
-	FSX:                   policy.FSXPolicies,
-	DataExchange:          policy.DataExchangePolicies,
-	DS:                    policy.DSPolicies,
-	ComputeOptimizer:      policy.ComputeOptimizerPolicies,
-	IOT:                   policy.IOTPolicies,
-	BackupGateway:         policy.BackupGatewayPolicies,
-	ServiceQuotas:         policy.ServiceQuotasPolicies,
-	Batch:                 policy.BatchPolicies,
-	LakeFormation:         policy.LakeFormationPolicies,
 	ACM:                   policy.ACMPolicies,
 	APIGateway:            policy.APIGatewayPolicies,
 	AppFlow:               policy.AppFlowPolicies,
 	AppRunner:             policy.AppRunnerPolicies,
-	Appstream2:            policy.Appstream2Policies,
+	AppStream:             policy.AppStreamPolicies,
+	AppSync:               policy.AppSyncPolicies,
 	Athena:                policy.AthenaPolicies,
 	AuditManager:          policy.AuditManagerPolicies,
-	Autoscaling:           policy.AutoscalingPolicies,
+	AutoScaling:           policy.AutoScalingPolicies,
 	Backup:                policy.BackupPolicies,
+	BackupGateway:         policy.BackupGatewayPolicies,
+	Batch:                 policy.BatchPolicies,
 	Chime:                 policy.ChimePolicies,
 	CloudDirectory:        policy.CloudDirectoryPolicies,
-	Cloudformation:        policy.CloudformationPolicies,
-	Cloudfront:            policy.CloudfrontPolicies,
-	Cloudsearch:           policy.CloudsearchPolicies,
-	Cloudtrail:            policy.CloudtrailPolicies,
-	Codebuild:             policy.CodebuildPolicies,
-	Codecommit:            policy.CodecommitPolicies,
+	CloudFormation:        policy.CloudFormationPolicies,
+	CloudFront:            policy.CloudFrontPolicies,
+	CloudSearch:           policy.CloudSearchPolicies,
+	CloudTrail:            policy.CloudTrailPolicies,
+	CodeArtifact:          policy.CodeArtifactPolicies,
+	CodeBuild:             policy.CodeBuildPolicies,
+	CodeCommit:            policy.CodeCommitPolicies,
 	CodeDeploy:            policy.CodeDeployPolicies,
+	CognitoIdentity:       policy.CognitoIdentityPolicies,
+	CognitoIDP:            policy.CognitoIDPPolicies,
+	CognitoSync:           policy.CognitoSyncPolicies,
 	Comprehend:            policy.ComprehendPolicies,
+	ComputeOptimizer:      policy.ComputeOptimizerPolicies,
 	ConfigService:         policy.ConfigServicePolicies,
 	DataBrew:              policy.DataBrewPolicies,
+	DataExchange:          policy.DataExchangePolicies,
 	DeviceFarm:            policy.DeviceFarmPolicies,
 	DevopsGuru:            policy.DevopsGuruPolicies,
-	Directconnect:         policy.DirectconnectPolicies,
+	DirectConnect:         policy.DirectConnectPolicies,
 	DMS:                   policy.DMSPolicies,
+	DS:                    policy.DSPolicies,
 	Dynamodb:              policy.DynamoDBPolicies,
 	DynamodbStreams:       policy.DynamodbStreamsPolicies,
 	EC2:                   policy.EC2Policies,
@@ -182,6 +183,7 @@ var Services = map[string]map[string]policy.Service{
 	Events:                policy.EventsPolicies,
 	Forecase:              policy.ForecastPolicies,
 	FraudDetector:         policy.FraudDetectorPolicies,
+	FSX:                   policy.FSXPolicies,
 	GameLift:              policy.GameLiftPolicies,
 	Glue:                  policy.GluePolicies,
 	Grafana:               policy.GrafanaPolicies,
@@ -192,12 +194,14 @@ var Services = map[string]map[string]policy.Service{
 	ImageBuilder:          policy.ImageBuilderPolicies,
 	Inspector:             policy.InspectorPolicies,
 	Inspector2:            policy.Inspector2Policies,
+	IOT:                   policy.IOTPolicies,
 	IotWireless:           policy.IotWirelessPolicies,
 	Kafka:                 policy.KafkaPolicies,
 	KafkaConnect:          policy.KafkaConnectPolicies,
 	Kinesis:               policy.KinesisPolicies,
 	KinesisVideo:          policy.KinesisVideoPolicies,
 	KMS:                   policy.KMSPolicies,
+	LakeFormation:         policy.LakeFormationPolicies,
 	Lambda:                policy.LambdaPolicies,
 	LicenseManager:        policy.LicenseManagerPolicies,
 	Lightsail:             policy.LightsailPolicies,
@@ -211,10 +215,12 @@ var Services = map[string]map[string]policy.Service{
 	MigrationHubStratergy: policy.MigrationHubStratergyPolicies,
 	MQ:                    policy.MQPolicies,
 	NetworkFirewall:       policy.NetworkFirewallPolicies,
+	Opensearch:            policy.OpensearchPolicies,
 	Organizations:         policy.OrganizationsPolicies,
 	Outposts:              policy.OutpostsPolicies,
 	Panorama:              policy.PanoramaPolicies,
 	Personalize:           policy.PersonalizePolicies,
+	Polly:                 policy.PollyPolicies,
 	Proton:                policy.ProtonPolicies,
 	RDS:                   policy.RDSPolicies,
 	Redshift:              policy.RedshiftPolicies,
@@ -226,6 +232,7 @@ var Services = map[string]map[string]policy.Service{
 	SecretsManager:        policy.SecretsManagerPolicies,
 	SecurityHub:           policy.SecurityHubPolicies,
 	ServiceCatalog:        policy.ServiceCatalogPolicies,
+	ServiceQuotas:         policy.ServiceQuotasPolicies,
 	Shield:                policy.ShieldPolicies,
 	SMS:                   policy.SMSPolicies,
 	Snowball:              policy.SnowballPolicies,
@@ -245,13 +252,6 @@ var Services = map[string]map[string]policy.Service{
 	Workspaces:            policy.WorkspacesPolicies,
 	WorkspacesWeb:         policy.WorkspacesWebPolicies,
 	Xray:                  policy.XrayPolicies,
-	CognitoIDP:            policy.CognitoIDPPolicies,
-	CognitoSync:           policy.CognitoSyncPolicies,
-	CognitoIdentity:       policy.CognitoIdentityPolicies,
-	Opensearch:            policy.OpensearchPolicies,
-	Polly:                 policy.PollyPolicies,
-	CodeArtifact:          policy.CodeArtifactPolicies,
-	AppSync:               policy.AppSyncPolicies,
 }
 
 // GetAWSResources returns a list of AWS services

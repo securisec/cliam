@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// CognitoSyncPolicies policy
 var CognitoSyncPolicies = map[string]Service{
 	"ListIdentityPoolUsage": {
 		Method:        "GET",

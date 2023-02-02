@@ -2,86 +2,124 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// ECSPolicies policy
 var ECSPolicies = map[string]Service{
-	"DescribeClusters": {
-		ServiceSuffix: "",
-		Method:        "POST",
-		JsonData:      map[string]string{},
+	"DescribeCapacityProviders": {
+		Method:   "POST",
+		JsonData: map[string]string{},
 		Headers: map[string]string{
-			"Content-Type": aws_JSON_1_1,
-			"x-amz-target": "AmazonEC2ContainerServiceV20141113.DescribeClusters",
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonEC2ContainerServiceV20141113.DescribeCapacityProviders",
+		},
+		Permission: "DescribeCapacityProviders",
+	},
+	"DescribeClusters": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonEC2ContainerServiceV20141113.DescribeClusters",
 		},
 		Permission: "DescribeClusters",
 	},
-	"ListAccountSettings": {
-		ServiceSuffix: "",
-		Method:        "POST",
-		JsonData:      map[string]string{},
+	"DiscoverPollEndpoint": {
+		Method:   "POST",
+		JsonData: map[string]string{},
 		Headers: map[string]string{
-			"Content-Type": aws_JSON_1_1,
-			"x-amz-target": "AmazonEC2ContainerServiceV20141113.ListAccountSettings",
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonEC2ContainerServiceV20141113.DiscoverPollEndpoint",
+		},
+		Permission: "DiscoverPollEndpoint",
+	},
+	"ListAccountSettings": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonEC2ContainerServiceV20141113.ListAccountSettings",
 		},
 		Permission: "ListAccountSettings",
 	},
 	"ListClusters": {
-		ServiceSuffix: "",
-		Method:        "POST",
-		JsonData:      map[string]string{},
+		Method:   "POST",
+		JsonData: map[string]string{},
 		Headers: map[string]string{
-			"Content-Type": aws_JSON_1_1,
-			"x-amz-target": "AmazonEC2ContainerServiceV20141113.ListClusters",
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonEC2ContainerServiceV20141113.ListClusters",
 		},
 		Permission: "ListClusters",
 	},
 	"ListContainerInstances": {
-		ServiceSuffix: "",
-		Method:        "POST",
-		JsonData:      map[string]string{},
+		Method:   "POST",
+		JsonData: map[string]string{},
 		Headers: map[string]string{
-			"Content-Type": aws_JSON_1_1,
-			"x-amz-target": "AmazonEC2ContainerServiceV20141113.ListContainerInstances",
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonEC2ContainerServiceV20141113.ListContainerInstances",
 		},
 		Permission: "ListContainerInstances",
 	},
 	"ListServices": {
-		ServiceSuffix: "",
-		Method:        "POST",
-		JsonData:      map[string]string{},
+		Method:   "POST",
+		JsonData: map[string]string{},
 		Headers: map[string]string{
-			"Content-Type": aws_JSON_1_1,
-			"x-amz-target": "AmazonEC2ContainerServiceV20141113.ListServices",
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonEC2ContainerServiceV20141113.ListServices",
 		},
 		Permission: "ListServices",
 	},
 	"ListTaskDefinitionFamilies": {
-		ServiceSuffix: "",
-		Method:        "POST",
-		JsonData:      map[string]string{},
+		Method:   "POST",
+		JsonData: map[string]string{},
 		Headers: map[string]string{
-			"Content-Type": aws_JSON_1_1,
-			"x-amz-target": "AmazonEC2ContainerServiceV20141113.ListTaskDefinitionFamilies",
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonEC2ContainerServiceV20141113.ListTaskDefinitionFamilies",
 		},
 		Permission: "ListTaskDefinitionFamilies",
 	},
 	"ListTaskDefinitions": {
-		ServiceSuffix: "",
-		Method:        "POST",
-		JsonData:      map[string]string{},
+		Method:   "POST",
+		JsonData: map[string]string{},
 		Headers: map[string]string{
-			"Content-Type": aws_JSON_1_1,
-			"x-amz-target": "AmazonEC2ContainerServiceV20141113.ListTaskDefinitions",
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonEC2ContainerServiceV20141113.ListTaskDefinitions",
 		},
 		Permission: "ListTaskDefinitions",
 	},
 	"ListTasks": {
-		ServiceSuffix: "",
-		Method:        "POST",
-		JsonData:      map[string]string{},
+		Method:   "POST",
+		JsonData: map[string]string{},
 		Headers: map[string]string{
-			"Content-Type": aws_JSON_1_1,
-			"x-amz-target": "AmazonEC2ContainerServiceV20141113.ListTasks",
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonEC2ContainerServiceV20141113.ListTasks",
 		},
 		Permission: "ListTasks",
+	},
+	"RegisterContainerInstance": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonEC2ContainerServiceV20141113.RegisterContainerInstance",
+		},
+		Permission: "RegisterContainerInstance",
+	},
+	"SubmitContainerStateChange": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonEC2ContainerServiceV20141113.SubmitContainerStateChange",
+		},
+		Permission: "SubmitContainerStateChange",
+	},
+	"SubmitTaskStateChange": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonEC2ContainerServiceV20141113.SubmitTaskStateChange",
+		},
+		Permission: "SubmitTaskStateChange",
 	},
 
 	// extra
@@ -133,6 +171,18 @@ var ECSPolicies = map[string]Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "tasks",
 	},
+	"GetTaskProtection": {
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonEC2ContainerServiceV20141113.GetTaskProtection",
+		},
+		Permission:             "GetTaskProtection",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "cluster",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "cluster",
+	},
 	"ListAttributes": {
 		Method: "POST",
 		Headers: map[string]string{
@@ -144,6 +194,18 @@ var ECSPolicies = map[string]Service{
 		ExtraComponentBodyKey:  "targetType",
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "target_type",
+	},
+	"ListServicesByNamespace": {
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonEC2ContainerServiceV20141113.ListServicesByNamespace",
+		},
+		Permission:             "ListServicesByNamespace",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "namespace",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "namespace",
 	},
 	"ListTagsForResource": {
 		Method: "POST",

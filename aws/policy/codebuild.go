@@ -2,7 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var CodebuildPolicies = map[string]Service{
+// CodeBuildPolicies policy
+var CodeBuildPolicies = map[string]Service{
 	"ListBuildBatches": {
 		Method:   "POST",
 		JsonData: map[string]string{},
@@ -75,6 +76,15 @@ var CodebuildPolicies = map[string]Service{
 		},
 		Permission: "ListSharedProjects",
 	},
+	"ListSharedReportGroups": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "CodeBuild_20161006.ListSharedReportGroups",
+		},
+		Permission: "ListSharedReportGroups",
+	},
 	"ListSourceCredentials": {
 		Method:   "POST",
 		JsonData: map[string]string{},
@@ -83,6 +93,24 @@ var CodebuildPolicies = map[string]Service{
 			aws_X_AMZ_TARGET:           "CodeBuild_20161006.ListSourceCredentials",
 		},
 		Permission: "ListSourceCredentials",
+	},
+	"RetryBuild": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "CodeBuild_20161006.RetryBuild",
+		},
+		Permission: "RetryBuild",
+	},
+	"RetryBuildBatch": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "CodeBuild_20161006.RetryBuildBatch",
+		},
+		Permission: "RetryBuildBatch",
 	},
 
 	// extra

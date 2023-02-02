@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// CodeDeployPolicies policy
 var CodeDeployPolicies = map[string]Service{
 	"BatchGetDeploymentTargets": {
 		Method:   "POST",

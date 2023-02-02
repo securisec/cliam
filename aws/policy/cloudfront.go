@@ -1,6 +1,7 @@
 package policy
 
-var CloudfrontPolicies = map[string]Service{
+// CloudFrontPolicies policy
+var CloudFrontPolicies = map[string]Service{
 	"ListDistributions": {
 		IgnoreRegion:  true,
 		ServiceSuffix: "2018-11-05/distribution",
