@@ -2,7 +2,13 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// MigrationHubStratergyPolicies policy
 var MigrationHubStratergyPolicies = map[string]Service{
+	"GetLatestAssessmentId": {
+		Method:        "GET",
+		ServiceSuffix: "get-latest-assessment-id",
+		Permission:    "GetLatestAssessmentId",
+	},
 	"GetPortfolioPreferences": {
 		Method:        "GET",
 		ServiceSuffix: "get-portfolio-preferences",
@@ -67,5 +73,56 @@ var MigrationHubStratergyPolicies = map[string]Service{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "StartRecommendationReportGeneration",
+	},
+
+	// extra
+	"GetApplicationComponentDetails": {
+		ServiceSuffix:          "/get-applicationcomponent-details/{{.application_component_id}}",
+		Permission:             "GetApplicationComponentDetails",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "application_component_id",
+	},
+	"GetApplicationComponentStrategies": {
+		ServiceSuffix:          "/get-applicationcomponent-strategies/{{.application_component_id}}",
+		Permission:             "GetApplicationComponentStrategies",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "application_component_id",
+	},
+	"GetAssessment": {
+		ServiceSuffix:          "/get-assessment/{{.id}}",
+		Permission:             "GetAssessment",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "id",
+	},
+	"GetImportFileTask": {
+		ServiceSuffix:          "/get-import-file-task/{{.id}}",
+		Permission:             "GetImportFileTask",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "id",
+	},
+	"GetRecommendationReportDetails": {
+		ServiceSuffix:          "/get-recommendation-report-details/{{.id}}",
+		Permission:             "GetRecommendationReportDetails",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "id",
+	},
+	"GetServerDetails": {
+		ServiceSuffix:          "/get-server-details/{{.server_id}}",
+		Permission:             "GetServerDetails",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "server_id",
+	},
+	"GetServerStrategies": {
+		ServiceSuffix:          "/get-server-strategies/{{.server_id}}",
+		Permission:             "GetServerStrategies",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "server_id",
 	},
 }

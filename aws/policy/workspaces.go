@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// WorkspacesPolicies policy
 var WorkspacesPolicies = map[string]Service{
 	"DescribeAccount": {
 		Method:   "POST",
@@ -84,6 +85,24 @@ var WorkspacesPolicies = map[string]Service{
 		},
 		Permission: "DescribeWorkspacesConnectionStatus",
 	},
+	// "ModifyAccount": {
+	// 	Method:   "POST",
+	// 	JsonData: map[string]string{},
+	// 	Headers: map[string]string{
+	// 		shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+	// 		aws_X_AMZ_TARGET:           "WorkspacesService.ModifyAccount",
+	// 	},
+	// 	Permission: "ModifyAccount",
+	// },
+	// "UpdateWorkspaceBundle": {
+	// 	Method:   "POST",
+	// 	JsonData: map[string]string{},
+	// 	Headers: map[string]string{
+	// 		shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+	// 		aws_X_AMZ_TARGET:           "WorkspacesService.UpdateWorkspaceBundle",
+	// 	},
+	// 	Permission: "UpdateWorkspaceBundle",
+	// },
 
 	// extra
 	"DescribeClientBranding": {

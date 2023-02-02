@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// MediaLivePolicies policy
 var MediaLivePolicies = map[string]Service{
 	"BatchDelete": {
 		Method:        "POST",
@@ -38,33 +39,6 @@ var MediaLivePolicies = map[string]Service{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ClaimDevice",
-	},
-	"CreateChannel": {
-		Method:        "POST",
-		ServiceSuffix: "prod/channels",
-		JsonData:      map[string]string{},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
-		},
-		Permission: "CreateChannel",
-	},
-	"CreateInput": {
-		Method:        "POST",
-		ServiceSuffix: "prod/inputs",
-		JsonData:      map[string]string{},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
-		},
-		Permission: "CreateInput",
-	},
-	"CreateInputSecurityGroup": {
-		Method:        "POST",
-		ServiceSuffix: "prod/inputSecurityGroups",
-		JsonData:      map[string]string{},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
-		},
-		Permission: "CreateInputSecurityGroup",
 	},
 	"ListChannels": {
 		Method:        "GET",

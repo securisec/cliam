@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// SMSPolicies policy
 var SMSPolicies = map[string]Service{
 	"GetApp": {
 		Method:   "POST",

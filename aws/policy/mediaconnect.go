@@ -1,19 +1,24 @@
 package policy
 
+// MediaconnectPolicies policy
 var MediaconnectPolicies = map[string]Service{
-	"ListFlows": {
-		ServiceSuffix: "v1/flows",
-		Permission:    "ListFlows",
-	},
 	"ListEntitlements": {
+		Method:        "GET",
 		ServiceSuffix: "v1/entitlements",
 		Permission:    "ListEntitlements",
 	},
+	"ListFlows": {
+		Method:        "GET",
+		ServiceSuffix: "v1/flows",
+		Permission:    "ListFlows",
+	},
 	"ListOfferings": {
+		Method:        "GET",
 		ServiceSuffix: "v1/offerings",
 		Permission:    "ListOfferings",
 	},
 	"ListReservations": {
+		Method:        "GET",
 		ServiceSuffix: "v1/reservations",
 		Permission:    "ListReservations",
 	},

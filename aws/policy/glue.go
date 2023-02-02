@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// GluePolicies policy
 var GluePolicies = map[string]Service{
 	"GetCatalogImportStatus": {
 		Method:   "POST",
@@ -93,14 +94,14 @@ var GluePolicies = map[string]Service{
 		},
 		Permission: "GetJobs",
 	},
-	"GetMlTransforms": {
+	"GetMLTransforms": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
-			aws_X_AMZ_TARGET:           "AWSGlue.GetMlTransforms",
+			aws_X_AMZ_TARGET:           "AWSGlue.GetMLTransforms",
 		},
-		Permission: "GetMlTransforms",
+		Permission: "GetMLTransforms",
 	},
 	"GetResourcePolicies": {
 		Method:   "POST",
@@ -147,6 +148,15 @@ var GluePolicies = map[string]Service{
 		},
 		Permission: "GetTriggers",
 	},
+	"ImportCatalogToGlue": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AWSGlue.ImportCatalogToGlue",
+		},
+		Permission: "ImportCatalogToGlue",
+	},
 	"ListBlueprints": {
 		Method:   "POST",
 		JsonData: map[string]string{},
@@ -164,6 +174,51 @@ var GluePolicies = map[string]Service{
 			aws_X_AMZ_TARGET:           "AWSGlue.ListCrawlers",
 		},
 		Permission: "ListCrawlers",
+	},
+	"ListCustomEntityTypes": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AWSGlue.ListCustomEntityTypes",
+		},
+		Permission: "ListCustomEntityTypes",
+	},
+	"ListDataQualityResults": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AWSGlue.ListDataQualityResults",
+		},
+		Permission: "ListDataQualityResults",
+	},
+	"ListDataQualityRuleRecommendationRuns": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AWSGlue.ListDataQualityRuleRecommendationRuns",
+		},
+		Permission: "ListDataQualityRuleRecommendationRuns",
+	},
+	"ListDataQualityRulesetEvaluationRuns": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AWSGlue.ListDataQualityRulesetEvaluationRuns",
+		},
+		Permission: "ListDataQualityRulesetEvaluationRuns",
+	},
+	"ListDataQualityRulesets": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AWSGlue.ListDataQualityRulesets",
+		},
+		Permission: "ListDataQualityRulesets",
 	},
 	"ListDevEndpoints": {
 		Method:   "POST",
@@ -183,14 +238,14 @@ var GluePolicies = map[string]Service{
 		},
 		Permission: "ListJobs",
 	},
-	"ListMlTransforms": {
+	"ListMLTransforms": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
-			aws_X_AMZ_TARGET:           "AWSGlue.ListMlTransforms",
+			aws_X_AMZ_TARGET:           "AWSGlue.ListMLTransforms",
 		},
-		Permission: "ListMlTransforms",
+		Permission: "ListMLTransforms",
 	},
 	"ListRegistries": {
 		Method:   "POST",
@@ -236,6 +291,51 @@ var GluePolicies = map[string]Service{
 			aws_X_AMZ_TARGET:           "AWSGlue.ListWorkflows",
 		},
 		Permission: "ListWorkflows",
+	},
+	"QuerySchemaVersionMetadata": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AWSGlue.QuerySchemaVersionMetadata",
+		},
+		Permission: "QuerySchemaVersionMetadata",
+	},
+	"SearchTables": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AWSGlue.SearchTables",
+		},
+		Permission: "SearchTables",
+	},
+	"UpdateClassifier": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AWSGlue.UpdateClassifier",
+		},
+		Permission: "UpdateClassifier",
+	},
+	"UpdateJobFromSourceControl": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AWSGlue.UpdateJobFromSourceControl",
+		},
+		Permission: "UpdateJobFromSourceControl",
+	},
+	"UpdateSourceControlFromJob": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AWSGlue.UpdateSourceControlFromJob",
+		},
+		Permission: "UpdateSourceControlFromJob",
 	},
 
 	// extra
@@ -298,6 +398,66 @@ var GluePolicies = map[string]Service{
 		ExtraComponentBodyKey:  "Name",
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "name",
+	},
+	"GetCustomEntityType": {
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AWSGlue.GetCustomEntityType",
+		},
+		Permission:             "GetCustomEntityType",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "Name",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "name",
+	},
+	"GetDataQualityResult": {
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AWSGlue.GetDataQualityResult",
+		},
+		Permission:             "GetDataQualityResult",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ResultId",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "result_id",
+	},
+	"GetDataQualityRuleRecommendationRun": {
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AWSGlue.GetDataQualityRuleRecommendationRun",
+		},
+		Permission:             "GetDataQualityRuleRecommendationRun",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "RunId",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "run_id",
+	},
+	"GetDataQualityRuleset": {
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AWSGlue.GetDataQualityRuleset",
+		},
+		Permission:             "GetDataQualityRuleset",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "Name",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "name",
+	},
+	"GetDataQualityRulesetEvaluationRun": {
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AWSGlue.GetDataQualityRulesetEvaluationRun",
+		},
+		Permission:             "GetDataQualityRulesetEvaluationRun",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "RunId",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "run_id",
 	},
 	"GetDatabase": {
 		Method: "POST",
@@ -514,6 +674,18 @@ var GluePolicies = map[string]Service{
 		ExtraComponentBodyKey:  "Name",
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "name",
+	},
+	"ListCrawls": {
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AWSGlue.ListCrawls",
+		},
+		Permission:             "ListCrawls",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "CrawlerName",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "crawler_name",
 	},
 	"ListSchemaVersions": {
 		Method: "POST",

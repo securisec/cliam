@@ -2,25 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// GameLiftPolicies policy
 var GameLiftPolicies = map[string]Service{
-	"CreateBuild": {
-		Method:   "POST",
-		JsonData: map[string]string{},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
-			aws_X_AMZ_TARGET:           "GameLift.CreateBuild",
-		},
-		Permission: "CreateBuild",
-	},
-	"CreateScript": {
-		Method:   "POST",
-		JsonData: map[string]string{},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
-			aws_X_AMZ_TARGET:           "GameLift.CreateScript",
-		},
-		Permission: "CreateScript",
-	},
 	"DescribeEC2InstanceLimits": {
 		Method:   "POST",
 		JsonData: map[string]string{},
@@ -164,6 +147,15 @@ var GameLiftPolicies = map[string]Service{
 			aws_X_AMZ_TARGET:           "GameLift.ListGameServerGroups",
 		},
 		Permission: "ListGameServerGroups",
+	},
+	"ListLocations": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "GameLift.ListLocations",
+		},
+		Permission: "ListLocations",
 	},
 	"ListScripts": {
 		Method:   "POST",
@@ -352,6 +344,18 @@ var GameLiftPolicies = map[string]Service{
 		ExtraComponentBodyKey:  "GameSessionId",
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "game_session_id",
+	},
+	"ListCompute": {
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "GameLift.ListCompute",
+		},
+		Permission:             "ListCompute",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "FleetId",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "fleet_id",
 	},
 	"ListGameServers": {
 		Method: "POST",

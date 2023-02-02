@@ -2,16 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// SnowballPolicies policy
 var SnowballPolicies = map[string]Service{
-	"CreateJob": {
-		Method:   "POST",
-		JsonData: map[string]string{},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
-			aws_X_AMZ_TARGET:           "AWSIESnowballJobManagementService.CreateJob",
-		},
-		Permission: "CreateJob",
-	},
 	"DescribeAddresses": {
 		Method:   "POST",
 		JsonData: map[string]string{},

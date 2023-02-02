@@ -1,7 +1,9 @@
 package policy
 
+// GrafanaPolicies policy
 var GrafanaPolicies = map[string]Service{
 	"ListWorkspaces": {
+		Method:        "GET",
 		ServiceSuffix: "workspaces",
 		Permission:    "ListWorkspaces",
 	},
@@ -17,6 +19,13 @@ var GrafanaPolicies = map[string]Service{
 	"DescribeWorkspaceAuthentication": {
 		ServiceSuffix:          "/workspaces/{{.workspace_id}}/authentication",
 		Permission:             "DescribeWorkspaceAuthentication",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "workspace_id",
+	},
+	"DescribeWorkspaceConfiguration": {
+		ServiceSuffix:          "/workspaces/{{.workspace_id}}/configuration",
+		Permission:             "DescribeWorkspaceConfiguration",
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "workspace_id",

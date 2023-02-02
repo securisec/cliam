@@ -1,16 +1,20 @@
 package policy
 
+// KafkaConnectPolicies policy
 var KafkaConnectPolicies = map[string]Service{
 	"ListConnectors": {
-		ServiceSuffix: "connect",
+		Method:        "GET",
+		ServiceSuffix: "v1/connectors",
 		Permission:    "ListConnectors",
 	},
 	"ListCustomPlugins": {
-		ServiceSuffix: "custom-plugins",
+		Method:        "GET",
+		ServiceSuffix: "v1/custom-plugins",
 		Permission:    "ListCustomPlugins",
 	},
 	"ListWorkerConfigurations": {
-		ServiceSuffix: "worker-configurations",
+		Method:        "GET",
+		ServiceSuffix: "v1/worker-configurations",
 		Permission:    "ListWorkerConfigurations",
 	},
 

@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// ShieldPolicies policy
 var ShieldPolicies = map[string]Service{
 	"DescribeAttackStatistics": {
 		Method:   "POST",
@@ -12,14 +13,14 @@ var ShieldPolicies = map[string]Service{
 		},
 		Permission: "DescribeAttackStatistics",
 	},
-	"DescribeDrtAccess": {
+	"DescribeDRTAccess": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
-			aws_X_AMZ_TARGET:           "AWSShield_20160616.DescribeDrtAccess",
+			aws_X_AMZ_TARGET:           "AWSShield_20160616.DescribeDRTAccess",
 		},
-		Permission: "DescribeDrtAccess",
+		Permission: "DescribeDRTAccess",
 	},
 	"DescribeEmergencyContactSettings": {
 		Method:   "POST",
@@ -48,6 +49,33 @@ var ShieldPolicies = map[string]Service{
 		},
 		Permission: "DescribeSubscription",
 	},
+	// "DisableProactiveEngagement": {
+	// 	Method:   "POST",
+	// 	JsonData: map[string]string{},
+	// 	Headers: map[string]string{
+	// 		shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+	// 		aws_X_AMZ_TARGET:           "AWSShield_20160616.DisableProactiveEngagement",
+	// 	},
+	// 	Permission: "DisableProactiveEngagement",
+	// },
+	// "DisassociateDRTRole": {
+	// 	Method:   "POST",
+	// 	JsonData: map[string]string{},
+	// 	Headers: map[string]string{
+	// 		shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+	// 		aws_X_AMZ_TARGET:           "AWSShield_20160616.DisassociateDRTRole",
+	// 	},
+	// 	Permission: "DisassociateDRTRole",
+	// },
+	// "EnableProactiveEngagement": {
+	// 	Method:   "POST",
+	// 	JsonData: map[string]string{},
+	// 	Headers: map[string]string{
+	// 		shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+	// 		aws_X_AMZ_TARGET:           "AWSShield_20160616.EnableProactiveEngagement",
+	// 	},
+	// 	Permission: "EnableProactiveEngagement",
+	// },
 	"GetSubscriptionState": {
 		Method:   "POST",
 		JsonData: map[string]string{},
@@ -84,6 +112,24 @@ var ShieldPolicies = map[string]Service{
 		},
 		Permission: "ListProtections",
 	},
+	// "UpdateEmergencyContactSettings": {
+	// 	Method:   "POST",
+	// 	JsonData: map[string]string{},
+	// 	Headers: map[string]string{
+	// 		shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+	// 		aws_X_AMZ_TARGET:           "AWSShield_20160616.UpdateEmergencyContactSettings",
+	// 	},
+	// 	Permission: "UpdateEmergencyContactSettings",
+	// },
+	// "UpdateSubscription": {
+	// 	Method:   "POST",
+	// 	JsonData: map[string]string{},
+	// 	Headers: map[string]string{
+	// 		shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+	// 		aws_X_AMZ_TARGET:           "AWSShield_20160616.UpdateSubscription",
+	// 	},
+	// 	Permission: "UpdateSubscription",
+	// },
 
 	// extra
 	"DescribeAttack": {

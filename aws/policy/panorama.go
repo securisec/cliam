@@ -1,5 +1,6 @@
 package policy
 
+// PanoramaPolicies policy
 var PanoramaPolicies = map[string]Service{
 	"ListApplicationInstances": {
 		Method:        "GET",

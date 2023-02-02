@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// MediaConvertPolicies policy
 var MediaConvertPolicies = map[string]Service{
 	"DescribeEndpoints": {
 		Method:        "POST",

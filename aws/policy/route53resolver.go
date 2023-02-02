@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// Route53ResolverPolicies policy
 var Route53ResolverPolicies = map[string]Service{
 	"ListFirewallConfigs": {
 		Method:   "POST",

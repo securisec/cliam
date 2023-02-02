@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// InspectorPolicies policy
 var InspectorPolicies = map[string]Service{
 	"DescribeCrossAccountAccessRole": {
 		Method:   "POST",

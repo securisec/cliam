@@ -2,10 +2,10 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// STSPolicies policy
 var STSPolicies = map[string]Service{
 	"GetCallerIdentity": {
-		ServiceSuffix: "",
-		Permission:    "GetCallerIdentity",
+		Method: "POST",
 		FormData: map[string]string{
 			"Action":  "GetCallerIdentity",
 			"Version": "2011-06-15",
@@ -13,11 +13,18 @@ var STSPolicies = map[string]Service{
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
 		},
-		Method: "POST",
+		Permission: "GetCallerIdentity",
 	},
 	"GetSessionToken": {
-		ServiceSuffix: "?Action=GetSessionToken&Version=2011-06-15",
-		Permission:    "GetSessionToken",
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetSessionToken",
+			"Version": "2011-06-15",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "GetSessionToken",
 	},
 
 	// extra

@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// WAFRegionalPolicies policy
 var WAFRegionalPolicies = map[string]Service{
 	"GetChangeToken": {
 		Method:   "POST",
@@ -39,14 +40,14 @@ var WAFRegionalPolicies = map[string]Service{
 		},
 		Permission: "ListGeoMatchSets",
 	},
-	"ListIpSets": {
+	"ListIPSets": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
-			aws_X_AMZ_TARGET:           "AWSWAF_Regional_20161128.ListIpSets",
+			aws_X_AMZ_TARGET:           "AWSWAF_Regional_20161128.ListIPSets",
 		},
-		Permission: "ListIpSets",
+		Permission: "ListIPSets",
 	},
 	"ListLoggingConfigurations": {
 		Method:   "POST",
@@ -128,6 +129,15 @@ var WAFRegionalPolicies = map[string]Service{
 			aws_X_AMZ_TARGET:           "AWSWAF_Regional_20161128.ListSubscribedRuleGroups",
 		},
 		Permission: "ListSubscribedRuleGroups",
+	},
+	"ListWebACLs": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AWSWAF_Regional_20161128.ListWebACLs",
+		},
+		Permission: "ListWebACLs",
 	},
 	"ListXssMatchSets": {
 		Method:   "POST",
@@ -366,6 +376,6 @@ var WAFRegionalPolicies = map[string]Service{
 		IsExtra:                true,
 		ExtraComponentBodyKey:  "ResourceARN",
 		ExtraComponentLocation: "json",
-		ExtraCommandLineFlag:   "resource_arn",
+		ExtraCommandLineFlag:   "resource_a_r_n",
 	},
 }

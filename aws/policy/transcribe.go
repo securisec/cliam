@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// TranscribePolicies policy
 var TranscribePolicies = map[string]Service{
 	"ListCallAnalyticsCategories": {
 		Method:   "POST",

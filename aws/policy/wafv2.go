@@ -2,7 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var WafV2Policies = map[string]Service{
+// WAFV2Policies policy
+var WAFV2Policies = map[string]Service{
 	"GetRuleGroup": {
 		Method:   "POST",
 		JsonData: map[string]string{},
@@ -156,7 +157,7 @@ var WafV2Policies = map[string]Service{
 		IsExtra:                true,
 		ExtraComponentBodyKey:  "ResourceARN",
 		ExtraComponentLocation: "json",
-		ExtraCommandLineFlag:   "resource_arn",
+		ExtraCommandLineFlag:   "resource_a_r_n",
 	},
 	"ListWebACLs": {
 		Method: "POST",

@@ -2,7 +2,17 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var LightsailPolicies = map[string]Service{
+// LightSailPolicies policy
+var LightSailPolicies = map[string]Service{
+	"DownloadDefaultKeyPair": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "Lightsail_20161128.DownloadDefaultKeyPair",
+		},
+		Permission: "DownloadDefaultKeyPair",
+	},
 	"GetActiveNames": {
 		Method:   "POST",
 		JsonData: map[string]string{},
@@ -84,14 +94,14 @@ var LightsailPolicies = map[string]Service{
 		},
 		Permission: "GetContactMethods",
 	},
-	"GetContainerApiMetadata": {
+	"GetContainerAPIMetadata": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
-			aws_X_AMZ_TARGET:           "Lightsail_20161128.GetContainerApiMetadata",
+			aws_X_AMZ_TARGET:           "Lightsail_20161128.GetContainerAPIMetadata",
 		},
-		Permission: "GetContainerApiMetadata",
+		Permission: "GetContainerAPIMetadata",
 	},
 	"GetContainerServicePowers": {
 		Method:   "POST",
@@ -201,6 +211,15 @@ var LightsailPolicies = map[string]Service{
 		},
 		Permission: "GetKeyPairs",
 	},
+	"GetLoadBalancerTlsPolicies": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "Lightsail_20161128.GetLoadBalancerTlsPolicies",
+		},
+		Permission: "GetLoadBalancerTlsPolicies",
+	},
 	"GetLoadBalancers": {
 		Method:   "POST",
 		JsonData: map[string]string{},
@@ -272,6 +291,51 @@ var LightsailPolicies = map[string]Service{
 			aws_X_AMZ_TARGET:           "Lightsail_20161128.GetStaticIps",
 		},
 		Permission: "GetStaticIps",
+	},
+	"IsVpcPeered": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "Lightsail_20161128.IsVpcPeered",
+		},
+		Permission: "IsVpcPeered",
+	},
+	"PeerVpc": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "Lightsail_20161128.PeerVpc",
+		},
+		Permission: "PeerVpc",
+	},
+	"ResetDistributionCache": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "Lightsail_20161128.ResetDistributionCache",
+		},
+		Permission: "ResetDistributionCache",
+	},
+	"UnpeerVpc": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "Lightsail_20161128.UnpeerVpc",
+		},
+		Permission: "UnpeerVpc",
+	},
+	"UpdateDistributionBundle": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "Lightsail_20161128.UpdateDistributionBundle",
+		},
+		Permission: "UpdateDistributionBundle",
 	},
 
 	// extra

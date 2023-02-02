@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// VoiceIdPolicies policy
 var VoiceIdPolicies = map[string]Service{
 	"ListDomains": {
 		Method:   "POST",

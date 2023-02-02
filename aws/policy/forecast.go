@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// ForecastPolicies policy
 var ForecastPolicies = map[string]Service{
 	"ListDatasetGroups": {
 		Method:   "POST",
@@ -66,6 +67,15 @@ var ForecastPolicies = map[string]Service{
 		},
 		Permission: "ListForecasts",
 	},
+	"ListMonitors": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonForecast.ListMonitors",
+		},
+		Permission: "ListMonitors",
+	},
 	"ListPredictorBacktestExportJobs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
@@ -83,6 +93,33 @@ var ForecastPolicies = map[string]Service{
 			aws_X_AMZ_TARGET:           "AmazonForecast.ListPredictors",
 		},
 		Permission: "ListPredictors",
+	},
+	"ListWhatIfAnalyses": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonForecast.ListWhatIfAnalyses",
+		},
+		Permission: "ListWhatIfAnalyses",
+	},
+	"ListWhatIfForecastExports": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonForecast.ListWhatIfForecastExports",
+		},
+		Permission: "ListWhatIfForecastExports",
+	},
+	"ListWhatIfForecasts": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonForecast.ListWhatIfForecasts",
+		},
+		Permission: "ListWhatIfForecasts",
 	},
 
 	// extra
@@ -182,6 +219,18 @@ var ForecastPolicies = map[string]Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "forecast_export_job_arn",
 	},
+	"DescribeMonitor": {
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonForecast.DescribeMonitor",
+		},
+		Permission:             "DescribeMonitor",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "MonitorArn",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "monitor_arn",
+	},
 	"DescribePredictor": {
 		Method: "POST",
 		Headers: map[string]string{
@@ -206,6 +255,42 @@ var ForecastPolicies = map[string]Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "predictor_backtest_export_job_arn",
 	},
+	"DescribeWhatIfAnalysis": {
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonForecast.DescribeWhatIfAnalysis",
+		},
+		Permission:             "DescribeWhatIfAnalysis",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "WhatIfAnalysisArn",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "what_if_analysis_arn",
+	},
+	"DescribeWhatIfForecast": {
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonForecast.DescribeWhatIfForecast",
+		},
+		Permission:             "DescribeWhatIfForecast",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "WhatIfForecastArn",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "what_if_forecast_arn",
+	},
+	"DescribeWhatIfForecastExport": {
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonForecast.DescribeWhatIfForecastExport",
+		},
+		Permission:             "DescribeWhatIfForecastExport",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "WhatIfForecastExportArn",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "what_if_forecast_export_arn",
+	},
 	"GetAccuracyMetrics": {
 		Method: "POST",
 		Headers: map[string]string{
@@ -217,6 +302,18 @@ var ForecastPolicies = map[string]Service{
 		ExtraComponentBodyKey:  "PredictorArn",
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "predictor_arn",
+	},
+	"ListMonitorEvaluations": {
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonForecast.ListMonitorEvaluations",
+		},
+		Permission:             "ListMonitorEvaluations",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "MonitorArn",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "monitor_arn",
 	},
 	"ListTagsForResource": {
 		Method: "POST",

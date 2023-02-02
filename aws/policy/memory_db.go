@@ -2,15 +2,16 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// MemoryDBPolicies policy
 var MemoryDBPolicies = map[string]Service{
-	"DescribeAcLs": {
+	"DescribeACLs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
-			aws_X_AMZ_TARGET:           "AmazonMemoryDB.DescribeAcLs",
+			aws_X_AMZ_TARGET:           "AmazonMemoryDB.DescribeACLs",
 		},
-		Permission: "DescribeAcLs",
+		Permission: "DescribeACLs",
 	},
 	"DescribeClusters": {
 		Method:   "POST",
@@ -30,6 +31,15 @@ var MemoryDBPolicies = map[string]Service{
 		},
 		Permission: "DescribeEngineVersions",
 	},
+	"DescribeEvents": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonMemoryDB.DescribeEvents",
+		},
+		Permission: "DescribeEvents",
+	},
 	"DescribeParameterGroups": {
 		Method:   "POST",
 		JsonData: map[string]string{},
@@ -38,6 +48,24 @@ var MemoryDBPolicies = map[string]Service{
 			aws_X_AMZ_TARGET:           "AmazonMemoryDB.DescribeParameterGroups",
 		},
 		Permission: "DescribeParameterGroups",
+	},
+	"DescribeReservedNodes": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonMemoryDB.DescribeReservedNodes",
+		},
+		Permission: "DescribeReservedNodes",
+	},
+	"DescribeReservedNodesOfferings": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonMemoryDB.DescribeReservedNodesOfferings",
+		},
+		Permission: "DescribeReservedNodesOfferings",
 	},
 	"DescribeServiceUpdates": {
 		Method:   "POST",
@@ -65,6 +93,15 @@ var MemoryDBPolicies = map[string]Service{
 			aws_X_AMZ_TARGET:           "AmazonMemoryDB.DescribeSubnetGroups",
 		},
 		Permission: "DescribeSubnetGroups",
+	},
+	"DescribeUsers": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonMemoryDB.DescribeUsers",
+		},
+		Permission: "DescribeUsers",
 	},
 
 	// extra

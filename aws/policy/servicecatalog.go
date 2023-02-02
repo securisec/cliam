@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// ServiceCatalogPolicies policy
 var ServiceCatalogPolicies = map[string]Service{
 	"DescribeProduct": {
 		Method:   "POST",

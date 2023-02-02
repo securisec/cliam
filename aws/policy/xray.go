@@ -2,42 +2,70 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// XrayPolicies policy
 var XrayPolicies = map[string]Service{
-	"GetGroups": {
-		ServiceSuffix: "Groups",
+	"GetEncryptionConfig": {
 		Method:        "POST",
+		ServiceSuffix: "EncryptionConfig",
+		JsonData:      map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+		},
+		Permission: "GetEncryptionConfig",
+	},
+	"GetGroup": {
+		Method:        "POST",
+		ServiceSuffix: "GetGroup",
+		JsonData:      map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+		},
+		Permission: "GetGroup",
+	},
+	"GetGroups": {
+		Method:        "POST",
+		ServiceSuffix: "Groups",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "GetGroups",
 	},
-	"GetSamplingStatisticSummaries": {
-		ServiceSuffix: "SamplingStatisticSummaries",
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
-		},
-		Permission: "GetSamplingStatisticSummaries",
-	},
 	"GetSamplingRules": {
-		ServiceSuffix: "GetSamplingRules",
 		Method:        "POST",
+		ServiceSuffix: "GetSamplingRules",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "GetSamplingRules",
 	},
-	"EncryptionConfig": {
-		ServiceSuffix: "EncryptionConfig",
+	"GetSamplingStatisticSummaries": {
 		Method:        "POST",
+		ServiceSuffix: "SamplingStatisticSummaries",
 		JsonData:      map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
-		Permission: "EncryptionConfig",
+		Permission: "GetSamplingStatisticSummaries",
+	},
+	"ListResourcePolicies": {
+		Method:        "POST",
+		ServiceSuffix: "ListResourcePolicies",
+		JsonData:      map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+		},
+		Permission: "ListResourcePolicies",
+	},
+	"UpdateGroup": {
+		Method:        "POST",
+		ServiceSuffix: "UpdateGroup",
+		JsonData:      map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+		},
+		Permission: "UpdateGroup",
 	},
 
 	// extra
@@ -114,6 +142,6 @@ var XrayPolicies = map[string]Service{
 		IsExtra:                true,
 		ExtraComponentBodyKey:  "ResourceARN",
 		ExtraComponentLocation: "form",
-		ExtraCommandLineFlag:   "resource_arn",
+		ExtraCommandLineFlag:   "resource_a_r_n",
 	},
 }

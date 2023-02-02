@@ -2,13 +2,21 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// SQSPolicies policy
 var SQSPolicies = map[string]Service{
 	"ListQueues": {
-		ServiceSuffix: "?Action=ListQueues",
-		Permission:    "ListQueues",
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "ListQueues",
+			"Version": "2012-11-05",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "ListQueues",
 	},
 
-	// extras
+	// extra
 	"GetQueueAttributes": {
 		Method: "POST",
 		FormData: map[string]string{

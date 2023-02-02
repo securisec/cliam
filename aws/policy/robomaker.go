@@ -2,16 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// RobomakerPolicies policy
 var RobomakerPolicies = map[string]Service{
-	"CreateWorldTemplate": {
-		Method:        "POST",
-		ServiceSuffix: "createWorldTemplate",
-		JsonData:      map[string]string{},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
-		},
-		Permission: "CreateWorldTemplate",
-	},
 	"GetWorldTemplateBody": {
 		Method:        "POST",
 		ServiceSuffix: "getWorldTemplateBody",

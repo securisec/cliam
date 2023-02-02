@@ -2,29 +2,26 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// IotWirelessPolicies policy
 var IotWirelessPolicies = map[string]Service{
-	"CreateDeviceProfile": {
-		Method:        "POST",
-		ServiceSuffix: "device-profiles",
-		JsonData:      map[string]string{},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
-		},
-		Permission: "CreateDeviceProfile",
-	},
-	"CreateServiceProfile": {
-		Method:        "POST",
-		ServiceSuffix: "service-profiles",
-		JsonData:      map[string]string{},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
-		},
-		Permission: "CreateServiceProfile",
+	"GetEventConfigurationByResourceTypes": {
+		Method:        "GET",
+		ServiceSuffix: "event-configurations-resource-types",
+		Permission:    "GetEventConfigurationByResourceTypes",
 	},
 	"GetLogLevelsByResourceTypes": {
 		Method:        "GET",
 		ServiceSuffix: "log-levels",
 		Permission:    "GetLogLevelsByResourceTypes",
+	},
+	"GetPositionEstimate": {
+		Method:        "POST",
+		ServiceSuffix: "position-estimate",
+		JsonData:      map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+		},
+		Permission: "GetPositionEstimate",
 	},
 	"GetServiceEndpoint": {
 		Method:        "GET",
@@ -51,10 +48,20 @@ var IotWirelessPolicies = map[string]Service{
 		ServiceSuffix: "multicast-groups",
 		Permission:    "ListMulticastGroups",
 	},
+	"ListNetworkAnalyzerConfigurations": {
+		Method:        "GET",
+		ServiceSuffix: "network-analyzer-configurations",
+		Permission:    "ListNetworkAnalyzerConfigurations",
+	},
 	"ListPartnerAccounts": {
 		Method:        "GET",
 		ServiceSuffix: "partner-accounts",
 		Permission:    "ListPartnerAccounts",
+	},
+	"ListPositionConfigurations": {
+		Method:        "GET",
+		ServiceSuffix: "position-configurations",
+		Permission:    "ListPositionConfigurations",
 	},
 	"ListServiceProfiles": {
 		Method:        "GET",
@@ -177,6 +184,13 @@ var IotWirelessPolicies = map[string]Service{
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "id",
+	},
+	"ListEventConfigurations": {
+		ServiceSuffix:          "/event-configurations",
+		Permission:             "ListEventConfigurations",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "resource_type",
 	},
 	"ListMulticastGroupsByFuotaTask": {
 		ServiceSuffix:          "/fuota-tasks/{{.id}}/multicast-groups",

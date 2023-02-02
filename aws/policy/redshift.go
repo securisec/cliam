@@ -2,18 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// RedshiftPolicies policy
 var RedshiftPolicies = map[string]Service{
-	"CreateSnapshotSchedule": {
-		Method: "POST",
-		FormData: map[string]string{
-			"Action":  "CreateSnapshotSchedule",
-			"Version": "2012-12-01",
-		},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
-		},
-		Permission: "CreateSnapshotSchedule",
-	},
 	"DescribeAccountAttributes": {
 		Method: "POST",
 		FormData: map[string]string{
@@ -438,6 +428,21 @@ var RedshiftPolicies = map[string]Service{
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
 		},
 		Permission:             "DescribeResize",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ClusterIdentifier",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "cluster_identifier",
+	},
+	"GetClusterCredentialsWithIAM": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetClusterCredentialsWithIAM",
+			"Version": "2012-12-01",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetClusterCredentialsWithIAM",
 		IsExtra:                true,
 		ExtraComponentBodyKey:  "ClusterIdentifier",
 		ExtraComponentLocation: "form",

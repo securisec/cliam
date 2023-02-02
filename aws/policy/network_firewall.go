@@ -2,39 +2,13 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// NetworkFirewallPolicies policy
 var NetworkFirewallPolicies = map[string]Service{
-	"DeleteFirewall": {
-		Method:   "POST",
-		JsonData: map[string]string{},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
-			aws_X_AMZ_TARGET:           "NetworkFirewall_20201112.DeleteFirewall",
-		},
-		Permission: "DeleteFirewall",
-	},
-	"DeleteFirewallPolicy": {
-		Method:   "POST",
-		JsonData: map[string]string{},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
-			aws_X_AMZ_TARGET:           "NetworkFirewall_20201112.DeleteFirewallPolicy",
-		},
-		Permission: "DeleteFirewallPolicy",
-	},
-	"DeleteRuleGroup": {
-		Method:   "POST",
-		JsonData: map[string]string{},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
-			aws_X_AMZ_TARGET:           "NetworkFirewall_20201112.DeleteRuleGroup",
-		},
-		Permission: "DeleteRuleGroup",
-	},
 	"DescribeFirewall": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "NetworkFirewall_20201112.DescribeFirewall",
 		},
 		Permission: "DescribeFirewall",
@@ -43,7 +17,7 @@ var NetworkFirewallPolicies = map[string]Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "NetworkFirewall_20201112.DescribeFirewallPolicy",
 		},
 		Permission: "DescribeFirewallPolicy",
@@ -52,7 +26,7 @@ var NetworkFirewallPolicies = map[string]Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "NetworkFirewall_20201112.DescribeLoggingConfiguration",
 		},
 		Permission: "DescribeLoggingConfiguration",
@@ -61,7 +35,7 @@ var NetworkFirewallPolicies = map[string]Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "NetworkFirewall_20201112.DescribeRuleGroup",
 		},
 		Permission: "DescribeRuleGroup",
@@ -70,7 +44,7 @@ var NetworkFirewallPolicies = map[string]Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "NetworkFirewall_20201112.DescribeRuleGroupMetadata",
 		},
 		Permission: "DescribeRuleGroupMetadata",
@@ -79,7 +53,7 @@ var NetworkFirewallPolicies = map[string]Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "NetworkFirewall_20201112.ListFirewallPolicies",
 		},
 		Permission: "ListFirewallPolicies",
@@ -88,7 +62,7 @@ var NetworkFirewallPolicies = map[string]Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "NetworkFirewall_20201112.ListFirewalls",
 		},
 		Permission: "ListFirewalls",
@@ -97,7 +71,7 @@ var NetworkFirewallPolicies = map[string]Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "NetworkFirewall_20201112.ListRuleGroups",
 		},
 		Permission: "ListRuleGroups",
@@ -106,16 +80,25 @@ var NetworkFirewallPolicies = map[string]Service{
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "NetworkFirewall_20201112.UpdateFirewallDescription",
 		},
 		Permission: "UpdateFirewallDescription",
+	},
+	"UpdateFirewallEncryptionConfiguration": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "NetworkFirewall_20201112.UpdateFirewallEncryptionConfiguration",
+		},
+		Permission: "UpdateFirewallEncryptionConfiguration",
 	},
 	"UpdateLoggingConfiguration": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_0,
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "NetworkFirewall_20201112.UpdateLoggingConfiguration",
 		},
 		Permission: "UpdateLoggingConfiguration",

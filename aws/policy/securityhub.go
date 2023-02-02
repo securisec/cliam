@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// SecurityHubPolicies policy
 var SecurityHubPolicies = map[string]Service{
 	"DescribeActionTargets": {
 		Method:        "POST",

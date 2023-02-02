@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// StorageGatewayPolicies policy
 var StorageGatewayPolicies = map[string]Service{
 	"DescribeTapeArchives": {
 		Method:   "POST",

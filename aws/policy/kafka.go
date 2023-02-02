@@ -1,23 +1,29 @@
 package policy
 
+// KafkaPolicies policy
 var KafkaPolicies = map[string]Service{
+	"GetCompatibleKafkaVersions": {
+		Method:        "GET",
+		ServiceSuffix: "v1/compatible-kafka-versions",
+		Permission:    "GetCompatibleKafkaVersions",
+	},
 	"ListClusters": {
+		Method:        "GET",
 		ServiceSuffix: "v1/clusters",
 		Permission:    "ListClusters",
 	},
 	"ListClustersV2": {
+		Method:        "GET",
 		ServiceSuffix: "api/v2/clusters",
 		Permission:    "ListClustersV2",
 	},
-	"GetCompatibleKafkaVersions": {
-		ServiceSuffix: "v1/compitable-kafka-versions",
-		Permission:    "GetCompatibleKafkaVersions",
-	},
 	"ListConfigurations": {
+		Method:        "GET",
 		ServiceSuffix: "v1/configurations",
 		Permission:    "ListConfigurations",
 	},
 	"ListKafkaVersions": {
+		Method:        "GET",
 		ServiceSuffix: "v1/kafka-versions",
 		Permission:    "ListKafkaVersions",
 	},

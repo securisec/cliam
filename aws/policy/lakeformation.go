@@ -2,16 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// LakeFormationPolicies policy
 var LakeFormationPolicies = map[string]Service{
-	"DeleteDataCellsFilter": {
-		Method:        "POST",
-		ServiceSuffix: "DeleteDataCellsFilter",
-		JsonData:      map[string]string{},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
-		},
-		Permission: "DeleteDataCellsFilter",
-	},
 	"ExtendTransaction": {
 		Method:        "POST",
 		ServiceSuffix: "ExtendTransaction",

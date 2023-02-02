@@ -1,5 +1,6 @@
 package policy
 
+// OutpostsPolicies policy
 var OutpostsPolicies = map[string]Service{
 	"ListCatalogItems": {
 		Method:        "GET",
@@ -30,6 +31,13 @@ var OutpostsPolicies = map[string]Service{
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "catalog_item_id",
 	},
+	"GetConnection": {
+		ServiceSuffix:          "/connections/{{.connection_id}}",
+		Permission:             "GetConnection",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "connection_id",
+	},
 	"GetOrder": {
 		ServiceSuffix:          "/orders/{{.order_id}}",
 		Permission:             "GetOrder",
@@ -57,6 +65,13 @@ var OutpostsPolicies = map[string]Service{
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "site_id",
+	},
+	"ListAssets": {
+		ServiceSuffix:          "/outposts/{{.outpost_identifier}}/assets",
+		Permission:             "ListAssets",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "outpost_identifier",
 	},
 	"ListTagsForResource": {
 		ServiceSuffix:          "/tags/{{.resource_arn}}",

@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// ImageBuilderPolicies policy
 var ImageBuilderPolicies = map[string]Service{
 	"ListComponents": {
 		Method:        "POST",

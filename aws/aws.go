@@ -63,7 +63,7 @@ const (
 	GameLift              = "gamelift"
 	Glue                  = "glue"
 	Grafana               = "grafana"
-	Greengrass            = "greengrass"
+	GreenGrass            = "greengrass"
 	GroundStation         = "groundstation"
 	GuardDuty             = "guardduty"
 	IAM                   = "iam"
@@ -71,6 +71,19 @@ const (
 	Inspector             = "inspector"
 	Inspector2            = "inspector2"
 	IOT                   = "iot"
+	IOT1ClickDevices      = "iot1click-devices"
+	IOT1ClickProjects     = "iot1click-projects"
+	IOTAnalytics          = "iotanalytics"
+	IOTData               = "iot-data"
+	IOTDeviceAdvisor      = "iotdeviceadvisor"
+	IOTEvents             = "iotevents"
+	IOTEventsData         = "iotevents-data"
+	IOTFleetHub           = "iotfleethub"
+	IOTFleetWise          = "iotfleetwise"
+	IOTJobsData           = "iot-jobs-data"
+	IOTRoboRunner         = "iot-roborunner"
+	IOTThingsGraph        = "iotthingsgraph"
+	IOTWinMaker           = "iotwinmaker"
 	IotWireless           = "api.iotwireless"
 	Kafka                 = "kafka"
 	KafkaConnect          = "kafkaconnect"
@@ -80,8 +93,9 @@ const (
 	LakeFormation         = "lakeformation"
 	Lambda                = "lambda"
 	LicenseManager        = "license-manager"
-	Lightsail             = "lightsail"
+	LightSail             = "lightsail"
 	Logs                  = "logs"
+	Macie                 = "macie"
 	Macie2                = "macie2"
 	Mediaconnect          = "mediaconnect"
 	MediaConvert          = "mediaconvert"
@@ -100,13 +114,20 @@ const (
 	Proton                = "proton"
 	RDS                   = "rds"
 	Redshift              = "redshift"
+	RedshiftData          = "redshift-data"
+	RedshiftServerless    = "redshift-serverless"
 	Robomaker             = "robomaker"
 	Route53               = "route53"
+	Route53Domains        = "route53domains"
 	Route53Resolver       = "route53resolver"
 	S3                    = "s3"
+	S3Control             = "s3control"
+	S3Outposts            = "s3outposts"
 	SageMaker             = "sagemaker"
+	Scheduler             = "scheduler"
 	SecretsManager        = "secretsmanager"
 	SecurityHub           = "securityhub"
+	SecurityLake          = "securitylake"
 	ServiceCatalog        = "servicecatalog"
 	ServiceQuotas         = "servicequotas"
 	Shield                = "shield"
@@ -187,7 +208,7 @@ var Services = map[string]map[string]policy.Service{
 	GameLift:              policy.GameLiftPolicies,
 	Glue:                  policy.GluePolicies,
 	Grafana:               policy.GrafanaPolicies,
-	Greengrass:            policy.GreengrassPolicies,
+	GreenGrass:            policy.GreenGrassPolicies,
 	GroundStation:         policy.GroundStationPolicies,
 	GuardDuty:             policy.GuardDutyPolicies,
 	IAM:                   policy.IAMPolicies,
@@ -195,6 +216,19 @@ var Services = map[string]map[string]policy.Service{
 	Inspector:             policy.InspectorPolicies,
 	Inspector2:            policy.Inspector2Policies,
 	IOT:                   policy.IOTPolicies,
+	IOT1ClickDevices:      policy.IOT1ClickDevicesPolicies,
+	IOT1ClickProjects:     policy.IOT1ClickProjectsPolicies,
+	IOTAnalytics:          policy.IOTAnalyticsPolicies,
+	IOTData:               policy.IOTDataPolicies,
+	IOTDeviceAdvisor:      policy.IOTDeviceAdvisorPolicies,
+	IOTEvents:             policy.IOTEventsPolicies,
+	IOTEventsData:         policy.IOTEventsDataPolicies,
+	IOTFleetHub:           policy.IOTFleetHubPolicies,
+	IOTFleetWise:          policy.IOTFleetWisePolicies,
+	IOTJobsData:           policy.IOTJobsDataPolicies,
+	IOTRoboRunner:         policy.IOTRoboRunnerPolicies,
+	IOTThingsGraph:        policy.IOTThingsGraphPolicies,
+	IOTWinMaker:           policy.IOTWinMakerPolicies,
 	IotWireless:           policy.IotWirelessPolicies,
 	Kafka:                 policy.KafkaPolicies,
 	KafkaConnect:          policy.KafkaConnectPolicies,
@@ -204,8 +238,9 @@ var Services = map[string]map[string]policy.Service{
 	LakeFormation:         policy.LakeFormationPolicies,
 	Lambda:                policy.LambdaPolicies,
 	LicenseManager:        policy.LicenseManagerPolicies,
-	Lightsail:             policy.LightsailPolicies,
+	LightSail:             policy.LightSailPolicies,
 	Logs:                  policy.LogsPolicies,
+	Macie:                 policy.MaciePolicies,
 	Macie2:                policy.Macie2Policies,
 	Mediaconnect:          policy.MediaconnectPolicies,
 	MediaConvert:          policy.MediaConvertPolicies,
@@ -224,13 +259,20 @@ var Services = map[string]map[string]policy.Service{
 	Proton:                policy.ProtonPolicies,
 	RDS:                   policy.RDSPolicies,
 	Redshift:              policy.RedshiftPolicies,
+	RedshiftData:          policy.RedshiftDataPolicies,
+	RedshiftServerless:    policy.RedshiftServerlessPolicies,
 	Robomaker:             policy.RobomakerPolicies,
 	Route53:               policy.Route53Policies,
+	Route53Domains:        policy.Route53DomainsPolicies,
 	Route53Resolver:       policy.Route53ResolverPolicies,
 	S3:                    policy.S3Policies,
+	S3Control:             policy.S3ControlPolicies,
+	S3Outposts:            policy.S3OutpostsPolicies,
 	SageMaker:             policy.SageMakerPolicies,
+	Scheduler:             policy.SchedulerPolicies,
 	SecretsManager:        policy.SecretsManagerPolicies,
 	SecurityHub:           policy.SecurityHubPolicies,
+	SecurityLake:          policy.SecurityLakePolicies,
 	ServiceCatalog:        policy.ServiceCatalogPolicies,
 	ServiceQuotas:         policy.ServiceQuotasPolicies,
 	Shield:                policy.ShieldPolicies,
@@ -247,8 +289,8 @@ var Services = map[string]map[string]policy.Service{
 	VoiceID:               policy.VoiceIdPolicies,
 	WAF:                   policy.WAFPolicies,
 	WAFRegional:           policy.WAFRegionalPolicies,
-	WafV2:                 policy.WafV2Policies,
-	Wellarchitected:       policy.WellarchitectedPolicies,
+	WafV2:                 policy.WAFV2Policies,
+	Wellarchitected:       policy.WellArchitectedPolicies,
 	Workspaces:            policy.WorkspacesPolicies,
 	WorkspacesWeb:         policy.WorkspacesWebPolicies,
 	Xray:                  policy.XrayPolicies,

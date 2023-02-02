@@ -2,57 +2,113 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// SNSPolicies policy
 var SNSPolicies = map[string]Service{
 	"GetSMSAttributes": {
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=GetSMSAttributes&Version=2010-03-31",
-		Permission:    "GetSMSAttributes",
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetSMSAttributes",
+			"Version": "2010-03-31",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "GetSMSAttributes",
 	},
 	"GetSMSSandboxAccountStatus": {
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=GetSMSSandboxAccountStatus&Version=2010-03-31",
-		Permission:    "GetSMSSandboxAccountStatus",
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetSMSSandboxAccountStatus",
+			"Version": "2010-03-31",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "GetSMSSandboxAccountStatus",
 	},
 	"ListOriginationNumbers": {
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=ListOriginationNumbers&Version=2010-03-31",
-		Permission:    "ListOriginationNumbers",
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "ListOriginationNumbers",
+			"Version": "2010-03-31",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "ListOriginationNumbers",
 	},
 	"ListPhoneNumbersOptedOut": {
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=ListPhoneNumbersOptedOut&Version=2010-03-31",
-		Permission:    "ListPhoneNumbersOptedOut",
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "ListPhoneNumbersOptedOut",
+			"Version": "2010-03-31",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "ListPhoneNumbersOptedOut",
 	},
 	"ListPlatformApplications": {
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=ListPlatformApplications&Version=2010-03-31",
-		Permission:    "ListPlatformApplications",
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "ListPlatformApplications",
+			"Version": "2010-03-31",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "ListPlatformApplications",
 	},
 	"ListSMSSandboxPhoneNumbers": {
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=ListSMSSandboxPhoneNumbers&Version=2010-03-31",
-		Permission:    "ListSMSSandboxPhoneNumbers",
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "ListSMSSandboxPhoneNumbers",
+			"Version": "2010-03-31",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "ListSMSSandboxPhoneNumbers",
 	},
 	"ListSubscriptions": {
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=ListSubscriptions&Version=2010-03-31",
-		Permission:    "ListSubscriptions",
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "ListSubscriptions",
+			"Version": "2010-03-31",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "ListSubscriptions",
 	},
 	"ListTopics": {
-		Method:        "POST",
-		JsonData:      map[string]string{},
-		ServiceSuffix: "?Action=ListTopics&Version=2010-03-31",
-		Permission:    "ListTopics",
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "ListTopics",
+			"Version": "2010-03-31",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission: "ListTopics",
 	},
 
-	// extra policies
+	// extra
+	"GetDataProtectionPolicy": {
+		Method: "POST",
+		FormData: map[string]string{
+			"Action":  "GetDataProtectionPolicy",
+			"Version": "2010-03-31",
+		},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
+		},
+		Permission:             "GetDataProtectionPolicy",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ResourceArn",
+		ExtraComponentLocation: "form",
+		ExtraCommandLineFlag:   "resource_arn",
+	},
 	"GetEndpointAttributes": {
 		Method: "POST",
 		FormData: map[string]string{

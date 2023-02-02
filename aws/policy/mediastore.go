@@ -2,15 +2,16 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// MediaStorePolicies policy
 var MediaStorePolicies = map[string]Service{
-	"DescribeContainers": {
+	"DescribeContainer": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "MediaStore_20170901.DescribeContainer",
 		},
-		Permission: "DescribeContainers",
+		Permission: "DescribeContainer",
 	},
 	"ListContainers": {
 		Method:   "POST",

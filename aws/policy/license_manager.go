@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// LicenseManagerPolicies policy
 var LicenseManagerPolicies = map[string]Service{
 	"GetServiceSettings": {
 		Method:   "POST",
@@ -74,6 +75,15 @@ var LicenseManagerPolicies = map[string]Service{
 			aws_X_AMZ_TARGET:           "AWSLicenseManager.ListReceivedLicenses",
 		},
 		Permission: "ListReceivedLicenses",
+	},
+	"ListReceivedLicensesForOrganization": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AWSLicenseManager.ListReceivedLicensesForOrganization",
+		},
+		Permission: "ListReceivedLicensesForOrganization",
 	},
 	"ListResourceInventory": {
 		Method:   "POST",
@@ -231,6 +241,18 @@ var LicenseManagerPolicies = map[string]Service{
 			aws_X_AMZ_TARGET:           "AWSLicenseManager.ListLicenseVersions",
 		},
 		Permission:             "ListLicenseVersions",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "LicenseArn",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "license_arn",
+	},
+	"ListReceivedGrantsForOrganization": {
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AWSLicenseManager.ListReceivedGrantsForOrganization",
+		},
+		Permission:             "ListReceivedGrantsForOrganization",
 		IsExtra:                true,
 		ExtraComponentBodyKey:  "LicenseArn",
 		ExtraComponentLocation: "json",

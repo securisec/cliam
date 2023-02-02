@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// OrganizationsPolicies policy
 var OrganizationsPolicies = map[string]Service{
 	"DescribeOrganization": {
 		Method:   "POST",
@@ -12,6 +13,42 @@ var OrganizationsPolicies = map[string]Service{
 		},
 		Permission: "DescribeOrganization",
 	},
+	"DescribeResourcePolicy": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AWSOrganizationsV20161128.DescribeResourcePolicy",
+		},
+		Permission: "DescribeResourcePolicy",
+	},
+	"EnableAllFeatures": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AWSOrganizationsV20161128.EnableAllFeatures",
+		},
+		Permission: "EnableAllFeatures",
+	},
+	"LeaveOrganization": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AWSOrganizationsV20161128.LeaveOrganization",
+		},
+		Permission: "LeaveOrganization",
+	},
+	"ListAWSServiceAccessForOrganization": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AWSOrganizationsV20161128.ListAWSServiceAccessForOrganization",
+		},
+		Permission: "ListAWSServiceAccessForOrganization",
+	},
 	"ListAccounts": {
 		Method:   "POST",
 		JsonData: map[string]string{},
@@ -20,15 +57,6 @@ var OrganizationsPolicies = map[string]Service{
 			aws_X_AMZ_TARGET:           "AWSOrganizationsV20161128.ListAccounts",
 		},
 		Permission: "ListAccounts",
-	},
-	"ListAwsServiceAccessForOrganization": {
-		Method:   "POST",
-		JsonData: map[string]string{},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
-			aws_X_AMZ_TARGET:           "AWSOrganizationsV20161128.ListAwsServiceAccessForOrganization",
-		},
-		Permission: "ListAwsServiceAccessForOrganization",
 	},
 	"ListCreateAccountStatus": {
 		Method:   "POST",

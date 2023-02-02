@@ -1,63 +1,79 @@
 package policy
 
+// Route53Policies policy
 var Route53Policies = map[string]Service{
-	"ListGeoLocations": {
-		IgnoreRegion:  true,
-		ServiceSuffix: "2013-04-01/geolocations",
-		Permission:    "ListGeoLocations",
+	"GetCheckerIpRanges": {
+		Method:        "GET",
+		ServiceSuffix: "2013-04-01/checkeripranges",
+		Permission:    "GetCheckerIpRanges",
+	},
+	"GetGeoLocation": {
+		Method:        "GET",
+		ServiceSuffix: "2013-04-01/geolocation",
+		Permission:    "GetGeoLocation",
 	},
 	"GetHealthCheckCount": {
-		IgnoreRegion:  true,
+		Method:        "GET",
 		ServiceSuffix: "2013-04-01/healthcheckcount",
 		Permission:    "GetHealthCheckCount",
 	},
 	"GetHostedZoneCount": {
-		IgnoreRegion:  true,
+		Method:        "GET",
 		ServiceSuffix: "2013-04-01/hostedzonecount",
 		Permission:    "GetHostedZoneCount",
 	},
 	"GetTrafficPolicyInstanceCount": {
-		IgnoreRegion:  true,
+		Method:        "GET",
 		ServiceSuffix: "2013-04-01/trafficpolicyinstancecount",
 		Permission:    "GetTrafficPolicyInstanceCount",
 	},
+	"ListCidrCollections": {
+		Method:        "GET",
+		ServiceSuffix: "2013-04-01/cidrcollection",
+		Permission:    "ListCidrCollections",
+	},
+	"ListGeoLocations": {
+		Method:        "GET",
+		ServiceSuffix: "2013-04-01/geolocations",
+		Permission:    "ListGeoLocations",
+	},
 	"ListHealthChecks": {
-		IgnoreRegion:  true,
+		Method:        "GET",
 		ServiceSuffix: "2013-04-01/healthcheck",
 		Permission:    "ListHealthChecks",
 	},
 	"ListHostedZones": {
-		IgnoreRegion:  true,
+		Method:        "GET",
 		ServiceSuffix: "2013-04-01/hostedzone",
 		Permission:    "ListHostedZones",
 	},
 	"ListHostedZonesByName": {
-		IgnoreRegion:  true,
+		Method:        "GET",
 		ServiceSuffix: "2013-04-01/hostedzonesbyname",
 		Permission:    "ListHostedZonesByName",
 	},
 	"ListQueryLoggingConfigs": {
-		IgnoreRegion:  true,
+		Method:        "GET",
 		ServiceSuffix: "2013-04-01/queryloggingconfig",
 		Permission:    "ListQueryLoggingConfigs",
 	},
 	"ListReusableDelegationSets": {
-		IgnoreRegion:  true,
+		Method:        "GET",
 		ServiceSuffix: "2013-04-01/delegationset",
 		Permission:    "ListReusableDelegationSets",
 	},
 	"ListTrafficPolicies": {
-		IgnoreRegion:  true,
+		Method:        "GET",
 		ServiceSuffix: "2013-04-01/trafficpolicies",
 		Permission:    "ListTrafficPolicies",
 	},
 	"ListTrafficPolicyInstances": {
-		IgnoreRegion:  true,
+		Method:        "GET",
 		ServiceSuffix: "2013-04-01/trafficpolicyinstances",
 		Permission:    "ListTrafficPolicyInstances",
 	},
 
-	// extra policies
+	// extra
 	"GetAccountLimit": {
 		ServiceSuffix:          "/2013-04-01/accountlimit/{{.type}}",
 		Permission:             "GetAccountLimit",
@@ -127,6 +143,20 @@ var Route53Policies = map[string]Service{
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "id",
+	},
+	"ListCidrBlocks": {
+		ServiceSuffix:          "/2013-04-01/cidrcollection/{{.collection_id}}/cidrblocks",
+		Permission:             "ListCidrBlocks",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "collection_id",
+	},
+	"ListCidrLocations": {
+		ServiceSuffix:          "/2013-04-01/cidrcollection/{{.collection_id}}",
+		Permission:             "ListCidrLocations",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "collection_id",
 	},
 	"ListResourceRecordSets": {
 		ServiceSuffix:          "/2013-04-01/hostedzone/{{.hosted_zone_id}}/rrset",

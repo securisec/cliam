@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// SecretsManagerPolicies policy
 var SecretsManagerPolicies = map[string]Service{
 	"GetRandomPassword": {
 		Method:   "POST",

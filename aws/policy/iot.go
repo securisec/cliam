@@ -2,16 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// IOTPolicies policy
 var IOTPolicies = map[string]Service{
-	"CreateKeysAndCertificate": {
-		Method:        "POST",
-		ServiceSuffix: "keys-and-certificate",
-		JsonData:      map[string]string{},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
-		},
-		Permission: "CreateKeysAndCertificate",
-	},
 	"DescribeAccountAuditConfiguration": {
 		Method:        "GET",
 		ServiceSuffix: "audit/configuration",
@@ -586,6 +578,13 @@ var IOTPolicies = map[string]Service{
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "template_name",
+	},
+	"ListRelatedResourcesForAuditFinding": {
+		ServiceSuffix:          "/audit/relatedResources",
+		Permission:             "ListRelatedResourcesForAuditFinding",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "finding_id",
 	},
 	"ListSecurityProfilesForTarget": {
 		ServiceSuffix:          "/security-profiles-for-target",

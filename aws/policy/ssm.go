@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// SSMPolicies policy
 var SSMPolicies = map[string]Service{
 	"DescribeActivations": {
 		Method:   "POST",
@@ -12,6 +13,24 @@ var SSMPolicies = map[string]Service{
 		},
 		Permission: "DescribeActivations",
 	},
+	"DescribeAssociation": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonSSM.DescribeAssociation",
+		},
+		Permission: "DescribeAssociation",
+	},
+	"DescribeAutomationExecutions": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonSSM.DescribeAutomationExecutions",
+		},
+		Permission: "DescribeAutomationExecutions",
+	},
 	"DescribeAvailablePatches": {
 		Method:   "POST",
 		JsonData: map[string]string{},
@@ -20,6 +39,15 @@ var SSMPolicies = map[string]Service{
 			aws_X_AMZ_TARGET:           "AmazonSSM.DescribeAvailablePatches",
 		},
 		Permission: "DescribeAvailablePatches",
+	},
+	"DescribeInstanceInformation": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonSSM.DescribeInstanceInformation",
+		},
+		Permission: "DescribeInstanceInformation",
 	},
 	"DescribeInventoryDeletions": {
 		Method:   "POST",
@@ -30,6 +58,15 @@ var SSMPolicies = map[string]Service{
 		},
 		Permission: "DescribeInventoryDeletions",
 	},
+	"DescribeMaintenanceWindowSchedule": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonSSM.DescribeMaintenanceWindowSchedule",
+		},
+		Permission: "DescribeMaintenanceWindowSchedule",
+	},
 	"DescribeMaintenanceWindows": {
 		Method:   "POST",
 		JsonData: map[string]string{},
@@ -38,6 +75,24 @@ var SSMPolicies = map[string]Service{
 			aws_X_AMZ_TARGET:           "AmazonSSM.DescribeMaintenanceWindows",
 		},
 		Permission: "DescribeMaintenanceWindows",
+	},
+	"DescribeOpsItems": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonSSM.DescribeOpsItems",
+		},
+		Permission: "DescribeOpsItems",
+	},
+	"DescribeParameters": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonSSM.DescribeParameters",
+		},
+		Permission: "DescribeParameters",
 	},
 	"DescribePatchBaselines": {
 		Method:   "POST",
@@ -66,6 +121,15 @@ var SSMPolicies = map[string]Service{
 		},
 		Permission: "GetDefaultPatchBaseline",
 	},
+	"GetInventory": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonSSM.GetInventory",
+		},
+		Permission: "GetInventory",
+	},
 	"GetInventorySchema": {
 		Method:   "POST",
 		JsonData: map[string]string{},
@@ -74,6 +138,24 @@ var SSMPolicies = map[string]Service{
 			aws_X_AMZ_TARGET:           "AmazonSSM.GetInventorySchema",
 		},
 		Permission: "GetInventorySchema",
+	},
+	"GetOpsSummary": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonSSM.GetOpsSummary",
+		},
+		Permission: "GetOpsSummary",
+	},
+	"ListAssociations": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonSSM.ListAssociations",
+		},
+		Permission: "ListAssociations",
 	},
 	"ListCommandInvocations": {
 		Method:   "POST",
@@ -110,6 +192,42 @@ var SSMPolicies = map[string]Service{
 			aws_X_AMZ_TARGET:           "AmazonSSM.ListComplianceSummaries",
 		},
 		Permission: "ListComplianceSummaries",
+	},
+	"ListDocuments": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonSSM.ListDocuments",
+		},
+		Permission: "ListDocuments",
+	},
+	"ListOpsItemEvents": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonSSM.ListOpsItemEvents",
+		},
+		Permission: "ListOpsItemEvents",
+	},
+	"ListOpsItemRelatedItems": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonSSM.ListOpsItemRelatedItems",
+		},
+		Permission: "ListOpsItemRelatedItems",
+	},
+	"ListOpsMetadata": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonSSM.ListOpsMetadata",
+		},
+		Permission: "ListOpsMetadata",
 	},
 	"ListResourceComplianceSummaries": {
 		Method:   "POST",
@@ -478,6 +596,18 @@ var SSMPolicies = map[string]Service{
 		ExtraComponentBodyKey:  "PatchGroup",
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "patch_group",
+	},
+	"GetResourcePolicies": {
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonSSM.GetResourcePolicies",
+		},
+		Permission:             "GetResourcePolicies",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ResourceArn",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "resource_arn",
 	},
 	"GetServiceSetting": {
 		Method: "POST",

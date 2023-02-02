@@ -2,11 +2,11 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// WAFPolicies policy
 var WAFPolicies = map[string]Service{
 	"GetChangeToken": {
-		IgnoreRegion: true,
-		Method:       "POST",
-		JsonData:     map[string]string{},
+		Method:   "POST",
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSWAF_20150824.GetChangeToken",
@@ -14,9 +14,8 @@ var WAFPolicies = map[string]Service{
 		Permission: "GetChangeToken",
 	},
 	"ListActivatedRulesInRuleGroup": {
-		IgnoreRegion: true,
-		Method:       "POST",
-		JsonData:     map[string]string{},
+		Method:   "POST",
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSWAF_20150824.ListActivatedRulesInRuleGroup",
@@ -24,9 +23,8 @@ var WAFPolicies = map[string]Service{
 		Permission: "ListActivatedRulesInRuleGroup",
 	},
 	"ListByteMatchSets": {
-		IgnoreRegion: true,
-		Method:       "POST",
-		JsonData:     map[string]string{},
+		Method:   "POST",
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSWAF_20150824.ListByteMatchSets",
@@ -34,29 +32,26 @@ var WAFPolicies = map[string]Service{
 		Permission: "ListByteMatchSets",
 	},
 	"ListGeoMatchSets": {
-		IgnoreRegion: true,
-		Method:       "POST",
-		JsonData:     map[string]string{},
+		Method:   "POST",
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSWAF_20150824.ListGeoMatchSets",
 		},
 		Permission: "ListGeoMatchSets",
 	},
-	"ListIpSets": {
-		IgnoreRegion: true,
-		Method:       "POST",
-		JsonData:     map[string]string{},
+	"ListIPSets": {
+		Method:   "POST",
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
-			aws_X_AMZ_TARGET:           "AWSWAF_20150824.ListIpSets",
+			aws_X_AMZ_TARGET:           "AWSWAF_20150824.ListIPSets",
 		},
-		Permission: "ListIpSets",
+		Permission: "ListIPSets",
 	},
 	"ListLoggingConfigurations": {
-		IgnoreRegion: true,
-		Method:       "POST",
-		JsonData:     map[string]string{},
+		Method:   "POST",
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSWAF_20150824.ListLoggingConfigurations",
@@ -64,9 +59,8 @@ var WAFPolicies = map[string]Service{
 		Permission: "ListLoggingConfigurations",
 	},
 	"ListRateBasedRules": {
-		IgnoreRegion: true,
-		Method:       "POST",
-		JsonData:     map[string]string{},
+		Method:   "POST",
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSWAF_20150824.ListRateBasedRules",
@@ -74,9 +68,8 @@ var WAFPolicies = map[string]Service{
 		Permission: "ListRateBasedRules",
 	},
 	"ListRegexMatchSets": {
-		IgnoreRegion: true,
-		Method:       "POST",
-		JsonData:     map[string]string{},
+		Method:   "POST",
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSWAF_20150824.ListRegexMatchSets",
@@ -84,9 +77,8 @@ var WAFPolicies = map[string]Service{
 		Permission: "ListRegexMatchSets",
 	},
 	"ListRegexPatternSets": {
-		IgnoreRegion: true,
-		Method:       "POST",
-		JsonData:     map[string]string{},
+		Method:   "POST",
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSWAF_20150824.ListRegexPatternSets",
@@ -94,9 +86,8 @@ var WAFPolicies = map[string]Service{
 		Permission: "ListRegexPatternSets",
 	},
 	"ListRuleGroups": {
-		IgnoreRegion: true,
-		Method:       "POST",
-		JsonData:     map[string]string{},
+		Method:   "POST",
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSWAF_20150824.ListRuleGroups",
@@ -104,9 +95,8 @@ var WAFPolicies = map[string]Service{
 		Permission: "ListRuleGroups",
 	},
 	"ListRules": {
-		IgnoreRegion: true,
-		Method:       "POST",
-		JsonData:     map[string]string{},
+		Method:   "POST",
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSWAF_20150824.ListRules",
@@ -114,9 +104,8 @@ var WAFPolicies = map[string]Service{
 		Permission: "ListRules",
 	},
 	"ListSizeConstraintSets": {
-		IgnoreRegion: true,
-		Method:       "POST",
-		JsonData:     map[string]string{},
+		Method:   "POST",
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSWAF_20150824.ListSizeConstraintSets",
@@ -124,9 +113,8 @@ var WAFPolicies = map[string]Service{
 		Permission: "ListSizeConstraintSets",
 	},
 	"ListSqlInjectionMatchSets": {
-		IgnoreRegion: true,
-		Method:       "POST",
-		JsonData:     map[string]string{},
+		Method:   "POST",
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSWAF_20150824.ListSqlInjectionMatchSets",
@@ -134,19 +122,26 @@ var WAFPolicies = map[string]Service{
 		Permission: "ListSqlInjectionMatchSets",
 	},
 	"ListSubscribedRuleGroups": {
-		IgnoreRegion: true,
-		Method:       "POST",
-		JsonData:     map[string]string{},
+		Method:   "POST",
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSWAF_20150824.ListSubscribedRuleGroups",
 		},
 		Permission: "ListSubscribedRuleGroups",
 	},
+	"ListWebACLs": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AWSWAF_20150824.ListWebACLs",
+		},
+		Permission: "ListWebACLs",
+	},
 	"ListXssMatchSets": {
-		IgnoreRegion: true,
-		Method:       "POST",
-		JsonData:     map[string]string{},
+		Method:   "POST",
+		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "AWSWAF_20150824.ListXssMatchSets",

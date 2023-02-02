@@ -2,7 +2,17 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// TranslatePolicies policy
 var TranslatePolicies = map[string]Service{
+	"ListLanguages": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AWSShineFrontendService_20170701.ListLanguages",
+		},
+		Permission: "ListLanguages",
+	},
 	"ListParallelData": {
 		Method:   "POST",
 		JsonData: map[string]string{},
@@ -67,5 +77,17 @@ var TranslatePolicies = map[string]Service{
 		ExtraComponentBodyKey:  "Name",
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "name",
+	},
+	"ListTagsForResource": {
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AWSShineFrontendService_20170701.ListTagsForResource",
+		},
+		Permission:             "ListTagsForResource",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ResourceArn",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "resource_arn",
 	},
 }

@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// Macie2Policies policy
 var Macie2Policies = map[string]Service{
 	"BatchGetCustomDataIdentifiers": {
 		Method:        "POST",
@@ -11,15 +12,6 @@ var Macie2Policies = map[string]Service{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "BatchGetCustomDataIdentifiers",
-	},
-	"CreateSampleFindings": {
-		Method:        "POST",
-		ServiceSuffix: "findings/sample",
-		JsonData:      map[string]string{},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
-		},
-		Permission: "CreateSampleFindings",
 	},
 	"DescribeBuckets": {
 		Method:        "POST",
@@ -67,6 +59,11 @@ var Macie2Policies = map[string]Service{
 		ServiceSuffix: "administrator",
 		Permission:    "GetAdministratorAccount",
 	},
+	"GetAutomatedDiscoveryConfiguration": {
+		Method:        "GET",
+		ServiceSuffix: "automated-discovery/configuration",
+		Permission:    "GetAutomatedDiscoveryConfiguration",
+	},
 	"GetBucketStatistics": {
 		Method:        "POST",
 		ServiceSuffix: "datasources/s3/statistics",
@@ -101,6 +98,11 @@ var Macie2Policies = map[string]Service{
 		ServiceSuffix: "master",
 		Permission:    "GetMasterAccount",
 	},
+	"GetRevealConfiguration": {
+		Method:        "GET",
+		ServiceSuffix: "reveal-configuration",
+		Permission:    "GetRevealConfiguration",
+	},
 	"GetUsageStatistics": {
 		Method:        "POST",
 		ServiceSuffix: "usage/statistics",
@@ -115,6 +117,11 @@ var Macie2Policies = map[string]Service{
 		ServiceSuffix: "usage",
 		Permission:    "GetUsageTotals",
 	},
+	"ListAllowLists": {
+		Method:        "GET",
+		ServiceSuffix: "allow-lists",
+		Permission:    "ListAllowLists",
+	},
 	"ListClassificationJobs": {
 		Method:        "POST",
 		ServiceSuffix: "jobs/list",
@@ -123,6 +130,11 @@ var Macie2Policies = map[string]Service{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "ListClassificationJobs",
+	},
+	"ListClassificationScopes": {
+		Method:        "GET",
+		ServiceSuffix: "classification-scopes",
+		Permission:    "ListClassificationScopes",
 	},
 	"ListCustomDataIdentifiers": {
 		Method:        "POST",
@@ -171,6 +183,11 @@ var Macie2Policies = map[string]Service{
 		ServiceSuffix: "admin",
 		Permission:    "ListOrganizationAdminAccounts",
 	},
+	"ListSensitivityInspectionTemplates": {
+		Method:        "GET",
+		ServiceSuffix: "templates/sensitivity-inspections",
+		Permission:    "ListSensitivityInspectionTemplates",
+	},
 	"SearchResources": {
 		Method:        "POST",
 		ServiceSuffix: "datasources/search-resources",
@@ -188,6 +205,20 @@ var Macie2Policies = map[string]Service{
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "job_id",
+	},
+	"GetAllowList": {
+		ServiceSuffix:          "/allow-lists/{{.id}}",
+		Permission:             "GetAllowList",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "id",
+	},
+	"GetClassificationScope": {
+		ServiceSuffix:          "/classification-scopes/{{.id}}",
+		Permission:             "GetClassificationScope",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "id",
 	},
 	"GetCustomDataIdentifier": {
 		ServiceSuffix:          "/custom-data-identifiers/{{.id}}",
@@ -239,6 +270,48 @@ var Macie2Policies = map[string]Service{
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "id",
+	},
+	"GetResourceProfile": {
+		ServiceSuffix:          "/resource-profiles",
+		Permission:             "GetResourceProfile",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "resource_arn",
+	},
+	"GetSensitiveDataOccurrences": {
+		ServiceSuffix:          "/findings/{{.finding_id}}/reveal",
+		Permission:             "GetSensitiveDataOccurrences",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "finding_id",
+	},
+	"GetSensitiveDataOccurrencesAvailability": {
+		ServiceSuffix:          "/findings/{{.finding_id}}/reveal/availability",
+		Permission:             "GetSensitiveDataOccurrencesAvailability",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "finding_id",
+	},
+	"GetSensitivityInspectionTemplate": {
+		ServiceSuffix:          "/templates/sensitivity-inspections/{{.id}}",
+		Permission:             "GetSensitivityInspectionTemplate",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "id",
+	},
+	"ListResourceProfileArtifacts": {
+		ServiceSuffix:          "/resource-profiles/artifacts",
+		Permission:             "ListResourceProfileArtifacts",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "resource_arn",
+	},
+	"ListResourceProfileDetections": {
+		ServiceSuffix:          "/resource-profiles/detections",
+		Permission:             "ListResourceProfileDetections",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "resource_arn",
 	},
 	"ListTagsForResource": {
 		ServiceSuffix:          "/tags/{{.resource_arn}}",

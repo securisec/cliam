@@ -2,7 +2,26 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// SageMakerPolicies policy
 var SageMakerPolicies = map[string]Service{
+	"DisableSagemakerServicecatalogPortfolio": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "SageMaker.DisableSagemakerServicecatalogPortfolio",
+		},
+		Permission: "DisableSagemakerServicecatalogPortfolio",
+	},
+	"EnableSagemakerServicecatalogPortfolio": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "SageMaker.EnableSagemakerServicecatalogPortfolio",
+		},
+		Permission: "EnableSagemakerServicecatalogPortfolio",
+	},
 	"GetSagemakerServicecatalogPortfolioStatus": {
 		Method:   "POST",
 		JsonData: map[string]string{},
@@ -66,14 +85,14 @@ var SageMakerPolicies = map[string]Service{
 		},
 		Permission: "ListAssociations",
 	},
-	"ListAutoMlJobs": {
+	"ListAutoMLJobs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
-			aws_X_AMZ_TARGET:           "SageMaker.ListAutoMlJobs",
+			aws_X_AMZ_TARGET:           "SageMaker.ListAutoMLJobs",
 		},
-		Permission: "ListAutoMlJobs",
+		Permission: "ListAutoMLJobs",
 	},
 	"ListCodeRepositories": {
 		Method:   "POST",
@@ -138,6 +157,15 @@ var SageMakerPolicies = map[string]Service{
 		},
 		Permission: "ListDomains",
 	},
+	"ListEdgeDeploymentPlans": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "SageMaker.ListEdgeDeploymentPlans",
+		},
+		Permission: "ListEdgeDeploymentPlans",
+	},
 	"ListEdgePackagingJobs": {
 		Method:   "POST",
 		JsonData: map[string]string{},
@@ -192,6 +220,15 @@ var SageMakerPolicies = map[string]Service{
 		},
 		Permission: "ListFlowDefinitions",
 	},
+	"ListHubs": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "SageMaker.ListHubs",
+		},
+		Permission: "ListHubs",
+	},
 	"ListHumanTaskUis": {
 		Method:   "POST",
 		JsonData: map[string]string{},
@@ -218,6 +255,15 @@ var SageMakerPolicies = map[string]Service{
 			aws_X_AMZ_TARGET:           "SageMaker.ListImages",
 		},
 		Permission: "ListImages",
+	},
+	"ListInferenceExperiments": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "SageMaker.ListInferenceExperiments",
+		},
+		Permission: "ListInferenceExperiments",
 	},
 	"ListInferenceRecommendationsJobs": {
 		Method:   "POST",
@@ -255,6 +301,15 @@ var SageMakerPolicies = map[string]Service{
 		},
 		Permission: "ListModelBiasJobDefinitions",
 	},
+	"ListModelCards": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "SageMaker.ListModelCards",
+		},
+		Permission: "ListModelCards",
+	},
 	"ListModelExplainabilityJobDefinitions": {
 		Method:   "POST",
 		JsonData: map[string]string{},
@@ -263,6 +318,15 @@ var SageMakerPolicies = map[string]Service{
 			aws_X_AMZ_TARGET:           "SageMaker.ListModelExplainabilityJobDefinitions",
 		},
 		Permission: "ListModelExplainabilityJobDefinitions",
+	},
+	"ListModelMetadata": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "SageMaker.ListModelMetadata",
+		},
+		Permission: "ListModelMetadata",
 	},
 	"ListModelPackageGroups": {
 		Method:   "POST",
@@ -299,6 +363,15 @@ var SageMakerPolicies = map[string]Service{
 			aws_X_AMZ_TARGET:           "SageMaker.ListModels",
 		},
 		Permission: "ListModels",
+	},
+	"ListMonitoringAlertHistory": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "SageMaker.ListMonitoringAlertHistory",
+		},
+		Permission: "ListMonitoringAlertHistory",
 	},
 	"ListMonitoringExecutions": {
 		Method:   "POST",
@@ -371,6 +444,15 @@ var SageMakerPolicies = map[string]Service{
 			aws_X_AMZ_TARGET:           "SageMaker.ListProjects",
 		},
 		Permission: "ListProjects",
+	},
+	"ListSpaces": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "SageMaker.ListSpaces",
+		},
+		Permission: "ListSpaces",
 	},
 	"ListStudioLifecycleConfigs": {
 		Method:   "POST",
@@ -452,6 +534,15 @@ var SageMakerPolicies = map[string]Service{
 			aws_X_AMZ_TARGET:           "SageMaker.ListWorkteams",
 		},
 		Permission: "ListWorkteams",
+	},
+	"QueryLineage": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "SageMaker.QueryLineage",
+		},
+		Permission: "QueryLineage",
 	},
 
 	// extra
@@ -587,6 +678,18 @@ var SageMakerPolicies = map[string]Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "domain_id",
 	},
+	"DescribeEdgeDeploymentPlan": {
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "SageMaker.DescribeEdgeDeploymentPlan",
+		},
+		Permission:             "DescribeEdgeDeploymentPlan",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "EdgeDeploymentPlanName",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "edge_deployment_plan_name",
+	},
 	"DescribeEdgePackagingJob": {
 		Method: "POST",
 		Headers: map[string]string{
@@ -659,6 +762,18 @@ var SageMakerPolicies = map[string]Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "flow_definition_name",
 	},
+	"DescribeHub": {
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "SageMaker.DescribeHub",
+		},
+		Permission:             "DescribeHub",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "HubName",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "hub_name",
+	},
 	"DescribeHumanTaskUi": {
 		Method: "POST",
 		Headers: map[string]string{
@@ -706,6 +821,18 @@ var SageMakerPolicies = map[string]Service{
 		ExtraComponentBodyKey:  "ImageName",
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "image_name",
+	},
+	"DescribeInferenceExperiment": {
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "SageMaker.DescribeInferenceExperiment",
+		},
+		Permission:             "DescribeInferenceExperiment",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "Name",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "name",
 	},
 	"DescribeInferenceRecommendationsJob": {
 		Method: "POST",
@@ -766,6 +893,30 @@ var SageMakerPolicies = map[string]Service{
 		ExtraComponentBodyKey:  "JobDefinitionName",
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "job_definition_name",
+	},
+	"DescribeModelCard": {
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "SageMaker.DescribeModelCard",
+		},
+		Permission:             "DescribeModelCard",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ModelCardName",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "model_card_name",
+	},
+	"DescribeModelCardExportJob": {
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "SageMaker.DescribeModelCardExportJob",
+		},
+		Permission:             "DescribeModelCardExportJob",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ModelCardExportJobArn",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "model_card_export_job_arn",
 	},
 	"DescribeModelExplainabilityJobDefinition": {
 		Method: "POST",
@@ -1055,6 +1206,18 @@ var SageMakerPolicies = map[string]Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "resource",
 	},
+	"ListAliases": {
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "SageMaker.ListAliases",
+		},
+		Permission:             "ListAliases",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ImageName",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "image_name",
+	},
 	"ListCandidatesForAutoMLJob": {
 		Method: "POST",
 		Headers: map[string]string{
@@ -1079,6 +1242,18 @@ var SageMakerPolicies = map[string]Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "image_name",
 	},
+	"ListInferenceRecommendationsJobSteps": {
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "SageMaker.ListInferenceRecommendationsJobSteps",
+		},
+		Permission:             "ListInferenceRecommendationsJobSteps",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "JobName",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "job_name",
+	},
 	"ListLabelingJobsForWorkteam": {
 		Method: "POST",
 		Headers: map[string]string{
@@ -1090,6 +1265,42 @@ var SageMakerPolicies = map[string]Service{
 		ExtraComponentBodyKey:  "WorkteamArn",
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "workteam_arn",
+	},
+	"ListModelCardExportJobs": {
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "SageMaker.ListModelCardExportJobs",
+		},
+		Permission:             "ListModelCardExportJobs",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ModelCardName",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "model_card_name",
+	},
+	"ListModelCardVersions": {
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "SageMaker.ListModelCardVersions",
+		},
+		Permission:             "ListModelCardVersions",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ModelCardName",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "model_card_name",
+	},
+	"ListMonitoringAlerts": {
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "SageMaker.ListMonitoringAlerts",
+		},
+		Permission:             "ListMonitoringAlerts",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "MonitoringScheduleName",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "monitoring_schedule_name",
 	},
 	"ListPipelineExecutions": {
 		Method: "POST",

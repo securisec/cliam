@@ -2,7 +2,17 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// KinesisPolicies policy
 var KinesisPolicies = map[string]Service{
+	"DeregisterStreamConsumer": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "Kinesis_20131202.DeregisterStreamConsumer",
+		},
+		Permission: "DeregisterStreamConsumer",
+	},
 	"DescribeLimits": {
 		Method:   "POST",
 		JsonData: map[string]string{},
@@ -11,6 +21,15 @@ var KinesisPolicies = map[string]Service{
 			aws_X_AMZ_TARGET:           "Kinesis_20131202.DescribeLimits",
 		},
 		Permission: "DescribeLimits",
+	},
+	"DescribeStream": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "Kinesis_20131202.DescribeStream",
+		},
+		Permission: "DescribeStream",
 	},
 	"DescribeStreamConsumer": {
 		Method:   "POST",
@@ -21,6 +40,24 @@ var KinesisPolicies = map[string]Service{
 		},
 		Permission: "DescribeStreamConsumer",
 	},
+	"DescribeStreamSummary": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "Kinesis_20131202.DescribeStreamSummary",
+		},
+		Permission: "DescribeStreamSummary",
+	},
+	"ListShards": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "Kinesis_20131202.ListShards",
+		},
+		Permission: "ListShards",
+	},
 	"ListStreams": {
 		Method:   "POST",
 		JsonData: map[string]string{},
@@ -30,32 +67,17 @@ var KinesisPolicies = map[string]Service{
 		},
 		Permission: "ListStreams",
 	},
+	"ListTagsForStream": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "Kinesis_20131202.ListTagsForStream",
+		},
+		Permission: "ListTagsForStream",
+	},
 
 	// extra
-	"DescribeStream": {
-		Method: "POST",
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
-			aws_X_AMZ_TARGET:           "Kinesis_20131202.DescribeStream",
-		},
-		Permission:             "DescribeStream",
-		IsExtra:                true,
-		ExtraComponentBodyKey:  "StreamName",
-		ExtraComponentLocation: "json",
-		ExtraCommandLineFlag:   "stream_name",
-	},
-	"DescribeStreamSummary": {
-		Method: "POST",
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
-			aws_X_AMZ_TARGET:           "Kinesis_20131202.DescribeStreamSummary",
-		},
-		Permission:             "DescribeStreamSummary",
-		IsExtra:                true,
-		ExtraComponentBodyKey:  "StreamName",
-		ExtraComponentLocation: "json",
-		ExtraCommandLineFlag:   "stream_name",
-	},
 	"GetRecords": {
 		Method: "POST",
 		Headers: map[string]string{
@@ -79,17 +101,5 @@ var KinesisPolicies = map[string]Service{
 		ExtraComponentBodyKey:  "StreamARN",
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "stream_arn",
-	},
-	"ListTagsForStream": {
-		Method: "POST",
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
-			aws_X_AMZ_TARGET:           "Kinesis_20131202.ListTagsForStream",
-		},
-		Permission:             "ListTagsForStream",
-		IsExtra:                true,
-		ExtraComponentBodyKey:  "StreamName",
-		ExtraComponentLocation: "json",
-		ExtraCommandLineFlag:   "stream_name",
 	},
 }

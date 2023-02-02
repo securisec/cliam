@@ -2,7 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
-var WellarchitectedPolicies = map[string]Service{
+// WellArchitectedPolicies policy
+var WellArchitectedPolicies = map[string]Service{
 	"ListLenses": {
 		Method:        "GET",
 		ServiceSuffix: "lenses",

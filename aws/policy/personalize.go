@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// PersonalizePolicies policy
 var PersonalizePolicies = map[string]Service{
 	"ListBatchInferenceJobs": {
 		Method:   "POST",
@@ -84,6 +85,24 @@ var PersonalizePolicies = map[string]Service{
 		},
 		Permission: "ListFilters",
 	},
+	"ListMetricAttributionMetrics": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonPersonalize.ListMetricAttributionMetrics",
+		},
+		Permission: "ListMetricAttributionMetrics",
+	},
+	"ListMetricAttributions": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonPersonalize.ListMetricAttributions",
+		},
+		Permission: "ListMetricAttributions",
+	},
 	"ListRecipes": {
 		Method:   "POST",
 		JsonData: map[string]string{},
@@ -128,6 +147,15 @@ var PersonalizePolicies = map[string]Service{
 			aws_X_AMZ_TARGET:           "AmazonPersonalize.ListSolutions",
 		},
 		Permission: "ListSolutions",
+	},
+	"UpdateMetricAttribution": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonPersonalize.UpdateMetricAttribution",
+		},
+		Permission: "UpdateMetricAttribution",
 	},
 
 	// extra
@@ -262,6 +290,18 @@ var PersonalizePolicies = map[string]Service{
 		ExtraComponentBodyKey:  "filterArn",
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "filter_arn",
+	},
+	"DescribeMetricAttribution": {
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AmazonPersonalize.DescribeMetricAttribution",
+		},
+		Permission:             "DescribeMetricAttribution",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "metricAttributionArn",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "metric_attribution_arn",
 	},
 	"DescribeRecipe": {
 		Method: "POST",

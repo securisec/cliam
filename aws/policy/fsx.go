@@ -2,16 +2,8 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// FSXPolicies policy
 var FSXPolicies = map[string]Service{
-	"CreateBackup": {
-		Method:   "POST",
-		JsonData: map[string]string{},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
-			aws_X_AMZ_TARGET:           "AWSSimbaAPIService_v20180301.CreateBackup",
-		},
-		Permission: "CreateBackup",
-	},
 	"DescribeBackups": {
 		Method:   "POST",
 		JsonData: map[string]string{},
@@ -38,6 +30,15 @@ var FSXPolicies = map[string]Service{
 			aws_X_AMZ_TARGET:           "AWSSimbaAPIService_v20180301.DescribeDataRepositoryTasks",
 		},
 		Permission: "DescribeDataRepositoryTasks",
+	},
+	"DescribeFileCaches": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "AWSSimbaAPIService_v20180301.DescribeFileCaches",
+		},
+		Permission: "DescribeFileCaches",
 	},
 	"DescribeFileSystems": {
 		Method:   "POST",

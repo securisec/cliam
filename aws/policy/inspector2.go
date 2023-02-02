@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// Inspector2Policies policy
 var Inspector2Policies = map[string]Service{
 	"BatchGetAccountStatus": {
 		Method:        "POST",
@@ -29,6 +30,15 @@ var Inspector2Policies = map[string]Service{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 		},
 		Permission: "Disable",
+	},
+	"GetConfiguration": {
+		Method:        "POST",
+		ServiceSuffix: "configuration/get",
+		JsonData:      map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+		},
+		Permission: "GetConfiguration",
 	},
 	"GetDelegatedAdminAccount": {
 		Method:        "POST",

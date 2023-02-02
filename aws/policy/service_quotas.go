@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// ServiceQuotasPolicies policy
 var ServiceQuotasPolicies = map[string]Service{
 	"AssociateServiceQuotaTemplate": {
 		Method:   "POST",

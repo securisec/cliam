@@ -2,6 +2,7 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// KMSPolicies policy
 var KMSPolicies = map[string]Service{
 	"DescribeCustomKeyStores": {
 		Method:   "POST",
@@ -11,6 +12,15 @@ var KMSPolicies = map[string]Service{
 			aws_X_AMZ_TARGET:           "TrentService.DescribeCustomKeyStores",
 		},
 		Permission: "DescribeCustomKeyStores",
+	},
+	"GenerateRandom": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "TrentService.GenerateRandom",
+		},
+		Permission: "GenerateRandom",
 	},
 	"ListAliases": {
 		Method:   "POST",
@@ -29,6 +39,15 @@ var KMSPolicies = map[string]Service{
 			aws_X_AMZ_TARGET:           "TrentService.ListKeys",
 		},
 		Permission: "ListKeys",
+	},
+	"RetireGrant": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "TrentService.RetireGrant",
+		},
+		Permission: "RetireGrant",
 	},
 
 	// extra

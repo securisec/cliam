@@ -1,17 +1,7 @@
 package policy
 
-import "github.com/securisec/cliam/shared"
-
+// WorkspacesWebPolicies policy
 var WorkspacesWebPolicies = map[string]Service{
-	"CreatePortal": {
-		Method:        "POST",
-		ServiceSuffix: "portals",
-		JsonData:      map[string]string{},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
-		},
-		Permission: "CreatePortal",
-	},
 	"ListBrowserSettings": {
 		Method:        "GET",
 		ServiceSuffix: "browserSettings",
@@ -31,6 +21,11 @@ var WorkspacesWebPolicies = map[string]Service{
 		Method:        "GET",
 		ServiceSuffix: "trustStores",
 		Permission:    "ListTrustStores",
+	},
+	"ListUserAccessLoggingSettings": {
+		Method:        "GET",
+		ServiceSuffix: "userAccessLoggingSettings",
+		Permission:    "ListUserAccessLoggingSettings",
 	},
 	"ListUserSettings": {
 		Method:        "GET",
@@ -80,6 +75,13 @@ var WorkspacesWebPolicies = map[string]Service{
 		ExtraComponentLocation: "path",
 		IsExtra:                true,
 		ExtraCommandLineFlag:   "trust_store_arn",
+	},
+	"GetUserAccessLoggingSettings": {
+		ServiceSuffix:          "/userAccessLoggingSettings/{{.user_access_logging_settings_arn}}",
+		Permission:             "GetUserAccessLoggingSettings",
+		ExtraComponentLocation: "path",
+		IsExtra:                true,
+		ExtraCommandLineFlag:   "user_access_logging_settings_arn",
 	},
 	"GetUserSettings": {
 		ServiceSuffix:          "/userSettings/{{.user_settings_arn}}",

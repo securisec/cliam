@@ -2,15 +2,34 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// TransferPolicies policy
 var TransferPolicies = map[string]Service{
-	"CreateServer": {
+	"ListCertificates": {
 		Method:   "POST",
 		JsonData: map[string]string{},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
-			aws_X_AMZ_TARGET:           "TransferService.CreateServer",
+			aws_X_AMZ_TARGET:           "TransferService.ListCertificates",
 		},
-		Permission: "CreateServer",
+		Permission: "ListCertificates",
+	},
+	"ListConnectors": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "TransferService.ListConnectors",
+		},
+		Permission: "ListConnectors",
+	},
+	"ListProfiles": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "TransferService.ListProfiles",
+		},
+		Permission: "ListProfiles",
 	},
 	"ListSecurityPolicies": {
 		Method:   "POST",
@@ -41,6 +60,42 @@ var TransferPolicies = map[string]Service{
 	},
 
 	// extra
+	"DescribeCertificate": {
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "TransferService.DescribeCertificate",
+		},
+		Permission:             "DescribeCertificate",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "CertificateId",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "certificate_id",
+	},
+	"DescribeConnector": {
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "TransferService.DescribeConnector",
+		},
+		Permission:             "DescribeConnector",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ConnectorId",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "connector_id",
+	},
+	"DescribeProfile": {
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "TransferService.DescribeProfile",
+		},
+		Permission:             "DescribeProfile",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ProfileId",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "profile_id",
+	},
 	"DescribeSecurityPolicy": {
 		Method: "POST",
 		Headers: map[string]string{
@@ -89,6 +144,18 @@ var TransferPolicies = map[string]Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "server_id",
 	},
+	"ListAgreements": {
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "TransferService.ListAgreements",
+		},
+		Permission:             "ListAgreements",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ServerId",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "server_id",
+	},
 	"ListExecutions": {
 		Method: "POST",
 		Headers: map[string]string{
@@ -100,6 +167,18 @@ var TransferPolicies = map[string]Service{
 		ExtraComponentBodyKey:  "WorkflowId",
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "workflow_id",
+	},
+	"ListHostKeys": {
+		Method: "POST",
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "TransferService.ListHostKeys",
+		},
+		Permission:             "ListHostKeys",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "ServerId",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "server_id",
 	},
 	"ListTagsForResource": {
 		Method: "POST",
