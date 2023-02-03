@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_AzureArcData_azurearcdata policy
 var Microsoft_AzureArcData_azurearcdata = map[string]Policy{
 	"Operations_List": {
 		Path:   "/providers/Microsoft.AzureArcData/operations",

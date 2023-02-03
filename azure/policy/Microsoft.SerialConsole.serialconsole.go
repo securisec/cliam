@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_SerialConsole_serialconsole policy
 var Microsoft_SerialConsole_serialconsole = map[string]Policy{
 	"ListOperations": {
 		Path:   "/providers/Microsoft.SerialConsole/operations",

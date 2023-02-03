@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_SecurityAndCompliance_privateLinkServicesForEDMUpload policy
 var Microsoft_SecurityAndCompliance_privateLinkServicesForEDMUpload = map[string]Policy{
 	"privateLinkServicesForEDMUpload_Get": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.SecurityAndCompliance/privateLinkServicesForEDMUpload/{{.resourceName}}",

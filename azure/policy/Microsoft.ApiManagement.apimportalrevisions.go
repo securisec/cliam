@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_ApiManagement_apimportalrevisions policy
 var Microsoft_ApiManagement_apimportalrevisions = map[string]Policy{
 	"PortalRevision_ListByService": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/portalRevisions",

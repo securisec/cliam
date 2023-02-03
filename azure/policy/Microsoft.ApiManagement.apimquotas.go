@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_ApiManagement_apimquotas policy
 var Microsoft_ApiManagement_apimquotas = map[string]Policy{
 	"QuotaByCounterKeys_ListByService": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/quotas/{{.quotaCounterKey}}",

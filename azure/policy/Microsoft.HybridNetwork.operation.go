@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_HybridNetwork_operation policy
 var Microsoft_HybridNetwork_operation = map[string]Policy{
 	"Operations_List": {
 		Path:   "/providers/Microsoft.HybridNetwork/operations",

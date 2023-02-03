@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_ApiManagement_apimtenant policy
 var Microsoft_ApiManagement_apimtenant = map[string]Policy{
 	"TenantAccess_ListByService": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/tenant",

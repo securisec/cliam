@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_Portal_CloudShell policy
 var Microsoft_Portal_CloudShell = map[string]Policy{
 	"getUserSettingsWithLocation": {
 		Path:   "/providers/Microsoft.Portal/locations/{{.location}}/userSettings/{{.userSettingsName}}",

@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_ApiManagement_apimcertificates policy
 var Microsoft_ApiManagement_apimcertificates = map[string]Policy{
 	"Certificate_ListByService": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/certificates",

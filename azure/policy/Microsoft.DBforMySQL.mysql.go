@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_DBforMySQL_mysql policy
 var Microsoft_DBforMySQL_mysql = map[string]Policy{
 	"Servers_Get": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.DBforMySQL/flexibleServers/{{.serverName}}",
@@ -179,6 +180,15 @@ var Microsoft_DBforMySQL_mysql = map[string]Policy{
 			"api-version": "2021-05-01",
 		},
 		OperationID: "CheckNameAvailability_Execute",
+		Resource:    "Microsoft.DBforMySQL",
+	},
+	"CheckNameAvailabilityWithoutLocation_Execute": {
+		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.DBforMySQL/checkNameAvailability",
+		Method: "POST",
+		QueryValues: map[string]string{
+			"api-version": "2021-05-01",
+		},
+		OperationID: "CheckNameAvailabilityWithoutLocation_Execute",
 		Resource:    "Microsoft.DBforMySQL",
 	},
 	"GetPrivateDnsZoneSuffix_Execute": {

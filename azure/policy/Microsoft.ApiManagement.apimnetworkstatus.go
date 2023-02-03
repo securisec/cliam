@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_ApiManagement_apimnetworkstatus policy
 var Microsoft_ApiManagement_apimnetworkstatus = map[string]Policy{
 	"NetworkStatus_ListByService": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/networkstatus",

@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_ApiManagement_apimsettings policy
 var Microsoft_ApiManagement_apimsettings = map[string]Policy{
 	"TenantSettings_ListByService": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/settings",

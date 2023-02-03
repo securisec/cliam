@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_SecurityAndCompliance_privateLinkServicesForSCCPowershell policy
 var Microsoft_SecurityAndCompliance_privateLinkServicesForSCCPowershell = map[string]Policy{
 	"privateLinkServicesForSCCPowershell_Get": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.SecurityAndCompliance/privateLinkServicesForSCCPowershell/{{.resourceName}}",

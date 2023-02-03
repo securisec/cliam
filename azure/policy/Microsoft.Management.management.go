@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_Management_management policy
 var Microsoft_Management_management = map[string]Policy{
 	"ManagementGroups_List": {
 		Path:   "/providers/Microsoft.Management/managementGroups",

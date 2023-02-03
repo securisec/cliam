@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_SoftwarePlan_softwareplan policy
 var Microsoft_SoftwarePlan_softwareplan = map[string]Policy{
 	"SoftwarePlan_Register": {
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.SoftwarePlan/register",

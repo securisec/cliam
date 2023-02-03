@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_Logz_logz policy
 var Microsoft_Logz_logz = map[string]Policy{
 	"Monitors_ListMonitoredResources": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Logz/monitors/{{.monitorName}}/listMonitoredResources",

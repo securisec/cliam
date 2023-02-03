@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_ApiManagement_apimtags policy
 var Microsoft_ApiManagement_apimtags = map[string]Policy{
 	"Tag_ListByService": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/tags",

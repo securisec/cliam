@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_VirtualMachineImages_imagebuilder policy
 var Microsoft_VirtualMachineImages_imagebuilder = map[string]Policy{
 	"VirtualMachineImageTemplates_List": {
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.VirtualMachineImages/imageTemplates",

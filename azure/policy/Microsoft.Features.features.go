@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_Features_features policy
 var Microsoft_Features_features = map[string]Policy{
 	"ListOperations": {
 		Path:   "/providers/Microsoft.Features/operations",

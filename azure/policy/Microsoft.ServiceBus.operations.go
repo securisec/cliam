@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_ServiceBus_operations policy
 var Microsoft_ServiceBus_operations = map[string]Policy{
 	"Operations_List": {
 		Path:   "/providers/Microsoft.ServiceBus/operations",

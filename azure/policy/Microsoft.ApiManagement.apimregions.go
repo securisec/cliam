@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_ApiManagement_apimregions policy
 var Microsoft_ApiManagement_apimregions = map[string]Policy{
 	"Region_ListByService": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/regions",

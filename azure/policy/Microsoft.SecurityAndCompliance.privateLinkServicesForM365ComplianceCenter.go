@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_SecurityAndCompliance_privateLinkServicesForM365ComplianceCenter policy
 var Microsoft_SecurityAndCompliance_privateLinkServicesForM365ComplianceCenter = map[string]Policy{
 	"privateLinkServicesForM365ComplianceCenter_Get": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.SecurityAndCompliance/privateLinkServicesForM365ComplianceCenter/{{.resourceName}}",

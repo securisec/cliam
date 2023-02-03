@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_ApiManagement_apimgateways policy
 var Microsoft_ApiManagement_apimgateways = map[string]Policy{
 	"Gateway_ListByService": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/gateways",

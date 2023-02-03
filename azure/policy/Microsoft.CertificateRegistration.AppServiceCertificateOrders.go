@@ -1,11 +1,12 @@
 package policy
 
+// Microsoft_CertificateRegistration_AppServiceCertificateOrders policy
 var Microsoft_CertificateRegistration_AppServiceCertificateOrders = map[string]Policy{
 	"AppServiceCertificateOrders_List": {
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.CertificateRegistration/certificateOrders",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2021-03-01",
+			"api-version": "2022-03-01",
 		},
 		OperationID: "AppServiceCertificateOrders_List",
 		Resource:    "Microsoft.CertificateRegistration",
@@ -14,7 +15,7 @@ var Microsoft_CertificateRegistration_AppServiceCertificateOrders = map[string]P
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.CertificateRegistration/validateCertificateRegistrationInformation",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2021-03-01",
+			"api-version": "2022-03-01",
 		},
 		OperationID: "AppServiceCertificateOrders_ValidatePurchaseInformation",
 		Resource:    "Microsoft.CertificateRegistration",
@@ -23,7 +24,7 @@ var Microsoft_CertificateRegistration_AppServiceCertificateOrders = map[string]P
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.CertificateRegistration/certificateOrders",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2021-03-01",
+			"api-version": "2022-03-01",
 		},
 		OperationID: "AppServiceCertificateOrders_ListByResourceGroup",
 		Resource:    "Microsoft.CertificateRegistration",
@@ -32,7 +33,7 @@ var Microsoft_CertificateRegistration_AppServiceCertificateOrders = map[string]P
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.CertificateRegistration/certificateOrders/{{.certificateOrderName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2021-03-01",
+			"api-version": "2022-03-01",
 		},
 		OperationID: "AppServiceCertificateOrders_Get",
 		Resource:    "Microsoft.CertificateRegistration",
@@ -41,7 +42,7 @@ var Microsoft_CertificateRegistration_AppServiceCertificateOrders = map[string]P
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.CertificateRegistration/certificateOrders/{{.certificateOrderName}}/certificates",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2021-03-01",
+			"api-version": "2022-03-01",
 		},
 		OperationID: "AppServiceCertificateOrders_ListCertificates",
 		Resource:    "Microsoft.CertificateRegistration",
@@ -50,7 +51,7 @@ var Microsoft_CertificateRegistration_AppServiceCertificateOrders = map[string]P
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.CertificateRegistration/certificateOrders/{{.certificateOrderName}}/certificates/{{.name}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2021-03-01",
+			"api-version": "2022-03-01",
 		},
 		OperationID: "AppServiceCertificateOrders_GetCertificate",
 		Resource:    "Microsoft.CertificateRegistration",
@@ -59,7 +60,7 @@ var Microsoft_CertificateRegistration_AppServiceCertificateOrders = map[string]P
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.CertificateRegistration/certificateOrders/{{.certificateOrderName}}/reissue",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2021-03-01",
+			"api-version": "2022-03-01",
 		},
 		OperationID: "AppServiceCertificateOrders_Reissue",
 		Resource:    "Microsoft.CertificateRegistration",
@@ -68,7 +69,7 @@ var Microsoft_CertificateRegistration_AppServiceCertificateOrders = map[string]P
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.CertificateRegistration/certificateOrders/{{.certificateOrderName}}/renew",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2021-03-01",
+			"api-version": "2022-03-01",
 		},
 		OperationID: "AppServiceCertificateOrders_Renew",
 		Resource:    "Microsoft.CertificateRegistration",
@@ -77,7 +78,7 @@ var Microsoft_CertificateRegistration_AppServiceCertificateOrders = map[string]P
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.CertificateRegistration/certificateOrders/{{.certificateOrderName}}/resendEmail",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2021-03-01",
+			"api-version": "2022-03-01",
 		},
 		OperationID: "AppServiceCertificateOrders_ResendEmail",
 		Resource:    "Microsoft.CertificateRegistration",
@@ -86,7 +87,7 @@ var Microsoft_CertificateRegistration_AppServiceCertificateOrders = map[string]P
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.CertificateRegistration/certificateOrders/{{.certificateOrderName}}/resendRequestEmails",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2021-03-01",
+			"api-version": "2022-03-01",
 		},
 		OperationID: "AppServiceCertificateOrders_ResendRequestEmails",
 		Resource:    "Microsoft.CertificateRegistration",
@@ -95,7 +96,7 @@ var Microsoft_CertificateRegistration_AppServiceCertificateOrders = map[string]P
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.CertificateRegistration/certificateOrders/{{.certificateOrderName}}/retrieveSiteSeal",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2021-03-01",
+			"api-version": "2022-03-01",
 		},
 		OperationID: "AppServiceCertificateOrders_RetrieveSiteSeal",
 		Resource:    "Microsoft.CertificateRegistration",
@@ -104,7 +105,7 @@ var Microsoft_CertificateRegistration_AppServiceCertificateOrders = map[string]P
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.CertificateRegistration/certificateOrders/{{.certificateOrderName}}/verifyDomainOwnership",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2021-03-01",
+			"api-version": "2022-03-01",
 		},
 		OperationID: "AppServiceCertificateOrders_VerifyDomainOwnership",
 		Resource:    "Microsoft.CertificateRegistration",
@@ -113,7 +114,7 @@ var Microsoft_CertificateRegistration_AppServiceCertificateOrders = map[string]P
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.CertificateRegistration/certificateOrders/{{.name}}/retrieveCertificateActions",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2021-03-01",
+			"api-version": "2022-03-01",
 		},
 		OperationID: "AppServiceCertificateOrders_RetrieveCertificateActions",
 		Resource:    "Microsoft.CertificateRegistration",
@@ -122,7 +123,7 @@ var Microsoft_CertificateRegistration_AppServiceCertificateOrders = map[string]P
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.CertificateRegistration/certificateOrders/{{.name}}/retrieveEmailHistory",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2021-03-01",
+			"api-version": "2022-03-01",
 		},
 		OperationID: "AppServiceCertificateOrders_RetrieveCertificateEmailHistory",
 		Resource:    "Microsoft.CertificateRegistration",

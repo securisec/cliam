@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_SerialConsole_serialport policy
 var Microsoft_SerialConsole_serialport = map[string]Policy{
 	"SerialPorts_List": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourcegroups/{{.resourceGroupName}}/providers/{{.resourceProviderNamespace}}/{{.parentResourceType}}/{{.parentResource}}/providers/Microsoft.SerialConsole/serialPorts",

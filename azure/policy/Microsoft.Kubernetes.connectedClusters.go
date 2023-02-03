@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_Kubernetes_connectedClusters policy
 var Microsoft_Kubernetes_connectedClusters = map[string]Policy{
 	"ConnectedCluster_Get": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourcegroups/{{.resourceGroupName}}/providers/Microsoft.Kubernetes/connectedClusters/{{.clusterName}}",

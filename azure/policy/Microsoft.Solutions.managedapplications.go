@@ -1,11 +1,12 @@
 package policy
 
+// Microsoft_Solutions_managedapplications policy
 var Microsoft_Solutions_managedapplications = map[string]Policy{
 	"ListOperations": {
 		Path:   "/providers/Microsoft.Solutions/operations",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2019-07-01",
+			"api-version": "2021-07-01",
 		},
 		OperationID: "ListOperations",
 		Resource:    "Microsoft.Solutions",
@@ -14,7 +15,7 @@ var Microsoft_Solutions_managedapplications = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Solutions/applications/{{.applicationName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2019-07-01",
+			"api-version": "2021-07-01",
 		},
 		OperationID: "Applications_Get",
 		Resource:    "Microsoft.Solutions",
@@ -23,7 +24,7 @@ var Microsoft_Solutions_managedapplications = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Solutions/applicationDefinitions/{{.applicationDefinitionName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2019-07-01",
+			"api-version": "2021-07-01",
 		},
 		OperationID: "ApplicationDefinitions_Get",
 		Resource:    "Microsoft.Solutions",
@@ -32,16 +33,25 @@ var Microsoft_Solutions_managedapplications = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Solutions/applicationDefinitions",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2019-07-01",
+			"api-version": "2021-07-01",
 		},
 		OperationID: "ApplicationDefinitions_ListByResourceGroup",
+		Resource:    "Microsoft.Solutions",
+	},
+	"ApplicationDefinitions_ListBySubscription": {
+		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.Solutions/applicationDefinitions",
+		Method: "GET",
+		QueryValues: map[string]string{
+			"api-version": "2021-07-01",
+		},
+		OperationID: "ApplicationDefinitions_ListBySubscription",
 		Resource:    "Microsoft.Solutions",
 	},
 	"Applications_ListByResourceGroup": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Solutions/applications",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2019-07-01",
+			"api-version": "2021-07-01",
 		},
 		OperationID: "Applications_ListByResourceGroup",
 		Resource:    "Microsoft.Solutions",
@@ -50,7 +60,7 @@ var Microsoft_Solutions_managedapplications = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.Solutions/applications",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2019-07-01",
+			"api-version": "2021-07-01",
 		},
 		OperationID: "Applications_ListBySubscription",
 		Resource:    "Microsoft.Solutions",
@@ -59,7 +69,7 @@ var Microsoft_Solutions_managedapplications = map[string]Policy{
 		Path:   "/{{.applicationId}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2019-07-01",
+			"api-version": "2021-07-01",
 		},
 		OperationID: "Applications_GetById",
 		Resource:    "Microsoft.Solutions",
@@ -68,7 +78,7 @@ var Microsoft_Solutions_managedapplications = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Solutions/jitRequests/{{.jitRequestName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2019-07-01",
+			"api-version": "2021-07-01",
 		},
 		OperationID: "JitRequests_Get",
 		Resource:    "Microsoft.Solutions",
@@ -77,7 +87,7 @@ var Microsoft_Solutions_managedapplications = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.Solutions/jitRequests",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2019-07-01",
+			"api-version": "2021-07-01",
 		},
 		OperationID: "jitRequests_ListBySubscription",
 		Resource:    "Microsoft.Solutions",
@@ -86,7 +96,7 @@ var Microsoft_Solutions_managedapplications = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Solutions/jitRequests",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2019-07-01",
+			"api-version": "2021-07-01",
 		},
 		OperationID: "jitRequests_ListByResourceGroup",
 		Resource:    "Microsoft.Solutions",
@@ -95,9 +105,36 @@ var Microsoft_Solutions_managedapplications = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Solutions/applications/{{.applicationName}}/refreshPermissions",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2019-07-01",
+			"api-version": "2021-07-01",
 		},
 		OperationID: "Applications_RefreshPermissions",
+		Resource:    "Microsoft.Solutions",
+	},
+	"Applications_ListAllowedUpgradePlans": {
+		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Solutions/applications/{{.applicationName}}/listAllowedUpgradePlans",
+		Method: "POST",
+		QueryValues: map[string]string{
+			"api-version": "2021-07-01",
+		},
+		OperationID: "Applications_ListAllowedUpgradePlans",
+		Resource:    "Microsoft.Solutions",
+	},
+	"Applications_UpdateAccess": {
+		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Solutions/applications/{{.applicationName}}/updateAccess",
+		Method: "POST",
+		QueryValues: map[string]string{
+			"api-version": "2021-07-01",
+		},
+		OperationID: "Applications_UpdateAccess",
+		Resource:    "Microsoft.Solutions",
+	},
+	"Applications_ListTokens": {
+		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Solutions/applications/{{.applicationName}}/listTokens",
+		Method: "POST",
+		QueryValues: map[string]string{
+			"api-version": "2021-07-01",
+		},
+		OperationID: "Applications_ListTokens",
 		Resource:    "Microsoft.Solutions",
 	},
 }

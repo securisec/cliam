@@ -1,11 +1,12 @@
 package policy
 
+// Microsoft_StorageSync_storagesync policy
 var Microsoft_StorageSync_storagesync = map[string]Policy{
 	"Operations_List": {
 		Path:   "/providers/Microsoft.StorageSync/operations",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2020-09-01",
+			"api-version": "2022-06-01",
 		},
 		OperationID: "Operations_List",
 		Resource:    "Microsoft.StorageSync",
@@ -14,7 +15,7 @@ var Microsoft_StorageSync_storagesync = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.StorageSync/locations/{{.locationName}}/checkNameAvailability",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2020-09-01",
+			"api-version": "2022-06-01",
 		},
 		OperationID: "StorageSyncServices_CheckNameAvailability",
 		Resource:    "Microsoft.StorageSync",
@@ -23,7 +24,7 @@ var Microsoft_StorageSync_storagesync = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.StorageSync/storageSyncServices/{{.storageSyncServiceName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2020-09-01",
+			"api-version": "2022-06-01",
 		},
 		OperationID: "StorageSyncServices_Get",
 		Resource:    "Microsoft.StorageSync",
@@ -32,7 +33,7 @@ var Microsoft_StorageSync_storagesync = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.StorageSync/storageSyncServices",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2020-09-01",
+			"api-version": "2022-06-01",
 		},
 		OperationID: "StorageSyncServices_ListByResourceGroup",
 		Resource:    "Microsoft.StorageSync",
@@ -41,7 +42,7 @@ var Microsoft_StorageSync_storagesync = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.StorageSync/storageSyncServices",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2020-09-01",
+			"api-version": "2022-06-01",
 		},
 		OperationID: "StorageSyncServices_ListBySubscription",
 		Resource:    "Microsoft.StorageSync",
@@ -50,7 +51,7 @@ var Microsoft_StorageSync_storagesync = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.StorageSync/storageSyncServices/{{.storageSyncServiceName}}/privateLinkResources",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2020-09-01",
+			"api-version": "2022-06-01",
 		},
 		OperationID: "PrivateLinkResources_ListByStorageSyncService",
 		Resource:    "Microsoft.StorageSync",
@@ -59,7 +60,7 @@ var Microsoft_StorageSync_storagesync = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.StorageSync/storageSyncServices/{{.storageSyncServiceName}}/privateEndpointConnections/{{.privateEndpointConnectionName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2020-09-01",
+			"api-version": "2022-06-01",
 		},
 		OperationID: "PrivateEndpointConnections_Get",
 		Resource:    "Microsoft.StorageSync",
@@ -68,7 +69,7 @@ var Microsoft_StorageSync_storagesync = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.StorageSync/storageSyncServices/{{.storageSyncServiceName}}/privateEndpointConnections",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2020-09-01",
+			"api-version": "2022-06-01",
 		},
 		OperationID: "PrivateEndpointConnections_ListByStorageSyncService",
 		Resource:    "Microsoft.StorageSync",
@@ -77,7 +78,7 @@ var Microsoft_StorageSync_storagesync = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.StorageSync/storageSyncServices/{{.storageSyncServiceName}}/syncGroups",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2020-09-01",
+			"api-version": "2022-06-01",
 		},
 		OperationID: "SyncGroups_ListByStorageSyncService",
 		Resource:    "Microsoft.StorageSync",
@@ -86,7 +87,7 @@ var Microsoft_StorageSync_storagesync = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.StorageSync/storageSyncServices/{{.storageSyncServiceName}}/syncGroups/{{.syncGroupName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2020-09-01",
+			"api-version": "2022-06-01",
 		},
 		OperationID: "SyncGroups_Get",
 		Resource:    "Microsoft.StorageSync",
@@ -95,7 +96,7 @@ var Microsoft_StorageSync_storagesync = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.StorageSync/storageSyncServices/{{.storageSyncServiceName}}/syncGroups/{{.syncGroupName}}/cloudEndpoints/{{.cloudEndpointName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2020-09-01",
+			"api-version": "2022-06-01",
 		},
 		OperationID: "CloudEndpoints_Get",
 		Resource:    "Microsoft.StorageSync",
@@ -104,7 +105,7 @@ var Microsoft_StorageSync_storagesync = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.StorageSync/storageSyncServices/{{.storageSyncServiceName}}/syncGroups/{{.syncGroupName}}/cloudEndpoints",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2020-09-01",
+			"api-version": "2022-06-01",
 		},
 		OperationID: "CloudEndpoints_ListBySyncGroup",
 		Resource:    "Microsoft.StorageSync",
@@ -113,7 +114,7 @@ var Microsoft_StorageSync_storagesync = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.StorageSync/storageSyncServices/{{.storageSyncServiceName}}/syncGroups/{{.syncGroupName}}/cloudEndpoints/{{.cloudEndpointName}}/prebackup",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2020-09-01",
+			"api-version": "2022-06-01",
 		},
 		OperationID: "CloudEndpoints_PreBackup",
 		Resource:    "Microsoft.StorageSync",
@@ -122,7 +123,7 @@ var Microsoft_StorageSync_storagesync = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.StorageSync/storageSyncServices/{{.storageSyncServiceName}}/syncGroups/{{.syncGroupName}}/cloudEndpoints/{{.cloudEndpointName}}/postbackup",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2020-09-01",
+			"api-version": "2022-06-01",
 		},
 		OperationID: "CloudEndpoints_PostBackup",
 		Resource:    "Microsoft.StorageSync",
@@ -131,7 +132,7 @@ var Microsoft_StorageSync_storagesync = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.StorageSync/storageSyncServices/{{.storageSyncServiceName}}/syncGroups/{{.syncGroupName}}/cloudEndpoints/{{.cloudEndpointName}}/prerestore",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2020-09-01",
+			"api-version": "2022-06-01",
 		},
 		OperationID: "CloudEndpoints_PreRestore",
 		Resource:    "Microsoft.StorageSync",
@@ -140,7 +141,7 @@ var Microsoft_StorageSync_storagesync = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.StorageSync/storageSyncServices/{{.storageSyncServiceName}}/syncGroups/{{.syncGroupName}}/cloudEndpoints/{{.cloudEndpointName}}/restoreheartbeat",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2020-09-01",
+			"api-version": "2022-06-01",
 		},
 		OperationID: "CloudEndpoints_restoreheartbeat",
 		Resource:    "Microsoft.StorageSync",
@@ -149,7 +150,7 @@ var Microsoft_StorageSync_storagesync = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.StorageSync/storageSyncServices/{{.storageSyncServiceName}}/syncGroups/{{.syncGroupName}}/cloudEndpoints/{{.cloudEndpointName}}/postrestore",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2020-09-01",
+			"api-version": "2022-06-01",
 		},
 		OperationID: "CloudEndpoints_PostRestore",
 		Resource:    "Microsoft.StorageSync",
@@ -158,16 +159,25 @@ var Microsoft_StorageSync_storagesync = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.StorageSync/storageSyncServices/{{.storageSyncServiceName}}/syncGroups/{{.syncGroupName}}/cloudEndpoints/{{.cloudEndpointName}}/triggerChangeDetection",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2020-09-01",
+			"api-version": "2022-06-01",
 		},
 		OperationID: "CloudEndpoints_TriggerChangeDetection",
+		Resource:    "Microsoft.StorageSync",
+	},
+	"CloudEndpoints_AfsShareMetadataCertificatePublicKeys": {
+		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.StorageSync/storageSyncServices/{{.storageSyncServiceName}}/syncGroups/{{.syncGroupName}}/cloudEndpoints/{{.cloudEndpointName}}/afsShareMetadataCertificatePublicKeys",
+		Method: "GET",
+		QueryValues: map[string]string{
+			"api-version": "2022-06-01",
+		},
+		OperationID: "CloudEndpoints_AfsShareMetadataCertificatePublicKeys",
 		Resource:    "Microsoft.StorageSync",
 	},
 	"ServerEndpoints_Get": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.StorageSync/storageSyncServices/{{.storageSyncServiceName}}/syncGroups/{{.syncGroupName}}/serverEndpoints/{{.serverEndpointName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2020-09-01",
+			"api-version": "2022-06-01",
 		},
 		OperationID: "ServerEndpoints_Get",
 		Resource:    "Microsoft.StorageSync",
@@ -176,7 +186,7 @@ var Microsoft_StorageSync_storagesync = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.StorageSync/storageSyncServices/{{.storageSyncServiceName}}/syncGroups/{{.syncGroupName}}/serverEndpoints",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2020-09-01",
+			"api-version": "2022-06-01",
 		},
 		OperationID: "ServerEndpoints_ListBySyncGroup",
 		Resource:    "Microsoft.StorageSync",
@@ -185,7 +195,7 @@ var Microsoft_StorageSync_storagesync = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.StorageSync/storageSyncServices/{{.storageSyncServiceName}}/syncGroups/{{.syncGroupName}}/serverEndpoints/{{.serverEndpointName}}/recallAction",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2020-09-01",
+			"api-version": "2022-06-01",
 		},
 		OperationID: "ServerEndpoints_recallAction",
 		Resource:    "Microsoft.StorageSync",
@@ -194,7 +204,7 @@ var Microsoft_StorageSync_storagesync = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.StorageSync/storageSyncServices/{{.storageSyncServiceName}}/registeredServers",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2020-09-01",
+			"api-version": "2022-06-01",
 		},
 		OperationID: "RegisteredServers_ListByStorageSyncService",
 		Resource:    "Microsoft.StorageSync",
@@ -203,7 +213,7 @@ var Microsoft_StorageSync_storagesync = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.StorageSync/storageSyncServices/{{.storageSyncServiceName}}/registeredServers/{{.serverId}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2020-09-01",
+			"api-version": "2022-06-01",
 		},
 		OperationID: "RegisteredServers_Get",
 		Resource:    "Microsoft.StorageSync",
@@ -212,7 +222,7 @@ var Microsoft_StorageSync_storagesync = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.StorageSync/storageSyncServices/{{.storageSyncServiceName}}/registeredServers/{{.serverId}}/triggerRollover",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2020-09-01",
+			"api-version": "2022-06-01",
 		},
 		OperationID: "RegisteredServers_triggerRollover",
 		Resource:    "Microsoft.StorageSync",
@@ -221,7 +231,7 @@ var Microsoft_StorageSync_storagesync = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.StorageSync/storageSyncServices/{{.storageSyncServiceName}}/workflows",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2020-09-01",
+			"api-version": "2022-06-01",
 		},
 		OperationID: "Workflows_ListByStorageSyncService",
 		Resource:    "Microsoft.StorageSync",
@@ -230,7 +240,7 @@ var Microsoft_StorageSync_storagesync = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.StorageSync/storageSyncServices/{{.storageSyncServiceName}}/workflows/{{.workflowId}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2020-09-01",
+			"api-version": "2022-06-01",
 		},
 		OperationID: "Workflows_Get",
 		Resource:    "Microsoft.StorageSync",
@@ -239,7 +249,7 @@ var Microsoft_StorageSync_storagesync = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.StorageSync/storageSyncServices/{{.storageSyncServiceName}}/workflows/{{.workflowId}}/abort",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2020-09-01",
+			"api-version": "2022-06-01",
 		},
 		OperationID: "Workflows_Abort",
 		Resource:    "Microsoft.StorageSync",
@@ -248,7 +258,7 @@ var Microsoft_StorageSync_storagesync = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.StorageSync/locations/{{.locationName}}/workflows/{{.workflowId}}/operations/{{.operationId}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2020-09-01",
+			"api-version": "2022-06-01",
 		},
 		OperationID: "OperationStatus_Get",
 		Resource:    "Microsoft.StorageSync",
@@ -257,7 +267,7 @@ var Microsoft_StorageSync_storagesync = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.StorageSync/locations/{{.locationName}}/operations/{{.operationId}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2020-09-01",
+			"api-version": "2022-06-01",
 		},
 		OperationID: "LocationOperationStatus",
 		Resource:    "Microsoft.StorageSync",

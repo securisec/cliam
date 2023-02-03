@@ -1,11 +1,12 @@
 package policy
 
+// Microsoft_NetApp_netapp policy
 var Microsoft_NetApp_netapp = map[string]Policy{
 	"Operations_List": {
 		Path:   "/providers/Microsoft.NetApp/operations",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "Operations_List",
 		Resource:    "Microsoft.NetApp",
@@ -14,7 +15,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.NetApp/locations/{{.location}}/checkNameAvailability",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "NetAppResource_CheckNameAvailability",
 		Resource:    "Microsoft.NetApp",
@@ -23,7 +24,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.NetApp/locations/{{.location}}/checkFilePathAvailability",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "NetAppResource_CheckFilePathAvailability",
 		Resource:    "Microsoft.NetApp",
@@ -32,7 +33,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.NetApp/locations/{{.location}}/checkQuotaAvailability",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "NetAppResource_CheckQuotaAvailability",
 		Resource:    "Microsoft.NetApp",
@@ -41,7 +42,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.NetApp/locations/{{.location}}/quotaLimits",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "NetAppResourceQuotaLimits_List",
 		Resource:    "Microsoft.NetApp",
@@ -50,16 +51,25 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.NetApp/locations/{{.location}}/quotaLimits/{{.quotaLimitName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "NetAppResourceQuotaLimits_Get",
+		Resource:    "Microsoft.NetApp",
+	},
+	"NetAppResource_QueryRegionInfo": {
+		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.NetApp/locations/{{.location}}/regionInfo",
+		Method: "GET",
+		QueryValues: map[string]string{
+			"api-version": "2022-05-01",
+		},
+		OperationID: "NetAppResource_QueryRegionInfo",
 		Resource:    "Microsoft.NetApp",
 	},
 	"Accounts_ListBySubscription": {
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.NetApp/netAppAccounts",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "Accounts_ListBySubscription",
 		Resource:    "Microsoft.NetApp",
@@ -68,7 +78,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "Accounts_List",
 		Resource:    "Microsoft.NetApp",
@@ -77,16 +87,25 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "Accounts_Get",
+		Resource:    "Microsoft.NetApp",
+	},
+	"Accounts_RenewCredentials": {
+		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/renewCredentials",
+		Method: "POST",
+		QueryValues: map[string]string{
+			"api-version": "2022-05-01",
+		},
+		OperationID: "Accounts_RenewCredentials",
 		Resource:    "Microsoft.NetApp",
 	},
 	"Pools_List": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/capacityPools",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "Pools_List",
 		Resource:    "Microsoft.NetApp",
@@ -95,7 +114,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/capacityPools/{{.poolName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "Pools_Get",
 		Resource:    "Microsoft.NetApp",
@@ -104,7 +123,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/capacityPools/{{.poolName}}/volumes",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "Volumes_List",
 		Resource:    "Microsoft.NetApp",
@@ -113,7 +132,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/capacityPools/{{.poolName}}/volumes/{{.volumeName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "Volumes_Get",
 		Resource:    "Microsoft.NetApp",
@@ -122,7 +141,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/capacityPools/{{.poolName}}/volumes/{{.volumeName}}/revert",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "Volumes_Revert",
 		Resource:    "Microsoft.NetApp",
@@ -131,7 +150,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/capacityPools/{{.poolName}}/volumes/{{.volumeName}}/resetCifsPassword",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "Volumes_ResetCifsPassword",
 		Resource:    "Microsoft.NetApp",
@@ -140,16 +159,25 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/capacityPools/{{.poolName}}/volumes/{{.volumeName}}/breakReplication",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "Volumes_BreakReplication",
+		Resource:    "Microsoft.NetApp",
+	},
+	"Volumes_ReestablishReplication": {
+		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/capacityPools/{{.poolName}}/volumes/{{.volumeName}}/reestablishReplication",
+		Method: "POST",
+		QueryValues: map[string]string{
+			"api-version": "2022-05-01",
+		},
+		OperationID: "Volumes_ReestablishReplication",
 		Resource:    "Microsoft.NetApp",
 	},
 	"Volumes_ReplicationStatus": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/capacityPools/{{.poolName}}/volumes/{{.volumeName}}/replicationStatus",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "Volumes_ReplicationStatus",
 		Resource:    "Microsoft.NetApp",
@@ -158,7 +186,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/capacityPools/{{.poolName}}/volumes/{{.volumeName}}/listReplications",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "Volumes_ListReplications",
 		Resource:    "Microsoft.NetApp",
@@ -167,7 +195,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/capacityPools/{{.poolName}}/volumes/{{.volumeName}}/resyncReplication",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "Volumes_ResyncReplication",
 		Resource:    "Microsoft.NetApp",
@@ -176,7 +204,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/capacityPools/{{.poolName}}/volumes/{{.volumeName}}/deleteReplication",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "Volumes_DeleteReplication",
 		Resource:    "Microsoft.NetApp",
@@ -185,7 +213,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/capacityPools/{{.poolName}}/volumes/{{.volumeName}}/authorizeReplication",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "Volumes_AuthorizeReplication",
 		Resource:    "Microsoft.NetApp",
@@ -194,7 +222,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/capacityPools/{{.poolName}}/volumes/{{.volumeName}}/reinitializeReplication",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "Volumes_ReInitializeReplication",
 		Resource:    "Microsoft.NetApp",
@@ -203,7 +231,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/capacityPools/{{.poolName}}/volumes/{{.volumeName}}/poolChange",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "Volumes_PoolChange",
 		Resource:    "Microsoft.NetApp",
@@ -212,7 +240,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/capacityPools/{{.poolName}}/volumes/{{.volumeName}}/relocate",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "Volumes_Relocate",
 		Resource:    "Microsoft.NetApp",
@@ -221,7 +249,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/capacityPools/{{.poolName}}/volumes/{{.volumeName}}/finalizeRelocation",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "Volumes_FinalizeRelocation",
 		Resource:    "Microsoft.NetApp",
@@ -230,7 +258,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/capacityPools/{{.poolName}}/volumes/{{.volumeName}}/revertRelocation",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "Volumes_RevertRelocation",
 		Resource:    "Microsoft.NetApp",
@@ -239,7 +267,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/capacityPools/{{.poolName}}/volumes/{{.volumeName}}/snapshots",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "Snapshots_List",
 		Resource:    "Microsoft.NetApp",
@@ -248,7 +276,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/capacityPools/{{.poolName}}/volumes/{{.volumeName}}/snapshots/{{.snapshotName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "Snapshots_Get",
 		Resource:    "Microsoft.NetApp",
@@ -257,7 +285,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/capacityPools/{{.poolName}}/volumes/{{.volumeName}}/snapshots/{{.snapshotName}}/restoreFiles",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "Snapshots_RestoreFiles",
 		Resource:    "Microsoft.NetApp",
@@ -266,7 +294,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/snapshotPolicies",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "SnapshotPolicies_List",
 		Resource:    "Microsoft.NetApp",
@@ -275,7 +303,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/snapshotPolicies/{{.snapshotPolicyName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "SnapshotPolicies_Get",
 		Resource:    "Microsoft.NetApp",
@@ -284,7 +312,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/snapshotPolicies/{{.snapshotPolicyName}}/volumes",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "SnapshotPolicies_ListVolumes",
 		Resource:    "Microsoft.NetApp",
@@ -293,7 +321,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/capacityPools/{{.poolName}}/volumes/{{.volumeName}}/backupStatus",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "Backups_GetStatus",
 		Resource:    "Microsoft.NetApp",
@@ -302,7 +330,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/capacityPools/{{.poolName}}/volumes/{{.volumeName}}/restoreStatus",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "Backups_GetVolumeRestoreStatus",
 		Resource:    "Microsoft.NetApp",
@@ -311,7 +339,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/accountBackups",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "AccountBackups_List",
 		Resource:    "Microsoft.NetApp",
@@ -320,7 +348,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/accountBackups/{{.backupName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "AccountBackups_Get",
 		Resource:    "Microsoft.NetApp",
@@ -329,7 +357,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/capacityPools/{{.poolName}}/volumes/{{.volumeName}}/backups",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "Backups_List",
 		Resource:    "Microsoft.NetApp",
@@ -338,7 +366,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/capacityPools/{{.poolName}}/volumes/{{.volumeName}}/backups/{{.backupName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "Backups_Get",
 		Resource:    "Microsoft.NetApp",
@@ -347,7 +375,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/backupPolicies",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "BackupPolicies_List",
 		Resource:    "Microsoft.NetApp",
@@ -356,7 +384,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/backupPolicies/{{.backupPolicyName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "BackupPolicies_Get",
 		Resource:    "Microsoft.NetApp",
@@ -365,7 +393,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/capacityPools/{{.poolName}}/volumes/{{.volumeName}}/volumeQuotaRules",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "VolumeQuotaRules_ListByVolume",
 		Resource:    "Microsoft.NetApp",
@@ -374,7 +402,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/capacityPools/{{.poolName}}/volumes/{{.volumeName}}/volumeQuotaRules/{{.volumeQuotaRuleName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "VolumeQuotaRules_Get",
 		Resource:    "Microsoft.NetApp",
@@ -383,7 +411,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/vaults",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "Vaults_List",
 		Resource:    "Microsoft.NetApp",
@@ -392,7 +420,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/volumeGroups",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "VolumeGroups_ListByNetAppAccount",
 		Resource:    "Microsoft.NetApp",
@@ -401,7 +429,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/volumeGroups/{{.volumeGroupName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "VolumeGroups_Get",
 		Resource:    "Microsoft.NetApp",
@@ -410,7 +438,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/capacityPools/{{.poolName}}/volumes/{{.volumeName}}/subvolumes",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "Subvolumes_ListByVolume",
 		Resource:    "Microsoft.NetApp",
@@ -419,7 +447,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/capacityPools/{{.poolName}}/volumes/{{.volumeName}}/subvolumes/{{.subvolumeName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "Subvolumes_Get",
 		Resource:    "Microsoft.NetApp",
@@ -428,7 +456,7 @@ var Microsoft_NetApp_netapp = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.NetApp/netAppAccounts/{{.accountName}}/capacityPools/{{.poolName}}/volumes/{{.volumeName}}/subvolumes/{{.subvolumeName}}/getMetadata",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-01-01",
+			"api-version": "2022-05-01",
 		},
 		OperationID: "Subvolumes_GetMetadata",
 		Resource:    "Microsoft.NetApp",

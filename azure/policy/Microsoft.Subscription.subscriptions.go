@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_Subscription_subscriptions policy
 var Microsoft_Subscription_subscriptions = map[string]Policy{
 	"Subscription_Cancel": {
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.Subscription/cancel",

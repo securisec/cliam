@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_ServiceBus_Queue policy
 var Microsoft_ServiceBus_Queue = map[string]Policy{
 	"Queues_ListByNamespace": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ServiceBus/namespaces/{{.namespaceName}}/queues",

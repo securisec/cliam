@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_Automanage_automanage policy
 var Microsoft_Automanage_automanage = map[string]Policy{
 	"BestPractices_Get": {
 		Path:   "/providers/Microsoft.Automanage/bestPractices/{{.bestPracticeName}}",

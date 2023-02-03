@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_ApiManagement_apimschema policy
 var Microsoft_ApiManagement_apimschema = map[string]Policy{
 	"GlobalSchema_ListByService": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/schemas",

@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_ApiManagement_apimreports policy
 var Microsoft_ApiManagement_apimreports = map[string]Policy{
 	"Reports_ListByApi": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/reports/byApi",

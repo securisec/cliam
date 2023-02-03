@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_ServiceBus_subscriptions policy
 var Microsoft_ServiceBus_subscriptions = map[string]Policy{
 	"Subscriptions_ListByTopic": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ServiceBus/namespaces/{{.namespaceName}}/topics/{{.topicName}}/subscriptions",

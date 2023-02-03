@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_Cache_redisenterprise policy
 var Microsoft_Cache_redisenterprise = map[string]Policy{
 	"Operations_List": {
 		Path:   "/providers/Microsoft.Cache/operations",

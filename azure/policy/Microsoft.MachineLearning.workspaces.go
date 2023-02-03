@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_MachineLearning_workspaces policy
 var Microsoft_MachineLearning_workspaces = map[string]Policy{
 	"Operations_List": {
 		Path:   "/providers/Microsoft.MachineLearning/operations",

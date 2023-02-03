@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_ServiceBus_networksets policy
 var Microsoft_ServiceBus_networksets = map[string]Policy{
 	"Namespaces_GetNetworkRuleSet": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ServiceBus/namespaces/{{.namespaceName}}/networkRuleSets/default",

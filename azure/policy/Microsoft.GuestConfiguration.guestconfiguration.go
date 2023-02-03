@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_GuestConfiguration_guestconfiguration policy
 var Microsoft_GuestConfiguration_guestconfiguration = map[string]Policy{
 	"GuestConfigurationAssignments_Get": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Compute/virtualMachines/{{.vmName}}/providers/Microsoft.GuestConfiguration/guestConfigurationAssignments/{{.guestConfigurationAssignmentName}}",

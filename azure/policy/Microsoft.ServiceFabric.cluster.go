@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_ServiceFabric_cluster policy
 var Microsoft_ServiceFabric_cluster = map[string]Policy{
 	"Clusters_Get": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ServiceFabric/clusters/{{.clusterName}}",

@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_SecurityAndCompliance_privateLinkServicesForMIPPolicySync policy
 var Microsoft_SecurityAndCompliance_privateLinkServicesForMIPPolicySync = map[string]Policy{
 	"privateLinkServicesForMIPPolicySync_Get": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.SecurityAndCompliance/privateLinkServicesForMIPPolicySync/{{.resourceName}}",

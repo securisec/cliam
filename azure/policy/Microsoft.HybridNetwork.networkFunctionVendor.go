@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_HybridNetwork_networkFunctionVendor policy
 var Microsoft_HybridNetwork_networkFunctionVendor = map[string]Policy{
 	"networkFunctionVendors_List": {
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.HybridNetwork/networkFunctionVendors",

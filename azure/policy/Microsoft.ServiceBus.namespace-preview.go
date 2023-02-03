@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_ServiceBus_namespace_preview policy
 var Microsoft_ServiceBus_namespace_preview = map[string]Policy{
 	"Namespaces_List": {
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.ServiceBus/namespaces",

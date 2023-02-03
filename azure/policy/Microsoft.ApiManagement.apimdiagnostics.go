@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_ApiManagement_apimdiagnostics policy
 var Microsoft_ApiManagement_apimdiagnostics = map[string]Policy{
 	"Diagnostic_ListByService": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/diagnostics",

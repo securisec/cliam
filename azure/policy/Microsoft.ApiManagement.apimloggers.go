@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_ApiManagement_apimloggers policy
 var Microsoft_ApiManagement_apimloggers = map[string]Policy{
 	"Logger_ListByService": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/loggers",

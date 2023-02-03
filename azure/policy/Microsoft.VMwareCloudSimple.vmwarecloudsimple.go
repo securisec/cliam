@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_VMwareCloudSimple_vmwarecloudsimple policy
 var Microsoft_VMwareCloudSimple_vmwarecloudsimple = map[string]Policy{
 	"Operations_List": {
 		Path:   "/providers/Microsoft.VMwareCloudSimple/operations",

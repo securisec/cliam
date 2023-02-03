@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_ApiManagement_apimissues policy
 var Microsoft_ApiManagement_apimissues = map[string]Policy{
 	"Issue_ListByService": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/issues",

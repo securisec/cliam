@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_DBforMariaDB_Servers policy
 var Microsoft_DBforMariaDB_Servers = map[string]Policy{
 	"Servers_Start": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.DBforMariaDB/servers/{{.serverName}}/start",

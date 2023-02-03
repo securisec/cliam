@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_Elastic_elastic policy
 var Microsoft_Elastic_elastic = map[string]Policy{
 	"Operations_List": {
 		Path:   "/providers/Microsoft.Elastic/operations",

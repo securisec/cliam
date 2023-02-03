@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_ServiceFabric_application policy
 var Microsoft_ServiceFabric_application = map[string]Policy{
 	"ApplicationTypes_Get": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ServiceFabric/clusters/{{.clusterName}}/applicationTypes/{{.applicationTypeName}}",

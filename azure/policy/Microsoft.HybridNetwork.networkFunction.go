@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_HybridNetwork_networkFunction policy
 var Microsoft_HybridNetwork_networkFunction = map[string]Policy{
 	"NetworkFunctions_Get": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.HybridNetwork/networkFunctions/{{.networkFunctionName}}",

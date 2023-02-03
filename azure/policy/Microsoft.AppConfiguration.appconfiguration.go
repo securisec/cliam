@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_AppConfiguration_appconfiguration policy
 var Microsoft_AppConfiguration_appconfiguration = map[string]Policy{
 	"ConfigurationStores_List": {
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.AppConfiguration/configurationStores",

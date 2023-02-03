@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_ApiManagement_apimcontenttypes policy
 var Microsoft_ApiManagement_apimcontenttypes = map[string]Policy{
 	"ContentType_ListByService": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/contentTypes",

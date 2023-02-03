@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_ServiceBus_migrationconfigs policy
 var Microsoft_ServiceBus_migrationconfigs = map[string]Policy{
 	"MigrationConfigs_List": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ServiceBus/namespaces/{{.namespaceName}}/migrationConfigurations",

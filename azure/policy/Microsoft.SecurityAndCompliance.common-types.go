@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_SecurityAndCompliance_common_types policy
 var Microsoft_SecurityAndCompliance_common_types = map[string]Policy{
 	"Operations_List": {
 		Path:   "/providers/Microsoft.SecurityAndCompliance/operations",

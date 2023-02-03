@@ -1,11 +1,12 @@
 package policy
 
+// Microsoft_Batch_BatchManagement policy
 var Microsoft_Batch_BatchManagement = map[string]Policy{
 	"BatchAccount_Get": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Batch/batchAccounts/{{.accountName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-06-01",
+			"api-version": "2022-10-01",
 		},
 		OperationID: "BatchAccount_Get",
 		Resource:    "Microsoft.Batch",
@@ -14,7 +15,7 @@ var Microsoft_Batch_BatchManagement = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.Batch/batchAccounts",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-06-01",
+			"api-version": "2022-10-01",
 		},
 		OperationID: "BatchAccount_List",
 		Resource:    "Microsoft.Batch",
@@ -23,7 +24,7 @@ var Microsoft_Batch_BatchManagement = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Batch/batchAccounts",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-06-01",
+			"api-version": "2022-10-01",
 		},
 		OperationID: "BatchAccount_ListByResourceGroup",
 		Resource:    "Microsoft.Batch",
@@ -32,7 +33,7 @@ var Microsoft_Batch_BatchManagement = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Batch/batchAccounts/{{.accountName}}/syncAutoStorageKeys",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-06-01",
+			"api-version": "2022-10-01",
 		},
 		OperationID: "BatchAccount_SynchronizeAutoStorageKeys",
 		Resource:    "Microsoft.Batch",
@@ -41,7 +42,7 @@ var Microsoft_Batch_BatchManagement = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Batch/batchAccounts/{{.accountName}}/regenerateKeys",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-06-01",
+			"api-version": "2022-10-01",
 		},
 		OperationID: "BatchAccount_RegenerateKey",
 		Resource:    "Microsoft.Batch",
@@ -50,7 +51,7 @@ var Microsoft_Batch_BatchManagement = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Batch/batchAccounts/{{.accountName}}/listKeys",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-06-01",
+			"api-version": "2022-10-01",
 		},
 		OperationID: "BatchAccount_GetKeys",
 		Resource:    "Microsoft.Batch",
@@ -59,7 +60,7 @@ var Microsoft_Batch_BatchManagement = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Batch/batchAccounts/{{.accountName}}/applications/{{.applicationName}}/versions/{{.versionName}}/activate",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-06-01",
+			"api-version": "2022-10-01",
 		},
 		OperationID: "ApplicationPackage_Activate",
 		Resource:    "Microsoft.Batch",
@@ -68,7 +69,7 @@ var Microsoft_Batch_BatchManagement = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Batch/batchAccounts/{{.accountName}}/applications/{{.applicationName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-06-01",
+			"api-version": "2022-10-01",
 		},
 		OperationID: "Application_Get",
 		Resource:    "Microsoft.Batch",
@@ -77,7 +78,7 @@ var Microsoft_Batch_BatchManagement = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Batch/batchAccounts/{{.accountName}}/applications/{{.applicationName}}/versions/{{.versionName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-06-01",
+			"api-version": "2022-10-01",
 		},
 		OperationID: "ApplicationPackage_Get",
 		Resource:    "Microsoft.Batch",
@@ -86,7 +87,7 @@ var Microsoft_Batch_BatchManagement = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Batch/batchAccounts/{{.accountName}}/applications",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-06-01",
+			"api-version": "2022-10-01",
 		},
 		OperationID: "Application_List",
 		Resource:    "Microsoft.Batch",
@@ -95,7 +96,7 @@ var Microsoft_Batch_BatchManagement = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Batch/batchAccounts/{{.accountName}}/applications/{{.applicationName}}/versions",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-06-01",
+			"api-version": "2022-10-01",
 		},
 		OperationID: "ApplicationPackage_List",
 		Resource:    "Microsoft.Batch",
@@ -104,7 +105,7 @@ var Microsoft_Batch_BatchManagement = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.Batch/locations/{{.locationName}}/quotas",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-06-01",
+			"api-version": "2022-10-01",
 		},
 		OperationID: "Location_GetQuotas",
 		Resource:    "Microsoft.Batch",
@@ -113,7 +114,7 @@ var Microsoft_Batch_BatchManagement = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.Batch/locations/{{.locationName}}/virtualMachineSkus",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-06-01",
+			"api-version": "2022-10-01",
 		},
 		OperationID: "Location_ListSupportedVirtualMachineSkus",
 		Resource:    "Microsoft.Batch",
@@ -122,7 +123,7 @@ var Microsoft_Batch_BatchManagement = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.Batch/locations/{{.locationName}}/cloudServiceSkus",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-06-01",
+			"api-version": "2022-10-01",
 		},
 		OperationID: "Location_ListSupportedCloudServiceSkus",
 		Resource:    "Microsoft.Batch",
@@ -131,7 +132,7 @@ var Microsoft_Batch_BatchManagement = map[string]Policy{
 		Path:   "/providers/Microsoft.Batch/operations",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-06-01",
+			"api-version": "2022-10-01",
 		},
 		OperationID: "Operations_List",
 		Resource:    "Microsoft.Batch",
@@ -140,7 +141,7 @@ var Microsoft_Batch_BatchManagement = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.Batch/locations/{{.locationName}}/checkNameAvailability",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-06-01",
+			"api-version": "2022-10-01",
 		},
 		OperationID: "Location_CheckNameAvailability",
 		Resource:    "Microsoft.Batch",
@@ -149,7 +150,7 @@ var Microsoft_Batch_BatchManagement = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Batch/batchAccounts/{{.accountName}}/certificates",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-06-01",
+			"api-version": "2022-10-01",
 		},
 		OperationID: "Certificate_ListByBatchAccount",
 		Resource:    "Microsoft.Batch",
@@ -158,7 +159,7 @@ var Microsoft_Batch_BatchManagement = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Batch/batchAccounts/{{.accountName}}/certificates/{{.certificateName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-06-01",
+			"api-version": "2022-10-01",
 		},
 		OperationID: "Certificate_Get",
 		Resource:    "Microsoft.Batch",
@@ -167,7 +168,7 @@ var Microsoft_Batch_BatchManagement = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Batch/batchAccounts/{{.accountName}}/certificates/{{.certificateName}}/cancelDelete",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-06-01",
+			"api-version": "2022-10-01",
 		},
 		OperationID: "Certificate_CancelDeletion",
 		Resource:    "Microsoft.Batch",
@@ -176,7 +177,7 @@ var Microsoft_Batch_BatchManagement = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Batch/batchAccounts/{{.accountName}}/detectors",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-06-01",
+			"api-version": "2022-10-01",
 		},
 		OperationID: "BatchAccount_ListDetectors",
 		Resource:    "Microsoft.Batch",
@@ -185,7 +186,7 @@ var Microsoft_Batch_BatchManagement = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Batch/batchAccounts/{{.accountName}}/detectors/{{.detectorId}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-06-01",
+			"api-version": "2022-10-01",
 		},
 		OperationID: "BatchAccount_GetDetector",
 		Resource:    "Microsoft.Batch",
@@ -194,7 +195,7 @@ var Microsoft_Batch_BatchManagement = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Batch/batchAccounts/{{.accountName}}/privateLinkResources",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-06-01",
+			"api-version": "2022-10-01",
 		},
 		OperationID: "PrivateLinkResource_ListByBatchAccount",
 		Resource:    "Microsoft.Batch",
@@ -203,7 +204,7 @@ var Microsoft_Batch_BatchManagement = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Batch/batchAccounts/{{.accountName}}/privateLinkResources/{{.privateLinkResourceName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-06-01",
+			"api-version": "2022-10-01",
 		},
 		OperationID: "PrivateLinkResource_Get",
 		Resource:    "Microsoft.Batch",
@@ -212,7 +213,7 @@ var Microsoft_Batch_BatchManagement = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Batch/batchAccounts/{{.accountName}}/privateEndpointConnections",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-06-01",
+			"api-version": "2022-10-01",
 		},
 		OperationID: "PrivateEndpointConnection_ListByBatchAccount",
 		Resource:    "Microsoft.Batch",
@@ -221,7 +222,7 @@ var Microsoft_Batch_BatchManagement = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Batch/batchAccounts/{{.accountName}}/privateEndpointConnections/{{.privateEndpointConnectionName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-06-01",
+			"api-version": "2022-10-01",
 		},
 		OperationID: "PrivateEndpointConnection_Get",
 		Resource:    "Microsoft.Batch",
@@ -230,7 +231,7 @@ var Microsoft_Batch_BatchManagement = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Batch/batchAccounts/{{.accountName}}/pools",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-06-01",
+			"api-version": "2022-10-01",
 		},
 		OperationID: "Pool_ListByBatchAccount",
 		Resource:    "Microsoft.Batch",
@@ -239,7 +240,7 @@ var Microsoft_Batch_BatchManagement = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Batch/batchAccounts/{{.accountName}}/pools/{{.poolName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-06-01",
+			"api-version": "2022-10-01",
 		},
 		OperationID: "Pool_Get",
 		Resource:    "Microsoft.Batch",
@@ -248,7 +249,7 @@ var Microsoft_Batch_BatchManagement = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Batch/batchAccounts/{{.accountName}}/pools/{{.poolName}}/disableAutoScale",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-06-01",
+			"api-version": "2022-10-01",
 		},
 		OperationID: "Pool_DisableAutoScale",
 		Resource:    "Microsoft.Batch",
@@ -257,7 +258,7 @@ var Microsoft_Batch_BatchManagement = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Batch/batchAccounts/{{.accountName}}/pools/{{.poolName}}/stopResize",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-06-01",
+			"api-version": "2022-10-01",
 		},
 		OperationID: "Pool_StopResize",
 		Resource:    "Microsoft.Batch",
@@ -266,7 +267,7 @@ var Microsoft_Batch_BatchManagement = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Batch/batchAccounts/{{.accountName}}/outboundNetworkDependenciesEndpoints",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-06-01",
+			"api-version": "2022-10-01",
 		},
 		OperationID: "BatchAccount_ListOutboundNetworkDependenciesEndpoints",
 		Resource:    "Microsoft.Batch",

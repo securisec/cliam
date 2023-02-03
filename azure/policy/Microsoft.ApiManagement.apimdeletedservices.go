@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_ApiManagement_apimdeletedservices policy
 var Microsoft_ApiManagement_apimdeletedservices = map[string]Policy{
 	"DeletedServices_ListBySubscription": {
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.ApiManagement/deletedservices",

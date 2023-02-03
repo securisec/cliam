@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_ApiManagement_apimusers policy
 var Microsoft_ApiManagement_apimusers = map[string]Policy{
 	"User_ListByService": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/users",

@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_ApiManagement_apimbackends policy
 var Microsoft_ApiManagement_apimbackends = map[string]Policy{
 	"Backend_ListByService": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/backends",

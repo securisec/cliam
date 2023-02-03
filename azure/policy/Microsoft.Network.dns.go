@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_Network_dns policy
 var Microsoft_Network_dns = map[string]Policy{
 	"RecordSets_Get": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Network/dnsZones/{{.zoneName}}/{{.recordType}}/{{.relativeRecordSetName}}",

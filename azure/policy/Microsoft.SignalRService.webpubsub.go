@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_SignalRService_webpubsub policy
 var Microsoft_SignalRService_webpubsub = map[string]Policy{
 	"Operations_List": {
 		Path:   "/providers/Microsoft.SignalRService/operations",

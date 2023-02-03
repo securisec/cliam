@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_ServiceBus_AuthorizationRules policy
 var Microsoft_ServiceBus_AuthorizationRules = map[string]Policy{
 	"Namespaces_ListAuthorizationRules": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ServiceBus/namespaces/{{.namespaceName}}/AuthorizationRules",

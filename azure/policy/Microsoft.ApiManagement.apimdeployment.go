@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_ApiManagement_apimdeployment policy
 var Microsoft_ApiManagement_apimdeployment = map[string]Policy{
 	"ApiManagementOperations_List": {
 		Path:   "/providers/Microsoft.ApiManagement/operations",

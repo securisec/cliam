@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_DevSpaces_devspaces policy
 var Microsoft_DevSpaces_devspaces = map[string]Policy{
 	"ContainerHostMappings_GetContainerHostMapping": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.DevSpaces/locations/{{.location}}/checkContainerHostMapping",

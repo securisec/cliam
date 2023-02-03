@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_ApiManagement_apimapiversionsets policy
 var Microsoft_ApiManagement_apimapiversionsets = map[string]Policy{
 	"ApiVersionSet_ListByService": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/apiVersionSets",

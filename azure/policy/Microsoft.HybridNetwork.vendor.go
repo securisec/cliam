@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_HybridNetwork_vendor policy
 var Microsoft_HybridNetwork_vendor = map[string]Policy{
 	"Vendors_Get": {
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.HybridNetwork/vendors/{{.vendorName}}",

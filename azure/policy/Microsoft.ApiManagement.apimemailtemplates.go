@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_ApiManagement_apimemailtemplates policy
 var Microsoft_ApiManagement_apimemailtemplates = map[string]Policy{
 	"EmailTemplate_ListByService": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/templates",

@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_ServiceBus_DisasterRecoveryConfig policy
 var Microsoft_ServiceBus_DisasterRecoveryConfig = map[string]Policy{
 	"DisasterRecoveryConfigs_List": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ServiceBus/namespaces/{{.namespaceName}}/disasterRecoveryConfigs",

@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_ApiManagement_apimidentityprovider policy
 var Microsoft_ApiManagement_apimidentityprovider = map[string]Policy{
 	"IdentityProvider_ListByService": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/identityProviders",

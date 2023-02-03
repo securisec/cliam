@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_Features_SubscriptionFeatureRegistration policy
 var Microsoft_Features_SubscriptionFeatureRegistration = map[string]Policy{
 	"SubscriptionFeatureRegistrations_Get": {
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.Features/featureProviders/{{.providerNamespace}}/subscriptionFeatureRegistrations/{{.featureName}}",

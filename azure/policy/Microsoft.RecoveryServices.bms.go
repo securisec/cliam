@@ -1,11 +1,12 @@
 package policy
 
+// Microsoft_RecoveryServices_bms policy
 var Microsoft_RecoveryServices_bms = map[string]Policy{
 	"BackupResourceStorageConfigsNonCRR_Get": {
 		Path:   "/Subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupstorageconfig/vaultstorageconfig",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "BackupResourceStorageConfigsNonCRR_Get",
 		Resource:    "Microsoft.RecoveryServices",
@@ -14,7 +15,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/Subscriptions/{{.subscriptionId}}/providers/Microsoft.RecoveryServices/locations/{{.azureRegion}}/backupPreValidateProtection",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "ProtectionIntent_Validate",
 		Resource:    "Microsoft.RecoveryServices",
@@ -23,7 +24,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/Subscriptions/{{.subscriptionId}}/providers/Microsoft.RecoveryServices/locations/{{.azureRegion}}/backupStatus",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "BackupStatus_Get",
 		Resource:    "Microsoft.RecoveryServices",
@@ -32,7 +33,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/Subscriptions/{{.subscriptionId}}/providers/Microsoft.RecoveryServices/locations/{{.azureRegion}}/backupValidateFeatures",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "FeatureSupport_Validate",
 		Resource:    "Microsoft.RecoveryServices",
@@ -41,7 +42,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/Subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupFabrics/{{.fabricName}}/backupProtectionIntent/{{.intentObjectName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "ProtectionIntent_Get",
 		Resource:    "Microsoft.RecoveryServices",
@@ -50,7 +51,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/Subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupProtectionIntents",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "BackupProtectionIntent_List",
 		Resource:    "Microsoft.RecoveryServices",
@@ -59,7 +60,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/Subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupUsageSummaries",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "BackupUsageSummaries_List",
 		Resource:    "Microsoft.RecoveryServices",
@@ -68,7 +69,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/providers/Microsoft.RecoveryServices/operations",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "Operations_List",
 		Resource:    "Microsoft.RecoveryServices",
@@ -77,7 +78,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupconfig/vaultconfig",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "BackupResourceVaultConfigs_Get",
 		Resource:    "Microsoft.RecoveryServices",
@@ -86,7 +87,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupEncryptionConfigs/backupResourceEncryptionConfig",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "BackupResourceEncryptionConfigs_Get",
 		Resource:    "Microsoft.RecoveryServices",
@@ -95,7 +96,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/privateEndpointConnections/{{.privateEndpointConnectionName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "PrivateEndpointConnection_Get",
 		Resource:    "Microsoft.RecoveryServices",
@@ -104,7 +105,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/privateEndpointConnections/{{.privateEndpointConnectionName}}/operationsStatus/{{.operationId}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "PrivateEndpoint_GetOperationStatus",
 		Resource:    "Microsoft.RecoveryServices",
@@ -113,7 +114,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupstorageconfig/vaultstorageconfig/operationStatus/{{.operationId}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "GetOperationStatus",
 		Resource:    "Microsoft.RecoveryServices",
@@ -122,7 +123,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupstorageconfig/vaultstorageconfig/prepareDataMove",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "BMSPrepareDataMove",
 		Resource:    "Microsoft.RecoveryServices",
@@ -131,7 +132,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupstorageconfig/vaultstorageconfig/operationResults/{{.operationId}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "BMSPrepareDataMoveOperationResult_Get",
 		Resource:    "Microsoft.RecoveryServices",
@@ -140,7 +141,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupstorageconfig/vaultstorageconfig/triggerDataMove",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "BMSTriggerDataMove",
 		Resource:    "Microsoft.RecoveryServices",
@@ -149,7 +150,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupFabrics/{{.fabricName}}/protectionContainers/{{.containerName}}/protectedItems/{{.protectedItemName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "ProtectedItems_Get",
 		Resource:    "Microsoft.RecoveryServices",
@@ -158,7 +159,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupFabrics/{{.fabricName}}/protectionContainers/{{.containerName}}/protectedItems/{{.protectedItemName}}/operationResults/{{.operationId}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "ProtectedItemOperationResults_Get",
 		Resource:    "Microsoft.RecoveryServices",
@@ -167,7 +168,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupFabrics/{{.fabricName}}/protectionContainers/{{.containerName}}/protectedItems/{{.protectedItemName}}/recoveryPoints",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "RecoveryPoints_List",
 		Resource:    "Microsoft.RecoveryServices",
@@ -176,7 +177,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupFabrics/{{.fabricName}}/protectionContainers/{{.containerName}}/protectedItems/{{.protectedItemName}}/recoveryPoints/{{.recoveryPointId}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "RecoveryPoints_Get",
 		Resource:    "Microsoft.RecoveryServices",
@@ -185,7 +186,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupFabrics/{{.fabricName}}/protectionContainers/{{.containerName}}/protectedItems/{{.protectedItemName}}/recoveryPoints/{{.recoveryPointId}}/restore",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "Restores_Trigger",
 		Resource:    "Microsoft.RecoveryServices",
@@ -194,7 +195,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupPolicies",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "BackupPolicies_List",
 		Resource:    "Microsoft.RecoveryServices",
@@ -203,7 +204,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupPolicies/{{.policyName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "ProtectionPolicies_Get",
 		Resource:    "Microsoft.RecoveryServices",
@@ -212,7 +213,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupPolicies/{{.policyName}}/operationResults/{{.operationId}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "ProtectionPolicyOperationResults_Get",
 		Resource:    "Microsoft.RecoveryServices",
@@ -221,7 +222,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupJobs",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "BackupJobs_List",
 		Resource:    "Microsoft.RecoveryServices",
@@ -230,7 +231,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupJobs/{{.jobName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "JobDetails_Get",
 		Resource:    "Microsoft.RecoveryServices",
@@ -239,7 +240,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupJobs/{{.jobName}}/cancel",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "JobCancellations_Trigger",
 		Resource:    "Microsoft.RecoveryServices",
@@ -248,7 +249,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupJobs/{{.jobName}}/operationResults/{{.operationId}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "JobOperationResults_Get",
 		Resource:    "Microsoft.RecoveryServices",
@@ -257,7 +258,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupJobs/operationResults/{{.operationId}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "ExportJobsOperationResults_Get",
 		Resource:    "Microsoft.RecoveryServices",
@@ -266,7 +267,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupJobsExport",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "Jobs_Export",
 		Resource:    "Microsoft.RecoveryServices",
@@ -275,7 +276,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupProtectedItems",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "BackupProtectedItems_List",
 		Resource:    "Microsoft.RecoveryServices",
@@ -284,7 +285,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupValidateOperation",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "Operation_Validate",
 		Resource:    "Microsoft.RecoveryServices",
@@ -293,7 +294,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupTriggerValidateOperation",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "ValidateOperation_Trigger",
 		Resource:    "Microsoft.RecoveryServices",
@@ -302,7 +303,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupValidateOperationResults/{{.operationId}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "ValidateOperationResults_Get",
 		Resource:    "Microsoft.RecoveryServices",
@@ -311,7 +312,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupValidateOperationsStatuses/{{.operationId}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "ValidateOperationStatuses_Get",
 		Resource:    "Microsoft.RecoveryServices",
@@ -320,7 +321,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupEngines",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "BackupEngines_List",
 		Resource:    "Microsoft.RecoveryServices",
@@ -329,7 +330,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupEngines/{{.backupEngineName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "BackupEngines_Get",
 		Resource:    "Microsoft.RecoveryServices",
@@ -338,7 +339,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupFabrics/{{.fabricName}}/operationResults/{{.operationId}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "ProtectionContainerRefreshOperationResults_Get",
 		Resource:    "Microsoft.RecoveryServices",
@@ -347,7 +348,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupFabrics/{{.fabricName}}/protectableContainers",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "ProtectableContainers_List",
 		Resource:    "Microsoft.RecoveryServices",
@@ -356,7 +357,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupFabrics/{{.fabricName}}/protectionContainers/{{.containerName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "ProtectionContainers_Get",
 		Resource:    "Microsoft.RecoveryServices",
@@ -365,7 +366,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupFabrics/{{.fabricName}}/protectionContainers/{{.containerName}}/inquire",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "ProtectionContainers_Inquire",
 		Resource:    "Microsoft.RecoveryServices",
@@ -374,7 +375,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupFabrics/{{.fabricName}}/protectionContainers/{{.containerName}}/items",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "BackupWorkloadItems_List",
 		Resource:    "Microsoft.RecoveryServices",
@@ -383,7 +384,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupFabrics/{{.fabricName}}/protectionContainers/{{.containerName}}/operationResults/{{.operationId}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "ProtectionContainerOperationResults_Get",
 		Resource:    "Microsoft.RecoveryServices",
@@ -392,7 +393,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupFabrics/{{.fabricName}}/protectionContainers/{{.containerName}}/protectedItems/{{.protectedItemName}}/backup",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "Backups_Trigger",
 		Resource:    "Microsoft.RecoveryServices",
@@ -401,7 +402,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupFabrics/{{.fabricName}}/protectionContainers/{{.containerName}}/protectedItems/{{.protectedItemName}}/operationsStatus/{{.operationId}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "ProtectedItemOperationStatuses_Get",
 		Resource:    "Microsoft.RecoveryServices",
@@ -410,7 +411,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupFabrics/{{.fabricName}}/protectionContainers/{{.containerName}}/protectedItems/{{.protectedItemName}}/recoveryPoints/{{.recoveryPointId}}/provisionInstantItemRecovery",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "ItemLevelRecoveryConnections_Provision",
 		Resource:    "Microsoft.RecoveryServices",
@@ -419,7 +420,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupFabrics/{{.fabricName}}/protectionContainers/{{.containerName}}/protectedItems/{{.protectedItemName}}/recoveryPoints/{{.recoveryPointId}}/revokeInstantItemRecovery",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "ItemLevelRecoveryConnections_Revoke",
 		Resource:    "Microsoft.RecoveryServices",
@@ -428,7 +429,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupFabrics/{{.fabricName}}/refreshContainers",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "ProtectionContainers_Refresh",
 		Resource:    "Microsoft.RecoveryServices",
@@ -437,7 +438,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupOperationResults/{{.operationId}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "BackupOperationResults_Get",
 		Resource:    "Microsoft.RecoveryServices",
@@ -446,7 +447,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupOperations/{{.operationId}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "BackupOperationStatuses_Get",
 		Resource:    "Microsoft.RecoveryServices",
@@ -455,7 +456,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupPolicies/{{.policyName}}/operations/{{.operationId}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "ProtectionPolicyOperationStatuses_Get",
 		Resource:    "Microsoft.RecoveryServices",
@@ -464,7 +465,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupProtectableItems",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "BackupProtectableItems_List",
 		Resource:    "Microsoft.RecoveryServices",
@@ -473,16 +474,25 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupProtectionContainers",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "BackupProtectionContainers_List",
+		Resource:    "Microsoft.RecoveryServices",
+	},
+	"DeletedProtectionContainers_List": {
+		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupDeletedProtectionContainers",
+		Method: "GET",
+		QueryValues: map[string]string{
+			"api-version": "2023-01-01",
+		},
+		OperationID: "DeletedProtectionContainers_List",
 		Resource:    "Microsoft.RecoveryServices",
 	},
 	"SecurityPINs_Get": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupSecurityPIN",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "SecurityPINs_Get",
 		Resource:    "Microsoft.RecoveryServices",
@@ -491,7 +501,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupFabrics/{{.fabricName}}/protectionContainers/{{.containerName}}/protectedItems/{{.protectedItemName}}/recoveryPoints/{{.recoveryPointId}}/move",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "MoveRecoveryPoint",
 		Resource:    "Microsoft.RecoveryServices",
@@ -500,7 +510,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupFabrics/{{.fabricName}}/protectionContainers/{{.containerName}}/protectedItems/{{.protectedItemName}}/recoveryPointsRecommendedForMove",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "RecoveryPointsRecommendedForMove_List",
 		Resource:    "Microsoft.RecoveryServices",
@@ -509,7 +519,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupResourceGuardProxies",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "ResourceGuardProxies_Get",
 		Resource:    "Microsoft.RecoveryServices",
@@ -518,7 +528,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupResourceGuardProxies/{{.resourceGuardProxyName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "ResourceGuardProxy_Get",
 		Resource:    "Microsoft.RecoveryServices",
@@ -527,7 +537,7 @@ var Microsoft_RecoveryServices_bms = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.RecoveryServices/vaults/{{.vaultName}}/backupResourceGuardProxies/{{.resourceGuardProxyName}}/unlockDelete",
 		Method: "POST",
 		QueryValues: map[string]string{
-			"api-version": "2022-03-01",
+			"api-version": "2023-01-01",
 		},
 		OperationID: "ResourceGuardProxy_UnlockDelete",
 		Resource:    "Microsoft.RecoveryServices",

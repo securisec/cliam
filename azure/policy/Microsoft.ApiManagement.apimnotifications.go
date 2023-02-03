@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_ApiManagement_apimnotifications policy
 var Microsoft_ApiManagement_apimnotifications = map[string]Policy{
 	"Notification_ListByService": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/notifications",

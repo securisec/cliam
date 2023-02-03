@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_ApiManagement_apimproducts policy
 var Microsoft_ApiManagement_apimproducts = map[string]Policy{
 	"Product_ListByService": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/products",

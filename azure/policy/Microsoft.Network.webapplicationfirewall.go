@@ -1,31 +1,32 @@
 package policy
 
+// Microsoft_Network_webapplicationfirewall policy
 var Microsoft_Network_webapplicationfirewall = map[string]Policy{
-	"Policies_List": {
-		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Network/frontDoorWebApplicationFirewallPolicies",
+	"WebApplicationFirewallPolicies_List": {
+		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Network/ApplicationGatewayWebApplicationFirewallPolicies",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2020-11-01",
+			"api-version": "2022-07-01",
 		},
-		OperationID: "Policies_List",
+		OperationID: "WebApplicationFirewallPolicies_List",
 		Resource:    "Microsoft.Network",
 	},
-	"Policies_Get": {
-		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Network/FrontDoorWebApplicationFirewallPolicies/{{.policyName}}",
+	"WebApplicationFirewallPolicies_ListAll": {
+		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.Network/ApplicationGatewayWebApplicationFirewallPolicies",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2020-11-01",
+			"api-version": "2022-07-01",
 		},
-		OperationID: "Policies_Get",
+		OperationID: "WebApplicationFirewallPolicies_ListAll",
 		Resource:    "Microsoft.Network",
 	},
-	"ManagedRuleSets_List": {
-		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.Network/FrontDoorWebApplicationFirewallManagedRuleSets",
+	"WebApplicationFirewallPolicies_Get": {
+		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.Network/ApplicationGatewayWebApplicationFirewallPolicies/{{.policyName}}",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2020-11-01",
+			"api-version": "2022-07-01",
 		},
-		OperationID: "ManagedRuleSets_List",
+		OperationID: "WebApplicationFirewallPolicies_Get",
 		Resource:    "Microsoft.Network",
 	},
 }

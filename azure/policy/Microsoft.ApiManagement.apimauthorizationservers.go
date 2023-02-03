@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_ApiManagement_apimauthorizationservers policy
 var Microsoft_ApiManagement_apimauthorizationservers = map[string]Policy{
 	"AuthorizationServer_ListByService": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/authorizationServers",

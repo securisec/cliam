@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_StoragePool_storagepool policy
 var Microsoft_StoragePool_storagepool = map[string]Policy{
 	"Operations_List": {
 		Path:   "/providers/Microsoft.StoragePool/operations",

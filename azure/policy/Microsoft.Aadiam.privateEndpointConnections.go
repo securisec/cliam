@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_Aadiam_privateEndpointConnections policy
 var Microsoft_Aadiam_privateEndpointConnections = map[string]Policy{
 	"PrivateEndpointConnections_ListByPolicyName": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/microsoft.aadiam/privateLinkForAzureAd/{{.policyName}}/privateEndpointConnections",

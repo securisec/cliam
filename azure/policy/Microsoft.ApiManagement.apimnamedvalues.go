@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_ApiManagement_apimnamedvalues policy
 var Microsoft_ApiManagement_apimnamedvalues = map[string]Policy{
 	"NamedValue_ListByService": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/namedValues",

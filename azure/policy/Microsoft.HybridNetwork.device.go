@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_HybridNetwork_device policy
 var Microsoft_HybridNetwork_device = map[string]Policy{
 	"Devices_Get": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.HybridNetwork/devices/{{.deviceName}}",

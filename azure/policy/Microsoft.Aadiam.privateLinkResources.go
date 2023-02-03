@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_Aadiam_privateLinkResources policy
 var Microsoft_Aadiam_privateLinkResources = map[string]Policy{
 	"PrivateLinkResources_ListByPrivateLinkPolicy": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/microsoft.aadiam/privateLinkForAzureAd/{{.policyName}}/privateLinkResources",

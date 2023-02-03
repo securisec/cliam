@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_HybridData_hybriddata policy
 var Microsoft_HybridData_hybriddata = map[string]Policy{
 	"Operations_List": {
 		Path:   "/providers/Microsoft.HybridData/operations",

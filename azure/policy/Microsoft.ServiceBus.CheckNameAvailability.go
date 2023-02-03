@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_ServiceBus_CheckNameAvailability policy
 var Microsoft_ServiceBus_CheckNameAvailability = map[string]Policy{
 	"Namespaces_CheckNameAvailability": {
 		Path:   "/subscriptions/{{.subscriptionId}}/providers/Microsoft.ServiceBus/CheckNameAvailability",

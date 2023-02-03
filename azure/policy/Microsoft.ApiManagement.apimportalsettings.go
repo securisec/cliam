@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_ApiManagement_apimportalsettings policy
 var Microsoft_ApiManagement_apimportalsettings = map[string]Policy{
 	"PortalSettings_ListByService": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/portalsettings",

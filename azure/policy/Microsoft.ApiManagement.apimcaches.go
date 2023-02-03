@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_ApiManagement_apimcaches policy
 var Microsoft_ApiManagement_apimcaches = map[string]Policy{
 	"Cache_ListByService": {
 		Path:   "/subscriptions/{{.subscriptionId}}/resourceGroups/{{.resourceGroupName}}/providers/Microsoft.ApiManagement/service/{{.serviceName}}/caches",

@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_StorageCache_storagecache policy
 var Microsoft_StorageCache_storagecache = map[string]Policy{
 	"Operations_List": {
 		Path:   "/providers/Microsoft.StorageCache/operations",

@@ -1,5 +1,6 @@
 package policy
 
+// Microsoft_Communication_CommunicationService policy
 var Microsoft_Communication_CommunicationService = map[string]Policy{
 	"Operations_List": {
 		Path:   "/providers/Microsoft.Communication/operations",

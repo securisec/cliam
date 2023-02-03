@@ -63,37 +63,44 @@ def getPolicies(resource, specification, version):
 
 # pyperclip.copy(o)
 
-SPECIFICATION = "datashare"
+all_services = [dirs.stem for dirs in Path('temp/azure-rest-api-specs/specification/').glob('*') if dirs.is_dir()]
+print(all_services)
 
-rdirs =  [dirs for dirs in Path(f'temp/azure-rest-api-specs/specification/{SPECIFICATION}/resource-manager/').glob("*") if dirs.is_dir()]
+for SPECIFICATION in all_services:
+    # SPECIFICATION = "keyvault"
 
-for dirs in rdirs:
-    RESOURCE = dirs.name
-    VERSION = [x for x in sorted((dirs / "stable").glob("*"))][-1].name
+    try:
+        rdirs =  [dirs for dirs in Path(f'temp/azure-rest-api-specs/specification/{SPECIFICATION}/resource-manager/').glob("*") if dirs.is_dir()]
+
+        for dirs in rdirs:
+            RESOURCE = dirs.name
+            VERSION = [x for x in sorted((dirs / "stable").glob("*"))][-1].name
 
 
-    for resource_path in getPolicies(RESOURCE, SPECIFICATION, VERSION):
+            for resource_path in getPolicies(RESOURCE, SPECIFICATION, VERSION):
 
-        path = Path("cliam/" + resource_path)
-        resource = path.stem
+                path = Path("cliam/" + resource_path)
+                resource = path.stem
 
-        save_path = Path(f"azure/policy/{RESOURCE}.{resource}.go")
-        if save_path.exists():
-            continue
+                save_path = Path(f"azure/policy/{RESOURCE}.{resource}.go")
+                print(save_path)
+                # if save_path.exists():
+                #     continue
 
-        policies = buildPolicy(path)
-        var_name = RESOURCE.replace(".", "_") + f"_{resource}"
+                policies = buildPolicy(path)
+                var_name = RESOURCE.replace(".", "_") + f"_{resource}"
 
-        template = f"""package policy
+                template = f"""package policy
 
+    // {var_name} policy
+    //
     var {var_name} = map[string]Policy{{
         {policies}
     }}
     """
 
-        save_path.write_text(template)
-        # print(policies)
+                save_path.write_text(template)
+                # print(policies)
 
-        o = f'"{RESOURCE}.{resource}": policy.{var_name},'
-        pyperclip.copy(o)
-        print(o)
+    except:
+        continue
