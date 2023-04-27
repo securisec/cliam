@@ -17,6 +17,7 @@ Todo:
   ☐ 💚 🐛 build for arm mac doesnt work on zsh
   ☐ ✨ sas-token enumeration for azure
   ☐ 💡 local database?
+  ☐ azure util list public blob storage
 
 Helpers:
 
