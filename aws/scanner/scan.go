@@ -20,24 +20,24 @@ func EnumerateSpecificResource(
 	ser ServiceMap,
 	creds *credentials.Credentials,
 	saveOutput bool,
-) (int, error) {
+) (int, []byte, error) {
 	u, err := ser.Policy.GetRequestURL(region, ser.Resource, endpoint)
 	if err != nil {
-		return 0, err
+		return 0, nil, err
 	}
 	ser.Policy.ReqURL = u
 
 	if ser.Policy.IsExtra {
 		s, err := ser.Policy.UpdateForExtra()
 		if err != nil {
-			return 0, err
+			return 0, nil, err
 		}
 		ser.Policy = s
 	}
 
 	_, res, body, err := signer.MakeScannerRequest(ctx, region, ser.Resource, &ser.Policy, creds)
 	if err != nil {
-		return 0, err
+		return 0, nil, err
 	}
 
 	if res.StatusCode == http.StatusOK {
@@ -46,7 +46,7 @@ func EnumerateSpecificResource(
 		}
 	}
 
-	return res.StatusCode, nil
+	return res.StatusCode, body, nil
 }
 
 type ServiceMap struct {

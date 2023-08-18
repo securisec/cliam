@@ -43,7 +43,7 @@ func cliResponseLoggerAWS(ser scanner.ServiceMap, status int) {
 	flag, ok := ModifyExtraMap(awsKnownResourceMap)[cf]
 	if status == http.StatusOK {
 		sl := l.Info().Str(ser.Resource, logger.ToSnakeCase(ser.Policy.Permission))
-		if ok && CLIVerbose {
+		if ok && flag != "" {
 			sl.Str(strings.ReplaceAll(cf, "_", "-"), flag)
 		}
 		successCounter++

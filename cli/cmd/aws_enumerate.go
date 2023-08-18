@@ -68,7 +68,7 @@ func awsEnumerateCmdFunc(_ *cobra.Command, args []string) {
 					<-max
 				}()
 
-				statusCode, err := scanner.EnumerateSpecificResource(ctx, region, awsEndpoint, s, creds, SaveOutput)
+				statusCode, body, err := scanner.EnumerateSpecificResource(ctx, region, awsEndpoint, s, creds, SaveOutput)
 				if err != nil {
 					cliErrorLogger(s, err)
 					failureCounter++
@@ -76,6 +76,22 @@ func awsEnumerateCmdFunc(_ *cobra.Command, args []string) {
 					return
 				}
 				cliResponseLoggerAWS(s, statusCode)
+
+				// if deep scanning is enabled, parse response
+				if awsDeepScan && s.Policy.ResponseParser != nil {
+					extras, err := s.Policy.ResponseParser.ResponseParser(body)
+					if err != nil {
+						wg.Done()
+						return
+					}
+					if len(extras) > 0 {
+						// update the extras with extra name
+						newExtras := awsGetNewExtras(s, extras)
+						// loop over extracted known values and set cmd accordfingly
+						awsKnownResourceMap = newExtras
+						awsSendToChannel(ch, resources)
+					}
+				}
 
 				wg.Done()
 
@@ -86,6 +102,8 @@ func awsEnumerateCmdFunc(_ *cobra.Command, args []string) {
 
 	awsSendToChannel(ch, resources)
 
-	close(ch)
+	// TODO 🔥 this is blocking if defered, or panicing because closed
+	wg.Done()
 	wg.Wait()
+	close(ch)
 }

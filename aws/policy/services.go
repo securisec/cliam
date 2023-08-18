@@ -51,6 +51,16 @@ type Service struct {
 	// i.e. --bucket-name for s3 buckets
 	ExtraCommandLineFlag string
 	ReqURL               string
+	// for deep scanning
+	ResponseParser *ResponseParser
+}
+
+// ResponseParser parse response
+type ResponseParser struct {
+	ResponseFormat                string
+	ExtractedExtraCommandLineFlag string
+	// ResponseParser func that should assing values to ExtractedExtras
+	ResponseParser func([]byte) ([]string, error)
 }
 
 func (s Service) UpdateForExtra() (Service, error) {

@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"encoding/json"
+	"fmt"
 	"os"
 	"strings"
 
@@ -36,6 +37,7 @@ var (
 	awsEndpoint         string
 	awsKnownResourceMap []string
 	// awsKnownOnly         bool
+	awsDeepScan bool
 )
 
 func init() {
@@ -48,6 +50,7 @@ func init() {
 	awsCmd.PersistentFlags().StringVar(&awsSessionJson, "session-json", "", "AWS Session JSON file. This flag attempts to read session information from the specified file. Helpful with temporary credentials.")
 	awsCmd.PersistentFlags().StringVar(&awsEndpoint, "endpoint", "", "AWS Endpoint. Custom AWS endpoint.")
 	awsCmd.PersistentFlags().StringSliceVarP(&awsKnownResourceMap, "known-value", "k", []string{}, "AWS Resource Name. Maps directly with aws cli flags. This flag can be used multiple times.")
+	awsCmd.PersistentFlags().BoolVar(&awsDeepScan, "deep", false, "Deep scan. From values identified in list operations, run further scans against them.")
 	awsCmd.RegisterFlagCompletionFunc("region", func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
 		return aws_Regions, cobra.ShellCompDirectiveNoFileComp
 	})
@@ -149,6 +152,14 @@ func awsModifyExtraMap(m map[string]string) map[string]string {
 		h[strings.ReplaceAll(k, "-", "_")] = v
 	}
 	return h
+}
+
+func awsGetNewExtras(s scanner.ServiceMap, extras []string) []string {
+	var hold []string
+	for _, e := range extras {
+		hold = append(hold, fmt.Sprintf("%s=%s", s.Policy.ResponseParser.ExtractedExtraCommandLineFlag, e))
+	}
+	return hold
 }
 
 // func awsLoadEnvVarsFirst(_ *cobra.Command, _ []string) {

@@ -1,10 +1,13 @@
 package shared
 
 import (
+	"bytes"
 	"context"
+	"errors"
 	"regexp"
 	"strings"
 
+	x2j "github.com/basgys/goxml2json"
 	"github.com/gookit/color"
 )
 
@@ -104,4 +107,18 @@ func KebabToCamelCase(kebab string) (camelCase string) {
 		}
 	}
 	return
+}
+
+// ResponseToJSON convert bytes to json
+func ResponseToJSON(responseType string, resBytes []byte) (out []byte, err error) {
+	switch responseType {
+	case "json":
+		return resBytes, nil
+	case "xml":
+		reader := bytes.NewReader(resBytes)
+		o, err := x2j.Convert(reader)
+		return o.Bytes(), err
+	default:
+		return nil, errors.New("data could not be parsed")
+	}
 }
