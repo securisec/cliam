@@ -8,6 +8,7 @@ import (
 	"text/template"
 
 	"github.com/buger/jsonparser"
+	"github.com/securisec/cliam/logger"
 	"github.com/securisec/cliam/shared"
 )
 
@@ -79,16 +80,37 @@ func (r ResponseParser) ExtraExtractor(respBytes []byte) ([]CommandLineFlagMap, 
 	if err != nil {
 		return nil, err
 	}
+	// get the array of data following the keys
+	dataArray, _, _, err := jsonparser.Get(converted, r.ObjectPath...)
+	if err != nil {
+		return nil, err
+	}
+	// placeholder to hold extracted data
 	var hold []CommandLineFlagMap
-	_, err = jsonparser.ArrayEach(converted, func(value []byte, dataType jsonparser.ValueType, offset int, err error) {
+	_, err = jsonparser.ArrayEach(dataArray, func(value []byte, dataType jsonparser.ValueType, offset int, err error) {
+		// switch to iterate over different datatype
 		for _, k := range r.KeysToExtract {
-			data, _ := jsonparser.GetString(value, k.ResponseKey)
-			hold = append(hold, CommandLineFlagMap{Flag: k.Flag, ResponseKey: data})
+			switch dataType {
+			// array of strings
+			case jsonparser.String:
+				hold = append(hold, CommandLineFlagMap{Flag: k.Flag, ResponseKey: string(value)})
+				break
+
+			// array of objects
+			case jsonparser.Object:
+				data, err := jsonparser.GetString(value, k.ResponseKey)
+				if err != nil {
+					logger.LogError(err)
+				}
+				hold = append(hold, CommandLineFlagMap{Flag: k.Flag, ResponseKey: data})
+				break
+			}
 		}
-	}, r.ObjectPath...)
+	})
 	return hold, err
 }
 
+// UpdateForExtra update Service struct to account for extras
 func (s Service) UpdateForExtra() (Service, error) {
 	if err := s.hasCorrectExtraKey(); err != nil {
 		return s, err

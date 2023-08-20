@@ -14,6 +14,13 @@ var SQSPolicies = map[string]Service{
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
 		},
 		Permission: "ListQueues",
+		ResponseParser: &ResponseParser{
+			ResponseFormat: "json",
+			KeysToExtract: []CommandLineFlagMap{
+				{Flag: "queue_url", ResponseKey: ""},
+			},
+			ObjectPath: []string{"ListQueuesResponse", "ListQueuesResult", "QueueUrl"},
+		},
 	},
 
 	// extra
