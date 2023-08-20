@@ -43,7 +43,7 @@ func awsSharedEnumerate(resources []string, saveOutput bool) {
 					wg.Done()
 					return
 				}
-				cliResponseLoggerAWS(s, statusCode)
+				cliResponseLoggerAWS(s, statusCode, awsKnownResourceMap)
 
 				wg.Done()
 
@@ -52,7 +52,7 @@ func awsSharedEnumerate(resources []string, saveOutput bool) {
 		}
 	}()
 
-	awsSendToChannel(ch, resources)
+	awsSendToChannel(ch, resources, []string{})
 
 	close(ch)
 	wg.Wait()

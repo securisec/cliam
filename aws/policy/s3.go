@@ -6,6 +6,13 @@ var S3Policies = map[string]Service{
 		Method:        "GET",
 		ServiceSuffix: "",
 		Permission:    "ListBuckets",
+		ResponseParser: &ResponseParser{
+			ResponseFormat: "xml",
+			KeysToExtract: []CommandLineFlagMap{
+				{Flag: "bucket", ResponseKey: "Name"},
+			},
+			ObjectPath: []string{"ListAllMyBucketsResult", "Buckets", "Bucket"},
+		},
 	},
 
 	// extra

@@ -2,11 +2,20 @@ package policy
 
 import "github.com/securisec/cliam/shared"
 
+// IAMPolicies iam permissions
 var IAMPolicies = map[string]Service{
 	"ListRoles": {
 		IgnoreRegion:  true,
 		ServiceSuffix: "?Action=ListRoles&Version=2010-05-08",
 		Permission:    "ListRoles",
+		ResponseParser: &ResponseParser{
+			ResponseFormat: "json",
+			KeysToExtract: []CommandLineFlagMap{
+				{Flag: "role_name", ResponseKey: "RoleName"},
+				{Flag: "role_name", ResponseKey: "RoleName"},
+			},
+			ObjectPath: []string{"ListRolesResponse", "ListRolesResult", "Roles"},
+		},
 	},
 	"GetAccountAuthorizationDetails": {
 		IgnoreRegion:  true,
@@ -344,6 +353,13 @@ var IAMPolicies = map[string]Service{
 		ExtraComponentBodyKey:  "RoleName",
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "role_name",
+		ResponseParser: &ResponseParser{
+			ResponseFormat: "json",
+			KeysToExtract: []CommandLineFlagMap{
+				{Flag: "policy_arn", ResponseKey: "PolicyArn"},
+			},
+			ObjectPath: []string{"ListAttachedRolePoliciesResponse", "ListAttachedRolePoliciesResult", "AttachedPolicies"},
+		},
 	},
 	"ListAttachedUserPolicies": {
 		Method:       "POST",

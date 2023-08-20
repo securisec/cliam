@@ -1,10 +1,5 @@
 package policy
 
-import (
-	"github.com/buger/jsonparser"
-	"github.com/securisec/cliam/shared"
-)
-
 // LambdaPolicies policy
 var LambdaPolicies = map[string]Service{
 	"GetAccountSettings": {
@@ -27,20 +22,11 @@ var LambdaPolicies = map[string]Service{
 		ServiceSuffix: "2015-03-31/functions/",
 		Permission:    "ListFunctions",
 		ResponseParser: &ResponseParser{
-			ExtractedExtraCommandLineFlag: "function_name",
-			ResponseFormat:                "json",
-			ResponseParser: func(respBytes []byte) ([]string, error) {
-				converted, err := shared.ResponseToJSON("json", respBytes)
-				if err != nil {
-					return nil, err
-				}
-				hold := make([]string, 0)
-				_, err = jsonparser.ArrayEach(converted, func(value []byte, dataType jsonparser.ValueType, offset int, err error) {
-					bucketName, _ := jsonparser.GetString(value, "FunctionName")
-					hold = append(hold, bucketName)
-				}, "Functions")
-				return hold, err
+			ResponseFormat: "json",
+			KeysToExtract: []CommandLineFlagMap{
+				{Flag: "function_name", ResponseKey: "FunctionName"},
 			},
+			ObjectPath: []string{"Functions"},
 		},
 	},
 	"ListLayers": {

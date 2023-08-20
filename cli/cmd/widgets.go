@@ -37,10 +37,10 @@ func cliErrorLogger(s scanner.ServiceMap, err error) {
 	}
 }
 
-func cliResponseLoggerAWS(ser scanner.ServiceMap, status int) {
+func cliResponseLoggerAWS(ser scanner.ServiceMap, status int, flagMap []string) {
 	l := logger.Logger
 	cf := ser.Policy.ExtraCommandLineFlag
-	flag, ok := ModifyExtraMap(awsKnownResourceMap)[cf]
+	flag, ok := ModifyExtraMap(flagMap)[cf]
 	if status == http.StatusOK {
 		sl := l.Info().Str(ser.Resource, logger.ToSnakeCase(ser.Policy.Permission))
 		if ok && flag != "" {

@@ -18,6 +18,8 @@ Todo:
   ☐ ✨ sas-token enumeration for azure
   ☐ 💡 local database?
   ☐ azure util list public blob storage
+  ☐ 💡 if the same known value is passed multiple types, iterate over each of them
+  ☐ ✨ save all enumerated permissions as json
 
 Helpers:
 

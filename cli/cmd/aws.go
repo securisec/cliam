@@ -2,7 +2,6 @@ package cmd
 
 import (
 	"encoding/json"
-	"fmt"
 	"os"
 	"strings"
 
@@ -111,7 +110,7 @@ func awsReadSessionJsonFile() (awsSessionJsonStruct, error) {
 	return s, err
 }
 
-func awsSendToChannel(ch chan scanner.ServiceMap, resources []string) {
+func awsSendToChannel(ch chan scanner.ServiceMap, resources []string, extrasArray []string) {
 	var extras []scanner.ServiceMap
 	enumerate := scanner.GetServiceMap(resources)
 	for _, e := range enumerate {
@@ -128,10 +127,15 @@ func awsSendToChannel(ch chan scanner.ServiceMap, resources []string) {
 	}
 
 	// if a known resource name is set, we will enumerate only the extra permissions
-	extraFlags := ModifyExtraMap(awsKnownResourceMap)
+	extraFlags := map[string]string{}
+	if len(extrasArray) > 0 {
+		extraFlags = awsModifyExtraMap(ModifyExtraMap(extrasArray))
+	} else {
+		extraFlags = awsModifyExtraMap(ModifyExtraMap(awsKnownResourceMap))
+	}
 	if len(extraFlags) > 0 && len(extras) > 0 {
 		for _, ee := range extras {
-			ee.Policy.ExtraValueMap = awsModifyExtraMap(extraFlags)
+			ee.Policy.ExtraValueMap = extraFlags
 			ch <- ee
 		}
 	}
@@ -152,14 +156,6 @@ func awsModifyExtraMap(m map[string]string) map[string]string {
 		h[strings.ReplaceAll(k, "-", "_")] = v
 	}
 	return h
-}
-
-func awsGetNewExtras(s scanner.ServiceMap, extras []string) []string {
-	var hold []string
-	for _, e := range extras {
-		hold = append(hold, fmt.Sprintf("%s=%s", s.Policy.ResponseParser.ExtractedExtraCommandLineFlag, e))
-	}
-	return hold
 }
 
 // func awsLoadEnvVarsFirst(_ *cobra.Command, _ []string) {

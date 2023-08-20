@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"context"
+	"fmt"
 	"os"
 	"sync"
 	"time"
@@ -75,21 +76,21 @@ func awsEnumerateCmdFunc(_ *cobra.Command, args []string) {
 					wg.Done()
 					return
 				}
-				cliResponseLoggerAWS(s, statusCode)
+				cliResponseLoggerAWS(s, statusCode, mapToArray(s.Policy.ExtraValueMap))
 
 				// if deep scanning is enabled, parse response
-				if awsDeepScan && s.Policy.ResponseParser != nil {
-					extras, err := s.Policy.ResponseParser.ResponseParser(body)
+				if awsDeepScan && s.Policy.ResponseParser != nil && statusCode == 200 {
+					extras, err := s.Policy.ResponseParser.ExtraExtractor(body)
 					if err != nil {
 						wg.Done()
 						return
 					}
 					if len(extras) > 0 {
 						// update the extras with extra name
-						newExtras := awsGetNewExtras(s, extras)
-						// loop over extracted known values and set cmd accordfingly
-						awsKnownResourceMap = newExtras
-						awsSendToChannel(ch, resources)
+						for _, extra := range extras {
+							awsKnownResourceMap = []string{fmt.Sprintf("%s=%s", extra.Flag, extra.ResponseKey)}
+							awsSendToChannel(ch, resources, []string{fmt.Sprintf("%s=%s", extra.Flag, extra.ResponseKey)})
+						}
 					}
 				}
 
@@ -100,10 +101,18 @@ func awsEnumerateCmdFunc(_ *cobra.Command, args []string) {
 		}
 	}()
 
-	awsSendToChannel(ch, resources)
+	awsSendToChannel(ch, resources, []string{})
 
 	// TODO 🔥 this is blocking if defered, or panicing because closed
-	wg.Done()
+	wg.Done() // refacor this because this is poor code and anti pattern
 	wg.Wait()
 	close(ch)
+}
+
+func mapToArray(data map[string]string) []string {
+	var hold []string
+	for k, v := range data {
+		hold = append(hold, fmt.Sprintf("%s=%s", k, v))
+	}
+	return hold
 }

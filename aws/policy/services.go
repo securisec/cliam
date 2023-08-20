@@ -7,6 +7,7 @@ import (
 	"path"
 	"text/template"
 
+	"github.com/buger/jsonparser"
 	"github.com/securisec/cliam/shared"
 )
 
@@ -57,10 +58,35 @@ type Service struct {
 
 // ResponseParser parse response
 type ResponseParser struct {
-	ResponseFormat                string
-	ExtractedExtraCommandLineFlag string
-	// ResponseParser func that should assing values to ExtractedExtras
-	ResponseParser func([]byte) ([]string, error)
+	ResponseFormat string
+	// KeysToExtract is the final array key to extract
+	KeysToExtract []CommandLineFlagMap
+	// ObjectPath is the json keys to the array to extract
+	ObjectPath []string
+}
+
+// CommandLineFlagMap map command line flags to its response key
+type CommandLineFlagMap struct {
+	Flag        string
+	ResponseKey string
+}
+
+// ExtraExtractor extract known values from parsed responses. It works for both xml and json responses.
+// `respBytes` is the response body data. `arrayKey` is the final array key to extract. `keys` are the pathway
+// to get to array key.
+func (r ResponseParser) ExtraExtractor(respBytes []byte) ([]CommandLineFlagMap, error) {
+	converted, err := shared.ResponseToJSON(r.ResponseFormat, respBytes)
+	if err != nil {
+		return nil, err
+	}
+	var hold []CommandLineFlagMap
+	_, err = jsonparser.ArrayEach(converted, func(value []byte, dataType jsonparser.ValueType, offset int, err error) {
+		for _, k := range r.KeysToExtract {
+			data, _ := jsonparser.GetString(value, k.ResponseKey)
+			hold = append(hold, CommandLineFlagMap{Flag: k.Flag, ResponseKey: data})
+		}
+	}, r.ObjectPath...)
+	return hold, err
 }
 
 func (s Service) UpdateForExtra() (Service, error) {
