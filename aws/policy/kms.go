@@ -30,6 +30,13 @@ var KMSPolicies = map[string]Service{
 			aws_X_AMZ_TARGET:           "TrentService.ListAliases",
 		},
 		Permission: "ListAliases",
+		ResponseParser: &ResponseParser{
+			ResponseFormat: "json",
+			KeysToExtract: []CommandLineFlagMap{
+				{Flag: "key_id", ResponseKey: "TargetKeyId"},
+			},
+			ObjectPath: []string{"Aliases"},
+		},
 	},
 	"ListKeys": {
 		Method:   "POST",
@@ -39,6 +46,13 @@ var KMSPolicies = map[string]Service{
 			aws_X_AMZ_TARGET:           "TrentService.ListKeys",
 		},
 		Permission: "ListKeys",
+		ResponseParser: &ResponseParser{
+			ResponseFormat: "json",
+			KeysToExtract: []CommandLineFlagMap{
+				{Flag: "key_id", ResponseKey: "KeyId"},
+			},
+			ObjectPath: []string{"Keys"},
+		},
 	},
 	"RetireGrant": {
 		Method:   "POST",

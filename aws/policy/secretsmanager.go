@@ -21,6 +21,13 @@ var SecretsManagerPolicies = map[string]Service{
 			aws_X_AMZ_TARGET:           "secretsmanager.ListSecrets",
 		},
 		Permission: "ListSecrets",
+		ResponseParser: &ResponseParser{
+			ResponseFormat: "json",
+			KeysToExtract: []CommandLineFlagMap{
+				{Flag: "secret_id", ResponseKey: "Name"},
+			},
+			ObjectPath: []string{"SecretList"},
+		},
 	},
 
 	// extra

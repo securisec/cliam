@@ -70,7 +70,15 @@ func awsEnumerateCmdFunc(_ *cobra.Command, args []string) {
 					<-max
 				}()
 
-				statusCode, body, err := scanner.EnumerateSpecificResource(ctx, region, awsEndpoint, s, creds, SaveOutput)
+				options := scanner.Options{
+					Endpoint:   awsEndpoint,
+					Creds:      creds,
+					ServiceMap: s,
+					Region:     region,
+					SaveOutput: SaveOutput,
+				}
+
+				statusCode, body, err := scanner.EnumerateSpecificResource(ctx, options)
 				if err != nil {
 					cliErrorLogger(s, err)
 					failureCounter++

@@ -93,6 +93,13 @@ var SSMPolicies = map[string]Service{
 			aws_X_AMZ_TARGET:           "AmazonSSM.DescribeParameters",
 		},
 		Permission: "DescribeParameters",
+		ResponseParser: &ResponseParser{
+			ResponseFormat: "json",
+			KeysToExtract: []CommandLineFlagMap{
+				{Flag: "name", ResponseKey: "Name"},
+			},
+			ObjectPath: []string{"Parameters"},
+		},
 	},
 	"DescribePatchBaselines": {
 		Method:   "POST",
@@ -201,6 +208,13 @@ var SSMPolicies = map[string]Service{
 			aws_X_AMZ_TARGET:           "AmazonSSM.ListDocuments",
 		},
 		Permission: "ListDocuments",
+		ResponseParser: &ResponseParser{
+			ResponseFormat: "json",
+			KeysToExtract: []CommandLineFlagMap{
+				{Flag: "name", ResponseKey: "Name"},
+			},
+			ObjectPath: []string{"DocumentIdentifiers"},
+		},
 	},
 	"ListOpsItemEvents": {
 		Method:   "POST",

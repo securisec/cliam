@@ -75,6 +75,13 @@ var DynamoDBPolicies = map[string]Service{
 			aws_X_AMZ_TARGET:           "DynamoDB_20120810.ListTables",
 		},
 		Permission: "ListTables",
+		ResponseParser: &ResponseParser{
+			ResponseFormat: "json",
+			KeysToExtract: []CommandLineFlagMap{
+				{Flag: "table_name", ResponseKey: ""},
+			},
+			ObjectPath: []string{"TableNames"},
+		},
 	},
 
 	// extra

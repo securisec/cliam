@@ -36,7 +36,15 @@ func awsSharedEnumerate(resources []string, saveOutput bool) {
 					<-max
 				}()
 
-				statusCode, _, err := scanner.EnumerateSpecificResource(ctx, region, awsEndpoint, s, creds, saveOutput)
+				options := scanner.Options{
+					Endpoint:   awsEndpoint,
+					Creds:      creds,
+					ServiceMap: s,
+					Region:     region,
+					SaveOutput: SaveOutput,
+				}
+
+				statusCode, _, err := scanner.EnumerateSpecificResource(ctx, options)
 				if err != nil {
 					cliErrorLogger(s, err)
 					failureCounter++

@@ -14,35 +14,41 @@ import (
 	"github.com/securisec/cliam/shared"
 )
 
+// Options config for enumeration scanner
+type Options struct {
+	Region, Endpoint string
+	ServiceMap       ServiceMap
+	Creds            *credentials.Credentials
+	SaveOutput       bool
+}
+
+// EnumerateSpecificResource enumerate
 func EnumerateSpecificResource(
 	ctx context.Context,
-	region, endpoint string,
-	ser ServiceMap,
-	creds *credentials.Credentials,
-	saveOutput bool,
+	config Options,
 ) (int, []byte, error) {
-	u, err := ser.Policy.GetRequestURL(region, ser.Resource, endpoint)
+	u, err := config.ServiceMap.Policy.GetRequestURL(config.Region, config.ServiceMap.Resource, config.Endpoint)
 	if err != nil {
 		return 0, nil, err
 	}
-	ser.Policy.ReqURL = u
+	config.ServiceMap.Policy.ReqURL = u
 
-	if ser.Policy.IsExtra {
-		s, err := ser.Policy.UpdateForExtra()
+	if config.ServiceMap.Policy.IsExtra {
+		s, err := config.ServiceMap.Policy.UpdateForExtra()
 		if err != nil {
 			return 0, nil, err
 		}
-		ser.Policy = s
+		config.ServiceMap.Policy = s
 	}
 
-	_, res, body, err := signer.MakeScannerRequest(ctx, region, ser.Resource, &ser.Policy, creds)
+	_, res, body, err := signer.MakeScannerRequest(ctx, config.Region, config.ServiceMap.Resource, &config.ServiceMap.Policy, config.Creds)
 	if err != nil {
 		return 0, nil, err
 	}
 
 	if res.StatusCode == http.StatusOK {
-		if saveOutput {
-			saveOutputToFile(ser, body)
+		if config.SaveOutput {
+			saveOutputToFile(config.ServiceMap, body)
 		}
 	}
 

@@ -106,6 +106,45 @@ func GetFirstSubscriptions(bearerToken string) (string, []SubscriptionValue, err
 	return id, subs.Value, nil
 }
 
+// GetResourceGroup returns the first resource group found.
+func GetResourceGroup(bearerToken, subscriptionID string) (string, []ResourceGroup, error) {
+	url := fmt.Sprintf("https://management.azure.com/subscriptions/%s/resourcegroups?api-version=2022-09-01", subscriptionID)
+	req, err := http.NewRequest("GET", url, nil)
+	if err != nil {
+		return "", nil, err
+	}
+	req.Header.Set("Authorization", "Bearer "+bearerToken)
+
+	res, err := http.DefaultClient.Do(req)
+	// read body
+	if err != nil {
+		return "", nil, err
+	}
+	defer res.Body.Close()
+	if res.StatusCode != http.StatusOK {
+		return "", nil, fmt.Errorf("unexpected status code: %d", res.StatusCode)
+	}
+	var rgs ResourceGroupValueResponse
+	if err := json.NewDecoder(res.Body).Decode(&rgs); err != nil {
+		return "", nil, err
+	}
+	if len(rgs.Value) <= 0 {
+		return "", nil, fmt.Errorf("no resource groups found found")
+	}
+
+	resoureceGroup := rgs.Value[0].Name
+
+	if logger.DEBUG {
+		s := make([]string, 0, len(rgs.Value))
+		for _, sub := range rgs.Value {
+			s = append(s, sub.Name)
+		}
+		logger.LoggerStdErr.Warn().Strs("resource-groups", s).Msg(shared.GetMessageColor("debug"))
+	}
+
+	return resoureceGroup, rgs.Value, nil
+}
+
 type SubscriptionResponse struct {
 	Value []SubscriptionValue `json:"value"`
 	Count Count               `json:"count"`
@@ -131,4 +170,17 @@ type SubscriptionPolicies struct {
 	LocationPlacementID string `json:"locationPlacementId"`
 	QuotaID             string `json:"quotaId"`
 	SpendingLimit       string `json:"spendingLimit"`
+}
+
+type ResourceGroupValueResponse struct {
+	Value []ResourceGroup `json:"value"`
+}
+
+type ResourceGroup struct {
+	ID         string      `json:"id"`
+	Name       string      `json:"name"`
+	Type       string      `json:"type"`
+	Location   string      `json:"location"`
+	Tags       interface{} `json:"tags"`
+	Properties interface{} `json:"properties"`
 }

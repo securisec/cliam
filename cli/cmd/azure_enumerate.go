@@ -46,6 +46,16 @@ func azureEnumerateCmdFunc(_ *cobra.Command, args []string) {
 		}
 	}
 
+	// resource group not specified, so try to get it
+	// TODO 🔥 this needs to apply to the other scan modes also
+	if azureResourceGroupName == "" {
+		azureResourceGroupName, _, err = azure.GetResourceGroup(azureOauthToken, azureSubscriptionID)
+		if err != nil {
+			logger.LoggerStdErr.Err(err).Send()
+		}
+		logger.LoggerStdErr.Info().Str("resource-group", azureResourceGroupName).Str("subscription-id", azureSubscriptionID).Msg("Using")
+	}
+
 	known := policy.CommonPathProperties{
 		SubscriptionID:    azureSubscriptionID,
 		ResourceGroupName: azureResourceGroupName,

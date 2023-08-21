@@ -60,7 +60,7 @@ var Microsoft_KeyVault_keyvault = map[string]Policy{
 		Path:   "/subscriptions/{{.subscriptionId}}/resources",
 		Method: "GET",
 		QueryValues: map[string]string{
-			"api-version": "2022-07-01",
+			"api-version": "2023-07-01",
 		},
 		OperationID: "Vaults_List",
 		Resource:    "Microsoft.KeyVault",

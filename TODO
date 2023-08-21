@@ -21,6 +21,7 @@ Todo:
   ☐ 💡 if the same known value is passed multiple types, iterate over each of them
   ☐ ✨ save all enumerated permissions as json
   ☐ for extra scanning, sometime if there is only one resource, it shows up as an object instead of an array. like sns list topics and s3 list bucket
+  ☐ azure get resource group name automatically
 
 Helpers:
 
