@@ -81,32 +81,57 @@ func (r ResponseParser) ExtraExtractor(respBytes []byte) ([]CommandLineFlagMap, 
 		return nil, err
 	}
 	// get the array of data following the keys
-	dataArray, _, _, err := jsonparser.Get(converted, r.ObjectPath...)
+	dataArray, dataType, _, err := jsonparser.Get(converted, r.ObjectPath...)
 	if err != nil {
 		return nil, err
 	}
+	if logger.DEBUG {
+		logger.LogDebug("ExtraExtractor", string(dataArray))
+	}
 	// placeholder to hold extracted data
 	var hold []CommandLineFlagMap
-	_, err = jsonparser.ArrayEach(dataArray, func(value []byte, dataType jsonparser.ValueType, offset int, err error) {
-		// switch to iterate over different datatype
-		for _, k := range r.KeysToExtract {
-			switch dataType {
-			// array of strings
-			case jsonparser.String:
-				hold = append(hold, CommandLineFlagMap{Flag: k.Flag, ResponseKey: string(value)})
-				break
 
-			// array of objects
-			case jsonparser.Object:
-				data, err := jsonparser.GetString(value, k.ResponseKey)
-				if err != nil {
-					logger.LogError(err)
+	// the value of the inner key can be an object or an array or strings or objects
+	switch dataType {
+
+	case jsonparser.Object:
+		err = jsonparser.ObjectEach(dataArray, func(key, value []byte, dataType jsonparser.ValueType, offset int) error {
+			for _, k := range r.KeysToExtract {
+				if string(key) == k.ResponseKey {
+					hold = append(hold, CommandLineFlagMap{Flag: k.Flag, ResponseKey: string(value)})
 				}
-				hold = append(hold, CommandLineFlagMap{Flag: k.Flag, ResponseKey: data})
-				break
 			}
+			return err
+		})
+		if err != nil {
+			logger.LogError(err)
 		}
-	})
+		break
+
+	case jsonparser.Array:
+		_, err = jsonparser.ArrayEach(dataArray, func(value []byte, arrayDataType jsonparser.ValueType, offset int, err error) {
+			// switch to iterate over different datatype
+			for _, k := range r.KeysToExtract {
+				switch arrayDataType {
+				// array of strings
+				case jsonparser.String:
+					hold = append(hold, CommandLineFlagMap{Flag: k.Flag, ResponseKey: string(value)})
+					break
+
+				// array of objects
+				case jsonparser.Object:
+					data, err := jsonparser.GetString(value, k.ResponseKey)
+					if err != nil {
+						logger.LogError(err)
+					}
+					hold = append(hold, CommandLineFlagMap{Flag: k.Flag, ResponseKey: data})
+					break
+				}
+			}
+		})
+		break
+	}
+
 	return hold, err
 }
 
@@ -162,7 +187,7 @@ func (s Service) hasCorrectExtraKey() error {
 // This will combine the service, region and service suffix
 // to return a valid request url for the permission
 func (s *Service) GetRequestURL(region, service, endpoint string) (string, error) {
-	var eUrl string
+	var eURL string
 	if endpoint != "" {
 		pu, err := url.Parse(endpoint)
 		if err != nil {
@@ -172,17 +197,18 @@ func (s *Service) GetRequestURL(region, service, endpoint string) (string, error
 	}
 	region = AwsRegionSafetyNet(service, region)
 	if s.IgnoreRegion {
-		eUrl = "https://" + path.Join(fmt.Sprintf(
+		eURL = "https://" + path.Join(fmt.Sprintf(
 			"%s%s.%s", s.ServicePrefix, service, aws_BASE_URL,
 		), s.ServiceSuffix)
-		return eUrl, nil
+		return eURL, nil
 	}
-	eUrl = "https://" + path.Join(fmt.Sprintf(
+	eURL = "https://" + path.Join(fmt.Sprintf(
 		"%s%s.%s.%s", s.ServicePrefix, service, region, aws_BASE_URL,
 	), s.ServiceSuffix)
-	return eUrl, nil
+	return eURL, nil
 }
 
+// AwsRegionSafetyNet some services does not require a region. This function helps fix that.
 func AwsRegionSafetyNet(service, region string) string {
 	switch service {
 	case "iam":

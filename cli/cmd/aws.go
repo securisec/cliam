@@ -37,6 +37,7 @@ var (
 	awsKnownResourceMap []string
 	// awsKnownOnly         bool
 	awsDeepScan bool
+	saveResults string
 )
 
 func init() {
@@ -50,6 +51,7 @@ func init() {
 	awsCmd.PersistentFlags().StringVar(&awsEndpoint, "endpoint", "", "AWS Endpoint. Custom AWS endpoint.")
 	awsCmd.PersistentFlags().StringSliceVarP(&awsKnownResourceMap, "known-value", "k", []string{}, "AWS Resource Name. Maps directly with aws cli flags. This flag can be used multiple times.")
 	awsCmd.PersistentFlags().BoolVar(&awsDeepScan, "deep", false, "Deep scan. From values identified in list operations, run further scans against them.")
+	awsCmd.PersistentFlags().StringVar(&saveResults, "output", "", "Write scan results to file")
 	awsCmd.RegisterFlagCompletionFunc("region", func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
 		return aws_Regions, cobra.ShellCompDirectiveNoFileComp
 	})

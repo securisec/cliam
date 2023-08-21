@@ -80,6 +80,13 @@ var SNSPolicies = map[string]Service{
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
 		},
 		Permission: "ListSubscriptions",
+		ResponseParser: &ResponseParser{
+			ResponseFormat: "json",
+			KeysToExtract: []CommandLineFlagMap{
+				{Flag: "subscription_arn", ResponseKey: "SubscriptionArn"},
+			},
+			ObjectPath: []string{"ListSubscriptionsResponse", "ListSubscriptionsResult", "Subscriptions", "member"},
+		},
 	},
 	"ListTopics": {
 		Method: "POST",
@@ -91,6 +98,13 @@ var SNSPolicies = map[string]Service{
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
 		},
 		Permission: "ListTopics",
+		ResponseParser: &ResponseParser{
+			ResponseFormat: "json",
+			KeysToExtract: []CommandLineFlagMap{
+				{Flag: "topic_arn", ResponseKey: "TopicArn"},
+			},
+			ObjectPath: []string{"ListTopicsResponse", "ListTopicsResult", "Topics", "member"},
+		},
 	},
 
 	// extra

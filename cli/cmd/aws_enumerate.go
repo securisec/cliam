@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"os"
 	"sync"
@@ -106,7 +107,16 @@ func awsEnumerateCmdFunc(_ *cobra.Command, args []string) {
 	// TODO 🔥 this is blocking if defered, or panicing because closed
 	wg.Done() // refacor this because this is poor code and anti pattern
 	wg.Wait()
+
+	// TODO 🔥 refactor this and move to aws persistant run. right now it will panic otherwise because of waitgroup
+	if saveResults != "" {
+		o, _ := json.Marshal(Results)
+		if err := os.WriteFile(saveResults, o, os.ModePerm); err != nil {
+			logger.LogError(err)
+		}
+	}
 	close(ch)
+
 }
 
 func mapToArray(data map[string]string) []string {

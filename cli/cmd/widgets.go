@@ -13,6 +13,16 @@ import (
 	"github.com/securisec/cliam/shared"
 )
 
+// Results collector of results to write to file optionally
+var Results []Result
+
+// Result success results
+type Result struct {
+	Permission string
+	Service    string
+	Flags      map[string]string
+}
+
 // promptInput is a helper function to prompt the user for input.
 func promptInput(msg string) string {
 	prompt := promptui.Prompt{
@@ -46,6 +56,12 @@ func cliResponseLoggerAWS(ser scanner.ServiceMap, status int, flagMap []string) 
 		if ok && flag != "" {
 			sl.Str(strings.ReplaceAll(cf, "_", "-"), flag)
 		}
+		// add to results array to export all success
+		Results = append(Results, Result{
+			Permission: ser.Policy.Permission,
+			Service:    ser.Resource,
+			Flags:      map[string]string{cf: flag},
+		})
 		successCounter++
 		sl.Msg(shared.GetMessageColor("success"))
 		return
