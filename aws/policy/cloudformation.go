@@ -91,6 +91,13 @@ var CloudFormationPolicies = map[string]Service{
 			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_URL_ENCODED,
 		},
 		Permission: "DescribeStacks",
+		ResponseParser: &ResponseParser{
+			ResponseFormat: "json",
+			KeysToExtract: []CommandLineFlagMap{
+				{Flag: "stack_name", ResponseKey: "StackName"},
+			},
+			ObjectPath: []string{"DescribeStacksResponse", "DescribeStacksResult", "Stacks", "member"},
+		},
 	},
 	"DescribeType": {
 		Method: "POST",

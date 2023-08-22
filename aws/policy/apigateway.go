@@ -22,11 +22,25 @@ var APIGatewayPolicies = map[string]Service{
 		Method:        "GET",
 		ServiceSuffix: "apikeys",
 		Permission:    "GetApiKeys",
+		ResponseParser: &ResponseParser{
+			ResponseFormat: "json",
+			KeysToExtract: []CommandLineFlagMap{
+				{Flag: "api_key", ResponseKey: "id"},
+			},
+			ObjectPath: []string{"item"},
+		},
 	},
 	"GetClientCertificates": {
 		Method:        "GET",
 		ServiceSuffix: "clientcertificates",
 		Permission:    "GetClientCertificates",
+		ResponseParser: &ResponseParser{
+			ResponseFormat: "json",
+			KeysToExtract: []CommandLineFlagMap{
+				{Flag: "client_certificate_id", ResponseKey: "clientCertificateId"},
+			},
+			ObjectPath: []string{"item"},
+		},
 	},
 	"GetDomainNames": {
 		Method:        "GET",
@@ -37,6 +51,13 @@ var APIGatewayPolicies = map[string]Service{
 		Method:        "GET",
 		ServiceSuffix: "restapis",
 		Permission:    "GetRestApis",
+		ResponseParser: &ResponseParser{
+			ResponseFormat: "json",
+			KeysToExtract: []CommandLineFlagMap{
+				{Flag: "rest_api_id", ResponseKey: "id"},
+			},
+			ObjectPath: []string{"item"},
+		},
 	},
 	"GetSdkTypes": {
 		Method:        "GET",

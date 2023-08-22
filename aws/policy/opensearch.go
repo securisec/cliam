@@ -50,6 +50,13 @@ var OpensearchPolicies = map[string]Service{
 		Method:        "GET",
 		ServiceSuffix: "2021-01-01/domain",
 		Permission:    "ListDomainNames",
+		ResponseParser: &ResponseParser{
+			ResponseFormat: "json",
+			KeysToExtract: []CommandLineFlagMap{
+				{Flag: "domain_name", ResponseKey: "DomainName"},
+			},
+			ObjectPath: []string{"DomainNames"},
+		},
 	},
 	"ListVersions": {
 		Method:        "GET",

@@ -61,7 +61,7 @@ func awsEnumerateCmdFunc(_ *cobra.Command, args []string) {
 		for s := range ch {
 			wg.Add(1)
 
-			go func(wg *sync.WaitGroup, s scanner.ServiceMap) {
+			go func(wg *sync.WaitGroup, service scanner.ServiceMap) {
 				max <- struct{}{}
 				ctx, cancel := context.WithTimeout(context.Background(), time.Duration(RequestTimeout)*time.Second)
 
@@ -73,23 +73,23 @@ func awsEnumerateCmdFunc(_ *cobra.Command, args []string) {
 				options := scanner.Options{
 					Endpoint:   awsEndpoint,
 					Creds:      creds,
-					ServiceMap: s,
+					ServiceMap: service,
 					Region:     region,
 					SaveOutput: SaveOutput,
 				}
 
 				statusCode, body, err := scanner.EnumerateSpecificResource(ctx, options)
 				if err != nil {
-					cliErrorLogger(s, err)
+					cliErrorLogger(service, err)
 					failureCounter++
 					wg.Done()
 					return
 				}
-				cliResponseLoggerAWS(s, statusCode, mapToArray(s.Policy.ExtraValueMap))
+				cliResponseLoggerAWS(service, statusCode, mapToArray(service.Policy.ExtraValueMap))
 
 				// if deep scanning is enabled, parse response
-				if awsDeepScan && s.Policy.ResponseParser != nil && statusCode == 200 {
-					extras, err := s.Policy.ResponseParser.ExtraExtractor(body)
+				if awsDeepScan && service.Policy.ResponseParser != nil && statusCode == 200 {
+					extras, err := service.Policy.ResponseParser.ExtraExtractor(body)
 					if err != nil {
 						wg.Done()
 						return

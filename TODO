@@ -20,8 +20,6 @@ Todo:
   ☐ azure util list public blob storage
   ☐ 💡 if the same known value is passed multiple types, iterate over each of them
   ☐ ✨ save all enumerated permissions as json
-  ☐ for extra scanning, sometime if there is only one resource, it shows up as an object instead of an array. like sns list topics and s3 list bucket
-  ☐ azure get resource group name automatically
 
 Helpers:
 
@@ -51,6 +49,8 @@ Resources:
   - https://docs.oracle.com/en-us/iaas/api/#/
 
 Archive:
+  ✔ for extra scanning, sometime if there is only one resource, it shows up as an object instead of an array. like sns list topics and s3 list bucket
+  ✔ azure get resource group name automatically
   ✔ 🚀 set envar as default value for flags
   ✔ 🐛 cli args passed for aws is still prompting for creds
   ✔ 🐛 looks like secret for aws when passed as a flag is wrong for static credentials
