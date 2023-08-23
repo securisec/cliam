@@ -49,6 +49,9 @@ Resources:
   - https://docs.oracle.com/en-us/iaas/api/#/
 
 Archive:
+  ✔ aws set profile based on obtained creds/profiles/creds file
+  ✔ set cliam aws profile based on current creds
+  ✔ profile autocompleter for aws
   ✔ for extra scanning, sometime if there is only one resource, it shows up as an object instead of an array. like sns list topics and s3 list bucket
   ✔ azure get resource group name automatically
   ✔ 🚀 set envar as default value for flags

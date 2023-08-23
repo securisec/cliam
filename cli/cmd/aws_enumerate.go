@@ -58,25 +58,25 @@ func awsEnumerateCmdFunc(_ *cobra.Command, args []string) {
 	go func() {
 		defer wg.Done()
 
+		options := scanner.Options{
+			Endpoint:   awsEndpoint,
+			Creds:      creds,
+			Region:     region,
+			SaveOutput: SaveOutput,
+		}
+
 		for s := range ch {
 			wg.Add(1)
 
-			go func(wg *sync.WaitGroup, service scanner.ServiceMap) {
+			go func(wg *sync.WaitGroup, service scanner.ServiceMap, options scanner.Options) {
 				max <- struct{}{}
+				options.ServiceMap = service
 				ctx, cancel := context.WithTimeout(context.Background(), time.Duration(RequestTimeout)*time.Second)
 
 				defer func() {
 					cancel()
 					<-max
 				}()
-
-				options := scanner.Options{
-					Endpoint:   awsEndpoint,
-					Creds:      creds,
-					ServiceMap: service,
-					Region:     region,
-					SaveOutput: SaveOutput,
-				}
 
 				statusCode, body, err := scanner.EnumerateSpecificResource(ctx, options)
 				if err != nil {
@@ -105,7 +105,7 @@ func awsEnumerateCmdFunc(_ *cobra.Command, args []string) {
 
 				wg.Done()
 
-			}(wg, s)
+			}(wg, s, options)
 
 		}
 	}()

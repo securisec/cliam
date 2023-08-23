@@ -52,12 +52,27 @@ func init() {
 	awsCmd.PersistentFlags().StringSliceVarP(&awsKnownResourceMap, "known-value", "k", []string{}, "AWS Resource Name. Maps directly with aws cli flags. This flag can be used multiple times.")
 	awsCmd.PersistentFlags().BoolVar(&awsDeepScan, "deep", false, "Deep scan. From values identified in list operations, run further scans against them.")
 	awsCmd.PersistentFlags().StringVar(&saveResults, "output", "", "Write scan results to file")
+
+	// completers
+	awsCmd.RegisterFlagCompletionFunc("profile", func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
+		var profiles []string
+		config, _, err := awsReadAWSCredentialsFile()
+		if err != nil {
+			logger.LogError(err)
+		}
+		for _, c := range config.Sections() {
+			if c.Name() != "DEFAULT" {
+				profiles = append(profiles, c.Name())
+			}
+		}
+		return profiles, cobra.ShellCompDirectiveNoFileComp
+	})
+	// region completer
+	// TODO 🔥 this may need to be updated
 	awsCmd.RegisterFlagCompletionFunc("region", func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
 		return aws_Regions, cobra.ShellCompDirectiveNoFileComp
 	})
-	// awsCmd.RegisterFlagCompletionFunc("known-value", func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
-	// 	return []string{}, cobra.ShellCompDirectiveNoFileComp
-	// })
+	// known value completer
 	awsCmd.RegisterFlagCompletionFunc("known-value", func(_ *cobra.Command, args []string, _ string) ([]string, cobra.ShellCompDirective) {
 		var keys []string
 		policies := scanner.GetServiceMap(args)
@@ -77,12 +92,19 @@ func getCredsAndRegion() (string, string, string, string) {
 		if err != nil {
 			logger.LoggerStdErr.Fatal().Msg("Failed to read session json file")
 		}
-		return s.Credentials.AccessKeyId, s.Credentials.SecretAccessKey, s.Credentials.Token, awsRegion
+		// if the Crendentials json param was found
+		if s.Credentials != nil {
+			return s.Credentials.AccessKeyID, s.Credentials.SecretAccessKey, s.Credentials.SessionToken, awsRegion
+		} else if s.AccessKeyID != "" && s.SecretAccessKey != "" {
+			return s.AccessKeyID, s.SecretAccessKey, s.SessionToken, awsRegion
+		}
 	}
-	return awsGetEnvarOrPrompt("AWS_ACCESS_KEY_ID", "AWS Access Key ID: "),
+	key, secret, token, region := awsGetEnvarOrPrompt("AWS_ACCESS_KEY_ID", "AWS Access Key ID: "),
 		awsGetEnvarOrPrompt("AWS_SECRET_ACCESS_KEY", "AWS Secret Access Key: "),
 		awsSessionToken,
 		awsRegion
+
+	return key, secret, token, region
 }
 
 func awsGetEnvarOrPrompt(envar, message string) string {
@@ -144,12 +166,18 @@ func awsSendToChannel(ch chan scanner.ServiceMap, resources []string, extrasArra
 }
 
 type awsSessionJsonStruct struct {
-	Credentials struct {
-		AccessKeyId     string `json:"AccessKeyId"`
-		SecretAccessKey string `json:"SecretAccessKey"`
-		Token           string `json:"SessionToken"`
-		Expiration      string `json:"Expiration"`
-	} `json:"Credentials"`
+	// in the event it has the key Credentials. This can handle both Credentials and IMDS style tokens
+	Credentials     *awsSessionJsonCredentialsStruct `json:"Credentials"`
+	AccessKeyID     string                           `json:"AccessKeyId"`
+	SecretAccessKey string                           `json:"SecretAccessKey"`
+	SessionToken    string                           `json:"SessionToken"`
+}
+
+type awsSessionJsonCredentialsStruct struct {
+	AccessKeyID     string `json:"AccessKeyId"`
+	SecretAccessKey string `json:"SecretAccessKey"`
+	SessionToken    string `json:"SessionToken"`
+	Expiration      string `json:"Expiration"`
 }
 
 func awsModifyExtraMap(m map[string]string) map[string]string {
@@ -159,9 +187,3 @@ func awsModifyExtraMap(m map[string]string) map[string]string {
 	}
 	return h
 }
-
-// func awsLoadEnvVarsFirst(_ *cobra.Command, _ []string) {
-// 	awsSessionToken = os.Getenv("AWS_SESSION_TOKEN")
-// 	awsAccessKeyID = os.Getenv("AWS_ACCESS_KEY_ID")
-// 	awsSecretAccessKey = os.Getenv("AWS_SECRET_ACCESS_KEY")
-// }

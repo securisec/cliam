@@ -13,7 +13,7 @@ import (
 
 var awsUtilsStsCallerIdentityCmd = &cobra.Command{
 	Use:   "sts-get-caller-identity",
-	Short: "Enumerate AWS EC2 snapshots across specified regions",
+	Short: "Get caller identity",
 	Run:   awsUtilsStsCallerIdentityCmdFunc,
 	// PreRun: awsLoadEnvVarsFirst,
 }
@@ -22,7 +22,7 @@ func init() {
 	awsUtilsCmd.AddCommand(awsUtilsStsCallerIdentityCmd)
 }
 
-func awsUtilsStsCallerIdentityCmdFunc(cmd *cobra.Command, args []string) {
+func awsUtilsStsCallerIdentityCmdFunc(_ *cobra.Command, _ []string) {
 	// get credentials
 	key, secret, token, region := getCredsAndRegion()
 	creds := signer.SetCredentials(key, secret, token, awsProfile)
