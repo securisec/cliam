@@ -48,7 +48,7 @@ func init() {
 	awsCmd.PersistentFlags().StringVar(&awsRegion, "region", "us-east-1", "AWS Region")
 	awsCmd.PersistentFlags().StringVar(&awsProfile, "profile", "", "AWS Profile. When profile is set, access-key-id, secret-access-key, and session-token are ignored.")
 	awsCmd.PersistentFlags().StringVar(&awsSessionJson, "session-json", "", "AWS Session JSON file. This flag attempts to read session information from the specified file. Helpful with temporary credentials.")
-	awsCmd.PersistentFlags().StringVar(&awsEndpoint, "endpoint", "", "AWS Endpoint. Custom AWS endpoint.")
+	awsCmd.PersistentFlags().StringVar(&awsEndpoint, "endpoint-url", "", "AWS Endpoint. Custom AWS endpoint.")
 	awsCmd.PersistentFlags().StringSliceVarP(&awsKnownResourceMap, "known-value", "k", []string{}, "AWS Resource Name. Maps directly with aws cli flags. This flag can be used multiple times.")
 	awsCmd.PersistentFlags().BoolVar(&awsDeepScan, "deep", false, "Deep scan. From values identified in list operations, run further scans against them.")
 	awsCmd.PersistentFlags().StringVar(&saveResults, "output", "", "Write scan results to file")
@@ -92,11 +92,16 @@ func getCredsAndRegion() (string, string, string, string) {
 		if err != nil {
 			logger.LoggerStdErr.Fatal().Msg("Failed to read session json file")
 		}
+		// TODO 🔥 it could also be in the forat where .Credentials is not there and SessionToken is called Token
 		// if the Crendentials json param was found
 		if s.Credentials != nil {
 			return s.Credentials.AccessKeyID, s.Credentials.SecretAccessKey, s.Credentials.SessionToken, awsRegion
 		} else if s.AccessKeyID != "" && s.SecretAccessKey != "" {
-			return s.AccessKeyID, s.SecretAccessKey, s.SessionToken, awsRegion
+			tok := s.Token
+			if tok == "" {
+				tok = s.SessionToken
+			}
+			return s.AccessKeyID, s.SecretAccessKey, tok, awsRegion
 		}
 	}
 	key, secret, token, region := awsGetEnvarOrPrompt("AWS_ACCESS_KEY_ID", "AWS Access Key ID: "),
@@ -171,6 +176,7 @@ type awsSessionJsonStruct struct {
 	AccessKeyID     string                           `json:"AccessKeyId"`
 	SecretAccessKey string                           `json:"SecretAccessKey"`
 	SessionToken    string                           `json:"SessionToken"`
+	Token           string                           `json:"Token"`
 }
 
 type awsSessionJsonCredentialsStruct struct {

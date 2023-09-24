@@ -65,7 +65,7 @@ func awsEnumerateCmdFunc(_ *cobra.Command, args []string) {
 			SaveOutput: SaveOutput,
 		}
 
-		for s := range ch {
+		for ser := range ch {
 			wg.Add(1)
 
 			go func(wg *sync.WaitGroup, service scanner.ServiceMap, options scanner.Options) {
@@ -87,7 +87,7 @@ func awsEnumerateCmdFunc(_ *cobra.Command, args []string) {
 				}
 				cliResponseLoggerAWS(service, statusCode, mapToArray(service.Policy.ExtraValueMap))
 
-				// if deep scanning is enabled, parse response
+				// process and get extras based on previous permissions identified
 				if awsDeepScan && service.Policy.ResponseParser != nil && statusCode == 200 {
 					extras, err := service.Policy.ResponseParser.ExtraExtractor(body)
 					if err != nil {
@@ -105,7 +105,7 @@ func awsEnumerateCmdFunc(_ *cobra.Command, args []string) {
 
 				wg.Done()
 
-			}(wg, s, options)
+			}(wg, ser, options)
 
 		}
 	}()

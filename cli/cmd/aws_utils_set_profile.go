@@ -28,7 +28,7 @@ func awsUtilsSetProfileCmdFunc(cmd *cobra.Command, _ []string) {
 		logger.LogError(err)
 	}
 
-	logger.LoggerStdErr.Info().Msg("Saveed profile " + name)
+	logger.LoggerStdErr.Info().Msg("Saved profile " + name)
 }
 
 func awsReadAWSCredentialsFile() (*ini.File, string, error) {
