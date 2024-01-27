@@ -32,7 +32,7 @@ If resource manager is disabled, this command will end with a 403 error.`,
 }
 
 func init() {
-	gcpCmd.AddCommand(gcpEnumerateCmd)
+	gcpResourceManagerCmd.AddCommand(gcpEnumerateCmd)
 }
 
 func gcpEnumerateCmdFunc(cmd *cobra.Command, args []string) {

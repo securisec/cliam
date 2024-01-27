@@ -23,6 +23,10 @@ var AwsServiceGrouping = map[string][]string{
 		aws.Redshift,
 		aws.Dynamodb,
 	},
+	"containers": {
+		aws.ECS,
+		aws.EKS,
+	},
 	"serverless": {
 		aws.APIGateway,
 		aws.Lambda,
@@ -30,6 +34,7 @@ var AwsServiceGrouping = map[string][]string{
 		aws.SNS,
 		aws.SQS,
 		aws.Dynamodb,
+		aws.SecretsManager,
 	},
 	"storage": {
 		aws.S3,

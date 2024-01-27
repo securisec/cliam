@@ -126,9 +126,9 @@ Usage:
   cliam gcp [command]
 
 Available Commands:
-  bruteforce  Enumerate all GCP permissions
-  enumerate   Enumerate specified GCP permissions
-  rest        GCP permissions using the REST API
+  bruteforce        Enumerate all GCP permissions
+  resourcemanager   Enumerate specified GCP permissions
+  rest              GCP permissions using the REST API
 
 Flags:
   -h, --help                     help for gcp

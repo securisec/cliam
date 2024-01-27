@@ -21,6 +21,7 @@ Todo:
   ☐ 💡 if the same known value is passed multiple types, iterate over each of them
   ☐ ✨ save all enumerated permissions as json
   🐙 disable color is no tty
+  ☐ aws get-role-policy
 
 Helpers:
 
