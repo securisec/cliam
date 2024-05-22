@@ -28,21 +28,21 @@ var awsRequestBuilderCmd = &cobra.Command{
 
 func init() {
 	awsCmd.AddCommand(awsRequestBuilderCmd)
-	awsRequestBuilderCmd.Flags().StringP("policy", "p", "", "The policy to build")
+	awsRequestBuilderCmd.Flags().StringP("resource", "p", "", "The resource to build")
 	awsRequestBuilderCmd.Flags().StringP("operation", "o", "", "The operation to build.")
 	awsRequestBuilderCmd.Flags().StringSliceP("values", "n", []string{}, "The values to use for known values.")
 
 	// completers
-	awsRequestBuilderCmd.RegisterFlagCompletionFunc("policy", func(cmd *cobra.Command, _ []string, _ string) ([]string, cobra.ShellCompDirective) {
+	awsRequestBuilderCmd.RegisterFlagCompletionFunc("resource", func(cmd *cobra.Command, _ []string, _ string) ([]string, cobra.ShellCompDirective) {
 		return aws.GetAWSResources(), cobra.ShellCompDirectiveNoFileComp
 	})
 	awsRequestBuilderCmd.RegisterFlagCompletionFunc("operation", func(cmd *cobra.Command, _ []string, _ string) ([]string, cobra.ShellCompDirective) {
 		hold := []string{}
-		policy, _ := cmd.Flags().GetString("policy")
-		if policy == "" {
+		resource, _ := cmd.Flags().GetString("resource")
+		if resource == "" {
 			return hold, cobra.ShellCompDirectiveNoSpace
 		}
-		policies, ok := aws.Services[policy]
+		policies, ok := aws.Services[resource]
 		if !ok {
 			return hold, cobra.ShellCompDirectiveNoFileComp
 		}
@@ -54,7 +54,7 @@ func init() {
 
 	// know value completer
 	awsRequestBuilderCmd.RegisterFlagCompletionFunc("values", func(cmd *cobra.Command, _ []string, _ string) ([]string, cobra.ShellCompDirective) {
-		p, _ := cmd.Flags().GetString("policy")
+		p, _ := cmd.Flags().GetString("resource")
 		o, _ := cmd.Flags().GetString("operation")
 		pol := awsGetSpecificOperation(p, o)
 		hold := []string{}
@@ -66,12 +66,12 @@ func init() {
 	})
 
 	// mark required
-	awsRequestBuilderCmd.MarkFlagRequired("policy")
+	awsRequestBuilderCmd.MarkFlagRequired("resource")
 	awsRequestBuilderCmd.MarkFlagRequired("operation")
 }
 
 func awsRequestBuilderCmdFunc(cmd *cobra.Command, _ []string) {
-	pCli, _ := cmd.Flags().GetString("policy")
+	pCli, _ := cmd.Flags().GetString("resource")
 	operation, _ := cmd.Flags().GetString("operation")
 	values, _ := cmd.Flags().GetStringSlice("values")
 
@@ -111,12 +111,12 @@ func awsRequestBuilderCmdFunc(cmd *cobra.Command, _ []string) {
 	fmt.Println(c.String())
 }
 
-func awsGetSpecificOperation(policy, operationId string) policy.Service {
+func awsGetSpecificOperation(policy, operationID string) policy.Service {
 	p, ok := aws.Services[policy]
 	if !ok {
 		logger.LoggerStdErr.Fatal().Msg("policy not found")
 	}
-	o, ok := p[operationId]
+	o, ok := p[operationID]
 	if !ok {
 		logger.LoggerStdErr.Fatal().Msg("operation not found")
 	}

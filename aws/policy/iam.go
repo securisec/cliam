@@ -536,6 +536,13 @@ var IAMPolicies = map[string]Service{
 		ExtraComponentBodyKey:  "RoleName",
 		ExtraComponentLocation: "form",
 		ExtraCommandLineFlag:   "role_name",
+		// ResponseParser: &ResponseParser{
+		// 	ResponseFormat: "xml",
+		// 	KeysToExtract: []CommandLineFlagMap{
+		// 		{Flag: "policy_name", ResponseKey: "member"},
+		// 	},
+		// 	ObjectPath: []string{"ListRolePoliciesResponse", "ListRolePoliciesResult"},
+		// },
 	},
 	"ListRoleTags": {
 		Method:       "POST",

@@ -8,7 +8,7 @@ import (
 var awsCommonCmd = &cobra.Command{
 	Use:       "service-group",
 	Short:     "Enumerate permissions for groups of AWS resources.",
-	Long:      "For example, serverless group enumerates permissions for lambda, sqs, s3, etc",
+	Long:      "For example, serverless group enumerates permissions for iam, s3, ec2 etc",
 	Run:       awsCommonCmdFunc,
 	Args:      cobra.ExactValidArgs(1),
 	ValidArgs: getAwsServiceGroups(),

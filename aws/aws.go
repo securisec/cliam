@@ -146,6 +146,7 @@ const (
 	WAFRegional           = "waf-regional"
 	WafV2                 = "wafv2"
 	Wellarchitected       = "wellarchitected"
+	Workdocs              = "workdocs"
 	Workspaces            = "workspaces"
 	WorkspacesWeb         = "workspaces-web"
 	Xray                  = "xray"
@@ -291,6 +292,7 @@ var Services = map[string]map[string]policy.Service{
 	WAFRegional:           policy.WAFRegionalPolicies,
 	WafV2:                 policy.WAFV2Policies,
 	Wellarchitected:       policy.WellArchitectedPolicies,
+	Workdocs:              policy.WorkdocsPolicies,
 	Workspaces:            policy.WorkspacesPolicies,
 	WorkspacesWeb:         policy.WorkspacesWebPolicies,
 	Xray:                  policy.XrayPolicies,
