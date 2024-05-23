@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"errors"
 	"fmt"
 	"sync"
 
@@ -65,6 +66,9 @@ func firebaseUnauthenticatedeCmdFunc(_ *cobra.Command, _ []string) {
 }
 
 func firebaseRTDB() (int, error) {
+	if firebaseProjectId == "" {
+		logger.LogPanic(errors.New("Project ID not provided"))
+	}
 	// check if db is specified
 	if _, ok := firebaseKnownValues["database"]; !ok {
 		firebaseKnownValues["database"] = fmt.Sprintf("%s-default-rtdb", firebaseProjectId)
@@ -80,6 +84,9 @@ func firebaseRTDB() (int, error) {
 }
 
 func firebaseFirestore() (int, error) {
+	if firebaseProjectId == "" {
+		logger.LogPanic(errors.New("Project ID not found"))
+	}
 	// check if collection is specified
 	if _, ok := firebaseKnownValues["collection"]; !ok {
 		firebaseKnownValues["collection"] = "default"

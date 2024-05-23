@@ -45,6 +45,8 @@ func init() {
 	})
 }
 
+// getSaAndRegion
+// returns service account path, projectId, region, zone
 func getSaAndRegion() (string, string, string, string) {
 	return getSaPath(), getProjectId(), gcpRegion, gcpZone
 }
