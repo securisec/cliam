@@ -21,7 +21,7 @@ var (
 )
 
 func init() {
-	RootCmd.AddCommand(firebaseCmd)
+	gcpCmd.AddCommand(firebaseCmd)
 	firebaseCmd.PersistentFlags().StringVar(&firebaseProjectId, "project-id", "", "Firebase project id")
 	firebaseCmd.PersistentFlags().StringToStringVar(&firebaseKnownValues, "known-value", map[string]string{}, "Extra parameters like collection name")
 	firebaseCmd.PersistentFlags().StringVar(&firebaseServiceAccount, "service-account", "", "Firebase service account")

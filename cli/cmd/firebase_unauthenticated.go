@@ -10,7 +10,7 @@ import (
 )
 
 var firebaseUnauthenticatedeCmd = &cobra.Command{
-	Use:               "unauthenticated [--extra database=<database>,collection=<collection>,document=<document>...]",
+	Use:               "unauthenticated [--known-value database=<database>,collection=<collection>,document=<document>...]",
 	Example:           "cliam firebase unauthenticated",
 	Short:             "Enumerate unauthenticated Firebase permissions",
 	Run:               firebaseUnauthenticatedeCmdFunc,
@@ -67,7 +67,8 @@ func firebaseUnauthenticatedeCmdFunc(_ *cobra.Command, _ []string) {
 
 func firebaseRTDB() (int, error) {
 	if firebaseProjectId == "" {
-		logger.LogPanic(errors.New("Project ID not provided"))
+		logger.Logger.Fatal().Err(errors.New("Project ID not provided")).Send()
+		return 0, nil
 	}
 	// check if db is specified
 	if _, ok := firebaseKnownValues["database"]; !ok {
@@ -85,7 +86,8 @@ func firebaseRTDB() (int, error) {
 
 func firebaseFirestore() (int, error) {
 	if firebaseProjectId == "" {
-		logger.LogPanic(errors.New("Project ID not found"))
+		logger.Logger.Fatal().Err(errors.New("Project ID not found")).Send()
+		return 0, nil
 	}
 	// check if collection is specified
 	if _, ok := firebaseKnownValues["collection"]; !ok {

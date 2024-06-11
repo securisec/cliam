@@ -4,15 +4,16 @@ import "github.com/securisec/cliam/shared"
 
 // DynamoDBPolicies policy
 var DynamoDBPolicies = map[string]Service{
-	"DescribeEndpoints": {
-		Method:   "POST",
-		JsonData: map[string]string{},
-		Headers: map[string]string{
-			shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_JSON,
-			aws_X_AMZ_TARGET:           "DynamoDB_20120810.DescribeEndpoints",
-		},
-		Permission: "DescribeEndpoints",
-	},
+	// 🔥 this always returns a result and seems pointless
+	// "DescribeEndpoints": {
+	// 	Method:   "POST",
+	// 	JsonData: map[string]string{},
+	// 	Headers: map[string]string{
+	// 		shared.CONTENT_TYPE_HEADER: shared.CONTENT_TYPE_JSON,
+	// 		aws_X_AMZ_TARGET:           "DynamoDB_20120810.DescribeEndpoints",
+	// 	},
+	// 	Permission: "DescribeEndpoints",
+	// },
 	"DescribeLimits": {
 		Method:   "POST",
 		JsonData: map[string]string{},
