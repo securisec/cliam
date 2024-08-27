@@ -21,9 +21,9 @@ var {policyName}Policies = map[string]Service{{
 
 
 # securitylake, scheudler
-filename = "../../temp/aws-sdk-js/apis/xray-2016-04-12.normal.json"
-name = "xray"
-policyName = "Xray"
+filename = "../../temp/aws-sdk-js/apis/bedrock-2023-04-20.normal.json"
+name = "bedrock"
+policyName = "Bedrock"
 
 policies = "\n".join(get_policies(filename, True))
 with_extras = "\n".join(get_policies_with_params(filename))

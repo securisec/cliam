@@ -230,4 +230,17 @@ var DynamoDBPolicies = map[string]Service{
 		ExtraComponentLocation: "json",
 		ExtraCommandLineFlag:   "resource_arn",
 	},
+	"Scan": {
+		Method:   "POST",
+		JsonData: map[string]string{},
+		Headers: map[string]string{
+			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
+			aws_X_AMZ_TARGET:           "DynamoDB_20120810.Scan",
+		},
+		Permission:             "Scan",
+		IsExtra:                true,
+		ExtraComponentBodyKey:  "TableName",
+		ExtraComponentLocation: "json",
+		ExtraCommandLineFlag:   "table_name",
+	},
 }

@@ -23,7 +23,6 @@ Todo:
   🐙 disable color is no tty
   ☐ aws get-role-policy
   ☐ firebase admin storage
-  ☐ firebase admin real time db
   ☐ firebase admin functions
   ☐ save output for firebase
 
@@ -55,6 +54,7 @@ Resources:
   - https://docs.oracle.com/en-us/iaas/api/#/
 
 Archive:
+  ✔ firebase admin real time db
   ✔ aws set profile based on obtained creds/profiles/creds file
   ✔ set cliam aws profile based on current creds
   ✔ profile autocompleter for aws

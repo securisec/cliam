@@ -20,6 +20,7 @@ const (
 	Backup                = "backup"
 	BackupGateway         = "backup-gateway"
 	Batch                 = "batch"
+	Bedrock               = "bedrock"
 	Chime                 = "chime"
 	CloudDirectory        = "clouddirectory"
 	CloudFormation        = "cloudformation"
@@ -166,6 +167,7 @@ var Services = map[string]map[string]policy.Service{
 	Backup:                policy.BackupPolicies,
 	BackupGateway:         policy.BackupGatewayPolicies,
 	Batch:                 policy.BatchPolicies,
+	Bedrock:               policy.BedrockPolicies,
 	Chime:                 policy.ChimePolicies,
 	CloudDirectory:        policy.CloudDirectoryPolicies,
 	CloudFormation:        policy.CloudFormationPolicies,

@@ -110,7 +110,7 @@ func firebaseAdminRTDB(ctx context.Context, app *firebase.App) {
 
 	var hold map[string]any
 	if err := ref.Get(ctx, &hold); err != nil {
-		panic(err)
+		logger.LogError(err)
 	}
 
 	for k, v := range hold {
