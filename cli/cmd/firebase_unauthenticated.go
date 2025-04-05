@@ -3,6 +3,8 @@ package cmd
 import (
 	"errors"
 	"fmt"
+	"net/url"
+	"path"
 	"sync"
 
 	"github.com/securisec/cliam/logger"
@@ -10,7 +12,7 @@ import (
 )
 
 var firebaseUnauthenticatedeCmd = &cobra.Command{
-	Use:               "unauthenticated [--known-value database=<database>,collection=<collection>,document=<document>...]",
+	Use:               "unauthenticated [--known-value database=<database>,collection=<collection>,document=<document>,url=<url>...]",
 	Example:           "cliam firebase unauthenticated",
 	Short:             "Enumerate unauthenticated Firebase permissions",
 	Run:               firebaseUnauthenticatedeCmdFunc,
@@ -33,6 +35,7 @@ func firebaseUnauthenticatedeCmdFunc(_ *cobra.Command, _ []string) {
 		firebaseRTDB,
 		firebaseFirestore,
 		firebaseStorage,
+		firebaseHostingInit,
 	}
 
 	go func() {
@@ -65,9 +68,23 @@ func firebaseUnauthenticatedeCmdFunc(_ *cobra.Command, _ []string) {
 
 }
 
+func firebaseHostingInit() (int, error) {
+	if _, ok := firebaseKnownValues["url"]; !ok {
+		return 0, nil
+	}
+	u, err := url.Parse(firebaseKnownValues["url"])
+	if err != nil {
+		logger.Logger.Error().Err(errors.New("Hosting: URL not valid")).Send()
+		return 0, nil
+	}
+	u.Path = path.Join(u.Path, "/__/firebase/init.json")
+	s := u.String()
+	return getRequest(s, "HostingInit")
+}
+
 func firebaseRTDB() (int, error) {
 	if firebaseProjectId == "" {
-		logger.Logger.Fatal().Err(errors.New("Project ID not provided")).Send()
+		logger.Logger.Warn().Err(errors.New("RTDB: Project ID not provided")).Send()
 		return 0, nil
 	}
 	// check if db is specified
@@ -86,7 +103,7 @@ func firebaseRTDB() (int, error) {
 
 func firebaseFirestore() (int, error) {
 	if firebaseProjectId == "" {
-		logger.Logger.Fatal().Err(errors.New("Project ID not found")).Send()
+		logger.Logger.Warn().Err(errors.New("Firestore: Project ID not found")).Send()
 		return 0, nil
 	}
 	// check if collection is specified

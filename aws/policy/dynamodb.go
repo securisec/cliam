@@ -231,8 +231,10 @@ var DynamoDBPolicies = map[string]Service{
 		ExtraCommandLineFlag:   "resource_arn",
 	},
 	"Scan": {
-		Method:   "POST",
-		JsonData: map[string]string{},
+		Method: "POST",
+		JsonData: map[string]string{
+			"Limit": "1",
+		},
 		Headers: map[string]string{
 			shared.CONTENT_TYPE_HEADER: aws_JSON_1_1,
 			aws_X_AMZ_TARGET:           "DynamoDB_20120810.Scan",
