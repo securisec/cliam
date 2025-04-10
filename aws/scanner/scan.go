@@ -11,6 +11,7 @@ import (
 	"github.com/securisec/cliam/aws"
 	"github.com/securisec/cliam/aws/policy"
 	"github.com/securisec/cliam/aws/signer"
+	"github.com/securisec/cliam/logger"
 	"github.com/securisec/cliam/shared"
 )
 
@@ -58,6 +59,8 @@ func EnumerateSpecificResource(
 type ServiceMap struct {
 	Resource string
 	Policy   policy.Service
+	// Region is only used when sending scan requests
+	Region string
 }
 
 func GetServiceMap(resources []string) []ServiceMap {
@@ -71,6 +74,18 @@ func GetServiceMap(resources []string) []ServiceMap {
 		for _, policy := range policies {
 			hold = append(hold, ServiceMap{Resource: resource, Policy: policy})
 		}
+	}
+	return hold
+}
+
+func GetSingleServiceMap(resource string) []ServiceMap {
+	hold := make([]ServiceMap, 0)
+	policies, ok := aws.Services[resource]
+	if !ok {
+		logger.Logger.Fatal().Str("resource not found", resource).Send()
+	}
+	for _, policy := range policies {
+		hold = append(hold, ServiceMap{Resource: resource, Policy: policy})
 	}
 	return hold
 }

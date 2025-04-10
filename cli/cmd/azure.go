@@ -191,7 +191,7 @@ func ModifyExtraMap(m []string) map[string]string {
 		if len(ex) != 2 {
 			continue
 		}
-		h[shared.KebabToCamelCase(ex[0])] = ex[1]
+		h[shared.KebabToCamelCase(ex[0], false)] = ex[1]
 	}
 	return h
 }

@@ -1,3 +1,4 @@
+// Package cmd ...
 package cmd
 
 import (
@@ -30,9 +31,9 @@ var (
 	awsAccessKeyID      string
 	awsSecretAccessKey  string
 	awsSessionToken     string
-	awsRegion           string
+	awsRegions          []string
 	awsProfile          string
-	awsSessionJson      string
+	awsSessionJSON      string
 	awsEndpoint         string
 	awsKnownResourceMap []string
 	// awsKnownOnly         bool
@@ -45,16 +46,16 @@ func init() {
 	awsCmd.PersistentFlags().StringVar(&awsAccessKeyID, "access-key-id", os.Getenv("AWS_ACCESS_KEY_ID"), "AWS Access Key ID")
 	awsCmd.PersistentFlags().StringVar(&awsSecretAccessKey, "secret-access-key", os.Getenv("AWS_SECRET_ACCESS_KEY"), "AWS Secret Access Key")
 	awsCmd.PersistentFlags().StringVar(&awsSessionToken, "session-token", os.Getenv("AWS_SESSION_TOKEN"), "AWS Session Token")
-	awsCmd.PersistentFlags().StringVar(&awsRegion, "region", "us-east-1", "AWS Region")
+	awsCmd.PersistentFlags().StringArrayVar(&awsRegions, "regions", []string{"us-east-1"}, "AWS Regions. Can be set multiple times")
 	awsCmd.PersistentFlags().StringVar(&awsProfile, "profile", "", "AWS Profile. When profile is set, access-key-id, secret-access-key, and session-token are ignored.")
-	awsCmd.PersistentFlags().StringVar(&awsSessionJson, "session-json", "", "AWS Session JSON file. This flag attempts to read session information from the specified file. Helpful with temporary credentials.")
+	awsCmd.PersistentFlags().StringVar(&awsSessionJSON, "session-json", "", "AWS Session JSON file. This flag attempts to read session information from the specified file. Helpful with temporary credentials.")
 	awsCmd.PersistentFlags().StringVar(&awsEndpoint, "endpoint-url", "", "AWS Endpoint. Custom AWS endpoint.")
 	awsCmd.PersistentFlags().StringSliceVarP(&awsKnownResourceMap, "known-value", "k", []string{}, "AWS Resource Name. Maps directly with aws cli flags. This flag can be used multiple times.")
 	awsCmd.PersistentFlags().BoolVar(&awsDeepScan, "deep", false, "Deep scan. From values identified in list operations, run further scans against them.")
 	awsCmd.PersistentFlags().StringVar(&saveResults, "output", "", "Write scan results to file")
 
 	// completers
-	awsCmd.RegisterFlagCompletionFunc("profile", func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
+	awsCmd.RegisterFlagCompletionFunc("profile", func(_ *cobra.Command, _ []string, _ string) ([]string, cobra.ShellCompDirective) {
 		var profiles []string
 		config, _, err := awsReadAWSCredentialsFile()
 		if err != nil {
@@ -69,8 +70,17 @@ func init() {
 	})
 	// region completer
 	// TODO 🔥 this may need to be updated
-	awsCmd.RegisterFlagCompletionFunc("region", func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
-		return aws_Regions, cobra.ShellCompDirectiveNoFileComp
+	awsCmd.RegisterFlagCompletionFunc("regions", func(_ *cobra.Command, _ []string, toComplete string) ([]string, cobra.ShellCompDirective) {
+		var matches []string
+		aws_Regions = append(aws_Regions, "all")
+		for _, region := range aws_Regions {
+			if strings.HasPrefix(region, toComplete) {
+				matches = append(matches, region)
+			}
+		}
+
+		// Return the filtered matches along with the ShellCompDirectiveNoFileComp
+		return matches, cobra.ShellCompDirectiveNoFileComp
 	})
 	// known value completer
 	awsCmd.RegisterFlagCompletionFunc("known-value", func(_ *cobra.Command, args []string, _ string) ([]string, cobra.ShellCompDirective) {
@@ -86,28 +96,28 @@ func init() {
 }
 
 // return the key, secret, token and region
-func getCredsAndRegion() (string, string, string, string) {
-	if awsSessionJson != "" {
-		s, err := awsReadSessionJsonFile()
+func getCredsAndRegion() (string, string, string, []string) {
+	if awsSessionJSON != "" {
+		s, err := awsReadSessionJSONFile()
 		if err != nil {
 			logger.LoggerStdErr.Fatal().Msg("Failed to read session json file")
 		}
 		// TODO 🔥 it could also be in the forat where .Credentials is not there and SessionToken is called Token
 		// if the Crendentials json param was found
 		if s.Credentials != nil {
-			return s.Credentials.AccessKeyID, s.Credentials.SecretAccessKey, s.Credentials.SessionToken, awsRegion
+			return s.Credentials.AccessKeyID, s.Credentials.SecretAccessKey, s.Credentials.SessionToken, awsRegions
 		} else if s.AccessKeyID != "" && s.SecretAccessKey != "" {
 			tok := s.Token
 			if tok == "" {
 				tok = s.SessionToken
 			}
-			return s.AccessKeyID, s.SecretAccessKey, tok, awsRegion
+			return s.AccessKeyID, s.SecretAccessKey, tok, awsRegions
 		}
 	}
 	key, secret, token, region := awsGetEnvarOrPrompt("AWS_ACCESS_KEY_ID", "AWS Access Key ID: "),
 		awsGetEnvarOrPrompt("AWS_SECRET_ACCESS_KEY", "AWS Secret Access Key: "),
 		awsSessionToken,
-		awsRegion
+		awsRegions
 
 	return key, secret, token, region
 }
@@ -129,9 +139,9 @@ func awsGetEnvarOrPrompt(envar, message string) string {
 	return promptInput(message)
 }
 
-func awsReadSessionJsonFile() (awsSessionJsonStruct, error) {
-	var s awsSessionJsonStruct
-	o, err := os.ReadFile(awsSessionJson)
+func awsReadSessionJSONFile() (awsSessionJSONStruct, error) {
+	var s awsSessionJSONStruct
+	o, err := os.ReadFile(awsSessionJSON)
 	if err != nil {
 		return s, err
 	}
@@ -139,7 +149,7 @@ func awsReadSessionJsonFile() (awsSessionJsonStruct, error) {
 	return s, err
 }
 
-func awsSendToChannel(ch chan scanner.ServiceMap, resources []string, extrasArray []string) {
+func awsSendToChannel(ch chan scanner.ServiceMap, resources []string, extrasArray, regions []string) {
 	var extras []scanner.ServiceMap
 	enumerate := scanner.GetServiceMap(resources)
 	for _, e := range enumerate {
@@ -150,7 +160,10 @@ func awsSendToChannel(ch chan scanner.ServiceMap, resources []string, extrasArra
 		} else {
 			// if the known only flag is set, ignore general permissions that doesnt require a resource name
 			if len(awsKnownResourceMap) == 0 {
-				ch <- e
+				for _, region := range regions {
+					e.Region = region
+					ch <- e
+				}
 			}
 		}
 	}
@@ -165,21 +178,24 @@ func awsSendToChannel(ch chan scanner.ServiceMap, resources []string, extrasArra
 	if len(extraFlags) > 0 && len(extras) > 0 {
 		for _, ee := range extras {
 			ee.Policy.ExtraValueMap = extraFlags
-			ch <- ee
+			for _, region := range regions {
+				ee.Region = region
+				ch <- ee
+			}
 		}
 	}
 }
 
-type awsSessionJsonStruct struct {
+type awsSessionJSONStruct struct {
 	// in the event it has the key Credentials. This can handle both Credentials and IMDS style tokens
-	Credentials     *awsSessionJsonCredentialsStruct `json:"Credentials"`
+	Credentials     *awsSessionJSONCredentialsStruct `json:"Credentials"`
 	AccessKeyID     string                           `json:"AccessKeyId"`
 	SecretAccessKey string                           `json:"SecretAccessKey"`
 	SessionToken    string                           `json:"SessionToken"`
 	Token           string                           `json:"Token"`
 }
 
-type awsSessionJsonCredentialsStruct struct {
+type awsSessionJSONCredentialsStruct struct {
 	AccessKeyID     string `json:"AccessKeyId"`
 	SecretAccessKey string `json:"SecretAccessKey"`
 	SessionToken    string `json:"SessionToken"`

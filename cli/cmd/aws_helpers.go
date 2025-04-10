@@ -1,6 +1,9 @@
 package cmd
 
-import "github.com/securisec/cliam/aws"
+import (
+	"github.com/securisec/cliam/aws"
+	"github.com/securisec/cliam/shared"
+)
 
 // AwsServiceGrouping common service mappings to group services together
 var AwsServiceGrouping = map[string][]string{
@@ -196,4 +199,15 @@ func getAwsServiceGroups() []string {
 		groups = append(groups, k)
 	}
 	return groups
+}
+
+// getRegions if all is specific, returns all regions
+func getRegions(regions []string) []string {
+	regions = shared.RemoveDuplicates(regions)
+	for _, r := range regions {
+		if r == "all" {
+			return aws_Regions
+		}
+	}
+	return regions
 }

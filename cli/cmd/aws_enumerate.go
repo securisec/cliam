@@ -21,7 +21,7 @@ var awsEnumerateCmd = &cobra.Command{
 	Example: "enumerate s3 lambda iam",
 	Short:   "Enumerate permissions for specified AWS resources.",
 	Run:     awsEnumerateCmdFunc,
-	ValidArgsFunction: func(cmd *cobra.Command, args []string, toComplete string) ([]string, cobra.ShellCompDirective) {
+	ValidArgsFunction: func(_ *cobra.Command, _ []string, _ string) ([]string, cobra.ShellCompDirective) {
 		return aws.GetAWSResources(), cobra.ShellCompDirectiveNoFileComp
 	},
 	// PreRun:  awsLoadEnvVarsFirst,
@@ -43,8 +43,9 @@ func awsEnumerateCmdFunc(_ *cobra.Command, args []string) {
 		os.Exit(1)
 	}
 
-	key, secret, token, region := getCredsAndRegion()
-	cliLogRegion(awsRegion)
+	key, secret, token, regions := getCredsAndRegion()
+	regions = getRegions(regions)
+	// cliLogRegion(awsRegion)
 	resources := shared.RemoveDuplicates(args)
 
 	creds := signer.SetCredentials(key, secret, token, awsProfile)
@@ -58,14 +59,14 @@ func awsEnumerateCmdFunc(_ *cobra.Command, args []string) {
 	go func() {
 		defer wg.Done()
 
-		options := scanner.Options{
-			Endpoint:   awsEndpoint,
-			Creds:      creds,
-			Region:     region,
-			SaveOutput: SaveOutput,
-		}
-
 		for ser := range ch {
+
+			options := scanner.Options{
+				Endpoint:   awsEndpoint,
+				Creds:      creds,
+				Region:     ser.Region,
+				SaveOutput: SaveOutput,
+			}
 			wg.Add(1)
 
 			go func(wg *sync.WaitGroup, service scanner.ServiceMap, options scanner.Options) {
@@ -85,7 +86,7 @@ func awsEnumerateCmdFunc(_ *cobra.Command, args []string) {
 					wg.Done()
 					return
 				}
-				cliResponseLoggerAWS(service, statusCode, mapToArray(service.Policy.ExtraValueMap))
+				cliResponseLoggerAWS(service, statusCode, mapToArray(service.Policy.ExtraValueMap), options.Region)
 
 				// process and get extras based on previous permissions identified
 				if awsDeepScan && service.Policy.ResponseParser != nil && statusCode == 200 {
@@ -98,7 +99,7 @@ func awsEnumerateCmdFunc(_ *cobra.Command, args []string) {
 						// update the extras with extra name
 						for _, extra := range extras {
 							awsKnownResourceMap = []string{fmt.Sprintf("%s=%s", extra.Flag, extra.ResponseKey)}
-							awsSendToChannel(ch, resources, []string{fmt.Sprintf("%s=%s", extra.Flag, extra.ResponseKey)})
+							awsSendToChannel(ch, resources, []string{fmt.Sprintf("%s=%s", extra.Flag, extra.ResponseKey)}, regions)
 						}
 					}
 				}
@@ -110,7 +111,7 @@ func awsEnumerateCmdFunc(_ *cobra.Command, args []string) {
 		}
 	}()
 
-	awsSendToChannel(ch, resources, []string{})
+	awsSendToChannel(ch, resources, []string{}, regions)
 
 	// TODO 🔥 this is blocking if defered, or panicing because closed
 	wg.Done() // refacor this because this is poor code and anti pattern

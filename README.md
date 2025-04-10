@@ -52,30 +52,37 @@ Uses the AWS rest api to make a signed request using the passed in credentials. 
 Supports obtaining credentials from AWS profile, flags, or default AWS environment variables like `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` and optionally `AWS_SESSION_TOKEN`.
 
 ```
-❯❯ cliam aws                                                        
-Enumerate AWS credentials for their permissions.
-
 Usage:
   cliam aws [command]
 
 Available Commands:
+  curl-builder  Build the curl command to test an aws policy. Only the first specified AWS region is used
   enumerate     Enumerate permissions for specified AWS resources.
   service-group Enumerate permissions for groups of AWS resources.
+  snipe         Check a specfic api permissions for an AWS resource.
+  utils         AWS utilities
 
 Flags:
-      --access-key-id string         AWS Access Key ID
-  -h, --help                         help for aws
-      --known-value stringToString   AWS Resource Name. When known-resource-name is set, additional permissions where a resource needs to be specified is enumerated. (default [])
-      --profile string               AWS Profile. When profile is set, access-key-id, secret-access-key, and session-token are ignored.
-      --region string                AWS Region (default "us-east-1")
-      --secret-access-key string     AWS Secret Access Key
-      --session-json string          AWS Session JSON file. This flag attempts to read session information from the specified file. Helpful with temporary credentials.
-      --session-token string         AWS Session Token
+      --access-key-id string       AWS Access Key ID
+      --deep                       Deep scan. From values identified in list operations, run further scans against them.
+      --endpoint-url string        AWS Endpoint. Custom AWS endpoint.
+  -h, --help                       help for aws
+  -k, --known-value strings        AWS Resource Name. Maps directly with aws cli flags. This flag can be used multiple times.
+      --output string              Write scan results to file
+      --profile string             AWS Profile. When profile is set, access-key-id, secret-access-key, and session-token are ignored.
+      --regions stringArray        AWS Regions. Can be set multiple times (default [us-east-1])
+      --secret-access-key string   AWS Secret Access Key
+      --session-json string        AWS Session JSON file. This flag attempts to read session information from the specified file. Helpful with temporary credentials.
+      --session-token string       AWS Session Token
 
 Global Flags:
       --max-threads int       Maximum number of threads to use. (default 5)
       --request-timeout int   Timeout for each request in seconds. (default 5)
+      --save-output           Save output to file on success
   -v, --verbose               Enable verbose output.
+
+Use "cliam aws [command] --help" for more information about a command.
+
 ```
 
 ### Known resources

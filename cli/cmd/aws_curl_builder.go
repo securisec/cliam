@@ -13,12 +13,12 @@ import (
 
 var awsRequestBuilderCmd = &cobra.Command{
 	Use:     "curl-builder",
-	Short:   "Build the curl command to test an aws policy.",
+	Short:   "Build the curl command to test an aws policy. Only the first specified AWS region is used",
 	Example: "aws curl-builder --policy somepolicy --operation someoperation --values somevalue=somevalue",
 	Long:    "Some requests requires known values. For these, use the -n command to supply them",
 	PreRun: func(_ *cobra.Command, _ []string) {
-		if awsRegion == "" {
-			logger.LoggerStdErr.Fatal().Msg("region is required")
+		if len(awsRegions) == 0 {
+			logger.LoggerStdErr.Fatal().Msg("At least one region is required")
 		}
 	},
 	Run:               awsRequestBuilderCmdFunc,
@@ -33,7 +33,7 @@ func init() {
 	awsRequestBuilderCmd.Flags().StringSliceP("values", "n", []string{}, "The values to use for known values.")
 
 	// completers
-	awsRequestBuilderCmd.RegisterFlagCompletionFunc("resource", func(cmd *cobra.Command, _ []string, _ string) ([]string, cobra.ShellCompDirective) {
+	awsRequestBuilderCmd.RegisterFlagCompletionFunc("resource", func(_ *cobra.Command, _ []string, _ string) ([]string, cobra.ShellCompDirective) {
 		return aws.GetAWSResources(), cobra.ShellCompDirectiveNoFileComp
 	})
 	awsRequestBuilderCmd.RegisterFlagCompletionFunc("operation", func(cmd *cobra.Command, _ []string, _ string) ([]string, cobra.ShellCompDirective) {
@@ -86,7 +86,7 @@ func awsRequestBuilderCmdFunc(cmd *cobra.Command, _ []string) {
 		p.ExtraValueMap = extraMap
 	}
 
-	u, err := p.GetRequestURL(region, pCli, awsEndpoint)
+	u, err := p.GetRequestURL(region[0], pCli, awsEndpoint)
 	if err != nil {
 		logger.LoggerStdErr.Fatal().Err(err).Msg("error getting request url")
 	}
@@ -99,7 +99,7 @@ func awsRequestBuilderCmdFunc(cmd *cobra.Command, _ []string) {
 		p = s
 	}
 
-	req, err := signer.BuildRequest(region, pCli, &p, creds)
+	req, err := signer.BuildRequest(region[0], pCli, &p, creds)
 	if err != nil {
 		logger.LoggerStdErr.Fatal().Err(err).Msg("error building request")
 	}

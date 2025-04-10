@@ -39,7 +39,7 @@ func promptInput(msg string) string {
 
 func cliErrorLogger(s scanner.ServiceMap, err error) {
 	if errors.Is(err, context.DeadlineExceeded) {
-		logger.LoggerStdErr.Error().Str(s.Resource, s.Policy.Permission).Msg(shared.GetMessageColor("timeout"))
+		logger.LoggerStdErr.Error().Str("region", s.Region).Str(s.Resource, s.Policy.Permission).Msg(shared.GetMessageColor("timeout"))
 	} else {
 		if logger.DEBUG {
 			logger.LoggerStdErr.Err(err).Msg(shared.GetMessageColor("error"))
@@ -47,12 +47,12 @@ func cliErrorLogger(s scanner.ServiceMap, err error) {
 	}
 }
 
-func cliResponseLoggerAWS(ser scanner.ServiceMap, status int, flagMap []string) {
+func cliResponseLoggerAWS(ser scanner.ServiceMap, status int, flagMap []string, region string) {
 	l := logger.Logger
 	cf := ser.Policy.ExtraCommandLineFlag
 	flag, ok := ModifyExtraMap(flagMap)[cf]
 	if status == http.StatusOK {
-		sl := l.Info().Str(ser.Resource, logger.ToSnakeCase(ser.Policy.Permission))
+		sl := l.Info().Str("region", region).Str(ser.Resource, logger.ToSnakeCase(ser.Policy.Permission))
 		if ok && flag != "" {
 			sl.Str(strings.ReplaceAll(cf, "_", "-"), flag)
 		}
@@ -72,15 +72,15 @@ func cliResponseLoggerAWS(ser scanner.ServiceMap, status int, flagMap []string) 
 		dl := l.Error().Str(ser.Resource, logger.ToSnakeCase(ser.Policy.Permission))
 		dl.Int("status", status)
 		if ok {
-			dl.Str(strings.ReplaceAll(cf, "_", "-"), flag)
+			dl.Str(strings.ReplaceAll(cf, "_", "-"), flag).Str("region", region)
 		}
 		dl.Msg(shared.GetMessageColor("error"))
 	}
 }
 
-func cliLogRegion(r string) {
-	logger.LoggerStdErr.Debug().Str("region", r).Msg(shared.GetMessageColor("info"))
-}
+// func cliLogRegion(r string) {
+// 	logger.LoggerStdErr.Debug().Str("region", r).Msg(shared.GetMessageColor("info"))
+// }
 
 func cliGcpLogRegion(data map[string]string) {
 	l := logger.LoggerStdErr.Debug()

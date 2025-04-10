@@ -25,6 +25,10 @@ Todo:
   ☐ firebase admin storage
   ☐ firebase admin functions
   ☐ save output for firebase
+  ☐ when reading aws profile, read region from it also
+  ☐ enumerate all regions
+  ☐ iam policy enumertaion 
+  snipe. enumerate a specific region
 
 Helpers:
 

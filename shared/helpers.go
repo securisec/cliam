@@ -6,6 +6,7 @@ import (
 	"errors"
 	"regexp"
 	"strings"
+	"unicode"
 
 	x2j "github.com/basgys/goxml2json"
 	"github.com/gookit/color"
@@ -92,8 +93,13 @@ func RemoveDuplicates(slice []string) []string {
 	return res
 }
 
-func KebabToCamelCase(kebab string) (camelCase string) {
+// KebabToCamelCase convert a kebab style string to camel case.
+// upperFirst will set the first character as uppercase. It is otherwise lowercase
+func KebabToCamelCase(kebab string, upperFirst bool) (camelCase string) {
 	isToUpper := false
+	if upperFirst {
+		kebab = strings.ToUpper(string(kebab[0])) + kebab[1:]
+	}
 	for _, runeValue := range kebab {
 		if isToUpper {
 			camelCase += strings.ToUpper(string(runeValue))
@@ -107,6 +113,21 @@ func KebabToCamelCase(kebab string) (camelCase string) {
 		}
 	}
 	return
+}
+
+func CamelToKebabCase(camel string) string {
+	var kebab strings.Builder
+	for i, r := range camel {
+		if unicode.IsUpper(r) {
+			if i > 0 {
+				kebab.WriteRune('-')
+			}
+			kebab.WriteRune(unicode.ToLower(r))
+		} else {
+			kebab.WriteRune(r)
+		}
+	}
+	return kebab.String()
 }
 
 // ResponseToJSON convert bytes to json

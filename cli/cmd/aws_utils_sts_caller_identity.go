@@ -24,17 +24,17 @@ func init() {
 
 func awsUtilsStsCallerIdentityCmdFunc(_ *cobra.Command, _ []string) {
 	// get credentials
-	key, secret, token, region := getCredsAndRegion()
+	key, secret, token, regions := getCredsAndRegion()
 	creds := signer.SetCredentials(key, secret, token, awsProfile)
 
 	pol := policy.STSPolicies["GetCallerIdentity"]
-	url, err := pol.GetRequestURL(region, "sts", awsEndpoint)
+	url, err := pol.GetRequestURL(regions[0], "sts", awsEndpoint)
 	if err != nil {
 		logger.LoggerStdErr.Fatal().Err(err).Msg("Failed to get request URL")
 	}
 	pol.ReqURL = url
 
-	_, res, body, err := signer.MakeScannerRequest(context.Background(), region, "sts", &pol, creds)
+	_, res, body, err := signer.MakeScannerRequest(context.Background(), regions[0], "sts", &pol, creds)
 	if err != nil {
 		logger.LoggerStdErr.Fatal().Err(err).Msg("Failed to make request")
 	}

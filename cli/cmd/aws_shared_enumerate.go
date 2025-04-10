@@ -10,8 +10,8 @@ import (
 )
 
 func awsSharedEnumerate(resources []string, saveOutput bool) {
-	key, secret, token, region := getCredsAndRegion()
-	cliLogRegion(awsRegion)
+	key, secret, token, regions := getCredsAndRegion()
+	regions = getRegions(regions)
 
 	creds := signer.SetCredentials(key, secret, token, awsProfile)
 
@@ -40,7 +40,7 @@ func awsSharedEnumerate(resources []string, saveOutput bool) {
 					Endpoint:   awsEndpoint,
 					Creds:      creds,
 					ServiceMap: s,
-					Region:     region,
+					Region:     s.Region,
 					SaveOutput: SaveOutput,
 				}
 
@@ -51,7 +51,7 @@ func awsSharedEnumerate(resources []string, saveOutput bool) {
 					wg.Done()
 					return
 				}
-				cliResponseLoggerAWS(s, statusCode, awsKnownResourceMap)
+				cliResponseLoggerAWS(s, statusCode, awsKnownResourceMap, s.Region)
 
 				wg.Done()
 
@@ -60,7 +60,7 @@ func awsSharedEnumerate(resources []string, saveOutput bool) {
 		}
 	}()
 
-	awsSendToChannel(ch, resources, []string{})
+	awsSendToChannel(ch, resources, []string{}, regions)
 
 	close(ch)
 	wg.Wait()
